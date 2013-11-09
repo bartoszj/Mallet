@@ -47,7 +47,7 @@ def print_NSData_as_NSString_command(debugger, command, result, internal_dict):
     options = lldb.SBExpressionOptions()
     options.SetIgnoreBreakpoints()
 
-    print_command = "(NSString *)[[NSString alloc] initWithData:({0!s}) encoding:4]".format(command)
+    print_command = "(NSString *)[[NSString alloc] initWithData:((NSData *)({0!s})) encoding:4]".format(command)
     if frame.IsValid():
         data = frame.EvaluateExpression(print_command, options)
         data_description = data.GetObjectDescription()
