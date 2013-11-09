@@ -34,32 +34,57 @@ def SKProduct_SummaryProvider(valobj, dict):
     #                                                      "(NSString *)[" + stream.GetData() +
     #                                                      " productIdentifier]")
     #product_identifier_value = product_identifier.GetObjectDescription()
+    #product_identifier_summary = product_identifier_value
 
     # localizedTitle
     localized_title = valobj.CreateValueFromExpression("localizedTitle",
                                                        "(NSString *)[" + stream.GetData() +
                                                        " localizedTitle]")
     localized_title_value = localized_title.GetObjectDescription()
+    localized_title_summary = "@\"{}\"".format(localized_title_value)
 
     # localizedDescription
     #localized_description = valobj.CreateValueFromExpression("localizedDescription",
     #                                                         "(NSString *)[" + stream.GetData() +
     #                                                         " localizedDescription]")
     #localized_description_value = localized_description.GetObjectDescription()
+    #localized_description_summary = localized_description_value
 
     # price
     #price = valobj.CreateValueFromExpression("price",
     #                                         "(NSDecimalNumber *)[" + stream.GetData() +
     #                                         " price]")
     #price_value = price.GetObjectDescription()
+    #price_summary = price_value
 
     # priceLocale
     #price_locale = valobj.CreateValueFromExpression("priceLocale",
     #                                                "(NSLocale *)[" + stream.GetData() +
     #                                                " priceLocale]")
     #price_locale_value = price_locale.GetObjectDescription()
+    #price_locale_summary = price_locale_value
 
-    summary = "@\"{}\"".format(localized_title_value)
+    # downloadable
+    downloadable = valobj.CreateValueFromExpression("downloadable",
+                                                    "(BOOL)[" + stream.GetData() +
+                                                    " downloadable]")
+    downloadable_value = downloadable.GetValueAsUnsigned()
+    downloadable_summary = "downloadable = {}".format("YES" if downloadable_value == 1 else "NO")
+
+    # downloadContentVersion
+    download_content_version = valobj.CreateValueFromExpression("downloadContentVersion",
+                                                                "(NSString *)[" + stream.GetData() +
+                                                                " downloadContentVersion]")
+    download_content_version_value = download_content_version.GetObjectDescription()
+    download_content_version_summary = "version = @\"{}\"".format(download_content_version_value)
+
+    # Summaries
+    summaries = [localized_title_summary]
+    if downloadable_value != 0:
+        summaries.append(downloadable_summary)
+        summaries.append(download_content_version_summary)
+
+    summary = ", ".join(summaries)
     return summary
 
 
