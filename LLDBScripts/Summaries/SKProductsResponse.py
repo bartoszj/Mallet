@@ -42,5 +42,6 @@ def SKProductsResponse_SummaryProvider(valobj, dict):
 
 def __lldb_init_module(debugger, dict):
     debugger.HandleCommand("type summary add -F SKProductsResponse.SKProductsResponse_SummaryProvider \
-                            --category StoreKit SKProductsResponse")
+                            --category StoreKit \
+                            SKProductsResponse")
     debugger.HandleCommand("type category enable StoreKit")

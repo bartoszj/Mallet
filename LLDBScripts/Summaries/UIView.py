@@ -64,5 +64,6 @@ def UIView_SummaryProvider(valobj, dict):
 
 def __lldb_init_module(debugger, dict):
     debugger.HandleCommand("type summary add -F UIView.UIView_SummaryProvider \
-                            --category UIKit UIView")
+                            --category UIKit \
+                            UIView")
     debugger.HandleCommand("type category enable UIKit")
