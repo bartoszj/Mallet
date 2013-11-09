@@ -23,36 +23,23 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
+from UIView import *
 
 
-# Frame
-def UIView_frame(valobj, stream):
-    frame_origin = valobj.CreateValueFromExpression("frameOrigin", "(CGPoint)[" + stream.GetData() + " frameOrigin]")
-    x = frame_origin.GetChildMemberWithName("x")
-    y = frame_origin.GetChildMemberWithName("y")
-
-    size = valobj.CreateValueFromExpression("size", "(CGSize)[" + stream.GetData() + " size]")
-    width = size.GetChildMemberWithName("width")
-    height = size.GetChildMemberWithName("height")
-
-    return x, y, width, height
+# Text
+def UILabel_text(valobj, stream):
+    text = valobj.CreateValueFromExpression("text", "(NSString *)[" + stream.GetData() + " text]")
+    return text
 
 
-# Alpha
-def UIView_alpha(valobj, stream):
-    alpha = valobj.CreateValueFromExpression("alpha", "(CGFloat)[" + stream.GetData() + " alpha]")
-    return alpha
-
-
-# Hidden
-def UIView_hidden(valobj, stream):
-    hidden = valobj.CreateValueFromExpression("hidden", "(BOOL)[" + stream.GetData() + " isHidden]")
-    return hidden
-
-
-def UIView_SummaryProvider(valobj, dict):
+def UILabel_SummaryProvider(valobj, dict):
     stream = lldb.SBStream()
     valobj.GetExpressionPath(stream)
+
+    # Text
+    text = UILabel_text(valobj, stream)
+    text_value = text.GetObjectDescription()
+    text_summary = "text = \"{}\"".format(text_value)
 
     # Frame
     (x, y, width, height) = UIView_frame(valobj, stream)
@@ -70,6 +57,8 @@ def UIView_SummaryProvider(valobj, dict):
 
     # Summary
     summaries = [frame_summary]
+    if len(text_value) > 0:
+        summaries.insert(0, text_summary)
     if alpha_value != 1.0:
         summaries.append(alpha_summary)
     if hidden_value != 0:
@@ -81,7 +70,7 @@ def UIView_SummaryProvider(valobj, dict):
 
 
 def __lldb_init_module(debugger, dict):
-    debugger.HandleCommand("type summary add -F UIView.UIView_SummaryProvider \
+    debugger.HandleCommand("type summary add -F UILabel.UILabel_SummaryProvider \
                             --category UIKit \
-                            UIView")
+                            UILabel")
     debugger.HandleCommand("type category enable UIKit")
