@@ -23,26 +23,57 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
+from helpers import *
 
 
 def SKProductsResponse_SummaryProvider(valobj, dict):
-    stream = lldb.SBStream()
-    valobj.GetExpressionPath(stream)
 
-    # Valid count
-    num_valid_products = valobj.CreateValueFromExpression("valid_count",
-                                                          "(NSUInteger)[[" + stream.GetData() +
-                                                          " products] count]")
-    num_valid_products_value = num_valid_products.GetValueAsUnsigned()
+    # Class data
+    class_data, wrapper = get_class_data(valobj)
+    if not class_data.sys_params.types_cache.NSArray:
+        class_data.sys_params.types_cache.NSArray = valobj.GetTarget().FindFirstType('NSArray').GetPointerType()
+    if not class_data.sys_params.types_cache.NSUInteger:
+        if class_data.sys_params.is_64_bit:
+            class_data.sys_params.types_cache.NSUInteger = valobj.GetType().GetBasicType(lldb.eBasicTypeUnsignedLong)
+        else:
+            class_data.sys_params.types_cache.NSUInteger = valobj.GetType().GetBasicType(lldb.eBasicTypeUnsignedInt)
 
-    # not valid count
-    num_not_valid_products = valobj.CreateValueFromExpression("not_valid_count",
-                                                              "(NSUInteger)[[" + stream.GetData() +
-                                                              " invalidProductIdentifiers] count]")
-    num_not_valid_products_value = num_not_valid_products.GetValueAsUnsigned()
+    # _internal (self->_internal)
+    internal = valobj.GetChildMemberWithName("_internal")
 
-    summary = "@\"Valid: {}, not valid: {}\"".format(num_valid_products_value, num_not_valid_products_value)
-    return summary
+    # _invalidIdentifiers (self->_internal->_invalidIdentifiers)
+    invalid_identifiers = internal.CreateChildAtOffset("invalidIdentifiers",
+                                                       1 * class_data.sys_params.pointer_size,
+                                                       class_data.sys_params.types_cache.NSArray)
+    # type: __NSCFArray
+    invalid_identifiers_count_vo = invalid_identifiers.CreateChildAtOffset("count",
+                                                                           class_data.sys_params.cfruntime_size,
+                                                                           class_data.sys_params.types_cache.NSUInteger)
+    invalid_identifiers_count = invalid_identifiers_count_vo.GetValueAsUnsigned()
+    invalid_identifiers_summary = "{} invalids".format(invalid_identifiers_count)
+
+    # _products (self->_internal->_products)
+    products = internal.CreateChildAtOffset("products",
+                                            2 * class_data.sys_params.pointer_size,
+                                            class_data.sys_params.types_cache.NSArray)
+    # type: __NSArrayI
+    products_count_vo = products.CreateChildAtOffset("count",
+                                                     class_data.sys_params.pointer_size,
+                                                     class_data.sys_params.types_cache.NSUInteger)
+    products_count = products_count_vo.GetValueAsUnsigned()
+    products_summary = "{} valids".format(products_count)
+
+    # Summaries
+    summaries = []
+    if products_count != 0:
+        summaries.append(products_summary)
+    if invalid_identifiers_count != 0:
+        summaries.append(invalid_identifiers_summary)
+
+    summary = None
+    if len(summaries) > 0:
+        summary = ", ".join(summaries);
+    return "@\"{}\"".format(summary)
 
 
 def __lldb_init_module(debugger, dict):

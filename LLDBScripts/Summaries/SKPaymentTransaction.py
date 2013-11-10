@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
+from helpers import *
 
 SKPaymentTransactionStatePurchasing = 0
 SKPaymentTransactionStatePurchased = 1
@@ -31,42 +32,43 @@ SKPaymentTransactionStateRestored = 3
 
 
 def SKPaymentTransaction_SummaryProvider(valobj, dict):
-    stream = lldb.SBStream()
-    valobj.GetExpressionPath(stream)
 
-    # transactionIdentifier
-    #transaction_identifier = valobj.CreateValueFromExpression("transactionIdentifier",
-    #                                                          "(NSString *)[" + stream.GetData() +
-    #                                                          " transactionIdentifier]")
-    #transaction_identifier_value = transaction_identifier.GetObjectDescription()
-    #transaction_identifier_summary = "@\"{}\"".format(transaction_identifier_value)
+    # Class data
+    class_data, wrapper = get_class_data(valobj)
+    if not class_data.sys_params.types_cache.NSString:
+        class_data.sys_params.types_cache.NSString = valobj.GetTarget().FindFirstType('NSString').GetPointerType()
+    if not class_data.sys_params.types_cache.int:
+        class_data.sys_params.types_cache.int = valobj.GetType().GetBasicType(lldb.eBasicTypeInt)
 
-    # transactionState
-    transaction_state = valobj.CreateValueFromExpression("transactionState",
-                                                         "(SKPaymentTransactionState)[" + stream.GetData() +
-                                                         " transactionState]")
+    # _internal (self->_internal)
+    internal = valobj.GetChildMemberWithName("_internal")
+
+    # _transactionIdentifier (self->_internal->_transactionIdentifier)
+    #transaction_identifier = internal.CreateChildAtOffset("transactionIdentifier",
+    #                                                      7 * class_data.sys_params.pointer_size,
+    #                                                      class_data.sys_params.types_cache.NSString)
+    #transaction_identifier_value = transaction_identifier.GetSummary()
+    #transaction_identifier_summary = transaction_identifier_value
+
+    # _transactionState (self->_internal->_transactionState)
+    transaction_state = internal.CreateChildAtOffset("transactionState",
+                                                     9 * class_data.sys_params.pointer_size,
+                                                     class_data.sys_params.types_cache.int)
     transaction_state_value = transaction_state.GetValueAsUnsigned()
     if transaction_state_value == 0:
         #transaction_state_value_name = "SKPaymentTransactionStatePurchasing"
-        transaction_state_value_name = "purchasing"
+        transaction_state_value_name = "Purchasing"
     elif transaction_state_value == 1:
         #transaction_state_value_name = "SKPaymentTransactionStatePurchased"
-        transaction_state_value_name = "purchased"
+        transaction_state_value_name = "Purchased"
     elif transaction_state_value == 2:
         #transaction_state_value_name = "SKPaymentTransactionStateFailed"
-        transaction_state_value_name = "failed"
+        transaction_state_value_name = "Failed"
     elif transaction_state_value == 3:
         #transaction_state_value_name = "SKPaymentTransactionStateRestored"
-        transaction_state_value_name = "restored"
+        transaction_state_value_name = "Restored"
 
     transaction_state_summary = "state = {}".format(transaction_state_value_name)
-
-    # transactionDate
-    #transaction_date = valobj.CreateValueFromExpression("transactionDate",
-    #                                                     "(NSDate *)[" + stream.GetData() +
-    #                                                     " transactionDate]")
-    #transaction_date_value = transaction_date.GetObjectDescription()
-    #transaction_date_summary = transaction_date_value
 
     # Summaries
     summaries = [transaction_state_summary]

@@ -23,29 +23,49 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
+from helpers import *
 
 
 def SKPayment_SummaryProvider(valobj, dict):
-    stream = lldb.SBStream()
-    valobj.GetExpressionPath(stream)
 
-    # productIdentifier
-    product_identifier = valobj.CreateValueFromExpression("productIdentifier",
-                                                              "(NSString *)[" + stream.GetData() +
-                                                              " productIdentifier]")
-    product_identifier_value = product_identifier.GetObjectDescription()
-    product_identifier_summary = "@\"{}\"".format(product_identifier_value)
+    # Class data
+    class_data, wrapper = get_class_data(valobj)
+    if not class_data.sys_params.types_cache.NSString:
+        class_data.sys_params.types_cache.NSString = valobj.GetTarget().FindFirstType('NSString').GetPointerType()
+    if not class_data.sys_params.types_cache.int:
+        class_data.sys_params.types_cache.int = valobj.GetType().GetBasicType(lldb.eBasicTypeInt)
 
-    # quantity
-    quantity = valobj.CreateValueFromExpression("quantity",
-                                                "(quantity)[" + stream.GetData() +
-                                                " quantity]")
+    # _internal (self->_internal)
+    internal = valobj.GetChildMemberWithName("_internal")
+
+    # _applicationUsername (self->_internal->_applicationUsername)
+    application_username = internal.CreateChildAtOffset("applicationUsername",
+                                                        1 * class_data.sys_params.pointer_size,
+                                                        class_data.sys_params.types_cache.NSString)
+    application_username_value = application_username.GetSummary()
+    application_username_summary = None
+    if application_username_value:
+        application_username_summary = "applicationUsername = {}".format(application_username_value[2:-1])
+
+    # _productIdentifier (self->_internal->_productIdentifier)
+    product_identifier = internal.CreateChildAtOffset("productIdentifier",
+                                                      2 * class_data.sys_params.pointer_size,
+                                                      class_data.sys_params.types_cache.NSString)
+    product_identifier_value = product_identifier.GetSummary()
+    product_identifier_summary = product_identifier_value
+
+    # _quantity (self->_internal->_quantity)
+    quantity = internal.CreateChildAtOffset("quantity",
+                                            3 * class_data.sys_params.pointer_size,
+                                            class_data.sys_params.types_cache.int)
     quantity_value = quantity.GetValueAsSigned()
     quantity_summary = "quantity = {}".format(quantity_value)
 
     # Summaries
     summaries = [product_identifier_summary]
-    if quantity_value != 0:
+    if application_username_value:
+        summaries.append(application_username_summary)
+    if quantity_value != 1:
         summaries.append(quantity_summary)
 
     summary = ", ".join(summaries)

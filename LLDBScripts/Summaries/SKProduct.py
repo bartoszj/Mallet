@@ -23,66 +23,85 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
+from helpers import *
 
 
 def SKProduct_SummaryProvider(valobj, dict):
-    stream = lldb.SBStream()
-    valobj.GetExpressionPath(stream)
 
-    # productIdentifier
-    #product_identifier = valobj.CreateValueFromExpression("productIdentifier",
-    #                                                      "(NSString *)[" + stream.GetData() +
-    #                                                      " productIdentifier]")
-    #product_identifier_value = product_identifier.GetObjectDescription()
-    #product_identifier_summary = product_identifier_value
+    # Class data
+    class_data, wrapper = get_class_data(valobj)
+    if not class_data.sys_params.types_cache.NSString:
+        class_data.sys_params.types_cache.NSString = valobj.GetTarget().FindFirstType('NSString').GetPointerType()
+    if not class_data.sys_params.types_cache.NSDecimalNumber:
+        class_data.sys_params.types_cache.NSDecimalNumber = valobj.GetTarget().FindFirstType('NSDecimalNumber').GetPointerType()
+    if not(class_data.sys_params.types_cache.char):
+        class_data.sys_params.types_cache.char = valobj.GetType().GetBasicType(lldb.eBasicTypeChar)
 
-    # localizedTitle
-    localized_title = valobj.CreateValueFromExpression("localizedTitle",
-                                                       "(NSString *)[" + stream.GetData() +
-                                                       " localizedTitle]")
-    localized_title_value = localized_title.GetObjectDescription()
-    localized_title_summary = "@\"{}\"".format(localized_title_value)
+    # _internal (self->_internal)
+    internal = valobj.GetChildMemberWithName("_internal")
 
-    # localizedDescription
-    #localized_description = valobj.CreateValueFromExpression("localizedDescription",
-    #                                                         "(NSString *)[" + stream.GetData() +
-    #                                                         " localizedDescription]")
-    #localized_description_value = localized_description.GetObjectDescription()
-    #localized_description_summary = localized_description_value
+    # _contentVersion (self->_internal->_contentVersion)
+    content_version = internal.CreateChildAtOffset("contentVersion",
+                                                   1 * class_data.sys_params.pointer_size,
+                                                   class_data.sys_params.types_cache.NSString)
+    content_version_value = content_version.GetSummary()
+    content_version_summary = None
+    if content_version_value:
+        content_version_summary = "version = {}".format(content_version_value[2:-1])
 
-    # price
-    #price = valobj.CreateValueFromExpression("price",
-    #                                         "(NSDecimalNumber *)[" + stream.GetData() +
-    #                                         " price]")
-    #price_value = price.GetObjectDescription()
-    #price_summary = price_value
-
-    # priceLocale
-    #price_locale = valobj.CreateValueFromExpression("priceLocale",
-    #                                                "(NSLocale *)[" + stream.GetData() +
-    #                                                " priceLocale]")
-    #price_locale_value = price_locale.GetObjectDescription()
-    #price_locale_summary = price_locale_value
-
-    # downloadable
-    downloadable = valobj.CreateValueFromExpression("downloadable",
-                                                    "(BOOL)[" + stream.GetData() +
-                                                    " downloadable]")
+    # _downloadable (self->_internal->_downloadable)
+    downloadable = internal.CreateChildAtOffset("downloadable",
+                                                2 * class_data.sys_params.pointer_size,
+                                                class_data.sys_params.types_cache.char)
     downloadable_value = downloadable.GetValueAsUnsigned()
-    downloadable_summary = "downloadable = {}".format("YES" if downloadable_value == 1 else "NO")
+    downloadable_summary = "downloadable = {}".format("YES" if downloadable_value != 0 else "NO")
 
-    # downloadContentVersion
-    download_content_version = valobj.CreateValueFromExpression("downloadContentVersion",
-                                                                "(NSString *)[" + stream.GetData() +
-                                                                " downloadContentVersion]")
-    download_content_version_value = download_content_version.GetObjectDescription()
-    download_content_version_summary = "version = @\"{}\"".format(download_content_version_value)
+    # _localeIdentifier (self->_internal->_localeIdentifier)
+    locale_identifier = internal.CreateChildAtOffset("localeIdentifier",
+                                                     4 * class_data.sys_params.pointer_size,
+                                                     class_data.sys_params.types_cache.NSString)
+    locale_identifier_value = locale_identifier.GetSummary()
+    locale_identifier_summary = None
+    if locale_identifier_value:
+        locale_identifier_summary = "locale = {}".format(locale_identifier_value[2:-1])
+
+    # _localizedDescription (self->_internal->_localizedDescription)
+    localized_description = internal.CreateChildAtOffset("localizedDescription",
+                                                         5 * class_data.sys_params.pointer_size,
+                                                         class_data.sys_params.types_cache.NSString)
+    localized_description_value = localized_description.GetSummary()
+    localized_description_summary = "description = {}".format(localized_description_value)
+
+    # _localizedTitle (self->_internal->_localizedTitle)
+    localized_title = internal.CreateChildAtOffset("localizedTitle",
+                                                   6 * class_data.sys_params.pointer_size,
+                                                   class_data.sys_params.types_cache.NSString)
+    localized_title_value = localized_title.GetSummary()
+    localized_title_summary = localized_title_value
+
+    # _price (self->internal->_price)
+    price = internal.CreateChildAtOffset("price",
+                                         7 * class_data.sys_params.pointer_size,
+                                         class_data.sys_params.types_cache.NSDecimalNumber)
+    price_value = price.GetSummary()
+    price_summary = "price = {}".format(price_value)
+
+    # _productIdentifier (self->_internal->_productIdentifier)
+    product_identifier = internal.CreateChildAtOffset("productIdentifier",
+                                                      9 * class_data.sys_params.pointer_size,
+                                                      class_data.sys_params.types_cache.NSString)
+    product_identifier_value = product_identifier.GetSummary()
+    product_identifier_summary = "productId = {}".format(product_identifier_value)
 
     # Summaries
-    summaries = [localized_title_summary]
+    summaries = []
+    if localized_title_value:
+        summaries.append(localized_title_summary)
+    if price_value:
+        summaries.append(price_summary)
     if downloadable_value != 0:
         summaries.append(downloadable_summary)
-        summaries.append(download_content_version_summary)
+        summaries.append(content_version_summary)
 
     summary = ", ".join(summaries)
     return summary

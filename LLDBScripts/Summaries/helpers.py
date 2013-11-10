@@ -42,10 +42,10 @@ def print_child(valobj):
         o = valobj.GetChildAtIndex(i)
         print "{:<2} - {}".format(i, o.GetName())
         print "{:<2} - {}".format(i, o.GetAddress())
-        print "{:<2} - {}".format(i, o.GetType())
-        print "{:<2} - {}".format(i, o.GetTypeName())
-        print "{:<2} - {}".format(i, o.GetSummary())
-        print "{:<2} - {}".format(i, o.GetObjectDescription())
+        #print "{:<2} - {}".format(i, o.GetType())
+        #print "{:<2} - {}".format(i, o.GetTypeName())
+        #print "{:<2} - {}".format(i, o.GetSummary())
+        #print "{:<2} - {}".format(i, o.GetObjectDescription())
         print ""
 
 
@@ -70,12 +70,18 @@ def print_child_recursive(valobj, indent=0):
             print_child_recursive(o, indent+1)
 
 
-def print_object_info(valobj):
+def get_class_data(valobj):
     global statistics
 
-    #print_child_recursive(valobj)
     class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(valobj, statistics)
-    print "class_data.cachePointer:                         {}".format(class_data.cachePointer)
+    return class_data, wrapper
+
+
+def print_object_info(valobj):
+    global statistics
+    class_data, wrapper = get_class_data(valobj)
+
+    print "class_data.cachePointer:                         {:#x}".format(class_data.cachePointer)
     print "class_data.check_valid():                        {}".format(class_data.check_valid())
     print "class_data.class_name():                         {}".format(class_data.class_name())
     print "class_data.data:                                 {}".format(class_data.data if hasattr(class_data, "data") else None)
@@ -86,8 +92,14 @@ def print_object_info(valobj):
     print "class_data.is_kvo():                             {}".format(class_data.is_kvo())
     print "class_data.is_tagged():                          {}".format(class_data.is_tagged())
     print "class_data.is_valid():                           {}".format(class_data.is_valid())
-    print "class_data.isaPointer:                           {}".format(class_data.isaPointer)
+    print "class_data.isaPointer:                           {:#x}".format(class_data.isaPointer)
     print "class_data.superclassIsaPointer:                 {}".format(class_data.superclassIsaPointer if hasattr(class_data, "superclassIsaPointer") else None) #
+    print "class_data.rwt:                                  {}".format(class_data.rwt if hasattr(class_data, "rwt") else None)
+    print "class_data.valid:                                {}".format(class_data.valid)
+    print "class_data.valobj:                               {}".format(class_data.valobj)
+    print "class_data.vtablePointer:                        {:#x}".format(class_data.vtablePointer)
+
+    print ""
 
     # SystemParameters
     print "class_data.sys_params.cfruntime_size:            {}".format(class_data.sys_params.cfruntime_size)
@@ -101,12 +113,19 @@ def print_object_info(valobj):
     print "class_data.sys_params.runtime_version:           {}".format(class_data.sys_params.runtime_version)
     print "class_data.sys_params.types_cache.addr_type:     {}".format(class_data.sys_params.types_cache.addr_type)
     print "class_data.sys_params.types_cache.addr_ptr_type: {}".format(class_data.sys_params.types_cache.addr_ptr_type)
+    print "class_data.sys_params.types_cache.char:          {}".format(class_data.sys_params.types_cache.char)
+    print "class_data.sys_params.types_cache.short:         {}".format(class_data.sys_params.types_cache.short)
+    print "class_data.sys_params.types_cache.int:           {}".format(class_data.sys_params.types_cache.int)
     print "class_data.sys_params.types_cache.long:          {}".format(class_data.sys_params.types_cache.long)
+    print "class_data.sys_params.types_cache.ulong:         {}".format(class_data.sys_params.types_cache.ulong)
+    print "class_data.sys_params.types_cache.longlong:      {}".format(class_data.sys_params.types_cache.longlong)
+    print "class_data.sys_params.types_cache.ulonglong:     {}".format(class_data.sys_params.types_cache.ulonglong)
     print "class_data.sys_params.types_cache.uint32_t:      {}".format(class_data.sys_params.types_cache.uint32_t)
-
-    print "class_data.rwt:                                  {}".format(class_data.rwt if hasattr(class_data, "rwt") else None)
-    print "class_data.valid:                                {}".format(class_data.valid)
-    print "class_data.valobj:                               {}".format(class_data.valobj)
-    print "class_data.vtablePointer:                        {}".format(class_data.vtablePointer)
+    print "class_data.sys_params.types_cache.float:         {}".format(class_data.sys_params.types_cache.float)
+    print "class_data.sys_params.types_cache.double:        {}".format(class_data.sys_params.types_cache.double)
+    print "class_data.sys_params.types_cache.id:            {}".format(class_data.sys_params.types_cache.id)
+    print "class_data.sys_params.types_cache.NSUInteger:    {}".format(class_data.sys_params.types_cache.NSUInteger)
+    print "class_data.sys_params.types_cache.NSString:      {}".format(class_data.sys_params.types_cache.NSString)
+    print "class_data.sys_params.types_cache.NSNumber:      {}".format(class_data.sys_params.types_cache.NSNumber)
 
     #print dir(wrapper)
