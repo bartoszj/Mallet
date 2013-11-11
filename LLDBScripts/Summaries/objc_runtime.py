@@ -3,7 +3,7 @@ Objective-C runtime wrapper for use by LLDB Python formatters
 
 part of The LLVM Compiler Infrastructure
 This file is distributed under the University of Illinois Open Source
-License. See LICENSE.TXT for details.
+License. See 'LLDB LICENSE.TXT' for details.
 """
 import lldb
 import lldb.formatters.cache
