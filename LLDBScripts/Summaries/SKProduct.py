@@ -34,8 +34,6 @@ def SKProduct_SummaryProvider(valobj, dict):
         class_data.sys_params.types_cache.NSString = valobj.GetTarget().FindFirstType('NSString').GetPointerType()
     if not class_data.sys_params.types_cache.NSDecimalNumber:
         class_data.sys_params.types_cache.NSDecimalNumber = valobj.GetTarget().FindFirstType('NSDecimalNumber').GetPointerType()
-    if not(class_data.sys_params.types_cache.char):
-        class_data.sys_params.types_cache.char = valobj.GetType().GetBasicType(lldb.eBasicTypeChar)
 
     # _internal (self->_internal)
     internal = valobj.GetChildMemberWithName("_internal")

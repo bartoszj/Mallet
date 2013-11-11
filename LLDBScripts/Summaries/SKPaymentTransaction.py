@@ -37,8 +37,6 @@ def SKPaymentTransaction_SummaryProvider(valobj, dict):
     class_data, wrapper = get_class_data(valobj)
     if not class_data.sys_params.types_cache.NSString:
         class_data.sys_params.types_cache.NSString = valobj.GetTarget().FindFirstType('NSString').GetPointerType()
-    if not class_data.sys_params.types_cache.int:
-        class_data.sys_params.types_cache.int = valobj.GetType().GetBasicType(lldb.eBasicTypeInt)
 
     # _internal (self->_internal)
     internal = valobj.GetChildMemberWithName("_internal")

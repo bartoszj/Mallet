@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
+import CFArray
 from helpers import *
 
 
@@ -32,11 +33,6 @@ def SKProductsResponse_SummaryProvider(valobj, dict):
     class_data, wrapper = get_class_data(valobj)
     if not class_data.sys_params.types_cache.NSArray:
         class_data.sys_params.types_cache.NSArray = valobj.GetTarget().FindFirstType('NSArray').GetPointerType()
-    if not class_data.sys_params.types_cache.NSUInteger:
-        if class_data.sys_params.is_64_bit:
-            class_data.sys_params.types_cache.NSUInteger = valobj.GetType().GetBasicType(lldb.eBasicTypeUnsignedLong)
-        else:
-            class_data.sys_params.types_cache.NSUInteger = valobj.GetType().GetBasicType(lldb.eBasicTypeUnsignedInt)
 
     # _internal (self->_internal)
     internal = valobj.GetChildMemberWithName("_internal")
@@ -45,23 +41,17 @@ def SKProductsResponse_SummaryProvider(valobj, dict):
     invalid_identifiers = internal.CreateChildAtOffset("invalidIdentifiers",
                                                        1 * class_data.sys_params.pointer_size,
                                                        class_data.sys_params.types_cache.NSArray)
-    # type: __NSCFArray
-    invalid_identifiers_count_vo = invalid_identifiers.CreateChildAtOffset("count",
-                                                                           class_data.sys_params.cfruntime_size,
-                                                                           class_data.sys_params.types_cache.NSUInteger)
-    invalid_identifiers_count = invalid_identifiers_count_vo.GetValueAsUnsigned()
-    invalid_identifiers_summary = "{} invalids".format(invalid_identifiers_count)
+    invalid_identifiers_provider = CFArray.NSArray_SynthProvider(invalid_identifiers, dict)
+    invalid_identifiers_count = invalid_identifiers_provider.num_children()
+    invalid_identifiers_summary = "{} invalid".format(invalid_identifiers_count)
 
     # _products (self->_internal->_products)
     products = internal.CreateChildAtOffset("products",
                                             2 * class_data.sys_params.pointer_size,
                                             class_data.sys_params.types_cache.NSArray)
-    # type: __NSArrayI
-    products_count_vo = products.CreateChildAtOffset("count",
-                                                     class_data.sys_params.pointer_size,
-                                                     class_data.sys_params.types_cache.NSUInteger)
-    products_count = products_count_vo.GetValueAsUnsigned()
-    products_summary = "{} valids".format(products_count)
+    products_provider = CFArray.NSArray_SynthProvider(products, dict)
+    products_count = products_provider.num_children()
+    products_summary = "{} valid".format(products_count)
 
     # Summaries
     summaries = []
@@ -72,7 +62,7 @@ def SKProductsResponse_SummaryProvider(valobj, dict):
 
     summary = None
     if len(summaries) > 0:
-        summary = ", ".join(summaries);
+        summary = ", ".join(summaries)
     return "@\"{}\"".format(summary)
 
 

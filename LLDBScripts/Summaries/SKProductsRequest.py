@@ -23,22 +23,16 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
+import NSSet
 from helpers import *
 
 
 def SKProductsRequest_SummaryProvider(valobj, dict):
 
-    print_object_info(valobj)
-
     # Class data
     class_data, wrapper = get_class_data(valobj)
     if not class_data.sys_params.types_cache.NSArray:
         class_data.sys_params.types_cache.NSSet = valobj.GetTarget().FindFirstType('NSSet').GetPointerType()
-    if not class_data.sys_params.types_cache.NSUInteger:
-        if class_data.sys_params.is_64_bit:
-            class_data.sys_params.types_cache.NSUInteger = valobj.GetType().GetBasicType(lldb.eBasicTypeUnsignedLong)
-        else:
-            class_data.sys_params.types_cache.NSUInteger = valobj.GetType().GetBasicType(lldb.eBasicTypeUnsignedInt)
 
     # _productsRequestInternal (self->_productsRequestInternal)
     products_request_internal = valobj.GetChildMemberWithName("_productsRequestInternal")
@@ -47,16 +41,12 @@ def SKProductsRequest_SummaryProvider(valobj, dict):
     product_identifiers = products_request_internal.CreateChildAtOffset("productIdentifiers",
                                                                         1 * class_data.sys_params.pointer_size,
                                                                         class_data.sys_params.types_cache.NSSet)
-    # type: __NSSetI
-    product_identifiers_count_vo = product_identifiers.CreateChildAtOffset("length",
-                                                                           class_data.sys_params.pointer_size,
-                                                                           class_data.sys_params.types_cache.NSUInteger)
-    product_identifiers_count = product_identifiers_count_vo.GetValueAsUnsigned()
-    if class_data.sys_params.is_64_bit:
-        product_identifiers_count = product_identifiers_count & ~0xFF00000000000000
+    product_identifiers_provider = NSSet.GetSummary_Impl(product_identifiers)
+
+    if product_identifiers_provider.count == 1:
+        product_identifiers_summary = "@\"{} product\"".format(product_identifiers_provider.count)
     else:
-        product_identifiers_count = product_identifiers_count & ~0xFF000000
-    product_identifiers_summary = "@\"{} products\"".format(product_identifiers_count)
+        product_identifiers_summary = "@\"{} products\"".format(product_identifiers_provider.count)
 
     # Summary
     return product_identifiers_summary
