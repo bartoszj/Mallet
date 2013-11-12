@@ -24,49 +24,105 @@
 
 import lldb
 import CFArray
-from helpers import *
+import objc_runtime
+import summary_helpers
+
+statistics = lldb.formatters.metrics.Metrics()
+statistics.add_metric('invalid_isa')
+statistics.add_metric('invalid_pointer')
+statistics.add_metric('unknown_class')
+statistics.add_metric('code_notrun')
 
 
-def SKProductsResponse_SummaryProvider(valobj, dict):
+class SKProductsResponse_SynthProvider(object):
+    def __init__(self, value_obj, sys_params, internal_dict):
+        super(SKProductsResponse_SynthProvider, self).__init__()
+        self.value_obj = value_obj
+        self.sys_params = sys_params
+        self.internal_dict = internal_dict
+        if not self.sys_params.types_cache.NSArray:
+            self.sys_params.types_cache.NSArray = self.value_obj.GetTarget().FindFirstType('NSArray').GetPointerType()
+        self.internal = None
+        self.invalid_identifiers = None
+        self.invalid_identifiers_provider = None
+        self.products = None
+        self.products_provider = None
+        self.update()
 
-    # Class data
-    class_data, wrapper = get_class_data(valobj)
-    if not class_data.sys_params.types_cache.NSArray:
-        class_data.sys_params.types_cache.NSArray = valobj.GetTarget().FindFirstType('NSArray').GetPointerType()
+    def update(self):
+        self.adjust_for_architecture()
+        # _internal (self->_internal)
+        self.internal = self.value_obj.GetChildMemberWithName("_internal")
+        self.invalid_identifiers = None
+        self.invalid_identifiers_provider = None
+        self.products = None
+        self.products_provider = None
 
-    # _internal (self->_internal)
-    internal = valobj.GetChildMemberWithName("_internal")
+    def adjust_for_architecture(self):
+        pass
 
     # _invalidIdentifiers (self->_internal->_invalidIdentifiers)
-    invalid_identifiers = internal.CreateChildAtOffset("invalidIdentifiers",
-                                                       1 * class_data.sys_params.pointer_size,
-                                                       class_data.sys_params.types_cache.NSArray)
-    invalid_identifiers_provider = CFArray.NSArray_SynthProvider(invalid_identifiers, dict)
-    invalid_identifiers_count = invalid_identifiers_provider.num_children()
-    invalid_identifiers_summary = "{} invalid".format(invalid_identifiers_count)
+    def get_invalid_identifiers(self):
+        if not self.invalid_identifiers:
+            self.invalid_identifiers = self.internal.CreateChildAtOffset("invalidIdentifiers",
+                                                                         1 * self.sys_params.pointer_size,
+                                                                         self.sys_params.types_cache.NSArray)
+        return self.invalid_identifiers
+
+    # NSArray provider
+    def get_invalid_identifiers_provider(self):
+        if not self.invalid_identifiers_provider:
+            self.invalid_identifiers_provider = CFArray.NSArray_SynthProvider(self.get_invalid_identifiers(),
+                                                                              self.internal_dict)
+        return self.invalid_identifiers_provider
 
     # _products (self->_internal->_products)
-    products = internal.CreateChildAtOffset("products",
-                                            2 * class_data.sys_params.pointer_size,
-                                            class_data.sys_params.types_cache.NSArray)
-    products_provider = CFArray.NSArray_SynthProvider(products, dict)
-    products_count = products_provider.num_children()
-    products_summary = "{} valid".format(products_count)
+    def get_products(self):
+        if not self.products:
+            self.products = self.internal.CreateChildAtOffset("products",
+                                                              2 * self.sys_params.pointer_size,
+                                                              self.sys_params.types_cache.NSArray)
+        return self.products
 
-    # Summaries
-    summaries = []
-    if products_count != 0:
-        summaries.append(products_summary)
-    if invalid_identifiers_count != 0:
-        summaries.append(invalid_identifiers_summary)
+    # NSArray provider
+    def get_products_provider(self):
+        if not self.products_provider:
+            self.products_provider = CFArray.NSArray_SynthProvider(self.get_products(), self.internal_dict)
+        return self.products_provider
 
-    summary = None
-    if len(summaries) > 0:
-        summary = ", ".join(summaries)
-    return "@\"{}\"".format(summary)
+    def summary(self):
+        invalid_identifiers_count = self.get_invalid_identifiers_provider().num_children()
+        invalid_identifiers_summary = "{} invalid".format(invalid_identifiers_count)
+        products_count = self.get_products_provider().num_children()
+        products_summary = "{} valid".format(products_count)
+
+        summaries = []
+        if products_count != 0:
+            summaries.append(products_summary)
+        if invalid_identifiers_count != 0:
+            summaries.append(invalid_identifiers_summary)
+
+        summary = None
+        if len(summaries) > 0:
+            summary = ", ".join(summaries)
+        return "@\"{}\"".format(summary)
 
 
-def __lldb_init_module(debugger, dict):
+def SKProductsResponse_SummaryProvider(value_obj, internal_dict):
+    # Class data
+    global statistics
+    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
+    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
+    if wrapper is not None:
+        return wrapper.message()
+
+    wrapper = SKProductsResponse_SynthProvider(value_obj, class_data.sys_params, internal_dict)
+    if wrapper is not None:
+        return wrapper.summary()
+    return "Summary Unavailable"
+
+
+def __lldb_init_module(debugger, internal_dict):
     debugger.HandleCommand("type summary add -F SKProductsResponse.SKProductsResponse_SummaryProvider \
                             --category StoreKit \
                             SKProductsResponse")

@@ -119,11 +119,11 @@ class RoT_Data:
             self.valobj = rot_pointer
             #self.flags = Utilities.read_child_of(self.valobj,0,self.sys_params.uint32_t)
             #self.instanceStart = Utilities.read_child_of(self.valobj,4,self.sys_params.uint32_t)
-            self.instanceSize = None # lazy fetching
+            self.instanceSize = None  # lazy fetching
             offset = 24 if self.sys_params.is_64_bit else 16
             #self.ivarLayoutPtr = Utilities.read_child_of(self.valobj,offset,self.sys_params.addr_ptr_type)
             self.namePointer = Utilities.read_child_of(self.valobj, offset, self.sys_params.types_cache.addr_ptr_type)
-            self.valid = 1 # self.check_valid()
+            self.valid = 1  # self.check_valid()
         else:
             logger >> "Marking as invalid - rot is invalid"
             self.valid = 0
@@ -611,7 +611,7 @@ class SystemParameters:
         global isa_caches
 
         process = valobj.GetTarget().GetProcess()
-        self.pid = process.GetUniqueID() # using the unique ID for added guarantees (see svn revision 172628 for further details)
+        self.pid = process.GetUniqueID()  # using the unique ID for added guarantees (see svn revision 172628 for further details)
 
         if runtime_version.look_for_key(self.pid):
             self.runtime_version = runtime_version.get_value(self.pid)
@@ -739,11 +739,11 @@ class ObjCRuntime:
                                                            self.sys_params.types_cache.addr_ptr_type)
         if self.isa_pointer is None or self.isa_pointer.IsValid() == 0:
             logger >> "invalid isa - bailing out"
-            return None;
+            return None
         self.isa_value = self.isa_pointer.GetValueAsUnsigned(1)
         if self.isa_value == 1:
             logger >> "invalid isa value - bailing out"
-            return None;
+            return None
         return Ellipsis
 
     def read_class_data(self):
@@ -769,7 +769,7 @@ class ObjCRuntime:
         if self.is_valid() == 0 or self.read_isa() is None:
             return InvalidClass_Data()
         data = self.sys_params.isa_cache.get_value(self.isa_value, default=None)
-        if data != None:
+        if data is not None:
             return data
         if self.sys_params.runtime_version == 2:
             data = Class_Data_V2(self.isa_pointer, self.sys_params)

@@ -70,20 +70,16 @@ def print_child_recursive(valobj, indent=0):
             print_child_recursive(o, indent+1)
 
 
-def get_class_data(valobj):
-    global statistics
-
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(valobj, statistics)
-    if not(class_data.sys_params.types_cache.char):
-        class_data.sys_params.types_cache.char = valobj.GetType().GetBasicType(lldb.eBasicTypeChar)
-    if not class_data.sys_params.types_cache.int:
-        class_data.sys_params.types_cache.int = valobj.GetType().GetBasicType(lldb.eBasicTypeInt)
-    if not class_data.sys_params.types_cache.NSUInteger:
-        if class_data.sys_params.is_64_bit:
-            class_data.sys_params.types_cache.NSUInteger = valobj.GetType().GetBasicType(lldb.eBasicTypeUnsignedLong)
+def update_sys_params(valobj, sys_params):
+    if not sys_params.types_cache.char:
+        sys_params.types_cache.char = valobj.GetType().GetBasicType(lldb.eBasicTypeChar)
+    if not sys_params.types_cache.int:
+        sys_params.types_cache.int = valobj.GetType().GetBasicType(lldb.eBasicTypeInt)
+    if not sys_params.types_cache.NSUInteger:
+        if sys_params.is_64_bit:
+            sys_params.types_cache.NSUInteger = valobj.GetType().GetBasicType(lldb.eBasicTypeUnsignedLong)
         else:
-            class_data.sys_params.types_cache.NSUInteger = valobj.GetType().GetBasicType(lldb.eBasicTypeUnsignedInt)
-    return class_data, wrapper
+            sys_params.types_cache.NSUInteger = valobj.GetType().GetBasicType(lldb.eBasicTypeUnsignedInt)
 
 
 def print_object_info(valobj):

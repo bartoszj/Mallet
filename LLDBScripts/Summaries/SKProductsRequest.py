@@ -24,35 +24,77 @@
 
 import lldb
 import NSSet
-from helpers import *
+import objc_runtime
+import summary_helpers
+
+statistics = lldb.formatters.metrics.Metrics()
+statistics.add_metric('invalid_isa')
+statistics.add_metric('invalid_pointer')
+statistics.add_metric('unknown_class')
+statistics.add_metric('code_notrun')
 
 
-def SKProductsRequest_SummaryProvider(valobj, dict):
+class SKProductsRequest_SynthProvider(object):
+    def __init__(self, value_obj, sys_params, internal_dict):
+        super(SKProductsRequest_SynthProvider, self).__init__()
+        self.value_obj = value_obj
+        self.sys_params = sys_params
+        self.internal_dict = internal_dict
+        if not self.sys_params.types_cache.NSArray:
+            self.sys_params.types_cache.NSSet = self.value_obj.GetTarget().FindFirstType('NSSet').GetPointerType()
+        self.internal = None
+        self.product_identifiers = None
+        self.product_identifiers_provider = None
+        self.update()
 
-    # Class data
-    class_data, wrapper = get_class_data(valobj)
-    if not class_data.sys_params.types_cache.NSArray:
-        class_data.sys_params.types_cache.NSSet = valobj.GetTarget().FindFirstType('NSSet').GetPointerType()
+    def update(self):
+        self.adjust_for_architecture()
+        # _productsRequestInternal (self->_productsRequestInternal)
+        self.internal = self.value_obj.GetChildMemberWithName("_productsRequestInternal")
+        self.product_identifiers = None
+        self.product_identifiers_provider = None
 
-    # _productsRequestInternal (self->_productsRequestInternal)
-    products_request_internal = valobj.GetChildMemberWithName("_productsRequestInternal")
+    def adjust_for_architecture(self):
+        pass
 
     # _productIdentifiers (self->_internal->_productIdentifiers)
-    product_identifiers = products_request_internal.CreateChildAtOffset("productIdentifiers",
-                                                                        1 * class_data.sys_params.pointer_size,
-                                                                        class_data.sys_params.types_cache.NSSet)
-    product_identifiers_provider = NSSet.GetSummary_Impl(product_identifiers)
+    def get_product_identifiers(self):
+        if not self.product_identifiers:
+            self.product_identifiers = self.internal.CreateChildAtOffset("productIdentifiers",
+                                                                         1 * self.sys_params.pointer_size,
+                                                                         self.sys_params.types_cache.NSSet)
+        return self.product_identifiers
 
-    if product_identifiers_provider.count == 1:
-        product_identifiers_summary = "@\"{} product\"".format(product_identifiers_provider.count)
-    else:
-        product_identifiers_summary = "@\"{} products\"".format(product_identifiers_provider.count)
+    # NSSet provider
+    def get_product_identifiers_provider(self):
+        if not self.product_identifiers_provider:
+            self.product_identifiers_provider = NSSet.GetSummary_Impl(self.get_product_identifiers())
+        return self.product_identifiers_provider
 
-    # Summary
-    return product_identifiers_summary
+    def summary(self):
+        count = self.get_product_identifiers_provider().count
+        if count == 1:
+            summary = "@\"{} product\"".format(count)
+        else:
+            summary = "@\"{} products\"".format(count)
+        return summary
 
 
-def __lldb_init_module(debugger, dict):
+def SKProductsRequest_SummaryProvider(value_obj, internal_dict):
+    # Class data
+    global statistics
+    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
+    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
+    if wrapper is not None:
+        return wrapper.message()
+
+    wrapper = SKProductsRequest_SynthProvider(value_obj, class_data.sys_params, internal_dict)
+    if wrapper is not None:
+        return wrapper.summary()
+    return "Summary Unavailable"
+
+
+def __lldb_init_module(debugger, internal_dict):
     debugger.HandleCommand("type summary add -F SKProductsRequest.SKProductsRequest_SummaryProvider \
                             --category StoreKit \
                             SKProductsRequest")

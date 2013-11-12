@@ -23,7 +23,14 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-from helpers import *
+import objc_runtime
+import summary_helpers
+
+statistics = lldb.formatters.metrics.Metrics()
+statistics.add_metric('invalid_isa')
+statistics.add_metric('invalid_pointer')
+statistics.add_metric('unknown_class')
+statistics.add_metric('code_notrun')
 
 SKPaymentTransactionStatePurchasing = 0
 SKPaymentTransactionStatePurchased = 1
@@ -31,51 +38,88 @@ SKPaymentTransactionStateFailed = 2
 SKPaymentTransactionStateRestored = 3
 
 
-def SKPaymentTransaction_SummaryProvider(valobj, dict):
+class SKPaymentTransaction_SynthProvider(object):
+    def __init__(self, value_obj, sys_params, internal_dict):
+        super(SKPaymentTransaction_SynthProvider, self).__init__()
+        self.value_obj = value_obj
+        self.sys_params = sys_params
+        self.internal_dict = internal_dict
+        if not self.sys_params.types_cache.NSString:
+            self.sys_params.types_cache.NSString = self.value_obj.GetTarget().FindFirstType('NSString').GetPointerType()
+        self.internal = None
+        self.transaction_identifier = None
+        self.transaction_state = None
+        self.update()
 
-    # Class data
-    class_data, wrapper = get_class_data(valobj)
-    if not class_data.sys_params.types_cache.NSString:
-        class_data.sys_params.types_cache.NSString = valobj.GetTarget().FindFirstType('NSString').GetPointerType()
+    def update(self):
+        self.adjust_for_architecture()
+        # _internal (self->_internal)
+        self.internal = self.value_obj.GetChildMemberWithName("_internal")
+        self.transaction_identifier = None
+        self.transaction_state = None
 
-    # _internal (self->_internal)
-    internal = valobj.GetChildMemberWithName("_internal")
+    def adjust_for_architecture(self):
+        pass
 
     # _transactionIdentifier (self->_internal->_transactionIdentifier)
-    #transaction_identifier = internal.CreateChildAtOffset("transactionIdentifier",
-    #                                                      7 * class_data.sys_params.pointer_size,
-    #                                                      class_data.sys_params.types_cache.NSString)
-    #transaction_identifier_value = transaction_identifier.GetSummary()
-    #transaction_identifier_summary = transaction_identifier_value
+    def get_transaction_identifier(self):
+        if not self.transaction_identifier:
+            self.transaction_identifier = self.internal.CreateChildAtOffset("transactionIdentifier",
+                                                                            7 * self.sys_params.pointer_size,
+                                                                            self.sys_params.types_cache.NSString)
+        return self.transaction_identifier
 
     # _transactionState (self->_internal->_transactionState)
-    transaction_state = internal.CreateChildAtOffset("transactionState",
-                                                     9 * class_data.sys_params.pointer_size,
-                                                     class_data.sys_params.types_cache.int)
-    transaction_state_value = transaction_state.GetValueAsUnsigned()
-    if transaction_state_value == 0:
-        #transaction_state_value_name = "SKPaymentTransactionStatePurchasing"
-        transaction_state_value_name = "Purchasing"
-    elif transaction_state_value == 1:
-        #transaction_state_value_name = "SKPaymentTransactionStatePurchased"
-        transaction_state_value_name = "Purchased"
-    elif transaction_state_value == 2:
-        #transaction_state_value_name = "SKPaymentTransactionStateFailed"
-        transaction_state_value_name = "Failed"
-    elif transaction_state_value == 3:
-        #transaction_state_value_name = "SKPaymentTransactionStateRestored"
-        transaction_state_value_name = "Restored"
+    def get_transaction_state(self):
+        if not self.transaction_state:
+            self.transaction_state = self.internal.CreateChildAtOffset("transactionState",
+                                                                       9 * self.sys_params.pointer_size,
+                                                                       self.sys_params.types_cache.int)
+        return self.transaction_state
 
-    transaction_state_summary = "state = {}".format(transaction_state_value_name)
+    def summary(self):
+        #transaction_identifier_value = self.get_transaction_identifier().GetSummary()
+        #transaction_identifier_summary = transaction_identifier_value
 
-    # Summaries
-    summaries = [transaction_state_summary]
+        transaction_state_value = self.get_transaction_state().GetValueAsUnsigned()
+        transaction_state_value_name = "Unknown"
+        if transaction_state_value == 0:
+            #transaction_state_value_name = "SKPaymentTransactionStatePurchasing"
+            transaction_state_value_name = "Purchasing"
+        elif transaction_state_value == 1:
+            #transaction_state_value_name = "SKPaymentTransactionStatePurchased"
+            transaction_state_value_name = "Purchased"
+        elif transaction_state_value == 2:
+            #transaction_state_value_name = "SKPaymentTransactionStateFailed"
+            transaction_state_value_name = "Failed"
+        elif transaction_state_value == 3:
+            #transaction_state_value_name = "SKPaymentTransactionStateRestored"
+            transaction_state_value_name = "Restored"
 
-    summary = ", ".join(summaries)
-    return summary
+        transaction_state_summary = "state = {}".format(transaction_state_value_name)
+
+        # Summaries
+        summaries = [transaction_state_summary]
+
+        summary = ", ".join(summaries)
+        return summary
 
 
-def __lldb_init_module(debugger, dict):
+def SKPaymentTransaction_SummaryProvider(value_obj, internal_dict):
+    # Class data
+    global statistics
+    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
+    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
+    if wrapper is not None:
+        return wrapper.message()
+
+    wrapper = SKPaymentTransaction_SynthProvider(value_obj, class_data.sys_params, internal_dict)
+    if wrapper is not None:
+        return wrapper.summary()
+    return "Summary Unavailable"
+
+
+def __lldb_init_module(debugger, internal_dict):
     debugger.HandleCommand("type summary add -F SKPaymentTransaction.SKPaymentTransaction_SummaryProvider \
                             --category StoreKit \
                             SKPaymentTransaction")

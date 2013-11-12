@@ -23,89 +23,162 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-from helpers import *
+import objc_runtime
+import summary_helpers
+
+statistics = lldb.formatters.metrics.Metrics()
+statistics.add_metric('invalid_isa')
+statistics.add_metric('invalid_pointer')
+statistics.add_metric('unknown_class')
+statistics.add_metric('code_notrun')
 
 
-def SKProduct_SummaryProvider(valobj, dict):
+class SKProduct_SynthProvider(object):
+    def __init__(self, value_obj, sys_params, internal_dict):
+        super(SKProduct_SynthProvider, self).__init__()
+        self.value_obj = value_obj
+        self.sys_params = sys_params
+        self.internal_dict = internal_dict
+        if not self.sys_params.types_cache.NSString:
+            self.sys_params.types_cache.NSString = self.value_obj.GetTarget().FindFirstType('NSString').GetPointerType()
+        if not self.sys_params.types_cache.NSDecimalNumber:
+            self.sys_params.types_cache.NSDecimalNumber = self.value_obj.GetTarget().FindFirstType('NSDecimalNumber')\
+                .GetPointerType()
+        self.internal = None
+        self.content_version = None
+        self.downloadable = None
+        self.locale_identifier = None
+        self.localized_description = None
+        self.localized_title = None
+        self.price = None
+        self.product_identifier = None
+        self.update()
 
-    # Class data
-    class_data, wrapper = get_class_data(valobj)
-    if not class_data.sys_params.types_cache.NSString:
-        class_data.sys_params.types_cache.NSString = valobj.GetTarget().FindFirstType('NSString').GetPointerType()
-    if not class_data.sys_params.types_cache.NSDecimalNumber:
-        class_data.sys_params.types_cache.NSDecimalNumber = valobj.GetTarget().FindFirstType('NSDecimalNumber').GetPointerType()
+    def update(self):
+        self.adjust_for_architecture()
+        # _internal (self->_internal)
+        self.internal = self.value_obj.GetChildMemberWithName("_internal")
+        self.content_version = None
+        self.downloadable = None
+        self.locale_identifier = None
+        self.localized_description = None
+        self.localized_title = None
+        self.product_identifier = None
+        self.price = None
 
-    # _internal (self->_internal)
-    internal = valobj.GetChildMemberWithName("_internal")
+    def adjust_for_architecture(self):
+        pass
 
     # _contentVersion (self->_internal->_contentVersion)
-    content_version = internal.CreateChildAtOffset("contentVersion",
-                                                   1 * class_data.sys_params.pointer_size,
-                                                   class_data.sys_params.types_cache.NSString)
-    content_version_value = content_version.GetSummary()
-    content_version_summary = None
-    if content_version_value:
-        content_version_summary = "version = {}".format(content_version_value[2:-1])
+    def get_content_version(self):
+        if not self.content_version:
+            self.content_version = self.internal.CreateChildAtOffset("contentVersion",
+                                                                     1 * self.sys_params.pointer_size,
+                                                                     self.sys_params.types_cache.NSString)
+        return self.content_version
 
     # _downloadable (self->_internal->_downloadable)
-    downloadable = internal.CreateChildAtOffset("downloadable",
-                                                2 * class_data.sys_params.pointer_size,
-                                                class_data.sys_params.types_cache.char)
-    downloadable_value = downloadable.GetValueAsUnsigned()
-    downloadable_summary = "downloadable = {}".format("YES" if downloadable_value != 0 else "NO")
+    def get_downloadable(self):
+        if not self.downloadable:
+            self.downloadable = self.internal.CreateChildAtOffset("downloadable",
+                                                                  2 * self.sys_params.pointer_size,
+                                                                  self.sys_params.types_cache.char)
+        return self.downloadable
 
     # _localeIdentifier (self->_internal->_localeIdentifier)
-    locale_identifier = internal.CreateChildAtOffset("localeIdentifier",
-                                                     4 * class_data.sys_params.pointer_size,
-                                                     class_data.sys_params.types_cache.NSString)
-    locale_identifier_value = locale_identifier.GetSummary()
-    locale_identifier_summary = None
-    if locale_identifier_value:
-        locale_identifier_summary = "locale = {}".format(locale_identifier_value[2:-1])
+    def get_locale_identifier(self):
+        if not self.locale_identifier:
+            self.locale_identifier = self.internal.CreateChildAtOffset("localeIdentifier",
+                                                                       4 * self.sys_params.pointer_size,
+                                                                       self.sys_params.types_cache.NSString)
+        return self.locale_identifier
 
     # _localizedDescription (self->_internal->_localizedDescription)
-    localized_description = internal.CreateChildAtOffset("localizedDescription",
-                                                         5 * class_data.sys_params.pointer_size,
-                                                         class_data.sys_params.types_cache.NSString)
-    localized_description_value = localized_description.GetSummary()
-    localized_description_summary = "description = {}".format(localized_description_value)
+    def get_localized_description(self):
+        if not self.localized_description:
+            self.localized_description = self.internal.CreateChildAtOffset("localizedDescription",
+                                                                           5 * self.sys_params.pointer_size,
+                                                                           self.sys_params.types_cache.NSString)
+        return self.localized_description
 
     # _localizedTitle (self->_internal->_localizedTitle)
-    localized_title = internal.CreateChildAtOffset("localizedTitle",
-                                                   6 * class_data.sys_params.pointer_size,
-                                                   class_data.sys_params.types_cache.NSString)
-    localized_title_value = localized_title.GetSummary()
-    localized_title_summary = localized_title_value
+    def get_localized_title(self):
+        if not self.localized_title:
+            self.localized_title = self.internal.CreateChildAtOffset("localizedTitle",
+                                                                     6 * self.sys_params.pointer_size,
+                                                                     self.sys_params.types_cache.NSString)
+        return self.localized_title
 
     # _price (self->internal->_price)
-    price = internal.CreateChildAtOffset("price",
-                                         7 * class_data.sys_params.pointer_size,
-                                         class_data.sys_params.types_cache.NSDecimalNumber)
-    price_value = price.GetSummary()
-    price_summary = "price = {}".format(price_value)
+    def get_price(self):
+        if not self.price:
+            self.price = self.internal.CreateChildAtOffset("price",
+                                                           7 * self.sys_params.pointer_size,
+                                                           self.sys_params.types_cache.NSDecimalNumber)
+        return self.price
 
     # _productIdentifier (self->_internal->_productIdentifier)
-    product_identifier = internal.CreateChildAtOffset("productIdentifier",
-                                                      9 * class_data.sys_params.pointer_size,
-                                                      class_data.sys_params.types_cache.NSString)
-    product_identifier_value = product_identifier.GetSummary()
-    product_identifier_summary = "productId = {}".format(product_identifier_value)
+    def get_product_identifier(self):
+        if not self.product_identifier:
+            self.product_identifier = self.internal.CreateChildAtOffset("productIdentifier",
+                                                                        9 * self.sys_params.pointer_size,
+                                                                        self.sys_params.types_cache.NSString)
+        return self.product_identifier
 
-    # Summaries
-    summaries = []
-    if localized_title_value:
-        summaries.append(localized_title_summary)
-    if price_value:
-        summaries.append(price_summary)
-    if downloadable_value != 0:
-        summaries.append(downloadable_summary)
-        summaries.append(content_version_summary)
+    def summary(self):
+        content_version_value = self.get_content_version().GetSummary()
+        content_version_summary = None
+        if content_version_value:
+            content_version_summary = "version = {}".format(content_version_value[2:-1])
 
-    summary = ", ".join(summaries)
-    return summary
+        downloadable_value = self.get_downloadable().GetValueAsUnsigned()
+        downloadable_summary = "downloadable = {}".format("YES" if downloadable_value != 0 else "NO")
+
+        #locale_identifier_value = self.get_locale_identifier().GetSummary()
+        #locale_identifier_summary = None
+        #if locale_identifier_value:
+        #    locale_identifier_summary = "locale = {}".format(locale_identifier_value[2:-1])
+
+        #localized_description_value = self.get_localized_description().GetSummary()
+        #localized_description_summary = "description = {}".format(localized_description_value)
+
+        localized_title_value = self.get_localized_title().GetSummary()
+        localized_title_summary = localized_title_value
+
+        price_value = self.get_price().GetSummary()
+        price_summary = "price = {}".format(price_value)
+
+        #product_identifier_value = self.get_product_identifier().GetSummary()
+        #product_identifier_summary = "productId = {}".format(product_identifier_value)
+
+        summaries = []
+        if localized_title_value:
+            summaries.append(localized_title_summary)
+        if price_value:
+            summaries.append(price_summary)
+        if downloadable_value != 0:
+            summaries.append(downloadable_summary)
+            summaries.append(content_version_summary)
+
+        summary = ", ".join(summaries)
+        return summary
 
 
-def __lldb_init_module(debugger, dict):
+def SKProduct_SummaryProvider(value_obj, internal_dict):
+    # Class data
+    global statistics
+    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
+    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
+    if wrapper is not None:
+        return wrapper.message()
+
+    wrapper = SKProduct_SynthProvider(value_obj, class_data.sys_params, internal_dict)
+    if wrapper is not None:
+        return wrapper.summary()
+    return "Summary Unavailable"
+
+
+def __lldb_init_module(debugger, internal_dict):
     debugger.HandleCommand("type summary add -F SKProduct.SKProduct_SummaryProvider \
                             --category StoreKit \
                             SKProduct")

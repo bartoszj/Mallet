@@ -23,55 +23,103 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-from helpers import *
+import objc_runtime
+import summary_helpers
+
+statistics = lldb.formatters.metrics.Metrics()
+statistics.add_metric('invalid_isa')
+statistics.add_metric('invalid_pointer')
+statistics.add_metric('unknown_class')
+statistics.add_metric('code_notrun')
 
 
-def SKPayment_SummaryProvider(valobj, dict):
+class SKPayment_SynthProvider(object):
+    def __init__(self, value_obj, sys_params, internal_dict):
+        super(SKPayment_SynthProvider, self).__init__()
+        self.value_obj = value_obj
+        self.sys_params = sys_params
+        self.internal_dict = internal_dict
+        if not self.sys_params.types_cache.NSString:
+            self.sys_params.types_cache.NSString = self.value_obj.GetTarget().FindFirstType('NSString').GetPointerType()
+        self.internal = None
+        self.application_username = None
+        self.product_identifier = None
+        self.quantity = None
+        self.update()
 
-    # Class data
-    class_data, wrapper = get_class_data(valobj)
-    if not class_data.sys_params.types_cache.NSString:
-        class_data.sys_params.types_cache.NSString = valobj.GetTarget().FindFirstType('NSString').GetPointerType()
+    def update(self):
+        self.adjust_for_architecture()
+        # _internal (self->_internal)
+        self.internal = self.value_obj.GetChildMemberWithName("_internal")
+        self.application_username = None
+        self.product_identifier = None
+        self.quantity = None
 
-
-    # _internal (self->_internal)
-    internal = valobj.GetChildMemberWithName("_internal")
+    def adjust_for_architecture(self):
+        pass
 
     # _applicationUsername (self->_internal->_applicationUsername)
-    application_username = internal.CreateChildAtOffset("applicationUsername",
-                                                        1 * class_data.sys_params.pointer_size,
-                                                        class_data.sys_params.types_cache.NSString)
-    application_username_value = application_username.GetSummary()
-    application_username_summary = None
-    if application_username_value:
-        application_username_summary = "applicationUsername = {}".format(application_username_value[2:-1])
+    def get_application_username(self):
+        if not self.application_username:
+            self.application_username = self.internal.CreateChildAtOffset("applicationUsername",
+                                                                          1 * self.sys_params.pointer_size,
+                                                                          self.sys_params.types_cache.NSString)
+        return self.application_username
 
     # _productIdentifier (self->_internal->_productIdentifier)
-    product_identifier = internal.CreateChildAtOffset("productIdentifier",
-                                                      2 * class_data.sys_params.pointer_size,
-                                                      class_data.sys_params.types_cache.NSString)
-    product_identifier_value = product_identifier.GetSummary()
-    product_identifier_summary = product_identifier_value
+    def get_product_identifier(self):
+        if not self.product_identifier:
+            self.product_identifier = self.internal.CreateChildAtOffset("productIdentifier",
+                                                                        2 * self.sys_params.pointer_size,
+                                                                        self.sys_params.types_cache.NSString)
+        return self.product_identifier
 
     # _quantity (self->_internal->_quantity)
-    quantity = internal.CreateChildAtOffset("quantity",
-                                            3 * class_data.sys_params.pointer_size,
-                                            class_data.sys_params.types_cache.int)
-    quantity_value = quantity.GetValueAsSigned()
-    quantity_summary = "quantity = {}".format(quantity_value)
+    def get_quantity(self):
+        if not self.quantity:
+            self.quantity = self.internal.CreateChildAtOffset("quantity",
+                                                              3 * self.sys_params.pointer_size,
+                                                              self.sys_params.types_cache.int)
+        return self.quantity
 
-    # Summaries
-    summaries = [product_identifier_summary]
-    if application_username_value:
-        summaries.append(application_username_summary)
-    if quantity_value != 1:
-        summaries.append(quantity_summary)
+    def summary(self):
+        application_username_value = self.get_application_username().GetSummary()
+        application_username_summary = None
+        if application_username_value:
+            application_username_summary = "applicationUsername = {}".format(application_username_value[2:-1])
 
-    summary = ", ".join(summaries)
-    return summary
+        product_identifier_value = self.get_product_identifier().GetSummary()
+        product_identifier_summary = product_identifier_value
+
+        quantity_value = self.get_quantity().GetValueAsSigned()
+        quantity_summary = "quantity = {}".format(quantity_value)
+
+        # Summaries
+        summaries = [product_identifier_summary]
+        if application_username_value:
+            summaries.append(application_username_summary)
+        if quantity_value != 1:
+            summaries.append(quantity_summary)
+
+        summary = ", ".join(summaries)
+        return summary
 
 
-def __lldb_init_module(debugger, dict):
+def SKPayment_SummaryProvider(value_obj, internal_dict):
+    # Class data
+    global statistics
+    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
+    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
+    if wrapper is not None:
+        return wrapper.message()
+
+    wrapper = SKPayment_SynthProvider(value_obj, class_data.sys_params, internal_dict)
+    if wrapper is not None:
+        return wrapper.summary()
+    return "Summary Unavailable"
+
+
+def __lldb_init_module(debugger, internal_dict):
     debugger.HandleCommand("type summary add -F SKPayment.SKPayment_SummaryProvider \
                             --category StoreKit \
                             SKPayment SKMutablePayment")
