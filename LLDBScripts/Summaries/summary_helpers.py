@@ -25,7 +25,6 @@
 import lldb.formatters
 import objc_runtime
 
-
 statistics = lldb.formatters.metrics.Metrics()
 statistics.add_metric('invalid_isa')
 statistics.add_metric('invalid_pointer')
@@ -33,13 +32,13 @@ statistics.add_metric('unknown_class')
 statistics.add_metric('code_notrun')
 
 
-def print_child(valobj):
-    valid = "Valid" if valobj.IsValid() else "Not valid"
-    print "{} {} {}".format(valobj.GetName(), valobj.GetAddress(), valid)
+def print_child(value_obj):
+    valid = "Valid" if value_obj.IsValid() else "Not valid"
+    print "{} {} {}".format(value_obj.GetName(), value_obj.GetAddress(), valid)
 
-    num = valobj.GetNumChildren()
+    num = value_obj.GetNumChildren()
     for i in xrange(num):
-        o = valobj.GetChildAtIndex(i)
+        o = value_obj.GetChildAtIndex(i)
         print "{:<2} - {}".format(i, o.GetName())
         print "{:<2} - {}".format(i, o.GetAddress())
         print "{:<2} - {}".format(i, o.GetType())
@@ -49,15 +48,15 @@ def print_child(valobj):
         print ""
 
 
-def print_child_recursive(valobj, indent=0):
+def print_child_recursive(value_obj, indent=0):
     indent_str = "  " * indent
-    valid = "Valid" if valobj.IsValid() else "Not valid"
-    print "{}{} {} {}".format(indent_str, valobj.GetName(), valobj.GetAddress(), valid)
-    print "{}{}".format(indent_str, valobj.GetObjectDescription())
+    valid = "Valid" if value_obj.IsValid() else "Not valid"
+    print "{}{} {} {}".format(indent_str, value_obj.GetName(), value_obj.GetAddress(), valid)
+    print "{}{}".format(indent_str, value_obj.GetObjectDescription())
 
-    num = valobj.GetNumChildren()
+    num = value_obj.GetNumChildren()
     for i in xrange(num):
-        o = valobj.GetChildAtIndex(i)
+        o = value_obj.GetChildAtIndex(i)
         print "{}{:<2} - {}".format(indent_str, i, o.GetName())
         print "{}{:<2} - {}".format(indent_str, i, o.GetAddress())
         print "{}{:<2} - {}".format(indent_str, i, o.GetType())
@@ -70,21 +69,47 @@ def print_child_recursive(valobj, indent=0):
             print_child_recursive(o, indent+1)
 
 
-def update_sys_params(valobj, sys_params):
+def update_sys_params(value_obj, sys_params):
     if not sys_params.types_cache.char:
-        sys_params.types_cache.char = valobj.GetType().GetBasicType(lldb.eBasicTypeChar)
+        sys_params.types_cache.char = value_obj.GetType().GetBasicType(lldb.eBasicTypeChar)
+    if not sys_params.types_cache.short:
+        sys_params.types_cache.short = value_obj.GetType().GetBasicType(lldb.eBasicTypeShort)
+    if not sys_params.types_cache.ushort:
+        sys_params.types_cache.ushort = value_obj.GetType().GetBasicType(lldb.eBasicTypeUnsignedShort)
     if not sys_params.types_cache.int:
-        sys_params.types_cache.int = valobj.GetType().GetBasicType(lldb.eBasicTypeInt)
+        sys_params.types_cache.int = value_obj.GetType().GetBasicType(lldb.eBasicTypeInt)
+    if not sys_params.types_cache.long:
+        sys_params.types_cache.long = value_obj.GetType().GetBasicType(lldb.eBasicTypeLong)
+    if not sys_params.types_cache.ulong:
+        sys_params.types_cache.ulong = value_obj.GetType().GetBasicType(lldb.eBasicTypeUnsignedLong)
+    if not sys_params.types_cache.longlong:
+        sys_params.types_cache.longlong = value_obj.GetType().GetBasicType(lldb.eBasicTypeLongLong)
+    if not sys_params.types_cache.ulonglong:
+        sys_params.types_cache.ulonglong = value_obj.GetType().GetBasicType(lldb.eBasicTypeUnsignedLongLong)
+    if not sys_params.types_cache.float:
+        sys_params.types_cache.float = value_obj.GetType().GetBasicType(lldb.eBasicTypeFloat)
+    if not sys_params.types_cache.double:
+        sys_params.types_cache.double = value_obj.GetType().GetBasicType(lldb.eBasicTypeDouble)
+    if not sys_params.types_cache.NSInteger:
+        if sys_params.is_64_bit:
+            sys_params.types_cache.NSInteger = value_obj.GetType().GetBasicType(lldb.eBasicTypeLong)
+        else:
+            sys_params.types_cache.NSInteger = value_obj.GetType().GetBasicType(lldb.eBasicTypeInt)
     if not sys_params.types_cache.NSUInteger:
         if sys_params.is_64_bit:
-            sys_params.types_cache.NSUInteger = valobj.GetType().GetBasicType(lldb.eBasicTypeUnsignedLong)
+            sys_params.types_cache.NSUInteger = value_obj.GetType().GetBasicType(lldb.eBasicTypeUnsignedLong)
         else:
-            sys_params.types_cache.NSUInteger = valobj.GetType().GetBasicType(lldb.eBasicTypeUnsignedInt)
+            sys_params.types_cache.NSUInteger = value_obj.GetType().GetBasicType(lldb.eBasicTypeUnsignedInt)
+    if not sys_params.types_cache.CGFloat:
+        if sys_params.is_64_bit:
+            sys_params.types_cache.CGFloat = value_obj.GetType().GetBasicType(lldb.eBasicTypeDouble)
+        else:
+            sys_params.types_cache.CGFloat = value_obj.GetType().GetBasicType(lldb.eBasicTypeFloat)
 
 
-def print_object_info(valobj):
+def print_object_info(value_obj):
     global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(valobj, statistics)
+    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
 
     print "class_data.cachePointer:                         {:#x}".format(class_data.cachePointer)
     print "class_data.check_valid():                        {}".format(class_data.check_valid())
