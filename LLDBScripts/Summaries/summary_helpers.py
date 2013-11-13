@@ -123,7 +123,7 @@ def print_object_info(value_obj):
     print "class_data.is_tagged():                          {}".format(class_data.is_tagged())
     print "class_data.is_valid():                           {}".format(class_data.is_valid())
     print "class_data.isaPointer:                           {:#x}".format(class_data.isaPointer)
-    print "class_data.superclassIsaPointer:                 {}".format(class_data.superclassIsaPointer if hasattr(class_data, "superclassIsaPointer") else None) #
+    print "class_data.superclassIsaPointer:                 {:#x}".format(class_data.superclassIsaPointer if hasattr(class_data, "superclassIsaPointer") else None) #
     print "class_data.rwt:                                  {}".format(class_data.rwt if hasattr(class_data, "rwt") else None)
     print "class_data.valid:                                {}".format("true" if class_data.valid else "false")
     print "class_data.valobj:                               {}".format(class_data.valobj)

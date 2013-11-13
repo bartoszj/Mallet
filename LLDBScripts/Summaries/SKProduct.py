@@ -34,6 +34,26 @@ statistics.add_metric('code_notrun')
 
 
 class SKProduct_SynthProvider(object):
+    # SKProduct:
+    # Offset / size                                 32bit:              64bit:
+    #
+    # Class isa                                      0 = 0x00 / 4        0 = 0x00 / 8
+    # SKProductInternal *_internal                   4 = 0x04 / 4        8 = 0x08 / 8
+
+    # SKProductInternal:
+    # Offset / size                                 32bit:              64bit:
+    #
+    # Class isa                                      0 = 0x00 / 4        0 = 0x00 / 8
+    # NSString *_contentVersion                      4 = 0x04 / 4        8 = 0x08 / 8
+    # BOOL _downloadable                             8 = 0x08 / 1 + 3   16 = 0x10 / 1 + 7
+    # NSArray *_downloadContentLengths              12 = 0x0c / 4       24 = 0x18 / 8
+    # NSString *_localeIdentifier                   16 = 0x10 / 4       32 = 0x20 / 8
+    # NSString *_localizedDescription               20 = 0x14 / 4       40 = 0x28 / 8
+    # NSString *_localizedTitle                     24 = 0x18 / 4       48 = 0x30 / 8
+    # NSDecimalNumber *_price                       28 = 0x1c / 4       56 = 0x38 / 8
+    # NSLocale *_priceLocale                        32 = 0x20 / 4       64 = 0x40 / 8
+    # NSString *_productIdentifier                  36 = 0x24 / 4       72 = 0x48 / 8
+
     def __init__(self, value_obj, sys_params, internal_dict):
         super(SKProduct_SynthProvider, self).__init__()
         self.value_obj = value_obj

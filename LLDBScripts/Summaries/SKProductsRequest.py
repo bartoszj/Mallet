@@ -35,6 +35,29 @@ statistics.add_metric('code_notrun')
 
 
 class SKProductsRequest_SynthProvider(object):
+    # SKProductsRequest:
+    # Offset / size                                         32bit:              64bit:
+    #
+    # Class isa                                              0 = 0x00 / 4        0 = 0x00 / 8
+    # SKRequestInternal *_requestInternal                    4 = 0x04 / 4        8 = 0x08 / 8
+    # SKProductsRequestInternal *_productsRequestInternal    8 = 0x08 / 4       16 = 0x10 / 8
+
+    # SKRequestInternal:
+    # Offset / size                                 32bit:              64bit:
+    #
+    # Class isa                                      0 = 0x00 / 4        0 = 0x00 / 8
+    # int _backgroundTaskIdentifier                  4 = 0x04 / 4        8 = 0x08 / 4 + 4
+    # SKPaymentQueueClient *_client                  8 = 0x08 / 4       16 = 0x10 / 8
+    # SKXPCConnection *_connection                  12 = 0x0c / 4       24 = 0x18 / 8
+    # id<SKRequestDelegate> _delegate               16 = 0x10 / 4       32 = 0x20 / 8
+    # int _state                                    20 = 0x14 / 4       40 = 0x28 / 4
+
+    # SKProductsRequestInternal:
+    # Offset / size                                 32bit:              64bit:
+    #
+    # Class isa                                      0 = 0x00 / 4        0 = 0x00 / 8
+    # NSSet *_productIdentifiers                     4 = 0x04 / 4        8 = 0x08 / 8
+
     def __init__(self, value_obj, sys_params, internal_dict):
         super(SKProductsRequest_SynthProvider, self).__init__()
         self.value_obj = value_obj

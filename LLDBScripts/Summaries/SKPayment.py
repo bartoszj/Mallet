@@ -22,6 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+
 import lldb
 import objc_runtime
 import summary_helpers
@@ -34,6 +35,22 @@ statistics.add_metric('code_notrun')
 
 
 class SKPayment_SynthProvider(object):
+    # SKPayment:
+    # Offset / size                                 32bit:              64bit:
+    #
+    # Class isa                                      0 = 0x00 / 4        0 = 0x00 / 8
+    # SKPaymentInternal *_internal                   4 = 0x04 / 4        4 = 0x08 / 8
+
+    # SKPaymentInternal:
+    # Offset / size                                 32bit:              64bit:
+    #
+    # Class isa                                      0 = 0x00 / 4        0 = 0x00 / 8
+    # NSString *_applicationUsername                 4 = 0x04 / 4        8 = 0x08 / 8
+    # NSString *_productIdentifier                   8 = 0x08 / 4       16 = 0x10 / 8
+    # int _quantity                                 12 = 0x0c / 4       24 = 0x18 / 4 + 4
+    # NSData *_requestData                          16 = 0x10 / 4       32 = 0x20 / 8
+    # NSDictionary *_requestParameters              20 = 0x14 / 4       40 = 0x28 / 8
+
     def __init__(self, value_obj, sys_params, internal_dict):
         super(SKPayment_SynthProvider, self).__init__()
         self.value_obj = value_obj
