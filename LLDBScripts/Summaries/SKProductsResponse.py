@@ -76,7 +76,10 @@ class SKProductsResponse_SynthProvider(object):
 
     # _invalidIdentifiers (self->_internal->_invalidIdentifiers)
     def get_invalid_identifiers(self):
-        if not self.invalid_identifiers:
+        if self.invalid_identifiers:
+            return self.invalid_identifiers
+
+        if self.internal:
             self.invalid_identifiers = self.internal.CreateChildAtOffset("invalidIdentifiers",
                                                                          1 * self.sys_params.pointer_size,
                                                                          self.sys_params.types_cache.NSArray)
@@ -84,14 +87,20 @@ class SKProductsResponse_SynthProvider(object):
 
     # NSArray provider
     def get_invalid_identifiers_provider(self):
-        if not self.invalid_identifiers_provider:
+        if self.invalid_identifiers_provider:
+            self.invalid_identifiers_provider
+
+        if self.get_invalid_identifiers():
             self.invalid_identifiers_provider = CFArray.NSArray_SynthProvider(self.get_invalid_identifiers(),
                                                                               self.internal_dict)
         return self.invalid_identifiers_provider
 
     # _products (self->_internal->_products)
     def get_products(self):
-        if not self.products:
+        if self.products:
+            return self.products
+
+        if self.internal:
             self.products = self.internal.CreateChildAtOffset("products",
                                                               2 * self.sys_params.pointer_size,
                                                               self.sys_params.types_cache.NSArray)
@@ -99,7 +108,10 @@ class SKProductsResponse_SynthProvider(object):
 
     # NSArray provider
     def get_products_provider(self):
-        if not self.products_provider:
+        if self.products_provider:
+            self.products_provider
+
+        if self.get_products():
             self.products_provider = CFArray.NSArray_SynthProvider(self.get_products(), self.internal_dict)
         return self.products_provider
 

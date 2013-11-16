@@ -59,11 +59,7 @@ class SKProduct_SynthProvider(object):
         self.value_obj = value_obj
         self.sys_params = sys_params
         self.internal_dict = internal_dict
-        if not self.sys_params.types_cache.NSString:
-            self.sys_params.types_cache.NSString = self.value_obj.GetTarget().FindFirstType('NSString').GetPointerType()
-        if not self.sys_params.types_cache.NSDecimalNumber:
-            self.sys_params.types_cache.NSDecimalNumber = self.value_obj.GetTarget().FindFirstType('NSDecimalNumber')\
-                .GetPointerType()
+
         self.internal = None
         self.content_version = None
         self.downloadable = None
@@ -91,7 +87,10 @@ class SKProduct_SynthProvider(object):
 
     # _contentVersion (self->_internal->_contentVersion)
     def get_content_version(self):
-        if not self.content_version:
+        if self.content_version:
+            return self.content_version
+
+        if self.internal:
             self.content_version = self.internal.CreateChildAtOffset("contentVersion",
                                                                      1 * self.sys_params.pointer_size,
                                                                      self.sys_params.types_cache.NSString)
@@ -99,7 +98,10 @@ class SKProduct_SynthProvider(object):
 
     # _downloadable (self->_internal->_downloadable)
     def get_downloadable(self):
-        if not self.downloadable:
+        if self.downloadable:
+            return self.downloadable
+
+        if self.internal:
             self.downloadable = self.internal.CreateChildAtOffset("downloadable",
                                                                   2 * self.sys_params.pointer_size,
                                                                   self.sys_params.types_cache.char)
@@ -107,7 +109,10 @@ class SKProduct_SynthProvider(object):
 
     # _localeIdentifier (self->_internal->_localeIdentifier)
     def get_locale_identifier(self):
-        if not self.locale_identifier:
+        if self.locale_identifier:
+            return self.locale_identifier
+
+        if self.internal:
             self.locale_identifier = self.internal.CreateChildAtOffset("localeIdentifier",
                                                                        4 * self.sys_params.pointer_size,
                                                                        self.sys_params.types_cache.NSString)
@@ -115,7 +120,10 @@ class SKProduct_SynthProvider(object):
 
     # _localizedDescription (self->_internal->_localizedDescription)
     def get_localized_description(self):
-        if not self.localized_description:
+        if self.localized_description:
+            return self.localized_description
+
+        if self.internal:
             self.localized_description = self.internal.CreateChildAtOffset("localizedDescription",
                                                                            5 * self.sys_params.pointer_size,
                                                                            self.sys_params.types_cache.NSString)
@@ -123,7 +131,10 @@ class SKProduct_SynthProvider(object):
 
     # _localizedTitle (self->_internal->_localizedTitle)
     def get_localized_title(self):
-        if not self.localized_title:
+        if self.localized_title:
+            return self.localized_title
+
+        if self.internal:
             self.localized_title = self.internal.CreateChildAtOffset("localizedTitle",
                                                                      6 * self.sys_params.pointer_size,
                                                                      self.sys_params.types_cache.NSString)
@@ -131,7 +142,10 @@ class SKProduct_SynthProvider(object):
 
     # _price (self->internal->_price)
     def get_price(self):
-        if not self.price:
+        if self.price:
+            return self.price
+
+        if self.internal:
             self.price = self.internal.CreateChildAtOffset("price",
                                                            7 * self.sys_params.pointer_size,
                                                            self.sys_params.types_cache.NSDecimalNumber)
@@ -139,7 +153,10 @@ class SKProduct_SynthProvider(object):
 
     # _productIdentifier (self->_internal->_productIdentifier)
     def get_product_identifier(self):
-        if not self.product_identifier:
+        if self.product_identifier:
+            return self.product_identifier
+
+        if self.internal:
             self.product_identifier = self.internal.CreateChildAtOffset("productIdentifier",
                                                                         9 * self.sys_params.pointer_size,
                                                                         self.sys_params.types_cache.NSString)

@@ -90,6 +90,7 @@ def update_sys_params(value_obj, sys_params):
         sys_params.types_cache.float = value_obj.GetType().GetBasicType(lldb.eBasicTypeFloat)
     if not sys_params.types_cache.double:
         sys_params.types_cache.double = value_obj.GetType().GetBasicType(lldb.eBasicTypeDouble)
+
     if not sys_params.types_cache.NSInteger:
         if sys_params.is_64_bit:
             sys_params.types_cache.NSInteger = value_obj.GetType().GetBasicType(lldb.eBasicTypeLong)
@@ -105,6 +106,19 @@ def update_sys_params(value_obj, sys_params):
             sys_params.types_cache.CGFloat = value_obj.GetType().GetBasicType(lldb.eBasicTypeDouble)
         else:
             sys_params.types_cache.CGFloat = value_obj.GetType().GetBasicType(lldb.eBasicTypeFloat)
+    if not sys_params.types_cache.id:
+        sys_params.types_cache.id = value_obj.GetType().GetBasicType(lldb.eBasicTypeObjCID)
+    if not sys_params.types_cache.NSString:
+            sys_params.types_cache.NSString = value_obj.GetTarget().FindFirstType('NSString').GetPointerType()
+    if not sys_params.types_cache.NSNumber:
+        sys_params.types_cache.NSNumber = value_obj.GetTarget().FindFirstType('NSNumber').GetPointerType()
+    if not sys_params.types_cache.NSDecimalNumber:
+        sys_params.types_cache.NSDecimalNumber = value_obj.GetTarget().FindFirstType('NSDecimalNumber')\
+            .GetPointerType()
+    if not sys_params.types_cache.NSURL:
+        sys_params.types_cache.NSURL = value_obj.GetTarget().FindFirstType('NSURL').GetPointerType()
+    if not sys_params.types_cache.NSArray:
+            sys_params.types_cache.NSSet = value_obj.GetTarget().FindFirstType('NSSet').GetPointerType()
 
 
 def print_object_info(value_obj):

@@ -56,8 +56,7 @@ class SKPayment_SynthProvider(object):
         self.value_obj = value_obj
         self.sys_params = sys_params
         self.internal_dict = internal_dict
-        if not self.sys_params.types_cache.NSString:
-            self.sys_params.types_cache.NSString = self.value_obj.GetTarget().FindFirstType('NSString').GetPointerType()
+
         self.internal = None
         self.application_username = None
         self.product_identifier = None
@@ -77,7 +76,10 @@ class SKPayment_SynthProvider(object):
 
     # _applicationUsername (self->_internal->_applicationUsername)
     def get_application_username(self):
-        if not self.application_username:
+        if self.application_username:
+            return self.application_username
+
+        if self.internal:
             self.application_username = self.internal.CreateChildAtOffset("applicationUsername",
                                                                           1 * self.sys_params.pointer_size,
                                                                           self.sys_params.types_cache.NSString)
@@ -85,7 +87,10 @@ class SKPayment_SynthProvider(object):
 
     # _productIdentifier (self->_internal->_productIdentifier)
     def get_product_identifier(self):
-        if not self.product_identifier:
+        if self.product_identifier:
+            return self.product_identifier
+
+        if self.internal:
             self.product_identifier = self.internal.CreateChildAtOffset("productIdentifier",
                                                                         2 * self.sys_params.pointer_size,
                                                                         self.sys_params.types_cache.NSString)
@@ -93,7 +98,10 @@ class SKPayment_SynthProvider(object):
 
     # _quantity (self->_internal->_quantity)
     def get_quantity(self):
-        if not self.quantity:
+        if self.quantity:
+            return self.quantity
+
+        if self.internal:
             self.quantity = self.internal.CreateChildAtOffset("quantity",
                                                               3 * self.sys_params.pointer_size,
                                                               self.sys_params.types_cache.int)

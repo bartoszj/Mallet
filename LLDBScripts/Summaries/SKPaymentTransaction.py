@@ -64,8 +64,7 @@ class SKPaymentTransaction_SynthProvider(object):
         self.value_obj = value_obj
         self.sys_params = sys_params
         self.internal_dict = internal_dict
-        if not self.sys_params.types_cache.NSString:
-            self.sys_params.types_cache.NSString = self.value_obj.GetTarget().FindFirstType('NSString').GetPointerType()
+
         self.internal = None
         self.transaction_identifier = None
         self.transaction_state = None
@@ -83,7 +82,10 @@ class SKPaymentTransaction_SynthProvider(object):
 
     # _transactionIdentifier (self->_internal->_transactionIdentifier)
     def get_transaction_identifier(self):
-        if not self.transaction_identifier:
+        if self.transaction_identifier:
+            return self.transaction_identifier
+
+        if self.internal:
             self.transaction_identifier = self.internal.CreateChildAtOffset("transactionIdentifier",
                                                                             7 * self.sys_params.pointer_size,
                                                                             self.sys_params.types_cache.NSString)
@@ -91,7 +93,10 @@ class SKPaymentTransaction_SynthProvider(object):
 
     # _transactionState (self->_internal->_transactionState)
     def get_transaction_state(self):
-        if not self.transaction_state:
+        if self.transaction_state:
+            return self.transaction_state
+
+        if self.internal:
             self.transaction_state = self.internal.CreateChildAtOffset("transactionState",
                                                                        9 * self.sys_params.pointer_size,
                                                                        self.sys_params.types_cache.int)

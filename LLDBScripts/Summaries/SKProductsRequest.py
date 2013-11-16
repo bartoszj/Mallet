@@ -24,6 +24,7 @@
 
 import lldb
 import NSSet
+import SKRequest
 import objc_runtime
 import summary_helpers
 
@@ -34,7 +35,7 @@ statistics.add_metric('unknown_class')
 statistics.add_metric('code_notrun')
 
 
-class SKProductsRequest_SynthProvider(object):
+class SKProductsRequest_SynthProvider(SKRequest.SKRequest_SynthProvider):
     # SKProductsRequest:
     # Offset / size                                         32bit:              64bit:
     #
@@ -42,60 +43,61 @@ class SKProductsRequest_SynthProvider(object):
     # SKRequestInternal *_requestInternal                    4 = 0x04 / 4        8 = 0x08 / 8
     # SKProductsRequestInternal *_productsRequestInternal    8 = 0x08 / 4       16 = 0x10 / 8
 
-    # SKRequestInternal:
-    # Offset / size                                 32bit:              64bit:
-    #
-    # Class isa                                      0 = 0x00 / 4        0 = 0x00 / 8
-    # int _backgroundTaskIdentifier                  4 = 0x04 / 4        8 = 0x08 / 4 + 4
-    # SKPaymentQueueClient *_client                  8 = 0x08 / 4       16 = 0x10 / 8
-    # SKXPCConnection *_connection                  12 = 0x0c / 4       24 = 0x18 / 8
-    # id<SKRequestDelegate> _delegate               16 = 0x10 / 4       32 = 0x20 / 8
-    # int _state                                    20 = 0x14 / 4       40 = 0x28 / 4
-
     # SKProductsRequestInternal:
-    # Offset / size                                 32bit:              64bit:
+    # Offset / size                                         32bit:              64bit:
     #
-    # Class isa                                      0 = 0x00 / 4        0 = 0x00 / 8
-    # NSSet *_productIdentifiers                     4 = 0x04 / 4        8 = 0x08 / 8
+    # Class isa                                              0 = 0x00 / 4        0 = 0x00 / 8
+    # NSSet *_productIdentifiers                             4 = 0x04 / 4        8 = 0x08 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        super(SKProductsRequest_SynthProvider, self).__init__()
+        super(SKProductsRequest_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
         self.value_obj = value_obj
         self.sys_params = sys_params
         self.internal_dict = internal_dict
         if not self.sys_params.types_cache.NSArray:
             self.sys_params.types_cache.NSSet = self.value_obj.GetTarget().FindFirstType('NSSet').GetPointerType()
-        self.internal = None
+        self.products_request_internal = None
         self.product_identifiers = None
         self.product_identifiers_provider = None
         self.update()
 
     def update(self):
-        self.adjust_for_architecture()
+        super(SKProductsRequest_SynthProvider, self).update()
         # _productsRequestInternal (self->_productsRequestInternal)
-        self.internal = self.value_obj.GetChildMemberWithName("_productsRequestInternal")
+        self.products_request_internal = self.value_obj.GetChildMemberWithName("_productsRequestInternal")
+        #self.products_request_internal = self.value_obj.CreateChildAtOffset("_productsRequestInternal",
+        #                                                                    2 * self.sys_params.pointer_size,
+        #                                                                    self.sys_params.types_cache.id)
         self.product_identifiers = None
         self.product_identifiers_provider = None
 
     def adjust_for_architecture(self):
-        pass
+        super(SKProductsRequest_SynthProvider, self).adjust_for_architecture()
 
     # _productIdentifiers (self->_internal->_productIdentifiers)
     def get_product_identifiers(self):
-        if not self.product_identifiers:
-            self.product_identifiers = self.internal.CreateChildAtOffset("productIdentifiers",
-                                                                         1 * self.sys_params.pointer_size,
-                                                                         self.sys_params.types_cache.NSSet)
+        if self.product_identifiers:
+            return self.product_identifiers
+
+        if self.products_request_internal:
+            self.product_identifiers = self.products_request_internal.CreateChildAtOffset("productIdentifiers",
+                                                                                          1 * self.sys_params.pointer_size,
+                                                                                          self.sys_params.types_cache.NSSet)
         return self.product_identifiers
 
     # NSSet provider
     def get_product_identifiers_provider(self):
-        if not self.product_identifiers_provider:
+        if self.product_identifiers_provider:
+            return self.product_identifiers_provider
+
+        if self.get_product_identifiers():
             self.product_identifiers_provider = NSSet.GetSummary_Impl(self.get_product_identifiers())
         return self.product_identifiers_provider
 
     def summary(self):
-        count = self.get_product_identifiers_provider().count
+        count = 0
+        if self.get_product_identifiers_provider():
+            count = self.get_product_identifiers_provider().count
         if count == 1:
             summary = "@\"{} product\"".format(count)
         else:
