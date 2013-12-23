@@ -24,14 +24,9 @@
 
 
 def __lldb_init_module(debugger, dict):
-    # UIEdgeInsets
+    # CGVector
     debugger.HandleCommand("type summary add -s \
-            \"(top=${var.top}, left=${var.left}, bottom=${var.bottom}, right=${var.right})\" -C false -p -r -v \
-            --category UIKit UIEdgeInsets")
+            \"(dx=${var.dx}, dy=${var.dy})\" -C false -p -r -v \
+            --category CoreFoundation CGVector")
 
-    # UIOffset
-    debugger.HandleCommand("type summary add -s \
-            \"(horizontal=${var.horizontal}, vertical=${var.vertical})\" -C false -p -r -v \
-            --category UIKit UIOffset")
-
-    debugger.HandleCommand("type category enable UIKit")
+    debugger.HandleCommand("type category enable CoreFoundation ")

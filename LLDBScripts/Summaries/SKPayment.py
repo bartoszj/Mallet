@@ -111,13 +111,13 @@ class SKPayment_SynthProvider(object):
         application_username_value = self.get_application_username().GetSummary()
         application_username_summary = None
         if application_username_value:
-            application_username_summary = "applicationUsername = {}".format(application_username_value[2:-1])
+            application_username_summary = "applicationUsername={}".format(application_username_value[2:-1])
 
         product_identifier_value = self.get_product_identifier().GetSummary()
         product_identifier_summary = product_identifier_value
 
         quantity_value = self.get_quantity().GetValueAsSigned()
-        quantity_summary = "quantity = {}".format(quantity_value)
+        quantity_summary = "quantity={}".format(quantity_value)
 
         # Summaries
         summaries = [product_identifier_summary]

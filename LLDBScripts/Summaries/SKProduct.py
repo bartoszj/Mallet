@@ -166,10 +166,10 @@ class SKProduct_SynthProvider(object):
         content_version_value = self.get_content_version().GetSummary()
         content_version_summary = None
         if content_version_value:
-            content_version_summary = "version = {}".format(content_version_value[2:-1])
+            content_version_summary = "version={}".format(content_version_value[2:-1])
 
         downloadable_value = self.get_downloadable().GetValueAsUnsigned()
-        downloadable_summary = "downloadable = {}".format("YES" if downloadable_value != 0 else "NO")
+        downloadable_summary = "downloadable={}".format("YES" if downloadable_value != 0 else "NO")
 
         #locale_identifier_value = self.get_locale_identifier().GetSummary()
         #locale_identifier_summary = None
@@ -183,7 +183,7 @@ class SKProduct_SynthProvider(object):
         localized_title_summary = localized_title_value
 
         price_value = self.get_price().GetSummary()
-        price_summary = "price = {}".format(price_value)
+        price_summary = "price={}".format(price_value)
 
         #product_identifier_value = self.get_product_identifier().GetSummary()
         #product_identifier_summary = "productId = {}".format(product_identifier_value)

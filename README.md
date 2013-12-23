@@ -1,13 +1,13 @@
 LLDB missing iOS summaries
-======================
+==========================
 
 LLDB commands and summaries
 
-# Instalation
+## Instalation
 1. Copy **lldbinit** to **~/.lldbinit**.
 2. Copy **LLDBScripts** to **~/Library/**.
 
-# Supported types:
+## Supported types:
 - UIKit:
 	- UIEdgeInsets
 	- UIOffset

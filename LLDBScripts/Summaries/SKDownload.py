@@ -197,7 +197,7 @@ class SKDownload_SynthProvider(object):
         content_id = self.get_content_identifier().GetSummary()
         content_length = self.get_content_length().GetValueAsSigned()
 
-        return "{}, length: {}".format(content_id, content_length)
+        return "{}, length={}".format(content_id, content_length)
 
 
 def SKDownload_SummaryProvider(value_obj, internal_dict):

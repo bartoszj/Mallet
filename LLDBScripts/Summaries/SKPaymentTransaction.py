@@ -121,7 +121,7 @@ class SKPaymentTransaction_SynthProvider(object):
             #transaction_state_value_name = "SKPaymentTransactionStateRestored"
             transaction_state_value_name = "Restored"
 
-        transaction_state_summary = "state = {}".format(transaction_state_value_name)
+        transaction_state_summary = "state={}".format(transaction_state_value_name)
 
         # Summaries
         summaries = [transaction_state_summary]
