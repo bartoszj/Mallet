@@ -110,6 +110,12 @@ def update_sys_params(value_obj, sys_params):
         sys_params.types_cache.id = value_obj.GetType().GetBasicType(lldb.eBasicTypeObjCID)
     if not sys_params.types_cache.NSString:
             sys_params.types_cache.NSString = value_obj.GetTarget().FindFirstType('NSString').GetPointerType()
+    if not sys_params.types_cache.NSAttributedString:
+        sys_params.types_cache.NSAttributedString = value_obj.GetTarget().FindFirstType('NSAttributedString')\
+            .GetPointerType()
+    if not sys_params.types_cache.NSMutableAttributedString:
+        sys_params.types_cache.NSMutableAttributedString = value_obj.GetTarget()\
+            .FindFirstType('NSMutableAttributedString').GetPointerType()
     if not sys_params.types_cache.NSNumber:
         sys_params.types_cache.NSNumber = value_obj.GetTarget().FindFirstType('NSNumber').GetPointerType()
     if not sys_params.types_cache.NSDecimalNumber:
@@ -118,6 +124,8 @@ def update_sys_params(value_obj, sys_params):
     if not sys_params.types_cache.NSURL:
         sys_params.types_cache.NSURL = value_obj.GetTarget().FindFirstType('NSURL').GetPointerType()
     if not sys_params.types_cache.NSArray:
+        sys_params.types_cache.NSArray = value_obj.GetTarget().FindFirstType('NSArray').GetPointerType()
+    if not sys_params.types_cache.NSSet:
             sys_params.types_cache.NSSet = value_obj.GetTarget().FindFirstType('NSSet').GetPointerType()
 
 

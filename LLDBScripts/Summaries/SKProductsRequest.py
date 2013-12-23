@@ -54,8 +54,6 @@ class SKProductsRequest_SynthProvider(SKRequest.SKRequest_SynthProvider):
         self.value_obj = value_obj
         self.sys_params = sys_params
         self.internal_dict = internal_dict
-        if not self.sys_params.types_cache.NSArray:
-            self.sys_params.types_cache.NSSet = self.value_obj.GetTarget().FindFirstType('NSSet').GetPointerType()
         self.products_request_internal = None
         self.product_identifiers = None
         self.product_identifiers_provider = None

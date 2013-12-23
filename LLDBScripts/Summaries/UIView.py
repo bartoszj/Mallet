@@ -124,9 +124,11 @@ class UIView_SynthProvider(object):
     # NSISVariable *_minXVariable                   80 = 0x50 / 4      152 = 0x98 / 8
     # NSISVariable *_minYVariable                   84 = 0x54 / 4      160 = 0xa0 / 8
     # NSMutableArray *_internalConstraints          88 = 0x58 / 4      168 = 0xa8 / 8
-    # NSArray *_constraintsExceptingSubviewAutoresizingConstraints  92 = 0x5c / 4       172 = 0xb0 / 8
+    # NSArray *_constraintsExceptingSubviewAutoresizingConstraints  92 = 0x5c / 4       176 = 0xac / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
+        # self.as_super = super(UIView_SynthProvider, self)
+        # self.as_super.__init__()
         super(UIView_SynthProvider, self).__init__()
         self.value_obj = value_obj
         self.sys_params = sys_params
@@ -145,7 +147,7 @@ class UIView_SynthProvider(object):
 
     def get_origin(self):
         origin = self.value_obj.CreateValueFromExpression("frameOrigin", "(CGPoint)[{} frameOrigin]"
-                                                                .format(self.stream.GetData()))
+                                                          .format(self.stream.GetData()))
         return origin
 
     def get_size(self):
