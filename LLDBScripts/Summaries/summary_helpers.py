@@ -135,7 +135,7 @@ def print_object_info(value_obj):
     global statistics
     class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
 
-    print "class_data.cachePointer:                         {:#x}".format(class_data.cachePointer)
+    print "class_data.cachePointer:                         {:#x}".format(class_data.cachePointer if hasattr(class_data, "cachePointer") else 0x00)
     print "class_data.check_valid():                        {}".format(class_data.check_valid())
     print "class_data.class_name():                         {}".format(class_data.class_name())
     print "class_data.data:                                 {}".format(class_data.data if hasattr(class_data, "data") else None)
