@@ -8,9 +8,14 @@ LLDB commands and summaries
 2. Copy **LLDBScripts** to **~/Library/**.
 
 ## Supported types:
+- CoreFoundation:
+    - CGVector
 - UIKit:
 	- UIEdgeInsets
 	- UIOffset
+    - UIView
+    - UILabel
+    - UIButton
 - StoreKit:
     - SKDownload (not tested!)
     - SKPayment

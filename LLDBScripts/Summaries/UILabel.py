@@ -41,7 +41,7 @@ class UILabel_SynthProvider(UIView.UIView_SynthProvider):
     # CGSize _size                                  96 = 0x60 / 8      184 = 0xb8 / 16
     # UIColor *_highlightedColor                   104 = 0x68 / 4      200 = 0xc8 / 8
     # NSInteger _numberOfLines                     108 = 0x6c / 4      208 = 0xd0 / 8
-    # int _measuredNumberOfLines                   112 = 0x70 / 4      216 = 0xd8 / 8?
+    # NSInteger _measuredNumberOfLines             112 = 0x70 / 4      216 = 0xd8 / 8
     # CGFloat _lastLineBaseline                    116 = 0x74 / 4      224 = 0xe0 / 8
     # CGFloat _minimumScaleFactor                  120 = 0x78 / 4      232 = 0xe8 / 8
     # NSMutableAttributedString *_attributedText   124 = 0x7c / 4      240 = 0xf0 / 8
@@ -76,6 +76,7 @@ class UILabel_SynthProvider(UIView.UIView_SynthProvider):
     # float _preferredMaxLayoutWidth               160 = 0xa0 / 4      276 = 0x114 / 4
 
     def __init__(self, value_obj, sys_params, internal_dict):
+        # Super doesn't work :(
         # self.as_super = super(UILabel_SynthProvider, self)
         # self.as_super.__init__(value_obj, sys_params, internal_dict)
         # super(UILabel_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
@@ -83,9 +84,6 @@ class UILabel_SynthProvider(UIView.UIView_SynthProvider):
         self.value_obj = value_obj
         self.sys_params = sys_params
         self.internal_dict = internal_dict
-
-        self.stream = lldb.SBStream()
-        self.value_obj.GetExpressionPath(self.stream)
 
         self.update()
 

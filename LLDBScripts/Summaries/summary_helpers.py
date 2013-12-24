@@ -127,6 +127,8 @@ def update_sys_params(value_obj, sys_params):
         sys_params.types_cache.NSArray = value_obj.GetTarget().FindFirstType('NSArray').GetPointerType()
     if not sys_params.types_cache.NSSet:
             sys_params.types_cache.NSSet = value_obj.GetTarget().FindFirstType('NSSet').GetPointerType()
+    if not sys_params.types_cache.NSDictionary:
+        sys_params.types_cache.NSDictionary = value_obj.GetTarget().FindFirstType('NSDictionary').GetPointerType()
 
 
 def print_object_info(value_obj):

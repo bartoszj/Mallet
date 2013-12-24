@@ -124,7 +124,7 @@ class UIView_SynthProvider(object):
     # NSISVariable *_minXVariable                   80 = 0x50 / 4      152 = 0x98 / 8
     # NSISVariable *_minYVariable                   84 = 0x54 / 4      160 = 0xa0 / 8
     # NSMutableArray *_internalConstraints          88 = 0x58 / 4      168 = 0xa8 / 8
-    # NSArray *_constraintsExceptingSubviewAutoresizingConstraints  92 = 0x5c / 4       176 = 0xac / 8
+    # NSArray *_constraintsExceptingSubviewAutoresizingConstraints  92 = 0x5c / 4       176 = 0xb0 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
         # self.as_super = super(UIView_SynthProvider, self)
@@ -146,24 +146,33 @@ class UIView_SynthProvider(object):
         pass
 
     def get_origin(self):
-        origin = self.value_obj.CreateValueFromExpression("frameOrigin", "(CGPoint)[{} frameOrigin]"
+        origin = self.value_obj.CreateValueFromExpression("frameOrigin",
+                                                          "(CGPoint)[{} frameOrigin]"
                                                           .format(self.stream.GetData()))
         return origin
 
     def get_size(self):
-        size = self.value_obj.CreateValueFromExpression("size", "(CGSize)[{} size]".format(self.stream.GetData()))
+        size = self.value_obj.CreateValueFromExpression("size",
+                                                        "(CGSize)[{} size]"
+                                                        .format(self.stream.GetData()))
         return size
 
     def get_frame(self):
-        frame = self.value_obj.CreateValueFromExpression("frame", "(CGRect)[{} frame]".format(self.stream.GetData()))
+        frame = self.value_obj.CreateValueFromExpression("frame",
+                                                         "(CGRect)[{} frame]"
+                                                         .format(self.stream.GetData()))
         return frame
 
     def get_alpha(self):
-        alpha = self.value_obj.CreateValueFromExpression("alpha", "(CGFloat)[{} alpha]".format(self.stream.GetData()))
+        alpha = self.value_obj.CreateValueFromExpression("alpha",
+                                                         "(CGFloat)[{} alpha]"
+                                                         .format(self.stream.GetData()))
         return alpha
 
     def get_hidden(self):
-        hidden = self.value_obj.CreateValueFromExpression("hidden", "(BOOL)[{} isHidden]".format(self.stream.GetData()))
+        hidden = self.value_obj.CreateValueFromExpression("hidden",
+                                                          "(BOOL)[{} isHidden]"
+                                                          .format(self.stream.GetData()))
         return hidden
 
     def summary(self):
