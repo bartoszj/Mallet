@@ -72,6 +72,8 @@ def print_child_recursive(value_obj, indent=0):
 def update_sys_params(value_obj, sys_params):
     if not sys_params.types_cache.char:
         sys_params.types_cache.char = value_obj.GetType().GetBasicType(lldb.eBasicTypeChar)
+    if not sys_params.types_cache.uchar:
+        sys_params.types_cache.uchar = value_obj.GetType().GetBasicType(lldb.eBasicTypeUnsignedChar)
     if not sys_params.types_cache.short:
         sys_params.types_cache.short = value_obj.GetType().GetBasicType(lldb.eBasicTypeShort)
     if not sys_params.types_cache.ushort:

@@ -29,4 +29,4 @@ def __lldb_init_module(debugger, dict):
             \"(dx=${var.dx}, dy=${var.dy})\" -C false -p -r -v \
             --category CoreFoundation CGVector")
 
-    debugger.HandleCommand("type category enable CoreFoundation ")
+    debugger.HandleCommand("type category enable CoreFoundation")
