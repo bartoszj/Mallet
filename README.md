@@ -20,6 +20,7 @@ LLDB commands and summaries
     - UIWindow
     - UILabel
     - UIButton
+    - UITextField (only placeholder text works)
 - StoreKit:
     - SKDownload (not tested!)
     - SKPayment

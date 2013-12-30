@@ -211,7 +211,8 @@ def UIView_SummaryProvider(value_obj, internal_dict):
     # Class data
     global statistics
     class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    if not class_data.is_valid() or (class_data.class_name() != "UIView" and class_data.class_name() != "UIWindow"):
+    supported_classes = ["UIView", "UIWindow"]
+    if not class_data.is_valid() or class_data.class_name() not in supported_classes:
         return ""
     summary_helpers.update_sys_params(value_obj, class_data.sys_params)
     if wrapper is not None:
