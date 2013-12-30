@@ -17,6 +17,7 @@ LLDB commands and summaries
 	- UIOffset
     - UIScreen
     - UIView
+    - UIWindow
     - UILabel
     - UIButton
 - StoreKit:

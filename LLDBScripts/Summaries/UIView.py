@@ -211,7 +211,7 @@ def UIView_SummaryProvider(value_obj, internal_dict):
     # Class data
     global statistics
     class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    if not class_data.is_valid() or class_data.class_name() != "UIView":
+    if not class_data.is_valid() or (class_data.class_name() != "UIView" and class_data.class_name() != "UIWindow"):
         return ""
     summary_helpers.update_sys_params(value_obj, class_data.sys_params)
     if wrapper is not None:
@@ -226,5 +226,5 @@ def UIView_SummaryProvider(value_obj, internal_dict):
 def __lldb_init_module(debugger, dict):
     debugger.HandleCommand("type summary add -F UIView.UIView_SummaryProvider \
                             --category UIKit \
-                            UIView")
+                            UIView UIWindow")
     debugger.HandleCommand("type category enable UIKit")
