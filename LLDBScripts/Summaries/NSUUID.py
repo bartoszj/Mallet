@@ -73,14 +73,14 @@ class NSUUID_SynthProvider(object):
         uuid_data = self.get_uuid_data()
         uuid_data.SetByteOrder(lldb.eByteOrderBig)
         error = lldb.SBError()
-        summary = "{:08X}-{:04X}-{:04X}-{:04X}-{:08X}{:04X}".format(uuid_data.GetUnsignedInt32(error, 0),
-                                                                    uuid_data.GetUnsignedInt16(error, 4),
-                                                                    uuid_data.GetUnsignedInt16(error, 6),
-                                                                    uuid_data.GetUnsignedInt16(error, 8),
-                                                                    uuid_data.GetUnsignedInt32(error, 10),
-                                                                    uuid_data.GetUnsignedInt16(error, 14))
+        uuid_summary = "{:08X}-{:04X}-{:04X}-{:04X}-{:08X}{:04X}".format(uuid_data.GetUnsignedInt32(error, 0),
+                                                                         uuid_data.GetUnsignedInt16(error, 4),
+                                                                         uuid_data.GetUnsignedInt16(error, 6),
+                                                                         uuid_data.GetUnsignedInt16(error, 8),
+                                                                         uuid_data.GetUnsignedInt32(error, 10),
+                                                                         uuid_data.GetUnsignedInt16(error, 14))
 
-        return summary
+        return uuid_summary
 
 
 def NSUUID_SummaryProvider(value_obj, internal_dict):
