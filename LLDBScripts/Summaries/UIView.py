@@ -187,7 +187,7 @@ class UIView_SynthProvider(object):
         w = float(size.GetChildMemberWithName("width").GetValue())
         h = float(size.GetChildMemberWithName("height").GetValue())
 
-        frame_summary = "frame=({:.4}, {:.4}; {:.4}, {:.4})".format(x, y, w, h)
+        frame_summary = "frame=({:.0f}, {:.0f}; {:.0f}, {:.0f})".format(x, y, w, h)
 
         # Alpha
         alpha = float(self.get_alpha().GetValue())
@@ -211,7 +211,7 @@ def UIView_SummaryProvider(value_obj, internal_dict):
     # Class data
     global statistics
     class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    supported_classes = ["UIView", "UIWindow"]
+    supported_classes = ["UIImageView", "UIView", "UIWindow"]
     if not class_data.is_valid() or class_data.class_name() not in supported_classes:
         return ""
     summary_helpers.update_sys_params(value_obj, class_data.sys_params)
@@ -227,5 +227,5 @@ def UIView_SummaryProvider(value_obj, internal_dict):
 def __lldb_init_module(debugger, dict):
     debugger.HandleCommand("type summary add -F UIView.UIView_SummaryProvider \
                             --category UIKit \
-                            UIView UIWindow")
+                            UIImageView UIView UIWindow")
     debugger.HandleCommand("type category enable UIKit")

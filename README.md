@@ -13,8 +13,10 @@ LLDB commands and summaries
 - CoreFoundation:
     - CGVector
 - UIKit:
+    - UIAlertView
     - UIButton
     - UIEdgeInsets
+    - UIImageView
     - UILabel
     - UIOffset
     - UIScreen

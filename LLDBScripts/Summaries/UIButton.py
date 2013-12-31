@@ -105,25 +105,18 @@ class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
                                                         self.sys_params.types_cache.UILabel)
         return self.label
 
-    def get_label_provider(self):
-        if not self.label:
-            self.get_label()
-
-        provider = UILabel.UILabel_SynthProvider(self.label, self.sys_params, self.internal_dict)
-        return provider
-
-    def get_text(self):
-        if not self.label:
-            self.get_label()
-
-        provider = self.get_label_provider()
-        return provider.get_text()
+    def get_label_text(self):
+        label = self.get_label()
+        label_provider = UILabel.UILabel_SynthProvider(label, self.sys_params, self.internal_dict)
+        label_text = label_provider.get_text()
+        return label_text
 
     def summary(self):
-        text = self.get_text()
-        text_summary = "text={}".format(text.GetSummary())
+        label_text = self.get_label_text()
+        label_text_value = label_text.GetSummary()
+        label_summary = "text={}".format(label_text_value)
 
-        return text_summary
+        return label_summary
 
 
 def UIButton_SummaryProvider(value_obj, internal_dict):
