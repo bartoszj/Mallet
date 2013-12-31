@@ -13,14 +13,15 @@ LLDB commands and summaries
 - CoreFoundation:
     - CGVector
 - UIKit:
-	- UIEdgeInsets
-	- UIOffset
+    - UIButton
+    - UIEdgeInsets
+    - UILabel
+    - UIOffset
     - UIScreen
+    - UIScrollView
+    - UITextField (only placeholder text works)
     - UIView
     - UIWindow
-    - UILabel
-    - UIButton
-    - UITextField (only placeholder text works)
 - StoreKit:
     - SKDownload (not tested!)
     - SKPayment

@@ -133,6 +133,12 @@ def update_sys_params(value_obj, sys_params):
     if not sys_params.types_cache.CGRect:
         sys_params.types_cache.CGRect = value_obj.GetTarget().FindFirstType('CGRect')
 
+    # UIEdgeInsets, UIOffset
+    if not sys_params.types_cache.UIEdgeInsets:
+        sys_params.types_cache.UIEdgeInsets = value_obj.GetTarget().FindFirstType('UIEdgeInsets')
+    if not sys_params.types_cache.UIOffset:
+        sys_params.types_cache.UIOffset = value_obj.GetTarget().FindFirstType('UIOffset')
+
     # id
     if not sys_params.types_cache.id:
         sys_params.types_cache.id = value_obj.GetType().GetBasicType(lldb.eBasicTypeObjCID)

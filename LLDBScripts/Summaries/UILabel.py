@@ -85,26 +85,31 @@ class UILabel_SynthProvider(UIView.UIView_SynthProvider):
         self.sys_params = sys_params
         self.internal_dict = internal_dict
 
+        self.text = None
         self.update()
 
     def update(self):
         super(UILabel_SynthProvider, self).update()
         self.adjust_for_architecture()
+        self.text = None
 
     def adjust_for_architecture(self):
         super(UILabel_SynthProvider, self).adjust_for_architecture()
         pass
 
     def get_text(self):
+        if self.text:
+            return self.text
+
         if self.sys_params.is_64_bit:
             offset = 0xf0
         else:
             offset = 0x7c
 
-        text = self.value_obj.CreateChildAtOffset("attributedText",
-                                                  offset,
-                                                  self.sys_params.types_cache.NSAttributedString)
-        return text
+        self.text = self.value_obj.CreateChildAtOffset("attributedText",
+                                                       offset,
+                                                       self.sys_params.types_cache.NSAttributedString)
+        return self.text
 
     def summary(self):
         text = self.get_text()
