@@ -40,24 +40,24 @@ SKPaymentTransactionStateRestored = 3
 
 class SKPaymentTransaction_SynthProvider(object):
     # SKPaymentTransaction:
-    # Offset / size                                 32bit:              64bit:
+    # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                      0 = 0x00 / 4        0 = 0x00 / 8
-    # SKPaymentTransactionInternal *_internal        4 = 0x04 / 4        8 = 0x08 / 8
+    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
+    # SKPaymentTransactionInternal *_internal                                 4 = 0x04 / 4            8 = 0x08 / 8
 
     # SKPaymentTransactionInternal:
-    # Offset / size                                 32bit:              64bit:
+    # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                      0 = 0x00 / 4        0 = 0x00 / 8
-    # NSArray *_downloads                            4 = 0x04 / 4        8 = 0x08 / 8
-    # NSError *_error                                8 = 0x08 / 4       16 = 0x08 / 8
-    # SKPaymentTransaction *_originalTransaction    12 = 0x0c / 4       24 = 0x08 / 8
-    # SKPayment *_payment                           16 = 0x10 / 4       32 = 0x08 / 8
-    # NSString *_temporaryIdentifier                20 = 0x14 / 4       40 = 0x08 / 8
-    # NSDate *_transactionDate                      24 = 0x18 / 4       48 = 0x08 / 8
-    # NSString *_transactionIdentifier              28 = 0x1c / 4       56 = 0x08 / 8
-    # NSData *_transactionReceipt                   32 = 0x20 / 4       64 = 0x08 / 8
-    # int _transactionState                         36 = 0x24 / 4       72 = 0x08 / 4
+    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
+    # NSArray *_downloads                                                     4 = 0x04 / 4            8 = 0x08 / 8
+    # NSError *_error                                                         8 = 0x08 / 4           16 = 0x08 / 8
+    # SKPaymentTransaction *_originalTransaction                             12 = 0x0c / 4           24 = 0x08 / 8
+    # SKPayment *_payment                                                    16 = 0x10 / 4           32 = 0x08 / 8
+    # NSString *_temporaryIdentifier                                         20 = 0x14 / 4           40 = 0x08 / 8
+    # NSDate *_transactionDate                                               24 = 0x18 / 4           48 = 0x08 / 8
+    # NSString *_transactionIdentifier                                       28 = 0x1c / 4           56 = 0x08 / 8
+    # NSData *_transactionReceipt                                            32 = 0x20 / 4           64 = 0x08 / 8
+    # int _transactionState                                                  36 = 0x24 / 4           72 = 0x08 / 4
 
     def __init__(self, value_obj, sys_params, internal_dict):
         super(SKPaymentTransaction_SynthProvider, self).__init__()

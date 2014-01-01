@@ -35,10 +35,10 @@ statistics.add_metric('code_notrun')
 
 class NSUUID_SynthProvider(object):
     # UIView:
-    # Offset / size                                 32bit:              64bit:
+    # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                      0 = 0x00 / 4        0 = 0x00 / 8
-    # uuid_t/unsigned char[16]                       4 = 0x04 / 16       8 = 0x08 / 16
+    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
+    # uuid_t/unsigned char[16]                                                4 = 0x04 / 16           8 = 0x08 / 16
 
     def __init__(self, value_obj, sys_params, internal_dict):
         # self.as_super = super(NSUUID_SynthProvider, self)
@@ -69,7 +69,6 @@ class NSUUID_SynthProvider(object):
         return self.uuid_data
 
     def summary(self):
-        lldb.SBData.SetByteOrder
         uuid_data = self.get_uuid_data()
         uuid_data.SetByteOrder(lldb.eByteOrderBig)
         error = lldb.SBError()
@@ -87,7 +86,8 @@ def NSUUID_SummaryProvider(value_obj, internal_dict):
     # Class data
     global statistics
     class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    if not class_data.is_valid() or class_data.class_name() != "__NSConcreteUUID":
+    supported_classes = ["__NSConcreteUUID"]
+    if not class_data.is_valid() or class_data.class_name() not in supported_classes:
         return ""
     summary_helpers.update_sys_params(value_obj, class_data.sys_params)
     if wrapper is not None:

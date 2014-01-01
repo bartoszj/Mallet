@@ -36,11 +36,11 @@ statistics.add_metric('code_notrun')
 
 class UIControl_SynthProvider(UIView.UIView_SynthProvider):
     # UIButton:
-    # Offset / size                                 32bit:              64bit:
+    # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # NSMutableArray *_targetActions                96 = 0x60 / 4      184 = 0xb8 / 8
-    # CGPoint _previousPoint                       100 = 0x64 / 8      192 = 0xc0 / 16
-    # double _downTime                             108 = 0x6c / 8      208 = 0xd0 / 8
+    # NSMutableArray *_targetActions                                         96 = 0x60 / 4          184 = 0xb8 / 8
+    # CGPoint _previousPoint                                                100 = 0x64 / 8          192 = 0xc0 / 16
+    # double _downTime                                                      108 = 0x6c / 8          208 = 0xd0 / 8
     # struct {
     #     unsigned disabled : 1;
     #     unsigned tracking : 1;
@@ -57,7 +57,7 @@ class UIControl_SynthProvider(UIView.UIView_SynthProvider):
     #     unsigned horizontalAlignment : 2;
     #     unsigned wasLastHighlightSuccessful : 1;
     #     unsigned touchHasHighlighted : 1;
-    # } _controlFlags                              116 = 0x74 / 3 + 1  216 = 0xd8 / 3 + 5
+    # } _controlFlags                                                       116 = 0x74 / 3 + 1      216 = 0xd8 / 3 + 5
 
     def __init__(self, value_obj, sys_params, internal_dict):
         # Super doesn't work :(

@@ -36,21 +36,21 @@ statistics.add_metric('code_notrun')
 
 class UILabel_SynthProvider(UIView.UIView_SynthProvider):
     # UILabel:
-    # Offset / size                                 32bit:              64bit:
+    # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # CGSize _size                                  96 = 0x60 / 8      184 = 0xb8 / 16
-    # UIColor *_highlightedColor                   104 = 0x68 / 4      200 = 0xc8 / 8
-    # NSInteger _numberOfLines                     108 = 0x6c / 4      208 = 0xd0 / 8
-    # NSInteger _measuredNumberOfLines             112 = 0x70 / 4      216 = 0xd8 / 8
-    # CGFloat _lastLineBaseline                    116 = 0x74 / 4      224 = 0xe0 / 8
-    # CGFloat _minimumScaleFactor                  120 = 0x78 / 4      232 = 0xe8 / 8
-    # NSMutableAttributedString *_attributedText   124 = 0x7c / 4      240 = 0xf0 / 8
-    # NSAttributedString *_synthesizedAttributedText   128 = 0x80 / 4       248 = 0xf8 / 8
-    # NSMutableDictionary *_defaultAttributes      132 = 0x84 / 4      256 = 0x100 / 8
-    # float _minimumFontSize                       136 = 0x88 / 4      264 = 0x108 / 4
-    # int _lineSpacing                             140 = 0x8c / 4      268 = 0x10c / 4
-    # id _layout                                   144 = 0x90 / 4      272 = 0x110 / 8
-    # _UILabelScaledMetrics *_scaledMetrics        148 = 0x94 / 4      280 = 0x118 / 8
+    # CGSize _size                                                           96 = 0x60 / 8          184 = 0xb8 / 16
+    # UIColor *_highlightedColor                                            104 = 0x68 / 4          200 = 0xc8 / 8
+    # NSInteger _numberOfLines                                              108 = 0x6c / 4          208 = 0xd0 / 8
+    # NSInteger _measuredNumberOfLines                                      112 = 0x70 / 4          216 = 0xd8 / 8
+    # CGFloat _lastLineBaseline                                             116 = 0x74 / 4          224 = 0xe0 / 8
+    # CGFloat _minimumScaleFactor                                           120 = 0x78 / 4          232 = 0xe8 / 8
+    # NSMutableAttributedString *_attributedText                            124 = 0x7c / 4          240 = 0xf0 / 8
+    # NSAttributedString *_synthesizedAttributedText                        128 = 0x80 / 4          248 = 0xf8 / 8
+    # NSMutableDictionary *_defaultAttributes                               132 = 0x84 / 4          256 = 0x100 / 8
+    # float _minimumFontSize                                                136 = 0x88 / 4          264 = 0x108 / 4
+    # int _lineSpacing                                                      140 = 0x8c / 4          268 = 0x10c / 4
+    # id _layout                                                            144 = 0x90 / 4          272 = 0x110 / 8
+    # _UILabelScaledMetrics *_scaledMetrics                                 148 = 0x94 / 4          280 = 0x118 / 8
     # struct {
     #     unsigned unused1 : 3;
     #     unsigned highlighted : 1;
@@ -72,8 +72,8 @@ class UILabel_SynthProvider(UIView.UIView_SynthProvider):
     #     unsigned drawsDebugBaselines : 1;
     #     unsigned explicitBaselineOffset : 1;
     #     unsigned usesSimpleTextEffects : 1;
-    # } _textLabelFlags                            156 = 0x9c / 3 + 1  272 = 0x110 / 3 + 1
-    # float _preferredMaxLayoutWidth               160 = 0xa0 / 4      276 = 0x114 / 4
+    # } _textLabelFlags                                                     156 = 0x9c / 3 + 1      272 = 0x110 / 3 + 1
+    # float _preferredMaxLayoutWidth                                        160 = 0xa0 / 4          276 = 0x114 / 4
 
     def __init__(self, value_obj, sys_params, internal_dict):
         # Super doesn't work :(

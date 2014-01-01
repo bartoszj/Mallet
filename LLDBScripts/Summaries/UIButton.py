@@ -37,17 +37,17 @@ statistics.add_metric('code_notrun')
 
 class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
     # UIButton:
-    # Offset / size                                 32bit:              64bit:
+    # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # CFDictionaryRef _contentLookup               120 = 0x78 / 4      224 = 0xe0 / 8
-    # UIEdgeInsets _contentEdgeInsets              124 = 0x7c / 16     232 = 0xe8 / 32
-    # UIEdgeInsets _titleEdgeInsets                140 = 0x8c / 16     264 = 0x108 / 32
-    # UIEdgeInsets _imageEdgeInsets                156 = 0x9c / 16     296 = 0x128 / 32
-    # UIImageView *_backgroundView                 172 = 0xac / 4      328 = 0x148 / 8
-    # UIImageView *_imageView                      176 = 0xb0 / 4      336 = 0x150 / 8
-    # UILabel *_titleView                          180 = 0xb4 / 4      344 = 0x158 / 8
-    # BOOL _initialized                            184 = 0xb8 / 1 + 3  352 = 0x160 / 1 + 7
-    # unsigned _lastDrawingControlState            188 = 0xbc / 4      360 = 0x168 / 4 + 4
+    # CFDictionaryRef _contentLookup                                        120 = 0x78 / 4          224 = 0xe0 / 8
+    # UIEdgeInsets _contentEdgeInsets                                       124 = 0x7c / 16         232 = 0xe8 / 32
+    # UIEdgeInsets _titleEdgeInsets                                         140 = 0x8c / 16         264 = 0x108 / 32
+    # UIEdgeInsets _imageEdgeInsets                                         156 = 0x9c / 16         296 = 0x128 / 32
+    # UIImageView *_backgroundView                                          172 = 0xac / 4          328 = 0x148 / 8
+    # UIImageView *_imageView                                               176 = 0xb0 / 4          336 = 0x150 / 8
+    # UILabel *_titleView                                                   180 = 0xb4 / 4          344 = 0x158 / 8
+    # BOOL _initialized                                                     184 = 0xb8 / 1 + 3      352 = 0x160 / 1 + 7
+    # unsigned _lastDrawingControlState                                     188 = 0xbc / 4          360 = 0x168 / 4 + 4
     # struct {
     #     unsigned reversesTitleShadowWhenHighlighted : 1;
     #     unsigned adjustsImageWhenHighlighted : 1;
@@ -58,12 +58,12 @@ class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
     #     unsigned buttonType : 8;
     #     unsigned shouldHandleScrollerMouseEvent : 1;
     #     unsigned titleFrozen : 1;
-    # } _buttonFlags                               192 = 0xc0 / 3 + 1  368 = 0x170 / 3 + 5
-    # _UIButtonMaskAnimationView *_maskAnimationView    196 = 0xc4 / 4      376 = 0x178 / 8
-    # UIView *_selectionView                       200 = 0xcc / 4      384 = 0x180 / 8
-    # UIFont *_lazyTitleViewFont                   204 = 0xd0 / 4      392 = 0x188 / 8
-    # NSArray *_contentConstraints                 208 = 0xd4 / 4      400 = 0x190 / 8
-    # UIEdgeInsets _internalTitlePaddingInsets     212 = 0xd8 / 16     408 = 0x198 / 32
+    # } _buttonFlags                                                        192 = 0xc0 / 3 + 1      368 = 0x170 / 3 + 5
+    # _UIButtonMaskAnimationView *_maskAnimationView                        196 = 0xc4 / 4          376 = 0x178 / 8
+    # UIView *_selectionView                                                200 = 0xcc / 4          384 = 0x180 / 8
+    # UIFont *_lazyTitleViewFont                                            204 = 0xd0 / 4          392 = 0x188 / 8
+    # NSArray *_contentConstraints                                          208 = 0xd4 / 4          400 = 0x190 / 8
+    # UIEdgeInsets _internalTitlePaddingInsets                              212 = 0xd8 / 16         408 = 0x198 / 32
 
     def __init__(self, value_obj, sys_params, internal_dict):
         # Super doesn't work :(

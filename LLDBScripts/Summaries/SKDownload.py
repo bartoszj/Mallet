@@ -35,19 +35,19 @@ statistics.add_metric('code_notrun')
 
 class SKDownload_SynthProvider(object):
     # SKDownload:
-    # Offset / size                                 32bit:              64bit:
+    # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                      0 = 0x00 / 4        0 = 0x00 / 8
-    # NSString *_contentIdentifier                   4 = 0x04 / 4        8 = 0x08 / 8
-    # long long _contentLength                       8 = 0x08 / 8       16 = 0x10 / 8
-    # NSURL *_contentURL                            16 = 0x10 / 4       24 = 0x18 / 8
-    # NSNumber *_downloadID                         20 = 0x14 / 4       32 = 0x20 / 8
-    # int _downloadState                            24 = 0x18 / 4       40 = 0x28 / 4 + 4
-    # NSError *_error                               28 = 0x1c / 4       48 = 0x30 / 8
-    # float _progress                               32 = 0x20 / 4       56 = 0x38 / 4 + 4
-    # double _timeRemaining                         36 = 0x24 / 8       64 = 0x40 / 8
-    # SKPaymentTransaction *_transaction            44 = 0x2c / 4       72 = 0x48 / 8
-    # NSString *_version                            48 = 0x30 / 4       80 = 0x50 / 8
+    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
+    # NSString *_contentIdentifier                                            4 = 0x04 / 4            8 = 0x08 / 8
+    # long long _contentLength                                                8 = 0x08 / 8           16 = 0x10 / 8
+    # NSURL *_contentURL                                                     16 = 0x10 / 4           24 = 0x18 / 8
+    # NSNumber *_downloadID                                                  20 = 0x14 / 4           32 = 0x20 / 8
+    # int _downloadState                                                     24 = 0x18 / 4           40 = 0x28 / 4 + 4
+    # NSError *_error                                                        28 = 0x1c / 4           48 = 0x30 / 8
+    # float _progress                                                        32 = 0x20 / 4           56 = 0x38 / 4 + 4
+    # double _timeRemaining                                                  36 = 0x24 / 8           64 = 0x40 / 8
+    # SKPaymentTransaction *_transaction                                     44 = 0x2c / 4           72 = 0x48 / 8
+    # NSString *_version                                                     48 = 0x30 / 4           80 = 0x50 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
         super(SKDownload_SynthProvider, self).__init__()

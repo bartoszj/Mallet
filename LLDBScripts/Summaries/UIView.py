@@ -35,18 +35,18 @@ statistics.add_metric('code_notrun')
 
 class UIView_SynthProvider(object):
     # UIView:
-    # Offset / size                                 32bit:              64bit:
+    # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                      0 = 0x00 / 4        0 = 0x00 / 8
-    # CALayer *_layer                                4 = 0x04 / 4        8 = 0x08 / 8
-    # id _gestureInfo                                8 = 0x08 / 4       16 = 0x10 / 8
-    # NSMutableArray *_gestureRecognizers           12 = 0x0c / 4       24 = 0x18 / 8
-    # NSArray *_subviewCache                        16 = 0x10 / 4       32 = 0x20 / 8
-    # float _charge                                 20 = 0x14 / 4       40 = 0x28 / 8
-    # int _tag                                      24 = 0x18 / 4       48 = 0x30 / 4 + 4
-    # UIViewController *_viewDelegate               28 = 0x1c / 4       56 = 0x38 / 8
-    # NSString *_backgroundColorSystemColorName     32 = 0x20 / 4       64 = 0x40 / 8
-    # unsigned _countOfMotionEffectsInSubtree       36 = 0x24 / 4       72 = 0x48 / 4 + 4
+    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
+    # CALayer *_layer                                                         4 = 0x04 / 4            8 = 0x08 / 8
+    # id _gestureInfo                                                         8 = 0x08 / 4           16 = 0x10 / 8
+    # NSMutableArray *_gestureRecognizers                                    12 = 0x0c / 4           24 = 0x18 / 8
+    # NSArray *_subviewCache                                                 16 = 0x10 / 4           32 = 0x20 / 8
+    # float _charge                                                          20 = 0x14 / 4           40 = 0x28 / 8
+    # int _tag                                                               24 = 0x18 / 4           48 = 0x30 / 4 + 4
+    # UIViewController *_viewDelegate                                        28 = 0x1c / 4           56 = 0x38 / 8
+    # NSString *_backgroundColorSystemColorName                              32 = 0x20 / 4           64 = 0x40 / 8
+    # unsigned _countOfMotionEffectsInSubtree                                36 = 0x24 / 4           72 = 0x48 / 4 + 4
     # struct {
     #     unsigned userInteractionDisabled : 1
     #     unsigned implementsDrawRect : 1
@@ -113,18 +113,18 @@ class UIView_SynthProvider(object):
     #     unsigned backdropOverlayMode : 2
     #     unsigned tintAdjustmentMode : 2
     #     unsigned isReferenceView : 1
-    # } _viewFlags                                  40 = 0x28 / 10 + 2  80 = 0x50 / 10 + 6
-    # int _retainCount                              52 = 0x34 / 4       96 = 0x60 / 8?
-    # int _tintAdjustmentDimmingCount               56 = 0x38 / 4      100 = 0x64 / 8?
-    # BOOL _shouldArchiveUIAppearanceTags           60 = 0x3c / 1 + 3  104 = 0x68 / 1 + 7
-    # UIColor *_interactionTintColor                64 = 0x40 / 4      120 = 0x78 / 8
-    # NSISEngine *_layoutEngine                     68 = 0x44 / 4      128 = 0x80 / 8
-    # NSISVariable *_boundsWidthVariable            72 = 0x48 / 4      136 = 0x88 / 8
-    # NSISVariable *_boundsHeightVariable           76 = 0x4c / 4      144 = 0x90 / 8
-    # NSISVariable *_minXVariable                   80 = 0x50 / 4      152 = 0x98 / 8
-    # NSISVariable *_minYVariable                   84 = 0x54 / 4      160 = 0xa0 / 8
-    # NSMutableArray *_internalConstraints          88 = 0x58 / 4      168 = 0xa8 / 8
-    # NSArray *_constraintsExceptingSubviewAutoresizingConstraints  92 = 0x5c / 4       176 = 0xb0 / 8
+    # } _viewFlags                                                           40 = 0x28 / 10 + 2      80 = 0x50 / 10 + 6
+    # int _retainCount                                                       52 = 0x34 / 4           96 = 0x60 / 8?
+    # int _tintAdjustmentDimmingCount                                        56 = 0x38 / 4          100 = 0x64 / 8?
+    # BOOL _shouldArchiveUIAppearanceTags                                    60 = 0x3c / 1 + 3      104 = 0x68 / 1 + 7
+    # UIColor *_interactionTintColor                                         64 = 0x40 / 4          120 = 0x78 / 8
+    # NSISEngine *_layoutEngine                                              68 = 0x44 / 4          128 = 0x80 / 8
+    # NSISVariable *_boundsWidthVariable                                     72 = 0x48 / 4          136 = 0x88 / 8
+    # NSISVariable *_boundsHeightVariable                                    76 = 0x4c / 4          144 = 0x90 / 8
+    # NSISVariable *_minXVariable                                            80 = 0x50 / 4          152 = 0x98 / 8
+    # NSISVariable *_minYVariable                                            84 = 0x54 / 4          160 = 0xa0 / 8
+    # NSMutableArray *_internalConstraints                                   88 = 0x58 / 4          168 = 0xa8 / 8
+    # NSArray *_constraintsExceptingSubviewAutoresizingConstraints           92 = 0x5c / 4          176 = 0xb0 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
         # self.as_super = super(UIView_SynthProvider, self)

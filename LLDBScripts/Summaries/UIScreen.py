@@ -35,19 +35,19 @@ statistics.add_metric('code_notrun')
 
 class UIScreen_SynthProvider(object):
     # UIView:
-    # Offset / size                                 32bit:              64bit:
+    # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                      0 = 0x00 / 4        0 = 0x00 / 8
-    # id _display                                    4 = 0x04 / 4        8 = 0x08 / 8
-    # CGRect _bounds                                 8 = 0x08 / 16      16 = 0x10 / 32
-    # float _scale                                  24 = 0x18 / 4       48 = 0x30 / 8
-    # float _horizontalScale                        28 = 0x1c / 4       56 = 0x38 / 8
-    # int _userInterfaceIdiom                       32 = 0x20 / 4       64 = 0x40 / 4 + 4
-    # NSDictionary *_capabilities                   36 = 0x24 / 4       72 = 0x48 / 8
-    # int _workspaceCapableScreenType               40 = 0x28 / 4       80 = 0x50 / 4 + 4
-    # UIWindow *_screenDisablingWindow              44 = 0x2c / 4       88 = 0x58 / 8
-    # double _startedPausingWindows                 48 = 0x30 / 8       96 = 0x60 / 8
-    # NSMutableArray *_pausedWindows                56 = 0x38 / 4      104 = 0x68 / 8
+    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
+    # id _display                                                             4 = 0x04 / 4            8 = 0x08 / 8
+    # CGRect _bounds                                                          8 = 0x08 / 16          16 = 0x10 / 32
+    # float _scale                                                           24 = 0x18 / 4           48 = 0x30 / 8
+    # float _horizontalScale                                                 28 = 0x1c / 4           56 = 0x38 / 8
+    # int _userInterfaceIdiom                                                32 = 0x20 / 4           64 = 0x40 / 4 + 4
+    # NSDictionary *_capabilities                                            36 = 0x24 / 4           72 = 0x48 / 8
+    # int _workspaceCapableScreenType                                        40 = 0x28 / 4           80 = 0x50 / 4 + 4
+    # UIWindow *_screenDisablingWindow                                       44 = 0x2c / 4           88 = 0x58 / 8
+    # double _startedPausingWindows                                          48 = 0x30 / 8           96 = 0x60 / 8
+    # NSMutableArray *_pausedWindows                                         56 = 0x38 / 4          104 = 0x68 / 8
     # struct {
     #     unsigned bitsPerComponent : 4
     #     unsigned initialized : 1
@@ -57,10 +57,10 @@ class UIScreen_SynthProvider(object):
     #     unsigned canAccessDisplay : 1
     #     unsigned canAccessDisplayValid : 1
     #     unsigned screenUpdatesDisabled : 1
-    # } _screenFlags                                60 = 0x3c / 2      112 = 0x70 / 2
-    # BOOL _wantsSoftwareDimming                    62 = 0x3e / 1 + 1  114 = 0x72 / 1 + 5
-    # UISoftwareDimmingWindow *_softwareDimmingWindow   64 = 0x40 / 4  120 = 0x78 / 8
-    # int _lastNotifiedBacklightLevel               68 = 0x44 / 4      128 = 0x80 / 4
+    # } _screenFlags                                                        60 = 0x3c / 2           112 = 0x70 / 2
+    # BOOL _wantsSoftwareDimming                                            62 = 0x3e / 1 + 1       114 = 0x72 / 1 + 5
+    # UISoftwareDimmingWindow *_softwareDimmingWindow                       64 = 0x40 / 4           120 = 0x78 / 8
+    # int _lastNotifiedBacklightLevel                                       68 = 0x44 / 4           128 = 0x80 / 4
 
     def __init__(self, value_obj, sys_params, internal_dict):
         # self.as_super = super(UIView_SynthProvider, self)

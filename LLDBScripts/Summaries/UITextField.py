@@ -37,45 +37,45 @@ statistics.add_metric('code_notrun')
 
 class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
     # UILabel:
-    # Offset / size                                 32bit:              64bit:
+    # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # _UICascadingTextStorage *_textStorage        120 = 0x78 / 4      224 = 0xe0 / 8
-    # int _borderStyle                             124 = 0x7c / 4      232 = 0xe8 / 4 + 4
-    # CGFloat _minimumFontSize                     128 = 0x80 / 4      240 = 0xf0 / 8
-    # id _delegate                                 132 = 0x84 / 4      248 = 0xf8 / 8
-    # UIImage *_background                         136 = 0x88 / 4      256 = 0x100 / 8
-    # UIImage *_disabledBackground                 140 = 0x8c / 4      264 = 0x108 / 8
-    # int _clearButtonMode                         144 = 0x90 / 4      272 = 0x110 / 4 + 4
-    # UIView *_leftView                            148 = 0x94 / 4      280 = 0x118 / 8
-    # int _leftViewMode                            152 = 0x98 / 4      288 = 0x120 / 4 + 4
-    # UIView *_rightView                           156 = 0x9c / 4      296 = 0x128 / 8
-    # int _rightViewMode                           160 = 0xa0 / 4      304 = 0x130 / 4 + 4
-    # UITextInputTraits *_traits                   164 = 0xa4 / 4      312 = 0x138 / 8
-    # UITextInputTraits *_nonAtomTraits            168 = 0xa8 / 4      320 = 0x140 / 8
-    # CGFloat _fullFontSize                        172 = 0xac / 4      328 = 0x148 / 8
-    # UIEdgeInsets _padding                        176 = 0xb0 / 16     336 = 0x150 / 32
-    # NSRange _selectionRangeWhenNotEditing        192 = 0xc0 / 8      368 = 0x170 / 16
-    # int _scrollXOffset                           200 = 0xc8 / 4      384 = 0x180 / 4
-    # int _scrollYOffset                           204 = 0xcc / 4      388 = 0x184 / 4
-    # float _progress                              208 = 0xd0 / 4      392 = 0x188 / 4 + 4
-    # UIButton *_clearButton                       212 = 0xd4 / 4      400 = 0x190 / 8
-    # CGSize _clearButtonOffset                    216 = 0xd8 / 8      408 = 0x198 / 16
-    # CGSize _leftViewOffset                       224 = 0xe0 / 8      424 = 0x1a8 / 16
-    # CGSize _rightViewOffset                      232 = 0xe8 / 8      440 = 0x1b8 / 16
-    # UITextFieldBorderView *_backgroundView       240 = 0xf0 / 4      456 = 0x1c8 / 8
-    # UITextFieldBorderView *_disabledBackgroundView        244 = 0xf4 / 4      464 = 0x1d0 / 8
-    # UITextFieldBackgroundView *_systemBackgroundView      248 = 0xf8 / 4      472 = 0x1d8 / 8
-    # UITextFieldLabel *_displayLabel              252 = 0xfc / 4      480 = 0x1e0 / 8
-    # UITextFieldLabel *_placeholderLabel          256 = 0x100 / 4     488 = 0x1e8 / 8
-    # UITextFieldLabel *_suffixLabel               260 = 0x104 / 4     496 = 0x1f0 / 8
-    # UITextFieldLabel *_prefixLabel               264 = 0x108 / 4     504 = 0x1f8 / 8
-    # UIImageView *_iconView                       268 = 0x10c / 4     512 = 0x200 / 8
-    # UILabel *_label                              272 = 0x110 / 4     520 = 0x208 / 8
-    # float _labelOffset                           276 = 0x114 / 4     528 = 0x210 / 4 ? 4
-    # UITextInteractionAssistant *_interactionAssistant     280 = 0x118 / 4     536 = 0x218 / 8
-    # UIView *_inputView                           284 = 0x11c / 4     544 = 0x220 / 8
-    # UIView *_inputAccessoryView                  288 = 0x120 / 4     552 = 0x228 / 8
-    # UITextFieldAtomBackgroundView *_atomBackgroundView    292 = 0x124 / 4     560 = 0x230 / 8
+    # _UICascadingTextStorage *_textStorage                                 120 = 0x78 / 4          224 = 0xe0 / 8
+    # int _borderStyle                                                      124 = 0x7c / 4          232 = 0xe8 / 4 + 4
+    # CGFloat _minimumFontSize                                              128 = 0x80 / 4          240 = 0xf0 / 8
+    # id _delegate                                                          132 = 0x84 / 4          248 = 0xf8 / 8
+    # UIImage *_background                                                  136 = 0x88 / 4          256 = 0x100 / 8
+    # UIImage *_disabledBackground                                          140 = 0x8c / 4          264 = 0x108 / 8
+    # int _clearButtonMode                                                  144 = 0x90 / 4          272 = 0x110 / 4 + 4
+    # UIView *_leftView                                                     148 = 0x94 / 4          280 = 0x118 / 8
+    # int _leftViewMode                                                     152 = 0x98 / 4          288 = 0x120 / 4 + 4
+    # UIView *_rightView                                                    156 = 0x9c / 4          296 = 0x128 / 8
+    # int _rightViewMode                                                    160 = 0xa0 / 4          304 = 0x130 / 4 + 4
+    # UITextInputTraits *_traits                                            164 = 0xa4 / 4          312 = 0x138 / 8
+    # UITextInputTraits *_nonAtomTraits                                     168 = 0xa8 / 4          320 = 0x140 / 8
+    # CGFloat _fullFontSize                                                 172 = 0xac / 4          328 = 0x148 / 8
+    # UIEdgeInsets _padding                                                 176 = 0xb0 / 16         336 = 0x150 / 32
+    # NSRange _selectionRangeWhenNotEditing                                 192 = 0xc0 / 8          368 = 0x170 / 16
+    # int _scrollXOffset                                                    200 = 0xc8 / 4          384 = 0x180 / 4
+    # int _scrollYOffset                                                    204 = 0xcc / 4          388 = 0x184 / 4
+    # float _progress                                                       208 = 0xd0 / 4          392 = 0x188 / 4 + 4
+    # UIButton *_clearButton                                                212 = 0xd4 / 4          400 = 0x190 / 8
+    # CGSize _clearButtonOffset                                             216 = 0xd8 / 8          408 = 0x198 / 16
+    # CGSize _leftViewOffset                                                224 = 0xe0 / 8          424 = 0x1a8 / 16
+    # CGSize _rightViewOffset                                               232 = 0xe8 / 8          440 = 0x1b8 / 16
+    # UITextFieldBorderView *_backgroundView                                240 = 0xf0 / 4          456 = 0x1c8 / 8
+    # UITextFieldBorderView *_disabledBackgroundView                        244 = 0xf4 / 4          464 = 0x1d0 / 8
+    # UITextFieldBackgroundView *_systemBackgroundView                      248 = 0xf8 / 4          472 = 0x1d8 / 8
+    # UITextFieldLabel *_displayLabel                                       252 = 0xfc / 4          480 = 0x1e0 / 8
+    # UITextFieldLabel *_placeholderLabel                                   256 = 0x100 / 4         488 = 0x1e8 / 8
+    # UITextFieldLabel *_suffixLabel                                        260 = 0x104 / 4         496 = 0x1f0 / 8
+    # UITextFieldLabel *_prefixLabel                                        264 = 0x108 / 4         504 = 0x1f8 / 8
+    # UIImageView *_iconView                                                268 = 0x10c / 4         512 = 0x200 / 8
+    # UILabel *_label                                                       272 = 0x110 / 4         520 = 0x208 / 8
+    # float _labelOffset                                                    276 = 0x114 / 4         528 = 0x210 / 4 ? 4
+    # UITextInteractionAssistant *_interactionAssistant                     280 = 0x118 / 4         536 = 0x218 / 8
+    # UIView *_inputView                                                    284 = 0x11c / 4         544 = 0x220 / 8
+    # UIView *_inputAccessoryView                                           288 = 0x120 / 4         552 = 0x228 / 8
+    # UITextFieldAtomBackgroundView *_atomBackgroundView                    292 = 0x124 / 4         560 = 0x230 / 8
     # struct {
     #     unsigned verticallyCenterText : 1
     #     unsigned isAnimating : 4
@@ -96,14 +96,14 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
     #     unsigned usesAttributedText : 1
     #     unsigned backgroundViewState : 2
     #     unsigned clearingBehavior : 2
-    # } _textFieldFlags                            296 = 0x128 / 3     568 = 0x238 / 3
-    # BOOL _deferringBecomeFirstResponder          299 = 0x12b / 1     571 = 0x23b / 1
-    # BOOL _avoidBecomeFirstResponder              300 = 0x12c / 1     572 = 0x23c / 1
-    # BOOL _setSelectionRangeAfterFieldEditorIsAttached     301 = 0x12d / 1     573 = 0x23d / 1
-    # BOOL _originFromBaselineLayoutIsInvalid;     302 = 0x12e / 1 + 1          574 = 0x23e / 1 + 1
-    # NSLayoutConstraint *_baselineLayoutConstraint         304 = 0x130 / 4     576 = 0x240 / 8
-    # _UIBaselineLayoutStrut *_baselineLayoutLabel          308 = 0x134 / 4     584 = 0x248 / 8
-    # NSDictionary *_defaultTextAttributes         312 = 0x138 / 4     592 = 0x250 / 8
+    # } _textFieldFlags                                                     296 = 0x128 / 3         568 = 0x238 / 3
+    # BOOL _deferringBecomeFirstResponder                                   299 = 0x12b / 1         571 = 0x23b / 1
+    # BOOL _avoidBecomeFirstResponder                                       300 = 0x12c / 1         572 = 0x23c / 1
+    # BOOL _setSelectionRangeAfterFieldEditorIsAttached                     301 = 0x12d / 1         573 = 0x23d / 1
+    # BOOL _originFromBaselineLayoutIsInvalid;                              302 = 0x12e / 1 + 1     574 = 0x23e / 1 + 1
+    # NSLayoutConstraint *_baselineLayoutConstraint                         304 = 0x130 / 4         576 = 0x240 / 8
+    # _UIBaselineLayoutStrut *_baselineLayoutLabel                          308 = 0x134 / 4         584 = 0x248 / 8
+    # NSDictionary *_defaultTextAttributes                                  312 = 0x138 / 4         592 = 0x250 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
         # Super doesn't work :(

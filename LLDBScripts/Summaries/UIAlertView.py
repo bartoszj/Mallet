@@ -38,36 +38,36 @@ statistics.add_metric('code_notrun')
 
 class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
     # UILabel:
-    # Offset / size                                 32bit:              64bit:
+    # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # id<UIAlertViewDelegate> _delegate             96 = 0x60 / 4      184 = 0xb8 / 8
-    # UILabel *_titleLabel                         100 = 0x64 / 4      192 = 0xc0 / 8
-    # UILabel *_subtitleLabel                      104 = 0x68 / 4      200 = 0xc8 / 8
-    # UILabel *_bodyTextLabel                      108 = 0x6c / 4      208 = 0xd0 / 8
-    # UILabel *_taglineTextLabel                   112 = 0x70 / 4      216 = 0xd8 / 8
-    # float _startY                                116 = 0x74 / 4      224 = 0xe0 / 4 + 4
-    # CGPoint _center                              120 = 0x78 / 8      232 = 0xe8 / 16
-    # id _context                                  128 = 0x80 / 4      248 = 0xf8 / 8
-    # int _cancelButton                            132 = 0x84 / 4      256 = 0x100 / 4
-    # int _defaultButton                           136 = 0x88 / 4      260 = 0x104 / 4
-    # int _firstOtherButton                        140 = 0x8c / 4      264 = 0x108 / 4 + 4
-    # UIToolbar *_toolbar                          144 = 0x90 / 4      272 = 0x110 / 8
-    # UIWindow *_originalWindow                    148 = 0x94 / 4      280 = 0x118 / 8
-    # UIWindow *_dimWindow                         152 = 0x98 / 4      288 = 0x120 / 8
-    # int _suspendTag                              156 = 0x9c / 4      296 = 0x128 / 4
-    # int _dismissButtonIndex                      160 = 0xa0 / 4      300 = 0x12c / 4
-    # float _bodyTextHeight                        164 = 0xa4 / 4      304 = 0x130 / 4 + 4
-    # NSMutableArray *_buttons                     168 = 0xa8 / 4      312 = 0x138 / 8
-    # NSMutableArray *_textFields                  172 = 0xac / 4      320 = 0x140 / 8
-    # UIView *_keyboard                            176 = 0xb0 / 4      328 = 0x148 / 8
-    # UIView *_table                               180 = 0xb4 / 4      336 = 0x150 / 8
-    # UIView *_dimView                             184 = 0xb8 / 4      344 = 0x158 / 8
-    # UIView *_backgroundImageView                 188 = 0xbc / 4      352 = 0x160 / 8
-    # UIView *_contentViewNeue                     192 = 0xc0 / 4      360 = 0x168 / 8
-    # UIView *_textFieldBackgroundView             196 = 0xc4 / 4      368 = 0x170 / 8
-    # UIWindow *_blurWindow                        200 = 0xc8 / 4      376 = 0x178 / 8
-    # UIView *_backdropView                        204 = 0xcc / 4      384 = 0x180 / 8
-    # NSMutableDictionary *_separatorsViews        208 = 0xd0 / 4      392 = 0x188 / 8
+    # id<UIAlertViewDelegate> _delegate                                      96 = 0x60 / 4          184 = 0xb8 / 8
+    # UILabel *_titleLabel                                                  100 = 0x64 / 4          192 = 0xc0 / 8
+    # UILabel *_subtitleLabel                                               104 = 0x68 / 4          200 = 0xc8 / 8
+    # UILabel *_bodyTextLabel                                               108 = 0x6c / 4          208 = 0xd0 / 8
+    # UILabel *_taglineTextLabel                                            112 = 0x70 / 4          216 = 0xd8 / 8
+    # float _startY                                                         116 = 0x74 / 4          224 = 0xe0 / 4 + 4
+    # CGPoint _center                                                       120 = 0x78 / 8          232 = 0xe8 / 16
+    # id _context                                                           128 = 0x80 / 4          248 = 0xf8 / 8
+    # int _cancelButton                                                     132 = 0x84 / 4          256 = 0x100 / 4
+    # int _defaultButton                                                    136 = 0x88 / 4          260 = 0x104 / 4
+    # int _firstOtherButton                                                 140 = 0x8c / 4          264 = 0x108 / 4 + 4
+    # UIToolbar *_toolbar                                                   144 = 0x90 / 4          272 = 0x110 / 8
+    # UIWindow *_originalWindow                                             148 = 0x94 / 4          280 = 0x118 / 8
+    # UIWindow *_dimWindow                                                  152 = 0x98 / 4          288 = 0x120 / 8
+    # int _suspendTag                                                       156 = 0x9c / 4          296 = 0x128 / 4
+    # int _dismissButtonIndex                                               160 = 0xa0 / 4          300 = 0x12c / 4
+    # float _bodyTextHeight                                                 164 = 0xa4 / 4          304 = 0x130 / 4 + 4
+    # NSMutableArray *_buttons                                              168 = 0xa8 / 4          312 = 0x138 / 8
+    # NSMutableArray *_textFields                                           172 = 0xac / 4          320 = 0x140 / 8
+    # UIView *_keyboard                                                     176 = 0xb0 / 4          328 = 0x148 / 8
+    # UIView *_table                                                        180 = 0xb4 / 4          336 = 0x150 / 8
+    # UIView *_dimView                                                      184 = 0xb8 / 4          344 = 0x158 / 8
+    # UIView *_backgroundImageView                                          188 = 0xbc / 4          352 = 0x160 / 8
+    # UIView *_contentViewNeue                                              192 = 0xc0 / 4          360 = 0x168 / 8
+    # UIView *_textFieldBackgroundView                                      196 = 0xc4 / 4          368 = 0x170 / 8
+    # UIWindow *_blurWindow                                                 200 = 0xc8 / 4          376 = 0x178 / 8
+    # UIView *_backdropView                                                 204 = 0xcc / 4          384 = 0x180 / 8
+    # NSMutableDictionary *_separatorsViews                                 208 = 0xd0 / 4          392 = 0x188 / 8
     # struct {
     #     unsigned numberOfRows : 7
     #     unsigned delegateAlertSheetButtonClicked : 1
@@ -123,16 +123,16 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
     #     unsigned isSBAlert : 1
     #     unsigned isBeingDismissed : 1
     #     unsigned useLookNeue : 1
-    # } _modalViewFlags                            212 = 0xd4 / 9 + 3  400 = 0x190 / 9 + 7
-    # NSMutableArray *_buttonTitlesNeue            224 = 0xe0 / 4      416 = 0x1a0 / 8
-    # NSString *_titleTextNeue                     228 = 0xe4 / 4      424 = 0x1a8 / 8
-    # NSString *_messageTextNeue                   232 = 0xe8 / 4      432 = 0x1b0 / 8
-    # UIViewController *_hostingViewControllerNeue  236 = 0xec / 4     440 = 0x1b8 / 8
-    # UIWindow *_windowFOrSBNeueCompatibility      240 = 0xf0 / 4      448 = 0x1c0 / 8
-    # UIView *_accessoryView                       244 = 0xf4 / 4      456 = 0x1c8 / 8
-    # UIViewController *_accessoryViewController   248 = 0xf8 / 4      464 = 0x1d0 / 8
-    # BOOL _textFieldsHidden                       252 = 0xfc / 1 + 3  472 = 0x1d8 / 1 + 7
-    # _UIModalItem *_representedModalItem          256 = 0x100 / 4     480 = 0x1e0 / 8
+    # } _modalViewFlags                                                     212 = 0xd4 / 9 + 3      400 = 0x190 / 9 + 7
+    # NSMutableArray *_buttonTitlesNeue                                     224 = 0xe0 / 4          416 = 0x1a0 / 8
+    # NSString *_titleTextNeue                                              228 = 0xe4 / 4          424 = 0x1a8 / 8
+    # NSString *_messageTextNeue                                            232 = 0xe8 / 4          432 = 0x1b0 / 8
+    # UIViewController *_hostingViewControllerNeue                          236 = 0xec / 4          440 = 0x1b8 / 8
+    # UIWindow *_windowFOrSBNeueCompatibility                               240 = 0xf0 / 4          448 = 0x1c0 / 8
+    # UIView *_accessoryView                                                244 = 0xf4 / 4          456 = 0x1c8 / 8
+    # UIViewController *_accessoryViewController                            248 = 0xf8 / 4          464 = 0x1d0 / 8
+    # BOOL _textFieldsHidden                                                252 = 0xfc / 1 + 3      472 = 0x1d8 / 1 + 7
+    # _UIModalItem *_representedModalItem                                   256 = 0x100 / 4         480 = 0x1e0 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
         # Super doesn't work :(
