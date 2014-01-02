@@ -23,16 +23,9 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import objc_runtime
 import summary_helpers
 import UIControl
 import UILabel
-
-statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric('invalid_isa')
-statistics.add_metric('invalid_pointer')
-statistics.add_metric('unknown_class')
-statistics.add_metric('code_notrun')
 
 
 class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
@@ -66,14 +59,9 @@ class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
     # UIEdgeInsets _internalTitlePaddingInsets                              212 = 0xd8 / 16         408 = 0x198 / 32
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # Super doesn't work :(
         # self.as_super = super(UIButton_SynthProvider, self)
         # self.as_super.__init__(value_obj, sys_params, internal_dict)
-        # super(UIButton_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
-
-        self.value_obj = value_obj
-        self.sys_params = sys_params
-        self.internal_dict = internal_dict
+        super(UIButton_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         if not self.sys_params.types_cache.UILabel:
             self.sys_params.types_cache.UILabel = self.value_obj.GetTarget().FindFirstType('UILabel').GetPointerType()
@@ -83,9 +71,8 @@ class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
         self.update()
 
     def update(self):
-        super(UIButton_SynthProvider, self).update()
-        self.adjust_for_architecture()
         self.label = None
+        super(UIButton_SynthProvider, self).update()
 
     def adjust_for_architecture(self):
         super(UIButton_SynthProvider, self).adjust_for_architecture()
@@ -119,19 +106,21 @@ class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
 
 
 def UIButton_SummaryProvider(value_obj, internal_dict):
-    # Class data
-    global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    if not class_data.is_valid():
-        return ""
-    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
-    if wrapper is not None:
-        return wrapper.message()
+    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIButton_SynthProvider)
 
-    wrapper = UIButton_SynthProvider(value_obj, class_data.sys_params, internal_dict)
-    if wrapper is not None:
-        return wrapper.summary()
-    return "Summary Unavailable"
+    # Class data
+    # global statistics
+    # class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
+    # if not class_data.is_valid():
+    #     return ""
+    # summary_helpers.update_sys_params(value_obj, class_data.sys_params)
+    # if wrapper is not None:
+    #     return wrapper.message()
+    #
+    # wrapper = UIButton_SynthProvider(value_obj, class_data.sys_params, internal_dict)
+    # if wrapper is not None:
+    #     return wrapper.summary()
+    # return "Summary Unavailable"
 
 
 def __lldb_init_module(debugger, dict):

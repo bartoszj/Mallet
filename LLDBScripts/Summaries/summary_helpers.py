@@ -32,6 +32,22 @@ statistics.add_metric('unknown_class')
 statistics.add_metric('code_notrun')
 
 
+def generic_SummaryProvider(value_obj, internal_dict, class_synth_provider, supported_classes=[]):
+    # Class data
+    global statistics
+    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
+    if not class_data.is_valid() or (len(supported_classes) > 0 and class_data.class_name() not in supported_classes):
+        return ""
+    update_sys_params(value_obj, class_data.sys_params)
+    if wrapper is not None:
+        return wrapper.message()
+
+    wrapper = class_synth_provider(value_obj, class_data.sys_params, internal_dict)
+    if wrapper is not None:
+        return wrapper.summary()
+    return "Summary Unavailable"
+
+
 def print_child(value_obj):
     valid = "Valid" if value_obj.IsValid() else "Not valid"
     print "{} {} {}".format(value_obj.GetName(), value_obj.GetAddress(), valid)

@@ -23,16 +23,9 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import NSSet
-import SKRequest
-import objc_runtime
 import summary_helpers
-
-statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric('invalid_isa')
-statistics.add_metric('invalid_pointer')
-statistics.add_metric('unknown_class')
-statistics.add_metric('code_notrun')
+import SKRequest
+import NSSet
 
 
 class SKProductsRequest_SynthProvider(SKRequest.SKRequest_SynthProvider):
@@ -51,16 +44,14 @@ class SKProductsRequest_SynthProvider(SKRequest.SKRequest_SynthProvider):
 
     def __init__(self, value_obj, sys_params, internal_dict):
         super(SKProductsRequest_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
-        self.value_obj = value_obj
-        self.sys_params = sys_params
-        self.internal_dict = internal_dict
+
         self.products_request_internal = None
         self.product_identifiers = None
         self.product_identifiers_provider = None
+
         self.update()
 
     def update(self):
-        super(SKProductsRequest_SynthProvider, self).update()
         # _productsRequestInternal (self->_productsRequestInternal)
         self.products_request_internal = self.value_obj.GetChildMemberWithName("_productsRequestInternal")
         #self.products_request_internal = self.value_obj.CreateChildAtOffset("_productsRequestInternal",
@@ -68,6 +59,7 @@ class SKProductsRequest_SynthProvider(SKRequest.SKRequest_SynthProvider):
         #                                                                    self.sys_params.types_cache.id)
         self.product_identifiers = None
         self.product_identifiers_provider = None
+        super(SKProductsRequest_SynthProvider, self).update()
 
     def adjust_for_architecture(self):
         super(SKProductsRequest_SynthProvider, self).adjust_for_architecture()
@@ -104,17 +96,7 @@ class SKProductsRequest_SynthProvider(SKRequest.SKRequest_SynthProvider):
 
 
 def SKProductsRequest_SummaryProvider(value_obj, internal_dict):
-    # Class data
-    global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
-    if wrapper is not None:
-        return wrapper.message()
-
-    wrapper = SKProductsRequest_SynthProvider(value_obj, class_data.sys_params, internal_dict)
-    if wrapper is not None:
-        return wrapper.summary()
-    return "Summary Unavailable"
+    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, SKProductsRequest_SynthProvider)
 
 
 def __lldb_init_module(debugger, internal_dict):

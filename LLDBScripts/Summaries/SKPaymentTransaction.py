@@ -23,14 +23,8 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import objc_runtime
 import summary_helpers
-
-statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric('invalid_isa')
-statistics.add_metric('invalid_pointer')
-statistics.add_metric('unknown_class')
-statistics.add_metric('code_notrun')
+import NSObject
 
 SKPaymentTransactionStatePurchasing = 0
 SKPaymentTransactionStatePurchased = 1
@@ -38,7 +32,7 @@ SKPaymentTransactionStateFailed = 2
 SKPaymentTransactionStateRestored = 3
 
 
-class SKPaymentTransaction_SynthProvider(object):
+class SKPaymentTransaction_SynthProvider(NSObject.NSObject_SynthProvider):
     # SKPaymentTransaction:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
@@ -60,25 +54,23 @@ class SKPaymentTransaction_SynthProvider(object):
     # NSInteger _transactionState                                            36 = 0x24 / 4           72 = 0x08 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        super(SKPaymentTransaction_SynthProvider, self).__init__()
-        self.value_obj = value_obj
-        self.sys_params = sys_params
-        self.internal_dict = internal_dict
+        super(SKPaymentTransaction_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         self.internal = None
         self.transaction_identifier = None
         self.transaction_state = None
+
         self.update()
 
     def update(self):
-        self.adjust_for_architecture()
         # _internal (self->_internal)
         self.internal = self.value_obj.GetChildMemberWithName("_internal")
         self.transaction_identifier = None
         self.transaction_state = None
+        super(SKPaymentTransaction_SynthProvider, self).update()
 
     def adjust_for_architecture(self):
-        pass
+        super(SKPaymentTransaction_SynthProvider, self).adjust_for_architecture()
 
     # _transactionIdentifier (self->_internal->_transactionIdentifier)
     def get_transaction_identifier(self):
@@ -131,17 +123,7 @@ class SKPaymentTransaction_SynthProvider(object):
 
 
 def SKPaymentTransaction_SummaryProvider(value_obj, internal_dict):
-    # Class data
-    global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
-    if wrapper is not None:
-        return wrapper.message()
-
-    wrapper = SKPaymentTransaction_SynthProvider(value_obj, class_data.sys_params, internal_dict)
-    if wrapper is not None:
-        return wrapper.summary()
-    return "Summary Unavailable"
+    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, SKPaymentTransaction_SynthProvider)
 
 
 def __lldb_init_module(debugger, internal_dict):

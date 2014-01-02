@@ -23,17 +23,11 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import objc_runtime
 import summary_helpers
-
-statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric('invalid_isa')
-statistics.add_metric('invalid_pointer')
-statistics.add_metric('unknown_class')
-statistics.add_metric('code_notrun')
+import NSObject
 
 
-class SKRequest_SynthProvider(object):
+class SKRequest_SynthProvider(NSObject.NSObject_SynthProvider):
     # SKRequest:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
@@ -51,38 +45,26 @@ class SKRequest_SynthProvider(object):
     # int _state                                                             20 = 0x14 / 4           40 = 0x28 / 4
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        super(SKRequest_SynthProvider, self).__init__()
-        self.value_obj = value_obj
-        self.sys_params = sys_params
-        self.internal_dict = internal_dict
+        super(SKRequest_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         self.request_internal = None
+
         self.update()
 
     def update(self):
-        self.adjust_for_architecture()
         # _requestInternal (self->_requestInternal)
         self.request_internal = self.value_obj.GetChildMemberWithName("_requestInternal")
+        super(SKRequest_SynthProvider, self).update()
 
     def adjust_for_architecture(self):
-        pass
+        super(SKRequest_SynthProvider, self).adjust_for_architecture()
 
     def summary(self):
         return ""
 
 
 def SKRequest_SummaryProvider(value_obj, internal_dict):
-    # Class data
-    global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
-    if wrapper is not None:
-        return wrapper.message()
-
-    wrapper = SKRequest_SynthProvider(value_obj, class_data.sys_params, internal_dict)
-    if wrapper is not None:
-        return wrapper.summary()
-    return "Summary Unavailable"
+    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, SKRequest_SynthProvider)
 
 
 def __lldb_init_module(debugger, internal_dict):

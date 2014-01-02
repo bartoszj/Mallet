@@ -23,17 +23,10 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import objc_runtime
 import summary_helpers
 import UIView
 import UILabel
 import UIButton
-
-statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric('invalid_isa')
-statistics.add_metric('invalid_pointer')
-statistics.add_metric('unknown_class')
-statistics.add_metric('code_notrun')
 
 
 class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
@@ -135,14 +128,9 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
     # _UIModalItem *_representedModalItem                                   256 = 0x100 / 4         496 = 0x1f0 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # Super doesn't work :(
         # self.as_super = super(UIAlertView_SynthProvider, self)
         # self.as_super.__init__(value_obj, sys_params, internal_dict)
-        # super(UIAlertView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
-
-        self.value_obj = value_obj
-        self.sys_params = sys_params
-        self.internal_dict = internal_dict
+        super(UIAlertView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         if not self.sys_params.types_cache.UILabel:
             self.sys_params.types_cache.UILabel = self.value_obj.GetTarget().FindFirstType('UILabel').GetPointerType()
@@ -155,12 +143,11 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
         self.update()
 
     def update(self):
-        super(UIAlertView_SynthProvider, self).update()
-        self.adjust_for_architecture()
         self.title = None
         self.subtitle = None
         self.body = None
         self.buttons = None
+        super(UIAlertView_SynthProvider, self).update()
 
     def adjust_for_architecture(self):
         super(UIAlertView_SynthProvider, self).adjust_for_architecture()
@@ -269,19 +256,21 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
 
 
 def UIAlertView_SummaryProvider(value_obj, internal_dict):
-    # Class data
-    global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    if not class_data.is_valid():
-        return ""
-    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
-    if wrapper is not None:
-        return wrapper.message()
+    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIAlertView_SynthProvider)
 
-    wrapper = UIAlertView_SynthProvider(value_obj, class_data.sys_params, internal_dict)
-    if wrapper is not None:
-        return wrapper.summary()
-    return "Summary Unavailable"
+    # Class data
+    # global statistics
+    # class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
+    # if not class_data.is_valid():
+    #     return ""
+    # summary_helpers.update_sys_params(value_obj, class_data.sys_params)
+    # if wrapper is not None:
+    #     return wrapper.message()
+    #
+    # wrapper = UIAlertView_SynthProvider(value_obj, class_data.sys_params, internal_dict)
+    # if wrapper is not None:
+    #     return wrapper.summary()
+    # return "Summary Unavailable"
 
 
 def __lldb_init_module(debugger, dict):

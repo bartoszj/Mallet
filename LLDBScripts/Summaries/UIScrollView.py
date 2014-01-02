@@ -23,19 +23,12 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import objc_runtime
 import summary_helpers
 import UIView
 
-statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric('invalid_isa')
-statistics.add_metric('invalid_pointer')
-statistics.add_metric('unknown_class')
-statistics.add_metric('code_notrun')
-
 
 class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
-    # UILabel:
+    # UIScrollView:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
     # id _delegate                                                           96 = 0x60 / 4          184 = 0xb8 / 8
@@ -161,14 +154,9 @@ class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
     # CADoublePoint _zoomAnchorPoint                                        448 = 0x1c0 / 16        776 = 0x308 / 16
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # Super doesn't work :(
         # self.as_super = super(UIScrollView_SynthProvider, self)
         # self.as_super.__init__(value_obj, sys_params, internal_dict)
-        # super(UIScrollView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
-
-        self.value_obj = value_obj
-        self.sys_params = sys_params
-        self.internal_dict = internal_dict
+        super(UIScrollView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         self.content_size = None
         self.content_inset = None
@@ -178,12 +166,11 @@ class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
         self.update()
 
     def update(self):
-        super(UIScrollView_SynthProvider, self).update()
-        self.adjust_for_architecture()
         self.content_size = None
         self.content_inset = None
         self.minimum_zoom_scale = None
         self.maximum_zoom_scale = None
+        super(UIScrollView_SynthProvider, self).update()
 
     def adjust_for_architecture(self):
         super(UIScrollView_SynthProvider, self).adjust_for_architecture()
@@ -279,19 +266,7 @@ class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
 
 
 def UIScrollView_SummaryProvider(value_obj, internal_dict):
-    # Class data
-    global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    if not class_data.is_valid():
-        return ""
-    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
-    if wrapper is not None:
-        return wrapper.message()
-
-    wrapper = UIScrollView_SynthProvider(value_obj, class_data.sys_params, internal_dict)
-    if wrapper is not None:
-        return wrapper.summary()
-    return "Summary Unavailable"
+    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIScrollView_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

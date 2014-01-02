@@ -24,17 +24,11 @@
 
 
 import lldb
-import objc_runtime
 import summary_helpers
-
-statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric('invalid_isa')
-statistics.add_metric('invalid_pointer')
-statistics.add_metric('unknown_class')
-statistics.add_metric('code_notrun')
+import NSObject
 
 
-class SKPayment_SynthProvider(object):
+class SKPayment_SynthProvider(NSObject.NSObject_SynthProvider):
     # SKPayment:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
@@ -52,27 +46,24 @@ class SKPayment_SynthProvider(object):
     # NSDictionary *_requestParameters                                       20 = 0x14 / 4           40 = 0x28 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        super(SKPayment_SynthProvider, self).__init__()
-        self.value_obj = value_obj
-        self.sys_params = sys_params
-        self.internal_dict = internal_dict
+        super(SKPayment_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         self.internal = None
         self.application_username = None
         self.product_identifier = None
         self.quantity = None
+
         self.update()
 
     def update(self):
-        self.adjust_for_architecture()
-        # _internal (self->_internal)
         self.internal = self.value_obj.GetChildMemberWithName("_internal")
         self.application_username = None
         self.product_identifier = None
         self.quantity = None
+        super(SKPayment_SynthProvider, self).update()
 
     def adjust_for_architecture(self):
-        pass
+        super(SKPayment_SynthProvider, self).adjust_for_architecture()
 
     # _applicationUsername (self->_internal->_applicationUsername)
     def get_application_username(self):
@@ -131,17 +122,7 @@ class SKPayment_SynthProvider(object):
 
 
 def SKPayment_SummaryProvider(value_obj, internal_dict):
-    # Class data
-    global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
-    if wrapper is not None:
-        return wrapper.message()
-
-    wrapper = SKPayment_SynthProvider(value_obj, class_data.sys_params, internal_dict)
-    if wrapper is not None:
-        return wrapper.summary()
-    return "Summary Unavailable"
+    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, SKPayment_SynthProvider)
 
 
 def __lldb_init_module(debugger, internal_dict):

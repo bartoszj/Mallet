@@ -23,17 +23,11 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import objc_runtime
 import summary_helpers
-
-statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric('invalid_isa')
-statistics.add_metric('invalid_pointer')
-statistics.add_metric('unknown_class')
-statistics.add_metric('code_notrun')
+import UIResponder
 
 
-class UIView_SynthProvider(object):
+class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
     # UIView:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
@@ -129,10 +123,7 @@ class UIView_SynthProvider(object):
     def __init__(self, value_obj, sys_params, internal_dict):
         # self.as_super = super(UIView_SynthProvider, self)
         # self.as_super.__init__()
-        super(UIView_SynthProvider, self).__init__()
-        self.value_obj = value_obj
-        self.sys_params = sys_params
-        self.internal_dict = internal_dict
+        super(UIView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         self.stream = lldb.SBStream()
         self.value_obj.GetExpressionPath(self.stream)
@@ -140,10 +131,10 @@ class UIView_SynthProvider(object):
         self.update()
 
     def update(self):
-        self.adjust_for_architecture()
+        super(UIView_SynthProvider, self).update()
 
     def adjust_for_architecture(self):
-        pass
+        super(UIView_SynthProvider, self).adjust_for_architecture()
 
     def get_origin(self):
         origin = self.value_obj.CreateValueFromExpression("frameOrigin",
@@ -208,20 +199,8 @@ class UIView_SynthProvider(object):
 
 
 def UIView_SummaryProvider(value_obj, internal_dict):
-    # Class data
-    global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    supported_classes = ["UIImageView", "UIView", "UIWindow"]
-    if not class_data.is_valid() or class_data.class_name() not in supported_classes:
-        return ""
-    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
-    if wrapper is not None:
-        return wrapper.message()
-
-    wrapper = UIView_SynthProvider(value_obj, class_data.sys_params, internal_dict)
-    if wrapper is not None:
-        return wrapper.summary()
-    return "Summary Unavailable"
+    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIView_SynthProvider,
+                                                   ["UIImageView", "UIView", "UIWindow"])
 
 
 def __lldb_init_module(debugger, dict):

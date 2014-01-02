@@ -23,15 +23,8 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import objc_runtime
 import summary_helpers
 import UIView
-
-statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric('invalid_isa')
-statistics.add_metric('invalid_pointer')
-statistics.add_metric('unknown_class')
-statistics.add_metric('code_notrun')
 
 
 class UILabel_SynthProvider(UIView.UIView_SynthProvider):
@@ -79,19 +72,15 @@ class UILabel_SynthProvider(UIView.UIView_SynthProvider):
         # Super doesn't work :(
         # self.as_super = super(UILabel_SynthProvider, self)
         # self.as_super.__init__(value_obj, sys_params, internal_dict)
-        # super(UILabel_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
-
-        self.value_obj = value_obj
-        self.sys_params = sys_params
-        self.internal_dict = internal_dict
+        super(UILabel_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         self.text = None
+
         self.update()
 
     def update(self):
-        super(UILabel_SynthProvider, self).update()
-        self.adjust_for_architecture()
         self.text = None
+        super(UILabel_SynthProvider, self).update()
 
     def adjust_for_architecture(self):
         super(UILabel_SynthProvider, self).adjust_for_architecture()
@@ -118,19 +107,7 @@ class UILabel_SynthProvider(UIView.UIView_SynthProvider):
 
 
 def UILabel_SummaryProvider(value_obj, internal_dict):
-    # Class data
-    global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    if not class_data.is_valid():
-        return ""
-    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
-    if wrapper is not None:
-        return wrapper.message()
-
-    wrapper = UILabel_SynthProvider(value_obj, class_data.sys_params, internal_dict)
-    if wrapper is not None:
-        return wrapper.summary()
-    return "Summary Unavailable"
+    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UILabel_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

@@ -23,18 +23,12 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import objc_runtime
 import summary_helpers
-
-statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric('invalid_isa')
-statistics.add_metric('invalid_pointer')
-statistics.add_metric('unknown_class')
-statistics.add_metric('code_notrun')
+import NSObject
 
 
-class NSUUID_SynthProvider(object):
-    # UIView:
+class NSUUID_SynthProvider(NSObject.NSObject_SynthProvider):
+    # NSUUID:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
     # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
@@ -43,20 +37,18 @@ class NSUUID_SynthProvider(object):
     def __init__(self, value_obj, sys_params, internal_dict):
         # self.as_super = super(NSUUID_SynthProvider, self)
         # self.as_super.__init__()
-        super(NSUUID_SynthProvider, self).__init__()
-        self.value_obj = value_obj
-        self.sys_params = sys_params
-        self.internal_dict = internal_dict
+        super(NSUUID_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         self.uuid_data = None
+
         self.update()
 
     def update(self):
-        self.adjust_for_architecture()
         self.uuid_data = None
+        super(NSUUID_SynthProvider, self).update()
 
     def adjust_for_architecture(self):
-        pass
+        super(NSUUID_SynthProvider, self).adjust_for_architecture()
 
     def get_uuid_data(self):
         if self.uuid_data:
@@ -83,20 +75,8 @@ class NSUUID_SynthProvider(object):
 
 
 def NSUUID_SummaryProvider(value_obj, internal_dict):
-    # Class data
-    global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    supported_classes = ["__NSConcreteUUID"]
-    if not class_data.is_valid() or class_data.class_name() not in supported_classes:
-        return ""
-    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
-    if wrapper is not None:
-        return wrapper.message()
-
-    wrapper = NSUUID_SynthProvider(value_obj, class_data.sys_params, internal_dict)
-    if wrapper is not None:
-        return wrapper.summary()
-    return "Summary Unavailable"
+    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, NSUUID_SynthProvider,
+                                                   ["__NSConcreteUUID"])
 
 
 def __lldb_init_module(debugger, dict):

@@ -23,17 +23,11 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import objc_runtime
 import summary_helpers
-
-statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric('invalid_isa')
-statistics.add_metric('invalid_pointer')
-statistics.add_metric('unknown_class')
-statistics.add_metric('code_notrun')
+import NSObject
 
 
-class SKProduct_SynthProvider(object):
+class SKProduct_SynthProvider(NSObject.NSObject_SynthProvider):
     # SKProduct:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
@@ -55,10 +49,7 @@ class SKProduct_SynthProvider(object):
     # NSString *_productIdentifier                                           36 = 0x24 / 4           72 = 0x48 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        super(SKProduct_SynthProvider, self).__init__()
-        self.value_obj = value_obj
-        self.sys_params = sys_params
-        self.internal_dict = internal_dict
+        super(SKProduct_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         self.internal = None
         self.content_version = None
@@ -68,10 +59,10 @@ class SKProduct_SynthProvider(object):
         self.localized_title = None
         self.price = None
         self.product_identifier = None
+
         self.update()
 
     def update(self):
-        self.adjust_for_architecture()
         # _internal (self->_internal)
         self.internal = self.value_obj.GetChildMemberWithName("_internal")
         self.content_version = None
@@ -81,9 +72,10 @@ class SKProduct_SynthProvider(object):
         self.localized_title = None
         self.product_identifier = None
         self.price = None
+        super(SKProduct_SynthProvider, self).update()
 
     def adjust_for_architecture(self):
-        pass
+        super(SKProduct_SynthProvider, self).adjust_for_architecture()
 
     # _contentVersion (self->_internal->_contentVersion)
     def get_content_version(self):
@@ -202,17 +194,7 @@ class SKProduct_SynthProvider(object):
 
 
 def SKProduct_SummaryProvider(value_obj, internal_dict):
-    # Class data
-    global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
-    if wrapper is not None:
-        return wrapper.message()
-
-    wrapper = SKProduct_SynthProvider(value_obj, class_data.sys_params, internal_dict)
-    if wrapper is not None:
-        return wrapper.summary()
-    return "Summary Unavailable"
+    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, SKProduct_SynthProvider)
 
 
 def __lldb_init_module(debugger, internal_dict):

@@ -23,18 +23,12 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import CFArray
-import objc_runtime
 import summary_helpers
-
-statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric('invalid_isa')
-statistics.add_metric('invalid_pointer')
-statistics.add_metric('unknown_class')
-statistics.add_metric('code_notrun')
+import CFArray
+import NSObject
 
 
-class SKProductsResponse_SynthProvider(object):
+class SKProductsResponse_SynthProvider(NSObject.NSObject_SynthProvider):
     # SKProductsResponse:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
@@ -49,28 +43,27 @@ class SKProductsResponse_SynthProvider(object):
     # NSArray *_products                                                      8 = 0x08 / 4           16 = 0x10 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        super(SKProductsResponse_SynthProvider, self).__init__()
-        self.value_obj = value_obj
-        self.sys_params = sys_params
-        self.internal_dict = internal_dict
+        super(SKProductsResponse_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+
         self.internal = None
         self.invalid_identifiers = None
         self.invalid_identifiers_provider = None
         self.products = None
         self.products_provider = None
+
         self.update()
 
     def update(self):
-        self.adjust_for_architecture()
         # _internal (self->_internal)
         self.internal = self.value_obj.GetChildMemberWithName("_internal")
         self.invalid_identifiers = None
         self.invalid_identifiers_provider = None
         self.products = None
         self.products_provider = None
+        super(SKProductsResponse_SynthProvider, self).update()
 
     def adjust_for_architecture(self):
-        pass
+        super(SKProductsResponse_SynthProvider, self).adjust_for_architecture()
 
     # _invalidIdentifiers (self->_internal->_invalidIdentifiers)
     def get_invalid_identifiers(self):
@@ -132,17 +125,7 @@ class SKProductsResponse_SynthProvider(object):
 
 
 def SKProductsResponse_SummaryProvider(value_obj, internal_dict):
-    # Class data
-    global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
-    if wrapper is not None:
-        return wrapper.message()
-
-    wrapper = SKProductsResponse_SynthProvider(value_obj, class_data.sys_params, internal_dict)
-    if wrapper is not None:
-        return wrapper.summary()
-    return "Summary Unavailable"
+    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, SKProductsResponse_SynthProvider)
 
 
 def __lldb_init_module(debugger, internal_dict):

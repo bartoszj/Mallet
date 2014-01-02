@@ -9,6 +9,7 @@ LLDB commands and summaries
 
 ## Supported types:
 - Foundation:
+    - NSObject
     - NSUUID
 - CoreFoundation:
     - CGVector
@@ -20,10 +21,12 @@ LLDB commands and summaries
     - UILabel
     - UIOffset
     - UIProgressView
+    - UIResponder
     - UIScreen
     - UIScrollView
     - UITextField (only placeholder text works)
     - UIView
+    - UIViewController
     - UIWindow
 - StoreKit:
     - SKDownload (not tested!)

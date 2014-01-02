@@ -23,18 +23,12 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import objc_runtime
 import summary_helpers
-
-statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric('invalid_isa')
-statistics.add_metric('invalid_pointer')
-statistics.add_metric('unknown_class')
-statistics.add_metric('code_notrun')
+import NSObject
 
 
-class UIScreen_SynthProvider(object):
-    # UIView:
+class UIScreen_SynthProvider(NSObject.NSObject_SynthProvider):
+    # UIScreen:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
     # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
@@ -63,28 +57,26 @@ class UIScreen_SynthProvider(object):
     # NSInteger _lastNotifiedBacklightLevel                                 68 = 0x44 / 4           128 = 0x80 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # self.as_super = super(UIView_SynthProvider, self)
+        # self.as_super = super(UIScreen_SynthProvider, self)
         # self.as_super.__init__()
-        super(UIScreen_SynthProvider, self).__init__()
-        self.value_obj = value_obj
-        self.sys_params = sys_params
-        self.internal_dict = internal_dict
+        super(UIScreen_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         self.bounds = None
         self.scale = None
         self.horizontal_scale = None
         self.interface_idiom = None
+        
         self.update()
 
     def update(self):
-        self.adjust_for_architecture()
         self.bounds = None
         self.scale = None
         self.horizontal_scale = None
         self.interface_idiom = None
+        super(UIScreen_SynthProvider, self).update()
 
     def adjust_for_architecture(self):
-        pass
+        super(UIScreen_SynthProvider, self).adjust_for_architecture()
 
     def get_bounds(self):
         if self.bounds:
@@ -165,19 +157,8 @@ class UIScreen_SynthProvider(object):
 
 
 def UIScreen_SummaryProvider(value_obj, internal_dict):
-    # Class data
-    global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    if not class_data.is_valid() or class_data.class_name() != "UIScreen":
-        return ""
-    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
-    if wrapper is not None:
-        return wrapper.message()
-
-    wrapper = UIScreen_SynthProvider(value_obj, class_data.sys_params, internal_dict)
-    if wrapper is not None:
-        return wrapper.summary()
-    return "Summary Unavailable"
+    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIScreen_SynthProvider,
+                                                   ["UIScreen"])
 
 
 def __lldb_init_module(debugger, dict):

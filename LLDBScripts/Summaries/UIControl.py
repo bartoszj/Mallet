@@ -23,19 +23,11 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import objc_runtime
-import summary_helpers
 import UIView
-
-statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric('invalid_isa')
-statistics.add_metric('invalid_pointer')
-statistics.add_metric('unknown_class')
-statistics.add_metric('code_notrun')
 
 
 class UIControl_SynthProvider(UIView.UIView_SynthProvider):
-    # UIButton:
+    # UIControl:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
     # NSMutableArray *_targetActions                                         96 = 0x60 / 4          184 = 0xb8 / 8
@@ -63,5 +55,10 @@ class UIControl_SynthProvider(UIView.UIView_SynthProvider):
         # Super doesn't work :(
         # self.as_super = super(UIControl_SynthProvider, self)
         # self.as_super.__init__(value_obj, sys_params, internal_dict)
-        # super(UIControl_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
-        pass
+        super(UIControl_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+
+    def update(self):
+        super(UIControl_SynthProvider, self).update()
+
+    def adjust_for_architecture(self):
+        super(UIControl_SynthProvider, self).adjust_for_architecture()

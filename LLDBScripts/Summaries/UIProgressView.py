@@ -23,19 +23,12 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import objc_runtime
 import summary_helpers
 import UIView
 
-statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric('invalid_isa')
-statistics.add_metric('invalid_pointer')
-statistics.add_metric('unknown_class')
-statistics.add_metric('code_notrun')
-
 
 class UIProgressView_SynthProvider(UIView.UIView_SynthProvider):
-    # UILabel:
+    # UIProgressView:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
     # NSInteger _progressViewStyle                                          96 = 0x60 / 4           184 = 0xb8 / 8
@@ -55,23 +48,17 @@ class UIProgressView_SynthProvider(UIView.UIView_SynthProvider):
     # UIImage *_progressImage                                               172 = 0xac / 4          226 = 0x150 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # Super doesn't work :(
         # self.as_super = super(UIProgressView_SynthProvider, self)
         # self.as_super.__init__(value_obj, sys_params, internal_dict)
         super(UIProgressView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
-
-        self.value_obj = value_obj
-        self.sys_params = sys_params
-        self.internal_dict = internal_dict
 
         self.progress = None
 
         self.update()
 
     def update(self):
-        super(UIProgressView_SynthProvider, self).update()
-        self.adjust_for_architecture()
         self.progress = None
+        super(UIProgressView_SynthProvider, self).update()
 
     def adjust_for_architecture(self):
         super(UIProgressView_SynthProvider, self).adjust_for_architecture()
@@ -99,19 +86,7 @@ class UIProgressView_SynthProvider(UIView.UIView_SynthProvider):
 
 
 def UIProgressView_SummaryProvider(value_obj, internal_dict):
-    # Class data
-    global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    if not class_data.is_valid():
-        return ""
-    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
-    if wrapper is not None:
-        return wrapper.message()
-
-    wrapper = UIProgressView_SynthProvider(value_obj, class_data.sys_params, internal_dict)
-    if wrapper is not None:
-        return wrapper.summary()
-    return "Summary Unavailable"
+    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIProgressView_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

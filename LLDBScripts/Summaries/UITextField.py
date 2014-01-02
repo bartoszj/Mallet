@@ -23,20 +23,13 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import objc_runtime
 import summary_helpers
 import UIControl
 import UILabel
 
-statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric('invalid_isa')
-statistics.add_metric('invalid_pointer')
-statistics.add_metric('unknown_class')
-statistics.add_metric('code_notrun')
-
 
 class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
-    # UILabel:
+    # UITextField:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
     # _UICascadingTextStorage *_textStorage                                 120 = 0x78 / 4          224 = 0xe0 / 8
@@ -106,14 +99,9 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
     # NSDictionary *_defaultTextAttributes                                  312 = 0x138 / 4         592 = 0x250 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # Super doesn't work :(
         # self.as_super = super(UITextField_SynthProvider, self)
         # self.as_super.__init__(value_obj, sys_params, internal_dict)
-        # super(UITextField_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
-
-        self.value_obj = value_obj
-        self.sys_params = sys_params
-        self.internal_dict = internal_dict
+        super(UITextField_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         if not self.sys_params.types_cache.UILabel:
             self.sys_params.types_cache.UILabel = self.value_obj.GetTarget().FindFirstType('UILabel').GetPointerType()
@@ -124,10 +112,9 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
         self.update()
 
     def update(self):
-        super(UITextField_SynthProvider, self).update()
-        self.adjust_for_architecture()
         self.display_label = None
         self.placeholder_label = None
+        super(UITextField_SynthProvider, self).update()
 
     def adjust_for_architecture(self):
         super(UITextField_SynthProvider, self).adjust_for_architecture()
@@ -188,19 +175,7 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
 
 
 def UITextField_SummaryProvider(value_obj, internal_dict):
-    # Class data
-    global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    if not class_data.is_valid():
-        return ""
-    summary_helpers.update_sys_params(value_obj, class_data.sys_params)
-    if wrapper is not None:
-        return wrapper.message()
-
-    wrapper = UITextField_SynthProvider(value_obj, class_data.sys_params, internal_dict)
-    if wrapper is not None:
-        return wrapper.summary()
-    return "Summary Unavailable"
+    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UITextField_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):
