@@ -58,7 +58,7 @@ class UIProgressView_SynthProvider(UIView.UIView_SynthProvider):
         # Super doesn't work :(
         # self.as_super = super(UIProgressView_SynthProvider, self)
         # self.as_super.__init__(value_obj, sys_params, internal_dict)
-        # super(UIProgressView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+        super(UIProgressView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         self.value_obj = value_obj
         self.sys_params = sys_params
@@ -75,7 +75,6 @@ class UIProgressView_SynthProvider(UIView.UIView_SynthProvider):
 
     def adjust_for_architecture(self):
         super(UIProgressView_SynthProvider, self).adjust_for_architecture()
-        pass
 
     def get_progress(self):
         if self.progress:

@@ -187,7 +187,6 @@ class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
 
     def adjust_for_architecture(self):
         super(UIScrollView_SynthProvider, self).adjust_for_architecture()
-        pass
 
     def get_content_size(self):
         if self.content_size:

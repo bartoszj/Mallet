@@ -95,7 +95,6 @@ class UILabel_SynthProvider(UIView.UIView_SynthProvider):
 
     def adjust_for_architecture(self):
         super(UILabel_SynthProvider, self).adjust_for_architecture()
-        pass
 
     def get_text(self):
         if self.text:

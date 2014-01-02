@@ -19,6 +19,7 @@ LLDB commands and summaries
     - UIImageView
     - UILabel
     - UIOffset
+    - UIProgressView
     - UIScreen
     - UIScrollView
     - UITextField (only placeholder text works)

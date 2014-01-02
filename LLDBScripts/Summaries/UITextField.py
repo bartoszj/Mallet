@@ -131,7 +131,6 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
 
     def adjust_for_architecture(self):
         super(UITextField_SynthProvider, self).adjust_for_architecture()
-        pass
 
     def get_display_label(self):
         if self.display_label:

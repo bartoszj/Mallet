@@ -164,7 +164,6 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
 
     def adjust_for_architecture(self):
         super(UIAlertView_SynthProvider, self).adjust_for_architecture()
-        pass
 
     def get_title(self):
         if self.title:

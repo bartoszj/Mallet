@@ -89,7 +89,6 @@ class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
 
     def adjust_for_architecture(self):
         super(UIButton_SynthProvider, self).adjust_for_architecture()
-        pass
 
     def get_label(self):
         if self.label:
