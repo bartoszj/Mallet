@@ -43,10 +43,10 @@ class UIView_SynthProvider(object):
     # NSMutableArray *_gestureRecognizers                                    12 = 0x0c / 4           24 = 0x18 / 8
     # NSArray *_subviewCache                                                 16 = 0x10 / 4           32 = 0x20 / 8
     # float _charge                                                          20 = 0x14 / 4           40 = 0x28 / 8
-    # int _tag                                                               24 = 0x18 / 4           48 = 0x30 / 4 + 4
+    # NSInteger _tag                                                         24 = 0x18 / 4           48 = 0x30 / 8
     # UIViewController *_viewDelegate                                        28 = 0x1c / 4           56 = 0x38 / 8
     # NSString *_backgroundColorSystemColorName                              32 = 0x20 / 4           64 = 0x40 / 8
-    # unsigned _countOfMotionEffectsInSubtree                                36 = 0x24 / 4           72 = 0x48 / 4 + 4
+    # NSUInteger _countOfMotionEffectsInSubtree                              36 = 0x24 / 4           72 = 0x48 / 8
     # struct {
     #     unsigned userInteractionDisabled : 1
     #     unsigned implementsDrawRect : 1
@@ -114,8 +114,8 @@ class UIView_SynthProvider(object):
     #     unsigned tintAdjustmentMode : 2
     #     unsigned isReferenceView : 1
     # } _viewFlags                                                           40 = 0x28 / 10 + 2      80 = 0x50 / 10 + 6
-    # int _retainCount                                                       52 = 0x34 / 4           96 = 0x60 / 8?
-    # int _tintAdjustmentDimmingCount                                        56 = 0x38 / 4          100 = 0x64 / 8?
+    # NSInteger _retainCount                                                 52 = 0x34 / 4           96 = 0x60 / 8
+    # NSInteger _tintAdjustmentDimmingCount                                  56 = 0x38 / 4          100 = 0x64 / 8
     # BOOL _shouldArchiveUIAppearanceTags                                    60 = 0x3c / 1 + 3      104 = 0x68 / 1 + 7
     # UIColor *_interactionTintColor                                         64 = 0x40 / 4          120 = 0x78 / 8
     # NSISEngine *_layoutEngine                                              68 = 0x44 / 4          128 = 0x80 / 8

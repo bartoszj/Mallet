@@ -57,7 +57,7 @@ class SKPaymentTransaction_SynthProvider(object):
     # NSDate *_transactionDate                                               24 = 0x18 / 4           48 = 0x08 / 8
     # NSString *_transactionIdentifier                                       28 = 0x1c / 4           56 = 0x08 / 8
     # NSData *_transactionReceipt                                            32 = 0x20 / 4           64 = 0x08 / 8
-    # int _transactionState                                                  36 = 0x24 / 4           72 = 0x08 / 4
+    # NSInteger _transactionState                                            36 = 0x24 / 4           72 = 0x08 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
         super(SKPaymentTransaction_SynthProvider, self).__init__()

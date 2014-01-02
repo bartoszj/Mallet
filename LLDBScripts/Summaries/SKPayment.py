@@ -47,7 +47,7 @@ class SKPayment_SynthProvider(object):
     # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
     # NSString *_applicationUsername                                          4 = 0x04 / 4            8 = 0x08 / 8
     # NSString *_productIdentifier                                            8 = 0x08 / 4           16 = 0x10 / 8
-    # int _quantity                                                          12 = 0x0c / 4           24 = 0x18 / 4 + 4
+    # NSInteger _quantity                                                    12 = 0x0c / 4           24 = 0x18 / 8
     # NSData *_requestData                                                   16 = 0x10 / 4           32 = 0x20 / 8
     # NSDictionary *_requestParameters                                       20 = 0x14 / 4           40 = 0x28 / 8
 

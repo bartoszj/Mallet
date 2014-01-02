@@ -47,7 +47,7 @@ class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
     # UIImageView *_imageView                                               176 = 0xb0 / 4          336 = 0x150 / 8
     # UILabel *_titleView                                                   180 = 0xb4 / 4          344 = 0x158 / 8
     # BOOL _initialized                                                     184 = 0xb8 / 1 + 3      352 = 0x160 / 1 + 7
-    # unsigned _lastDrawingControlState                                     188 = 0xbc / 4          360 = 0x168 / 4 + 4
+    # NSUInteger _lastDrawingControlState                                   188 = 0xbc / 4          360 = 0x168 / 8
     # struct {
     #     unsigned reversesTitleShadowWhenHighlighted : 1;
     #     unsigned adjustsImageWhenHighlighted : 1;

@@ -47,10 +47,10 @@ class UILabel_SynthProvider(UIView.UIView_SynthProvider):
     # NSMutableAttributedString *_attributedText                            124 = 0x7c / 4          240 = 0xf0 / 8
     # NSAttributedString *_synthesizedAttributedText                        128 = 0x80 / 4          248 = 0xf8 / 8
     # NSMutableDictionary *_defaultAttributes                               132 = 0x84 / 4          256 = 0x100 / 8
-    # float _minimumFontSize                                                136 = 0x88 / 4          264 = 0x108 / 4
-    # int _lineSpacing                                                      140 = 0x8c / 4          268 = 0x10c / 4
-    # id _layout                                                            144 = 0x90 / 4          272 = 0x110 / 8
-    # _UILabelScaledMetrics *_scaledMetrics                                 148 = 0x94 / 4          280 = 0x118 / 8
+    # CGFloat _minimumFontSize                                              136 = 0x88 / 4          264 = 0x108 / 8
+    # NSInteger _lineSpacing                                                140 = 0x8c / 4          272 = 0x110 / 8
+    # id _layout                                                            144 = 0x90 / 4          280 = 0x118 / 8
+    # _UILabelScaledMetrics *_scaledMetrics                                 148 = 0x94 / 4          288 = 0x120 / 8
     # struct {
     #     unsigned unused1 : 3;
     #     unsigned highlighted : 1;
@@ -72,8 +72,8 @@ class UILabel_SynthProvider(UIView.UIView_SynthProvider):
     #     unsigned drawsDebugBaselines : 1;
     #     unsigned explicitBaselineOffset : 1;
     #     unsigned usesSimpleTextEffects : 1;
-    # } _textLabelFlags                                                     156 = 0x9c / 3 + 1      272 = 0x110 / 3 + 1
-    # float _preferredMaxLayoutWidth                                        160 = 0xa0 / 4          276 = 0x114 / 4
+    # } _textLabelFlags                                                     156 = 0x9c / 3 + 1      296 = 0x128 / 3 + 5
+    # CGFloat _preferredMaxLayoutWidth                                      160 = 0xa0 / 4          304 = 0x130 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
         # Super doesn't work :(

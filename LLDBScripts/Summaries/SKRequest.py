@@ -44,7 +44,7 @@ class SKRequest_SynthProvider(object):
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
     # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
-    # int _backgroundTaskIdentifier                                           4 = 0x04 / 4            8 = 0x08 / 4 + 4
+    # NSInteger _backgroundTaskIdentifier                                     4 = 0x04 / 4            8 = 0x08 / 8
     # SKPaymentQueueClient *_client                                           8 = 0x08 / 4           16 = 0x10 / 8
     # SKXPCConnection *_connection                                           12 = 0x0c / 4           24 = 0x18 / 8
     # id<SKRequestDelegate> _delegate                                        16 = 0x10 / 4           32 = 0x20 / 8

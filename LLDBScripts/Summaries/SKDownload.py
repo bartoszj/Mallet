@@ -42,7 +42,7 @@ class SKDownload_SynthProvider(object):
     # long long _contentLength                                                8 = 0x08 / 8           16 = 0x10 / 8
     # NSURL *_contentURL                                                     16 = 0x10 / 4           24 = 0x18 / 8
     # NSNumber *_downloadID                                                  20 = 0x14 / 4           32 = 0x20 / 8
-    # int _downloadState                                                     24 = 0x18 / 4           40 = 0x28 / 4 + 4
+    # NSInteger _downloadState                                               24 = 0x18 / 4           40 = 0x28 / 8
     # NSError *_error                                                        28 = 0x1c / 4           48 = 0x30 / 8
     # float _progress                                                        32 = 0x20 / 4           56 = 0x38 / 4 + 4
     # double _timeRemaining                                                  36 = 0x24 / 8           64 = 0x40 / 8

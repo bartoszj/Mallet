@@ -40,16 +40,16 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
     # _UICascadingTextStorage *_textStorage                                 120 = 0x78 / 4          224 = 0xe0 / 8
-    # int _borderStyle                                                      124 = 0x7c / 4          232 = 0xe8 / 4 + 4
+    # NSInteger _borderStyle                                                124 = 0x7c / 4          232 = 0xe8 / 8
     # CGFloat _minimumFontSize                                              128 = 0x80 / 4          240 = 0xf0 / 8
     # id _delegate                                                          132 = 0x84 / 4          248 = 0xf8 / 8
     # UIImage *_background                                                  136 = 0x88 / 4          256 = 0x100 / 8
     # UIImage *_disabledBackground                                          140 = 0x8c / 4          264 = 0x108 / 8
-    # int _clearButtonMode                                                  144 = 0x90 / 4          272 = 0x110 / 4 + 4
+    # NSInteger _clearButtonMode                                            144 = 0x90 / 4          272 = 0x110 / 8
     # UIView *_leftView                                                     148 = 0x94 / 4          280 = 0x118 / 8
-    # int _leftViewMode                                                     152 = 0x98 / 4          288 = 0x120 / 4 + 4
+    # NSInteger _leftViewMode                                               152 = 0x98 / 4          288 = 0x120 / 8
     # UIView *_rightView                                                    156 = 0x9c / 4          296 = 0x128 / 8
-    # int _rightViewMode                                                    160 = 0xa0 / 4          304 = 0x130 / 4 + 4
+    # NSInteger _rightViewMode                                              160 = 0xa0 / 4          304 = 0x130 / 8
     # UITextInputTraits *_traits                                            164 = 0xa4 / 4          312 = 0x138 / 8
     # UITextInputTraits *_nonAtomTraits                                     168 = 0xa8 / 4          320 = 0x140 / 8
     # CGFloat _fullFontSize                                                 172 = 0xac / 4          328 = 0x148 / 8
@@ -71,7 +71,7 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
     # UITextFieldLabel *_prefixLabel                                        264 = 0x108 / 4         504 = 0x1f8 / 8
     # UIImageView *_iconView                                                268 = 0x10c / 4         512 = 0x200 / 8
     # UILabel *_label                                                       272 = 0x110 / 4         520 = 0x208 / 8
-    # float _labelOffset                                                    276 = 0x114 / 4         528 = 0x210 / 4 ? 4
+    # CGFloat _labelOffset                                                  276 = 0x114 / 4         528 = 0x210 / 8
     # UITextInteractionAssistant *_interactionAssistant                     280 = 0x118 / 4         536 = 0x218 / 8
     # UIView *_inputView                                                    284 = 0x11c / 4         544 = 0x220 / 8
     # UIView *_inputAccessoryView                                           288 = 0x120 / 4         552 = 0x228 / 8
