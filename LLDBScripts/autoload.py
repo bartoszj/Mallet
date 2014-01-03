@@ -24,56 +24,67 @@
 
 import os
 
-lldb_auto_load_paths = ["~/Library/LLDBScripts/Commands",
-                        "~/Library/LLDBScripts/Summaries"]
+lldb_commands_paths = ["~/Library/LLDBScripts/Commands"]
+lldb_summaries_paths = ["~/Library/LLDBScripts/Summaries"]
 lldb_script_endings = [".py"]
-lldb_script_order = ["objc_runtime",
-                     "summary_helpers",
-                     "NSObject",
-                     "UIResponder",
-                     "UIView",
-                     "UIControl"]
+lldb_summaries_load_order = ["objc_runtime",
+                             "summary_helpers",
+                             "NSObject",
+                             "UIResponder",
+                             "UIView",
+                             "UIControl"]
+
+
+def scripts_in_directory(path):
+    endings = tuple(lldb_script_endings)
+    scripts = []
+
+    # Go through all folders
+    for root, dirs, files in os.walk(os.path.expanduser(path)):
+        # Got through all files in folder
+        for f in files:
+            # Add only files with correct suffix
+            if f.endswith(endings):
+                file_name = os.path.splitext(f)[0]
+                full_file_path = os.path.join(root, f)
+                scripts.append((file_name, full_file_path))
+                # print f
+                # print file_name
+                # print full_file_path
+    return scripts
+
+
+def load_scripts(scripts, debugger, order_list=[]):
+    scripts.sort()
+
+    # Load scripts from ordered list.
+    for ordered_script in order_list:
+        indexes = [i for i, v in enumerate(scripts) if v[0] == ordered_script]
+        if len(indexes) > 0:
+            index = indexes[0]
+            script_name, script_path = scripts[index]
+            load_script(script_path, debugger)
+            del scripts[index]
+
+    # Load other scripts
+    for script_name, script_path in scripts:
+        load_script(script_path, debugger)
 
 
 def load_script(script_path, debugger):
     command = "command script import \"{}\"".format(script_path)
     debugger.HandleCommand(command)
+    # print script_path
+    # print command
 
 
 def __lldb_init_module(debugger, dict):
-    # Go through all files
-    to_load = set()
-    endings = tuple(lldb_script_endings)
+    scripts = []
+    for directory in lldb_commands_paths:
+        scripts.extend(scripts_in_directory(directory))
+    load_scripts(scripts, debugger)
 
-    # Go through all lldb auto load paths
-    for path in lldb_auto_load_paths:
-        # Got through all folders in auto load paths
-        for root, dirs, files in os.walk(os.path.expanduser(path)):
-            # Got through all files
-            for f in files:
-                # Add only files with correct suffix
-                if f.endswith(endings):
-                    full_file_path = os.path.join(root, f)
-                    # to_load.add(full_file_path)
-                    to_load.add((f, full_file_path))
-                    # print f
-                    # print full_file_path
-
-    # Load all scripts
-    to_load = list(to_load)
-    to_load.sort()
-
-    # First load Summaries from order list
-    for order_summary in lldb_script_order:
-        indexes = [i for i, v in enumerate(to_load) if v[0].startswith(order_summary)]
-        if len(indexes) > 0:
-            index = indexes[0]
-            script_name, script_path = to_load[index]
-            load_script(script_path, debugger)
-            del to_load[index]
-
-    # Load other scripts
-    for script_name, script_path in to_load:
-        load_script(script_path, debugger)
-        # print script_path
-        # print command
+    scripts = []
+    for directory in lldb_summaries_paths:
+        scripts.extend(scripts_in_directory(directory))
+    load_scripts(scripts, debugger, lldb_summaries_load_order)
