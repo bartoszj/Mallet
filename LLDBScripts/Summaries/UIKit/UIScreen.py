@@ -57,8 +57,6 @@ class UIScreen_SynthProvider(NSObject.NSObject_SynthProvider):
     # NSInteger _lastNotifiedBacklightLevel                                 68 = 0x44 / 4           128 = 0x80 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # self.as_super = super(UIScreen_SynthProvider, self)
-        # self.as_super.__init__()
         super(UIScreen_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         self.bounds = None
@@ -74,9 +72,6 @@ class UIScreen_SynthProvider(NSObject.NSObject_SynthProvider):
         self.horizontal_scale = None
         self.interface_idiom = None
         super(UIScreen_SynthProvider, self).update()
-
-    def adjust_for_architecture(self):
-        super(UIScreen_SynthProvider, self).adjust_for_architecture()
 
     def get_bounds(self):
         if self.bounds:

@@ -128,8 +128,6 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
     # _UIModalItem *_representedModalItem                                   256 = 0x100 / 4         496 = 0x1f0 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # self.as_super = super(UIAlertView_SynthProvider, self)
-        # self.as_super.__init__(value_obj, sys_params, internal_dict)
         super(UIAlertView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         if not self.sys_params.types_cache.UILabel:
@@ -148,9 +146,6 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
         self.body = None
         self.buttons = None
         super(UIAlertView_SynthProvider, self).update()
-
-    def adjust_for_architecture(self):
-        super(UIAlertView_SynthProvider, self).adjust_for_architecture()
 
     def get_title(self):
         if self.title:

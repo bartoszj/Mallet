@@ -56,9 +56,6 @@ class SKRequest_SynthProvider(NSObject.NSObject_SynthProvider):
         self.request_internal = self.value_obj.GetChildMemberWithName("_requestInternal")
         super(SKRequest_SynthProvider, self).update()
 
-    def adjust_for_architecture(self):
-        super(SKRequest_SynthProvider, self).adjust_for_architecture()
-
     def summary(self):
         return ""
 

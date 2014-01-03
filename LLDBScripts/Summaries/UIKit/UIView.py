@@ -121,8 +121,6 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
     # NSArray *_constraintsExceptingSubviewAutoresizingConstraints           92 = 0x5c / 4          176 = 0xb0 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # self.as_super = super(UIView_SynthProvider, self)
-        # self.as_super.__init__()
         super(UIView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         self.stream = lldb.SBStream()
@@ -132,9 +130,6 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
 
     def update(self):
         super(UIView_SynthProvider, self).update()
-
-    def adjust_for_architecture(self):
-        super(UIView_SynthProvider, self).adjust_for_architecture()
 
     def get_origin(self):
         origin = self.value_obj.CreateValueFromExpression("frameOrigin",

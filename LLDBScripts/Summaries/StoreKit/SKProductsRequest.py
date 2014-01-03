@@ -61,9 +61,6 @@ class SKProductsRequest_SynthProvider(SKRequest.SKRequest_SynthProvider):
         self.product_identifiers_provider = None
         super(SKProductsRequest_SynthProvider, self).update()
 
-    def adjust_for_architecture(self):
-        super(SKProductsRequest_SynthProvider, self).adjust_for_architecture()
-
     # _productIdentifiers (self->_internal->_productIdentifiers)
     def get_product_identifiers(self):
         if self.product_identifiers:

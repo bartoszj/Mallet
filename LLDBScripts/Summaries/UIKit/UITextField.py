@@ -99,8 +99,6 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
     # NSDictionary *_defaultTextAttributes                                  312 = 0x138 / 4         592 = 0x250 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # self.as_super = super(UITextField_SynthProvider, self)
-        # self.as_super.__init__(value_obj, sys_params, internal_dict)
         super(UITextField_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         if not self.sys_params.types_cache.UILabel:
@@ -115,9 +113,6 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
         self.display_label = None
         self.placeholder_label = None
         super(UITextField_SynthProvider, self).update()
-
-    def adjust_for_architecture(self):
-        super(UITextField_SynthProvider, self).adjust_for_architecture()
 
     def get_display_label(self):
         if self.display_label:

@@ -62,9 +62,6 @@ class SKProductsResponse_SynthProvider(NSObject.NSObject_SynthProvider):
         self.products_provider = None
         super(SKProductsResponse_SynthProvider, self).update()
 
-    def adjust_for_architecture(self):
-        super(SKProductsResponse_SynthProvider, self).adjust_for_architecture()
-
     # _invalidIdentifiers (self->_internal->_invalidIdentifiers)
     def get_invalid_identifiers(self):
         if self.invalid_identifiers:

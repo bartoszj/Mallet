@@ -22,7 +22,6 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import lldb
 import NSObject
 
 
@@ -31,12 +30,4 @@ class UIResponder_SynthProvider(NSObject.NSObject_SynthProvider):
     # Offset / size (+ alignment)                                           32bit:                  64bit:
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # self.as_super = super(UIResponder_SynthProvider, self)
-        # self.as_super.__init__()
         super(UIResponder_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
-        
-    def update(self):
-        super(UIResponder_SynthProvider, self).update()
-        
-    def adjust_for_architecture(self):
-        super(UIResponder_SynthProvider, self).adjust_for_architecture()

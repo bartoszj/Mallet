@@ -68,9 +68,6 @@ class SKDownload_SynthProvider(NSObject.NSObject_SynthProvider):
         self.version = None
         super(SKDownload_SynthProvider, self).update()
 
-    def adjust_for_architecture(self):
-        super(SKDownload_SynthProvider, self).adjust_for_architecture()
-
     # _contentIdentifier (self->_contentIdentifier)
     def get_content_identifier(self):
         if self.content_identifier:

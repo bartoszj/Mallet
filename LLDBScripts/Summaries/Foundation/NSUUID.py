@@ -35,8 +35,6 @@ class NSUUID_SynthProvider(NSObject.NSObject_SynthProvider):
     # uuid_t/unsigned char[16]                                                4 = 0x04 / 16           8 = 0x08 / 16
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # self.as_super = super(NSUUID_SynthProvider, self)
-        # self.as_super.__init__()
         super(NSUUID_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         self.uuid_data = None

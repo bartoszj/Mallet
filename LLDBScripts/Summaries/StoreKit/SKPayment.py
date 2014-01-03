@@ -22,7 +22,6 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 import lldb
 import summary_helpers
 import NSObject
@@ -61,9 +60,6 @@ class SKPayment_SynthProvider(NSObject.NSObject_SynthProvider):
         self.product_identifier = None
         self.quantity = None
         super(SKPayment_SynthProvider, self).update()
-
-    def adjust_for_architecture(self):
-        super(SKPayment_SynthProvider, self).adjust_for_architecture()
 
     # _applicationUsername (self->_internal->_applicationUsername)
     def get_application_username(self):

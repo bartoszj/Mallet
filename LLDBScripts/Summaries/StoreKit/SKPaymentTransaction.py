@@ -69,9 +69,6 @@ class SKPaymentTransaction_SynthProvider(NSObject.NSObject_SynthProvider):
         self.transaction_state = None
         super(SKPaymentTransaction_SynthProvider, self).update()
 
-    def adjust_for_architecture(self):
-        super(SKPaymentTransaction_SynthProvider, self).adjust_for_architecture()
-
     # _transactionIdentifier (self->_internal->_transactionIdentifier)
     def get_transaction_identifier(self):
         if self.transaction_identifier:

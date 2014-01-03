@@ -52,13 +52,4 @@ class UIControl_SynthProvider(UIView.UIView_SynthProvider):
     # } _controlFlags                                                       116 = 0x74 / 3 + 1      216 = 0xd8 / 3 + 5
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # Super doesn't work :(
-        # self.as_super = super(UIControl_SynthProvider, self)
-        # self.as_super.__init__(value_obj, sys_params, internal_dict)
         super(UIControl_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
-
-    def update(self):
-        super(UIControl_SynthProvider, self).update()
-
-    def adjust_for_architecture(self):
-        super(UIControl_SynthProvider, self).adjust_for_architecture()

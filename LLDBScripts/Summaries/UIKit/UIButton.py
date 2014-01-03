@@ -59,8 +59,6 @@ class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
     # UIEdgeInsets _internalTitlePaddingInsets                              212 = 0xd8 / 16         408 = 0x198 / 32
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # self.as_super = super(UIButton_SynthProvider, self)
-        # self.as_super.__init__(value_obj, sys_params, internal_dict)
         super(UIButton_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         if not self.sys_params.types_cache.UILabel:
@@ -73,9 +71,6 @@ class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
     def update(self):
         self.label = None
         super(UIButton_SynthProvider, self).update()
-
-    def adjust_for_architecture(self):
-        super(UIButton_SynthProvider, self).adjust_for_architecture()
 
     def get_label(self):
         if self.label:

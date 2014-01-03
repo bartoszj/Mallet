@@ -48,8 +48,6 @@ class UIProgressView_SynthProvider(UIView.UIView_SynthProvider):
     # UIImage *_progressImage                                               172 = 0xac / 4          226 = 0x150 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # self.as_super = super(UIProgressView_SynthProvider, self)
-        # self.as_super.__init__(value_obj, sys_params, internal_dict)
         super(UIProgressView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         self.progress = None
@@ -59,9 +57,6 @@ class UIProgressView_SynthProvider(UIView.UIView_SynthProvider):
     def update(self):
         self.progress = None
         super(UIProgressView_SynthProvider, self).update()
-
-    def adjust_for_architecture(self):
-        super(UIProgressView_SynthProvider, self).adjust_for_architecture()
 
     def get_progress(self):
         if self.progress:

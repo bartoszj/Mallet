@@ -142,8 +142,6 @@ class UIViewController_SynthProvider(UIResponder.UIResponder_SynthProvider):
     # struct CGRect __embeddedViewFrame                                     288 = 0x120 / 16        568 = 0x238 / 32
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # self.as_super = super(UIViewController_SynthProvider, self)
-        # self.as_super.__init__(value_obj, sys_params, internal_dict)
         super(UIViewController_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         self.title = None
@@ -153,9 +151,6 @@ class UIViewController_SynthProvider(UIResponder.UIResponder_SynthProvider):
     def update(self):
         self.title = None
         super(UIViewController_SynthProvider, self).update()
-
-    def adjust_for_architecture(self):
-        super(UIViewController_SynthProvider, self).adjust_for_architecture()
 
     def get_title(self):
         if self.title:

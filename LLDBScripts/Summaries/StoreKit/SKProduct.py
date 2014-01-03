@@ -74,9 +74,6 @@ class SKProduct_SynthProvider(NSObject.NSObject_SynthProvider):
         self.price = None
         super(SKProduct_SynthProvider, self).update()
 
-    def adjust_for_architecture(self):
-        super(SKProduct_SynthProvider, self).adjust_for_architecture()
-
     # _contentVersion (self->_internal->_contentVersion)
     def get_content_version(self):
         if self.content_version:

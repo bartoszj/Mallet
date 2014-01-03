@@ -69,9 +69,6 @@ class UILabel_SynthProvider(UIView.UIView_SynthProvider):
     # CGFloat _preferredMaxLayoutWidth                                      160 = 0xa0 / 4          304 = 0x130 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # Super doesn't work :(
-        # self.as_super = super(UILabel_SynthProvider, self)
-        # self.as_super.__init__(value_obj, sys_params, internal_dict)
         super(UILabel_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         self.text = None
@@ -81,9 +78,6 @@ class UILabel_SynthProvider(UIView.UIView_SynthProvider):
     def update(self):
         self.text = None
         super(UILabel_SynthProvider, self).update()
-
-    def adjust_for_architecture(self):
-        super(UILabel_SynthProvider, self).adjust_for_architecture()
 
     def get_text(self):
         if self.text:

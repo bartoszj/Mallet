@@ -154,8 +154,6 @@ class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
     # CADoublePoint _zoomAnchorPoint                                        448 = 0x1c0 / 16        776 = 0x308 / 16
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # self.as_super = super(UIScrollView_SynthProvider, self)
-        # self.as_super.__init__(value_obj, sys_params, internal_dict)
         super(UIScrollView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         self.content_size = None
@@ -171,9 +169,6 @@ class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
         self.minimum_zoom_scale = None
         self.maximum_zoom_scale = None
         super(UIScrollView_SynthProvider, self).update()
-
-    def adjust_for_architecture(self):
-        super(UIScrollView_SynthProvider, self).adjust_for_architecture()
 
     def get_content_size(self):
         if self.content_size:
