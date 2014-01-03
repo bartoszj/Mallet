@@ -49,7 +49,7 @@ class UIControl_SynthProvider(UIView.UIView_SynthProvider):
     #     unsigned horizontalAlignment : 2;
     #     unsigned wasLastHighlightSuccessful : 1;
     #     unsigned touchHasHighlighted : 1;
-    # } _controlFlags                                                       116 = 0x74 / 3 + 1      216 = 0xd8 / 3 + 5
+    # } _controlFlags                                                       116 = 0x74 / 3 + 1      216 = 0xd8 / 3 + 1
 
     def __init__(self, value_obj, sys_params, internal_dict):
         super(UIControl_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)

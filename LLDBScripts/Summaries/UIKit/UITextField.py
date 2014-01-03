@@ -89,11 +89,11 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
     #     unsigned usesAttributedText : 1
     #     unsigned backgroundViewState : 2
     #     unsigned clearingBehavior : 2
-    # } _textFieldFlags                                                     296 = 0x128 / 3         568 = 0x238 / 3
-    # BOOL _deferringBecomeFirstResponder                                   299 = 0x12b / 1         571 = 0x23b / 1
-    # BOOL _avoidBecomeFirstResponder                                       300 = 0x12c / 1         572 = 0x23c / 1
-    # BOOL _setSelectionRangeAfterFieldEditorIsAttached                     301 = 0x12d / 1         573 = 0x23d / 1
-    # BOOL _originFromBaselineLayoutIsInvalid;                              302 = 0x12e / 1 + 1     574 = 0x23e / 1 + 1
+    # } _textFieldFlags                                                     296 = 0x128 / 3 + 1     568 = 0x238 / 3 + 1
+    # BOOL _deferringBecomeFirstResponder                                   300 = 0x12c / 1         572 = 0x23c / 1
+    # BOOL _avoidBecomeFirstResponder                                       301 = 0x12d / 1         573 = 0x23d / 1
+    # BOOL _setSelectionRangeAfterFieldEditorIsAttached                     302 = 0x12e / 1         574 = 0x23e / 1
+    # BOOL _originFromBaselineLayoutIsInvalid;                              303 = 0x12f / 1         575 = 0x23f / 1
     # NSLayoutConstraint *_baselineLayoutConstraint                         304 = 0x130 / 4         576 = 0x240 / 8
     # _UIBaselineLayoutStrut *_baselineLayoutLabel                          308 = 0x134 / 4         584 = 0x248 / 8
     # NSDictionary *_defaultTextAttributes                                  312 = 0x138 / 4         592 = 0x250 / 8

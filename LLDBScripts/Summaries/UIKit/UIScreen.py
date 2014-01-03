@@ -51,10 +51,10 @@ class UIScreen_SynthProvider(NSObject.NSObject_SynthProvider):
     #     unsigned canAccessDisplay : 1
     #     unsigned canAccessDisplayValid : 1
     #     unsigned screenUpdatesDisabled : 1
-    # } _screenFlags                                                        60 = 0x3c / 2           112 = 0x70 / 2
-    # BOOL _wantsSoftwareDimming                                            62 = 0x3e / 1 + 1       114 = 0x72 / 1 + 5
-    # UISoftwareDimmingWindow *_softwareDimmingWindow                       64 = 0x40 / 4           120 = 0x78 / 8
-    # NSInteger _lastNotifiedBacklightLevel                                 68 = 0x44 / 4           128 = 0x80 / 8
+    # } _screenFlags                                                        60 = 0x3c / 2 + 2       112 = 0x70 / 2 + 2
+    # BOOL _wantsSoftwareDimming                                            64 = 0x40 / 1 + 3       116 = 0x74 / 1 + 3
+    # UISoftwareDimmingWindow *_softwareDimmingWindow                       68 = 0x44 / 4           120 = 0x78 / 8
+    # NSInteger _lastNotifiedBacklightLevel                                 72 = 0x4c / 4           128 = 0x80 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
         super(UIScreen_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
@@ -152,8 +152,7 @@ class UIScreen_SynthProvider(NSObject.NSObject_SynthProvider):
 
 
 def UIScreen_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIScreen_SynthProvider,
-                                                   ["UIScreen"])
+    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIScreen_SynthProvider, ["UIScreen"])
 
 
 def __lldb_init_module(debugger, dict):

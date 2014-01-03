@@ -16,10 +16,12 @@ LLDB commands and summaries
 - UIKit:
     - UIAlertView
     - UIButton
+    - UIDatePicker
     - UIEdgeInsets
     - UIImageView
     - UILabel
     - UIOffset
+    - UIPickerView
     - UIProgressView
     - UIResponder
     - UIScreen

@@ -253,20 +253,6 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
 def UIAlertView_SummaryProvider(value_obj, internal_dict):
     return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIAlertView_SynthProvider)
 
-    # Class data
-    # global statistics
-    # class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    # if not class_data.is_valid():
-    #     return ""
-    # summary_helpers.update_sys_params(value_obj, class_data.sys_params)
-    # if wrapper is not None:
-    #     return wrapper.message()
-    #
-    # wrapper = UIAlertView_SynthProvider(value_obj, class_data.sys_params, internal_dict)
-    # if wrapper is not None:
-    #     return wrapper.summary()
-    # return "Summary Unavailable"
-
 
 def __lldb_init_module(debugger, dict):
     debugger.HandleCommand("type summary add -F UIAlertView.UIAlertView_SummaryProvider \

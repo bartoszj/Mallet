@@ -33,6 +33,7 @@ lldb_summaries_load_order = ["objc_runtime",
                              "UIResponder",
                              "UIView",
                              "UIControl",
+                             "UIPickerView",
 
                              "SKRequest"]
 

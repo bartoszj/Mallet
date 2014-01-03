@@ -180,6 +180,10 @@ def update_sys_params(value_obj, sys_params):
     if not sys_params.types_cache.NSURL:
         sys_params.types_cache.NSURL = value_obj.GetTarget().FindFirstType('NSURL').GetPointerType()
 
+    # NSDate
+    if not sys_params.types_cache.NSDate:
+        sys_params.types_cache.NSDate = value_obj.GetTarget().FindFirstType('NSDate').GetPointerType()
+
     # NSArray, NSSet, NSDictionary
     if not sys_params.types_cache.NSArray:
         sys_params.types_cache.NSArray = value_obj.GetTarget().FindFirstType('NSArray').GetPointerType()
