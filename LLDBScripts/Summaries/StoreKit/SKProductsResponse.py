@@ -24,7 +24,6 @@
 
 import lldb
 import summary_helpers
-import CFArray
 import NSObject
 
 
@@ -73,16 +72,6 @@ class SKProductsResponse_SynthProvider(NSObject.NSObject_SynthProvider):
                                                                          self.sys_params.types_cache.NSArray)
         return self.invalid_identifiers
 
-    # NSArray provider
-    def get_invalid_identifiers_provider(self):
-        if self.invalid_identifiers_provider:
-            self.invalid_identifiers_provider
-
-        if self.get_invalid_identifiers():
-            self.invalid_identifiers_provider = CFArray.NSArray_SynthProvider(self.get_invalid_identifiers(),
-                                                                              self.internal_dict)
-        return self.invalid_identifiers_provider
-
     # _products (self->_internal->_products)
     def get_products(self):
         if self.products:
@@ -94,19 +83,13 @@ class SKProductsResponse_SynthProvider(NSObject.NSObject_SynthProvider):
                                                               self.sys_params.types_cache.NSArray)
         return self.products
 
-    # NSArray provider
-    def get_products_provider(self):
-        if self.products_provider:
-            self.products_provider
-
-        if self.get_products():
-            self.products_provider = CFArray.NSArray_SynthProvider(self.get_products(), self.internal_dict)
-        return self.products_provider
-
     def summary(self):
-        invalid_identifiers_count = self.get_invalid_identifiers_provider().num_children()
+        invalid_identifiers = self.get_invalid_identifiers()
+        invalid_identifiers_count = invalid_identifiers.GetNumChildren()
         invalid_identifiers_summary = "{} invalid".format(invalid_identifiers_count)
-        products_count = self.get_products_provider().num_children()
+
+        products = self.get_products()
+        products_count = products.GetNumChildren()
         products_summary = "{} valid".format(products_count)
 
         summaries = []

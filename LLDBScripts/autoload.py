@@ -32,7 +32,9 @@ lldb_summaries_load_order = ["objc_runtime",
                              "NSObject",
                              "UIResponder",
                              "UIView",
-                             "UIControl"]
+                             "UIControl",
+
+                             "SKRequest"]
 
 
 def scripts_in_directory(path):

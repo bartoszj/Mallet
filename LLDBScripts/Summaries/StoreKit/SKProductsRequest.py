@@ -25,7 +25,6 @@
 import lldb
 import summary_helpers
 import SKRequest
-import NSSet
 
 
 class SKProductsRequest_SynthProvider(SKRequest.SKRequest_SynthProvider):
@@ -72,23 +71,14 @@ class SKProductsRequest_SynthProvider(SKRequest.SKRequest_SynthProvider):
                                                                                           self.sys_params.types_cache.NSSet)
         return self.product_identifiers
 
-    # NSSet provider
-    def get_product_identifiers_provider(self):
-        if self.product_identifiers_provider:
-            return self.product_identifiers_provider
-
-        if self.get_product_identifiers():
-            self.product_identifiers_provider = NSSet.GetSummary_Impl(self.get_product_identifiers())
-        return self.product_identifiers_provider
-
     def summary(self):
-        count = 0
-        if self.get_product_identifiers_provider():
-            count = self.get_product_identifiers_provider().count
-        if count == 1:
-            summary = "@\"{} product\"".format(count)
+        identifiers = self.get_product_identifiers()
+        identifiers_count = identifiers.GetNumChildren()
+
+        if identifiers_count == 1:
+            summary = "@\"{} product\"".format(identifiers_count)
         else:
-            summary = "@\"{} products\"".format(count)
+            summary = "@\"{} products\"".format(identifiers_count)
         return summary
 
 
