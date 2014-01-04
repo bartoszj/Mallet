@@ -31,13 +31,11 @@ class SKProductsResponse_SynthProvider(NSObject.NSObject_SynthProvider):
     # SKProductsResponse:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
     # SKProductsResponseInternal *_internal                                   4 = 0x04 / 4            8 = 0x08 / 8
 
     # SKProductsResponseInternal:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
     # NSArray *_invalidIdentifiers                                            4 = 0x04 / 4            8 = 0x08 / 8
     # NSArray *_products                                                      8 = 0x08 / 4           16 = 0x10 / 8
 

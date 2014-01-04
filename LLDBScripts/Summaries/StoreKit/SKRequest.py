@@ -31,13 +31,11 @@ class SKRequest_SynthProvider(NSObject.NSObject_SynthProvider):
     # SKRequest:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
     # SKRequestInternal *_requestInternal                                     4 = 0x04 / 4            8 = 0x08 / 8
 
     # SKRequestInternal:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
     # NSInteger _backgroundTaskIdentifier                                     4 = 0x04 / 4            8 = 0x08 / 8
     # SKPaymentQueueClient *_client                                           8 = 0x08 / 4           16 = 0x10 / 8
     # SKXPCConnection *_connection                                           12 = 0x0c / 4           24 = 0x18 / 8

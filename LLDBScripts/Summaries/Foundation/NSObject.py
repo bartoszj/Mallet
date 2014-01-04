@@ -23,27 +23,14 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
+import SummaryBase
 
 
-class NSObject_SynthProvider(object):
+class NSObject_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
     # NSObject:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
     # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        # self.as_super = super(NSObject_SynthProvider, self)
-        # self.as_super.__init__()
-        super(NSObject_SynthProvider, self).__init__()
-
-        self.value_obj = value_obj
-        self.sys_params = sys_params
-        self.internal_dict = internal_dict
-
-        self.update()
-
-    def update(self):
-        self.adjust_for_architecture()
-
-    def adjust_for_architecture(self):
-        pass
+        super(NSObject_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)

@@ -65,11 +65,13 @@ class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
             self.sys_params.types_cache.UILabel = self.value_obj.GetTarget().FindFirstType('UILabel').GetPointerType()
 
         self.label = None
+        self.label_provider = None
 
         self.update()
 
     def update(self):
         self.label = None
+        self.label_provider = None
         super(UIButton_SynthProvider, self).update()
 
     def get_label(self):
@@ -86,9 +88,16 @@ class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
                                                         self.sys_params.types_cache.UILabel)
         return self.label
 
-    def get_label_text(self):
+    def get_label_provider(self):
+        if self.label_provider:
+            return self.label_provider
+
         label = self.get_label()
-        label_provider = UILabel.UILabel_SynthProvider(label, self.sys_params, self.internal_dict)
+        self.label_provider = UILabel.UILabel_SynthProvider(label, self.sys_params, self.internal_dict)
+        return self.label_provider
+
+    def get_label_text(self):
+        label_provider = self.get_label_provider()
         label_text = label_provider.get_text()
         return label_text
 

@@ -31,7 +31,6 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
     # UIView:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
     # CALayer *_layer                                                         4 = 0x04 / 4            8 = 0x08 / 8
     # id _gestureInfo                                                         8 = 0x08 / 4           16 = 0x10 / 8
     # NSMutableArray *_gestureRecognizers                                    12 = 0x0c / 4           24 = 0x18 / 8

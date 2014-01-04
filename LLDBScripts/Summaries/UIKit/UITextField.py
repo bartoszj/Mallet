@@ -105,13 +105,17 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
             self.sys_params.types_cache.UILabel = self.value_obj.GetTarget().FindFirstType('UILabel').GetPointerType()
 
         self.display_label = None
+        self.display_label_provider = None
         self.placeholder_label = None
+        self.placeholder_label_provider = None
 
         self.update()
 
     def update(self):
         self.display_label = None
+        self.display_label_provider = None
         self.placeholder_label = None
+        self.placeholder_label_provider = None
         super(UITextField_SynthProvider, self).update()
 
     def get_display_label(self):
@@ -123,10 +127,18 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
         else:
             offset = 0xfc
 
-        self.display_label = self.value_obj.CreateChildAtOffset("displayasdasLabel",
+        self.display_label = self.value_obj.CreateChildAtOffset("displayLabel",
                                                                 offset,
                                                                 self.sys_params.types_cache.UILabel)
         return self.display_label
+
+    def get_display_label_provider(self):
+        if self.display_label_provider:
+            return self.display_label_provider
+
+        display_label = self.get_display_label()
+        self.display_label_provider = UILabel.UILabel_SynthProvider(display_label, self.sys_params, self.internal_dict)
+        return self.display_label_provider
 
     def get_placeholder_label(self):
         if self.placeholder_label:
@@ -142,18 +154,24 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
                                                                     self.sys_params.types_cache.UILabel)
         return self.placeholder_label
 
+    def get_placeholder_label_provider(self):
+        if self.placeholder_label_provider:
+            return self.placeholder_label_provider
+
+        placeholder_label = self.get_placeholder_label()
+        self.placeholder_label_provider = UILabel.UILabel_SynthProvider(placeholder_label,
+                                                                        self.sys_params,
+                                                                        self.internal_dict)
+        return self.placeholder_label_provider
+
     def summary(self):
         # Display label doesn't work :(
-        # display_label = self.get_display_label()
-        # display_label_provider = UILabel.UILabel_SynthProvider(display_label, self.sys_params, self.internal_dict)
+        # display_label_provider = self.get_display_label_provider()
         # display_label_text = display_label_provider.get_text()
         # display_label_text_value = display_label_text.GetSummary()
         # display_label_text_summary = "text={}".format(display_label_text_value)
 
-        placeholder_label = self.get_placeholder_label()
-        placeholder_label_provider = UILabel.UILabel_SynthProvider(placeholder_label,
-                                                                   self.sys_params,
-                                                                   self.internal_dict)
+        placeholder_label_provider = self.get_placeholder_label_provider()
         placeholder_label_text = placeholder_label_provider.get_text()
         placeholder_label_text_value = placeholder_label_text.GetSummary()
         placeholder_label_text_summary = "placeholder={}".format(placeholder_label_text_value)

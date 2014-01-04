@@ -9,7 +9,9 @@ LLDB commands and summaries
 
 ## Supported types:
 - Foundation:
+    - NSMutableURLRequest
     - NSObject
+    - NSURLRequest
     - NSUUID
 - CoreFoundation:
     - CGVector

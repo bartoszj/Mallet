@@ -25,7 +25,6 @@
 import lldb
 import summary_helpers
 import UIControl
-import UIDatePickerView
 
 
 class UIDatePicker_SynthProvider(UIControl.UIControl_SynthProvider):
@@ -66,9 +65,9 @@ class UIDatePicker_SynthProvider(UIControl.UIControl_SynthProvider):
 
     def summary(self):
         picker_view = self.get_picker_view()
-        picker_view_value = picker_view.GetSummary()
+        picker_view_summary = picker_view.GetSummary()
 
-        return picker_view_value
+        return picker_view_summary
 
 
 def UIDatePicker_SummaryProvider(value_obj, internal_dict):

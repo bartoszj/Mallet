@@ -36,13 +36,11 @@ class SKPaymentTransaction_SynthProvider(NSObject.NSObject_SynthProvider):
     # SKPaymentTransaction:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
     # SKPaymentTransactionInternal *_internal                                 4 = 0x04 / 4            8 = 0x08 / 8
 
     # SKPaymentTransactionInternal:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
     # NSArray *_downloads                                                     4 = 0x04 / 4            8 = 0x08 / 8
     # NSError *_error                                                         8 = 0x08 / 4           16 = 0x08 / 8
     # SKPaymentTransaction *_originalTransaction                             12 = 0x0c / 4           24 = 0x08 / 8

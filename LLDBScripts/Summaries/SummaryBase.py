@@ -23,12 +23,27 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import NSObject
 
 
-class UIResponder_SynthProvider(NSObject.NSObject_SynthProvider):
-    # UIResponder:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+class SummaryBase_SynthProvider(object):
+    # SummaryBase:
 
     def __init__(self, value_obj, sys_params, internal_dict):
-        super(UIResponder_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+        # self.as_super = super(SummaryBase_SynthProvider, self)
+        # self.as_super.__init__()
+        super(SummaryBase_SynthProvider, self).__init__()
+
+        self.value_obj = value_obj
+        self.sys_params = sys_params
+        self.internal_dict = internal_dict
+
+        self.update()
+
+    def update(self):
+        self.adjust_for_architecture()
+
+    def adjust_for_architecture(self):
+        pass
+
+    def summary(self):
+        return None

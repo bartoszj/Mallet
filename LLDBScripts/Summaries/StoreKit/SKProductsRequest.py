@@ -31,14 +31,12 @@ class SKProductsRequest_SynthProvider(SKRequest.SKRequest_SynthProvider):
     # SKProductsRequest:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
     # SKRequestInternal *_requestInternal                                     4 = 0x04 / 4            8 = 0x08 / 8
     # SKProductsRequestInternal *_productsRequestInternal                     8 = 0x08 / 4           16 = 0x10 / 8
 
     # SKProductsRequestInternal:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                                              0 = 0x00 / 4             0 = 0x00 / 8
     # NSSet *_productIdentifiers                                             4 = 0x04 / 4             8 = 0x08 / 8
 
     def __init__(self, value_obj, sys_params, internal_dict):

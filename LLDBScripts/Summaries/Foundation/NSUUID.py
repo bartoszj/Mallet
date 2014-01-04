@@ -31,7 +31,6 @@ class NSUUID_SynthProvider(NSObject.NSObject_SynthProvider):
     # NSUUID:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
     # uuid_t/unsigned char[16]                                                4 = 0x04 / 16           8 = 0x08 / 16
 
     def __init__(self, value_obj, sys_params, internal_dict):
@@ -44,9 +43,6 @@ class NSUUID_SynthProvider(NSObject.NSObject_SynthProvider):
     def update(self):
         self.uuid_data = None
         super(NSUUID_SynthProvider, self).update()
-
-    def adjust_for_architecture(self):
-        super(NSUUID_SynthProvider, self).adjust_for_architecture()
 
     def get_uuid_data(self):
         if self.uuid_data:

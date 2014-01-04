@@ -31,7 +31,6 @@ class SKDownload_SynthProvider(NSObject.NSObject_SynthProvider):
     # SKDownload:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
     # NSString *_contentIdentifier                                            4 = 0x04 / 4            8 = 0x08 / 8
     # long long _contentLength                                                8 = 0x08 / 8           16 = 0x10 / 8
     # NSURL *_contentURL                                                     16 = 0x10 / 4           24 = 0x18 / 8

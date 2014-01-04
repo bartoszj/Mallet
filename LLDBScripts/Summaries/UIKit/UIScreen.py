@@ -31,7 +31,6 @@ class UIScreen_SynthProvider(NSObject.NSObject_SynthProvider):
     # UIScreen:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
-    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
     # id _display                                                             4 = 0x04 / 4            8 = 0x08 / 8
     # CGRect _bounds                                                          8 = 0x08 / 16          16 = 0x10 / 32
     # CGFloat _scale                                                         24 = 0x18 / 4           48 = 0x30 / 8

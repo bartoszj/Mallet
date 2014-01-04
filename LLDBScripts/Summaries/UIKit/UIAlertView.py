@@ -134,16 +134,22 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
             self.sys_params.types_cache.UILabel = self.value_obj.GetTarget().FindFirstType('UILabel').GetPointerType()
 
         self.title = None
+        self.title_provider = None
         self.subtitle = None
+        self.subtitle_provider = None
         self.body = None
+        self.body_provider = None
         self.buttons = None
 
         self.update()
 
     def update(self):
         self.title = None
+        self.title_provider = None
         self.subtitle = None
+        self.subtitle_provider = None
         self.body = None
+        self.body_provider = None
         self.buttons = None
         super(UIAlertView_SynthProvider, self).update()
 
@@ -161,6 +167,14 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
                                                         self.sys_params.types_cache.UILabel)
         return self.title
 
+    def get_title_provider(self):
+        if self.title_provider:
+            return self.title_provider
+
+        title = self.get_title()
+        self.title_provider = UILabel.UILabel_SynthProvider(title, self.sys_params, self.internal_dict)
+        return self.title_provider
+
     def get_subtitle(self):
         if self.subtitle:
             return self.subtitle
@@ -175,6 +189,14 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
                                                            self.sys_params.types_cache.UILabel)
         return self.subtitle
 
+    def get_subtitle_provider(self):
+        if self.subtitle_provider:
+            return self.subtitle_provider
+
+        subtitle = self.get_subtitle()
+        self.subtitle_provider = UILabel.UILabel_SynthProvider(subtitle, self.sys_params, self.internal_dict)
+        return self.subtitle_provider
+
     def get_body(self):
         if self.body:
             return self.body
@@ -188,6 +210,14 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
                                                        offset,
                                                        self.sys_params.types_cache.UILabel)
         return self.body
+
+    def get_body_provider(self):
+        if self.body_provider:
+            return self.body_provider
+
+        body = self.get_body()
+        self.body_provider = UILabel.UILabel_SynthProvider(body, self.sys_params, self.internal_dict)
+        return self.body_provider
 
     def get_buttons(self):
         if self.buttons:
@@ -208,20 +238,17 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
         return buttons
 
     def summary(self):
-        title = self.get_title()
-        title_provider = UILabel.UILabel_SynthProvider(title, self.sys_params, self.internal_dict)
+        title_provider = self.get_title_provider()
         title_text = title_provider.get_text()
         title_text_value = title_text.GetSummary()
         title_summary = "title={}".format(title_text_value)
 
-        subtitle = self.get_subtitle()
-        subtitle_provider = UILabel.UILabel_SynthProvider(subtitle, self.sys_params, self.internal_dict)
+        subtitle_provider = self.get_subtitle_provider()
         subtitle_text = subtitle_provider.get_text()
         subtitle_text_value = subtitle_text.GetSummary()
         subtitle_summary = "subtitle={}".format(subtitle_text_value)
 
-        body = self.get_body()
-        body_provider = UILabel.UILabel_SynthProvider(body, self.sys_params, self.internal_dict)
+        body_provider = self.get_body_provider()
         body_text = body_provider.get_text()
         body_text_value = body_text.GetSummary()
         body_summary = "message={}".format(body_text_value)

@@ -29,6 +29,8 @@ lldb_summaries_paths = ["~/Library/LLDBScripts/Summaries"]
 lldb_script_endings = [".py"]
 lldb_summaries_load_order = ["objc_runtime",
                              "summary_helpers",
+                             "SummaryBase",
+
                              "NSObject",
                              "UIResponder",
                              "UIView",
