@@ -23,6 +23,7 @@ LLDB commands and summaries
     - UIImageView
     - UILabel
     - UIOffset
+    - UIPageControl
     - UIPickerView
     - UIProgressView
     - UIResponder
