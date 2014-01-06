@@ -30,6 +30,7 @@ LLDB commands and summaries
     - UIScreen
     - UIScrollView
     - UISegmentedControl
+    - UISlider
     - UITextField (only placeholder text works)
     - UIView
     - UIViewController

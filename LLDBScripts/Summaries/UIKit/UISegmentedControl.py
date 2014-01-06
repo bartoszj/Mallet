@@ -28,7 +28,7 @@ import UIControl
 
 
 class UISegmentedControl_SynthProvider(UIControl.UIControl_SynthProvider):
-    # UIPageControl:
+    # UISegmentedControl:
     # Offset / size (+ alignment)                                           32bit:                  64bit:
     #
     # NSMutableArray *_segments                                             120 = 0x78 / 4          224 = 0xe0 / 8
