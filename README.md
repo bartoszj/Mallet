@@ -32,6 +32,7 @@ LLDB commands and summaries
     - UISegmentedControl
     - UISlider
     - UIStepper
+    - UISwitch
     - UITextField (only placeholder text works)
     - UIView
     - UIViewController
