@@ -29,7 +29,7 @@ import UIView
 
 class UIPickerView_SynthProvider(UIView.UIView_SynthProvider):
     # UIPickerView:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # NSMutableArray *_tables                                                96 = 0x60 / 4          184 = 0xb8 / 8
     # UIView *_topFrame                                                     100 = 0x64 / 4          192 = 0xc0 / 8

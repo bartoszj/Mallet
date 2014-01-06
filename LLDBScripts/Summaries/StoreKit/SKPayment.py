@@ -29,7 +29,7 @@ import NSObject
 
 class SKPayment_SynthProvider(NSObject.NSObject_SynthProvider):
     # SKPayment:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # SKPaymentInternal *_internal                                            4 = 0x04 / 4            4 = 0x08 / 8
 

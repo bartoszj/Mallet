@@ -29,12 +29,12 @@ import NSObject
 
 class SKRequest_SynthProvider(NSObject.NSObject_SynthProvider):
     # SKRequest:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # SKRequestInternal *_requestInternal                                     4 = 0x04 / 4            8 = 0x08 / 8
 
     # SKRequestInternal:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # NSInteger _backgroundTaskIdentifier                                     4 = 0x04 / 4            8 = 0x08 / 8
     # SKPaymentQueueClient *_client                                           8 = 0x08 / 4           16 = 0x10 / 8

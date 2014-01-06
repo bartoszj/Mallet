@@ -28,7 +28,7 @@ import UIView
 
 class UIControl_SynthProvider(UIView.UIView_SynthProvider):
     # UIControl:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # NSMutableArray *_targetActions                                         96 = 0x60 / 4          184 = 0xb8 / 8
     # CGPoint _previousPoint                                                100 = 0x64 / 8          192 = 0xc0 / 16

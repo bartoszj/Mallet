@@ -29,7 +29,7 @@ import UIView
 
 class UIProgressView_SynthProvider(UIView.UIView_SynthProvider):
     # UIProgressView:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # NSInteger _progressViewStyle                                          96 = 0x60 / 4           184 = 0xb8 / 8
     # float _progress                                                       100 = 0x64 / 4          192 = 0xc0 / 4 + 4

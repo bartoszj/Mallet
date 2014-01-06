@@ -31,7 +31,7 @@ import UIButton
 
 class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
     # UILabel:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # id<UIAlertViewDelegate> _delegate                                      96 = 0x60 / 4          184 = 0xb8 / 8
     # UILabel *_titleLabel                                                  100 = 0x64 / 4          192 = 0xc0 / 8

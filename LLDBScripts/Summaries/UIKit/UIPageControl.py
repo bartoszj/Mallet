@@ -29,7 +29,7 @@ import UIControl
 
 class UIPageControl_SynthProvider(UIControl.UIControl_SynthProvider):
     # UIPageControl:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # NSMutableArray *_indicators                                           120 = 0x78 / 4          224 = 0xe0 / 8
     # NSInteger _currentPage                                                124 = 0x7c / 4          232 = 0xe8 / 8

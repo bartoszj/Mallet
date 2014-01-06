@@ -29,7 +29,7 @@ import NSObject
 
 class SKDownload_SynthProvider(NSObject.NSObject_SynthProvider):
     # SKDownload:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # NSString *_contentIdentifier                                            4 = 0x04 / 4            8 = 0x08 / 8
     # long long _contentLength                                                8 = 0x08 / 8           16 = 0x10 / 8

@@ -29,7 +29,7 @@ import UIControl
 
 class UIDatePicker_SynthProvider(UIControl.UIControl_SynthProvider):
     # UIDatePicker:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # _UIDatePickerView *_pickerView                                        120 = 0x78 / 4          224 = 0xe0 / 8
     # BOOL _useCurrentDateDuringDecoding                                    124 = 0x7c / 1          232 = 0xe8 / 1

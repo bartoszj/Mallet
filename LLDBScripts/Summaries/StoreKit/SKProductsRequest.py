@@ -29,13 +29,13 @@ import SKRequest
 
 class SKProductsRequest_SynthProvider(SKRequest.SKRequest_SynthProvider):
     # SKProductsRequest:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # SKRequestInternal *_requestInternal                                     4 = 0x04 / 4            8 = 0x08 / 8
     # SKProductsRequestInternal *_productsRequestInternal                     8 = 0x08 / 4           16 = 0x10 / 8
 
     # SKProductsRequestInternal:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # NSSet *_productIdentifiers                                             4 = 0x04 / 4             8 = 0x08 / 8
 

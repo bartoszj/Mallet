@@ -29,7 +29,7 @@ import UIView
 
 class UILabel_SynthProvider(UIView.UIView_SynthProvider):
     # UILabel:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # CGSize _size                                                           96 = 0x60 / 8          184 = 0xb8 / 16
     # UIColor *_highlightedColor                                            104 = 0x68 / 4          200 = 0xc8 / 8

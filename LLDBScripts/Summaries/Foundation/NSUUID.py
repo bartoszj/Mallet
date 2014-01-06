@@ -29,7 +29,7 @@ import NSObject
 
 class NSUUID_SynthProvider(NSObject.NSObject_SynthProvider):
     # NSUUID:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # uuid_t/unsigned char[16]                                                4 = 0x04 / 16           8 = 0x08 / 16
 

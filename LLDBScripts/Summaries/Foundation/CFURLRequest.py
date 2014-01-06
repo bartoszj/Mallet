@@ -29,7 +29,7 @@ import SummaryBase
 
 class CFURLRequest_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
     # _CFURLRequest:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # unknown 16 / 32 bytes                                                   0 = 0x00 / 16           0 = 0x00 / 32
     # NSURL *url                                                             16 = 0x10 / 4           32 = 0x20 / 8

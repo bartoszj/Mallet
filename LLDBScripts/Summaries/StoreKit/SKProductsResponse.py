@@ -29,12 +29,12 @@ import NSObject
 
 class SKProductsResponse_SynthProvider(NSObject.NSObject_SynthProvider):
     # SKProductsResponse:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # SKProductsResponseInternal *_internal                                   4 = 0x04 / 4            8 = 0x08 / 8
 
     # SKProductsResponseInternal:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # NSArray *_invalidIdentifiers                                            4 = 0x04 / 4            8 = 0x08 / 8
     # NSArray *_products                                                      8 = 0x08 / 4           16 = 0x10 / 8

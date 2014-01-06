@@ -29,12 +29,12 @@ import NSObject
 
 class SKProduct_SynthProvider(NSObject.NSObject_SynthProvider):
     # SKProduct:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # SKProductInternal *_internal                                            4 = 0x04 / 4            8 = 0x08 / 8
 
     # SKProductInternal:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # NSString *_contentVersion                                               4 = 0x04 / 4            8 = 0x08 / 8
     # BOOL _downloadable                                                      8 = 0x08 / 1 + 3       16 = 0x10 / 1 + 7

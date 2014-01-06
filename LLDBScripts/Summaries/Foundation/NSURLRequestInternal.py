@@ -30,7 +30,7 @@ import CFURLRequest
 
 class NSURLRequestInternal_SynthProvider(NSObject.NSObject_SynthProvider):
     # NSURLRequestInternal:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # struct _CFURLRequest *request                                           4 = 0x04 / 4            8 = 0x08 / 4
 

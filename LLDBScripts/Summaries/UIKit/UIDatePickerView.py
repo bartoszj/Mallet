@@ -29,7 +29,7 @@ import UIPickerView
 
 class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
     # _UIDatePickerView:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # NSInteger _loadingDate                                                172 = 0xac / 4          328 = 0x148 / 8
     # NSDate *_userSuppliedDate                                             176 = 0xb0 / 4          336 = 0x150 / 8

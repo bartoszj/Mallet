@@ -30,7 +30,7 @@ import UILabel
 
 class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
     # UIButton:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # CFDictionaryRef _contentLookup                                        120 = 0x78 / 4          224 = 0xe0 / 8
     # UIEdgeInsets _contentEdgeInsets                                       124 = 0x7c / 16         232 = 0xe8 / 32

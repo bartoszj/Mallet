@@ -28,7 +28,7 @@ import NSObject
 
 class UIResponder_SynthProvider(NSObject.NSObject_SynthProvider):
     # UIResponder:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
 
     def __init__(self, value_obj, sys_params, internal_dict):
         super(UIResponder_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)

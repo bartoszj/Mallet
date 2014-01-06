@@ -34,12 +34,12 @@ SKPaymentTransactionStateRestored = 3
 
 class SKPaymentTransaction_SynthProvider(NSObject.NSObject_SynthProvider):
     # SKPaymentTransaction:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # SKPaymentTransactionInternal *_internal                                 4 = 0x04 / 4            8 = 0x08 / 8
 
     # SKPaymentTransactionInternal:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # NSArray *_downloads                                                     4 = 0x04 / 4            8 = 0x08 / 8
     # NSError *_error                                                         8 = 0x08 / 4           16 = 0x08 / 8

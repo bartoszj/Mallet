@@ -29,7 +29,7 @@ import UIResponder
 
 class UIViewController_SynthProvider(UIResponder.UIResponder_SynthProvider):
     # UIViewController:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # UIView *_view                                                           4 = 0x04 / 4            8 = 0x08 / 8
     # UITabBarItem *_tabBarItem                                               8 = 0x08 / 4           16 = 0x10 / 8

@@ -30,7 +30,7 @@ import NSURLRequestInternal
 
 class NSURLRequest_SynthProvider(NSObject.NSObject_SynthProvider):
     # NSURLRequest:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # NSURLRequestInternal *_internal                                         4 = 0x04 / 4            8 = 0x08 / 4
 

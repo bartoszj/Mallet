@@ -30,7 +30,7 @@ import UILabel
 
 class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
     # UITextField:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # _UICascadingTextStorage *_textStorage                                 120 = 0x78 / 4          224 = 0xe0 / 8
     # NSInteger _borderStyle                                                124 = 0x7c / 4          232 = 0xe8 / 8

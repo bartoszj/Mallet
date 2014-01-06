@@ -29,7 +29,7 @@ import UIControl
 
 class UISlider_SynthProvider(UIControl.UIControl_SynthProvider):
     # UISlider:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # float _value                                                          120 = 0x78 / 4          220 = 0xdc / 4
     # float _minValue                                                       124 = 0x7c / 4          224 = 0xe0 / 4

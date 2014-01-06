@@ -28,7 +28,7 @@ import SummaryBase
 
 class NSObject_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
     # NSObject:
-    # Offset / size (+ alignment)                                           32bit:                  64bit:
+    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
 
