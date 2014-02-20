@@ -9,6 +9,7 @@ LLDB commands and summaries
 
 ## Supported types:
 - Foundation:
+    - NSDateComponents
     - NSMutableURLRequest
     - NSObject
     - NSURLRequest
@@ -20,7 +21,7 @@ LLDB commands and summaries
     - UIButton
     - UIDatePicker
     - UIEdgeInsets
-    - UIImageView
+    - UIImageView (temporary disabled)
     - UILabel
     - UIOffset
     - UIPageControl
@@ -34,9 +35,9 @@ LLDB commands and summaries
     - UIStepper
     - UISwitch
     - UITextField (only placeholder text works)
-    - UIView
+    - UIView (temporary disabled)
     - UIViewController
-    - UIWindow
+    - UIWindow (temporary disabled)
 - StoreKit:
     - SKDownload (not tested!)
     - SKPayment
@@ -45,3 +46,10 @@ LLDB commands and summaries
     - SKProductsRequest
     - SKProductsResponse
     - SKRequest
+
+## Known problems:
+- Summaries doesn't work on devices with arm64 but they works on 64bit simulator.
+
+## Summaries that I've failed to implement:
+- NSIndexPath
+Data is saved in the `void *_reserved` field. I have no idea how to get values from it.

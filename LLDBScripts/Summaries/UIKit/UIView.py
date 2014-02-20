@@ -197,8 +197,8 @@ def UIView_SummaryProvider(value_obj, internal_dict):
                                                    ["UIImageView", "UIView", "UIWindow"])
 
 
-def __lldb_init_module(debugger, dict):
-    debugger.HandleCommand("type summary add -F UIView.UIView_SummaryProvider \
-                            --category UIKit \
-                            UIImageView UIView UIWindow")
-    debugger.HandleCommand("type category enable UIKit")
+# def __lldb_init_module(debugger, dict):
+    # debugger.HandleCommand("type summary add -F UIView.UIView_SummaryProvider \
+    #                         --category UIKit \
+    #                         UIImageView UIView UIWindow")
+    # debugger.HandleCommand("type category enable UIKit")
