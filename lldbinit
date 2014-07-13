@@ -20,3 +20,6 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 command script import ~/Library/LLDBScripts/autoload.py
+
+command script import ~/Downloads/OtherProjects/chisel/fblldb.py
+#command script import /usr/local/Cellar/chisel/1.0.0/libexec/fblldb.py

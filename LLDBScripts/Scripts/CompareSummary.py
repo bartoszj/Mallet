@@ -3,7 +3,7 @@
 
 # The MIT License (MIT)
 #
-# Copyright (c) 2013 Bartosz Janda
+# Copyright (c) 2014 Bartosz Janda
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
 # this software and associated documentation files (the "Software"), to deal in
@@ -23,14 +23,30 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import os
 
 
-def __lldb_init_module(debugger, dict):
+def breakpoint_compare_summary(frame, bp_loc, dict):
+    """
+    Breakpoint command used to compare object summary (from obj variable) with string (compare variable).
 
-    path = os.path.expanduser("~/Library/LLDBScripts/Scripts/LoadScripts.py")
-    command = "command script import \"{}\"".format(path)
-    debugger.HandleCommand(command)
+    This method is used in testing. It compares object summary (from obj variable) with given string
+    (compare variable). If they are not equal application execution is stopped.
+    """
+    # lldb.SBFrame.FindVariable("object")
+    obj = frame.FindVariable("object", lldb.eDynamicDontRunTarget)
+    obj_summary = obj.GetSummary()
 
-    import LoadScripts
-    LoadScripts.load_lldb_scripts(debugger)
+    compare = frame.FindVariable("compare")
+    compare_description = compare.GetObjectDescription()
+
+    options = lldb.SBExpressionOptions()
+    options.SetIgnoreBreakpoints()
+
+    if obj_summary == compare_description:
+        frame.EvaluateExpression("equal = @YES", options)
+        # Continue execution.
+        return False
+    else:
+        frame.EvaluateExpression("equal = @NO", options)
+        # Break execution.
+        return True
