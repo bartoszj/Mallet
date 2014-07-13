@@ -23,33 +23,6 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-import summary_helpers
-
-
-def breakpoint_compare_summary(frame, bp_loc, dict):
-    """
-    Breakpoint command used to compare object summary (from obj variable) with string (compare variable).
-
-    This method is used in testing. It compares object summary (from obj variable) with given string
-    (compare variable). If they are not equal application execution is stopped.
-    """
-    obj = frame.FindVariable("object", lldb.eDynamicDontRunTarget)
-    obj_summary = obj.GetSummary()
-
-    compare = frame.FindVariable("compare")
-    compare_description = compare.GetObjectDescription()
-
-    options = lldb.SBExpressionOptions()
-    options.SetIgnoreBreakpoints()
-
-    if obj_summary == compare_description:
-        frame.EvaluateExpression("equal = @YES", options)
-        # Continue execution.
-        return False
-    else:
-        frame.EvaluateExpression("equal = @NO", options)
-        # Break execution.
-        return True
 
 
 def compare_summary(debugger, command, result, internal_dict):
@@ -96,4 +69,4 @@ def compare_summary(debugger, command, result, internal_dict):
 
 
 def __lldb_init_module(debugger, internal_dict):
-    debugger.HandleCommand('command script add -f CompareSummary.compare_summary compare_summary')
+    debugger.HandleCommand('command script add -f compare_summary.compare_summary compare_summary')
