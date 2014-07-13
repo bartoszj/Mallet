@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
+import summary_helpers
 
 
 def breakpoint_compare_summary(frame, bp_loc, dict):
@@ -32,7 +33,6 @@ def breakpoint_compare_summary(frame, bp_loc, dict):
     This method is used in testing. It compares object summary (from obj variable) with given string
     (compare variable). If they are not equal application execution is stopped.
     """
-    # lldb.SBFrame.FindVariable("object")
     obj = frame.FindVariable("object", lldb.eDynamicDontRunTarget)
     obj_summary = obj.GetSummary()
 
@@ -50,3 +50,50 @@ def breakpoint_compare_summary(frame, bp_loc, dict):
         frame.EvaluateExpression("equal = @NO", options)
         # Break execution.
         return True
+
+
+def compare_summary(debugger, command, result, internal_dict):
+    args = command.split(" ")
+    if len(args) != 4:
+        result.SetError("Not enough arguments.")
+        return
+
+    target = debugger.GetSelectedTarget()
+    process = target.GetProcess()
+    thread = process.GetSelectedThread()
+    frame = thread.GetSelectedFrame()
+
+    obj_name = args[0]
+    obj_val = frame.FindVariable(obj_name, lldb.eDynamicDontRunTarget)
+    # obj_val = frame.FindVariable(obj_name, lldb.eDynamicCanRunTarget)
+    obj_summary = obj_val.GetSummary()
+
+    class_name = args[1]
+    class_val = frame.FindVariable(class_name)
+    class_type_name = class_val.GetSummary()[2:-1]
+    class_type = target.FindFirstType(class_type_name).GetPointerType()
+
+    # casted_val = obj_val.Cast(class_type)
+    casted_val = obj_val.CreateValueFromExpression("casted",
+                                                   "({} *){}".format(class_type_name, obj_name))
+    casted_summary = casted_val.GetSummary()
+    # summary = obj_summary
+    summary = casted_summary
+
+    compare_name = args[2]
+    compare_val = frame.FindVariable(compare_name)
+    compare_description = compare_val.GetObjectDescription()
+
+    result_name = args[3]
+
+    options = lldb.SBExpressionOptions()
+    options.SetIgnoreBreakpoints()
+    if summary == compare_description:
+        frame.EvaluateExpression("{} = @YES".format(result_name), options)
+    else:
+        print >> result, "object: {}".format(summary)
+        frame.EvaluateExpression("{} = @NO".format(result_name), options)
+
+
+def __lldb_init_module(debugger, internal_dict):
+    debugger.HandleCommand('command script add -f CompareSummary.compare_summary compare_summary')

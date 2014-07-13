@@ -70,12 +70,11 @@ class NSUUID_SynthProvider(NSObject.NSObject_SynthProvider):
 
 
 def NSUUID_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, NSUUID_SynthProvider,
-                                                   ["__NSConcreteUUID", "NSUUID"])
+    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, NSUUID_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):
     debugger.HandleCommand("type summary add -F NSUUID.NSUUID_SummaryProvider \
                             --category Foundation \
-                            NSUUID")
+                            NSUUID __NSConcreteUUID")
     debugger.HandleCommand("type category enable Foundation")

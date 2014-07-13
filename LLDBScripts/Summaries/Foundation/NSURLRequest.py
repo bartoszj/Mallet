@@ -38,7 +38,7 @@ class NSURLRequest_SynthProvider(NSObject.NSObject_SynthProvider):
         super(NSURLRequest_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
 
         if not self.sys_params.types_cache.NSURLRequestInternal:
-            self.sys_params.types_cache.NSURLRequestInternal = self.value_obj.GetTarget().\
+            self.sys_params.types_cache.NSURLRequestInternal = self.value_obj.GetTarget(). \
                 FindFirstType('NSURLRequestInternal').GetPointerType()
 
         self.request_internal = None
@@ -55,7 +55,15 @@ class NSURLRequest_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.request_internal:
             return self.request_internal
 
-        self.request_internal = self.value_obj.GetChildMemberWithName("_internal")
+        if self.sys_params.is_64_bit:
+            offset = 0x08
+        else:
+            offset = 0x04
+
+        self.request_internal = self.value_obj.CreateChildAtOffset("_internal",
+                                                                   offset,
+                                                                   self.sys_params.types_cache.NSURLRequestInternal)
+
         return self.request_internal
 
     def get_request_internal_provider(self):
