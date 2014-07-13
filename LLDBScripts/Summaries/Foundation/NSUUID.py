@@ -44,19 +44,20 @@ class NSUUID_SynthProvider(NSObject.NSObject_SynthProvider):
         self.uuid_data = None
         super(NSUUID_SynthProvider, self).update()
 
-    def get_uuid_data(self):
+    def get_uuid(self):
         if self.uuid_data:
             return self.uuid_data
 
         if self.sys_params.is_64_bit:
-            self.uuid_data = self.value_obj.GetPointeeData(1, 2)
+            self.uuid_data = self.value_obj.CreateChildAtOffset("uuid", 8, self.sys_params.types_cache.uuid_t)
         else:
-            self.uuid_data = self.value_obj.GetPointeeData(1, 4)
+            self.uuid_data = self.value_obj.CreateChildAtOffset("uuid", 4, self.sys_params.types_cache.uuid_t)
         return self.uuid_data
 
     def summary(self):
-        uuid_data = self.get_uuid_data()
+        uuid_data = self.get_uuid().GetData()
         uuid_data.SetByteOrder(lldb.eByteOrderBig)
+
         error = lldb.SBError()
         uuid_summary = "{:08X}-{:04X}-{:04X}-{:04X}-{:08X}{:04X}".format(uuid_data.GetUnsignedInt32(error, 0),
                                                                          uuid_data.GetUnsignedInt16(error, 4),
@@ -70,7 +71,7 @@ class NSUUID_SynthProvider(NSObject.NSObject_SynthProvider):
 
 def NSUUID_SummaryProvider(value_obj, internal_dict):
     return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, NSUUID_SynthProvider,
-                                                   ["__NSConcreteUUID"])
+                                                   ["__NSConcreteUUID", "NSUUID"])
 
 
 def __lldb_init_module(debugger, dict):

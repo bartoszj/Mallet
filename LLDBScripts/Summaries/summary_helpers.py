@@ -22,6 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+import lldb
 import lldb.formatters
 import objc_runtime
 
@@ -140,6 +141,10 @@ def update_sys_params(value_obj, sys_params):
             sys_params.types_cache.CGFloat = value_obj.GetType().GetBasicType(lldb.eBasicTypeDouble)
         else:
             sys_params.types_cache.CGFloat = value_obj.GetType().GetBasicType(lldb.eBasicTypeFloat)
+
+    # uuid_t
+    if not sys_params.types_cache.uuid_t:
+        sys_params.types_cache.uuid_t = value_obj.GetType().GetBasicType(lldb.eBasicTypeUnsignedInt128)
 
     # CGPoint, CGSize, CGRect
     if not sys_params.types_cache.CGPoint:
