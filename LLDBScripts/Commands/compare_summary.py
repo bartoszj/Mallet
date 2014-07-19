@@ -48,7 +48,7 @@ def compare_summary(debugger, command, result, internal_dict):
 
     # casted_val = obj_val.Cast(class_type)
     casted_val = obj_val.CreateValueFromExpression("casted",
-                                                   "({} *){}".format(class_type_name, obj_name))
+                                                   "({}){}".format(class_type_name, obj_name))
     casted_summary = casted_val.GetSummary()
     # summary = obj_summary
     summary = casted_summary

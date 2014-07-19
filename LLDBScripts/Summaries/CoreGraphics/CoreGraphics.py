@@ -26,7 +26,7 @@
 def __lldb_init_module(debugger, dict):
     # CGVector
     debugger.HandleCommand("type summary add -s \
-            \"(dx=${var.dx}, dy=${var.dy})\" -C false -p -r -v \
-            --category CoreFoundation CGVector")
+            \"(dx=${var.dx}, dy=${var.dy})\" -v \
+            --category CoreGraphics CGVector")
 
-    debugger.HandleCommand("type category enable CoreFoundation")
+    debugger.HandleCommand("type category enable CoreGraphics")
