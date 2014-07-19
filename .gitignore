@@ -37,3 +37,37 @@ nosetests.xml
 
 # PyCharm
 .idea
+
+# Xcode
+*.o
+*.lo
+*.la
+*.al
+#*#
+.*.rej
+*.rej
+.*~
+*~
+.#*
+.DS_Store
+*~.nib
+.xvpics
+build
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.pbxuser
+*.xcuserstate
+xcuserdata
+project.xcworkspace
+.libs
+*.so
+*.so.[0-9]*
+*.pyc
+*.pyo
+*.tmp
+*.save
+.*.swp
+Pods
