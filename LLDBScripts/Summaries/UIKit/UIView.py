@@ -160,36 +160,36 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
                                                           .format(self.stream.GetData()))
         return hidden
 
-    def summary(self):
-        # Frame
-        frame = self.get_frame()
-        # Origin
-        origin = frame.GetChildMemberWithName("origin")
-        x = float(origin.GetChildMemberWithName("x").GetValue())
-        y = float(origin.GetChildMemberWithName("y").GetValue())
-        # Size
-        size = frame.GetChildMemberWithName("size")
-        w = float(size.GetChildMemberWithName("width").GetValue())
-        h = float(size.GetChildMemberWithName("height").GetValue())
-
-        frame_summary = "frame=({:.0f}, {:.0f}; {:.0f}, {:.0f})".format(x, y, w, h)
-
-        # Alpha
-        alpha = float(self.get_alpha().GetValue())
-        alpha_summary = "alpha={:4.2}".format(alpha)
-
-        # Hidden
-        hidden = self.get_hidden().GetValueAsUnsigned()
-        hidden_summary = "hidden={}".format("YES" if hidden == 1 else "NO")
-
-        summaries = [frame_summary]
-        if alpha != 1.0:
-            summaries.append(alpha_summary)
-        if hidden != 0:
-            summaries.append(hidden_summary)
-
-        summary = ", ".join(summaries)
-        return summary
+    # def summary(self):
+    #     # Frame
+    #     frame = self.get_frame()
+    #     # Origin
+    #     origin = frame.GetChildMemberWithName("origin")
+    #     x = float(origin.GetChildMemberWithName("x").GetValue())
+    #     y = float(origin.GetChildMemberWithName("y").GetValue())
+    #     # Size
+    #     size = frame.GetChildMemberWithName("size")
+    #     w = float(size.GetChildMemberWithName("width").GetValue())
+    #     h = float(size.GetChildMemberWithName("height").GetValue())
+    #
+    #     frame_summary = "frame=({:.0f}, {:.0f}; {:.0f}, {:.0f})".format(x, y, w, h)
+    #
+    #     # Alpha
+    #     alpha = float(self.get_alpha().GetValue())
+    #     alpha_summary = "alpha={:4.2}".format(alpha)
+    #
+    #     # Hidden
+    #     hidden = self.get_hidden().GetValueAsUnsigned()
+    #     hidden_summary = "hidden={}".format("YES" if hidden == 1 else "NO")
+    #
+    #     summaries = [frame_summary]
+    #     if alpha != 1.0:
+    #         summaries.append(alpha_summary)
+    #     if hidden != 0:
+    #         summaries.append(hidden_summary)
+    #
+    #     summary = ", ".join(summaries)
+    #     return summary
 
 
 def UIView_SummaryProvider(value_obj, internal_dict):

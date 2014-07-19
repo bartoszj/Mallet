@@ -26,12 +26,12 @@
 def __lldb_init_module(debugger, dict):
     # UIEdgeInsets
     debugger.HandleCommand("type summary add -s \
-            \"(top=${var.top}, left=${var.left}, bottom=${var.bottom}, right=${var.right})\" -C false -p -r -v \
+            \"(top=${var.top}, left=${var.left}, bottom=${var.bottom}, right=${var.right})\" -v \
             --category UIKit UIEdgeInsets")
 
     # UIOffset
     debugger.HandleCommand("type summary add -s \
-            \"(horizontal=${var.horizontal}, vertical=${var.vertical})\" -C false -p -r -v \
+            \"(horizontal=${var.horizontal}, vertical=${var.vertical})\" -v \
             --category UIKit UIOffset")
 
     debugger.HandleCommand("type category enable UIKit")
