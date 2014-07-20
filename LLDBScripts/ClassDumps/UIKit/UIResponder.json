@@ -1,0 +1,22 @@
+{
+  "arm64":{
+    "className":"UIResponder",
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "armv7s":{
+    "className":"UIResponder",
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "i386":{
+    "className":"UIResponder",
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"UIResponder",
+    "superClassName":"NSObject",
+    "type":"class"
+  }
+}

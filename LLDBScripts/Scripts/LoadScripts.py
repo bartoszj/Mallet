@@ -25,10 +25,10 @@
 import lldb
 import os
 
-
-lldb_commands_paths = ["~/Library/LLDBScripts/Commands"]
-lldb_scripts_paths = ["~/Library/LLDBScripts/Scripts"]
-lldb_summaries_paths = ["~/Library/LLDBScripts/Summaries"]
+lldb_scripts_dir = "~/Library/LLDBScripts/"
+lldb_commands_paths = ["Commands"]
+lldb_scripts_paths = ["Scripts"]
+lldb_summaries_paths = ["Summaries"]
 lldb_script_extensions = [".py"]
 lldb_summaries_load_order = ["objc_runtime",
                              "summary_helpers",
@@ -89,15 +89,18 @@ def load_script(script_path, debugger):
 def load_lldb_scripts(debugger):
     scripts = []
     for directory in lldb_commands_paths:
-        scripts.extend(scripts_in_directory(directory))
+        full_path = os.path.join(lldb_scripts_dir, directory)
+        scripts.extend(scripts_in_directory(full_path))
     load_scripts(scripts, debugger)
 
     scripts = []
     for directory in lldb_scripts_paths:
-        scripts.extend(scripts_in_directory(directory))
+        full_path = os.path.join(lldb_scripts_dir, directory)
+        scripts.extend(scripts_in_directory(full_path))
     load_scripts(scripts, debugger)
 
     scripts = []
     for directory in lldb_summaries_paths:
-        scripts.extend(scripts_in_directory(directory))
+        full_path = os.path.join(lldb_scripts_dir, directory)
+        scripts.extend(scripts_in_directory(full_path))
     load_scripts(scripts, debugger, lldb_summaries_load_order)

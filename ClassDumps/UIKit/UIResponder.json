@@ -1,0 +1,3753 @@
+{
+  "i386" : {
+    "superClassName" : "NSObject",
+    "className" : "UIResponder",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)undoManager",
+        "type" : "method",
+        "name" : "undoManager",
+        "address" : 1561811
+      },
+      {
+        "declaration" : "(id)targetForAction:(SEL)arg1 withSender:(id)arg2",
+        "type" : "method",
+        "name" : "targetForAction:withSender:",
+        "address" : 1561644
+      },
+      {
+        "declaration" : "(BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2",
+        "type" : "method",
+        "name" : "canPerformAction:withSender:",
+        "address" : 1561596
+      },
+      {
+        "declaration" : "(void)_clearBecomeFirstResponderWhenCapable",
+        "type" : "method",
+        "name" : "_clearBecomeFirstResponderWhenCapable",
+        "address" : 1561591
+      },
+      {
+        "declaration" : "(id)firstResponder",
+        "type" : "method",
+        "name" : "firstResponder",
+        "address" : 1561533
+      },
+      {
+        "declaration" : "(BOOL)isFirstResponder",
+        "type" : "method",
+        "name" : "isFirstResponder",
+        "address" : 1561485
+      },
+      {
+        "declaration" : "(BOOL)canResignFirstResponder",
+        "type" : "method",
+        "name" : "canResignFirstResponder",
+        "address" : 1561475
+      },
+      {
+        "declaration" : "(BOOL)resignFirstResponder",
+        "type" : "method",
+        "name" : "resignFirstResponder",
+        "address" : 1561174
+      },
+      {
+        "declaration" : "(void)_finishResignFirstResponder",
+        "type" : "method",
+        "name" : "_finishResignFirstResponder",
+        "address" : 1560985
+      },
+      {
+        "declaration" : "(BOOL)canBecomeFirstResponder",
+        "type" : "method",
+        "name" : "canBecomeFirstResponder",
+        "address" : 1560978
+      },
+      {
+        "declaration" : "(BOOL)becomeFirstResponder",
+        "type" : "method",
+        "name" : "becomeFirstResponder",
+        "address" : 1560357
+      },
+      {
+        "declaration" : "(BOOL)_containsResponder:(id)arg1",
+        "type" : "method",
+        "name" : "_containsResponder:",
+        "address" : 1560288
+      },
+      {
+        "declaration" : "(BOOL)_containedInAbsoluteResponderChain",
+        "type" : "method",
+        "name" : "_containedInAbsoluteResponderChain",
+        "address" : 1560227
+      },
+      {
+        "declaration" : "(id)_responderForEditing",
+        "type" : "method",
+        "name" : "_responderForEditing",
+        "address" : 1560180
+      },
+      {
+        "declaration" : "(id)_editingDelegate",
+        "type" : "method",
+        "name" : "_editingDelegate",
+        "address" : 1560173
+      },
+      {
+        "declaration" : "(BOOL)_isRootForKeyResponderCycle",
+        "type" : "method",
+        "name" : "_isRootForKeyResponderCycle",
+        "address" : 1560166
+      },
+      {
+        "declaration" : "(id)_previousKeyResponder",
+        "type" : "method",
+        "name" : "_previousKeyResponder",
+        "address" : 1560159
+      },
+      {
+        "declaration" : "(id)_nextKeyResponder",
+        "type" : "method",
+        "name" : "_nextKeyResponder",
+        "address" : 1560152
+      },
+      {
+        "declaration" : "(id)nextResponder",
+        "type" : "method",
+        "name" : "nextResponder",
+        "address" : 1560145
+      },
+      {
+        "declaration" : "(void)gestureChanged:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "gestureChanged:",
+        "address" : 1560063
+      },
+      {
+        "declaration" : "(void)gestureEnded:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "gestureEnded:",
+        "address" : 1559981
+      },
+      {
+        "declaration" : "(void)gestureStarted:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "gestureStarted:",
+        "address" : 1559899
+      },
+      {
+        "declaration" : "(void)scrollWheel:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "scrollWheel:",
+        "address" : 1559817
+      },
+      {
+        "declaration" : "(void)_wheelChangedWithEvent:(id)arg1",
+        "type" : "method",
+        "name" : "_wheelChangedWithEvent:",
+        "address" : 1559735
+      },
+      {
+        "declaration" : "(void)remoteControlReceivedWithEvent:(id)arg1",
+        "type" : "method",
+        "name" : "remoteControlReceivedWithEvent:",
+        "address" : 1559653
+      },
+      {
+        "declaration" : "(void)motionCancelled:(int)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "motionCancelled:withEvent:",
+        "address" : 1559564
+      },
+      {
+        "declaration" : "(void)motionEnded:(int)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "motionEnded:withEvent:",
+        "address" : 1559475
+      },
+      {
+        "declaration" : "(void)motionBegan:(int)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "motionBegan:withEvent:",
+        "address" : 1559386
+      },
+      {
+        "declaration" : "(void)touchesCancelled:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesCancelled:withEvent:",
+        "address" : 1559351
+      },
+      {
+        "declaration" : "(void)touchesEnded:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesEnded:withEvent:",
+        "address" : 1559316
+      },
+      {
+        "declaration" : "(void)touchesMoved:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesMoved:withEvent:",
+        "address" : 1559281
+      },
+      {
+        "declaration" : "(void)touchesBegan:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesBegan:withEvent:",
+        "address" : 1558928
+      },
+      {
+        "declaration" : "(void)reloadInputViewsWithoutReset",
+        "type" : "method",
+        "name" : "reloadInputViewsWithoutReset",
+        "address" : 1562812
+      },
+      {
+        "declaration" : "(void)reloadInputViews",
+        "type" : "method",
+        "name" : "reloadInputViews",
+        "address" : 1562517
+      },
+      {
+        "declaration" : "(id)textInputContextIdentifier",
+        "type" : "method",
+        "name" : "textInputContextIdentifier",
+        "address" : 1562391
+      },
+      {
+        "declaration" : "(id)textInputMode",
+        "type" : "method",
+        "name" : "textInputMode",
+        "address" : 1562133
+      },
+      {
+        "declaration" : "(id)inputAccessoryView",
+        "type" : "method",
+        "name" : "inputAccessoryView",
+        "address" : 1562008
+      },
+      {
+        "declaration" : "(id)inputView",
+        "type" : "method",
+        "name" : "inputView",
+        "address" : 1561883
+      },
+      {
+        "declaration" : "(id)keyCommands",
+        "type" : "method",
+        "name" : "keyCommands",
+        "address" : 1563193
+      },
+      {
+        "declaration" : "(void)_didChangeToFirstResponder:(id)arg1",
+        "type" : "method",
+        "name" : "_didChangeToFirstResponder:",
+        "address" : 1567221
+      },
+      {
+        "declaration" : "(BOOL)_canChangeFirstResponder:(id)arg1 toResponder:(id)arg2",
+        "type" : "method",
+        "name" : "_canChangeFirstResponder:toResponder:",
+        "address" : 1567138
+      },
+      {
+        "declaration" : "(id)_responderSelectionImage",
+        "type" : "method",
+        "name" : "_responderSelectionImage",
+        "address" : 1566640
+      },
+      {
+        "declaration" : "(id)_responderSelectionContainerViewForResponder:(id)arg1",
+        "type" : "method",
+        "name" : "_responderSelectionContainerViewForResponder:",
+        "address" : 1566575
+      },
+      {
+        "declaration" : "(struct CGRect)_responderSelectionRectForWindow:(id)arg1",
+        "type" : "method",
+        "name" : "_responderSelectionRectForWindow:",
+        "address" : 1566535
+      },
+      {
+        "declaration" : "(id)_deepestUnambiguousResponder",
+        "type" : "method",
+        "name" : "_deepestUnambiguousResponder",
+        "address" : 1566527
+      },
+      {
+        "declaration" : "(void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_physicalButtonsCancelled:withEvent:",
+        "address" : 1566492
+      },
+      {
+        "declaration" : "(void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_physicalButtonsEnded:withEvent:",
+        "address" : 1566457
+      },
+      {
+        "declaration" : "(void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_physicalButtonsBegan:withEvent:",
+        "address" : 1566422
+      },
+      {
+        "declaration" : "(void)_moveWithEvent:(id)arg1",
+        "type" : "method",
+        "name" : "_moveWithEvent:",
+        "address" : 1566340
+      },
+      {
+        "declaration" : "(id)_showServiceForText:(id)arg1 type:(int)arg2 fromRect:(struct CGRect)arg3 inView:(id)arg4",
+        "type" : "method",
+        "name" : "_showServiceForText:type:fromRect:inView:",
+        "address" : 1566239
+      },
+      {
+        "declaration" : "(BOOL)_canShowTextServices",
+        "type" : "method",
+        "name" : "_canShowTextServices",
+        "address" : 1566178
+      },
+      {
+        "declaration" : "(id)_nextViewControllerInResponderChain",
+        "type" : "method",
+        "name" : "_nextViewControllerInResponderChain",
+        "address" : 1566090
+      },
+      {
+        "declaration" : "(BOOL)_isViewController",
+        "type" : "method",
+        "name" : "_isViewController",
+        "address" : 1566083
+      },
+      {
+        "declaration" : "(void)_completeForwardingTouches:(id)arg1 phase:(int)arg2 event:(id)arg3",
+        "type" : "method",
+        "name" : "_completeForwardingTouches:phase:event:",
+        "address" : 1566016
+      },
+      {
+        "declaration" : "(void)_completeForwardingTouches:(id)arg1 phase:(int)arg2 event:(id)arg3 index:(unsigned int)arg4",
+        "type" : "method",
+        "name" : "_completeForwardingTouches:phase:event:index:",
+        "address" : 1565440
+      },
+      {
+        "declaration" : "(BOOL)_isTransitioningFromView:(id)arg1",
+        "type" : "method",
+        "name" : "_isTransitioningFromView:",
+        "address" : 1565373
+      },
+      {
+        "declaration" : "(void)_windowResignedKey",
+        "type" : "method",
+        "name" : "_windowResignedKey",
+        "address" : 1565368
+      },
+      {
+        "declaration" : "(void)_windowBecameKey",
+        "type" : "method",
+        "name" : "_windowBecameKey",
+        "address" : 1565250
+      },
+      {
+        "declaration" : "(id)nextFirstResponder",
+        "type" : "method",
+        "name" : "nextFirstResponder",
+        "address" : 1565124
+      },
+      {
+        "declaration" : "(void)_handleKeyUIEvent:(id)arg1",
+        "type" : "method",
+        "name" : "_handleKeyUIEvent:",
+        "address" : 1565059
+      },
+      {
+        "declaration" : "(void)_handleKeyEvent:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "_handleKeyEvent:",
+        "address" : 1564994
+      },
+      {
+        "declaration" : "(BOOL)_isPinningInputViews",
+        "type" : "method",
+        "name" : "_isPinningInputViews",
+        "address" : 1564923
+      },
+      {
+        "declaration" : "(void)_endPinningInputViews",
+        "type" : "method",
+        "name" : "_endPinningInputViews",
+        "address" : 1564855
+      },
+      {
+        "declaration" : "(void)_beginPinningInputViews",
+        "type" : "method",
+        "name" : "_beginPinningInputViews",
+        "address" : 1564787
+      },
+      {
+        "declaration" : "(void)_becomeFirstResponderAndMakeVisible",
+        "type" : "method",
+        "name" : "_becomeFirstResponderAndMakeVisible",
+        "address" : 1564749
+      },
+      {
+        "declaration" : "(BOOL)_canBecomeFirstResponder",
+        "type" : "method",
+        "name" : "_canBecomeFirstResponder",
+        "address" : 1564708
+      },
+      {
+        "declaration" : "(void)_resignFirstResponder",
+        "type" : "method",
+        "name" : "_resignFirstResponder",
+        "address" : 1564662
+      },
+      {
+        "declaration" : "(void)_becomeFirstResponder",
+        "type" : "method",
+        "name" : "_becomeFirstResponder",
+        "address" : 1564620
+      },
+      {
+        "declaration" : "(BOOL)_resignIfContainsFirstResponder",
+        "type" : "method",
+        "name" : "_resignIfContainsFirstResponder",
+        "address" : 1564400
+      },
+      {
+        "declaration" : "(id)_responderWindow",
+        "type" : "method",
+        "name" : "_responderWindow",
+        "address" : 1564342
+      },
+      {
+        "declaration" : "(id)_keyboardResponder",
+        "type" : "method",
+        "name" : "_keyboardResponder",
+        "address" : 1564334
+      },
+      {
+        "declaration" : "(BOOL)_requiresKeyboardResetOnReload",
+        "type" : "method",
+        "name" : "_requiresKeyboardResetOnReload",
+        "address" : 1564327
+      },
+      {
+        "declaration" : "(BOOL)_requiresKeyboardWindowWhenFirstResponder",
+        "type" : "method",
+        "name" : "_requiresKeyboardWindowWhenFirstResponder",
+        "address" : 1564286
+      },
+      {
+        "declaration" : "(BOOL)_requiresKeyboardWhenFirstResponder",
+        "type" : "method",
+        "name" : "_requiresKeyboardWhenFirstResponder",
+        "address" : 1564155
+      },
+      {
+        "declaration" : "(id)_keyCommandForEvent:(id)arg1",
+        "type" : "method",
+        "name" : "_keyCommandForEvent:",
+        "address" : 1563563
+      },
+      {
+        "declaration" : "(id)_keyCommands",
+        "type" : "method",
+        "name" : "_keyCommands",
+        "address" : 1563525
+      },
+      {
+        "declaration" : "(void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchEnded:withEvent:",
+        "address" : 1563436
+      },
+      {
+        "declaration" : "(void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchMoved:withEvent:",
+        "address" : 1563347
+      },
+      {
+        "declaration" : "(void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchBegan:withEvent:",
+        "address" : 1563258
+      },
+      {
+        "declaration" : "(id)_window",
+        "type" : "method",
+        "name" : "_window",
+        "address" : 1563200
+      },
+      {
+        "declaration" : "(BOOL)_supportsBecomeFirstResponderWhenPossible",
+        "type" : "method",
+        "name" : "_supportsBecomeFirstResponderWhenPossible",
+        "address" : 1567431
+      },
+      {
+        "declaration" : "(BOOL)_canBecomeFirstResponderWhenPossible",
+        "type" : "method",
+        "name" : "_canBecomeFirstResponderWhenPossible",
+        "address" : 1567390
+      },
+      {
+        "declaration" : "(BOOL)_becomeFirstResponderWhenPossible",
+        "type" : "method",
+        "name" : "_becomeFirstResponderWhenPossible",
+        "address" : 1567383
+      },
+      {
+        "declaration" : "(id)_responderForBecomeFirstResponder",
+        "type" : "method",
+        "name" : "_responderForBecomeFirstResponder",
+        "address" : 1567375
+      },
+      {
+        "declaration" : "(id)_firstResponder",
+        "type" : "method",
+        "name" : "_firstResponder",
+        "address" : 1567317
+      },
+      {
+        "declaration" : "(void)_setFirstResponder:(id)arg1",
+        "type" : "method",
+        "name" : "_setFirstResponder:",
+        "address" : 1567226
+      },
+      {
+        "declaration" : "(id)_selectableText",
+        "type" : "method",
+        "name" : "_selectableText",
+        "address" : 4558980
+      },
+      {
+        "declaration" : "(id)_textSelectingContainer",
+        "type" : "method",
+        "name" : "_textSelectingContainer",
+        "address" : 4558972
+      },
+      {
+        "declaration" : "(struct CGRect)_lastRectForRange:(id)arg1",
+        "type" : "method",
+        "name" : "_lastRectForRange:",
+        "address" : 4558611
+      },
+      {
+        "declaration" : "(int)selectionAffinity",
+        "type" : "method",
+        "name" : "selectionAffinity",
+        "address" : 4558604
+      },
+      {
+        "declaration" : "(void)_phraseBoundaryGesture:(id)arg1",
+        "type" : "method",
+        "name" : "_phraseBoundaryGesture:",
+        "address" : 4556802
+      },
+      {
+        "declaration" : "(id)_newPhraseBoundaryGestureRecognizer",
+        "type" : "method",
+        "name" : "_newPhraseBoundaryGestureRecognizer",
+        "address" : 4556528
+      },
+      {
+        "declaration" : "(void)_unmarkText",
+        "type" : "method",
+        "name" : "_unmarkText",
+        "address" : 4556422
+      },
+      {
+        "declaration" : "(void)_setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2",
+        "type" : "method",
+        "name" : "_setMarkedText:selectedRange:",
+        "address" : 4556064
+      },
+      {
+        "declaration" : "(void)_setGestureRecognizers",
+        "type" : "method",
+        "name" : "_setGestureRecognizers",
+        "address" : 4555330
+      },
+      {
+        "declaration" : "(int)_selectionAffinity",
+        "type" : "method",
+        "name" : "_selectionAffinity",
+        "address" : 4555029
+      },
+      {
+        "declaration" : "(void)_setSelectedTextRange:(id)arg1 withAffinityDownstream:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_setSelectedTextRange:withAffinityDownstream:",
+        "address" : 4554903
+      },
+      {
+        "declaration" : "(id)_positionFromPosition:(id)arg1 inDirection:(int)arg2 offset:(int)arg3 withAffinityDownstream:(BOOL)arg4",
+        "type" : "method",
+        "name" : "_positionFromPosition:inDirection:offset:withAffinityDownstream:",
+        "address" : 4554824
+      },
+      {
+        "declaration" : "(id)_moveRight:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveRight:withHistory:",
+        "address" : 4554529
+      },
+      {
+        "declaration" : "(id)_moveLeft:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveLeft:withHistory:",
+        "address" : 4554234
+      },
+      {
+        "declaration" : "(id)_moveDown:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveDown:withHistory:",
+        "address" : 4553632
+      },
+      {
+        "declaration" : "(id)_moveUp:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveUp:withHistory:",
+        "address" : 4553030
+      },
+      {
+        "declaration" : "(id)_moveToEndOfDocument:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToEndOfDocument:withHistory:",
+        "address" : 4552704
+      },
+      {
+        "declaration" : "(id)_moveToStartOfDocument:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToStartOfDocument:withHistory:",
+        "address" : 4552484
+      },
+      {
+        "declaration" : "(id)_moveToEndOfParagraph:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToEndOfParagraph:withHistory:",
+        "address" : 4551796
+      },
+      {
+        "declaration" : "(id)_moveToStartOfParagraph:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToStartOfParagraph:withHistory:",
+        "address" : 4551108
+      },
+      {
+        "declaration" : "(id)_moveToEndOfLine:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToEndOfLine:withHistory:",
+        "address" : 4550610
+      },
+      {
+        "declaration" : "(id)_moveToStartOfLine:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToStartOfLine:withHistory:",
+        "address" : 4550112
+      },
+      {
+        "declaration" : "(id)_moveToEndOfWord:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToEndOfWord:withHistory:",
+        "address" : 4549649
+      },
+      {
+        "declaration" : "(id)_moveToStartOfWord:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToStartOfWord:withHistory:",
+        "address" : 4548762
+      },
+      {
+        "declaration" : "(id)_setHistory:(id)arg1 withExtending:(BOOL)arg2 withAnchor:(int)arg3 withAffinityDownstream:(BOOL)arg4",
+        "type" : "method",
+        "name" : "_setHistory:withExtending:withAnchor:withAffinityDownstream:",
+        "address" : 4548243
+      },
+      {
+        "declaration" : "(id)_setSelectionRangeWithHistory:(id)arg1",
+        "type" : "method",
+        "name" : "_setSelectionRangeWithHistory:",
+        "address" : 4547497
+      },
+      {
+        "declaration" : "(void)_updateSelectionWithTextRange:(id)arg1 withAffinityDownstream:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_updateSelectionWithTextRange:withAffinityDownstream:",
+        "address" : 4547424
+      },
+      {
+        "declaration" : "(id)_fontForCaretSelection",
+        "type" : "method",
+        "name" : "_fontForCaretSelection",
+        "address" : 4547196
+      },
+      {
+        "declaration" : "(id)_textColorForCaretSelection",
+        "type" : "method",
+        "name" : "_textColorForCaretSelection",
+        "address" : 4546968
+      },
+      {
+        "declaration" : "(id)_clampedpositionFromPosition:(id)arg1 offset:(int)arg2",
+        "type" : "method",
+        "name" : "_clampedpositionFromPosition:offset:",
+        "address" : 4546836
+      },
+      {
+        "declaration" : "(id)_findPleasingWordBoundaryFromPosition:(id)arg1",
+        "type" : "method",
+        "name" : "_findPleasingWordBoundaryFromPosition:",
+        "address" : 4546417
+      },
+      {
+        "declaration" : "(id)_fullRange",
+        "type" : "method",
+        "name" : "_fullRange",
+        "address" : 4546307
+      },
+      {
+        "declaration" : "(id)_rangeOfParagraphEnclosingPosition:(id)arg1",
+        "type" : "method",
+        "name" : "_rangeOfParagraphEnclosingPosition:",
+        "address" : 4546208
+      },
+      {
+        "declaration" : "(id)_rangeOfLineEnclosingPosition:(id)arg1",
+        "type" : "method",
+        "name" : "_rangeOfLineEnclosingPosition:",
+        "address" : 4546109
+      },
+      {
+        "declaration" : "(id)_rangeOfEnclosingWord:(id)arg1",
+        "type" : "method",
+        "name" : "_rangeOfEnclosingWord:",
+        "address" : 4545953
+      },
+      {
+        "declaration" : "(id)_rangeOfText:(id)arg1 endingAtPosition:(id)arg2",
+        "type" : "method",
+        "name" : "_rangeOfText:endingAtPosition:",
+        "address" : 4545251
+      },
+      {
+        "declaration" : "(void)_scrollRectToVisible:(struct CGRect)arg1 animated:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_scrollRectToVisible:animated:",
+        "address" : 4545246
+      },
+      {
+        "declaration" : "(void)_replaceCurrentWordWithText:(id)arg1",
+        "type" : "method",
+        "name" : "_replaceCurrentWordWithText:",
+        "address" : 4545109
+      },
+      {
+        "declaration" : "(void)_deleteForwardAndNotify:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_deleteForwardAndNotify:",
+        "address" : 4544673
+      },
+      {
+        "declaration" : "(void)_deleteBackwardAndNotify:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_deleteBackwardAndNotify:",
+        "address" : 4544615
+      },
+      {
+        "declaration" : "(void)_deleteToEndOfLine",
+        "type" : "method",
+        "name" : "_deleteToEndOfLine",
+        "address" : 4544179
+      },
+      {
+        "declaration" : "(void)_deleteToStartOfLine",
+        "type" : "method",
+        "name" : "_deleteToStartOfLine",
+        "address" : 4543743
+      },
+      {
+        "declaration" : "(void)_deleteByWord",
+        "type" : "method",
+        "name" : "_deleteByWord",
+        "address" : 4543536
+      },
+      {
+        "declaration" : "(void)_setCaretSelectionAtEndOfSelection",
+        "type" : "method",
+        "name" : "_setCaretSelectionAtEndOfSelection",
+        "address" : 4543378
+      },
+      {
+        "declaration" : "(id)_positionAtStartOfWords:(unsigned int)arg1 beforePosition:(id)arg2",
+        "type" : "method",
+        "name" : "_positionAtStartOfWords:beforePosition:",
+        "address" : 4542946
+      },
+      {
+        "declaration" : "(void)_expandSelectionToStartOfWordsBeforeCaretSelection:(int)arg1",
+        "type" : "method",
+        "name" : "_expandSelectionToStartOfWordsBeforeCaretSelection:",
+        "address" : 4542746
+      },
+      {
+        "declaration" : "(void)_expandSelectionToStartOfWordBeforeCaretSelection",
+        "type" : "method",
+        "name" : "_expandSelectionToStartOfWordBeforeCaretSelection",
+        "address" : 4542700
+      },
+      {
+        "declaration" : "(void)_expandSelectionToBackwardDeletionCluster",
+        "type" : "method",
+        "name" : "_expandSelectionToBackwardDeletionCluster",
+        "address" : 4542155
+      },
+      {
+        "declaration" : "(void)_moveCurrentSelection:(int)arg1",
+        "type" : "method",
+        "name" : "_moveCurrentSelection:",
+        "address" : 4541886
+      },
+      {
+        "declaration" : "(void)_extendCurrentSelection:(int)arg1",
+        "type" : "method",
+        "name" : "_extendCurrentSelection:",
+        "address" : 4541619
+      },
+      {
+        "declaration" : "(BOOL)_hasMarkedTextOrRangedSelection",
+        "type" : "method",
+        "name" : "_hasMarkedTextOrRangedSelection",
+        "address" : 4541487
+      },
+      {
+        "declaration" : "(BOOL)_isEmptySelection",
+        "type" : "method",
+        "name" : "_isEmptySelection",
+        "address" : 4541345
+      },
+      {
+        "declaration" : "(struct CGRect)_selectionClipRect",
+        "type" : "method",
+        "name" : "_selectionClipRect",
+        "address" : 4541305
+      },
+      {
+        "declaration" : "(BOOL)_selectionAtDocumentEnd",
+        "type" : "method",
+        "name" : "_selectionAtDocumentEnd",
+        "address" : 4541163
+      },
+      {
+        "declaration" : "(BOOL)_selectionAtDocumentStart",
+        "type" : "method",
+        "name" : "_selectionAtDocumentStart",
+        "address" : 4541021
+      },
+      {
+        "declaration" : "(BOOL)_selectionAtWordStart",
+        "type" : "method",
+        "name" : "_selectionAtWordStart",
+        "address" : 4540826
+      },
+      {
+        "declaration" : "(id)_fullText",
+        "type" : "method",
+        "name" : "_fullText",
+        "address" : 4540694
+      },
+      {
+        "declaration" : "(id)_wordContainingCaretSelection",
+        "type" : "method",
+        "name" : "_wordContainingCaretSelection",
+        "address" : 4540507
+      },
+      {
+        "declaration" : "(unsigned long)_characterInRelationToRangedSelection:(int)arg1",
+        "type" : "method",
+        "name" : "_characterInRelationToRangedSelection:",
+        "address" : 4539910
+      },
+      {
+        "declaration" : "(unsigned long)_characterInRelationToCaretSelection:(int)arg1",
+        "type" : "method",
+        "name" : "_characterInRelationToCaretSelection:",
+        "address" : 4539776
+      },
+      {
+        "declaration" : "(unsigned long)_characterBeforeCaretSelection",
+        "type" : "method",
+        "name" : "_characterBeforeCaretSelection",
+        "address" : 4539730
+      },
+      {
+        "declaration" : "(unsigned long)_characterAfterCaretSelection",
+        "type" : "method",
+        "name" : "_characterAfterCaretSelection",
+        "address" : 4539684
+      },
+      {
+        "declaration" : "(struct _NSRange)_nsrangeForTextRange:(id)arg1",
+        "type" : "method",
+        "name" : "_nsrangeForTextRange:",
+        "address" : 4539520
+      },
+      {
+        "declaration" : "(int)_indexForTextPosition:(id)arg1",
+        "type" : "method",
+        "name" : "_indexForTextPosition:",
+        "address" : 4539429
+      },
+      {
+        "declaration" : "(void)_selectAll",
+        "type" : "method",
+        "name" : "_selectAll",
+        "address" : 4539345
+      },
+      {
+        "declaration" : "(struct _NSRange)_selectedNSRange",
+        "type" : "method",
+        "name" : "_selectedNSRange",
+        "address" : 4539246
+      },
+      {
+        "declaration" : "(id)_keyInput",
+        "type" : "method",
+        "name" : "_keyInput",
+        "address" : 4539238
+      },
+      {
+        "declaration" : "(id)_proxyTextInput",
+        "type" : "method",
+        "name" : "_proxyTextInput",
+        "address" : 4539200
+      },
+      {
+        "declaration" : "(void)endSelectionChange",
+        "type" : "method",
+        "name" : "endSelectionChange",
+        "address" : 4578742
+      },
+      {
+        "declaration" : "(void)beginSelectionChange",
+        "type" : "method",
+        "name" : "beginSelectionChange",
+        "address" : 4578737
+      },
+      {
+        "declaration" : "(struct CGRect)_caretRect",
+        "type" : "method",
+        "name" : "_caretRect",
+        "address" : 4578560
+      },
+      {
+        "declaration" : "(id)_asTextSelection",
+        "type" : "method",
+        "name" : "_asTextSelection",
+        "address" : 4578552
+      },
+      {
+        "declaration" : "(BOOL)isEditing",
+        "type" : "method",
+        "name" : "isEditing",
+        "address" : 4578511
+      },
+      {
+        "declaration" : "(BOOL)isEditable",
+        "type" : "method",
+        "name" : "isEditable",
+        "address" : 4578501
+      },
+      {
+        "declaration" : "(id)interactionAssistant",
+        "type" : "method",
+        "name" : "interactionAssistant",
+        "address" : 4578494
+      },
+      {
+        "declaration" : "(id)textInputView",
+        "type" : "method",
+        "name" : "textInputView",
+        "address" : 4578436
+      },
+      {
+        "declaration" : "(void)decodeRestorableStateWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "decodeRestorableStateWithCoder:",
+        "address" : 7132783
+      },
+      {
+        "declaration" : "(void)encodeRestorableStateWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeRestorableStateWithCoder:",
+        "address" : 7132778
+      },
+      {
+        "declaration" : "(id)_restorationIdentifierPath",
+        "type" : "method",
+        "name" : "_restorationIdentifierPath",
+        "address" : 7131891
+      },
+      {
+        "declaration" : "(void)setRestorationIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "setRestorationIdentifier:",
+        "address" : 7131007
+      },
+      {
+        "declaration" : "(void)_rebuildStateRestorationIdentifierPath",
+        "type" : "method",
+        "name" : "_rebuildStateRestorationIdentifierPath",
+        "address" : 7130365
+      },
+      {
+        "declaration" : "(id)restorationIdentifier",
+        "type" : "method",
+        "name" : "restorationIdentifier",
+        "address" : 7130327
+      }
+    ],
+    "protocols" : [
+      "UITextInput_Internal",
+      "UITextInputAdditions"
+    ],
+    "properties" : [
+      {
+        "name" : "inputView",
+        "setter" : "setInputView:",
+        "getter" : "inputView",
+        "type" : "property",
+        "propertyType" : "UIView *"
+      },
+      {
+        "name" : "inputAccessoryView",
+        "setter" : "setInputAccessoryView:",
+        "getter" : "inputAccessoryView",
+        "type" : "property",
+        "propertyType" : "UIView *"
+      },
+      {
+        "name" : "textInputMode",
+        "setter" : "setTextInputMode:",
+        "getter" : "textInputMode",
+        "type" : "property",
+        "propertyType" : "UITextInputMode *"
+      },
+      {
+        "name" : "textInputContextIdentifier",
+        "setter" : "setTextInputContextIdentifier:",
+        "getter" : "textInputContextIdentifier",
+        "type" : "property",
+        "propertyType" : "NSString *"
+      },
+      {
+        "name" : "keyCommands",
+        "setter" : "setKeyCommands:",
+        "getter" : "keyCommands",
+        "type" : "property",
+        "propertyType" : "NSArray *"
+      },
+      {
+        "name" : "_editingDelegate",
+        "setter" : "set_editingDelegate:",
+        "getter" : "_editingDelegate",
+        "type" : "property",
+        "propertyType" : "UIResponder *"
+      },
+      {
+        "name" : "_responderForEditing",
+        "setter" : "set_responderForEditing:",
+        "getter" : "_responderForEditing",
+        "type" : "property",
+        "propertyType" : "UIResponder *"
+      },
+      {
+        "name" : "__content",
+        "setter" : "set__content:",
+        "getter" : "_proxyTextInput",
+        "type" : "property",
+        "propertyType" : "UIResponder<UITextInput> *"
+      },
+      {
+        "name" : "_textSelectingContainer",
+        "setter" : "set_textSelectingContainer:",
+        "getter" : "_textSelectingContainer",
+        "type" : "property",
+        "propertyType" : "UIView<UITextInputPrivate> *"
+      },
+      {
+        "name" : "editable",
+        "setter" : "setEditable:",
+        "getter" : "isEditable",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "editing",
+        "setter" : "setEditing:",
+        "getter" : "isEditing",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "caretRect",
+        "setter" : "setCaretRect:",
+        "getter" : "_caretRect",
+        "type" : "property",
+        "propertyType" : "struct CGRect"
+      },
+      {
+        "name" : "restorationIdentifier",
+        "setter" : "setRestorationIdentifier:",
+        "getter" : "restorationIdentifier",
+        "type" : "property",
+        "propertyType" : "NSString *"
+      },
+      {
+        "name" : "undoManager",
+        "setter" : "setUndoManager:",
+        "getter" : "undoManager",
+        "type" : "property",
+        "propertyType" : "NSUndoManager *"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(void)clearTextInputContextIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "clearTextInputContextIdentifier:",
+        "address" : 1562449
+      },
+      {
+        "declaration" : "(void)_finishStateRestoration",
+        "type" : "method",
+        "name" : "_finishStateRestoration",
+        "address" : 7132740
+      },
+      {
+        "declaration" : "(void)_cleanupAllStateRestorationTables",
+        "type" : "method",
+        "name" : "_cleanupAllStateRestorationTables",
+        "address" : 7132636
+      },
+      {
+        "declaration" : "(void)_prepareForSecondPassStateRestoration",
+        "type" : "method",
+        "name" : "_prepareForSecondPassStateRestoration",
+        "address" : 7132598
+      },
+      {
+        "declaration" : "(void)_cleanupStateRestorationObjectIdentifierTrackingTables",
+        "type" : "method",
+        "name" : "_cleanupStateRestorationObjectIdentifierTrackingTables",
+        "address" : 7132524
+      },
+      {
+        "declaration" : "(void)_setRestoredIdentifierPathForObject:(id)arg1 identifierPath:(id)arg2",
+        "type" : "method",
+        "name" : "_setRestoredIdentifierPathForObject:identifierPath:",
+        "address" : 7132237
+      },
+      {
+        "declaration" : "(void)_updateStateRestorationIdentifierMap",
+        "type" : "method",
+        "name" : "_updateStateRestorationIdentifierMap",
+        "address" : 7132012
+      },
+      {
+        "declaration" : "(void)_stopDeferredTrackingObjectsWithIdentifiers",
+        "type" : "method",
+        "name" : "_stopDeferredTrackingObjectsWithIdentifiers",
+        "address" : 7131994
+      },
+      {
+        "declaration" : "(void)_startDeferredTrackingObjectsWithIdentifiers",
+        "type" : "method",
+        "name" : "_startDeferredTrackingObjectsWithIdentifiers",
+        "address" : 7131976
+      },
+      {
+        "declaration" : "(id)objectWithRestorationIdentifierPath:(id)arg1",
+        "type" : "method",
+        "name" : "objectWithRestorationIdentifierPath:",
+        "address" : 7131180
+      }
+    ]
+  },
+  "x86_64" : {
+    "superClassName" : "NSObject",
+    "className" : "UIResponder",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)undoManager",
+        "type" : "method",
+        "name" : "undoManager",
+        "address" : 1344408
+      },
+      {
+        "declaration" : "(id)targetForAction:(SEL)arg1 withSender:(id)arg2",
+        "type" : "method",
+        "name" : "targetForAction:withSender:",
+        "address" : 1344261
+      },
+      {
+        "declaration" : "(_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2",
+        "type" : "method",
+        "name" : "canPerformAction:withSender:",
+        "address" : 1344242
+      },
+      {
+        "declaration" : "(void)_clearBecomeFirstResponderWhenCapable",
+        "type" : "method",
+        "name" : "_clearBecomeFirstResponderWhenCapable",
+        "address" : 1344236
+      },
+      {
+        "declaration" : "(id)firstResponder",
+        "type" : "method",
+        "name" : "firstResponder",
+        "address" : 1344190
+      },
+      {
+        "declaration" : "(_Bool)isFirstResponder",
+        "type" : "method",
+        "name" : "isFirstResponder",
+        "address" : 1344155
+      },
+      {
+        "declaration" : "(_Bool)canResignFirstResponder",
+        "type" : "method",
+        "name" : "canResignFirstResponder",
+        "address" : 1344147
+      },
+      {
+        "declaration" : "(_Bool)resignFirstResponder",
+        "type" : "method",
+        "name" : "resignFirstResponder",
+        "address" : 1343890
+      },
+      {
+        "declaration" : "(void)_finishResignFirstResponder",
+        "type" : "method",
+        "name" : "_finishResignFirstResponder",
+        "address" : 1343740
+      },
+      {
+        "declaration" : "(_Bool)canBecomeFirstResponder",
+        "type" : "method",
+        "name" : "canBecomeFirstResponder",
+        "address" : 1343732
+      },
+      {
+        "declaration" : "(_Bool)becomeFirstResponder",
+        "type" : "method",
+        "name" : "becomeFirstResponder",
+        "address" : 1343208
+      },
+      {
+        "declaration" : "(_Bool)_containsResponder:(id)arg1",
+        "type" : "method",
+        "name" : "_containsResponder:",
+        "address" : 1343145
+      },
+      {
+        "declaration" : "(_Bool)_containedInAbsoluteResponderChain",
+        "type" : "method",
+        "name" : "_containedInAbsoluteResponderChain",
+        "address" : 1343104
+      },
+      {
+        "declaration" : "(id)_responderForEditing",
+        "type" : "method",
+        "name" : "_responderForEditing",
+        "address" : 1343068
+      },
+      {
+        "declaration" : "(id)_editingDelegate",
+        "type" : "method",
+        "name" : "_editingDelegate",
+        "address" : 1343060
+      },
+      {
+        "declaration" : "(_Bool)_isRootForKeyResponderCycle",
+        "type" : "method",
+        "name" : "_isRootForKeyResponderCycle",
+        "address" : 1343052
+      },
+      {
+        "declaration" : "(id)_previousKeyResponder",
+        "type" : "method",
+        "name" : "_previousKeyResponder",
+        "address" : 1343044
+      },
+      {
+        "declaration" : "(id)_nextKeyResponder",
+        "type" : "method",
+        "name" : "_nextKeyResponder",
+        "address" : 1343036
+      },
+      {
+        "declaration" : "(id)nextResponder",
+        "type" : "method",
+        "name" : "nextResponder",
+        "address" : 1343028
+      },
+      {
+        "declaration" : "(void)gestureChanged:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "gestureChanged:",
+        "address" : 1342943
+      },
+      {
+        "declaration" : "(void)gestureEnded:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "gestureEnded:",
+        "address" : 1342858
+      },
+      {
+        "declaration" : "(void)gestureStarted:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "gestureStarted:",
+        "address" : 1342773
+      },
+      {
+        "declaration" : "(void)scrollWheel:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "scrollWheel:",
+        "address" : 1342688
+      },
+      {
+        "declaration" : "(void)_wheelChangedWithEvent:(id)arg1",
+        "type" : "method",
+        "name" : "_wheelChangedWithEvent:",
+        "address" : 1342603
+      },
+      {
+        "declaration" : "(void)remoteControlReceivedWithEvent:(id)arg1",
+        "type" : "method",
+        "name" : "remoteControlReceivedWithEvent:",
+        "address" : 1342518
+      },
+      {
+        "declaration" : "(void)motionCancelled:(long long)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "motionCancelled:withEvent:",
+        "address" : 1342430
+      },
+      {
+        "declaration" : "(void)motionEnded:(long long)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "motionEnded:withEvent:",
+        "address" : 1342342
+      },
+      {
+        "declaration" : "(void)motionBegan:(long long)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "motionBegan:withEvent:",
+        "address" : 1342254
+      },
+      {
+        "declaration" : "(void)touchesCancelled:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesCancelled:withEvent:",
+        "address" : 1342244
+      },
+      {
+        "declaration" : "(void)touchesEnded:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesEnded:withEvent:",
+        "address" : 1342234
+      },
+      {
+        "declaration" : "(void)touchesMoved:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesMoved:withEvent:",
+        "address" : 1342224
+      },
+      {
+        "declaration" : "(void)touchesBegan:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesBegan:withEvent:",
+        "address" : 1341920
+      },
+      {
+        "declaration" : "(void)reloadInputViewsWithoutReset",
+        "type" : "method",
+        "name" : "reloadInputViewsWithoutReset",
+        "address" : 1345298
+      },
+      {
+        "declaration" : "(void)reloadInputViews",
+        "type" : "method",
+        "name" : "reloadInputViews",
+        "address" : 1345032
+      },
+      {
+        "declaration" : "(id)textInputContextIdentifier",
+        "type" : "method",
+        "name" : "textInputContextIdentifier",
+        "address" : 1344928
+      },
+      {
+        "declaration" : "(id)textInputMode",
+        "type" : "method",
+        "name" : "textInputMode",
+        "address" : 1344685
+      },
+      {
+        "declaration" : "(id)inputAccessoryView",
+        "type" : "method",
+        "name" : "inputAccessoryView",
+        "address" : 1344578
+      },
+      {
+        "declaration" : "(id)inputView",
+        "type" : "method",
+        "name" : "inputView",
+        "address" : 1344471
+      },
+      {
+        "declaration" : "(id)keyCommands",
+        "type" : "method",
+        "name" : "keyCommands",
+        "address" : 1345639
+      },
+      {
+        "declaration" : "(void)_didChangeToFirstResponder:(id)arg1",
+        "type" : "method",
+        "name" : "_didChangeToFirstResponder:",
+        "address" : 1349075
+      },
+      {
+        "declaration" : "(_Bool)_canChangeFirstResponder:(id)arg1 toResponder:(id)arg2",
+        "type" : "method",
+        "name" : "_canChangeFirstResponder:toResponder:",
+        "address" : 1349011
+      },
+      {
+        "declaration" : "(id)_responderSelectionImage",
+        "type" : "method",
+        "name" : "_responderSelectionImage",
+        "address" : 1348481
+      },
+      {
+        "declaration" : "(id)_responderSelectionContainerViewForResponder:(id)arg1",
+        "type" : "method",
+        "name" : "_responderSelectionContainerViewForResponder:",
+        "address" : 1348430
+      },
+      {
+        "declaration" : "(struct CGRect)_responderSelectionRectForWindow:(id)arg1",
+        "type" : "method",
+        "name" : "_responderSelectionRectForWindow:",
+        "address" : 1348384
+      },
+      {
+        "declaration" : "(id)_deepestUnambiguousResponder",
+        "type" : "method",
+        "name" : "_deepestUnambiguousResponder",
+        "address" : 1348375
+      },
+      {
+        "declaration" : "(void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_physicalButtonsCancelled:withEvent:",
+        "address" : 1348365
+      },
+      {
+        "declaration" : "(void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_physicalButtonsEnded:withEvent:",
+        "address" : 1348355
+      },
+      {
+        "declaration" : "(void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_physicalButtonsBegan:withEvent:",
+        "address" : 1348345
+      },
+      {
+        "declaration" : "(void)_moveWithEvent:(id)arg1",
+        "type" : "method",
+        "name" : "_moveWithEvent:",
+        "address" : 1348260
+      },
+      {
+        "declaration" : "(id)_showServiceForText:(id)arg1 type:(long long)arg2 fromRect:(struct CGRect)arg3 inView:(id)arg4",
+        "type" : "method",
+        "name" : "_showServiceForText:type:fromRect:inView:",
+        "address" : 1348189
+      },
+      {
+        "declaration" : "(_Bool)_canShowTextServices",
+        "type" : "method",
+        "name" : "_canShowTextServices",
+        "address" : 1348148
+      },
+      {
+        "declaration" : "(id)_nextViewControllerInResponderChain",
+        "type" : "method",
+        "name" : "_nextViewControllerInResponderChain",
+        "address" : 1348076
+      },
+      {
+        "declaration" : "(_Bool)_isViewController",
+        "type" : "method",
+        "name" : "_isViewController",
+        "address" : 1348068
+      },
+      {
+        "declaration" : "(void)_completeForwardingTouches:(id)arg1 phase:(long long)arg2 event:(id)arg3",
+        "type" : "method",
+        "name" : "_completeForwardingTouches:phase:event:",
+        "address" : 1348047
+      },
+      {
+        "declaration" : "(void)_completeForwardingTouches:(id)arg1 phase:(long long)arg2 event:(id)arg3 index:(unsigned long long)arg4",
+        "type" : "method",
+        "name" : "_completeForwardingTouches:phase:event:index:",
+        "address" : 1347531
+      },
+      {
+        "declaration" : "(_Bool)_isTransitioningFromView:(id)arg1",
+        "type" : "method",
+        "name" : "_isTransitioningFromView:",
+        "address" : 1347483
+      },
+      {
+        "declaration" : "(void)_windowResignedKey",
+        "type" : "method",
+        "name" : "_windowResignedKey",
+        "address" : 1347477
+      },
+      {
+        "declaration" : "(void)_windowBecameKey",
+        "type" : "method",
+        "name" : "_windowBecameKey",
+        "address" : 1347360
+      },
+      {
+        "declaration" : "(id)nextFirstResponder",
+        "type" : "method",
+        "name" : "nextFirstResponder",
+        "address" : 1347226
+      },
+      {
+        "declaration" : "(void)_handleKeyUIEvent:(id)arg1",
+        "type" : "method",
+        "name" : "_handleKeyUIEvent:",
+        "address" : 1347175
+      },
+      {
+        "declaration" : "(void)_handleKeyEvent:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "_handleKeyEvent:",
+        "address" : 1347124
+      },
+      {
+        "declaration" : "(_Bool)_isPinningInputViews",
+        "type" : "method",
+        "name" : "_isPinningInputViews",
+        "address" : 1347069
+      },
+      {
+        "declaration" : "(void)_endPinningInputViews",
+        "type" : "method",
+        "name" : "_endPinningInputViews",
+        "address" : 1347011
+      },
+      {
+        "declaration" : "(void)_beginPinningInputViews",
+        "type" : "method",
+        "name" : "_beginPinningInputViews",
+        "address" : 1346953
+      },
+      {
+        "declaration" : "(void)_becomeFirstResponderAndMakeVisible",
+        "type" : "method",
+        "name" : "_becomeFirstResponderAndMakeVisible",
+        "address" : 1346935
+      },
+      {
+        "declaration" : "(_Bool)_canBecomeFirstResponder",
+        "type" : "method",
+        "name" : "_canBecomeFirstResponder",
+        "address" : 1346916
+      },
+      {
+        "declaration" : "(void)_resignFirstResponder",
+        "type" : "method",
+        "name" : "_resignFirstResponder",
+        "address" : 1346896
+      },
+      {
+        "declaration" : "(void)_becomeFirstResponder",
+        "type" : "method",
+        "name" : "_becomeFirstResponder",
+        "address" : 1346875
+      },
+      {
+        "declaration" : "(_Bool)_resignIfContainsFirstResponder",
+        "type" : "method",
+        "name" : "_resignIfContainsFirstResponder",
+        "address" : 1346684
+      },
+      {
+        "declaration" : "(id)_responderWindow",
+        "type" : "method",
+        "name" : "_responderWindow",
+        "address" : 1346638
+      },
+      {
+        "declaration" : "(id)_keyboardResponder",
+        "type" : "method",
+        "name" : "_keyboardResponder",
+        "address" : 1346629
+      },
+      {
+        "declaration" : "(_Bool)_requiresKeyboardResetOnReload",
+        "type" : "method",
+        "name" : "_requiresKeyboardResetOnReload",
+        "address" : 1346621
+      },
+      {
+        "declaration" : "(_Bool)_requiresKeyboardWindowWhenFirstResponder",
+        "type" : "method",
+        "name" : "_requiresKeyboardWindowWhenFirstResponder",
+        "address" : 1346602
+      },
+      {
+        "declaration" : "(_Bool)_requiresKeyboardWhenFirstResponder",
+        "type" : "method",
+        "name" : "_requiresKeyboardWhenFirstResponder",
+        "address" : 1346490
+      },
+      {
+        "declaration" : "(id)_keyCommandForEvent:(id)arg1",
+        "type" : "method",
+        "name" : "_keyCommandForEvent:",
+        "address" : 1345975
+      },
+      {
+        "declaration" : "(id)_keyCommands",
+        "type" : "method",
+        "name" : "_keyCommands",
+        "address" : 1345957
+      },
+      {
+        "declaration" : "(void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchEnded:withEvent:",
+        "address" : 1345869
+      },
+      {
+        "declaration" : "(void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchMoved:withEvent:",
+        "address" : 1345781
+      },
+      {
+        "declaration" : "(void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchBegan:withEvent:",
+        "address" : 1345693
+      },
+      {
+        "declaration" : "(id)_window",
+        "type" : "method",
+        "name" : "_window",
+        "address" : 1345647
+      },
+      {
+        "declaration" : "(_Bool)_supportsBecomeFirstResponderWhenPossible",
+        "type" : "method",
+        "name" : "_supportsBecomeFirstResponderWhenPossible",
+        "address" : 1349244
+      },
+      {
+        "declaration" : "(_Bool)_canBecomeFirstResponderWhenPossible",
+        "type" : "method",
+        "name" : "_canBecomeFirstResponderWhenPossible",
+        "address" : 1349225
+      },
+      {
+        "declaration" : "(_Bool)_becomeFirstResponderWhenPossible",
+        "type" : "method",
+        "name" : "_becomeFirstResponderWhenPossible",
+        "address" : 1349217
+      },
+      {
+        "declaration" : "(id)_responderForBecomeFirstResponder",
+        "type" : "method",
+        "name" : "_responderForBecomeFirstResponder",
+        "address" : 1349208
+      },
+      {
+        "declaration" : "(id)_firstResponder",
+        "type" : "method",
+        "name" : "_firstResponder",
+        "address" : 1349162
+      },
+      {
+        "declaration" : "(void)_setFirstResponder:(id)arg1",
+        "type" : "method",
+        "name" : "_setFirstResponder:",
+        "address" : 1349081
+      },
+      {
+        "declaration" : "(id)_selectableText",
+        "type" : "method",
+        "name" : "_selectableText",
+        "address" : 3995471
+      },
+      {
+        "declaration" : "(id)_textSelectingContainer",
+        "type" : "method",
+        "name" : "_textSelectingContainer",
+        "address" : 3995462
+      },
+      {
+        "declaration" : "(struct CGRect)_lastRectForRange:(id)arg1",
+        "type" : "method",
+        "name" : "_lastRectForRange:",
+        "address" : 3995183
+      },
+      {
+        "declaration" : "(long long)selectionAffinity",
+        "type" : "method",
+        "name" : "selectionAffinity",
+        "address" : 3995175
+      },
+      {
+        "declaration" : "(void)_phraseBoundaryGesture:(id)arg1",
+        "type" : "method",
+        "name" : "_phraseBoundaryGesture:",
+        "address" : 3993666
+      },
+      {
+        "declaration" : "(id)_newPhraseBoundaryGestureRecognizer",
+        "type" : "method",
+        "name" : "_newPhraseBoundaryGestureRecognizer",
+        "address" : 3993472
+      },
+      {
+        "declaration" : "(void)_unmarkText",
+        "type" : "method",
+        "name" : "_unmarkText",
+        "address" : 3993371
+      },
+      {
+        "declaration" : "(void)_setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2",
+        "type" : "method",
+        "name" : "_setMarkedText:selectedRange:",
+        "address" : 3993034
+      },
+      {
+        "declaration" : "(void)_setGestureRecognizers",
+        "type" : "method",
+        "name" : "_setGestureRecognizers",
+        "address" : 3992374
+      },
+      {
+        "declaration" : "(long long)_selectionAffinity",
+        "type" : "method",
+        "name" : "_selectionAffinity",
+        "address" : 3992134
+      },
+      {
+        "declaration" : "(void)_setSelectedTextRange:(id)arg1 withAffinityDownstream:(_Bool)arg2",
+        "type" : "method",
+        "name" : "_setSelectedTextRange:withAffinityDownstream:",
+        "address" : 3992011
+      },
+      {
+        "declaration" : "(id)_positionFromPosition:(id)arg1 inDirection:(long long)arg2 offset:(long long)arg3 withAffinityDownstream:(_Bool)arg4",
+        "type" : "method",
+        "name" : "_positionFromPosition:inDirection:offset:withAffinityDownstream:",
+        "address" : 3991940
+      },
+      {
+        "declaration" : "(id)_moveRight:(_Bool)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveRight:withHistory:",
+        "address" : 3991684
+      },
+      {
+        "declaration" : "(id)_moveLeft:(_Bool)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveLeft:withHistory:",
+        "address" : 3991428
+      },
+      {
+        "declaration" : "(id)_moveDown:(_Bool)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveDown:withHistory:",
+        "address" : 3990884
+      },
+      {
+        "declaration" : "(id)_moveUp:(_Bool)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveUp:withHistory:",
+        "address" : 3990340
+      },
+      {
+        "declaration" : "(id)_moveToEndOfDocument:(_Bool)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToEndOfDocument:withHistory:",
+        "address" : 3990070
+      },
+      {
+        "declaration" : "(id)_moveToStartOfDocument:(_Bool)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToStartOfDocument:withHistory:",
+        "address" : 3989875
+      },
+      {
+        "declaration" : "(id)_moveToEndOfParagraph:(_Bool)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToEndOfParagraph:withHistory:",
+        "address" : 3989359
+      },
+      {
+        "declaration" : "(id)_moveToStartOfParagraph:(_Bool)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToStartOfParagraph:withHistory:",
+        "address" : 3988831
+      },
+      {
+        "declaration" : "(id)_moveToEndOfLine:(_Bool)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToEndOfLine:withHistory:",
+        "address" : 3988433
+      },
+      {
+        "declaration" : "(id)_moveToStartOfLine:(_Bool)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToStartOfLine:withHistory:",
+        "address" : 3988029
+      },
+      {
+        "declaration" : "(id)_moveToEndOfWord:(_Bool)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToEndOfWord:withHistory:",
+        "address" : 3987649
+      },
+      {
+        "declaration" : "(id)_moveToStartOfWord:(_Bool)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToStartOfWord:withHistory:",
+        "address" : 3986930
+      },
+      {
+        "declaration" : "(id)_setHistory:(id)arg1 withExtending:(_Bool)arg2 withAnchor:(int)arg3 withAffinityDownstream:(_Bool)arg4",
+        "type" : "method",
+        "name" : "_setHistory:withExtending:withAnchor:withAffinityDownstream:",
+        "address" : 3986476
+      },
+      {
+        "declaration" : "(id)_setSelectionRangeWithHistory:(id)arg1",
+        "type" : "method",
+        "name" : "_setSelectionRangeWithHistory:",
+        "address" : 3985843
+      },
+      {
+        "declaration" : "(void)_updateSelectionWithTextRange:(id)arg1 withAffinityDownstream:(_Bool)arg2",
+        "type" : "method",
+        "name" : "_updateSelectionWithTextRange:withAffinityDownstream:",
+        "address" : 3985776
+      },
+      {
+        "declaration" : "(id)_fontForCaretSelection",
+        "type" : "method",
+        "name" : "_fontForCaretSelection",
+        "address" : 3985586
+      },
+      {
+        "declaration" : "(id)_textColorForCaretSelection",
+        "type" : "method",
+        "name" : "_textColorForCaretSelection",
+        "address" : 3985396
+      },
+      {
+        "declaration" : "(id)_clampedpositionFromPosition:(id)arg1 offset:(int)arg2",
+        "type" : "method",
+        "name" : "_clampedpositionFromPosition:offset:",
+        "address" : 3985272
+      },
+      {
+        "declaration" : "(id)_findPleasingWordBoundaryFromPosition:(id)arg1",
+        "type" : "method",
+        "name" : "_findPleasingWordBoundaryFromPosition:",
+        "address" : 3984950
+      },
+      {
+        "declaration" : "(id)_fullRange",
+        "type" : "method",
+        "name" : "_fullRange",
+        "address" : 3984854
+      },
+      {
+        "declaration" : "(id)_rangeOfParagraphEnclosingPosition:(id)arg1",
+        "type" : "method",
+        "name" : "_rangeOfParagraphEnclosingPosition:",
+        "address" : 3984780
+      },
+      {
+        "declaration" : "(id)_rangeOfLineEnclosingPosition:(id)arg1",
+        "type" : "method",
+        "name" : "_rangeOfLineEnclosingPosition:",
+        "address" : 3984706
+      },
+      {
+        "declaration" : "(id)_rangeOfEnclosingWord:(id)arg1",
+        "type" : "method",
+        "name" : "_rangeOfEnclosingWord:",
+        "address" : 3984566
+      },
+      {
+        "declaration" : "(id)_rangeOfText:(id)arg1 endingAtPosition:(id)arg2",
+        "type" : "method",
+        "name" : "_rangeOfText:endingAtPosition:",
+        "address" : 3983933
+      },
+      {
+        "declaration" : "(void)_scrollRectToVisible:(struct CGRect)arg1 animated:(_Bool)arg2",
+        "type" : "method",
+        "name" : "_scrollRectToVisible:animated:",
+        "address" : 3983927
+      },
+      {
+        "declaration" : "(void)_replaceCurrentWordWithText:(id)arg1",
+        "type" : "method",
+        "name" : "_replaceCurrentWordWithText:",
+        "address" : 3983804
+      },
+      {
+        "declaration" : "(void)_deleteForwardAndNotify:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_deleteForwardAndNotify:",
+        "address" : 3983476
+      },
+      {
+        "declaration" : "(void)_deleteBackwardAndNotify:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_deleteBackwardAndNotify:",
+        "address" : 3983430
+      },
+      {
+        "declaration" : "(void)_deleteToEndOfLine",
+        "type" : "method",
+        "name" : "_deleteToEndOfLine",
+        "address" : 3983099
+      },
+      {
+        "declaration" : "(void)_deleteToStartOfLine",
+        "type" : "method",
+        "name" : "_deleteToStartOfLine",
+        "address" : 3982765
+      },
+      {
+        "declaration" : "(void)_deleteByWord",
+        "type" : "method",
+        "name" : "_deleteByWord",
+        "address" : 3982594
+      },
+      {
+        "declaration" : "(void)_setCaretSelectionAtEndOfSelection",
+        "type" : "method",
+        "name" : "_setCaretSelectionAtEndOfSelection",
+        "address" : 3982449
+      },
+      {
+        "declaration" : "(id)_positionAtStartOfWords:(unsigned long long)arg1 beforePosition:(id)arg2",
+        "type" : "method",
+        "name" : "_positionAtStartOfWords:beforePosition:",
+        "address" : 3982065
+      },
+      {
+        "declaration" : "(void)_expandSelectionToStartOfWordsBeforeCaretSelection:(int)arg1",
+        "type" : "method",
+        "name" : "_expandSelectionToStartOfWordsBeforeCaretSelection:",
+        "address" : 3981886
+      },
+      {
+        "declaration" : "(void)_expandSelectionToStartOfWordBeforeCaretSelection",
+        "type" : "method",
+        "name" : "_expandSelectionToStartOfWordBeforeCaretSelection",
+        "address" : 3981863
+      },
+      {
+        "declaration" : "(void)_expandSelectionToBackwardDeletionCluster",
+        "type" : "method",
+        "name" : "_expandSelectionToBackwardDeletionCluster",
+        "address" : 3981372
+      },
+      {
+        "declaration" : "(void)_moveCurrentSelection:(int)arg1",
+        "type" : "method",
+        "name" : "_moveCurrentSelection:",
+        "address" : 3981148
+      },
+      {
+        "declaration" : "(void)_extendCurrentSelection:(int)arg1",
+        "type" : "method",
+        "name" : "_extendCurrentSelection:",
+        "address" : 3980903
+      },
+      {
+        "declaration" : "(_Bool)_hasMarkedTextOrRangedSelection",
+        "type" : "method",
+        "name" : "_hasMarkedTextOrRangedSelection",
+        "address" : 3980794
+      },
+      {
+        "declaration" : "(_Bool)_isEmptySelection",
+        "type" : "method",
+        "name" : "_isEmptySelection",
+        "address" : 3980684
+      },
+      {
+        "declaration" : "(struct CGRect)_selectionClipRect",
+        "type" : "method",
+        "name" : "_selectionClipRect",
+        "address" : 3980638
+      },
+      {
+        "declaration" : "(_Bool)_selectionAtDocumentEnd",
+        "type" : "method",
+        "name" : "_selectionAtDocumentEnd",
+        "address" : 3980523
+      },
+      {
+        "declaration" : "(_Bool)_selectionAtDocumentStart",
+        "type" : "method",
+        "name" : "_selectionAtDocumentStart",
+        "address" : 3980408
+      },
+      {
+        "declaration" : "(_Bool)_selectionAtWordStart",
+        "type" : "method",
+        "name" : "_selectionAtWordStart",
+        "address" : 3980246
+      },
+      {
+        "declaration" : "(id)_fullText",
+        "type" : "method",
+        "name" : "_fullText",
+        "address" : 3980132
+      },
+      {
+        "declaration" : "(id)_wordContainingCaretSelection",
+        "type" : "method",
+        "name" : "_wordContainingCaretSelection",
+        "address" : 3979962
+      },
+      {
+        "declaration" : "(unsigned int)_characterInRelationToRangedSelection:(int)arg1",
+        "type" : "method",
+        "name" : "_characterInRelationToRangedSelection:",
+        "address" : 3979487
+      },
+      {
+        "declaration" : "(unsigned int)_characterInRelationToCaretSelection:(int)arg1",
+        "type" : "method",
+        "name" : "_characterInRelationToCaretSelection:",
+        "address" : 3979364
+      },
+      {
+        "declaration" : "(unsigned int)_characterBeforeCaretSelection",
+        "type" : "method",
+        "name" : "_characterBeforeCaretSelection",
+        "address" : 3979341
+      },
+      {
+        "declaration" : "(unsigned int)_characterAfterCaretSelection",
+        "type" : "method",
+        "name" : "_characterAfterCaretSelection",
+        "address" : 3979321
+      },
+      {
+        "declaration" : "(struct _NSRange)_nsrangeForTextRange:(id)arg1",
+        "type" : "method",
+        "name" : "_nsrangeForTextRange:",
+        "address" : 3979177
+      },
+      {
+        "declaration" : "(int)_indexForTextPosition:(id)arg1",
+        "type" : "method",
+        "name" : "_indexForTextPosition:",
+        "address" : 3979096
+      },
+      {
+        "declaration" : "(void)_selectAll",
+        "type" : "method",
+        "name" : "_selectAll",
+        "address" : 3979030
+      },
+      {
+        "declaration" : "(struct _NSRange)_selectedNSRange",
+        "type" : "method",
+        "name" : "_selectedNSRange",
+        "address" : 3978923
+      },
+      {
+        "declaration" : "(id)_keyInput",
+        "type" : "method",
+        "name" : "_keyInput",
+        "address" : 3978914
+      },
+      {
+        "declaration" : "(id)_proxyTextInput",
+        "type" : "method",
+        "name" : "_proxyTextInput",
+        "address" : 3978896
+      },
+      {
+        "declaration" : "(void)endSelectionChange",
+        "type" : "method",
+        "name" : "endSelectionChange",
+        "address" : 4012070
+      },
+      {
+        "declaration" : "(void)beginSelectionChange",
+        "type" : "method",
+        "name" : "beginSelectionChange",
+        "address" : 4012064
+      },
+      {
+        "declaration" : "(struct CGRect)_caretRect",
+        "type" : "method",
+        "name" : "_caretRect",
+        "address" : 4011882
+      },
+      {
+        "declaration" : "(id)_asTextSelection",
+        "type" : "method",
+        "name" : "_asTextSelection",
+        "address" : 4011873
+      },
+      {
+        "declaration" : "(_Bool)isEditing",
+        "type" : "method",
+        "name" : "isEditing",
+        "address" : 4011854
+      },
+      {
+        "declaration" : "(_Bool)isEditable",
+        "type" : "method",
+        "name" : "isEditable",
+        "address" : 4011846
+      },
+      {
+        "declaration" : "(id)interactionAssistant",
+        "type" : "method",
+        "name" : "interactionAssistant",
+        "address" : 4011838
+      },
+      {
+        "declaration" : "(id)textInputView",
+        "type" : "method",
+        "name" : "textInputView",
+        "address" : 4011792
+      },
+      {
+        "declaration" : "(void)decodeRestorableStateWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "decodeRestorableStateWithCoder:",
+        "address" : 6253299
+      },
+      {
+        "declaration" : "(void)encodeRestorableStateWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeRestorableStateWithCoder:",
+        "address" : 6253293
+      },
+      {
+        "declaration" : "(id)_restorationIdentifierPath",
+        "type" : "method",
+        "name" : "_restorationIdentifierPath",
+        "address" : 6252532
+      },
+      {
+        "declaration" : "(void)setRestorationIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "setRestorationIdentifier:",
+        "address" : 6251724
+      },
+      {
+        "declaration" : "(void)_rebuildStateRestorationIdentifierPath",
+        "type" : "method",
+        "name" : "_rebuildStateRestorationIdentifierPath",
+        "address" : 6251112
+      },
+      {
+        "declaration" : "(id)restorationIdentifier",
+        "type" : "method",
+        "name" : "restorationIdentifier",
+        "address" : 6251095
+      }
+    ],
+    "protocols" : [
+      "UITextInput_Internal",
+      "UITextInputAdditions"
+    ],
+    "properties" : [
+      {
+        "propertyType" : "UIView *",
+        "getter" : "inputView",
+        "type" : "property",
+        "name" : "inputView",
+        "setter" : "setInputView:"
+      },
+      {
+        "propertyType" : "UIView *",
+        "getter" : "inputAccessoryView",
+        "type" : "property",
+        "name" : "inputAccessoryView",
+        "setter" : "setInputAccessoryView:"
+      },
+      {
+        "propertyType" : "UITextInputMode *",
+        "getter" : "textInputMode",
+        "type" : "property",
+        "name" : "textInputMode",
+        "setter" : "setTextInputMode:"
+      },
+      {
+        "propertyType" : "NSString *",
+        "getter" : "textInputContextIdentifier",
+        "type" : "property",
+        "name" : "textInputContextIdentifier",
+        "setter" : "setTextInputContextIdentifier:"
+      },
+      {
+        "propertyType" : "NSArray *",
+        "getter" : "keyCommands",
+        "type" : "property",
+        "name" : "keyCommands",
+        "setter" : "setKeyCommands:"
+      },
+      {
+        "propertyType" : "UIResponder *",
+        "getter" : "_editingDelegate",
+        "type" : "property",
+        "name" : "_editingDelegate",
+        "setter" : "set_editingDelegate:"
+      },
+      {
+        "propertyType" : "UIResponder *",
+        "getter" : "_responderForEditing",
+        "type" : "property",
+        "name" : "_responderForEditing",
+        "setter" : "set_responderForEditing:"
+      },
+      {
+        "propertyType" : "UIResponder<UITextInput> *",
+        "getter" : "_proxyTextInput",
+        "type" : "property",
+        "name" : "__content",
+        "setter" : "set__content:"
+      },
+      {
+        "propertyType" : "UIView<UITextInputPrivate> *",
+        "getter" : "_textSelectingContainer",
+        "type" : "property",
+        "name" : "_textSelectingContainer",
+        "setter" : "set_textSelectingContainer:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "isEditable",
+        "type" : "property",
+        "name" : "editable",
+        "setter" : "setEditable:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "isEditing",
+        "type" : "property",
+        "name" : "editing",
+        "setter" : "setEditing:"
+      },
+      {
+        "propertyType" : "struct CGRect",
+        "getter" : "_caretRect",
+        "type" : "property",
+        "name" : "caretRect",
+        "setter" : "setCaretRect:"
+      },
+      {
+        "propertyType" : "NSString *",
+        "getter" : "restorationIdentifier",
+        "type" : "property",
+        "name" : "restorationIdentifier",
+        "setter" : "setRestorationIdentifier:"
+      },
+      {
+        "propertyType" : "NSUndoManager *",
+        "getter" : "undoManager",
+        "type" : "property",
+        "name" : "undoManager",
+        "setter" : "setUndoManager:"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(void)clearTextInputContextIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "clearTextInputContextIdentifier:",
+        "address" : 1344974
+      },
+      {
+        "declaration" : "(void)_finishStateRestoration",
+        "type" : "method",
+        "name" : "_finishStateRestoration",
+        "address" : 6253275
+      },
+      {
+        "declaration" : "(void)_cleanupAllStateRestorationTables",
+        "type" : "method",
+        "name" : "_cleanupAllStateRestorationTables",
+        "address" : 6253192
+      },
+      {
+        "declaration" : "(void)_prepareForSecondPassStateRestoration",
+        "type" : "method",
+        "name" : "_prepareForSecondPassStateRestoration",
+        "address" : 6253174
+      },
+      {
+        "declaration" : "(void)_cleanupStateRestorationObjectIdentifierTrackingTables",
+        "type" : "method",
+        "name" : "_cleanupStateRestorationObjectIdentifierTrackingTables",
+        "address" : 6253108
+      },
+      {
+        "declaration" : "(void)_setRestoredIdentifierPathForObject:(id)arg1 identifierPath:(id)arg2",
+        "type" : "method",
+        "name" : "_setRestoredIdentifierPathForObject:identifierPath:",
+        "address" : 6252858
+      },
+      {
+        "declaration" : "(void)_updateStateRestorationIdentifierMap",
+        "type" : "method",
+        "name" : "_updateStateRestorationIdentifierMap",
+        "address" : 6252631
+      },
+      {
+        "declaration" : "(void)_stopDeferredTrackingObjectsWithIdentifiers",
+        "type" : "method",
+        "name" : "_stopDeferredTrackingObjectsWithIdentifiers",
+        "address" : 6252618
+      },
+      {
+        "declaration" : "(void)_startDeferredTrackingObjectsWithIdentifiers",
+        "type" : "method",
+        "name" : "_startDeferredTrackingObjectsWithIdentifiers",
+        "address" : 6252605
+      },
+      {
+        "declaration" : "(id)objectWithRestorationIdentifierPath:(id)arg1",
+        "type" : "method",
+        "name" : "objectWithRestorationIdentifierPath:",
+        "address" : 6251865
+      }
+    ]
+  },
+  "armv7s" : {
+    "superClassName" : "NSObject",
+    "className" : "UIResponder",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)undoManager",
+        "type" : "method",
+        "name" : "undoManager",
+        "address" : 3027233
+      },
+      {
+        "declaration" : "(id)targetForAction:(SEL)arg1 withSender:(id)arg2",
+        "type" : "method",
+        "name" : "targetForAction:withSender:",
+        "address" : 2311437
+      },
+      {
+        "declaration" : "(BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2",
+        "type" : "method",
+        "name" : "canPerformAction:withSender:",
+        "address" : 2059565
+      },
+      {
+        "declaration" : "(void)_clearBecomeFirstResponderWhenCapable",
+        "type" : "method",
+        "name" : "_clearBecomeFirstResponderWhenCapable",
+        "address" : 1078653
+      },
+      {
+        "declaration" : "(id)firstResponder",
+        "type" : "method",
+        "name" : "firstResponder",
+        "address" : 563629
+      },
+      {
+        "declaration" : "(BOOL)isFirstResponder",
+        "type" : "method",
+        "name" : "isFirstResponder",
+        "address" : 39473
+      },
+      {
+        "declaration" : "(BOOL)canResignFirstResponder",
+        "type" : "method",
+        "name" : "canResignFirstResponder",
+        "address" : 1078657
+      },
+      {
+        "declaration" : "(BOOL)resignFirstResponder",
+        "type" : "method",
+        "name" : "resignFirstResponder",
+        "address" : 716741
+      },
+      {
+        "declaration" : "(void)_finishResignFirstResponder",
+        "type" : "method",
+        "name" : "_finishResignFirstResponder",
+        "address" : 1078661
+      },
+      {
+        "declaration" : "(BOOL)canBecomeFirstResponder",
+        "type" : "method",
+        "name" : "canBecomeFirstResponder",
+        "address" : 563853
+      },
+      {
+        "declaration" : "(BOOL)becomeFirstResponder",
+        "type" : "method",
+        "name" : "becomeFirstResponder",
+        "address" : 562901
+      },
+      {
+        "declaration" : "(BOOL)_containsResponder:(id)arg1",
+        "type" : "method",
+        "name" : "_containsResponder:",
+        "address" : 802769
+      },
+      {
+        "declaration" : "(BOOL)_containedInAbsoluteResponderChain",
+        "type" : "method",
+        "name" : "_containedInAbsoluteResponderChain",
+        "address" : 740385
+      },
+      {
+        "declaration" : "(id)_responderForEditing",
+        "type" : "method",
+        "name" : "_responderForEditing",
+        "address" : 2311397
+      },
+      {
+        "declaration" : "(id)_editingDelegate",
+        "type" : "method",
+        "name" : "_editingDelegate",
+        "address" : 2311433
+      },
+      {
+        "declaration" : "(BOOL)_isRootForKeyResponderCycle",
+        "type" : "method",
+        "name" : "_isRootForKeyResponderCycle",
+        "address" : 3027229
+      },
+      {
+        "declaration" : "(id)_previousKeyResponder",
+        "type" : "method",
+        "name" : "_previousKeyResponder",
+        "address" : 3027225
+      },
+      {
+        "declaration" : "(id)_nextKeyResponder",
+        "type" : "method",
+        "name" : "_nextKeyResponder",
+        "address" : 3027221
+      },
+      {
+        "declaration" : "(id)nextResponder",
+        "type" : "method",
+        "name" : "nextResponder",
+        "address" : 204529
+      },
+      {
+        "declaration" : "(void)gestureChanged:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "gestureChanged:",
+        "address" : 3027157
+      },
+      {
+        "declaration" : "(void)gestureEnded:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "gestureEnded:",
+        "address" : 3027093
+      },
+      {
+        "declaration" : "(void)gestureStarted:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "gestureStarted:",
+        "address" : 3027029
+      },
+      {
+        "declaration" : "(void)scrollWheel:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "scrollWheel:",
+        "address" : 3026965
+      },
+      {
+        "declaration" : "(void)_wheelChangedWithEvent:(id)arg1",
+        "type" : "method",
+        "name" : "_wheelChangedWithEvent:",
+        "address" : 3026901
+      },
+      {
+        "declaration" : "(void)remoteControlReceivedWithEvent:(id)arg1",
+        "type" : "method",
+        "name" : "remoteControlReceivedWithEvent:",
+        "address" : 3026837
+      },
+      {
+        "declaration" : "(void)motionCancelled:(int)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "motionCancelled:withEvent:",
+        "address" : 3026761
+      },
+      {
+        "declaration" : "(void)motionEnded:(int)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "motionEnded:withEvent:",
+        "address" : 3026685
+      },
+      {
+        "declaration" : "(void)motionBegan:(int)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "motionBegan:withEvent:",
+        "address" : 3026609
+      },
+      {
+        "declaration" : "(void)touchesCancelled:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesCancelled:withEvent:",
+        "address" : 1647889
+      },
+      {
+        "declaration" : "(void)touchesEnded:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesEnded:withEvent:",
+        "address" : 1947561
+      },
+      {
+        "declaration" : "(void)touchesMoved:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesMoved:withEvent:",
+        "address" : 2112029
+      },
+      {
+        "declaration" : "(void)touchesBegan:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesBegan:withEvent:",
+        "address" : 1646249
+      },
+      {
+        "declaration" : "(void)reloadInputViewsWithoutReset",
+        "type" : "method",
+        "name" : "reloadInputViewsWithoutReset",
+        "address" : 3027345
+      },
+      {
+        "declaration" : "(void)reloadInputViews",
+        "type" : "method",
+        "name" : "reloadInputViews",
+        "address" : 202317
+      },
+      {
+        "declaration" : "(id)textInputContextIdentifier",
+        "type" : "method",
+        "name" : "textInputContextIdentifier",
+        "address" : 1144185
+      },
+      {
+        "declaration" : "(id)textInputMode",
+        "type" : "method",
+        "name" : "textInputMode",
+        "address" : 1144273
+      },
+      {
+        "declaration" : "(id)inputAccessoryView",
+        "type" : "method",
+        "name" : "inputAccessoryView",
+        "address" : 204325
+      },
+      {
+        "declaration" : "(id)inputView",
+        "type" : "method",
+        "name" : "inputView",
+        "address" : 801901
+      },
+      {
+        "declaration" : "(id)keyCommands",
+        "type" : "method",
+        "name" : "keyCommands",
+        "address" : 1796017
+      },
+      {
+        "declaration" : "(void)_didChangeToFirstResponder:(id)arg1",
+        "type" : "method",
+        "name" : "_didChangeToFirstResponder:",
+        "address" : 801893
+      },
+      {
+        "declaration" : "(BOOL)_canChangeFirstResponder:(id)arg1 toResponder:(id)arg2",
+        "type" : "method",
+        "name" : "_canChangeFirstResponder:toResponder:",
+        "address" : 1078133
+      },
+      {
+        "declaration" : "(id)_responderSelectionImage",
+        "type" : "method",
+        "name" : "_responderSelectionImage",
+        "address" : 3028161
+      },
+      {
+        "declaration" : "(id)_responderSelectionContainerViewForResponder:(id)arg1",
+        "type" : "method",
+        "name" : "_responderSelectionContainerViewForResponder:",
+        "address" : 3028117
+      },
+      {
+        "declaration" : "(struct CGRect)_responderSelectionRectForWindow:(id)arg1",
+        "type" : "method",
+        "name" : "_responderSelectionRectForWindow:",
+        "address" : 3028093
+      },
+      {
+        "declaration" : "(id)_deepestUnambiguousResponder",
+        "type" : "method",
+        "name" : "_deepestUnambiguousResponder",
+        "address" : 3028089
+      },
+      {
+        "declaration" : "(void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_physicalButtonsCancelled:withEvent:",
+        "address" : 3028085
+      },
+      {
+        "declaration" : "(void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_physicalButtonsEnded:withEvent:",
+        "address" : 3028081
+      },
+      {
+        "declaration" : "(void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_physicalButtonsBegan:withEvent:",
+        "address" : 3028077
+      },
+      {
+        "declaration" : "(void)_moveWithEvent:(id)arg1",
+        "type" : "method",
+        "name" : "_moveWithEvent:",
+        "address" : 3028013
+      },
+      {
+        "declaration" : "(id)_showServiceForText:(id)arg1 type:(int)arg2 fromRect:(struct CGRect)arg3 inView:(id)arg4",
+        "type" : "method",
+        "name" : "_showServiceForText:type:fromRect:inView:",
+        "address" : 3027933
+      },
+      {
+        "declaration" : "(BOOL)_canShowTextServices",
+        "type" : "method",
+        "name" : "_canShowTextServices",
+        "address" : 3027893
+      },
+      {
+        "declaration" : "(id)_nextViewControllerInResponderChain",
+        "type" : "method",
+        "name" : "_nextViewControllerInResponderChain",
+        "address" : 3027821
+      },
+      {
+        "declaration" : "(BOOL)_isViewController",
+        "type" : "method",
+        "name" : "_isViewController",
+        "address" : 1190529
+      },
+      {
+        "declaration" : "(void)_completeForwardingTouches:(id)arg1 phase:(int)arg2 event:(id)arg3",
+        "type" : "method",
+        "name" : "_completeForwardingTouches:phase:event:",
+        "address" : 271701
+      },
+      {
+        "declaration" : "(void)_completeForwardingTouches:(id)arg1 phase:(int)arg2 event:(id)arg3 index:(unsigned int)arg4",
+        "type" : "method",
+        "name" : "_completeForwardingTouches:phase:event:index:",
+        "address" : 271737
+      },
+      {
+        "declaration" : "(BOOL)_isTransitioningFromView:(id)arg1",
+        "type" : "method",
+        "name" : "_isTransitioningFromView:",
+        "address" : 870645
+      },
+      {
+        "declaration" : "(void)_windowResignedKey",
+        "type" : "method",
+        "name" : "_windowResignedKey",
+        "address" : 2335749
+      },
+      {
+        "declaration" : "(void)_windowBecameKey",
+        "type" : "method",
+        "name" : "_windowBecameKey",
+        "address" : 870533
+      },
+      {
+        "declaration" : "(id)nextFirstResponder",
+        "type" : "method",
+        "name" : "nextFirstResponder",
+        "address" : 1230833
+      },
+      {
+        "declaration" : "(void)_handleKeyUIEvent:(id)arg1",
+        "type" : "method",
+        "name" : "_handleKeyUIEvent:",
+        "address" : 1795129
+      },
+      {
+        "declaration" : "(void)_handleKeyEvent:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "_handleKeyEvent:",
+        "address" : 3027777
+      },
+      {
+        "declaration" : "(BOOL)_isPinningInputViews",
+        "type" : "method",
+        "name" : "_isPinningInputViews",
+        "address" : 3027721
+      },
+      {
+        "declaration" : "(void)_endPinningInputViews",
+        "type" : "method",
+        "name" : "_endPinningInputViews",
+        "address" : 2064541
+      },
+      {
+        "declaration" : "(void)_beginPinningInputViews",
+        "type" : "method",
+        "name" : "_beginPinningInputViews",
+        "address" : 2062217
+      },
+      {
+        "declaration" : "(void)_becomeFirstResponderAndMakeVisible",
+        "type" : "method",
+        "name" : "_becomeFirstResponderAndMakeVisible",
+        "address" : 3027705
+      },
+      {
+        "declaration" : "(BOOL)_canBecomeFirstResponder",
+        "type" : "method",
+        "name" : "_canBecomeFirstResponder",
+        "address" : 563829
+      },
+      {
+        "declaration" : "(void)_resignFirstResponder",
+        "type" : "method",
+        "name" : "_resignFirstResponder",
+        "address" : 1078937
+      },
+      {
+        "declaration" : "(void)_becomeFirstResponder",
+        "type" : "method",
+        "name" : "_becomeFirstResponder",
+        "address" : 801109
+      },
+      {
+        "declaration" : "(BOOL)_resignIfContainsFirstResponder",
+        "type" : "method",
+        "name" : "_resignIfContainsFirstResponder",
+        "address" : 1190345
+      },
+      {
+        "declaration" : "(id)_responderWindow",
+        "type" : "method",
+        "name" : "_responderWindow",
+        "address" : 39549
+      },
+      {
+        "declaration" : "(id)_keyboardResponder",
+        "type" : "method",
+        "name" : "_keyboardResponder",
+        "address" : 205501
+      },
+      {
+        "declaration" : "(BOOL)_requiresKeyboardResetOnReload",
+        "type" : "method",
+        "name" : "_requiresKeyboardResetOnReload",
+        "address" : 801897
+      },
+      {
+        "declaration" : "(BOOL)_requiresKeyboardWindowWhenFirstResponder",
+        "type" : "method",
+        "name" : "_requiresKeyboardWindowWhenFirstResponder",
+        "address" : 3027681
+      },
+      {
+        "declaration" : "(BOOL)_requiresKeyboardWhenFirstResponder",
+        "type" : "method",
+        "name" : "_requiresKeyboardWhenFirstResponder",
+        "address" : 205373
+      },
+      {
+        "declaration" : "(id)_keyCommandForEvent:(id)arg1",
+        "type" : "method",
+        "name" : "_keyCommandForEvent:",
+        "address" : 1795553
+      },
+      {
+        "declaration" : "(id)_keyCommands",
+        "type" : "method",
+        "name" : "_keyCommands",
+        "address" : 1796001
+      },
+      {
+        "declaration" : "(void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchEnded:withEvent:",
+        "address" : 271565
+      },
+      {
+        "declaration" : "(void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchMoved:withEvent:",
+        "address" : 1642613
+      },
+      {
+        "declaration" : "(void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchBegan:withEvent:",
+        "address" : 325545
+      },
+      {
+        "declaration" : "(id)_window",
+        "type" : "method",
+        "name" : "_window",
+        "address" : 3027641
+      },
+      {
+        "declaration" : "(BOOL)_supportsBecomeFirstResponderWhenPossible",
+        "type" : "method",
+        "name" : "_supportsBecomeFirstResponderWhenPossible",
+        "address" : 3028493
+      },
+      {
+        "declaration" : "(BOOL)_canBecomeFirstResponderWhenPossible",
+        "type" : "method",
+        "name" : "_canBecomeFirstResponderWhenPossible",
+        "address" : 2302561
+      },
+      {
+        "declaration" : "(BOOL)_becomeFirstResponderWhenPossible",
+        "type" : "method",
+        "name" : "_becomeFirstResponderWhenPossible",
+        "address" : 740425
+      },
+      {
+        "declaration" : "(id)_responderForBecomeFirstResponder",
+        "type" : "method",
+        "name" : "_responderForBecomeFirstResponder",
+        "address" : 1588229
+      },
+      {
+        "declaration" : "(id)_firstResponder",
+        "type" : "method",
+        "name" : "_firstResponder",
+        "address" : 563589
+      },
+      {
+        "declaration" : "(void)_setFirstResponder:(id)arg1",
+        "type" : "method",
+        "name" : "_setFirstResponder:",
+        "address" : 801129
+      },
+      {
+        "declaration" : "(id)_selectableText",
+        "type" : "method",
+        "name" : "_selectableText",
+        "address" : 322181
+      },
+      {
+        "declaration" : "(id)_textSelectingContainer",
+        "type" : "method",
+        "name" : "_textSelectingContainer",
+        "address" : 322217
+      },
+      {
+        "declaration" : "(struct CGRect)_lastRectForRange:(id)arg1",
+        "type" : "method",
+        "name" : "_lastRectForRange:",
+        "address" : 1847577
+      },
+      {
+        "declaration" : "(int)selectionAffinity",
+        "type" : "method",
+        "name" : "selectionAffinity",
+        "address" : 4415965
+      },
+      {
+        "declaration" : "(void)_phraseBoundaryGesture:(id)arg1",
+        "type" : "method",
+        "name" : "_phraseBoundaryGesture:",
+        "address" : 4414617
+      },
+      {
+        "declaration" : "(id)_newPhraseBoundaryGestureRecognizer",
+        "type" : "method",
+        "name" : "_newPhraseBoundaryGestureRecognizer",
+        "address" : 4414377
+      },
+      {
+        "declaration" : "(void)_unmarkText",
+        "type" : "method",
+        "name" : "_unmarkText",
+        "address" : 2199629
+      },
+      {
+        "declaration" : "(void)_setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2",
+        "type" : "method",
+        "name" : "_setMarkedText:selectedRange:",
+        "address" : 4414061
+      },
+      {
+        "declaration" : "(void)_setGestureRecognizers",
+        "type" : "method",
+        "name" : "_setGestureRecognizers",
+        "address" : 4413477
+      },
+      {
+        "declaration" : "(int)_selectionAffinity",
+        "type" : "method",
+        "name" : "_selectionAffinity",
+        "address" : 4413225
+      },
+      {
+        "declaration" : "(void)_setSelectedTextRange:(id)arg1 withAffinityDownstream:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_setSelectedTextRange:withAffinityDownstream:",
+        "address" : 4413109
+      },
+      {
+        "declaration" : "(id)_positionFromPosition:(id)arg1 inDirection:(int)arg2 offset:(int)arg3 withAffinityDownstream:(BOOL)arg4",
+        "type" : "method",
+        "name" : "_positionFromPosition:inDirection:offset:withAffinityDownstream:",
+        "address" : 4413061
+      },
+      {
+        "declaration" : "(id)_moveRight:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveRight:withHistory:",
+        "address" : 4412805
+      },
+      {
+        "declaration" : "(id)_moveLeft:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveLeft:withHistory:",
+        "address" : 4412553
+      },
+      {
+        "declaration" : "(id)_moveDown:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveDown:withHistory:",
+        "address" : 4412057
+      },
+      {
+        "declaration" : "(id)_moveUp:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveUp:withHistory:",
+        "address" : 4411561
+      },
+      {
+        "declaration" : "(id)_moveToEndOfDocument:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToEndOfDocument:withHistory:",
+        "address" : 4411281
+      },
+      {
+        "declaration" : "(id)_moveToStartOfDocument:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToStartOfDocument:withHistory:",
+        "address" : 4411093
+      },
+      {
+        "declaration" : "(id)_moveToEndOfParagraph:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToEndOfParagraph:withHistory:",
+        "address" : 4410601
+      },
+      {
+        "declaration" : "(id)_moveToStartOfParagraph:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToStartOfParagraph:withHistory:",
+        "address" : 4410109
+      },
+      {
+        "declaration" : "(id)_moveToEndOfLine:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToEndOfLine:withHistory:",
+        "address" : 4409717
+      },
+      {
+        "declaration" : "(id)_moveToStartOfLine:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToStartOfLine:withHistory:",
+        "address" : 4409325
+      },
+      {
+        "declaration" : "(id)_moveToEndOfWord:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToEndOfWord:withHistory:",
+        "address" : 4408969
+      },
+      {
+        "declaration" : "(id)_moveToStartOfWord:(BOOL)arg1 withHistory:(id)arg2",
+        "type" : "method",
+        "name" : "_moveToStartOfWord:withHistory:",
+        "address" : 4408341
+      },
+      {
+        "declaration" : "(id)_setHistory:(id)arg1 withExtending:(BOOL)arg2 withAnchor:(int)arg3 withAffinityDownstream:(BOOL)arg4",
+        "type" : "method",
+        "name" : "_setHistory:withExtending:withAnchor:withAffinityDownstream:",
+        "address" : 4407897
+      },
+      {
+        "declaration" : "(id)_setSelectionRangeWithHistory:(id)arg1",
+        "type" : "method",
+        "name" : "_setSelectionRangeWithHistory:",
+        "address" : 4407297
+      },
+      {
+        "declaration" : "(void)_updateSelectionWithTextRange:(id)arg1 withAffinityDownstream:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_updateSelectionWithTextRange:withAffinityDownstream:",
+        "address" : 4407249
+      },
+      {
+        "declaration" : "(id)_fontForCaretSelection",
+        "type" : "method",
+        "name" : "_fontForCaretSelection",
+        "address" : 1855621
+      },
+      {
+        "declaration" : "(id)_textColorForCaretSelection",
+        "type" : "method",
+        "name" : "_textColorForCaretSelection",
+        "address" : 1876937
+      },
+      {
+        "declaration" : "(id)_clampedpositionFromPosition:(id)arg1 offset:(int)arg2",
+        "type" : "method",
+        "name" : "_clampedpositionFromPosition:offset:",
+        "address" : 4407149
+      },
+      {
+        "declaration" : "(id)_findPleasingWordBoundaryFromPosition:(id)arg1",
+        "type" : "method",
+        "name" : "_findPleasingWordBoundaryFromPosition:",
+        "address" : 1758389
+      },
+      {
+        "declaration" : "(id)_fullRange",
+        "type" : "method",
+        "name" : "_fullRange",
+        "address" : 2531381
+      },
+      {
+        "declaration" : "(id)_rangeOfParagraphEnclosingPosition:(id)arg1",
+        "type" : "method",
+        "name" : "_rangeOfParagraphEnclosingPosition:",
+        "address" : 4407081
+      },
+      {
+        "declaration" : "(id)_rangeOfLineEnclosingPosition:(id)arg1",
+        "type" : "method",
+        "name" : "_rangeOfLineEnclosingPosition:",
+        "address" : 4407013
+      },
+      {
+        "declaration" : "(id)_rangeOfEnclosingWord:(id)arg1",
+        "type" : "method",
+        "name" : "_rangeOfEnclosingWord:",
+        "address" : 1845681
+      },
+      {
+        "declaration" : "(id)_rangeOfText:(id)arg1 endingAtPosition:(id)arg2",
+        "type" : "method",
+        "name" : "_rangeOfText:endingAtPosition:",
+        "address" : 1845193
+      },
+      {
+        "declaration" : "(void)_scrollRectToVisible:(struct CGRect)arg1 animated:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_scrollRectToVisible:animated:",
+        "address" : 4407005
+      },
+      {
+        "declaration" : "(void)_replaceCurrentWordWithText:(id)arg1",
+        "type" : "method",
+        "name" : "_replaceCurrentWordWithText:",
+        "address" : 4406889
+      },
+      {
+        "declaration" : "(void)_deleteForwardAndNotify:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_deleteForwardAndNotify:",
+        "address" : 4406541
+      },
+      {
+        "declaration" : "(void)_deleteBackwardAndNotify:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_deleteBackwardAndNotify:",
+        "address" : 2331709
+      },
+      {
+        "declaration" : "(void)_deleteToEndOfLine",
+        "type" : "method",
+        "name" : "_deleteToEndOfLine",
+        "address" : 4406193
+      },
+      {
+        "declaration" : "(void)_deleteToStartOfLine",
+        "type" : "method",
+        "name" : "_deleteToStartOfLine",
+        "address" : 4405845
+      },
+      {
+        "declaration" : "(void)_deleteByWord",
+        "type" : "method",
+        "name" : "_deleteByWord",
+        "address" : 4405673
+      },
+      {
+        "declaration" : "(void)_setCaretSelectionAtEndOfSelection",
+        "type" : "method",
+        "name" : "_setCaretSelectionAtEndOfSelection",
+        "address" : 4405537
+      },
+      {
+        "declaration" : "(id)_positionAtStartOfWords:(unsigned int)arg1 beforePosition:(id)arg2",
+        "type" : "method",
+        "name" : "_positionAtStartOfWords:beforePosition:",
+        "address" : 4405245
+      },
+      {
+        "declaration" : "(void)_expandSelectionToStartOfWordsBeforeCaretSelection:(int)arg1",
+        "type" : "method",
+        "name" : "_expandSelectionToStartOfWordsBeforeCaretSelection:",
+        "address" : 4405081
+      },
+      {
+        "declaration" : "(void)_expandSelectionToStartOfWordBeforeCaretSelection",
+        "type" : "method",
+        "name" : "_expandSelectionToStartOfWordBeforeCaretSelection",
+        "address" : 4405061
+      },
+      {
+        "declaration" : "(void)_expandSelectionToBackwardDeletionCluster",
+        "type" : "method",
+        "name" : "_expandSelectionToBackwardDeletionCluster",
+        "address" : 4404553
+      },
+      {
+        "declaration" : "(void)_moveCurrentSelection:(int)arg1",
+        "type" : "method",
+        "name" : "_moveCurrentSelection:",
+        "address" : 4404329
+      },
+      {
+        "declaration" : "(void)_extendCurrentSelection:(int)arg1",
+        "type" : "method",
+        "name" : "_extendCurrentSelection:",
+        "address" : 4404125
+      },
+      {
+        "declaration" : "(BOOL)_hasMarkedTextOrRangedSelection",
+        "type" : "method",
+        "name" : "_hasMarkedTextOrRangedSelection",
+        "address" : 4404021
+      },
+      {
+        "declaration" : "(BOOL)_isEmptySelection",
+        "type" : "method",
+        "name" : "_isEmptySelection",
+        "address" : 4403905
+      },
+      {
+        "declaration" : "(struct CGRect)_selectionClipRect",
+        "type" : "method",
+        "name" : "_selectionClipRect",
+        "address" : 1759473
+      },
+      {
+        "declaration" : "(BOOL)_selectionAtDocumentEnd",
+        "type" : "method",
+        "name" : "_selectionAtDocumentEnd",
+        "address" : 4403793
+      },
+      {
+        "declaration" : "(BOOL)_selectionAtDocumentStart",
+        "type" : "method",
+        "name" : "_selectionAtDocumentStart",
+        "address" : 4403681
+      },
+      {
+        "declaration" : "(BOOL)_selectionAtWordStart",
+        "type" : "method",
+        "name" : "_selectionAtWordStart",
+        "address" : 4403529
+      },
+      {
+        "declaration" : "(id)_fullText",
+        "type" : "method",
+        "name" : "_fullText",
+        "address" : 2420773
+      },
+      {
+        "declaration" : "(id)_wordContainingCaretSelection",
+        "type" : "method",
+        "name" : "_wordContainingCaretSelection",
+        "address" : 4403369
+      },
+      {
+        "declaration" : "(unsigned long)_characterInRelationToRangedSelection:(int)arg1",
+        "type" : "method",
+        "name" : "_characterInRelationToRangedSelection:",
+        "address" : 322221
+      },
+      {
+        "declaration" : "(unsigned long)_characterInRelationToCaretSelection:(int)arg1",
+        "type" : "method",
+        "name" : "_characterInRelationToCaretSelection:",
+        "address" : 322061
+      },
+      {
+        "declaration" : "(unsigned long)_characterBeforeCaretSelection",
+        "type" : "method",
+        "name" : "_characterBeforeCaretSelection",
+        "address" : 322041
+      },
+      {
+        "declaration" : "(unsigned long)_characterAfterCaretSelection",
+        "type" : "method",
+        "name" : "_characterAfterCaretSelection",
+        "address" : 1187237
+      },
+      {
+        "declaration" : "(struct _NSRange)_nsrangeForTextRange:(id)arg1",
+        "type" : "method",
+        "name" : "_nsrangeForTextRange:",
+        "address" : 2330757
+      },
+      {
+        "declaration" : "(int)_indexForTextPosition:(id)arg1",
+        "type" : "method",
+        "name" : "_indexForTextPosition:",
+        "address" : 2330905
+      },
+      {
+        "declaration" : "(void)_selectAll",
+        "type" : "method",
+        "name" : "_selectAll",
+        "address" : 2531313
+      },
+      {
+        "declaration" : "(struct _NSRange)_selectedNSRange",
+        "type" : "method",
+        "name" : "_selectedNSRange",
+        "address" : 2531069
+      },
+      {
+        "declaration" : "(id)_keyInput",
+        "type" : "method",
+        "name" : "_keyInput",
+        "address" : 2331753
+      },
+      {
+        "declaration" : "(id)_proxyTextInput",
+        "type" : "method",
+        "name" : "_proxyTextInput",
+        "address" : 717921
+      },
+      {
+        "declaration" : "(void)endSelectionChange",
+        "type" : "method",
+        "name" : "endSelectionChange",
+        "address" : 4431421
+      },
+      {
+        "declaration" : "(void)beginSelectionChange",
+        "type" : "method",
+        "name" : "beginSelectionChange",
+        "address" : 4431417
+      },
+      {
+        "declaration" : "(struct CGRect)_caretRect",
+        "type" : "method",
+        "name" : "_caretRect",
+        "address" : 4431293
+      },
+      {
+        "declaration" : "(id)_asTextSelection",
+        "type" : "method",
+        "name" : "_asTextSelection",
+        "address" : 4431289
+      },
+      {
+        "declaration" : "(BOOL)isEditing",
+        "type" : "method",
+        "name" : "isEditing",
+        "address" : 4431265
+      },
+      {
+        "declaration" : "(BOOL)isEditable",
+        "type" : "method",
+        "name" : "isEditable",
+        "address" : 4431261
+      },
+      {
+        "declaration" : "(id)interactionAssistant",
+        "type" : "method",
+        "name" : "interactionAssistant",
+        "address" : 4431257
+      },
+      {
+        "declaration" : "(id)textInputView",
+        "type" : "method",
+        "name" : "textInputView",
+        "address" : 4431217
+      },
+      {
+        "declaration" : "(void)decodeRestorableStateWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "decodeRestorableStateWithCoder:",
+        "address" : 1534713
+      },
+      {
+        "declaration" : "(void)encodeRestorableStateWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeRestorableStateWithCoder:",
+        "address" : 1525761
+      },
+      {
+        "declaration" : "(id)_restorationIdentifierPath",
+        "type" : "method",
+        "name" : "_restorationIdentifierPath",
+        "address" : 1526289
+      },
+      {
+        "declaration" : "(void)setRestorationIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "setRestorationIdentifier:",
+        "address" : 1247097
+      },
+      {
+        "declaration" : "(void)_rebuildStateRestorationIdentifierPath",
+        "type" : "method",
+        "name" : "_rebuildStateRestorationIdentifierPath",
+        "address" : 5903921
+      },
+      {
+        "declaration" : "(id)restorationIdentifier",
+        "type" : "method",
+        "name" : "restorationIdentifier",
+        "address" : 1497697
+      }
+    ],
+    "protocols" : [
+      "UITextInput_Internal",
+      "UITextInputAdditions"
+    ],
+    "properties" : [
+      {
+        "getter" : "inputView",
+        "setter" : "setInputView:",
+        "type" : "property",
+        "name" : "inputView",
+        "propertyType" : "UIView *"
+      },
+      {
+        "getter" : "inputAccessoryView",
+        "setter" : "setInputAccessoryView:",
+        "type" : "property",
+        "name" : "inputAccessoryView",
+        "propertyType" : "UIView *"
+      },
+      {
+        "getter" : "textInputMode",
+        "setter" : "setTextInputMode:",
+        "type" : "property",
+        "name" : "textInputMode",
+        "propertyType" : "UITextInputMode *"
+      },
+      {
+        "getter" : "textInputContextIdentifier",
+        "setter" : "setTextInputContextIdentifier:",
+        "type" : "property",
+        "name" : "textInputContextIdentifier",
+        "propertyType" : "NSString *"
+      },
+      {
+        "getter" : "keyCommands",
+        "setter" : "setKeyCommands:",
+        "type" : "property",
+        "name" : "keyCommands",
+        "propertyType" : "NSArray *"
+      },
+      {
+        "getter" : "_editingDelegate",
+        "setter" : "set_editingDelegate:",
+        "type" : "property",
+        "name" : "_editingDelegate",
+        "propertyType" : "UIResponder *"
+      },
+      {
+        "getter" : "_responderForEditing",
+        "setter" : "set_responderForEditing:",
+        "type" : "property",
+        "name" : "_responderForEditing",
+        "propertyType" : "UIResponder *"
+      },
+      {
+        "getter" : "_proxyTextInput",
+        "setter" : "set__content:",
+        "type" : "property",
+        "name" : "__content",
+        "propertyType" : "UIResponder<UITextInput> *"
+      },
+      {
+        "getter" : "_textSelectingContainer",
+        "setter" : "set_textSelectingContainer:",
+        "type" : "property",
+        "name" : "_textSelectingContainer",
+        "propertyType" : "UIView<UITextInputPrivate> *"
+      },
+      {
+        "getter" : "isEditable",
+        "setter" : "setEditable:",
+        "type" : "property",
+        "name" : "editable",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "isEditing",
+        "setter" : "setEditing:",
+        "type" : "property",
+        "name" : "editing",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "_caretRect",
+        "setter" : "setCaretRect:",
+        "type" : "property",
+        "name" : "caretRect",
+        "propertyType" : "struct CGRect"
+      },
+      {
+        "getter" : "restorationIdentifier",
+        "setter" : "setRestorationIdentifier:",
+        "type" : "property",
+        "name" : "restorationIdentifier",
+        "propertyType" : "NSString *"
+      },
+      {
+        "getter" : "undoManager",
+        "setter" : "setUndoManager:",
+        "type" : "property",
+        "name" : "undoManager",
+        "propertyType" : "NSUndoManager *"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(void)clearTextInputContextIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "clearTextInputContextIdentifier:",
+        "address" : 3027289
+      },
+      {
+        "declaration" : "(void)_finishStateRestoration",
+        "type" : "method",
+        "name" : "_finishStateRestoration",
+        "address" : 1537169
+      },
+      {
+        "declaration" : "(void)_cleanupAllStateRestorationTables",
+        "type" : "method",
+        "name" : "_cleanupAllStateRestorationTables",
+        "address" : 564173
+      },
+      {
+        "declaration" : "(void)_prepareForSecondPassStateRestoration",
+        "type" : "method",
+        "name" : "_prepareForSecondPassStateRestoration",
+        "address" : 1534193
+      },
+      {
+        "declaration" : "(void)_cleanupStateRestorationObjectIdentifierTrackingTables",
+        "type" : "method",
+        "name" : "_cleanupStateRestorationObjectIdentifierTrackingTables",
+        "address" : 564241
+      },
+      {
+        "declaration" : "(void)_setRestoredIdentifierPathForObject:(id)arg1 identifierPath:(id)arg2",
+        "type" : "method",
+        "name" : "_setRestoredIdentifierPathForObject:identifierPath:",
+        "address" : 1627389
+      },
+      {
+        "declaration" : "(void)_updateStateRestorationIdentifierMap",
+        "type" : "method",
+        "name" : "_updateStateRestorationIdentifierMap",
+        "address" : 1528389
+      },
+      {
+        "declaration" : "(void)_stopDeferredTrackingObjectsWithIdentifiers",
+        "type" : "method",
+        "name" : "_stopDeferredTrackingObjectsWithIdentifiers",
+        "address" : 564301
+      },
+      {
+        "declaration" : "(void)_startDeferredTrackingObjectsWithIdentifiers",
+        "type" : "method",
+        "name" : "_startDeferredTrackingObjectsWithIdentifiers",
+        "address" : 499121
+      },
+      {
+        "declaration" : "(id)objectWithRestorationIdentifierPath:(id)arg1",
+        "type" : "method",
+        "name" : "objectWithRestorationIdentifierPath:",
+        "address" : 1528897
+      }
+    ]
+  },
+  "arm64" : {
+    "properties" : [
+      {
+        "type" : "property",
+        "propertyType" : "NSUndoManager *",
+        "name" : "undoManager",
+        "getter" : "undoManager",
+        "setter" : "setUndoManager:"
+      }
+    ],
+    "className" : "UIResponder",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)undoManager",
+        "type" : "method",
+        "name" : "undoManager",
+        "address" : 3302652
+      },
+      {
+        "declaration" : "(id)targetForAction:(SEL)arg1 withSender:(id)arg2",
+        "type" : "method",
+        "name" : "targetForAction:withSender:",
+        "address" : 2521896
+      },
+      {
+        "declaration" : "(_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2",
+        "type" : "method",
+        "name" : "canPerformAction:withSender:",
+        "address" : 2243128
+      },
+      {
+        "declaration" : "(void)_clearBecomeFirstResponderWhenCapable",
+        "type" : "method",
+        "name" : "_clearBecomeFirstResponderWhenCapable",
+        "address" : 1176288
+      },
+      {
+        "declaration" : "(id)firstResponder",
+        "type" : "method",
+        "name" : "firstResponder",
+        "address" : 626216
+      },
+      {
+        "declaration" : "(_Bool)isFirstResponder",
+        "type" : "method",
+        "name" : "isFirstResponder",
+        "address" : 53932
+      },
+      {
+        "declaration" : "(_Bool)canResignFirstResponder",
+        "type" : "method",
+        "name" : "canResignFirstResponder",
+        "address" : 1176292
+      },
+      {
+        "declaration" : "(_Bool)resignFirstResponder",
+        "type" : "method",
+        "name" : "resignFirstResponder",
+        "address" : 790120
+      },
+      {
+        "declaration" : "(void)_finishResignFirstResponder",
+        "type" : "method",
+        "name" : "_finishResignFirstResponder",
+        "address" : 1176300
+      },
+      {
+        "declaration" : "(_Bool)canBecomeFirstResponder",
+        "type" : "method",
+        "name" : "canBecomeFirstResponder",
+        "address" : 626464
+      },
+      {
+        "declaration" : "(_Bool)becomeFirstResponder",
+        "type" : "method",
+        "name" : "becomeFirstResponder",
+        "address" : 625328
+      },
+      {
+        "declaration" : "(_Bool)_containsResponder:(id)arg1",
+        "type" : "method",
+        "name" : "_containsResponder:",
+        "address" : 883024
+      },
+      {
+        "declaration" : "(_Bool)_containedInAbsoluteResponderChain",
+        "type" : "method",
+        "name" : "_containedInAbsoluteResponderChain",
+        "address" : 815216
+      },
+      {
+        "declaration" : "(id)_responderForEditing",
+        "type" : "method",
+        "name" : "_responderForEditing",
+        "address" : 2521836
+      },
+      {
+        "declaration" : "(id)_editingDelegate",
+        "type" : "method",
+        "name" : "_editingDelegate",
+        "address" : 2521888
+      },
+      {
+        "declaration" : "(_Bool)_isRootForKeyResponderCycle",
+        "type" : "method",
+        "name" : "_isRootForKeyResponderCycle",
+        "address" : 3302644
+      },
+      {
+        "declaration" : "(id)_previousKeyResponder",
+        "type" : "method",
+        "name" : "_previousKeyResponder",
+        "address" : 3302636
+      },
+      {
+        "declaration" : "(id)_nextKeyResponder",
+        "type" : "method",
+        "name" : "_nextKeyResponder",
+        "address" : 3302628
+      },
+      {
+        "declaration" : "(id)nextResponder",
+        "type" : "method",
+        "name" : "nextResponder",
+        "address" : 233972
+      },
+      {
+        "declaration" : "(void)gestureChanged:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "gestureChanged:",
+        "address" : 3302520
+      },
+      {
+        "declaration" : "(void)gestureEnded:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "gestureEnded:",
+        "address" : 3302412
+      },
+      {
+        "declaration" : "(void)gestureStarted:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "gestureStarted:",
+        "address" : 3302304
+      },
+      {
+        "declaration" : "(void)scrollWheel:(struct __GSEvent *)arg1",
+        "type" : "method",
+        "name" : "scrollWheel:",
+        "address" : 3302196
+      },
+      {
+        "declaration" : "(void)_wheelChangedWithEvent:(id)arg1",
+        "type" : "method",
+        "name" : "_wheelChangedWithEvent:",
+        "address" : 3302088
+      },
+      {
+        "declaration" : "(void)remoteControlReceivedWithEvent:(id)arg1",
+        "type" : "method",
+        "name" : "remoteControlReceivedWithEvent:",
+        "address" : 3301980
+      },
+      {
+        "declaration" : "(void)motionCancelled:(long long)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "motionCancelled:withEvent:",
+        "address" : 3301864
+      },
+      {
+        "declaration" : "(void)motionEnded:(long long)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "motionEnded:withEvent:",
+        "address" : 3301748
+      },
+      {
+        "declaration" : "(void)motionBegan:(long long)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "motionBegan:withEvent:",
+        "address" : 3301632
+      },
+      {
+        "declaration" : "(void)touchesCancelled:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesCancelled:withEvent:",
+        "address" : 1801084
+      },
+      {
+        "declaration" : "(void)touchesEnded:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesEnded:withEvent:",
+        "address" : 2120840
+      },
+      {
+        "declaration" : "(void)touchesMoved:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesMoved:withEvent:",
+        "address" : 2301840
+      },
+      {
+        "declaration" : "(void)touchesBegan:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesBegan:withEvent:",
+        "address" : 1799400
+      }
+    ],
+    "type" : "class",
+    "superClassName" : "NSObject"
+  }
+}
