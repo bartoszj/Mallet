@@ -2579,6 +2579,1296 @@
       }
     ]
   },
+  "armv7" : {
+    "superClassName" : "UIView",
+    "className" : "UILabel",
+    "instanceMethods" : [
+      {
+        "declaration" : "(float)minimumScaleFactor",
+        "type" : "method",
+        "name" : "minimumScaleFactor",
+        "address" : 1283013
+      },
+      {
+        "declaration" : "(float)preferredMaxLayoutWidth",
+        "type" : "method",
+        "name" : "preferredMaxLayoutWidth",
+        "address" : 3192133
+      },
+      {
+        "declaration" : "(void)_setWantsUnderlineForAccessibilityButtonShapesEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setWantsUnderlineForAccessibilityButtonShapesEnabled:",
+        "address" : 3192117
+      },
+      {
+        "declaration" : "(BOOL)_wantsUnderlineForAccessibilityButtonShapesEnabled",
+        "type" : "method",
+        "name" : "_wantsUnderlineForAccessibilityButtonShapesEnabled",
+        "address" : 3192101
+      },
+      {
+        "declaration" : "(BOOL)_usesSimpleTextEffects",
+        "type" : "method",
+        "name" : "_usesSimpleTextEffects",
+        "address" : 3192081
+      },
+      {
+        "declaration" : "(void)_setUsesSimpleTextEffects:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUsesSimpleTextEffects:",
+        "address" : 1612421
+      },
+      {
+        "declaration" : "(BOOL)drawsUnderline",
+        "type" : "method",
+        "name" : "drawsUnderline",
+        "address" : 3192053
+      },
+      {
+        "declaration" : "(void)setDrawsUnderline:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setDrawsUnderline:",
+        "address" : 3191513
+      },
+      {
+        "declaration" : "(id)letterpressStyle",
+        "type" : "method",
+        "name" : "letterpressStyle",
+        "address" : 106297
+      },
+      {
+        "declaration" : "(void)setLetterpressStyle:(id)arg1",
+        "type" : "method",
+        "name" : "setLetterpressStyle:",
+        "address" : 789001
+      },
+      {
+        "declaration" : "(BOOL)drawsLetterpress",
+        "type" : "method",
+        "name" : "drawsLetterpress",
+        "address" : 2335989
+      },
+      {
+        "declaration" : "(void)setDrawsLetterpress:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setDrawsLetterpress:",
+        "address" : 3191453
+      },
+      {
+        "declaration" : "(void)setMarqueeRunning:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setMarqueeRunning:",
+        "address" : 3191341
+      },
+      {
+        "declaration" : "(BOOL)marqueeRunning",
+        "type" : "method",
+        "name" : "marqueeRunning",
+        "address" : 3191305
+      },
+      {
+        "declaration" : "(void)_stopMarqueeWithRedisplay:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_stopMarqueeWithRedisplay:",
+        "address" : 3191201
+      },
+      {
+        "declaration" : "(void)_startMarqueeIfNecessary",
+        "type" : "method",
+        "name" : "_startMarqueeIfNecessary",
+        "address" : 3191121
+      },
+      {
+        "declaration" : "(void)_startMarquee",
+        "type" : "method",
+        "name" : "_startMarquee",
+        "address" : 3188801
+      },
+      {
+        "declaration" : "(void)_drawFullMarqueeTextInRect:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "_drawFullMarqueeTextInRect:",
+        "address" : 3188757
+      },
+      {
+        "declaration" : "(void)_coordinateBeginTimeForMarqueeAnimations:(double)arg1",
+        "type" : "method",
+        "name" : "_coordinateBeginTimeForMarqueeAnimations:",
+        "address" : 3188161
+      },
+      {
+        "declaration" : "(float)_maximumMarqueeTextWidth",
+        "type" : "method",
+        "name" : "_maximumMarqueeTextWidth",
+        "address" : 3187869
+      },
+      {
+        "declaration" : "(id)_siblingMarqueeLabels",
+        "type" : "method",
+        "name" : "_siblingMarqueeLabels",
+        "address" : 3187529
+      },
+      {
+        "declaration" : "(void)setMarqueeEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setMarqueeEnabled:",
+        "address" : 3187349
+      },
+      {
+        "declaration" : "(BOOL)_shouldDrawUnderlinesLikeWebKit",
+        "type" : "method",
+        "name" : "_shouldDrawUnderlinesLikeWebKit",
+        "address" : 107137
+      },
+      {
+        "declaration" : "(void)_setWordRoundingEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setWordRoundingEnabled:",
+        "address" : 3187225
+      },
+      {
+        "declaration" : "(void)drawRect:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "drawRect:",
+        "address" : 564669
+      },
+      {
+        "declaration" : "(void)_drawTextInRect:(struct CGRect)arg1 baselineCalculationOnly:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_drawTextInRect:baselineCalculationOnly:",
+        "address" : 142497
+      },
+      {
+        "declaration" : "(BOOL)_updateScaledMetricsForRect:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "_updateScaledMetricsForRect:",
+        "address" : 3186121
+      },
+      {
+        "declaration" : "(BOOL)_drawsUnderline",
+        "type" : "method",
+        "name" : "_drawsUnderline",
+        "address" : 3185941
+      },
+      {
+        "declaration" : "(void)drawTextInRect:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "drawTextInRect:",
+        "address" : 564757
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 102653
+      },
+      {
+        "declaration" : "(struct CGSize)intrinsicContentSize",
+        "type" : "method",
+        "name" : "intrinsicContentSize",
+        "address" : 1045177
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 102705
+      },
+      {
+        "declaration" : "(void)updateConstraints",
+        "type" : "method",
+        "name" : "updateConstraints",
+        "address" : 1043157
+      },
+      {
+        "declaration" : "(void)_setInSecondConstraintsPass:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setInSecondConstraintsPass:",
+        "address" : 1597389
+      },
+      {
+        "declaration" : "(void)_prepareForSecondIntrinsicContentSizeCalculationWithEngine:(id)arg1",
+        "type" : "method",
+        "name" : "_prepareForSecondIntrinsicContentSizeCalculationWithEngine:",
+        "address" : 1597461
+      },
+      {
+        "declaration" : "(void)_prepareForFirstIntrinsicContentSizeCalculation",
+        "type" : "method",
+        "name" : "_prepareForFirstIntrinsicContentSizeCalculation",
+        "address" : 1596541
+      },
+      {
+        "declaration" : "(void)nsis_valueOfVariable:(id)arg1 didChangeInEngine:(id)arg2",
+        "type" : "method",
+        "name" : "nsis_valueOfVariable:didChangeInEngine:",
+        "address" : 1042001
+      },
+      {
+        "declaration" : "(BOOL)_needsDoubleUpdateConstraintsPass",
+        "type" : "method",
+        "name" : "_needsDoubleUpdateConstraintsPass",
+        "address" : 1042145
+      },
+      {
+        "declaration" : "(float)_baselineOffsetFromBottom",
+        "type" : "method",
+        "name" : "_baselineOffsetFromBottom",
+        "address" : 141573
+      },
+      {
+        "declaration" : "(float)_lastLineBaseline",
+        "type" : "method",
+        "name" : "_lastLineBaseline",
+        "address" : 1027977
+      },
+      {
+        "declaration" : "(int)baselineAdjustment",
+        "type" : "method",
+        "name" : "baselineAdjustment",
+        "address" : 3185893
+      },
+      {
+        "declaration" : "(BOOL)_drawsDebugBaselines",
+        "type" : "method",
+        "name" : "_drawsDebugBaselines",
+        "address" : 3185873
+      },
+      {
+        "declaration" : "(void)_setDrawsDebugBaselines:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setDrawsDebugBaselines:",
+        "address" : 3185813
+      },
+      {
+        "declaration" : "(void)setBaselineAdjustment:(int)arg1",
+        "type" : "method",
+        "name" : "setBaselineAdjustment:",
+        "address" : 1630281
+      },
+      {
+        "declaration" : "(BOOL)adjustsLetterSpacingToFitWidth",
+        "type" : "method",
+        "name" : "adjustsLetterSpacingToFitWidth",
+        "address" : 3185789
+      },
+      {
+        "declaration" : "(void)setAdjustsLetterSpacingToFitWidth:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setAdjustsLetterSpacingToFitWidth:",
+        "address" : 1263993
+      },
+      {
+        "declaration" : "(int)lineSpacing",
+        "type" : "method",
+        "name" : "lineSpacing",
+        "address" : 565553
+      },
+      {
+        "declaration" : "(void)setLineSpacing:(int)arg1",
+        "type" : "method",
+        "name" : "setLineSpacing:",
+        "address" : 2062941
+      },
+      {
+        "declaration" : "(int)numberOfLines",
+        "type" : "method",
+        "name" : "numberOfLines",
+        "address" : 789157
+      },
+      {
+        "declaration" : "(void)setNumberOfLines:(int)arg1",
+        "type" : "method",
+        "name" : "setNumberOfLines:",
+        "address" : 787833
+      },
+      {
+        "declaration" : "(int)lineBreakMode",
+        "type" : "method",
+        "name" : "lineBreakMode",
+        "address" : 146881
+      },
+      {
+        "declaration" : "(void)setLineBreakMode:(int)arg1",
+        "type" : "method",
+        "name" : "setLineBreakMode:",
+        "address" : 665137
+      },
+      {
+        "declaration" : "(void)_setLineBreakMode:(int)arg1",
+        "type" : "method",
+        "name" : "_setLineBreakMode:",
+        "address" : 665157
+      },
+      {
+        "declaration" : "(BOOL)isHighlighted",
+        "type" : "method",
+        "name" : "isHighlighted",
+        "address" : 106273
+      },
+      {
+        "declaration" : "(void)setHighlighted:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setHighlighted:",
+        "address" : 1375597
+      },
+      {
+        "declaration" : "(float)shadowBlur",
+        "type" : "method",
+        "name" : "shadowBlur",
+        "address" : 2440517
+      },
+      {
+        "declaration" : "(void)setShadowBlur:(float)arg1",
+        "type" : "method",
+        "name" : "setShadowBlur:",
+        "address" : 2440373
+      },
+      {
+        "declaration" : "(struct CGSize)shadowOffset",
+        "type" : "method",
+        "name" : "shadowOffset",
+        "address" : 700617
+      },
+      {
+        "declaration" : "(void)_setShadowUIOffset:(struct UIOffset)arg1",
+        "type" : "method",
+        "name" : "_setShadowUIOffset:",
+        "address" : 3185769
+      },
+      {
+        "declaration" : "(void)setShadowOffset:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "setShadowOffset:",
+        "address" : 669241
+      },
+      {
+        "declaration" : "(id)shadowColor",
+        "type" : "method",
+        "name" : "shadowColor",
+        "address" : 107145
+      },
+      {
+        "declaration" : "(void)setShadowColor:(id)arg1",
+        "type" : "method",
+        "name" : "setShadowColor:",
+        "address" : 669825
+      },
+      {
+        "declaration" : "(id)_shadow",
+        "type" : "method",
+        "name" : "_shadow",
+        "address" : 107189
+      },
+      {
+        "declaration" : "(void)_setShadow:(id)arg1",
+        "type" : "method",
+        "name" : "_setShadow:",
+        "address" : 669961
+      },
+      {
+        "declaration" : "(id)font",
+        "type" : "method",
+        "name" : "font",
+        "address" : 147117
+      },
+      {
+        "declaration" : "(void)setFont:(id)arg1",
+        "type" : "method",
+        "name" : "setFont:",
+        "address" : 98749
+      },
+      {
+        "declaration" : "(void)_setFont:(id)arg1",
+        "type" : "method",
+        "name" : "_setFont:",
+        "address" : 98765
+      },
+      {
+        "declaration" : "(void)_baselineOffsetDidChange",
+        "type" : "method",
+        "name" : "_baselineOffsetDidChange",
+        "address" : 3184941
+      },
+      {
+        "declaration" : "(id)currentTextColor",
+        "type" : "method",
+        "name" : "currentTextColor",
+        "address" : 1350197
+      },
+      {
+        "declaration" : "(id)_disabledFontColor",
+        "type" : "method",
+        "name" : "_disabledFontColor",
+        "address" : 1350401
+      },
+      {
+        "declaration" : "(id)highlightedTextColor",
+        "type" : "method",
+        "name" : "highlightedTextColor",
+        "address" : 1971721
+      },
+      {
+        "declaration" : "(void)setHighlightedTextColor:(id)arg1",
+        "type" : "method",
+        "name" : "setHighlightedTextColor:",
+        "address" : 901665
+      },
+      {
+        "declaration" : "(int)textAlignment",
+        "type" : "method",
+        "name" : "textAlignment",
+        "address" : 788213
+      },
+      {
+        "declaration" : "(void)setTextAlignment:(int)arg1",
+        "type" : "method",
+        "name" : "setTextAlignment:",
+        "address" : 515925
+      },
+      {
+        "declaration" : "(void)_setTextAlignment:(int)arg1",
+        "type" : "method",
+        "name" : "_setTextAlignment:",
+        "address" : 515945
+      },
+      {
+        "declaration" : "(void)setMinimumScaleFactor:(float)arg1",
+        "type" : "method",
+        "name" : "setMinimumScaleFactor:",
+        "address" : 666969
+      },
+      {
+        "declaration" : "(float)minimumFontSize",
+        "type" : "method",
+        "name" : "minimumFontSize",
+        "address" : 3184917
+      },
+      {
+        "declaration" : "(void)setMinimumFontSize:(float)arg1",
+        "type" : "method",
+        "name" : "setMinimumFontSize:",
+        "address" : 3184901
+      },
+      {
+        "declaration" : "(float)_minimumFontSize",
+        "type" : "method",
+        "name" : "_minimumFontSize",
+        "address" : 2033789
+      },
+      {
+        "declaration" : "(void)_setMinimumFontSize:(float)arg1",
+        "type" : "method",
+        "name" : "_setMinimumFontSize:",
+        "address" : 1345557
+      },
+      {
+        "declaration" : "(id)_associatedScalingLabel",
+        "type" : "method",
+        "name" : "_associatedScalingLabel",
+        "address" : 3184897
+      },
+      {
+        "declaration" : "(float)_actualScaleFactor",
+        "type" : "method",
+        "name" : "_actualScaleFactor",
+        "address" : 3184769
+      },
+      {
+        "declaration" : "(BOOL)adjustsFontSizeToFitWidth",
+        "type" : "method",
+        "name" : "adjustsFontSizeToFitWidth",
+        "address" : 1282805
+      },
+      {
+        "declaration" : "(void)setAdjustsFontSizeToFitWidth:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setAdjustsFontSizeToFitWidth:",
+        "address" : 670481
+      },
+      {
+        "declaration" : "(id)textColor",
+        "type" : "method",
+        "name" : "textColor",
+        "address" : 1463253
+      },
+      {
+        "declaration" : "(void)setTextColor:(id)arg1",
+        "type" : "method",
+        "name" : "setTextColor:",
+        "address" : 100061
+      },
+      {
+        "declaration" : "(void)_setTextColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextColor:",
+        "address" : 100077
+      },
+      {
+        "declaration" : "(BOOL)isEnabled",
+        "type" : "method",
+        "name" : "isEnabled",
+        "address" : 106249
+      },
+      {
+        "declaration" : "(void)setEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setEnabled:",
+        "address" : 787249
+      },
+      {
+        "declaration" : "(void)setUserInteractionEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setUserInteractionEnabled:",
+        "address" : 100937
+      },
+      {
+        "declaration" : "(id)attributedText",
+        "type" : "method",
+        "name" : "attributedText",
+        "address" : 107377
+      },
+      {
+        "declaration" : "(void)setAttributedText:(id)arg1",
+        "type" : "method",
+        "name" : "setAttributedText:",
+        "address" : 344997
+      },
+      {
+        "declaration" : "(void)_setAttributedText:(id)arg1 andTakeOwnership:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_setAttributedText:andTakeOwnership:",
+        "address" : 3184521
+      },
+      {
+        "declaration" : "(id)text",
+        "type" : "method",
+        "name" : "text",
+        "address" : 104937
+      },
+      {
+        "declaration" : "(void)setText:(id)arg1",
+        "type" : "method",
+        "name" : "setText:",
+        "address" : 101681
+      },
+      {
+        "declaration" : "(void)_setText:(id)arg1",
+        "type" : "method",
+        "name" : "_setText:",
+        "address" : 101697
+      },
+      {
+        "declaration" : "(void)_invalidateTextSize",
+        "type" : "method",
+        "name" : "_invalidateTextSize",
+        "address" : 101249
+      },
+      {
+        "declaration" : "(struct CGRect)_textRectForBounds:(struct CGRect)arg1 limitedToNumberOfLines:(int)arg2 includingShadow:(BOOL)arg3",
+        "type" : "method",
+        "name" : "_textRectForBounds:limitedToNumberOfLines:includingShadow:",
+        "address" : 103129
+      },
+      {
+        "declaration" : "(BOOL)_shouldCeilSizeToViewScale",
+        "type" : "method",
+        "name" : "_shouldCeilSizeToViewScale",
+        "address" : 3184513
+      },
+      {
+        "declaration" : "(id)_stringDrawingContext",
+        "type" : "method",
+        "name" : "_stringDrawingContext",
+        "address" : 105037
+      },
+      {
+        "declaration" : "(struct CGRect)textRectForBounds:(struct CGRect)arg1 limitedToNumberOfLines:(int)arg2",
+        "type" : "method",
+        "name" : "textRectForBounds:limitedToNumberOfLines:",
+        "address" : 103053
+      },
+      {
+        "declaration" : "(struct CGSize)textSize",
+        "type" : "method",
+        "name" : "textSize",
+        "address" : 944853
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 878485
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 3183273
+      },
+      {
+        "declaration" : "(BOOL)_attributedStringHasAttributesNotCoveredByPrimitives",
+        "type" : "method",
+        "name" : "_attributedStringHasAttributesNotCoveredByPrimitives",
+        "address" : 3182649
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 3181521
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 1069521
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 97981
+      },
+      {
+        "declaration" : "(void)_invalidateAsNeededForNewSize:(struct CGSize)arg1 oldSize:(struct CGSize)arg2",
+        "type" : "method",
+        "name" : "_invalidateAsNeededForNewSize:oldSize:",
+        "address" : 98129
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 97813
+      },
+      {
+        "declaration" : "(void)_commonInit",
+        "type" : "method",
+        "name" : "_commonInit",
+        "address" : 98193
+      },
+      {
+        "declaration" : "(void)_setSynthesizedAttributedText:(id)arg1",
+        "type" : "method",
+        "name" : "_setSynthesizedAttributedText:",
+        "address" : 101061
+      },
+      {
+        "declaration" : "(void)_invalidateSynthesizedAttributedTextAndLayout",
+        "type" : "method",
+        "name" : "_invalidateSynthesizedAttributedTextAndLayout",
+        "address" : 3181381
+      },
+      {
+        "declaration" : "(void)_invalidateDefaultAttributes",
+        "type" : "method",
+        "name" : "_invalidateDefaultAttributes",
+        "address" : 3181333
+      },
+      {
+        "declaration" : "(id)_synthesizedAttributedText",
+        "type" : "method",
+        "name" : "_synthesizedAttributedText",
+        "address" : 105341
+      },
+      {
+        "declaration" : "(id)_synthesizedTextAttributes",
+        "type" : "method",
+        "name" : "_synthesizedTextAttributes",
+        "address" : 3180761
+      },
+      {
+        "declaration" : "(id)_compatibilityAttributedString",
+        "type" : "method",
+        "name" : "_compatibilityAttributedString",
+        "address" : 106349
+      },
+      {
+        "declaration" : "(void)_setDefaultAttributes:(id)arg1",
+        "type" : "method",
+        "name" : "_setDefaultAttributes:",
+        "address" : 3180653
+      },
+      {
+        "declaration" : "(id)_defaultAttributes",
+        "type" : "method",
+        "name" : "_defaultAttributes",
+        "address" : 99409
+      },
+      {
+        "declaration" : "(float)_preferredMaxLayoutWidth",
+        "type" : "method",
+        "name" : "_preferredMaxLayoutWidth",
+        "address" : 142045
+      },
+      {
+        "declaration" : "(void)setPreferredMaxLayoutWidth:(float)arg1",
+        "type" : "method",
+        "name" : "setPreferredMaxLayoutWidth:",
+        "address" : 3180553
+      },
+      {
+        "declaration" : "(id)_scriptingInfo",
+        "type" : "method",
+        "name" : "_scriptingInfo",
+        "address" : 3192149
+      },
+      {
+        "declaration" : "(void)_setLastLineBaselineFrameOriginY:(float)arg1",
+        "type" : "method",
+        "name" : "_setLastLineBaselineFrameOriginY:",
+        "address" : 3192365
+      },
+      {
+        "declaration" : "(float)_lastLineBaselineFrameOriginY",
+        "type" : "method",
+        "name" : "_lastLineBaselineFrameOriginY",
+        "address" : 2172657
+      },
+      {
+        "declaration" : "(void)_setFirstLineBaselineFrameOriginY:(float)arg1",
+        "type" : "method",
+        "name" : "_setFirstLineBaselineFrameOriginY:",
+        "address" : 2286177
+      },
+      {
+        "declaration" : "(float)_firstLineBaselineFrameOriginY",
+        "type" : "method",
+        "name" : "_firstLineBaselineFrameOriginY",
+        "address" : 2172525
+      },
+      {
+        "declaration" : "(void)_setFirstLineCapFrameOriginY:(float)arg1",
+        "type" : "method",
+        "name" : "_setFirstLineCapFrameOriginY:",
+        "address" : 2286005
+      },
+      {
+        "declaration" : "(float)_firstLineCapFrameOriginY",
+        "type" : "method",
+        "name" : "_firstLineCapFrameOriginY",
+        "address" : 3192273
+      },
+      {
+        "declaration" : "(float)_firstLineBaselineOffsetFromBoundsTop",
+        "type" : "method",
+        "name" : "_firstLineBaselineOffsetFromBoundsTop",
+        "address" : 1597025
+      },
+      {
+        "declaration" : "(float)_capOffsetFromBoundsTop",
+        "type" : "method",
+        "name" : "_capOffsetFromBoundsTop",
+        "address" : 1027589
+      },
+      {
+        "declaration" : "(int)_measuredNumberOfLines",
+        "type" : "method",
+        "name" : "_measuredNumberOfLines",
+        "address" : 1028141
+      },
+      {
+        "declaration" : "(void)_setWantsUnderlineForAccessibilityButtonShapesEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setWantsUnderlineForAccessibilityButtonShapesEnabled:",
+        "address" : 3192501
+      },
+      {
+        "declaration" : "(void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3",
+        "type" : "method",
+        "name" : "_didChangeFromIdiom:onScreen:traverseHierarchy:",
+        "address" : 3192861
+      },
+      {
+        "declaration" : "(BOOL)_shouldShowAccessibilityButtonShapesUnderline",
+        "type" : "method",
+        "name" : "_shouldShowAccessibilityButtonShapesUnderline",
+        "address" : 3192801
+      },
+      {
+        "declaration" : "(void)_accessibilityButtonShapesChangedNotification:(id)arg1",
+        "type" : "method",
+        "name" : "_accessibilityButtonShapesChangedNotification:",
+        "address" : 3192785
+      },
+      {
+        "declaration" : "(void)_accessibilityButtonShapesParametersDidChange",
+        "type" : "method",
+        "name" : "_accessibilityButtonShapesParametersDidChange",
+        "address" : 3192549
+      },
+      {
+        "declaration" : "(struct CGSize)rawSize",
+        "type" : "method",
+        "name" : "rawSize",
+        "address" : 3193201
+      },
+      {
+        "declaration" : "(void)setRawSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "setRawSize:",
+        "address" : 3193181
+      },
+      {
+        "declaration" : "(void)drawContentsInRect:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "drawContentsInRect:",
+        "address" : 3193145
+      },
+      {
+        "declaration" : "(struct CGRect)textRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "textRectForBounds:",
+        "address" : 3193077
+      },
+      {
+        "declaration" : "(struct CGSize)textSizeForWidth:(float)arg1",
+        "type" : "method",
+        "name" : "textSizeForWidth:",
+        "address" : 2589221
+      },
+      {
+        "declaration" : "(BOOL)centersHorizontally",
+        "type" : "method",
+        "name" : "centersHorizontally",
+        "address" : 3193049
+      },
+      {
+        "declaration" : "(void)setCentersHorizontally:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setCentersHorizontally:",
+        "address" : 3193017
+      },
+      {
+        "declaration" : "(id)color",
+        "type" : "method",
+        "name" : "color",
+        "address" : 3193001
+      },
+      {
+        "declaration" : "(void)setColor:(id)arg1",
+        "type" : "method",
+        "name" : "setColor:",
+        "address" : 2589841
+      },
+      {
+        "declaration" : "(void)_setColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setColor:",
+        "address" : 2589857
+      },
+      {
+        "declaration" : "(BOOL)autotrackTextToFit",
+        "type" : "method",
+        "name" : "autotrackTextToFit",
+        "address" : 3192977
+      },
+      {
+        "declaration" : "(void)setAutotrackTextToFit:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setAutotrackTextToFit:",
+        "address" : 1263977
+      },
+      {
+        "declaration" : "(unsigned long long)defaultAccessibilityTraits",
+        "type" : "method",
+        "name" : "defaultAccessibilityTraits",
+        "address" : 3792417
+      },
+      {
+        "declaration" : "(BOOL)isElementAccessibilityExposedToInterfaceBuilder",
+        "type" : "method",
+        "name" : "isElementAccessibilityExposedToInterfaceBuilder",
+        "address" : 3792413
+      },
+      {
+        "declaration" : "(BOOL)isAccessibilityElementByDefault",
+        "type" : "method",
+        "name" : "isAccessibilityElementByDefault",
+        "address" : 3792409
+      },
+      {
+        "declaration" : "(id)_image",
+        "type" : "method",
+        "name" : "_image",
+        "address" : 5395053
+      },
+      {
+        "declaration" : "(BOOL)_isTextFieldCenteredLabel",
+        "type" : "method",
+        "name" : "_isTextFieldCenteredLabel",
+        "address" : 146873
+      }
+    ],
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "struct CGSize",
+        "size" : 8,
+        "offset" : 56,
+        "type" : "ivar",
+        "name" : "_size"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 64,
+        "type" : "ivar",
+        "name" : "_highlightedColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 68,
+        "type" : "ivar",
+        "name" : "_numberOfLines"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 72,
+        "type" : "ivar",
+        "name" : "_measuredNumberOfLines"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 76,
+        "type" : "ivar",
+        "name" : "_lastLineBaseline"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_minimumScaleFactor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "id",
+        "size" : 4,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_content"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSAttributedString *",
+        "size" : 4,
+        "offset" : 88,
+        "type" : "ivar",
+        "name" : "_synthesizedAttributedText"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSMutableDictionary *",
+        "size" : 4,
+        "offset" : 92,
+        "type" : "ivar",
+        "name" : "_defaultAttributes"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 96,
+        "type" : "ivar",
+        "name" : "_minimumFontSize"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 100,
+        "type" : "ivar",
+        "name" : "_lineSpacing"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "id",
+        "size" : 4,
+        "offset" : 104,
+        "type" : "ivar",
+        "name" : "_layout"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "_UILabelScaledMetrics *",
+        "size" : 4,
+        "offset" : 108,
+        "type" : "ivar",
+        "name" : "_scaledMetrics"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "struct {\n        unsigned int unused1:3;\n        unsigned int highlighted:1;\n        unsigned int autosizeTextToFit:1;\n        unsigned int autotrackTextToFit:1;\n        unsigned int baselineAdjustment:2;\n        unsigned int unused2:2;\n        unsigned int enabled:1;\n        unsigned int wordRoundingEnabled:1;\n        unsigned int explicitAlignment:1;\n        unsigned int marqueeEnabled:1;\n        unsigned int marqueeRunable:1;\n        unsigned int marqueeRequired:1;\n        unsigned int drawsLetterpress:1;\n        unsigned int unused3:1;\n        unsigned int usesExplicitPreferredMaxLayoutWidth:1;\n        unsigned int determiningPreferredMaxLayoutWidth:1;\n        unsigned int inSecondConstraintsPass:1;\n        unsigned int drawsDebugBaselines:1;\n        unsigned int explicitBaselineOffset:1;\n        unsigned int usesSimpleTextEffects:1;\n        unsigned int isComplexString:1;\n    }",
+        "size" : 4,
+        "offset" : 112,
+        "type" : "ivar",
+        "name" : "_textLabelFlags"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 116,
+        "type" : "ivar",
+        "name" : "_wantsUnderlineForAccessibilityButtonShapesEnabled"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 120,
+        "type" : "ivar",
+        "name" : "_preferredMaxLayoutWidth"
+      }
+    ],
+    "protocols" : [
+      "NSCoding"
+    ],
+    "properties" : [
+      {
+        "name" : "_capOffsetFromBoundsTop",
+        "propertyType" : "float",
+        "getter" : "_capOffsetFromBoundsTop",
+        "type" : "property",
+        "setter" : "set_capOffsetFromBoundsTop:"
+      },
+      {
+        "name" : "_firstLineBaselineOffsetFromBoundsTop",
+        "propertyType" : "float",
+        "getter" : "_firstLineBaselineOffsetFromBoundsTop",
+        "type" : "property",
+        "setter" : "set_firstLineBaselineOffsetFromBoundsTop:"
+      },
+      {
+        "name" : "_firstLineCapFrameOriginY",
+        "propertyType" : "float",
+        "getter" : "_firstLineCapFrameOriginY",
+        "type" : "property",
+        "setter" : "_setFirstLineCapFrameOriginY:"
+      },
+      {
+        "name" : "_firstLineBaselineFrameOriginY",
+        "propertyType" : "float",
+        "getter" : "_firstLineBaselineFrameOriginY",
+        "type" : "property",
+        "setter" : "_setFirstLineBaselineFrameOriginY:"
+      },
+      {
+        "name" : "_lastLineBaselineFrameOriginY",
+        "propertyType" : "float",
+        "getter" : "_lastLineBaselineFrameOriginY",
+        "type" : "property",
+        "setter" : "_setLastLineBaselineFrameOriginY:"
+      },
+      {
+        "name" : "_drawsDebugBaselines",
+        "propertyType" : "char",
+        "getter" : "_drawsDebugBaselines",
+        "type" : "property",
+        "setter" : "_setDrawsDebugBaselines:"
+      },
+      {
+        "name" : "_wantsUnderlineForAccessibilityButtonShapesEnabled",
+        "propertyType" : "char",
+        "getter" : "_wantsUnderlineForAccessibilityButtonShapesEnabled",
+        "type" : "property",
+        "setter" : "_setWantsUnderlineForAccessibilityButtonShapesEnabled:"
+      },
+      {
+        "name" : "text",
+        "propertyType" : "NSString *",
+        "getter" : "text",
+        "type" : "property",
+        "setter" : "setText:"
+      },
+      {
+        "name" : "font",
+        "propertyType" : "UIFont *",
+        "getter" : "font",
+        "type" : "property",
+        "setter" : "setFont:"
+      },
+      {
+        "name" : "textColor",
+        "propertyType" : "UIColor *",
+        "getter" : "textColor",
+        "type" : "property",
+        "setter" : "setTextColor:"
+      },
+      {
+        "name" : "shadowColor",
+        "propertyType" : "UIColor *",
+        "getter" : "shadowColor",
+        "type" : "property",
+        "setter" : "setShadowColor:"
+      },
+      {
+        "name" : "shadowOffset",
+        "propertyType" : "struct CGSize",
+        "getter" : "shadowOffset",
+        "type" : "property",
+        "setter" : "setShadowOffset:"
+      },
+      {
+        "name" : "textAlignment",
+        "propertyType" : "int",
+        "getter" : "textAlignment",
+        "type" : "property",
+        "setter" : "setTextAlignment:"
+      },
+      {
+        "name" : "lineBreakMode",
+        "propertyType" : "int",
+        "getter" : "lineBreakMode",
+        "type" : "property",
+        "setter" : "setLineBreakMode:"
+      },
+      {
+        "name" : "attributedText",
+        "propertyType" : "NSAttributedString *",
+        "getter" : "attributedText",
+        "type" : "property",
+        "setter" : "setAttributedText:"
+      },
+      {
+        "name" : "highlightedTextColor",
+        "propertyType" : "UIColor *",
+        "getter" : "highlightedTextColor",
+        "type" : "property",
+        "setter" : "setHighlightedTextColor:"
+      },
+      {
+        "name" : "highlighted",
+        "propertyType" : "char",
+        "getter" : "isHighlighted",
+        "type" : "property",
+        "setter" : "setHighlighted:"
+      },
+      {
+        "name" : "userInteractionEnabled",
+        "propertyType" : "char",
+        "getter" : "isUserInteractionEnabled",
+        "type" : "property",
+        "setter" : "setUserInteractionEnabled:"
+      },
+      {
+        "name" : "enabled",
+        "propertyType" : "char",
+        "getter" : "isEnabled",
+        "type" : "property",
+        "setter" : "setEnabled:"
+      },
+      {
+        "name" : "numberOfLines",
+        "propertyType" : "int",
+        "getter" : "numberOfLines",
+        "type" : "property",
+        "setter" : "setNumberOfLines:"
+      },
+      {
+        "name" : "adjustsFontSizeToFitWidth",
+        "propertyType" : "char",
+        "getter" : "adjustsFontSizeToFitWidth",
+        "type" : "property",
+        "setter" : "setAdjustsFontSizeToFitWidth:"
+      },
+      {
+        "name" : "adjustsLetterSpacingToFitWidth",
+        "propertyType" : "char",
+        "getter" : "adjustsLetterSpacingToFitWidth",
+        "type" : "property",
+        "setter" : "setAdjustsLetterSpacingToFitWidth:"
+      },
+      {
+        "name" : "minimumFontSize",
+        "propertyType" : "float",
+        "getter" : "minimumFontSize",
+        "type" : "property",
+        "setter" : "setMinimumFontSize:"
+      },
+      {
+        "name" : "baselineAdjustment",
+        "propertyType" : "int",
+        "getter" : "baselineAdjustment",
+        "type" : "property",
+        "setter" : "setBaselineAdjustment:"
+      },
+      {
+        "name" : "minimumScaleFactor",
+        "propertyType" : "float",
+        "getter" : "minimumScaleFactor",
+        "type" : "property",
+        "setter" : "setMinimumScaleFactor:"
+      },
+      {
+        "name" : "preferredMaxLayoutWidth",
+        "propertyType" : "float",
+        "getter" : "preferredMaxLayoutWidth",
+        "type" : "property",
+        "setter" : "setPreferredMaxLayoutWidth:"
+      },
+      {
+        "name" : "_wantsUnderlineForAccessibilityButtonShapesEnabled",
+        "propertyType" : "char",
+        "getter" : "_wantsUnderlineForAccessibilityButtonShapesEnabled",
+        "type" : "property",
+        "setter" : "_setWantsUnderlineForAccessibilityButtonShapesEnabled:"
+      },
+      {
+        "name" : "_lastLineBaseline",
+        "propertyType" : "float",
+        "getter" : "_lastLineBaseline",
+        "type" : "property",
+        "setter" : "set_lastLineBaseline:"
+      },
+      {
+        "name" : "lineSpacing",
+        "propertyType" : "int",
+        "getter" : "lineSpacing",
+        "type" : "property",
+        "setter" : "setLineSpacing:"
+      },
+      {
+        "name" : "_synthesizedAttributedText",
+        "propertyType" : "NSAttributedString *",
+        "getter" : "_synthesizedAttributedText",
+        "type" : "property",
+        "setter" : "_setSynthesizedAttributedText:"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(struct CGSize)_legacy_adjustSizeForWebKitConstraining:(struct CGSize)arg1 withFont:(id)arg2",
+        "type" : "method",
+        "name" : "_legacy_adjustSizeForWebKitConstraining:withFont:",
+        "address" : 1515601
+      },
+      {
+        "declaration" : "(id)_defaultAttributes",
+        "type" : "method",
+        "name" : "_defaultAttributes",
+        "address" : 99493
+      },
+      {
+        "declaration" : "(id)defaultFont",
+        "type" : "method",
+        "name" : "defaultFont",
+        "address" : 98713
+      }
+    ]
+  },
   "armv7s" : {
     "superClassName" : "UIView",
     "className" : "UILabel",

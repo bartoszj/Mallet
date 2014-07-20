@@ -38,6 +38,45 @@
     "superClassName":"UIView",
     "type":"class"
   },
+  "armv7":{
+    "className":"UIControl",
+    "ivars":[
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_targetActions",
+        "offset":56,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct CGPoint",
+        "name":"_previousPoint",
+        "offset":60,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"double",
+        "name":"_downTime",
+        "offset":68,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":0,
+        "ivarType":"struct {\n        unsigned int disabled:1;\n        unsigned int tracking:1;\n        unsigned int touchInside:1;\n        unsigned int touchDragged:1;\n        unsigned int requiresDisplayOnTracking:1;\n        unsigned int highlighted:1;\n        unsigned int dontHighlightOnTouchDown:1;\n        unsigned int delayActions:1;\n        unsigned int allowActionsToQueue:1;\n        unsigned int pendingUnhighlight:1;\n        unsigned int selected:1;\n        unsigned int verticalAlignment:2;\n        unsigned int horizontalAlignment:2;\n        unsigned int wasLastHighlightSuccessful:1;\n        unsigned int touchHasHighlighted:1;\n    }",
+        "name":"_controlFlags",
+        "offset":76,
+        "size":3,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIView",
+    "type":"class"
+  },
   "armv7s":{
     "className":"UIControl",
     "ivars":[

@@ -25,7 +25,7 @@ for frameworks_path in ${FRAMEWORKS_PATHS[@]}; do
         # x86_64
         "${CLASSDUMP}" -a -A --arch x86_64 -H -o "x86_64/${framework_dir_name}" "${bin_path}" 2>/dev/null
         # armv7
-        "${CLASSDUMP}" -a -A --arch armv7s -H -o "armv7/${framework_dir_name}" "${bin_path}" 2>/dev/null
+        "${CLASSDUMP}" -a -A --arch armv7 -H -o "armv7/${framework_dir_name}" "${bin_path}" 2>/dev/null
         # armv7s
         "${CLASSDUMP}" -a -A --arch armv7s -H -o "armv7s/${framework_dir_name}" "${bin_path}" 2>/dev/null
         # arm64

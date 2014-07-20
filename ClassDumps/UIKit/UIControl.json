@@ -941,6 +941,477 @@
     ],
     "superClassName" : "UIView"
   },
+  "armv7" : {
+    "properties" : [
+      {
+        "name" : "enabled",
+        "propertyType" : "char",
+        "getter" : "isEnabled",
+        "type" : "property",
+        "setter" : "setEnabled:"
+      },
+      {
+        "name" : "selected",
+        "propertyType" : "char",
+        "getter" : "isSelected",
+        "type" : "property",
+        "setter" : "setSelected:"
+      },
+      {
+        "name" : "highlighted",
+        "propertyType" : "char",
+        "getter" : "isHighlighted",
+        "type" : "property",
+        "setter" : "setHighlighted:"
+      },
+      {
+        "name" : "contentVerticalAlignment",
+        "propertyType" : "int",
+        "getter" : "contentVerticalAlignment",
+        "type" : "property",
+        "setter" : "setContentVerticalAlignment:"
+      },
+      {
+        "name" : "contentHorizontalAlignment",
+        "propertyType" : "int",
+        "getter" : "contentHorizontalAlignment",
+        "type" : "property",
+        "setter" : "setContentHorizontalAlignment:"
+      },
+      {
+        "name" : "state",
+        "propertyType" : "unsigned int",
+        "getter" : "state",
+        "type" : "property",
+        "setter" : "setState:"
+      },
+      {
+        "name" : "tracking",
+        "propertyType" : "char",
+        "getter" : "isTracking",
+        "type" : "property",
+        "setter" : "setTracking:"
+      },
+      {
+        "name" : "touchInside",
+        "propertyType" : "char",
+        "getter" : "isTouchInside",
+        "type" : "property",
+        "setter" : "setTouchInside:"
+      }
+    ],
+    "className" : "UIControl",
+    "instanceMethods" : [
+      {
+        "declaration" : "(void)_sendDelayedActions:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_sendDelayedActions:",
+        "address" : 178161
+      },
+      {
+        "declaration" : "(void)_unhighlight",
+        "type" : "method",
+        "name" : "_unhighlight",
+        "address" : 2923141
+      },
+      {
+        "declaration" : "(void)setTracking:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setTracking:",
+        "address" : 261993
+      },
+      {
+        "declaration" : "(void)removeTarget:(id)arg1 forEvents:(int)arg2",
+        "type" : "method",
+        "name" : "removeTarget:forEvents:",
+        "address" : 2923105
+      },
+      {
+        "declaration" : "(void)addTarget:(id)arg1 action:(SEL)arg2 forEvents:(int)arg3",
+        "type" : "method",
+        "name" : "addTarget:action:forEvents:",
+        "address" : 521745
+      },
+      {
+        "declaration" : "(BOOL)hasOneOrMoreTargets",
+        "type" : "method",
+        "name" : "hasOneOrMoreTargets",
+        "address" : 2923065
+      },
+      {
+        "declaration" : "(BOOL)requiresDisplayOnTracking",
+        "type" : "method",
+        "name" : "requiresDisplayOnTracking",
+        "address" : 262517
+      },
+      {
+        "declaration" : "(void)setRequiresDisplayOnTracking:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setRequiresDisplayOnTracking:",
+        "address" : 1383249
+      },
+      {
+        "declaration" : "(BOOL)touchDragged",
+        "type" : "method",
+        "name" : "touchDragged",
+        "address" : 2923045
+      },
+      {
+        "declaration" : "(BOOL)shouldTrack",
+        "type" : "method",
+        "name" : "shouldTrack",
+        "address" : 295909
+      },
+      {
+        "declaration" : "(BOOL)_touchHasHighlighted",
+        "type" : "method",
+        "name" : "_touchHasHighlighted",
+        "address" : 595029
+      },
+      {
+        "declaration" : "(void)_setTouchHasHighlighted:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setTouchHasHighlighted:",
+        "address" : 269977
+      },
+      {
+        "declaration" : "(BOOL)_wasLastHighlightSuccessful",
+        "type" : "method",
+        "name" : "_wasLastHighlightSuccessful",
+        "address" : 2923021
+      },
+      {
+        "declaration" : "(void)_setLastHighlightSuccessful:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setLastHighlightSuccessful:",
+        "address" : 269849
+      },
+      {
+        "declaration" : "(BOOL)pointMostlyInside:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "pointMostlyInside:withEvent:",
+        "address" : 261413
+      },
+      {
+        "declaration" : "(void)_cancelDelayedActions",
+        "type" : "method",
+        "name" : "_cancelDelayedActions",
+        "address" : 1317969
+      },
+      {
+        "declaration" : "(void)_sendDelayedActions",
+        "type" : "method",
+        "name" : "_sendDelayedActions",
+        "address" : 2387053
+      },
+      {
+        "declaration" : "(void)_delayActions",
+        "type" : "method",
+        "name" : "_delayActions",
+        "address" : 2922989
+      },
+      {
+        "declaration" : "(void)_setHighlightOnMouseDown:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setHighlightOnMouseDown:",
+        "address" : 1431465
+      },
+      {
+        "declaration" : "(void)_sendActionsForEvents:(int)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_sendActionsForEvents:withEvent:",
+        "address" : 177601
+      },
+      {
+        "declaration" : "(BOOL)_hasActionForEventMask:(int)arg1",
+        "type" : "method",
+        "name" : "_hasActionForEventMask:",
+        "address" : 2922865
+      },
+      {
+        "declaration" : "(float)_highlightCornerRadius",
+        "type" : "method",
+        "name" : "_highlightCornerRadius",
+        "address" : 2922777
+      },
+      {
+        "declaration" : "(struct CGRect)_clippedHighlightBounds",
+        "type" : "method",
+        "name" : "_clippedHighlightBounds",
+        "address" : 2922741
+      },
+      {
+        "declaration" : "(BOOL)canBecomeFirstResponder",
+        "type" : "method",
+        "name" : "canBecomeFirstResponder",
+        "address" : 2922673
+      },
+      {
+        "declaration" : "(void)sendActionsForControlEvents:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "sendActionsForControlEvents:",
+        "address" : 2100005
+      },
+      {
+        "declaration" : "(void)sendAction:(SEL)arg1 to:(id)arg2 forEvent:(id)arg3",
+        "type" : "method",
+        "name" : "sendAction:to:forEvent:",
+        "address" : 262053
+      },
+      {
+        "declaration" : "(id)actionsForTarget:(id)arg1 forControlEvent:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "actionsForTarget:forControlEvent:",
+        "address" : 2922341
+      },
+      {
+        "declaration" : "(unsigned int)allControlEvents",
+        "type" : "method",
+        "name" : "allControlEvents",
+        "address" : 2922141
+      },
+      {
+        "declaration" : "(id)allTargets",
+        "type" : "method",
+        "name" : "allTargets",
+        "address" : 2921857
+      },
+      {
+        "declaration" : "(void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3",
+        "type" : "method",
+        "name" : "removeTarget:action:forControlEvents:",
+        "address" : 1317725
+      },
+      {
+        "declaration" : "(void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3",
+        "type" : "method",
+        "name" : "addTarget:action:forControlEvents:",
+        "address" : 516473
+      },
+      {
+        "declaration" : "(void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2",
+        "type" : "method",
+        "name" : "_didMoveFromWindow:toWindow:",
+        "address" : 534669
+      },
+      {
+        "declaration" : "(void)touchesCancelled:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesCancelled:withEvent:",
+        "address" : 1643801
+      },
+      {
+        "declaration" : "(void)touchesEnded:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesEnded:withEvent:",
+        "address" : 260097
+      },
+      {
+        "declaration" : "(void)touchesMoved:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesMoved:withEvent:",
+        "address" : 1640053
+      },
+      {
+        "declaration" : "(void)touchesBegan:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "touchesBegan:withEvent:",
+        "address" : 295549
+      },
+      {
+        "declaration" : "(id)hitTest:(struct CGPoint)arg1 forEvent:(struct __GSEvent *)arg2",
+        "type" : "method",
+        "name" : "hitTest:forEvent:",
+        "address" : 2921765
+      },
+      {
+        "declaration" : "(id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "hitTest:withEvent:",
+        "address" : 280069
+      },
+      {
+        "declaration" : "(BOOL)isSelected",
+        "type" : "method",
+        "name" : "isSelected",
+        "address" : 393169
+      },
+      {
+        "declaration" : "(void)setSelected:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setSelected:",
+        "address" : 2369401
+      },
+      {
+        "declaration" : "(int)contentHorizontalAlignment",
+        "type" : "method",
+        "name" : "contentHorizontalAlignment",
+        "address" : 526005
+      },
+      {
+        "declaration" : "(void)setContentHorizontalAlignment:(int)arg1",
+        "type" : "method",
+        "name" : "setContentHorizontalAlignment:",
+        "address" : 791205
+      },
+      {
+        "declaration" : "(int)contentVerticalAlignment",
+        "type" : "method",
+        "name" : "contentVerticalAlignment",
+        "address" : 186161
+      },
+      {
+        "declaration" : "(void)setContentVerticalAlignment:(int)arg1",
+        "type" : "method",
+        "name" : "setContentVerticalAlignment:",
+        "address" : 2921697
+      },
+      {
+        "declaration" : "(BOOL)isHighlighted",
+        "type" : "method",
+        "name" : "isHighlighted",
+        "address" : 261885
+      },
+      {
+        "declaration" : "(void)setHighlighted:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setHighlighted:",
+        "address" : 262249
+      },
+      {
+        "declaration" : "(void)cancelTrackingWithEvent:(id)arg1",
+        "type" : "method",
+        "name" : "cancelTrackingWithEvent:",
+        "address" : 1643881
+      },
+      {
+        "declaration" : "(void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "endTrackingWithTouch:withEvent:",
+        "address" : 261929
+      },
+      {
+        "declaration" : "(BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "continueTrackingWithTouch:withEvent:",
+        "address" : 1640541
+      },
+      {
+        "declaration" : "(BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "beginTrackingWithTouch:withEvent:",
+        "address" : 295977
+      },
+      {
+        "declaration" : "(BOOL)cancelTouchTracking",
+        "type" : "method",
+        "name" : "cancelTouchTracking",
+        "address" : 2101017
+      },
+      {
+        "declaration" : "(BOOL)cancelMouseTracking",
+        "type" : "method",
+        "name" : "cancelMouseTracking",
+        "address" : 2389429
+      },
+      {
+        "declaration" : "(BOOL)isTouchInside",
+        "type" : "method",
+        "name" : "isTouchInside",
+        "address" : 261905
+      },
+      {
+        "declaration" : "(unsigned int)state",
+        "type" : "method",
+        "name" : "state",
+        "address" : 393073
+      },
+      {
+        "declaration" : "(BOOL)isTracking",
+        "type" : "method",
+        "name" : "isTracking",
+        "address" : 261045
+      },
+      {
+        "declaration" : "(BOOL)isEnabled",
+        "type" : "method",
+        "name" : "isEnabled",
+        "address" : 280157
+      },
+      {
+        "declaration" : "(void)setEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setEnabled:",
+        "address" : 567249
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 1471365
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 2921397
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 2920921
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 512901
+      },
+      {
+        "declaration" : "(void)_connectInterfaceBuilderEventConnection:(id)arg1",
+        "type" : "method",
+        "name" : "_connectInterfaceBuilderEventConnection:",
+        "address" : 3648349
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "NSMutableArray *",
+        "size" : 4,
+        "offset" : 56,
+        "type" : "ivar",
+        "name" : "_targetActions"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "struct CGPoint",
+        "size" : 8,
+        "offset" : 60,
+        "type" : "ivar",
+        "name" : "_previousPoint"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 68,
+        "type" : "ivar",
+        "name" : "_downTime"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "struct {\n        unsigned int disabled:1;\n        unsigned int tracking:1;\n        unsigned int touchInside:1;\n        unsigned int touchDragged:1;\n        unsigned int requiresDisplayOnTracking:1;\n        unsigned int highlighted:1;\n        unsigned int dontHighlightOnTouchDown:1;\n        unsigned int delayActions:1;\n        unsigned int allowActionsToQueue:1;\n        unsigned int pendingUnhighlight:1;\n        unsigned int selected:1;\n        unsigned int verticalAlignment:2;\n        unsigned int horizontalAlignment:2;\n        unsigned int wasLastHighlightSuccessful:1;\n        unsigned int touchHasHighlighted:1;\n    }",
+        "size" : 3,
+        "offset" : 76,
+        "type" : "ivar",
+        "name" : "_controlFlags"
+      }
+    ],
+    "superClassName" : "UIView"
+  },
   "armv7s" : {
     "properties" : [
       {

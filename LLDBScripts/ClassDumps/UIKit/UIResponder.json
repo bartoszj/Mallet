@@ -4,6 +4,11 @@
     "superClassName":"NSObject",
     "type":"class"
   },
+  "armv7":{
+    "className":"UIResponder",
+    "superClassName":"NSObject",
+    "type":"class"
+  },
   "armv7s":{
     "className":"UIResponder",
     "superClassName":"NSObject",
