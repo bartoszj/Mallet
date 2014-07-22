@@ -37,22 +37,7 @@ def clean_class_dumps():
     output_dir = os.path.join(current_dir, "LLDBScripts/ClassDumps")
 
     al = ClassDump.ArchitecturesList()
-
-    # Go through all files in input directory and read it
-    for root, dirs, files in os.walk(input_dir):
-        for f in files:
-            # Check if it is a JSON file.
-            if not f.endswith(".json"):
-                continue
-
-            # Framework.
-            framework_name = root.replace(input_dir, "").strip("/")
-
-            # File path.
-            fi_path = os.path.join(root, f)
-            al.read_file_path(fi_path, framework_name)
-
-    # Dump all classes
+    al.read_directory_path(input_dir)
     al.save_to_folder(output_dir)
 
 if __name__ == "__main__":

@@ -25,6 +25,7 @@
 import json
 import os
 
+
 class ArchitecturesList(object):
     def __init__(self):
         super(ArchitecturesList, self).__init__()
@@ -57,6 +58,21 @@ class ArchitecturesList(object):
     def read_file_path(self, fp, framework):
         with open(fp, "r") as f:
             self.read_file(f, framework)
+
+    def read_directory_path(self, dir_path):
+        # Go through all files in input directory and read it
+        for root, dirs, files in os.walk(dir_path):
+            for f in files:
+                # Check if it is a JSON file.
+                if not f.endswith(".json"):
+                    continue
+
+                # Framework.
+                framework_name = root.replace(dir_path, "").strip("/")
+
+                # File path.
+                fi_path = os.path.join(root, f)
+                self.read_file_path(fi_path, framework_name)
 
     def save_to_folder(self, folder_path):
         classes = self.all_class_names()
