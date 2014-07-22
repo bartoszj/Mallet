@@ -23,57 +23,39 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import os
-import json
 import sys
+import ClassDump
 
 
-def class_dump(j):
-    d = u""
-    for archName in j:
-        d += u"Architecture: {}\n".format(archName)
-        arch = j[archName]
-        type = arch[u"type"]
-        if type == u"class":
-            class_name = arch["className"]
-            super_class_name = arch["superClassName"]
-            d += u"Class: {}\n".format(class_name)
-            d += u"Super class: {}\n".format(super_class_name)
-            if "ivars" in arch:
-                ivars = arch["ivars"]
-                # Sort ivars by offset.
-                ivars = sorted(ivars, key=lambda x: x["offset"], reverse=False)
-                for ivar in ivars:
-                    ivarType = ivar["ivarType"]
-                    name = ivar["name"]
-                    size = ivar["size"]
-                    offset = ivar["offset"]
-                    d += u"  {0} {1} {2} (0x{2:X}) 0x{3:X}\n".format(ivarType, name, size, offset)
+def dump_class(class_name):
+    # Current directory path.
+    current_dir = os.path.abspath(__file__)
+    current_dir, _ = os.path.split(current_dir)
+    input_dir = os.path.join(current_dir, "LLDBScripts/ClassDumps")
 
-        d += u"\n"
-    return d
+    al = ClassDump.ArchitecturesList()
+    al.read_directory_path(input_dir)
+    all_classes = al.all_class_names()
+    if class_name in all_classes:
+        output = u""
+        for architecture in al.architectures:
+            c = architecture.get_class(class_name)
+            output += u"Architecture: {}\n".format(architecture.name)
+            output += u"Class: {}\n".format(c.class_name)
+            output += u"Super class: {}\n".format(c.super_class_name)
+            output += u"Protocols: {}\n".format(u", ".join(c.protocols))
+            output += u"Ivars:\n"
+            ivars = sorted(c.ivars, key=lambda x: x.offset, reverse=False)
+            for ivar in ivars:
+                output += u"  {0} {1} {2} (0x{2:X}) 0x{3:X}\n".format(ivar.ivarType, ivar.name, ivar.size, ivar.offset)
+            output += u"\n"
+        print output
 
 
 if __name__ == "__main__":
     # Check number of parameters.
-    if len(sys.argv) < 2:
-        print "Not enough arguments"
+    if len(sys.argv) != 2:
+        print "Wrong number of parameters"
         exit()
 
-    # Current directory path.
-    current_dir = os.path.abspath(__file__)
-    current_dir, _ = os.path.split(current_dir)
-
-    args = sys.argv[1:]
-    for path in args:
-        # Create absolute path.
-        if not os.path.isabs(path):
-            path = os.path.join(current_dir, path)
-
-        if not os.path.exists(path):
-            continue
-
-        with open(path, "r") as f:
-            json_data = json.load(f)
-
-        dump = class_dump(json_data)
-        print dump
+    dump_class(sys.argv[1])
