@@ -24,70 +24,7 @@
 
 
 import os
-import json
-
-
-def clean_ivar_json(j):
-    oj = dict()
-
-    # Standard keys.
-    supported_keys = [u"alignment", u"ivarType", u"name", u"offset", u"size", u"type"]
-    for key in supported_keys:
-        if key in j:
-            oj[key] = j[key]
-
-    if len(oj) == 0:
-        return None
-    return oj
-
-
-def clean_ivars_json(j):
-    oj = list()
-
-    for ivar in j:
-        new_ivar = clean_ivar_json(ivar)
-        if new_ivar:
-            oj.append(new_ivar)
-
-    if len(j) == 0:
-        return None
-    return oj
-
-
-def clean_class_json(j):
-    oj = dict()
-
-    # Standard keys.
-    supported_keys = [u"superClassName", u"className", u"type"]
-    for key in supported_keys:
-        if key in j:
-            oj[key] = j[key]
-
-    # ivars key.
-    ivars_key = u"ivars"
-    if ivars_key in j:
-        new_ivars = clean_ivars_json(j[ivars_key])
-        if new_ivars:
-            oj[ivars_key] = new_ivars
-
-    if len(oj) == 0:
-        return None
-    return oj
-
-
-def clean_class_dump_json(j):
-    oj = dict()
-    for archName in j:
-        arch = j[archName]
-        type = arch[u"type"]
-        if type == u"class":
-            new_arch = clean_class_json(arch)
-            if new_arch:
-                oj[archName] = new_arch
-
-    if len(oj) == 0:
-        return None
-    return oj
+import ClassDump
 
 
 def clean_class_dumps():
@@ -99,40 +36,24 @@ def clean_class_dumps():
     input_dir = os.path.join(current_dir, "ClassDumps")
     output_dir = os.path.join(current_dir, "LLDBScripts/ClassDumps")
 
-    # Go through all files in input directory.
+    al = ClassDump.ArchitecturesList()
+
+    # Go through all files in input directory and read it
     for root, dirs, files in os.walk(input_dir):
         for f in files:
             # Check if it is a JSON file.
             if not f.endswith(".json"):
                 continue
 
+            # Framework.
+            framework_name = root.replace(input_dir, "").strip("/")
+
             # File path.
             fi_path = os.path.join(root, f)
+            al.read_file_path(fi_path, framework_name)
 
-            # Read JSON.
-            j = None
-            with open(fi_path, "r") as json_file:
-                j = json.load(json_file)
-
-            j = clean_class_dump_json(j)
-
-            # Skip is JSON data is empty.
-            if j is None:
-                continue
-
-            # Get file output directory.
-            d = root.replace(input_dir, "")
-            d = d.strip("/")
-            d_path = os.path.join(output_dir, d)
-            if not os.path.exists(d_path):
-                os.makedirs(d_path)
-
-            # Output file path.
-            fo_path = os.path.join(d_path, f)
-
-            # Save file.
-            with open(fo_path, "w") as json_file:
-                json.dump(j, json_file, sort_keys=True, indent=2, separators=(",", ":"))
+    # Dump all classes
+    al.save_to_folder(output_dir)
 
 if __name__ == "__main__":
     clean_class_dumps()

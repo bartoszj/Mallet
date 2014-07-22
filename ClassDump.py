@@ -23,14 +23,14 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import json
-
+import os
 
 class ArchitecturesList(object):
     def __init__(self):
         super(ArchitecturesList, self).__init__()
         self.architectures = list()
 
-    def architecture(self, name):
+    def get_architecture(self, name):
         for a in self.architectures:
             if a.name == name:
                 return a
@@ -42,31 +42,45 @@ class ArchitecturesList(object):
             s = s.union(set(a.all_class_names()))
         return list(s)
 
-    def read_json(self, j):
+    def read_json(self, j, framework):
         for archName in j:
-            architecture = self.architecture(archName)
+            architecture = self.get_architecture(archName)
             if not architecture:
                 architecture = Architecture(archName)
                 self.architectures.append(architecture)
-            architecture.add_json(j[archName])
+            architecture.add_json(j[archName], framework)
 
-    def read_file(self, f):
+    def read_file(self, f, framework):
         j = json.load(f)
-        self.read_json(j)
+        self.read_json(j, framework)
 
-    def read_file_path(self, fp):
+    def read_file_path(self, fp, framework):
         with open(fp, "r") as f:
-            self.read_file(f)
+            self.read_file(f, framework)
 
     def save_to_folder(self, folder_path):
         classes = self.all_class_names()
         for class_name in classes:
-            class_data = list()
+            # Get class data.
+            class_data = dict()
+            framework_name = None
             for architecture in self.architectures:
                 c = architecture.get_class(class_name)
-                class_data.append(architecture.json_data_for_object(c))
-            print class_data
-        print folder_path
+                framework_name = c.framework_name
+                class_data[architecture.name] = c.json_data()
+
+            # Output directory path.
+            output_dir_path = os.path.join(folder_path, framework_name)
+            # Create output directory if needed.
+            if not os.path.exists(output_dir_path):
+                os.makedirs(output_dir_path)
+
+            # Output file path.
+            output_file_path = os.path.join(output_dir_path, class_name) + ".json"
+            # Saving.
+            with open(output_file_path, "w") as output_file:
+                json.dump(class_data, output_file, sort_keys=True, indent=2, separators=(",", ":"))
+                print "Saving {}".format(class_name)
 
 
 class Architecture(object):
@@ -100,7 +114,7 @@ class Architecture(object):
             return self._classes_map[name]
         return None
 
-    def add_json(self, j):
+    def add_json(self, j, framework):
         if j is None:
             return
 
@@ -110,24 +124,15 @@ class Architecture(object):
         t = j["type"]
         if t == "class":
             c = Class(j)
+            c.framework_name = framework
             self.classes.append(c)
             self._classes_map = None
-
-    def json_data_for_object(self, o):
-        if o is None:
-            return None
-
-        oj = o.json_data()
-
-        j = dict()
-        j[self.name] = oj
-
-        return j
 
 
 class Protocol(object):
     def __init__(self, j=None):
         super(Protocol, self).__init__()
+        self.framework_name = None
         self.protocol_name = None
         self.protocols = None
         self.properties = None

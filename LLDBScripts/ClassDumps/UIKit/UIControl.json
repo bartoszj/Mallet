@@ -66,7 +66,6 @@
         "type":"ivar"
       },
       {
-        "alignment":0,
         "ivarType":"struct {\n        unsigned int disabled:1;\n        unsigned int tracking:1;\n        unsigned int touchInside:1;\n        unsigned int touchDragged:1;\n        unsigned int requiresDisplayOnTracking:1;\n        unsigned int highlighted:1;\n        unsigned int dontHighlightOnTouchDown:1;\n        unsigned int delayActions:1;\n        unsigned int allowActionsToQueue:1;\n        unsigned int pendingUnhighlight:1;\n        unsigned int selected:1;\n        unsigned int verticalAlignment:2;\n        unsigned int horizontalAlignment:2;\n        unsigned int wasLastHighlightSuccessful:1;\n        unsigned int touchHasHighlighted:1;\n    }",
         "name":"_controlFlags",
         "offset":76,
@@ -105,7 +104,6 @@
         "type":"ivar"
       },
       {
-        "alignment":0,
         "ivarType":"struct {\n        unsigned int disabled:1;\n        unsigned int tracking:1;\n        unsigned int touchInside:1;\n        unsigned int touchDragged:1;\n        unsigned int requiresDisplayOnTracking:1;\n        unsigned int highlighted:1;\n        unsigned int dontHighlightOnTouchDown:1;\n        unsigned int delayActions:1;\n        unsigned int allowActionsToQueue:1;\n        unsigned int pendingUnhighlight:1;\n        unsigned int selected:1;\n        unsigned int verticalAlignment:2;\n        unsigned int horizontalAlignment:2;\n        unsigned int wasLastHighlightSuccessful:1;\n        unsigned int touchHasHighlighted:1;\n    }",
         "name":"_controlFlags",
         "offset":76,

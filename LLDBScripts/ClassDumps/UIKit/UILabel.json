@@ -115,7 +115,6 @@
         "type":"ivar"
       },
       {
-        "alignment":0,
         "ivarType":"_Bool",
         "name":"_wantsUnderlineForAccessibilityButtonShapesEnabled",
         "offset":220,
@@ -130,6 +129,9 @@
         "size":8,
         "type":"ivar"
       }
+    ],
+    "protocols":[
+      "NSCoding"
     ],
     "superClassName":"UIView",
     "type":"class"
@@ -242,7 +244,6 @@
         "type":"ivar"
       },
       {
-        "alignment":0,
         "ivarType":"struct {\n        unsigned int unused1:3;\n        unsigned int highlighted:1;\n        unsigned int autosizeTextToFit:1;\n        unsigned int autotrackTextToFit:1;\n        unsigned int baselineAdjustment:2;\n        unsigned int unused2:2;\n        unsigned int enabled:1;\n        unsigned int wordRoundingEnabled:1;\n        unsigned int explicitAlignment:1;\n        unsigned int marqueeEnabled:1;\n        unsigned int marqueeRunable:1;\n        unsigned int marqueeRequired:1;\n        unsigned int drawsLetterpress:1;\n        unsigned int unused3:1;\n        unsigned int usesExplicitPreferredMaxLayoutWidth:1;\n        unsigned int determiningPreferredMaxLayoutWidth:1;\n        unsigned int inSecondConstraintsPass:1;\n        unsigned int drawsDebugBaselines:1;\n        unsigned int explicitBaselineOffset:1;\n        unsigned int usesSimpleTextEffects:1;\n        unsigned int isComplexString:1;\n    }",
         "name":"_textLabelFlags",
         "offset":112,
@@ -250,7 +251,6 @@
         "type":"ivar"
       },
       {
-        "alignment":0,
         "ivarType":"char",
         "name":"_wantsUnderlineForAccessibilityButtonShapesEnabled",
         "offset":116,
@@ -265,6 +265,9 @@
         "size":4,
         "type":"ivar"
       }
+    ],
+    "protocols":[
+      "NSCoding"
     ],
     "superClassName":"UIView",
     "type":"class"
@@ -377,7 +380,6 @@
         "type":"ivar"
       },
       {
-        "alignment":0,
         "ivarType":"struct {\n        unsigned int unused1:3;\n        unsigned int highlighted:1;\n        unsigned int autosizeTextToFit:1;\n        unsigned int autotrackTextToFit:1;\n        unsigned int baselineAdjustment:2;\n        unsigned int unused2:2;\n        unsigned int enabled:1;\n        unsigned int wordRoundingEnabled:1;\n        unsigned int explicitAlignment:1;\n        unsigned int marqueeEnabled:1;\n        unsigned int marqueeRunable:1;\n        unsigned int marqueeRequired:1;\n        unsigned int drawsLetterpress:1;\n        unsigned int unused3:1;\n        unsigned int usesExplicitPreferredMaxLayoutWidth:1;\n        unsigned int determiningPreferredMaxLayoutWidth:1;\n        unsigned int inSecondConstraintsPass:1;\n        unsigned int drawsDebugBaselines:1;\n        unsigned int explicitBaselineOffset:1;\n        unsigned int usesSimpleTextEffects:1;\n        unsigned int isComplexString:1;\n    }",
         "name":"_textLabelFlags",
         "offset":112,
@@ -385,7 +387,6 @@
         "type":"ivar"
       },
       {
-        "alignment":0,
         "ivarType":"char",
         "name":"_wantsUnderlineForAccessibilityButtonShapesEnabled",
         "offset":116,
@@ -400,6 +401,9 @@
         "size":4,
         "type":"ivar"
       }
+    ],
+    "protocols":[
+      "NSCoding"
     ],
     "superClassName":"UIView",
     "type":"class"
@@ -520,7 +524,6 @@
         "type":"ivar"
       },
       {
-        "alignment":0,
         "ivarType":"char",
         "name":"_wantsUnderlineForAccessibilityButtonShapesEnabled",
         "offset":116,
@@ -535,6 +538,9 @@
         "size":4,
         "type":"ivar"
       }
+    ],
+    "protocols":[
+      "NSCoding"
     ],
     "superClassName":"UIView",
     "type":"class"
@@ -655,7 +661,6 @@
         "type":"ivar"
       },
       {
-        "alignment":0,
         "ivarType":"_Bool",
         "name":"_wantsUnderlineForAccessibilityButtonShapesEnabled",
         "offset":220,
@@ -670,6 +675,9 @@
         "size":8,
         "type":"ivar"
       }
+    ],
+    "protocols":[
+      "NSCoding"
     ],
     "superClassName":"UIView",
     "type":"class"

@@ -6,21 +6,37 @@
   },
   "armv7":{
     "className":"UIResponder",
+    "protocols":[
+      "UITextInput_Internal",
+      "UITextInputAdditions"
+    ],
     "superClassName":"NSObject",
     "type":"class"
   },
   "armv7s":{
     "className":"UIResponder",
+    "protocols":[
+      "UITextInput_Internal",
+      "UITextInputAdditions"
+    ],
     "superClassName":"NSObject",
     "type":"class"
   },
   "i386":{
     "className":"UIResponder",
+    "protocols":[
+      "UITextInput_Internal",
+      "UITextInputAdditions"
+    ],
     "superClassName":"NSObject",
     "type":"class"
   },
   "x86_64":{
     "className":"UIResponder",
+    "protocols":[
+      "UITextInput_Internal",
+      "UITextInputAdditions"
+    ],
     "superClassName":"NSObject",
     "type":"class"
   }
