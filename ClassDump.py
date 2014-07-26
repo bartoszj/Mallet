@@ -80,9 +80,11 @@ class ArchitecturesList(object):
             # Get class data.
             class_data = dict()
             framework_name = None
+            file_name = None
             for architecture in self.architectures:
                 c = architecture.get_class(class_name)
                 framework_name = c.framework_name
+                file_name = c.file_name()
                 class_data[architecture.name] = c.json_data()
 
             # Output directory path.
@@ -92,11 +94,33 @@ class ArchitecturesList(object):
                 os.makedirs(output_dir_path)
 
             # Output file path.
-            output_file_path = os.path.join(output_dir_path, class_name) + ".json"
+            output_file_path = os.path.join(output_dir_path, file_name)
             # Saving.
             with open(output_file_path, "w") as output_file:
                 json.dump(class_data, output_file, sort_keys=True, indent=2, separators=(",", ":"))
                 print "Saving {}".format(class_name)
+
+    def fix_ivars_offset(self):
+        # Current directory path.
+        current_dir = os.path.abspath(__file__)
+        current_dir, _ = os.path.split(current_dir)
+
+        # Finds offsets.json file.
+        offsets_file_path = os.path.join(current_dir, "offsets.json")
+        if not os.path.exists(offsets_file_path):
+            print "Offset file doesn't exists."
+            exit()
+
+        # Read offsets.json file.
+        with open(offsets_file_path, "r") as offsets_file:
+            offsets = json.load(offsets_file)
+
+            # Go through all architectures and fix offsets.
+            for architecture in self.architectures:
+                if architecture.name not in offsets:
+                    print "No architecture {} in offsets.".format(architecture.name)
+                    continue
+                architecture.fix_ivars_offset(offsets[architecture.name])
 
 
 class Architecture(object):
@@ -144,6 +168,29 @@ class Architecture(object):
             self.classes.append(c)
             self._classes_map = None
 
+    def class_inheritance(self, cl):
+        ci = [cl.super_class_name]
+
+        super_cl = self.get_class(cl.super_class_name)
+        if super_cl:
+            ci.extend(self.class_inheritance(super_cl))
+
+        return ci
+
+    def class_offset_for_class(self, cl, offsets_list):
+        class_inheritance = self.class_inheritance(cl)
+        for class_name in class_inheritance:
+            if offsets_list.has_class_offset(class_name):
+                return offsets_list.get_class_offset(class_name)
+        return None
+
+    def fix_ivars_offset(self, offsets):
+        offsets_list = OffsetsList(offsets)
+        for cl in self.classes:
+            class_offset = self.class_offset_for_class(cl, offsets_list)
+            if class_offset:
+                cl.fix_ivars_offset(class_offset)
+
 
 class Protocol(object):
     def __init__(self, j=None):
@@ -187,7 +234,7 @@ class Class(Protocol):
         self.class_name = None
         self.super_class_name = None
         self.ivars = None
-        self.protocols = None
+        # self.protocols = None
         self.class_methods = None
         self.type = "class"
         self.read_json(j)
@@ -230,6 +277,10 @@ class Class(Protocol):
         j["type"] = self.type
         return j
 
+    def fix_ivars_offset(self, offset):
+        for ivar in self.ivars:
+            ivar.offset += offset.offset
+
 
 class Ivar(object):
     def __init__(self, j=None):
@@ -271,6 +322,59 @@ class Ivar(object):
             j["size"] = self.size
         j["type"] = self.type
         return j
+
+
+class OffsetsList(object):
+    def __init__(self, json_data):
+        super(OffsetsList, self).__init__()
+        self.list = None
+        self._classes_map = None
+        self._read_json(json_data)
+
+    def _get_class_map(self):
+        # Create class map.
+        if self._classes_map is None:
+            m = dict()
+            for c in self.list:
+                m[c.name] = c
+            if len(m) > 0:
+                self._classes_map = m
+        return self._classes_map
+
+    def _read_json(self, json_data):
+        l = list()
+        for cl in json_data:
+            o = ClassOffset(cl)
+            l.append(o)
+
+        if len(l) > 0:
+            self.list = l
+
+    def has_class_offset(self, class_name):
+        self._get_class_map()
+
+        if class_name in self._classes_map:
+            return True
+
+    def get_class_offset(self, class_name):
+        self._get_class_map()
+
+        if class_name in self._classes_map:
+            return self._classes_map[class_name]
+        return None
+
+
+class ClassOffset(object):
+    def __init__(self, json_data):
+        super(ClassOffset, self).__init__()
+        self.name = None
+        self.offset = None
+        self._read_json(json_data)
+
+    def _read_json(self, json_data):
+        self.name = json_data["class"]
+        self.offset = json_data["offset"]
+
 
 if __name__ == "__main__":
     pass

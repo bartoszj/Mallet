@@ -42,12 +42,15 @@ def dump_class(class_name):
             c = architecture.get_class(class_name)
             output += u"Architecture: {}\n".format(architecture.name)
             output += u"Class: {}\n".format(c.class_name)
-            output += u"Super class: {}\n".format(c.super_class_name)
-            output += u"Protocols: {}\n".format(u", ".join(c.protocols))
-            output += u"Ivars:\n"
-            ivars = sorted(c.ivars, key=lambda x: x.offset, reverse=False)
-            for ivar in ivars:
-                output += u"  {0} {1} {2} (0x{2:X}) 0x{3:X}\n".format(ivar.ivarType, ivar.name, ivar.size, ivar.offset)
+            if c.super_class_name:
+                output += u"Super class: {}\n".format(c.super_class_name)
+            if c.protocols:
+                output += u"Protocols: {}\n".format(u", ".join(c.protocols))
+            if c.ivars:
+                output += u"Ivars:\n"
+                ivars = sorted(c.ivars, key=lambda x: x.offset, reverse=False)
+                for ivar in ivars:
+                    output += u"  {0} {1}  {2} (0x{2:X}) + {3}\n".format(ivar.ivarType, ivar.name, ivar.offset, ivar.size)
             output += u"\n"
         print output
 

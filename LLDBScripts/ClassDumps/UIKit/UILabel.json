@@ -6,7 +6,7 @@
         "alignment":3,
         "ivarType":"struct CGSize",
         "name":"_size",
-        "offset":104,
+        "offset":184,
         "size":16,
         "type":"ivar"
       },
@@ -14,7 +14,7 @@
         "alignment":3,
         "ivarType":"UIColor *",
         "name":"_highlightedColor",
-        "offset":120,
+        "offset":200,
         "size":8,
         "type":"ivar"
       },
@@ -22,7 +22,7 @@
         "alignment":3,
         "ivarType":"long long",
         "name":"_numberOfLines",
-        "offset":128,
+        "offset":208,
         "size":8,
         "type":"ivar"
       },
@@ -30,7 +30,7 @@
         "alignment":3,
         "ivarType":"long long",
         "name":"_measuredNumberOfLines",
-        "offset":136,
+        "offset":216,
         "size":8,
         "type":"ivar"
       },
@@ -38,7 +38,7 @@
         "alignment":3,
         "ivarType":"double",
         "name":"_lastLineBaseline",
-        "offset":144,
+        "offset":224,
         "size":8,
         "type":"ivar"
       },
@@ -46,7 +46,7 @@
         "alignment":3,
         "ivarType":"double",
         "name":"_minimumScaleFactor",
-        "offset":152,
+        "offset":232,
         "size":8,
         "type":"ivar"
       },
@@ -54,7 +54,7 @@
         "alignment":3,
         "ivarType":"id",
         "name":"_content",
-        "offset":160,
+        "offset":240,
         "size":8,
         "type":"ivar"
       },
@@ -62,7 +62,7 @@
         "alignment":3,
         "ivarType":"NSAttributedString *",
         "name":"_synthesizedAttributedText",
-        "offset":168,
+        "offset":248,
         "size":8,
         "type":"ivar"
       },
@@ -70,7 +70,7 @@
         "alignment":3,
         "ivarType":"NSMutableDictionary *",
         "name":"_defaultAttributes",
-        "offset":176,
+        "offset":256,
         "size":8,
         "type":"ivar"
       },
@@ -78,7 +78,7 @@
         "alignment":3,
         "ivarType":"double",
         "name":"_minimumFontSize",
-        "offset":184,
+        "offset":264,
         "size":8,
         "type":"ivar"
       },
@@ -86,7 +86,7 @@
         "alignment":3,
         "ivarType":"long long",
         "name":"_lineSpacing",
-        "offset":192,
+        "offset":272,
         "size":8,
         "type":"ivar"
       },
@@ -94,7 +94,7 @@
         "alignment":3,
         "ivarType":"id",
         "name":"_layout",
-        "offset":200,
+        "offset":280,
         "size":8,
         "type":"ivar"
       },
@@ -102,7 +102,7 @@
         "alignment":3,
         "ivarType":"_UILabelScaledMetrics *",
         "name":"_scaledMetrics",
-        "offset":208,
+        "offset":288,
         "size":8,
         "type":"ivar"
       },
@@ -110,14 +110,14 @@
         "alignment":2,
         "ivarType":"struct {\n        unsigned int unused1:3;\n        unsigned int highlighted:1;\n        unsigned int autosizeTextToFit:1;\n        unsigned int autotrackTextToFit:1;\n        unsigned int baselineAdjustment:2;\n        unsigned int unused2:2;\n        unsigned int enabled:1;\n        unsigned int wordRoundingEnabled:1;\n        unsigned int explicitAlignment:1;\n        unsigned int marqueeEnabled:1;\n        unsigned int marqueeRunable:1;\n        unsigned int marqueeRequired:1;\n        unsigned int drawsLetterpress:1;\n        unsigned int unused3:1;\n        unsigned int usesExplicitPreferredMaxLayoutWidth:1;\n        unsigned int determiningPreferredMaxLayoutWidth:1;\n        unsigned int inSecondConstraintsPass:1;\n        unsigned int drawsDebugBaselines:1;\n        unsigned int explicitBaselineOffset:1;\n        unsigned int usesSimpleTextEffects:1;\n        unsigned int isComplexString:1;\n    }",
         "name":"_textLabelFlags",
-        "offset":216,
+        "offset":296,
         "size":4,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_wantsUnderlineForAccessibilityButtonShapesEnabled",
-        "offset":220,
+        "offset":300,
         "size":1,
         "type":"ivar"
       },
@@ -125,7 +125,7 @@
         "alignment":3,
         "ivarType":"double",
         "name":"_preferredMaxLayoutWidth",
-        "offset":224,
+        "offset":304,
         "size":8,
         "type":"ivar"
       }
@@ -143,7 +143,7 @@
         "alignment":2,
         "ivarType":"struct CGSize",
         "name":"_size",
-        "offset":56,
+        "offset":96,
         "size":8,
         "type":"ivar"
       },
@@ -151,7 +151,7 @@
         "alignment":2,
         "ivarType":"UIColor *",
         "name":"_highlightedColor",
-        "offset":64,
+        "offset":104,
         "size":4,
         "type":"ivar"
       },
@@ -159,7 +159,7 @@
         "alignment":2,
         "ivarType":"int",
         "name":"_numberOfLines",
-        "offset":68,
+        "offset":108,
         "size":4,
         "type":"ivar"
       },
@@ -167,7 +167,7 @@
         "alignment":2,
         "ivarType":"int",
         "name":"_measuredNumberOfLines",
-        "offset":72,
+        "offset":112,
         "size":4,
         "type":"ivar"
       },
@@ -175,7 +175,7 @@
         "alignment":2,
         "ivarType":"float",
         "name":"_lastLineBaseline",
-        "offset":76,
+        "offset":116,
         "size":4,
         "type":"ivar"
       },
@@ -183,7 +183,7 @@
         "alignment":2,
         "ivarType":"float",
         "name":"_minimumScaleFactor",
-        "offset":80,
+        "offset":120,
         "size":4,
         "type":"ivar"
       },
@@ -191,7 +191,7 @@
         "alignment":2,
         "ivarType":"id",
         "name":"_content",
-        "offset":84,
+        "offset":124,
         "size":4,
         "type":"ivar"
       },
@@ -199,7 +199,7 @@
         "alignment":2,
         "ivarType":"NSAttributedString *",
         "name":"_synthesizedAttributedText",
-        "offset":88,
+        "offset":128,
         "size":4,
         "type":"ivar"
       },
@@ -207,7 +207,7 @@
         "alignment":2,
         "ivarType":"NSMutableDictionary *",
         "name":"_defaultAttributes",
-        "offset":92,
+        "offset":132,
         "size":4,
         "type":"ivar"
       },
@@ -215,7 +215,7 @@
         "alignment":2,
         "ivarType":"float",
         "name":"_minimumFontSize",
-        "offset":96,
+        "offset":136,
         "size":4,
         "type":"ivar"
       },
@@ -223,7 +223,7 @@
         "alignment":2,
         "ivarType":"int",
         "name":"_lineSpacing",
-        "offset":100,
+        "offset":140,
         "size":4,
         "type":"ivar"
       },
@@ -231,7 +231,7 @@
         "alignment":2,
         "ivarType":"id",
         "name":"_layout",
-        "offset":104,
+        "offset":144,
         "size":4,
         "type":"ivar"
       },
@@ -239,21 +239,21 @@
         "alignment":2,
         "ivarType":"_UILabelScaledMetrics *",
         "name":"_scaledMetrics",
-        "offset":108,
+        "offset":148,
         "size":4,
         "type":"ivar"
       },
       {
         "ivarType":"struct {\n        unsigned int unused1:3;\n        unsigned int highlighted:1;\n        unsigned int autosizeTextToFit:1;\n        unsigned int autotrackTextToFit:1;\n        unsigned int baselineAdjustment:2;\n        unsigned int unused2:2;\n        unsigned int enabled:1;\n        unsigned int wordRoundingEnabled:1;\n        unsigned int explicitAlignment:1;\n        unsigned int marqueeEnabled:1;\n        unsigned int marqueeRunable:1;\n        unsigned int marqueeRequired:1;\n        unsigned int drawsLetterpress:1;\n        unsigned int unused3:1;\n        unsigned int usesExplicitPreferredMaxLayoutWidth:1;\n        unsigned int determiningPreferredMaxLayoutWidth:1;\n        unsigned int inSecondConstraintsPass:1;\n        unsigned int drawsDebugBaselines:1;\n        unsigned int explicitBaselineOffset:1;\n        unsigned int usesSimpleTextEffects:1;\n        unsigned int isComplexString:1;\n    }",
         "name":"_textLabelFlags",
-        "offset":112,
+        "offset":152,
         "size":4,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_wantsUnderlineForAccessibilityButtonShapesEnabled",
-        "offset":116,
+        "offset":156,
         "size":1,
         "type":"ivar"
       },
@@ -261,7 +261,7 @@
         "alignment":2,
         "ivarType":"float",
         "name":"_preferredMaxLayoutWidth",
-        "offset":120,
+        "offset":160,
         "size":4,
         "type":"ivar"
       }
@@ -279,7 +279,7 @@
         "alignment":2,
         "ivarType":"struct CGSize",
         "name":"_size",
-        "offset":56,
+        "offset":96,
         "size":8,
         "type":"ivar"
       },
@@ -287,7 +287,7 @@
         "alignment":2,
         "ivarType":"UIColor *",
         "name":"_highlightedColor",
-        "offset":64,
+        "offset":104,
         "size":4,
         "type":"ivar"
       },
@@ -295,7 +295,7 @@
         "alignment":2,
         "ivarType":"int",
         "name":"_numberOfLines",
-        "offset":68,
+        "offset":108,
         "size":4,
         "type":"ivar"
       },
@@ -303,7 +303,7 @@
         "alignment":2,
         "ivarType":"int",
         "name":"_measuredNumberOfLines",
-        "offset":72,
+        "offset":112,
         "size":4,
         "type":"ivar"
       },
@@ -311,7 +311,7 @@
         "alignment":2,
         "ivarType":"float",
         "name":"_lastLineBaseline",
-        "offset":76,
+        "offset":116,
         "size":4,
         "type":"ivar"
       },
@@ -319,7 +319,7 @@
         "alignment":2,
         "ivarType":"float",
         "name":"_minimumScaleFactor",
-        "offset":80,
+        "offset":120,
         "size":4,
         "type":"ivar"
       },
@@ -327,7 +327,7 @@
         "alignment":2,
         "ivarType":"id",
         "name":"_content",
-        "offset":84,
+        "offset":124,
         "size":4,
         "type":"ivar"
       },
@@ -335,7 +335,7 @@
         "alignment":2,
         "ivarType":"NSAttributedString *",
         "name":"_synthesizedAttributedText",
-        "offset":88,
+        "offset":128,
         "size":4,
         "type":"ivar"
       },
@@ -343,7 +343,7 @@
         "alignment":2,
         "ivarType":"NSMutableDictionary *",
         "name":"_defaultAttributes",
-        "offset":92,
+        "offset":132,
         "size":4,
         "type":"ivar"
       },
@@ -351,7 +351,7 @@
         "alignment":2,
         "ivarType":"float",
         "name":"_minimumFontSize",
-        "offset":96,
+        "offset":136,
         "size":4,
         "type":"ivar"
       },
@@ -359,7 +359,7 @@
         "alignment":2,
         "ivarType":"int",
         "name":"_lineSpacing",
-        "offset":100,
+        "offset":140,
         "size":4,
         "type":"ivar"
       },
@@ -367,7 +367,7 @@
         "alignment":2,
         "ivarType":"id",
         "name":"_layout",
-        "offset":104,
+        "offset":144,
         "size":4,
         "type":"ivar"
       },
@@ -375,21 +375,21 @@
         "alignment":2,
         "ivarType":"_UILabelScaledMetrics *",
         "name":"_scaledMetrics",
-        "offset":108,
+        "offset":148,
         "size":4,
         "type":"ivar"
       },
       {
         "ivarType":"struct {\n        unsigned int unused1:3;\n        unsigned int highlighted:1;\n        unsigned int autosizeTextToFit:1;\n        unsigned int autotrackTextToFit:1;\n        unsigned int baselineAdjustment:2;\n        unsigned int unused2:2;\n        unsigned int enabled:1;\n        unsigned int wordRoundingEnabled:1;\n        unsigned int explicitAlignment:1;\n        unsigned int marqueeEnabled:1;\n        unsigned int marqueeRunable:1;\n        unsigned int marqueeRequired:1;\n        unsigned int drawsLetterpress:1;\n        unsigned int unused3:1;\n        unsigned int usesExplicitPreferredMaxLayoutWidth:1;\n        unsigned int determiningPreferredMaxLayoutWidth:1;\n        unsigned int inSecondConstraintsPass:1;\n        unsigned int drawsDebugBaselines:1;\n        unsigned int explicitBaselineOffset:1;\n        unsigned int usesSimpleTextEffects:1;\n        unsigned int isComplexString:1;\n    }",
         "name":"_textLabelFlags",
-        "offset":112,
+        "offset":152,
         "size":4,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_wantsUnderlineForAccessibilityButtonShapesEnabled",
-        "offset":116,
+        "offset":156,
         "size":1,
         "type":"ivar"
       },
@@ -397,7 +397,7 @@
         "alignment":2,
         "ivarType":"float",
         "name":"_preferredMaxLayoutWidth",
-        "offset":120,
+        "offset":160,
         "size":4,
         "type":"ivar"
       }
@@ -415,7 +415,7 @@
         "alignment":2,
         "ivarType":"struct CGSize",
         "name":"_size",
-        "offset":56,
+        "offset":96,
         "size":8,
         "type":"ivar"
       },
@@ -423,7 +423,7 @@
         "alignment":2,
         "ivarType":"UIColor *",
         "name":"_highlightedColor",
-        "offset":64,
+        "offset":104,
         "size":4,
         "type":"ivar"
       },
@@ -431,7 +431,7 @@
         "alignment":2,
         "ivarType":"int",
         "name":"_numberOfLines",
-        "offset":68,
+        "offset":108,
         "size":4,
         "type":"ivar"
       },
@@ -439,7 +439,7 @@
         "alignment":2,
         "ivarType":"int",
         "name":"_measuredNumberOfLines",
-        "offset":72,
+        "offset":112,
         "size":4,
         "type":"ivar"
       },
@@ -447,7 +447,7 @@
         "alignment":2,
         "ivarType":"float",
         "name":"_lastLineBaseline",
-        "offset":76,
+        "offset":116,
         "size":4,
         "type":"ivar"
       },
@@ -455,7 +455,7 @@
         "alignment":2,
         "ivarType":"float",
         "name":"_minimumScaleFactor",
-        "offset":80,
+        "offset":120,
         "size":4,
         "type":"ivar"
       },
@@ -463,7 +463,7 @@
         "alignment":2,
         "ivarType":"id",
         "name":"_content",
-        "offset":84,
+        "offset":124,
         "size":4,
         "type":"ivar"
       },
@@ -471,7 +471,7 @@
         "alignment":2,
         "ivarType":"NSAttributedString *",
         "name":"_synthesizedAttributedText",
-        "offset":88,
+        "offset":128,
         "size":4,
         "type":"ivar"
       },
@@ -479,7 +479,7 @@
         "alignment":2,
         "ivarType":"NSMutableDictionary *",
         "name":"_defaultAttributes",
-        "offset":92,
+        "offset":132,
         "size":4,
         "type":"ivar"
       },
@@ -487,7 +487,7 @@
         "alignment":2,
         "ivarType":"float",
         "name":"_minimumFontSize",
-        "offset":96,
+        "offset":136,
         "size":4,
         "type":"ivar"
       },
@@ -495,7 +495,7 @@
         "alignment":2,
         "ivarType":"int",
         "name":"_lineSpacing",
-        "offset":100,
+        "offset":140,
         "size":4,
         "type":"ivar"
       },
@@ -503,7 +503,7 @@
         "alignment":2,
         "ivarType":"id",
         "name":"_layout",
-        "offset":104,
+        "offset":144,
         "size":4,
         "type":"ivar"
       },
@@ -511,7 +511,7 @@
         "alignment":2,
         "ivarType":"_UILabelScaledMetrics *",
         "name":"_scaledMetrics",
-        "offset":108,
+        "offset":148,
         "size":4,
         "type":"ivar"
       },
@@ -519,14 +519,14 @@
         "alignment":2,
         "ivarType":"struct {\n        unsigned int unused1:3;\n        unsigned int highlighted:1;\n        unsigned int autosizeTextToFit:1;\n        unsigned int autotrackTextToFit:1;\n        unsigned int baselineAdjustment:2;\n        unsigned int unused2:2;\n        unsigned int enabled:1;\n        unsigned int wordRoundingEnabled:1;\n        unsigned int explicitAlignment:1;\n        unsigned int marqueeEnabled:1;\n        unsigned int marqueeRunable:1;\n        unsigned int marqueeRequired:1;\n        unsigned int drawsLetterpress:1;\n        unsigned int unused3:1;\n        unsigned int usesExplicitPreferredMaxLayoutWidth:1;\n        unsigned int determiningPreferredMaxLayoutWidth:1;\n        unsigned int inSecondConstraintsPass:1;\n        unsigned int drawsDebugBaselines:1;\n        unsigned int explicitBaselineOffset:1;\n        unsigned int usesSimpleTextEffects:1;\n        unsigned int isComplexString:1;\n    }",
         "name":"_textLabelFlags",
-        "offset":112,
+        "offset":152,
         "size":4,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_wantsUnderlineForAccessibilityButtonShapesEnabled",
-        "offset":116,
+        "offset":156,
         "size":1,
         "type":"ivar"
       },
@@ -534,7 +534,7 @@
         "alignment":2,
         "ivarType":"float",
         "name":"_preferredMaxLayoutWidth",
-        "offset":120,
+        "offset":160,
         "size":4,
         "type":"ivar"
       }
@@ -552,7 +552,7 @@
         "alignment":3,
         "ivarType":"struct CGSize",
         "name":"_size",
-        "offset":104,
+        "offset":184,
         "size":16,
         "type":"ivar"
       },
@@ -560,7 +560,7 @@
         "alignment":3,
         "ivarType":"UIColor *",
         "name":"_highlightedColor",
-        "offset":120,
+        "offset":200,
         "size":8,
         "type":"ivar"
       },
@@ -568,7 +568,7 @@
         "alignment":3,
         "ivarType":"long long",
         "name":"_numberOfLines",
-        "offset":128,
+        "offset":208,
         "size":8,
         "type":"ivar"
       },
@@ -576,7 +576,7 @@
         "alignment":3,
         "ivarType":"long long",
         "name":"_measuredNumberOfLines",
-        "offset":136,
+        "offset":216,
         "size":8,
         "type":"ivar"
       },
@@ -584,7 +584,7 @@
         "alignment":3,
         "ivarType":"double",
         "name":"_lastLineBaseline",
-        "offset":144,
+        "offset":224,
         "size":8,
         "type":"ivar"
       },
@@ -592,7 +592,7 @@
         "alignment":3,
         "ivarType":"double",
         "name":"_minimumScaleFactor",
-        "offset":152,
+        "offset":232,
         "size":8,
         "type":"ivar"
       },
@@ -600,7 +600,7 @@
         "alignment":3,
         "ivarType":"id",
         "name":"_content",
-        "offset":160,
+        "offset":240,
         "size":8,
         "type":"ivar"
       },
@@ -608,7 +608,7 @@
         "alignment":3,
         "ivarType":"NSAttributedString *",
         "name":"_synthesizedAttributedText",
-        "offset":168,
+        "offset":248,
         "size":8,
         "type":"ivar"
       },
@@ -616,7 +616,7 @@
         "alignment":3,
         "ivarType":"NSMutableDictionary *",
         "name":"_defaultAttributes",
-        "offset":176,
+        "offset":256,
         "size":8,
         "type":"ivar"
       },
@@ -624,7 +624,7 @@
         "alignment":3,
         "ivarType":"double",
         "name":"_minimumFontSize",
-        "offset":184,
+        "offset":264,
         "size":8,
         "type":"ivar"
       },
@@ -632,7 +632,7 @@
         "alignment":3,
         "ivarType":"long long",
         "name":"_lineSpacing",
-        "offset":192,
+        "offset":272,
         "size":8,
         "type":"ivar"
       },
@@ -640,7 +640,7 @@
         "alignment":3,
         "ivarType":"id",
         "name":"_layout",
-        "offset":200,
+        "offset":280,
         "size":8,
         "type":"ivar"
       },
@@ -648,7 +648,7 @@
         "alignment":3,
         "ivarType":"_UILabelScaledMetrics *",
         "name":"_scaledMetrics",
-        "offset":208,
+        "offset":288,
         "size":8,
         "type":"ivar"
       },
@@ -656,14 +656,14 @@
         "alignment":2,
         "ivarType":"struct {\n        unsigned int unused1:3;\n        unsigned int highlighted:1;\n        unsigned int autosizeTextToFit:1;\n        unsigned int autotrackTextToFit:1;\n        unsigned int baselineAdjustment:2;\n        unsigned int unused2:2;\n        unsigned int enabled:1;\n        unsigned int wordRoundingEnabled:1;\n        unsigned int explicitAlignment:1;\n        unsigned int marqueeEnabled:1;\n        unsigned int marqueeRunable:1;\n        unsigned int marqueeRequired:1;\n        unsigned int drawsLetterpress:1;\n        unsigned int unused3:1;\n        unsigned int usesExplicitPreferredMaxLayoutWidth:1;\n        unsigned int determiningPreferredMaxLayoutWidth:1;\n        unsigned int inSecondConstraintsPass:1;\n        unsigned int drawsDebugBaselines:1;\n        unsigned int explicitBaselineOffset:1;\n        unsigned int usesSimpleTextEffects:1;\n        unsigned int isComplexString:1;\n    }",
         "name":"_textLabelFlags",
-        "offset":216,
+        "offset":296,
         "size":4,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_wantsUnderlineForAccessibilityButtonShapesEnabled",
-        "offset":220,
+        "offset":300,
         "size":1,
         "type":"ivar"
       },
@@ -671,7 +671,7 @@
         "alignment":3,
         "ivarType":"double",
         "name":"_preferredMaxLayoutWidth",
-        "offset":224,
+        "offset":304,
         "size":8,
         "type":"ivar"
       }

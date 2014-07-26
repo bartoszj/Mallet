@@ -1,0 +1,32 @@
+{
+  "arm64": [
+    {
+      "class": "UIView",
+      "offset": 80
+    }
+  ],
+  "armv7": [
+    {
+      "class": "UIView",
+      "offset": 40
+    }
+  ],
+  "armv7s": [
+    {
+      "class": "UIView",
+      "offset": 40
+    }
+  ],
+  "i386": [
+    {
+      "class": "UIView",
+      "offset": 40
+    }
+  ],
+  "x86_64": [
+    {
+      "class": "UIView",
+      "offset": 80
+    }
+  ]
+}

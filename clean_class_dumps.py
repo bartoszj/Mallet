@@ -38,6 +38,7 @@ def clean_class_dumps():
 
     al = ClassDump.ArchitecturesList()
     al.read_directory_path(input_dir)
+    al.fix_ivars_offset()
     al.save_to_folder(output_dir)
 
 if __name__ == "__main__":
