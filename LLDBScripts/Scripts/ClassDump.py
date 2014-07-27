@@ -106,7 +106,7 @@ class ArchitecturesList(object):
         current_dir, _ = os.path.split(current_dir)
 
         # Finds offsets.json file.
-        offsets_file_path = os.path.join(current_dir, "offsets.json")
+        offsets_file_path = os.path.join(current_dir, "../../offsets.json")
         if not os.path.exists(offsets_file_path):
             print "Offset file doesn't exists."
             exit()

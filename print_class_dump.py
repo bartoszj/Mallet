@@ -24,6 +24,8 @@
 
 import os
 import sys
+
+sys.path.append("LLDBScripts/Scripts/")
 import ClassDump
 
 
