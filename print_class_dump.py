@@ -24,8 +24,9 @@
 
 import os
 import sys
+import imp
 
-sys.path.append("LLDBScripts/Scripts/")
+imp.load_source("ClassDump", "LLDBScripts/Scripts/ClassDump.py")
 import ClassDump
 
 

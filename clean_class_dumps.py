@@ -23,9 +23,9 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import os
-import sys
+import imp
 
-sys.path.append("LLDBScripts/Scripts/")
+imp.load_source("ClassDump", "LLDBScripts/Scripts/ClassDump.py")
 import ClassDump
 
 
@@ -37,10 +37,11 @@ def clean_class_dumps():
     # Input / output folders.
     input_dir = os.path.join(current_dir, "ClassDumps")
     output_dir = os.path.join(current_dir, "LLDBScripts/ClassDumps")
+    offsets_file_path = os.path.join(current_dir, "offsets.json")
 
     al = ClassDump.ArchitecturesList()
     al.read_directory_path(input_dir)
-    al.fix_ivars_offset()
+    al.fix_ivars_offset(offsets_file_path)
     al.save_to_folder(output_dir)
 
 if __name__ == "__main__":

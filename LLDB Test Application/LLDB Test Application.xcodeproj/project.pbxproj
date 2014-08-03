@@ -7,26 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C30D57EE42D4E31B1857CDB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF70374A0FB4072ACCED657 /* libPods.a */; };
 		9636C852182977A700FD4AEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9636C851182977A700FD4AEA /* Foundation.framework */; };
 		9636C854182977A700FD4AEA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9636C853182977A700FD4AEA /* CoreGraphics.framework */; };
 		9636C856182977A700FD4AEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9636C855182977A700FD4AEA /* UIKit.framework */; };
-		9636C85C182977A700FD4AEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9636C85A182977A700FD4AEA /* InfoPlist.strings */; };
 		9636C874182977A700FD4AEA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9636C873182977A700FD4AEA /* XCTest.framework */; };
 		9636C875182977A700FD4AEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9636C851182977A700FD4AEA /* Foundation.framework */; };
 		9636C876182977A700FD4AEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9636C855182977A700FD4AEA /* UIKit.framework */; };
-		9636C87E182977A700FD4AEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9636C87C182977A700FD4AEA /* InfoPlist.strings */; };
-		9636C8931829787400FD4AEA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9636C88C1829787400FD4AEA /* ViewController.m */; };
-		9636C8941829787400FD4AEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9636C8901829787400FD4AEA /* AppDelegate.m */; };
-		9636C8951829787400FD4AEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9636C8911829787400FD4AEA /* main.m */; };
-		9636C89C1829787E00FD4AEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9636C8981829787E00FD4AEA /* Images.xcassets */; };
-		9636C89D1829787E00FD4AEA /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9636C89A1829787E00FD4AEA /* Main_iPad.storyboard */; };
-		9636C89E1829787E00FD4AEA /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9636C89B1829787E00FD4AEA /* Main_iPhone.storyboard */; };
-		966B027D1972964200B360ED /* Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 966B027C1972964200B360ED /* Compare.m */; };
-		9681991D197AB2AE004926A0 /* SharedTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9681991C197AB2AE004926A0 /* SharedTestCase.m */; };
-		9681991F197AB3D4004926A0 /* CoreGraphicsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9681991E197AB3D4004926A0 /* CoreGraphicsTests.m */; };
-		96819921197AB615004926A0 /* FoundationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96819920197AB615004926A0 /* FoundationTests.m */; };
-		96819923197ABA68004926A0 /* UIKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96819922197ABA68004926A0 /* UIKitTests.m */; };
+		96601909198587C200BDBB71 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96601908198587C200BDBB71 /* Cocoa.framework */; };
+		96601913198587C200BDBB71 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96601911198587C200BDBB71 /* InfoPlist.strings */; };
+		96601915198587C200BDBB71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96601914198587C200BDBB71 /* main.m */; };
+		96601919198587C200BDBB71 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 96601917198587C200BDBB71 /* Credits.rtf */; };
+		9660191C198587C200BDBB71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9660191B198587C200BDBB71 /* AppDelegate.m */; };
+		9660191F198587C200BDBB71 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9660191D198587C200BDBB71 /* MainMenu.xib */; };
+		96601921198587C200BDBB71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96601920198587C200BDBB71 /* Images.xcassets */; };
+		96601927198587C200BDBB71 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9636C873182977A700FD4AEA /* XCTest.framework */; };
+		96601928198587C200BDBB71 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96601908198587C200BDBB71 /* Cocoa.framework */; };
+		96601930198587C200BDBB71 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9660192E198587C200BDBB71 /* InfoPlist.strings */; };
+		96601932198587C200BDBB71 /* LLDB_Mac_Test_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96601931198587C200BDBB71 /* LLDB_Mac_Test_AppTests.m */; };
+		966019501985884F00BDBB71 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9660193D1985884F00BDBB71 /* ViewController.m */; };
+		966019511985884F00BDBB71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 966019411985884F00BDBB71 /* AppDelegate.m */; };
+		966019521985884F00BDBB71 /* Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 966019431985884F00BDBB71 /* Compare.m */; };
+		966019531985884F00BDBB71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 966019441985884F00BDBB71 /* main.m */; };
+		966019541985884F00BDBB71 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 966019461985884F00BDBB71 /* InfoPlist.strings */; };
+		966019571985884F00BDBB71 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9660194E1985884F00BDBB71 /* Main_iPad.storyboard */; };
+		966019581985884F00BDBB71 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9660194F1985884F00BDBB71 /* Main_iPhone.storyboard */; };
+		96601963198588E400BDBB71 /* CoreGraphicsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9660195B198588E400BDBB71 /* CoreGraphicsTests.m */; };
+		96601964198588E400BDBB71 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9660195C198588E400BDBB71 /* InfoPlist.strings */; };
+		96601965198588E400BDBB71 /* FoundationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9660195E198588E400BDBB71 /* FoundationTests.m */; };
+		96601967198588E400BDBB71 /* SharedTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 96601961198588E400BDBB71 /* SharedTestCase.m */; };
+		96601968198588E400BDBB71 /* UIKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96601962198588E400BDBB71 /* UIKitTests.m */; };
+		9660196B1985897700BDBB71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9660196A1985897700BDBB71 /* Images.xcassets */; };
+		B16225C58D39463287A04370 /* libPods-LLDB iOS Test App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F330B12F38F4AE0A6DD753E /* libPods-LLDB iOS Test App.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,37 +48,63 @@
 			remoteGlobalIDString = 9636C84D182977A700FD4AEA;
 			remoteInfo = "LLDB Test Application";
 		};
+		96601929198587C200BDBB71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9636C846182977A700FD4AEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96601906198587C100BDBB71;
+			remoteInfo = "LLDB Mac Test App";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0AF70374A0FB4072ACCED657 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		711BE8B4F62B4910BDA5D189 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		9636C84E182977A700FD4AEA /* LLDB Test Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LLDB Test Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F330B12F38F4AE0A6DD753E /* libPods-LLDB iOS Test App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LLDB iOS Test App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8318058A2C9844C78BCA03B6 /* Pods-LLDB iOS Test App.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLDB iOS Test App.xcconfig"; path = "Pods/Pods-LLDB iOS Test App.xcconfig"; sourceTree = "<group>"; };
+		9636C84E182977A700FD4AEA /* LLDB iOS Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LLDB iOS Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9636C851182977A700FD4AEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9636C853182977A700FD4AEA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9636C855182977A700FD4AEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		9636C859182977A700FD4AEA /* LLDB Test Application-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LLDB Test Application-Info.plist"; sourceTree = "<group>"; };
-		9636C85B182977A700FD4AEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9636C85F182977A700FD4AEA /* LLDB Test Application-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LLDB Test Application-Prefix.pch"; sourceTree = "<group>"; };
-		9636C872182977A700FD4AEA /* LLDB Test ApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LLDB Test ApplicationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9636C872182977A700FD4AEA /* LLDB iOS Test AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LLDB iOS Test AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9636C873182977A700FD4AEA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		9636C87B182977A700FD4AEA /* LLDB Test ApplicationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LLDB Test ApplicationTests-Info.plist"; sourceTree = "<group>"; };
-		9636C87D182977A700FD4AEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9636C88B1829787400FD4AEA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9636C88C1829787400FD4AEA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9636C88F1829787400FD4AEA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		9636C8901829787400FD4AEA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9636C8911829787400FD4AEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9636C8981829787E00FD4AEA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9636C89A1829787E00FD4AEA /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
-		9636C89B1829787E00FD4AEA /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
-		966B027B1972964200B360ED /* Compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compare.h; sourceTree = "<group>"; };
-		966B027C1972964200B360ED /* Compare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Compare.m; sourceTree = "<group>"; };
-		9681991B197AB2AE004926A0 /* SharedTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedTestCase.h; sourceTree = "<group>"; };
-		9681991C197AB2AE004926A0 /* SharedTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedTestCase.m; sourceTree = "<group>"; };
-		9681991E197AB3D4004926A0 /* CoreGraphicsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreGraphicsTests.m; sourceTree = "<group>"; };
-		96819920197AB615004926A0 /* FoundationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundationTests.m; sourceTree = "<group>"; };
-		96819922197ABA68004926A0 /* UIKitTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitTests.m; sourceTree = "<group>"; };
+		96601907198587C100BDBB71 /* LLDB Mac Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LLDB Mac Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96601908198587C200BDBB71 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		9660190B198587C200BDBB71 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		9660190C198587C200BDBB71 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9660190D198587C200BDBB71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		96601910198587C200BDBB71 /* LLDB Mac Test App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LLDB Mac Test App-Info.plist"; sourceTree = "<group>"; };
+		96601912198587C200BDBB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		96601914198587C200BDBB71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		96601916198587C200BDBB71 /* LLDB Mac Test App-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LLDB Mac Test App-Prefix.pch"; sourceTree = "<group>"; };
+		96601918198587C200BDBB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		9660191A198587C200BDBB71 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9660191B198587C200BDBB71 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9660191E198587C200BDBB71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		96601920198587C200BDBB71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		96601926198587C200BDBB71 /* LLDB Mac Test AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LLDB Mac Test AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9660192D198587C200BDBB71 /* LLDB Mac Test AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LLDB Mac Test AppTests-Info.plist"; sourceTree = "<group>"; };
+		9660192F198587C200BDBB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		96601931198587C200BDBB71 /* LLDB_Mac_Test_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLDB_Mac_Test_AppTests.m; sourceTree = "<group>"; };
+		9660193C1985884F00BDBB71 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9660193D1985884F00BDBB71 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		966019401985884F00BDBB71 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		966019411985884F00BDBB71 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		966019421985884F00BDBB71 /* Compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compare.h; sourceTree = "<group>"; };
+		966019431985884F00BDBB71 /* Compare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Compare.m; sourceTree = "<group>"; };
+		966019441985884F00BDBB71 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		966019471985884F00BDBB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9660194E1985884F00BDBB71 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		9660194F1985884F00BDBB71 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		9660195B198588E400BDBB71 /* CoreGraphicsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreGraphicsTests.m; sourceTree = "<group>"; };
+		9660195D198588E400BDBB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9660195E198588E400BDBB71 /* FoundationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundationTests.m; sourceTree = "<group>"; };
+		96601960198588E400BDBB71 /* SharedTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedTestCase.h; sourceTree = "<group>"; };
+		96601961198588E400BDBB71 /* SharedTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedTestCase.m; sourceTree = "<group>"; };
+		96601962198588E400BDBB71 /* UIKitTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitTests.m; sourceTree = "<group>"; };
+		9660196A1985897700BDBB71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9660196C1985898500BDBB71 /* LLDB iOS Test App-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LLDB iOS Test App-Info.plist"; sourceTree = "<group>"; };
+		9660196D1985898500BDBB71 /* LLDB iOS Test App-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LLDB iOS Test App-Prefix.pch"; sourceTree = "<group>"; };
+		9660196F19858AA800BDBB71 /* LLDB iOS Test AppTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LLDB iOS Test AppTests-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +115,7 @@
 				9636C854182977A700FD4AEA /* CoreGraphics.framework in Frameworks */,
 				9636C856182977A700FD4AEA /* UIKit.framework in Frameworks */,
 				9636C852182977A700FD4AEA /* Foundation.framework in Frameworks */,
-				1C30D57EE42D4E31B1857CDB /* libPods.a in Frameworks */,
+				B16225C58D39463287A04370 /* libPods-LLDB iOS Test App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,25 +129,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96601904198587C100BDBB71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96601909198587C200BDBB71 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96601923198587C200BDBB71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96601928198587C200BDBB71 /* Cocoa.framework in Frameworks */,
+				96601927198587C200BDBB71 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		9636C845182977A700FD4AEA = {
 			isa = PBXGroup;
 			children = (
-				9636C857182977A700FD4AEA /* LLDB Test Application */,
-				9636C879182977A700FD4AEA /* LLDB Test ApplicationTests */,
+				966019391985884F00BDBB71 /* LLDB iOS Test App */,
+				9660195A198588E400BDBB71 /* LLDB iOS Test AppTests */,
+				9660190E198587C200BDBB71 /* LLDB Mac Test App */,
+				9660192B198587C200BDBB71 /* LLDB Mac Test AppTests */,
 				9636C850182977A700FD4AEA /* Frameworks */,
 				9636C84F182977A700FD4AEA /* Products */,
-				711BE8B4F62B4910BDA5D189 /* Pods.xcconfig */,
+				8318058A2C9844C78BCA03B6 /* Pods-LLDB iOS Test App.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
 		9636C84F182977A700FD4AEA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9636C84E182977A700FD4AEA /* LLDB Test Application.app */,
-				9636C872182977A700FD4AEA /* LLDB Test ApplicationTests.xctest */,
+				9636C84E182977A700FD4AEA /* LLDB iOS Test App.app */,
+				9636C872182977A700FD4AEA /* LLDB iOS Test AppTests.xctest */,
+				96601907198587C100BDBB71 /* LLDB Mac Test App.app */,
+				96601926198587C200BDBB71 /* LLDB Mac Test AppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,130 +181,177 @@
 				9636C855182977A700FD4AEA /* UIKit.framework */,
 				9636C873182977A700FD4AEA /* XCTest.framework */,
 				0AF70374A0FB4072ACCED657 /* libPods.a */,
+				96601908198587C200BDBB71 /* Cocoa.framework */,
+				9660190A198587C200BDBB71 /* Other Frameworks */,
+				6F330B12F38F4AE0A6DD753E /* libPods-LLDB iOS Test App.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9636C857182977A700FD4AEA /* LLDB Test Application */ = {
+		9660190A198587C200BDBB71 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9636C8891829787400FD4AEA /* Classes */,
-				9636C8961829787E00FD4AEA /* Resources */,
-				9636C858182977A700FD4AEA /* Supporting Files */,
+				9660190B198587C200BDBB71 /* AppKit.framework */,
+				9660190C198587C200BDBB71 /* CoreData.framework */,
+				9660190D198587C200BDBB71 /* Foundation.framework */,
 			);
-			path = "LLDB Test Application";
+			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		9636C858182977A700FD4AEA /* Supporting Files */ = {
+		9660190E198587C200BDBB71 /* LLDB Mac Test App */ = {
 			isa = PBXGroup;
 			children = (
-				9636C859182977A700FD4AEA /* LLDB Test Application-Info.plist */,
-				9636C85A182977A700FD4AEA /* InfoPlist.strings */,
-				9636C85F182977A700FD4AEA /* LLDB Test Application-Prefix.pch */,
+				9660191A198587C200BDBB71 /* AppDelegate.h */,
+				9660191B198587C200BDBB71 /* AppDelegate.m */,
+				9660191D198587C200BDBB71 /* MainMenu.xib */,
+				96601920198587C200BDBB71 /* Images.xcassets */,
+				9660190F198587C200BDBB71 /* Supporting Files */,
 			);
-			name = "Supporting Files";
+			path = "LLDB Mac Test App";
 			sourceTree = "<group>";
 		};
-		9636C879182977A700FD4AEA /* LLDB Test ApplicationTests */ = {
+		9660190F198587C200BDBB71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9681991E197AB3D4004926A0 /* CoreGraphicsTests.m */,
-				96819920197AB615004926A0 /* FoundationTests.m */,
-				9681991B197AB2AE004926A0 /* SharedTestCase.h */,
-				9681991C197AB2AE004926A0 /* SharedTestCase.m */,
-				9636C87A182977A700FD4AEA /* Supporting Files */,
-				96819922197ABA68004926A0 /* UIKitTests.m */,
-			);
-			path = "LLDB Test ApplicationTests";
-			sourceTree = "<group>";
-		};
-		9636C87A182977A700FD4AEA /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9636C87B182977A700FD4AEA /* LLDB Test ApplicationTests-Info.plist */,
-				9636C87C182977A700FD4AEA /* InfoPlist.strings */,
+				96601910198587C200BDBB71 /* LLDB Mac Test App-Info.plist */,
+				96601911198587C200BDBB71 /* InfoPlist.strings */,
+				96601914198587C200BDBB71 /* main.m */,
+				96601916198587C200BDBB71 /* LLDB Mac Test App-Prefix.pch */,
+				96601917198587C200BDBB71 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9636C8891829787400FD4AEA /* Classes */ = {
+		9660192B198587C200BDBB71 /* LLDB Mac Test AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				9636C88A1829787400FD4AEA /* Controllers */,
-				9636C88D1829787400FD4AEA /* Models */,
-				9636C88E1829787400FD4AEA /* Others */,
-				9636C8921829787400FD4AEA /* Views */,
+				96601931198587C200BDBB71 /* LLDB_Mac_Test_AppTests.m */,
+				9660192C198587C200BDBB71 /* Supporting Files */,
+			);
+			path = "LLDB Mac Test AppTests";
+			sourceTree = "<group>";
+		};
+		9660192C198587C200BDBB71 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9660192D198587C200BDBB71 /* LLDB Mac Test AppTests-Info.plist */,
+				9660192E198587C200BDBB71 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		966019391985884F00BDBB71 /* LLDB iOS Test App */ = {
+			isa = PBXGroup;
+			children = (
+				9660193A1985884F00BDBB71 /* Classes */,
+				966019591985886E00BDBB71 /* Supporting Files */,
+				9660194A1985884F00BDBB71 /* Resources */,
+			);
+			path = "LLDB iOS Test App";
+			sourceTree = "<group>";
+		};
+		9660193A1985884F00BDBB71 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9660193B1985884F00BDBB71 /* Controllers */,
+				9660193E1985884F00BDBB71 /* Models */,
+				9660193F1985884F00BDBB71 /* Others */,
+				966019451985884F00BDBB71 /* Views */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		9636C88A1829787400FD4AEA /* Controllers */ = {
+		9660193B1985884F00BDBB71 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9636C88B1829787400FD4AEA /* ViewController.h */,
-				9636C88C1829787400FD4AEA /* ViewController.m */,
+				9660193C1985884F00BDBB71 /* ViewController.h */,
+				9660193D1985884F00BDBB71 /* ViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		9636C88D1829787400FD4AEA /* Models */ = {
+		9660193E1985884F00BDBB71 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		9636C88E1829787400FD4AEA /* Others */ = {
+		9660193F1985884F00BDBB71 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				9636C88F1829787400FD4AEA /* AppDelegate.h */,
-				9636C8901829787400FD4AEA /* AppDelegate.m */,
-				966B027B1972964200B360ED /* Compare.h */,
-				966B027C1972964200B360ED /* Compare.m */,
-				9636C8911829787400FD4AEA /* main.m */,
+				966019401985884F00BDBB71 /* AppDelegate.h */,
+				966019411985884F00BDBB71 /* AppDelegate.m */,
+				966019421985884F00BDBB71 /* Compare.h */,
+				966019431985884F00BDBB71 /* Compare.m */,
+				966019441985884F00BDBB71 /* main.m */,
 			);
 			path = Others;
 			sourceTree = "<group>";
 		};
-		9636C8921829787400FD4AEA /* Views */ = {
+		966019451985884F00BDBB71 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		9636C8961829787E00FD4AEA /* Resources */ = {
+		9660194A1985884F00BDBB71 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9636C8971829787E00FD4AEA /* Assets */,
-				9636C8991829787E00FD4AEA /* Storyboards */,
+				9660196A1985897700BDBB71 /* Images.xcassets */,
+				9660194D1985884F00BDBB71 /* Storyboards */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		9636C8971829787E00FD4AEA /* Assets */ = {
+		9660194D1985884F00BDBB71 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				9636C8981829787E00FD4AEA /* Images.xcassets */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		9636C8991829787E00FD4AEA /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				9636C89A1829787E00FD4AEA /* Main_iPad.storyboard */,
-				9636C89B1829787E00FD4AEA /* Main_iPhone.storyboard */,
+				9660194E1985884F00BDBB71 /* Main_iPad.storyboard */,
+				9660194F1985884F00BDBB71 /* Main_iPhone.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		966019591985886E00BDBB71 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				966019461985884F00BDBB71 /* InfoPlist.strings */,
+				9660196C1985898500BDBB71 /* LLDB iOS Test App-Info.plist */,
+				9660196D1985898500BDBB71 /* LLDB iOS Test App-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9660195A198588E400BDBB71 /* LLDB iOS Test AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				9660195B198588E400BDBB71 /* CoreGraphicsTests.m */,
+				9660195E198588E400BDBB71 /* FoundationTests.m */,
+				96601960198588E400BDBB71 /* SharedTestCase.h */,
+				96601961198588E400BDBB71 /* SharedTestCase.m */,
+				96601969198588ED00BDBB71 /* Supporting Files */,
+				96601962198588E400BDBB71 /* UIKitTests.m */,
+			);
+			path = "LLDB iOS Test AppTests";
+			sourceTree = "<group>";
+		};
+		96601969198588ED00BDBB71 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9660196F19858AA800BDBB71 /* LLDB iOS Test AppTests-Info.plist */,
+				9660195C198588E400BDBB71 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9636C84D182977A700FD4AEA /* LLDB Test Application */ = {
+		9636C84D182977A700FD4AEA /* LLDB iOS Test App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9636C883182977A700FD4AEA /* Build configuration list for PBXNativeTarget "LLDB Test Application" */;
+			buildConfigurationList = 9636C883182977A700FD4AEA /* Build configuration list for PBXNativeTarget "LLDB iOS Test App" */;
 			buildPhases = (
 				1918014D73F946A2A5D7F284 /* Check Pods Manifest.lock */,
 				9636C84A182977A700FD4AEA /* Sources */,
@@ -258,14 +363,14 @@
 			);
 			dependencies = (
 			);
-			name = "LLDB Test Application";
+			name = "LLDB iOS Test App";
 			productName = "LLDB Test Application";
-			productReference = 9636C84E182977A700FD4AEA /* LLDB Test Application.app */;
+			productReference = 9636C84E182977A700FD4AEA /* LLDB iOS Test App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9636C871182977A700FD4AEA /* LLDB Test ApplicationTests */ = {
+		9636C871182977A700FD4AEA /* LLDB iOS Test AppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9636C886182977A700FD4AEA /* Build configuration list for PBXNativeTarget "LLDB Test ApplicationTests" */;
+			buildConfigurationList = 9636C886182977A700FD4AEA /* Build configuration list for PBXNativeTarget "LLDB iOS Test AppTests" */;
 			buildPhases = (
 				9636C86E182977A700FD4AEA /* Sources */,
 				9636C86F182977A700FD4AEA /* Frameworks */,
@@ -276,9 +381,44 @@
 			dependencies = (
 				9636C878182977A700FD4AEA /* PBXTargetDependency */,
 			);
-			name = "LLDB Test ApplicationTests";
+			name = "LLDB iOS Test AppTests";
 			productName = "LLDB Test ApplicationTests";
-			productReference = 9636C872182977A700FD4AEA /* LLDB Test ApplicationTests.xctest */;
+			productReference = 9636C872182977A700FD4AEA /* LLDB iOS Test AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		96601906198587C100BDBB71 /* LLDB Mac Test App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96601937198587C200BDBB71 /* Build configuration list for PBXNativeTarget "LLDB Mac Test App" */;
+			buildPhases = (
+				96601903198587C100BDBB71 /* Sources */,
+				96601904198587C100BDBB71 /* Frameworks */,
+				96601905198587C100BDBB71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LLDB Mac Test App";
+			productName = "LLDB Mac Test App";
+			productReference = 96601907198587C100BDBB71 /* LLDB Mac Test App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		96601925198587C200BDBB71 /* LLDB Mac Test AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96601938198587C200BDBB71 /* Build configuration list for PBXNativeTarget "LLDB Mac Test AppTests" */;
+			buildPhases = (
+				96601922198587C200BDBB71 /* Sources */,
+				96601923198587C200BDBB71 /* Frameworks */,
+				96601924198587C200BDBB71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9660192A198587C200BDBB71 /* PBXTargetDependency */,
+			);
+			name = "LLDB Mac Test AppTests";
+			productName = "LLDB Mac Test AppTests";
+			productReference = 96601926198587C200BDBB71 /* LLDB Mac Test AppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -292,6 +432,9 @@
 				TargetAttributes = {
 					9636C871182977A700FD4AEA = {
 						TestTargetID = 9636C84D182977A700FD4AEA;
+					};
+					96601925198587C200BDBB71 = {
+						TestTargetID = 96601906198587C100BDBB71;
 					};
 				};
 			};
@@ -308,8 +451,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9636C84D182977A700FD4AEA /* LLDB Test Application */,
-				9636C871182977A700FD4AEA /* LLDB Test ApplicationTests */,
+				9636C84D182977A700FD4AEA /* LLDB iOS Test App */,
+				9636C871182977A700FD4AEA /* LLDB iOS Test AppTests */,
+				96601906198587C100BDBB71 /* LLDB Mac Test App */,
+				96601925198587C200BDBB71 /* LLDB Mac Test AppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -319,10 +464,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9636C89E1829787E00FD4AEA /* Main_iPhone.storyboard in Resources */,
-				9636C89D1829787E00FD4AEA /* Main_iPad.storyboard in Resources */,
-				9636C85C182977A700FD4AEA /* InfoPlist.strings in Resources */,
-				9636C89C1829787E00FD4AEA /* Images.xcassets in Resources */,
+				966019571985884F00BDBB71 /* Main_iPad.storyboard in Resources */,
+				9660196B1985897700BDBB71 /* Images.xcassets in Resources */,
+				966019581985884F00BDBB71 /* Main_iPhone.storyboard in Resources */,
+				966019541985884F00BDBB71 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +475,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9636C87E182977A700FD4AEA /* InfoPlist.strings in Resources */,
+				96601964198588E400BDBB71 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96601905198587C100BDBB71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96601913198587C200BDBB71 /* InfoPlist.strings in Resources */,
+				96601921198587C200BDBB71 /* Images.xcassets in Resources */,
+				96601919198587C200BDBB71 /* Credits.rtf in Resources */,
+				9660191F198587C200BDBB71 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96601924198587C200BDBB71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96601930198587C200BDBB71 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +528,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-LLDB iOS Test App-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -374,10 +538,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9636C8941829787400FD4AEA /* AppDelegate.m in Sources */,
-				966B027D1972964200B360ED /* Compare.m in Sources */,
-				9636C8951829787400FD4AEA /* main.m in Sources */,
-				9636C8931829787400FD4AEA /* ViewController.m in Sources */,
+				966019511985884F00BDBB71 /* AppDelegate.m in Sources */,
+				966019521985884F00BDBB71 /* Compare.m in Sources */,
+				966019531985884F00BDBB71 /* main.m in Sources */,
+				966019501985884F00BDBB71 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,10 +549,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96819923197ABA68004926A0 /* UIKitTests.m in Sources */,
-				96819921197AB615004926A0 /* FoundationTests.m in Sources */,
-				9681991F197AB3D4004926A0 /* CoreGraphicsTests.m in Sources */,
-				9681991D197AB2AE004926A0 /* SharedTestCase.m in Sources */,
+				96601968198588E400BDBB71 /* UIKitTests.m in Sources */,
+				96601967198588E400BDBB71 /* SharedTestCase.m in Sources */,
+				96601965198588E400BDBB71 /* FoundationTests.m in Sources */,
+				96601963198588E400BDBB71 /* CoreGraphicsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96601903198587C100BDBB71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9660191C198587C200BDBB71 /* AppDelegate.m in Sources */,
+				96601915198587C200BDBB71 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96601922198587C200BDBB71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96601932198587C200BDBB71 /* LLDB_Mac_Test_AppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,24 +578,61 @@
 /* Begin PBXTargetDependency section */
 		9636C878182977A700FD4AEA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9636C84D182977A700FD4AEA /* LLDB Test Application */;
+			target = 9636C84D182977A700FD4AEA /* LLDB iOS Test App */;
 			targetProxy = 9636C877182977A700FD4AEA /* PBXContainerItemProxy */;
+		};
+		9660192A198587C200BDBB71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96601906198587C100BDBB71 /* LLDB Mac Test App */;
+			targetProxy = 96601929198587C200BDBB71 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9636C85A182977A700FD4AEA /* InfoPlist.strings */ = {
+		96601911198587C200BDBB71 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9636C85B182977A700FD4AEA /* en */,
+				96601912198587C200BDBB71 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		9636C87C182977A700FD4AEA /* InfoPlist.strings */ = {
+		96601917198587C200BDBB71 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9636C87D182977A700FD4AEA /* en */,
+				96601918198587C200BDBB71 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		9660191D198587C200BDBB71 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9660191E198587C200BDBB71 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		9660192E198587C200BDBB71 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9660192F198587C200BDBB71 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		966019461985884F00BDBB71 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				966019471985884F00BDBB71 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9660195C198588E400BDBB71 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9660195D198588E400BDBB71 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -496,13 +714,13 @@
 		};
 		9636C884182977A700FD4AEA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 711BE8B4F62B4910BDA5D189 /* Pods.xcconfig */;
+			baseConfigurationReference = 8318058A2C9844C78BCA03B6 /* Pods-LLDB iOS Test App.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LLDB Test Application/LLDB Test Application-Prefix.pch";
-				INFOPLIST_FILE = "LLDB Test Application/LLDB Test Application-Info.plist";
+				GCC_PREFIX_HEADER = "LLDB iOS Test App/LLDB iOS Test App-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/LLDB iOS Test App/LLDB iOS Test App-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -510,13 +728,13 @@
 		};
 		9636C885182977A700FD4AEA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 711BE8B4F62B4910BDA5D189 /* Pods.xcconfig */;
+			baseConfigurationReference = 8318058A2C9844C78BCA03B6 /* Pods-LLDB iOS Test App.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LLDB Test Application/LLDB Test Application-Prefix.pch";
-				INFOPLIST_FILE = "LLDB Test Application/LLDB Test Application-Info.plist";
+				GCC_PREFIX_HEADER = "LLDB iOS Test App/LLDB iOS Test App-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/LLDB iOS Test App/LLDB iOS Test App-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -525,19 +743,19 @@
 		9636C887182977A700FD4AEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LLDB Test Application.app/LLDB Test Application";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LLDB iOS Test App.app/LLDB iOS Test App";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LLDB Test Application/LLDB Test Application-Prefix.pch";
+				GCC_PREFIX_HEADER = "LLDB iOS Test App/LLDB iOS Test App-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "LLDB Test ApplicationTests/LLDB Test ApplicationTests-Info.plist";
+				INFOPLIST_FILE = "LLDB iOS Test AppTests/LLDB iOS Test AppTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -547,16 +765,112 @@
 		9636C888182977A700FD4AEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LLDB Test Application.app/LLDB Test Application";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LLDB iOS Test App.app/LLDB iOS Test App";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LLDB Test Application/LLDB Test Application-Prefix.pch";
-				INFOPLIST_FILE = "LLDB Test ApplicationTests/LLDB Test ApplicationTests-Info.plist";
+				GCC_PREFIX_HEADER = "LLDB iOS Test App/LLDB iOS Test App-Prefix.pch";
+				INFOPLIST_FILE = "LLDB iOS Test AppTests/LLDB iOS Test AppTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		96601933198587C200BDBB71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LLDB Mac Test App/LLDB Mac Test App-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "LLDB Mac Test App/LLDB Mac Test App-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		96601934198587C200BDBB71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LLDB Mac Test App/LLDB Mac Test App-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "LLDB Mac Test App/LLDB Mac Test App-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		96601935198587C200BDBB71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LLDB Mac Test App.app/Contents/MacOS/LLDB Mac Test App";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LLDB Mac Test App/LLDB Mac Test App-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "LLDB Mac Test AppTests/LLDB Mac Test AppTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		96601936198587C200BDBB71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LLDB Mac Test App.app/Contents/MacOS/LLDB Mac Test App";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LLDB Mac Test App/LLDB Mac Test App-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "LLDB Mac Test AppTests/LLDB Mac Test AppTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -574,7 +888,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9636C883182977A700FD4AEA /* Build configuration list for PBXNativeTarget "LLDB Test Application" */ = {
+		9636C883182977A700FD4AEA /* Build configuration list for PBXNativeTarget "LLDB iOS Test App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9636C884182977A700FD4AEA /* Debug */,
@@ -583,11 +897,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9636C886182977A700FD4AEA /* Build configuration list for PBXNativeTarget "LLDB Test ApplicationTests" */ = {
+		9636C886182977A700FD4AEA /* Build configuration list for PBXNativeTarget "LLDB iOS Test AppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9636C887182977A700FD4AEA /* Debug */,
 				9636C888182977A700FD4AEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96601937198587C200BDBB71 /* Build configuration list for PBXNativeTarget "LLDB Mac Test App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96601933198587C200BDBB71 /* Debug */,
+				96601934198587C200BDBB71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96601938198587C200BDBB71 /* Build configuration list for PBXNativeTarget "LLDB Mac Test AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96601935198587C200BDBB71 /* Debug */,
+				96601936198587C200BDBB71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

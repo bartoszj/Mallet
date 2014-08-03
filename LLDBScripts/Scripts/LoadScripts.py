@@ -26,6 +26,7 @@ import lldb
 import os
 
 lldb_scripts_dir = "~/Library/LLDBScripts/"
+lldb_class_dump_dir = "ClassDumps"
 lldb_commands_paths = ["Commands"]
 lldb_scripts_paths = ["Scripts"]
 lldb_summaries_paths = ["Summaries"]

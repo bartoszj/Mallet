@@ -1,9 +1,24 @@
-platform :ios, "6.0"
+# Uncomment this line to define a global platform for your project
+# platform :ios, "7.0"
 
-pod "AFNetworking", "~> 2.3.1"
-pod "FMDB", "~> 2.3"
-pod "Facebook-iOS-SDK", "~> 3.15"
-pod "MBProgressHUD", "~> 0.8"
-pod "Reachability", "~> 3.1.1"
+target "LLDB iOS Test App" do
+    pod "AFNetworking", "~> 2.3.1"
+    pod "FMDB", "~> 2.3"
+    pod "Facebook-iOS-SDK", "~> 3.15"
+    pod "MBProgressHUD", "~> 0.8"
+    pod "Reachability", "~> 3.1.1"
+end
+
+target "LLDB iOS Test AppTests" do
+
+end
+
+target "LLDB Mac Test App" do
+
+end
+
+target "LLDB Mac Test AppTests" do
+
+end
 
 inhibit_all_warnings!

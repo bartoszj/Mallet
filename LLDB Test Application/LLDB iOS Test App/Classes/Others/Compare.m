@@ -19,6 +19,8 @@ NSNumber* CompareVariableWithSummary(void *variable, NSString *type, NSString *s
     // Set breakpoint here:
     // compare_summary variable type summary equal
     
+    DoNothing();
+    
     NSCAssert(equal, @"Python script doesn't work.");
     NSCAssert(equal.boolValue, @"Wrong summary.");
     
@@ -30,6 +32,8 @@ NSNumber* CompareObjectWithSummary(id object, NSString *type, NSString *summary)
     NSNumber *equal;
     // Set breakpoint here:
     // compare_summary object type summary equal
+    
+    DoNothing();
     
     NSCAssert(equal, @"Python script doesn't work.");
     NSCAssert(equal.boolValue, @"Wrong summary.");

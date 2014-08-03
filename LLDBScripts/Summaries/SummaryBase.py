@@ -22,7 +22,10 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+import os
 import lldb
+import ClassDump
+import LoadScripts
 
 Architecture_unknown = 0
 Architecture_armv7 = 1
@@ -30,6 +33,11 @@ Architecture_armv7s = 1
 Architecture_arm64 = 2
 Architecture_i386 = 3
 Architecture_x86_64 = 4
+
+# Architecture list.
+# class_dump_dir = os.path.expanduser(os.path.join(LoadScripts.lldb_scripts_dir, LoadScripts.lldb_class_dump_dir))
+# architectures_list = ClassDump.LazyArchitecturesList(class_dump_dir)
+architectures_list = None
 
 
 class SummaryBase_SynthProvider(object):
@@ -70,6 +78,15 @@ class SummaryBase_SynthProvider(object):
             self.architecture = Architecture_arm64
 
         return self.architecture
+
+    @staticmethod
+    def get_architecture_list():
+        global architectures_list
+        if architectures_list is None:
+            class_dump_dir = os.path.expanduser(os.path.join(LoadScripts.lldb_scripts_dir,
+                                                             LoadScripts.lldb_class_dump_dir))
+            architectures_list = ClassDump.LazyArchitecturesList(class_dump_dir)
+        return architectures_list
 
     def summary(self):
         return None
