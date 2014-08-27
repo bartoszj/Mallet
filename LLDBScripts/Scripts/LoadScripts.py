@@ -45,6 +45,9 @@ lldb_summaries_load_order = ["objc_runtime",
 
 
 def scripts_in_directory(path):
+    """
+    Finds all Python scripts in given directory.
+    """
     extensions = tuple(lldb_script_extensions)
     scripts = []
 
@@ -64,6 +67,9 @@ def scripts_in_directory(path):
 
 
 def load_scripts(scripts, debugger, order_list=[]):
+    """
+    Loads ass scripts from scripts to the debugger. It uses order_list to load scripts in correct order if needed.
+    """
     scripts.sort()
 
     # Load scripts from ordered list.
@@ -81,6 +87,9 @@ def load_scripts(scripts, debugger, order_list=[]):
 
 
 def load_script(script_path, debugger):
+    """
+    Loads script at script_path to debugger.
+    """
     command = "command script import \"{}\"".format(script_path)
     debugger.HandleCommand(command)
     # print script_path
@@ -88,6 +97,9 @@ def load_script(script_path, debugger):
 
 
 def load_lldb_scripts(debugger):
+    """
+    Loads all scripts from Commands, Scripts and Summaries directories.
+    """
     scripts = []
     for directory in lldb_commands_paths:
         full_path = os.path.join(lldb_scripts_dir, directory)
@@ -105,3 +117,6 @@ def load_lldb_scripts(debugger):
         full_path = os.path.join(lldb_scripts_dir, directory)
         scripts.extend(scripts_in_directory(full_path))
     load_scripts(scripts, debugger, lldb_summaries_load_order)
+
+    import LLDBLogger
+    LLDBLogger.get_logger().debug("Scripts loaded.")

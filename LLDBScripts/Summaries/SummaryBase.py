@@ -35,8 +35,6 @@ Architecture_i386 = 3
 Architecture_x86_64 = 4
 
 # Architecture list.
-# class_dump_dir = os.path.expanduser(os.path.join(LoadScripts.lldb_scripts_dir, LoadScripts.lldb_class_dump_dir))
-# architectures_list = ClassDump.LazyArchitecturesList(class_dump_dir)
 architectures_list = None
 
 
