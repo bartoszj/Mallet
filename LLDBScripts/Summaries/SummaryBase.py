@@ -26,16 +26,11 @@ import os
 import lldb
 import ClassDump
 import LoadScripts
-
-Architecture_unknown = 0
-Architecture_armv7 = 1
-Architecture_armv7s = 1
-Architecture_arm64 = 2
-Architecture_i386 = 3
-Architecture_x86_64 = 4
+import LLDBLogger
+import Helpers
 
 # Architecture list.
-architectures_list = None
+_architectures_list = None
 
 
 class SummaryBase_SynthProvider(object):
@@ -49,7 +44,7 @@ class SummaryBase_SynthProvider(object):
         self.value_obj = value_obj
         self.sys_params = sys_params
         self.internal_dict = internal_dict
-        self.architecture = Architecture_unknown
+        self.architecture = Helpers.Architecture_unknown
         self.arch_offset = 0
         self.get_architecture()
         self.update()
@@ -61,30 +56,17 @@ class SummaryBase_SynthProvider(object):
         pass
 
     def get_architecture(self):
-        triple = self.value_obj.GetTarget().GetTriple()
-
-        self.architecture = Architecture_unknown
-        if triple.startswith("i386"):
-            self.architecture = Architecture_i386
-        elif triple.startswith("x86_64"):
-            self.architecture = Architecture_x86_64
-        elif triple.startswith("armv7"):
-            self.architecture = Architecture_armv7
-        elif triple.startswith("armv7s"):
-            self.architecture = Architecture_armv7s
-        elif triple.startswith("arm64"):
-            self.architecture = Architecture_arm64
-
+        self.architecture = Helpers.architecture_from_target(self.value_obj.GetTarget())
         return self.architecture
 
     @staticmethod
     def get_architecture_list():
-        global architectures_list
-        if architectures_list is None:
+        global _architectures_list
+        if _architectures_list is None:
             class_dump_dir = os.path.expanduser(os.path.join(LoadScripts.lldb_scripts_dir,
                                                              LoadScripts.lldb_class_dump_dir))
-            architectures_list = ClassDump.LazyArchitecturesList(class_dump_dir)
-        return architectures_list
+            _architectures_list = ClassDump.LazyArchitecturesList(class_dump_dir)
+        return _architectures_list
 
     def summary(self):
         return None
