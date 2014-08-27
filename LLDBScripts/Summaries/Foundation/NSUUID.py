@@ -23,8 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-
-import summary_helpers
+import Helpers
 import NSObject
 
 
@@ -34,25 +33,19 @@ class NSUUID_SynthProvider(NSObject.NSObject_SynthProvider):
     #
     # uuid_t/unsigned char[16]                                                4 = 0x04 / 16           8 = 0x08 / 16
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(NSUUID_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(NSUUID_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.uuid_data = None
-
-        self.update()
-
-    def update(self):
-        self.uuid_data = None
-        super(NSUUID_SynthProvider, self).update()
 
     def get_uuid(self):
         if self.uuid_data:
             return self.uuid_data
 
-        if self.sys_params.is_64_bit:
-            self.uuid_data = self.value_obj.CreateChildAtOffset("uuid", 8, self.sys_params.types_cache.uuid_t)
+        if self.is_64bit():
+            self.uuid_data = self.value_obj.CreateChildAtOffset("uuid", 8, self.get_type("uuid_t"))
         else:
-            self.uuid_data = self.value_obj.CreateChildAtOffset("uuid", 4, self.sys_params.types_cache.uuid_t)
+            self.uuid_data = self.value_obj.CreateChildAtOffset("uuid", 4, self.get_type("uuid_t"))
         return self.uuid_data
 
     def summary(self):
@@ -71,7 +64,7 @@ class NSUUID_SynthProvider(NSObject.NSObject_SynthProvider):
 
 
 def NSUUID_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, NSUUID_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, NSUUID_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

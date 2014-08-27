@@ -432,10 +432,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
 
 
 def NSDateComponents_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj,
-                                            internal_dict,
-                                            NSDateComponents_SynthProvider,
-                                            ["NSDateComponents"])
+    return Helpers.generic_summary_provider(value_obj, internal_dict, NSDateComponents_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):
