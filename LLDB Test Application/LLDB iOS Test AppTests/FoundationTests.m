@@ -221,8 +221,37 @@
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.hour = 5;
     dateComponents.minute = 6;
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"time=05:06"];
+}
+
+- (void)testNSDateComponents16
+{
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    dateComponents.hour = 5;
+    dateComponents.minute = 6;
     dateComponents.second = 7;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"hour=5, minute=6, second=7"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"time=05:06:07"];
+}
+
+- (void)testNSDateComponents17
+{
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    dateComponents.year = 2014;
+    dateComponents.month = 3;
+    dateComponents.day = 21;
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"date=2014-03-21"];
+}
+
+- (void)testNSDateComponents18
+{
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    dateComponents.year = 2014;
+    dateComponents.month = 3;
+    dateComponents.day = 21;
+    dateComponents.hour = 5;
+    dateComponents.minute = 6;
+    dateComponents.second = 7;
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"2014-03-21 05:06:07"];
 }
 
 @end

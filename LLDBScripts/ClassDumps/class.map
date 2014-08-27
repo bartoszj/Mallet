@@ -1,4 +1,5 @@
 UIControl:UIKit/UIControl.json
 UIResponder:UIKit/UIResponder.json
 UILabel:UIKit/UILabel.json
+NSURLRequest:Foundation/NSURLRequest.json
 UIView:UIKit/UIView.json

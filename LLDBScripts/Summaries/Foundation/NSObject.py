@@ -22,7 +22,6 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import lldb
 import SummaryBase
 
 
@@ -32,5 +31,5 @@ class NSObject_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
     #
     # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(NSObject_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(NSObject_SynthProvider, self).__init__(value_obj, internal_dict)

@@ -53,13 +53,17 @@ def architecture_from_target(target):
     return architecture
 
 
-def is_64bit_architecture(target):
-    architecture = architecture_from_target(target)
+def is_64bit_architecture(architecture):
     if architecture == Architecture_unknown:
         return False
     if architecture == Architecture_x86_64 or architecture == Architecture_arm64:
         return True
     return False
+
+
+def is_64bit_architecture_from_target(target):
+    architecture = architecture_from_target(target)
+    return is_64bit_architecture(architecture)
 
 
 # Statistics for objc_runtime.
@@ -91,9 +95,9 @@ def generic_summary_provider(value_obj, internal_dict, class_synthetic_provider,
         return wrapper.message()
 
     # Using Class Summary Provider.
-    wrapper = class_synthetic_provider(value_obj, class_data.sys_params, internal_dict)
+    wrapper = class_synthetic_provider(value_obj, internal_dict)
     if wrapper is not None:
-        LLDBLogger.get_logger().debug("generic_summary_provider using summary provider")
+        # LLDBLogger.get_logger().debug("generic_summary_provider using summary provider")
         return wrapper.summary()
 
     # Summary not available.

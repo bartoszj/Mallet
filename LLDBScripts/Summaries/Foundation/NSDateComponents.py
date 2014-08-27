@@ -22,8 +22,8 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
 import NSObject
+import Helpers
 
 
 class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
@@ -49,8 +49,8 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
     # NSInteger yearForWeekOfYear                                            68 = 0x44 / 4          136 = 0x88 / 8
     # NSInteger leapMonth                                                    72 = 0x48 / 4          144 = 0x90 / 8
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(NSDateComponents_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(NSDateComponents_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.era = None
         self.year = None
@@ -67,31 +67,11 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         self.week_of_month = None
         self.year_for_week_of_year = None
         self.leap_month = None
-
-        # self.update()
-
-    def update(self):
-        self.era = None
-        self.year = None
-        self.month = None
-        self.day = None
-        self.hour = None
-        self.minute = None
-        self.second = None
-        self.week = None
-        self.weekday = None
-        self.weekday_ordinal = None
-        self.quarter = None
-        self.week_of_year = None
-        self.week_of_month = None
-        self.year_for_week_of_year = None
-        self.leap_month = None
-        super(NSDateComponents_SynthProvider, self).update()
 
     def is_not_empty_value(self, value):
-        if self.sys_params.is_64_bit and value == 0x7FFFFFFFFFFFFFFF:
+        if self.is_64bit() and value == 0x7FFFFFFFFFFFFFFF:
             return False
-        elif not self.sys_params.is_64_bit and value == 0x7FFFFFFF:
+        elif not self.is_64bit() and value == 0x7FFFFFFF:
             return False
         return True
 
@@ -99,210 +79,210 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.era:
             return self.era
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x18
         else:
             offset = 0x0c
 
         self.era = self.value_obj.CreateChildAtOffset("era",
                                                       offset,
-                                                      self.sys_params.types_cache.NSInteger)
+                                                      self.get_type("NSInteger"))
         return self.era
 
     def get_year(self):
         if self.year:
             return self.year
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x20
         else:
             offset = 0x10
 
         self.year = self.value_obj.CreateChildAtOffset("year",
                                                        offset,
-                                                       self.sys_params.types_cache.NSInteger)
+                                                       self.get_type("NSInteger"))
         return self.year
 
     def get_month(self):
         if self.month:
             return self.month
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x28
         else:
             offset = 0x14
 
         self.month = self.value_obj.CreateChildAtOffset("month",
                                                         offset,
-                                                        self.sys_params.types_cache.NSInteger)
+                                                        self.get_type("NSInteger"))
         return self.month
 
     def get_day(self):
         if self.day:
             return self.day
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x30
         else:
             offset = 0x18
 
         self.day = self.value_obj.CreateChildAtOffset("day",
                                                       offset,
-                                                      self.sys_params.types_cache.NSInteger)
+                                                      self.get_type("NSInteger"))
         return self.day
 
     def get_hour(self):
         if self.hour:
             return self.hour
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x38
         else:
             offset = 0x1c
 
         self.hour = self.value_obj.CreateChildAtOffset("hour",
                                                        offset,
-                                                       self.sys_params.types_cache.NSInteger)
+                                                       self.get_type("NSInteger"))
         return self.hour
 
     def get_minute(self):
         if self.minute:
             return self.minute
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x40
         else:
             offset = 0x20
 
         self.minute = self.value_obj.CreateChildAtOffset("minute",
                                                          offset,
-                                                         self.sys_params.types_cache.NSInteger)
+                                                         self.get_type("NSInteger"))
         return self.minute
 
     def get_second(self):
         if self.second:
             return self.second
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x48
         else:
             offset = 0x24
 
         self.second = self.value_obj.CreateChildAtOffset("second",
                                                          offset,
-                                                         self.sys_params.types_cache.NSInteger)
+                                                         self.get_type("NSInteger"))
         return self.second
 
     def get_week(self):
         if self.week:
             return self.week
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x50
         else:
             offset = 0x28
 
         self.week = self.value_obj.CreateChildAtOffset("week",
                                                        offset,
-                                                       self.sys_params.types_cache.NSInteger)
+                                                       self.get_type("NSInteger"))
         return self.week
 
     def get_weekday(self):
         if self.weekday:
             return self.weekday
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x58
         else:
             offset = 0x2c
 
         self.weekday = self.value_obj.CreateChildAtOffset("weekday",
                                                           offset,
-                                                          self.sys_params.types_cache.NSInteger)
+                                                          self.get_type("NSInteger"))
         return self.weekday
 
     def get_weekday_ordinal(self):
         if self.weekday_ordinal:
             return self.weekday_ordinal
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x60
         else:
             offset = 0x30
 
         self.weekday_ordinal = self.value_obj.CreateChildAtOffset("weekday_ordinal",
                                                                   offset,
-                                                                  self.sys_params.types_cache.NSInteger)
+                                                                  self.get_type("NSInteger"))
         return self.weekday_ordinal
 
     def get_quarter(self):
         if self.quarter:
             return self.quarter
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x68
         else:
             offset = 0x34
 
         self.quarter = self.value_obj.CreateChildAtOffset("quarter",
                                                           offset,
-                                                          self.sys_params.types_cache.NSInteger)
+                                                          self.get_type("NSInteger"))
         return self.quarter
 
     def get_week_of_year(self):
         if self.week_of_year:
             return self.week_of_year
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x78
         else:
             offset = 0x3c
 
         self.week_of_year = self.value_obj.CreateChildAtOffset("week_of_year",
                                                                offset,
-                                                               self.sys_params.types_cache.NSInteger)
+                                                               self.get_type("NSInteger"))
         return self.week_of_year
 
     def get_week_of_month(self):
         if self.week_of_month:
             return self.week_of_month
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x80
         else:
             offset = 0x40
 
         self.week_of_month = self.value_obj.CreateChildAtOffset("week_of_month",
                                                                 offset,
-                                                                self.sys_params.types_cache.NSInteger)
+                                                                self.get_type("NSInteger"))
         return self.week_of_month
 
     def get_year_for_week_of_year(self):
         if self.year_for_week_of_year:
             return self.year_for_week_of_year
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x88
         else:
             offset = 0x44
 
         self.year_for_week_of_year = self.value_obj.CreateChildAtOffset("year_for_week_of_year",
                                                                         offset,
-                                                                        self.sys_params.types_cache.NSInteger)
+                                                                        self.get_type("NSInteger"))
         return self.year_for_week_of_year
 
     def get_leap_month(self):
         if self.leap_month:
             return self.leap_month
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x90
         else:
             offset = 0x48
 
         self.leap_month = self.value_obj.CreateChildAtOffset("leap_month",
                                                              offset,
-                                                             self.sys_params.types_cache.NSInteger)
+                                                             self.get_type("NSInteger"))
         return self.leap_month
 
     def summary(self):
@@ -333,6 +313,36 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         second = self.get_second()
         second_value = second.GetValueAsSigned()
         second_summary = "second={}".format(second_value)
+
+        # Date in ISO format
+        if self.is_not_empty_value(year_value) and \
+           self.is_not_empty_value(month_value) and \
+           self.is_not_empty_value(day_value) and \
+           self.is_not_empty_value(hour_value) and \
+           self.is_not_empty_value(minute_value):
+            if self.is_not_empty_value(second_value):
+                # YYYY-MM-dd HH:mm:ss
+                date_summary = "{}-{:02}-{:02} {:02}:{:02}:{:02}".format(year_value, month_value, day_value,
+                                                                        hour_value, minute_value, second_value)
+            else:
+                # YYYY-MM-dd HH:mm
+                date_summary = "{}-{:02}-{:02} {:02}:{:02}".format(year_value, month_value, day_value,
+                                                                  hour_value, minute_value)
+        else:
+            if self.is_not_empty_value(year_value) and \
+               self.is_not_empty_value(month_value) and \
+               self.is_not_empty_value(day_value):
+                # YYYY-MM-dd
+                date_summary = "date={}-{:02}-{:02}".format(year_value, month_value, day_value)
+
+            if self.is_not_empty_value(hour_value) and \
+               self.is_not_empty_value(minute_value):
+                if self.is_not_empty_value(second_value):
+                    # HH:mm:ss
+                    time_summary = "time={:02}:{:02}:{:02}".format(hour_value, minute_value, second_value)
+                else:
+                    # HH:mm
+                    time_summary = "time={:02}:{:02}".format(hour_value, minute_value)
 
         week = self.get_week()
         week_value = week.GetValueAsSigned()
@@ -370,18 +380,36 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         summaries = []
         if self.is_not_empty_value(era_value):
             summaries.append(era_summary)
-        if self.is_not_empty_value(year_value):
-            summaries.append(year_summary)
-        if self.is_not_empty_value(month_value):
-            summaries.append(month_summary)
-        if self.is_not_empty_value(day_value):
-            summaries.append(day_summary)
-        if self.is_not_empty_value(hour_value):
-            summaries.append(hour_summary)
-        if self.is_not_empty_value(minute_value):
-            summaries.append(minute_summary)
-        if self.is_not_empty_value(second_value):
-            summaries.append(second_summary)
+
+        if self.is_not_empty_value(year_value) and \
+           self.is_not_empty_value(month_value) and \
+           self.is_not_empty_value(day_value) and \
+           self.is_not_empty_value(hour_value) and \
+           self.is_not_empty_value(minute_value):
+            summaries.append(date_summary)
+        else:
+            if self.is_not_empty_value(year_value) and \
+               self.is_not_empty_value(month_value) and \
+               self.is_not_empty_value(day_value):
+                summaries.append(date_summary)
+            else:
+                if self.is_not_empty_value(year_value):
+                    summaries.append(year_summary)
+                if self.is_not_empty_value(month_value):
+                    summaries.append(month_summary)
+                if self.is_not_empty_value(day_value):
+                    summaries.append(day_summary)
+
+            if self.is_not_empty_value(hour_value) and \
+               self.is_not_empty_value(minute_value):
+                summaries.append(time_summary)
+            else:
+                if self.is_not_empty_value(hour_value):
+                    summaries.append(hour_summary)
+                if self.is_not_empty_value(minute_value):
+                    summaries.append(minute_summary)
+                if self.is_not_empty_value(second_value):
+                    summaries.append(second_summary)
         if self.is_not_empty_value(week_value):
             summaries.append(week_summary)
         if self.is_not_empty_value(weekday_value):
@@ -404,8 +432,10 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
 
 
 def NSDateComponents_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, NSDateComponents_SynthProvider,
-                                                   ["NSDateComponents"])
+    return Helpers.generic_summary_provider(value_obj,
+                                            internal_dict,
+                                            NSDateComponents_SynthProvider,
+                                            ["NSDateComponents"])
 
 
 def __lldb_init_module(debugger, dict):

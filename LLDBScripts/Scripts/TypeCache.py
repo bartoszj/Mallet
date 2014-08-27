@@ -26,9 +26,6 @@ import Helpers
 import lldb
 import LLDBLogger
 
-# Shared type cache
-_type_cache = None
-
 
 class TypeCache(object):
     def __init__(self):
@@ -72,7 +69,7 @@ class TypeCache(object):
             return
 
         self._populated = True
-        is64bit = Helpers.is_64bit_architecture(target)
+        is64bit = Helpers.is_64bit_architecture_from_target(target)
         LLDBLogger.get_logger().debug("Populating type cache.")
 
         # char, unsigned char
@@ -120,8 +117,7 @@ class TypeCache(object):
 
 
 def get_type_cache():
-    global _type_cache
-    if _type_cache is None:
-        _type_cache = TypeCache()
-
-    return _type_cache
+    if not hasattr(get_type_cache, "type_cache"):
+        LLDBLogger.get_logger().debug("Creating shared TypeCache.")
+        get_type_cache.type_cache = TypeCache()
+    return get_type_cache.type_cache
