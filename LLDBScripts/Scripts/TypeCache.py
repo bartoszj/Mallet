@@ -70,7 +70,7 @@ class TypeCache(object):
 
         self._populated = True
         is64bit = Helpers.is_64bit_architecture_from_target(target)
-        LLDBLogger.get_logger().debug("Populating type cache.")
+        # LLDBLogger.get_logger().debug("Populating type cache.")
 
         # char, unsigned char
         self.types["char"] = target.GetBasicType(lldb.eBasicTypeChar)
@@ -92,11 +92,14 @@ class TypeCache(object):
             self.types["NSInteger"] = target.GetBasicType(lldb.eBasicTypeLong)
             self.types["NSUInteger"] = target.GetBasicType(lldb.eBasicTypeUnsignedLong)
             self.types["CGFloat"] = target.GetBasicType(lldb.eBasicTypeDouble)
+            self.types["addr_type"] = target.GetBasicType(lldb.eBasicTypeUnsignedLongLong)
         else:
             self.types["NSInteger"] = target.GetBasicType(lldb.eBasicTypeInt)
             self.types["NSUInteger"] = target.GetBasicType(lldb.eBasicTypeUnsignedInt)
             self.types["CGFloat"] = target.GetBasicType(lldb.eBasicTypeFloat)
+            self.types["addr_type"] = target.GetBasicType(lldb.eBasicTypeUnsignedLong)
 
+        self.types["addr_ptr_type"] = self.types["addr_type"].GetPointerType()
         self.types["CGPoint"] = target.FindFirstType('CGPoint')
         self.types["CGSize"] = target.FindFirstType('CGSize')
         self.types["CGRect"] = target.FindFirstType('CGRect')
@@ -118,6 +121,6 @@ class TypeCache(object):
 
 def get_type_cache():
     if not hasattr(get_type_cache, "type_cache"):
-        LLDBLogger.get_logger().debug("Creating shared TypeCache.")
+        # LLDBLogger.get_logger().debug("Creating shared TypeCache.")
         get_type_cache.type_cache = TypeCache()
     return get_type_cache.type_cache

@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import SummaryBase
 
 
@@ -40,62 +40,48 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
     #     NSString *HTTPMethod                                               68 = 0x44 / 4          136 = 0x88 / 8
     # }
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(CFURLRequest_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(CFURLRequest_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.url = None
         self.tmp1_structure = None
         self.method = None
-
-        self.update()
-
-    def update(self):
-        self.url = None
-        self.tmp1_structure = None
-        self.method = None
-        super(CFURLRequest_SynthProvider, self).update()
 
     def get_url(self):
         if self.url:
             return self.url
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x20
         else:
             offset = 0x10
 
-        self.url = self.value_obj.CreateChildAtOffset("url",
-                                                      offset,
-                                                      self.sys_params.types_cache.NSURL)
+        self.url = self.value_obj.CreateChildAtOffset("url", offset, self.get_type("NSURL *"))
         return self.url
 
     def get_tmp1_structure(self):
         if self.tmp1_structure:
             return self.tmp1_structure
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x50
         else:
             offset = 0x2c
 
-        self.tmp1_structure = self.value_obj.CreateChildAtOffset("tmp1",
-                                                                 offset,
-                                                                 self.sys_params.types_cache.addr_ptr_type)
+        self.tmp1_structure = self.value_obj.CreateChildAtOffset("tmp1", offset, self.get_type("addr_ptr_type"))
         return self.tmp1_structure
 
     def get_method(self):
         if self.method:
             return self.method
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x88
         else:
             offset = 0x44
 
         self.get_tmp1_structure()
-        self.method = self.tmp1_structure.CreateChildAtOffset("HTTPMethod",
-                                                              offset,
-                                                              self.sys_params.types_cache.NSString)
+        self.method = self.tmp1_structure.CreateChildAtOffset("HTTPMethod", offset, self.get_type("NSString *"))
         return self.method
 
     def summary(self):
@@ -119,7 +105,7 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
 
 
 def CFURLRequest_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, CFURLRequest_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, CFURLRequest_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

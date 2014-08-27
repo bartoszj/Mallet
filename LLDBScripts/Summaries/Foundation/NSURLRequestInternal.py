@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import NSObject
 import CFURLRequest
 
@@ -33,30 +33,22 @@ class NSURLRequestInternal_SynthProvider(NSObject.NSObject_SynthProvider):
     #
     # struct _CFURLRequest *request                                           4 = 0x04 / 4            8 = 0x08 / 4
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(NSURLRequestInternal_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(NSURLRequestInternal_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.request = None
         self.request_provider = None
-
-        self.update()
-
-    def update(self):
-        self.request = None
-        super(NSURLRequestInternal_SynthProvider, self).update()
 
     def get_request(self):
         if self.request:
             return self.request
 
-        if self.sys_params.is_64_bit:
+        if self.is_64bit():
             offset = 0x08
         else:
             offset = 0x04
 
-        self.request = self.value_obj.CreateChildAtOffset("request",
-                                                          offset,
-                                                          self.sys_params.types_cache.addr_ptr_type)
+        self.request = self.value_obj.CreateChildAtOffset("request", offset, self.get_type("addr_ptr_type"))
         return self.request
 
     def get_request_provider(self):
@@ -64,7 +56,7 @@ class NSURLRequestInternal_SynthProvider(NSObject.NSObject_SynthProvider):
             return self.request_provider
 
         request = self.get_request()
-        self.request_provider = CFURLRequest.CFURLRequest_SynthProvider(request, self.sys_params, self.internal_dict)
+        self.request_provider = CFURLRequest.CFURLRequest_SynthProvider(request, self.internal_dict)
         return self.request_provider
 
     def get_url(self):
@@ -98,7 +90,7 @@ class NSURLRequestInternal_SynthProvider(NSObject.NSObject_SynthProvider):
 
 
 def NSURLRequestInternal_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, NSURLRequestInternal_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, NSURLRequestInternal_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

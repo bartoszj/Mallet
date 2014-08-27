@@ -28,6 +28,7 @@ import ClassDump
 import LoadScripts
 import Helpers
 import TypeCache
+import LLDBLogger
 
 
 class SummaryBase_SynthProvider(object):
@@ -40,26 +41,47 @@ class SummaryBase_SynthProvider(object):
         # self.as_super.__init__()
         super(SummaryBase_SynthProvider, self).__init__()
 
+        self.internal_dict = internal_dict
         self.default_dynamic_type = lldb.eDynamicDontRunTarget
         # self.default_dynamic_type = lldb.eDynamicCanRunTarget
 
         self.value_obj = value_obj
         self.dynamic_value_obj = self.value_obj.GetDynamicValue(self.default_dynamic_type)
+        self.type_name = self.dynamic_value_obj.GetTypeName()
+        self.is_pointer_type = self.type_name.endswith("*")
+        self.normalized_type_name = self.type_name.rstrip("*").strip()
         self.target = self.dynamic_value_obj.GetTarget()
-
-        self.internal_dict = internal_dict
-        self.architecture = Helpers.Architecture_unknown
-        self.get_architecture()
-
-    def get_architecture(self):
-        self.architecture = Helpers.architecture_from_target(self.value_obj.GetTarget())
-        return self.architecture
+        self.architecture = Helpers.architecture_type_from_target(self.target)
+        self.architecture_name = Helpers.architecture_name_from_target(self.target)
 
     def is_64bit(self):
         return Helpers.is_64bit_architecture(self.architecture)
 
     def get_type(self, type_name):
         return TypeCache.get_type_cache().get_type(type_name, self.target)
+
+    def get_value(self, value_name):
+        value = self.dynamic_value_obj.GetChildMemberWithName(value_name, self.default_dynamic_type)
+        if value:
+            # Get dynamic value.
+            if not value.IsDynamic():
+                value = value.GetDynamicValue(self.default_dynamic_type)
+            return value
+
+        # Find ivar and its offset.
+        ivar = self.get_architecture_list().get_ivar(self.architecture_name, self.normalized_type_name, value_name)
+        if ivar is None:
+            LLDBLogger.get_logger().debug("No ivar {} for class {} in architecture {}.".format(value_name,
+                                                                                               self.normalized_type_name,
+                                                                                               self.architecture_name))
+            return None
+
+        # Get value from offset.
+        value = self.dynamic_value_obj.CreateChildAtOffset(value_name, ivar.offset, self.get_type(ivar.ivarType))
+        # Get dynamic value.
+        if value and not value.IsDynamic():
+            value = value.GetDynamicValue(self.default_dynamic_type)
+        return value
 
     @classmethod
     def get_architecture_list(cls):

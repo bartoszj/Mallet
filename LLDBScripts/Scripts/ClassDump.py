@@ -24,6 +24,7 @@
 
 import json
 import os
+import LLDBLogger
 
 class_map_file_name = "class.map"
 
@@ -41,11 +42,11 @@ class LazyArchitecturesList(object):
 
     def _read_class_map(self):
         """
-        Reads class.map file into memory from.
+        Reads class.map file into memory.
         """
         class_map_file_path = os.path.join(self.dir_path, class_map_file_name)
         if not os.path.exists(class_map_file_path):
-            print "Cannot find class.map file"
+            LLDBLogger.get_logger().fatal("Cannot find class.map file")
             raise StandardError()
 
         with open(class_map_file_path, "r") as class_map_file:
@@ -64,14 +65,14 @@ class LazyArchitecturesList(object):
 
     def read_file(self, f):
         """
-        Reads JSON data from file file object.
+        Reads JSON data from file object.
         """
         j = json.load(f)
         return j
 
     def read_file_path(self, file_path):
         """
-        Reads JSON data from file file at given file path.
+        Reads JSON data from file at given file path.
         """
         with open(file_path, "r") as f:
             return self.read_file(f)

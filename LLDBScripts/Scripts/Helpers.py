@@ -35,22 +35,43 @@ Architecture_i386 = 3
 Architecture_x86_64 = 4
 
 
-def architecture_from_target(target):
+def architecture_name_from_target(target):
     triple = target.GetTriple()
 
-    architecture = Architecture_unknown
     if triple.startswith("i386"):
-        architecture = Architecture_i386
+        return "i386"
     elif triple.startswith("x86_64"):
-        architecture = Architecture_x86_64
+        return "x86_64"
     elif triple.startswith("armv7"):
-        architecture = Architecture_armv7
+        return "armv7"
     elif triple.startswith("armv7s"):
+        return "armv7s"
+    elif triple.startswith(""):
+        return "arm64"
+
+    return None
+
+
+def architecture_type_from_name(architecture_name):
+    architecture = Architecture_unknown
+
+    if architecture_name == "i386":
+        architecture = Architecture_i386
+    elif architecture_name == "x86_64":
+        architecture = Architecture_x86_64
+    elif architecture_name == "armv7":
+        architecture = Architecture_armv7
+    elif architecture_name == "armv7s":
         architecture = Architecture_armv7s
-    elif triple.startswith("arm64"):
+    elif architecture_name == "arm64":
         architecture = Architecture_arm64
 
     return architecture
+
+
+def architecture_type_from_target(target):
+    architecture_name = architecture_name_from_target(target)
+    return architecture_type_from_name(architecture_name)
 
 
 def is_64bit_architecture(architecture):
@@ -61,8 +82,13 @@ def is_64bit_architecture(architecture):
     return False
 
 
+def is_64bit_architecture_from_name(architecture_name):
+    architecture = architecture_type_from_name(architecture_name)
+    return is_64bit_architecture(architecture)
+
+
 def is_64bit_architecture_from_target(target):
-    architecture = architecture_from_target(target)
+    architecture = architecture_type_from_target(target)
     return is_64bit_architecture(architecture)
 
 

@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import NSObject
 import NSURLRequestInternal
 
@@ -33,36 +33,17 @@ class NSURLRequest_SynthProvider(NSObject.NSObject_SynthProvider):
     #
     # NSURLRequestInternal *_internal                                         4 = 0x04 / 4            8 = 0x08 / 4
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(NSURLRequest_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
-
-        if not self.sys_params.types_cache.NSURLRequestInternal:
-            self.sys_params.types_cache.NSURLRequestInternal = self.value_obj.GetTarget(). \
-                FindFirstType('NSURLRequestInternal').GetPointerType()
+    def __init__(self, value_obj, internal_dict):
+        super(NSURLRequest_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.request_internal = None
         self.request_internal_provider = None
-
-        self.update()
-
-    def update(self):
-        self.request_internal = None
-        self.request_internal_provider = None
-        super(NSURLRequest_SynthProvider, self).update()
 
     def get_request_internal(self):
         if self.request_internal:
             return self.request_internal
 
-        if self.sys_params.is_64_bit:
-            offset = 0x08
-        else:
-            offset = 0x04
-
-        self.request_internal = self.value_obj.CreateChildAtOffset("_internal",
-                                                                   offset,
-                                                                   self.sys_params.types_cache.NSURLRequestInternal)
-
+        self.request_internal = self.get_value("_internal")
         return self.request_internal
 
     def get_request_internal_provider(self):
@@ -71,7 +52,6 @@ class NSURLRequest_SynthProvider(NSObject.NSObject_SynthProvider):
 
         request_internal = self.get_request_internal()
         self.request_internal_provider = NSURLRequestInternal.NSURLRequestInternal_SynthProvider(request_internal,
-                                                                                                 self.sys_params,
                                                                                                  self.internal_dict)
         return self.request_internal_provider
 
@@ -98,7 +78,7 @@ class NSURLRequest_SynthProvider(NSObject.NSObject_SynthProvider):
 
 
 def NSURLRequest_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, NSURLRequest_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, NSURLRequest_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):
