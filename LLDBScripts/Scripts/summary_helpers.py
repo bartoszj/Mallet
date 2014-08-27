@@ -24,7 +24,10 @@
 
 import lldb
 import lldb.formatters
+
 import objc_runtime
+import LLDBLogger
+
 
 statistics = lldb.formatters.metrics.Metrics()
 statistics.add_metric('invalid_isa')
@@ -37,15 +40,25 @@ def generic_SummaryProvider(value_obj, internal_dict, class_synth_provider, supp
     # Class data
     global statistics
     class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    if not class_data.is_valid() or (len(supported_classes) > 0 and class_data.class_name() not in supported_classes):
+    if not class_data.is_valid():
+        LLDBLogger.get_logger().debug("generic_summary_provider class_data invalid")
         return ""
+
+    if len(supported_classes) > 0 and class_data.class_name() not in supported_classes:
+        LLDBLogger.get_logger().debug("generic_summary_provider not supported class")
+        return ""
+
     update_sys_params(value_obj, class_data.sys_params)
     if wrapper is not None:
+        LLDBLogger.get_logger().debug("generic_summary_provider using wrapper")
         return wrapper.message()
 
     wrapper = class_synth_provider(value_obj, class_data.sys_params, internal_dict)
     if wrapper is not None:
+        LLDBLogger.get_logger().debug("generic_summary_provider using summary provider")
         return wrapper.summary()
+
+    LLDBLogger.get_logger().debug("generic_summary_provider summary unavailable")
     return "Summary Unavailable"
 
 

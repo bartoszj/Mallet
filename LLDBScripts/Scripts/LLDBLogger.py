@@ -43,9 +43,12 @@ def get_logger():
         file_handler = logging.FileHandler(file_path)
         file_handler.setFormatter(formatter)
 
+        null_handler = logging.NullHandler()
+
         # Logger.
         _logger = logging.getLogger("LLDBSummariesLogger")
         _logger.setLevel(logging.DEBUG)
         _logger.addHandler(file_handler)
+        # _logger.addHandler(null_handler)
 
     return _logger

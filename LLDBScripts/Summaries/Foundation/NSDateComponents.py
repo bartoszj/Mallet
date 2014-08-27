@@ -22,7 +22,6 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import lldb
 import summary_helpers
 import NSObject
 
@@ -69,7 +68,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         self.year_for_week_of_year = None
         self.leap_month = None
 
-        self.update()
+        # self.update()
 
     def update(self):
         self.era = None

@@ -41,7 +41,12 @@ class SummaryBase_SynthProvider(object):
         # self.as_super.__init__()
         super(SummaryBase_SynthProvider, self).__init__()
 
+        self.default_dynamic_type = lldb.eDynamicDontRunTarget
+        # self.default_dynamic_type = lldb.eDynamicCanRunTarget
+
         self.value_obj = value_obj
+        self.dynamic_value_obj = self.value_obj.GetDynamicValue(self.default_dynamic_type)
+
         self.sys_params = sys_params
         self.internal_dict = internal_dict
         self.architecture = Helpers.Architecture_unknown

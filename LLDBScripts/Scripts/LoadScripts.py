@@ -29,11 +29,13 @@ lldb_scripts_dir = "~/Library/LLDBScripts/"
 lldb_class_dump_dir = "ClassDumps"
 lldb_commands_paths = ["Commands"]
 lldb_scripts_paths = ["Scripts"]
-lldb_summaries_paths = ["Summaries"]
+lldb_scripts_load_order = ["objc_runtime",
+                           "summary_helpers",
+                           "LLDBLogger"]
 lldb_script_extensions = [".py"]
-lldb_summaries_load_order = ["objc_runtime",
-                             "summary_helpers",
-                             "SummaryBase",
+
+lldb_summaries_paths = ["Summaries"]
+lldb_summaries_load_order = ["SummaryBase",
 
                              "NSObject",
                              "UIResponder",
@@ -110,7 +112,7 @@ def load_lldb_scripts(debugger):
     for directory in lldb_scripts_paths:
         full_path = os.path.join(lldb_scripts_dir, directory)
         scripts.extend(scripts_in_directory(full_path))
-    load_scripts(scripts, debugger)
+    load_scripts(scripts, debugger, lldb_scripts_load_order)
 
     scripts = []
     for directory in lldb_summaries_paths:

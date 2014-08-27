@@ -225,9 +225,4 @@
     [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"hour=5, minute=6, second=7"];
 }
 
-
-
-
-
-
 @end
