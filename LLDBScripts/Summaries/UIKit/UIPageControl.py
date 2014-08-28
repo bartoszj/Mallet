@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import UIControl
 
 
@@ -44,61 +44,32 @@ class UIPageControl_SynthProvider(UIControl.UIControl_SynthProvider):
     # UIColor *_pageIndicatorTintColor                                      152 = 0x98 / 4          288 = 0x120 / 8
     # _UILegibilitySettings *_legibilitySettings                            156 = 0x9c / 4          296 = 0x128 / 8
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UIPageControl_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj,internal_dict):
+        super(UIPageControl_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.indicators = None
         self.current_page = None
         self.displayed_page = None
-
-        self.update()
-
-    def update(self):
-        self.indicators = None
-        self.current_page = None
-        self.displayed_page = None
-        super(UIPageControl_SynthProvider, self).update()
 
     def get_indicators(self):
         if self.indicators:
             return self.indicators
 
-        if self.sys_params.is_64_bit:
-            offset = 0xe0
-        else:
-            offset = 0x78
-
-        self.indicators = self.value_obj.CreateChildAtOffset("indicators",
-                                                             offset,
-                                                             self.sys_params.types_cache.NSArray)
+        self.indicators = self.get_child_value("_indicators")
         return self.indicators
 
     def get_current_page(self):
         if self.current_page:
             return self.current_page
 
-        if self.sys_params.is_64_bit:
-            offset = 0xe8
-        else:
-            offset = 0x7c
-
-        self.current_page = self.value_obj.CreateChildAtOffset("currentPage",
-                                                               offset,
-                                                               self.sys_params.types_cache.NSInteger)
+        self.current_page = self.get_child_value("_currentPage")
         return self.current_page
 
     def get_displayed_page(self):
         if self.displayed_page:
             return self.displayed_page
 
-        if self.sys_params.is_64_bit:
-            offset = 0xf0
-        else:
-            offset = 0x80
-
-        self.displayed_page = self.value_obj.CreateChildAtOffset("displayPage",
-                                                                 offset,
-                                                                 self.sys_params.types_cache.NSInteger)
+        self.displayed_page = self.get_child_value("_displayedPage")
         return self.displayed_page
 
     def summary(self):
@@ -122,7 +93,7 @@ class UIPageControl_SynthProvider(UIControl.UIControl_SynthProvider):
 
 
 def UIPageControl_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIPageControl_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIPageControl_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

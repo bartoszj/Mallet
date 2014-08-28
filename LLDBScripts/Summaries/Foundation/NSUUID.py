@@ -42,7 +42,7 @@ class NSUUID_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.uuid_data:
             return self.uuid_data
 
-        if self.is_64bit():
+        if self.is_64bit:
             self.uuid_data = self.value_obj.CreateChildAtOffset("uuid", 8, self.get_type("uuid_t"))
         else:
             self.uuid_data = self.value_obj.CreateChildAtOffset("uuid", 4, self.get_type("uuid_t"))

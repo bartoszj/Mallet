@@ -43,7 +43,7 @@ class NSURLRequestInternal_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.request:
             return self.request
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x08
         else:
             offset = 0x04

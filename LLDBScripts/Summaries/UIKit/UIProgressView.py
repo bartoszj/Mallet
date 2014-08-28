@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import UIView
 
 
@@ -46,29 +46,16 @@ class UIProgressView_SynthProvider(UIView.UIView_SynthProvider):
     # UIImage *_trackImage                                                  168 = 0xa8 / 4          328 = 0x148 / 8
     # UIImage *_progressImage                                               172 = 0xac / 4          226 = 0x150 / 8
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UIProgressView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(UIProgressView_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.progress = None
-
-        self.update()
-
-    def update(self):
-        self.progress = None
-        super(UIProgressView_SynthProvider, self).update()
 
     def get_progress(self):
         if self.progress:
             return self.progress
 
-        if self.sys_params.is_64_bit:
-            offset = 0xc0
-        else:
-            offset = 0x64
-
-        self.progress = self.value_obj.CreateChildAtOffset("progress",
-                                                           offset,
-                                                           self.sys_params.types_cache.float)
+        self.progress = self.get_child_value("_progress")
         return self.progress
 
     def summary(self):
@@ -80,7 +67,7 @@ class UIProgressView_SynthProvider(UIView.UIView_SynthProvider):
 
 
 def UIProgressView_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIProgressView_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIProgressView_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

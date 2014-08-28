@@ -53,14 +53,26 @@ class SummaryBase_SynthProvider(object):
         self.target = self.dynamic_value_obj.GetTarget()
         self.architecture = Helpers.architecture_type_from_target(self.target)
         self.architecture_name = Helpers.architecture_name_from_target(self.target)
-
-    def is_64bit(self):
-        return Helpers.is_64bit_architecture(self.architecture)
+        self.is_64bit = Helpers.is_64bit_architecture(self.architecture)
 
     def get_type(self, type_name):
+        """
+        Returns LLDB type from TypeCache.
+        """
         return TypeCache.get_type_cache().get_type(type_name, self.target)
 
-    def get_value(self, value_name):
+    def get_ivar(self, ivar_name):
+        """
+        Returns Ivar object with given name.
+        """
+        # LLDBLogger.get_logger().debug("Loading ivar {} for class {} for architecture {}.".
+        #                               format(ivar_name, self.normalized_type_name, self.architecture_name))
+        return self.get_architecture_list().get_ivar(self.architecture_name, self.normalized_type_name, ivar_name)
+
+    def get_child_value(self, value_name, type_name=None):
+        """
+        Returns child value (SBValue) with given name. If variable cannot be find by name then uses ivar offset.
+        """
         value = self.dynamic_value_obj.GetChildMemberWithName(value_name, self.default_dynamic_type)
         if value:
             # Get dynamic value.
@@ -69,15 +81,16 @@ class SummaryBase_SynthProvider(object):
             return value
 
         # Find ivar and its offset.
-        ivar = self.get_architecture_list().get_ivar(self.architecture_name, self.normalized_type_name, value_name)
+        ivar = self.get_ivar(value_name)
         if ivar is None:
-            LLDBLogger.get_logger().debug("No ivar {} for class {} in architecture {}.".format(value_name,
-                                                                                               self.normalized_type_name,
-                                                                                               self.architecture_name))
+            LLDBLogger.get_logger().debug("No ivar {} for class {} for architecture {}.".
+                                          format(value_name, self.normalized_type_name, self.architecture_name))
             return None
 
         # Get value from offset.
-        value = self.dynamic_value_obj.CreateChildAtOffset(value_name, ivar.offset, self.get_type(ivar.ivarType))
+        if type_name is None:
+            type_name = ivar.ivarType
+        value = self.dynamic_value_obj.CreateChildAtOffset(value_name, ivar.offset, self.get_type(type_name))
         # Get dynamic value.
         if value and not value.IsDynamic():
             value = value.GetDynamicValue(self.default_dynamic_type)

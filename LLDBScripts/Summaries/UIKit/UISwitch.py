@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import UIControl
 
 
@@ -38,29 +38,16 @@ class UISwitch_SynthProvider(UIControl.UIControl_SynthProvider):
     # BOOL _on                                                              134 = 0x86 / 1 + 1      250 = 0xfa / 1 + 5
     # CGFloat _enabledAlpha                                                 136 = 0x88 / 4          256 = 0x100 / 8
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UISwitch_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(UISwitch_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.on = None
-
-        self.update()
-
-    def update(self):
-        self.on = None
-        super(UISwitch_SynthProvider, self).update()
 
     def get_on(self):
         if self.on:
             return self.on
 
-        if self.sys_params.is_64_bit:
-            offset = 0xfa
-        else:
-            offset = 0x86
-
-        self.on = self.value_obj.CreateChildAtOffset("on",
-                                                     offset,
-                                                     self.sys_params.types_cache.char)
+        self.on = self.get_child_value("_on")
         return self.on
 
     def summary(self):
@@ -76,7 +63,7 @@ class UISwitch_SynthProvider(UIControl.UIControl_SynthProvider):
 
 
 def UISwitch_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UISwitch_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UISwitch_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

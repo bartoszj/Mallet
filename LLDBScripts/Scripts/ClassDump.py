@@ -24,7 +24,6 @@
 
 import json
 import os
-import LLDBLogger
 
 class_map_file_name = "class.map"
 
@@ -46,7 +45,7 @@ class LazyArchitecturesList(object):
         """
         class_map_file_path = os.path.join(self.dir_path, class_map_file_name)
         if not os.path.exists(class_map_file_path):
-            LLDBLogger.get_logger().fatal("Cannot find class.map file")
+            print("Cannot find class.map file")
             raise StandardError()
 
         with open(class_map_file_path, "r") as class_map_file:
@@ -241,12 +240,12 @@ class ArchitecturesList(object):
 class Architecture(object):
     def __init__(self, name):
         super(Architecture, self).__init__()
-        self.name = name
-        self.protocols = list()
-        self.classes = list()
-        self.categories = list()
+        self.name = name            # Architecture name.
+        self.protocols = list()     # List of protocols.
+        self.classes = list()       # List of classes.
+        self.categories = list()    # List of categories.
 
-        self._classes_map = None
+        self._classes_map = None    # Maps class name to Class object.
 
     def _get_class_map(self):
         # Create class map.
@@ -287,19 +286,35 @@ class Architecture(object):
             return c
 
     def class_inheritance(self, cl):
-        ci = [cl.super_class_name]
+        """
+        Returns class hierarchy.
+        """
+        ci = [cl.class_name, cl.super_class_name]
 
-        super_cl = self.get_class(cl.super_class_name)
-        if super_cl:
-            ci.extend(self.class_inheritance(super_cl))
+        super_class_name = cl.super_class_name
+        while super_class_name:
+            super_cl = self.get_class(super_class_name)
+            if super_cl:
+                # Adds super class name to the end of the list.
+                ci.append(super_cl.super_class_name)
+                super_class_name = super_cl.super_class_name
+            else:
+                super_class_name = None
 
         return ci
 
     def class_offset_for_class(self, cl, offsets_list):
+        """
+        Returns ClassOffset object for given Class object.
+        """
         class_inheritance = self.class_inheritance(cl)
         for class_name in class_inheritance:
+            # Looks for ClassOffset from class list.
             if offsets_list.has_class_offset(class_name):
                 return offsets_list.get_class_offset(class_name)
+            # Looks for ClassOffset from super class list.
+            if offsets_list.has_super_class_offset(class_name):
+                return offsets_list.get_super_class_offset(class_name)
         return None
 
     def fix_ivars_offset(self, offsets):
@@ -453,17 +468,23 @@ class OffsetsList(object):
         super(OffsetsList, self).__init__()
         self.list = None
         self._classes_map = None
+        self._super_classes_map = None
         self._read_json(json_data)
 
     def _get_class_map(self):
         # Create class map.
         if self._classes_map is None:
-            m = dict()
+            cm = dict()
+            scm = dict()
             for c in self.list:
-                m[c.name] = c
-            if len(m) > 0:
-                self._classes_map = m
-        return self._classes_map
+                if c.class_name is not None:
+                    cm[c.class_name] = c
+                if c.super_class_name is not None:
+                    scm[c.super_class_name] = c
+            if len(cm) > 0:
+                self._classes_map = cm
+            if len(scm) > 0:
+                self._super_classes_map = scm
 
     def _read_json(self, json_data):
         l = list()
@@ -483,6 +504,15 @@ class OffsetsList(object):
             return True
         return False
 
+    def has_super_class_offset(self, super_class_name):
+        self._get_class_map()
+        if self._super_classes_map is None:
+            return False
+
+        if super_class_name in self._super_classes_map:
+            return True
+        return False
+
     def get_class_offset(self, class_name):
         self._get_class_map()
         if self._classes_map is None:
@@ -492,16 +522,29 @@ class OffsetsList(object):
             return self._classes_map[class_name]
         return None
 
+    def get_super_class_offset(self, super_class_name):
+        self._get_class_map()
+        if self._super_classes_map is None:
+            return None
+
+        if super_class_name in self._super_classes_map:
+            return self._super_classes_map[super_class_name]
+        return None
+
 
 class ClassOffset(object):
     def __init__(self, json_data):
         super(ClassOffset, self).__init__()
-        self.name = None
+        self.class_name = None
+        self.super_class_name = None
         self.offset = None
         self._read_json(json_data)
 
     def _read_json(self, json_data):
-        self.name = json_data["class"]
+        if "class" in json_data:
+            self.class_name = json_data["class"]
+        if "super_class" in json_data:
+            self.super_class_name = json_data["super_class"]
         self.offset = json_data["offset"]
 
 

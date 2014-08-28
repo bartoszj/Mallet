@@ -1,32 +1,58 @@
 {
   "arm64": [
     {
-      "class": "UIView",
+      "super_class": "UIView",
       "offset": 80
+    }
+    ,
+    {
+      "class": "_UIDatePickerView",
+      "offset": 128
     }
   ],
   "armv7": [
     {
-      "class": "UIView",
+      "super_class": "UIView",
       "offset": 40
+    },
+    {
+      "class": "_UIDatePickerView",
+      "offset": 64
     }
   ],
   "armv7s": [
     {
-      "class": "UIView",
+      "super_class": "UIView",
       "offset": 40
+    }
+    ,
+    {
+      "class": "_UIDatePickerView",
+      "offset": 64
     }
   ],
   "i386": [
     {
-      "class": "UIView",
+      "super_class": "UIView",
       "offset": 40
+    },
+    {
+      "class": "_UIDatePickerView",
+      "offset": 64
+    },
+    {
+      "class": "UIStepper",
+      "offset": 48
     }
   ],
   "x86_64": [
     {
-      "class": "UIView",
+      "super_class": "UIView",
       "offset": 80
+    },
+    {
+      "class": "_UIDatePickerView",
+      "offset": 128
     }
   ]
 }

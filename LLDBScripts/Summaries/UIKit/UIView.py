@@ -23,8 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-
-import summary_helpers
+import Helpers
 import UIResponder
 
 
@@ -120,16 +119,11 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
     # NSMutableArray *_internalConstraints                                   88 = 0x58 / 4          168 = 0xa8 / 8
     # NSArray *_constraintsExceptingSubviewAutoresizingConstraints           92 = 0x5c / 4          176 = 0xb0 / 8
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UIView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(UIView_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.stream = lldb.SBStream()
         self.value_obj.GetExpressionPath(self.stream)
-
-        self.update()
-
-    def update(self):
-        super(UIView_SynthProvider, self).update()
 
     def get_origin(self):
         origin = self.value_obj.CreateValueFromExpression("frameOrigin",
@@ -194,8 +188,8 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
 
 
 def UIView_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIView_SynthProvider,
-                                                   ["UIImageView", "UIView", "UIWindow"])
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIView_SynthProvider,
+                                            ["UIImageView", "UIView", "UIWindow"])
 
 
 # def __lldb_init_module(debugger, dict):

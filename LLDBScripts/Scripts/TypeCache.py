@@ -38,6 +38,8 @@ class TypeCache(object):
         """
         Returns type (SBType) from target (SBTarget) based on type name.
         """
+        if isinstance(type_name, unicode):
+            type_name = type_name.encode('utf-8')
         is_pointer = type_name.endswith("*")
         only_type_name = type_name.rstrip("*").strip()
         t = target.FindFirstType(only_type_name)
@@ -59,6 +61,7 @@ class TypeCache(object):
             return self.types[type_name]
 
         # Get type from name.
+        LLDBLogger.get_logger().debug("Adding type {} to cache.".format(type_name))
         t = self._get_type_from_name(type_name, target)
         self.types[type_name] = t
         return t
@@ -100,23 +103,29 @@ class TypeCache(object):
             self.types["addr_type"] = target.GetBasicType(lldb.eBasicTypeUnsignedLong)
 
         self.types["addr_ptr_type"] = self.types["addr_type"].GetPointerType()
-        self.types["CGPoint"] = target.FindFirstType('CGPoint')
-        self.types["CGSize"] = target.FindFirstType('CGSize')
-        self.types["CGRect"] = target.FindFirstType('CGRect')
-        self.types["UIEdgeInsets"] = target.FindFirstType('UIEdgeInsets')
-        self.types["UIOffset"] = target.FindFirstType('UIOffset')
+        self.types["CGPoint"] = target.FindFirstType("CGPoint")
+        self.types["CGSize"] = target.FindFirstType("CGSize")
+        self.types["CGRect"] = target.FindFirstType("CGRect")
+        self.types["UIEdgeInsets"] = target.FindFirstType("UIEdgeInsets")
+        self.types["UIOffset"] = target.FindFirstType("UIOffset")
+        self.types["struct CGPoint"] = target.FindFirstType("CGPoint")
+        self.types["struct CGSize"] = target.FindFirstType("CGSize")
+        self.types["struct CGRect"] = target.FindFirstType("CGRect")
+        self.types["struct UIEdgeInsets"] = target.FindFirstType("UIEdgeInsets")
+        self.types["struct UIOffset"] = target.FindFirstType("UIOffset")
 
-        self.types["NSString *"] = target.FindFirstType('NSString').GetPointerType()
-        self.types["NSAttributedString *"] = target.FindFirstType('NSAttributedString').GetPointerType()
-        self.types["NSMutableAttributedString *"] = target.FindFirstType('NSMutableAttributedString').GetPointerType()
-        self.types["NSNumber *"] = target.FindFirstType('NSNumber').GetPointerType()
-        self.types["NSDecimalNumber *"] = target.FindFirstType('NSDecimalNumber').GetPointerType()
-        self.types["NSURL *"] = target.FindFirstType('NSURL').GetPointerType()
-        self.types["NSDate *"] = target.FindFirstType('NSDate').GetPointerType()
-        self.types["NSData *"] = target.FindFirstType('NSData').GetPointerType()
-        self.types["NSArray *"] = target.FindFirstType('NSArray').GetPointerType()
-        self.types["NSSet *"] = target.FindFirstType('NSSet').GetPointerType()
-        self.types["NSDictionary *"] = target.FindFirstType('NSDictionary').GetPointerType()
+        self.types["NSString *"] = target.FindFirstType("NSString").GetPointerType()
+        self.types["NSAttributedString *"] = target.FindFirstType("NSAttributedString").GetPointerType()
+        self.types["NSMutableAttributedString *"] = target.FindFirstType("NSMutableAttributedString").GetPointerType()
+        self.types["NSNumber *"] = target.FindFirstType("NSNumber").GetPointerType()
+        self.types["NSDecimalNumber *"] = target.FindFirstType("NSDecimalNumber").GetPointerType()
+        self.types["NSURL *"] = target.FindFirstType("NSURL").GetPointerType()
+        self.types["NSDate *"] = target.FindFirstType("NSDate").GetPointerType()
+        self.types["NSData *"] = target.FindFirstType("NSData").GetPointerType()
+        self.types["NSArray *"] = target.FindFirstType("NSArray").GetPointerType()
+        self.types["NSMutableArray *"] = target.FindFirstType("NSMutableArray").GetPointerType()
+        self.types["NSSet *"] = target.FindFirstType("NSSet").GetPointerType()
+        self.types["NSDictionary *"] = target.FindFirstType("NSDictionary").GetPointerType()
 
 
 def get_type_cache():

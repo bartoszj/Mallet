@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import UIControl
 
 
@@ -33,33 +33,25 @@ class UIDatePicker_SynthProvider(UIControl.UIControl_SynthProvider):
     # _UIDatePickerView *_pickerView                                        120 = 0x78 / 4          224 = 0xe0 / 8
     # BOOL _useCurrentDateDuringDecoding                                    124 = 0x7c / 1          232 = 0xe8 / 1
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UIDatePicker_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
-
-        if not self.sys_params.types_cache.UIDatePickerView:
-            self.sys_params.types_cache.UIDatePickerView = self.value_obj.GetTarget().\
-                FindFirstType('_UIDatePickerView').GetPointerType()
+    def __init__(self, value_obj, internal_dict):
+        super(UIDatePicker_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.picker_view = None
-
-        self.update()
-
-    def update(self):
-        self.picker_view = None
-        super(UIDatePicker_SynthProvider, self).update()
 
     def get_picker_view(self):
         if self.picker_view:
             return self.picker_view
 
-        if self.sys_params.is_64_bit:
-            offset = 0xe0
-        else:
-            offset = 0x78
+        self.picker_view = self.get_child_value("_pickerView")
 
-        self.picker_view = self.value_obj.CreateChildAtOffset("pickerView",
-                                                              offset,
-                                                              self.sys_params.types_cache.UIDatePickerView)
+        # if self.sys_params.is_64_bit:
+        #     offset = 0xe0
+        # else:
+        #     offset = 0x78
+        #
+        # self.picker_view = self.value_obj.CreateChildAtOffset("pickerView",
+        #                                                       offset,
+        #                                                       self.sys_params.types_cache.UIDatePickerView)
         return self.picker_view
 
     def summary(self):
@@ -70,7 +62,7 @@ class UIDatePicker_SynthProvider(UIControl.UIControl_SynthProvider):
 
 
 def UIDatePicker_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIDatePicker_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIDatePicker_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

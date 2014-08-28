@@ -43,7 +43,7 @@ class NSURLRequest_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.request_internal:
             return self.request_internal
 
-        self.request_internal = self.get_value("_internal")
+        self.request_internal = self.get_child_value("_internal")
         return self.request_internal
 
     def get_request_internal_provider(self):

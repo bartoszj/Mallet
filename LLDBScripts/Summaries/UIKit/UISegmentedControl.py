@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import UIControl
 
 
@@ -54,61 +54,32 @@ class UISegmentedControl_SynthProvider(UIControl.UIControl_SynthProvider):
     # } _segmentedControlFlags                                              152 = 0x98 / 2 + 2      288 = 0x120 / 2 + 2
     # BOOL __hasTranslucentOptionsBackground                                156 = 0x9c / 1          292 = 0x124 / 1
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UISegmentedControl_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(UISegmentedControl_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.segments = None
         self.selected_segment = None
         self.highlighted_segment = None
-
-        self.update()
-
-    def update(self):
-        self.segments = None
-        self.selected_segment = None
-        self.highlighted_segment = None
-        super(UISegmentedControl_SynthProvider, self).update()
 
     def get_segments(self):
         if self.segments:
             return self.segments
 
-        if self.sys_params.is_64_bit:
-            offset = 0xe0
-        else:
-            offset = 0x78
-
-        self.segments = self.value_obj.CreateChildAtOffset("segments",
-                                                           offset,
-                                                           self.sys_params.types_cache.NSArray)
+        self.segments = self.get_child_value("_segments")
         return self.segments
 
     def get_selected_segments(self):
         if self.selected_segment:
             return self.selected_segment
 
-        if self.sys_params.is_64_bit:
-            offset = 0xe8
-        else:
-            offset = 0x7c
-
-        self.selected_segment = self.value_obj.CreateChildAtOffset("selectedSegment",
-                                                                   offset,
-                                                                   self.sys_params.types_cache.NSInteger)
+        self.selected_segment = self.get_child_value("_selectedSegment")
         return self.selected_segment
 
     def get_highlighted_segment(self):
         if self.highlighted_segment:
             return self.highlighted_segment
 
-        if self.sys_params.is_64_bit:
-            offset = 0xd0
-        else:
-            offset = 0x80
-
-        self.highlighted_segment = self.value_obj.CreateChildAtOffset("highlightedSegment",
-                                                                   offset,
-                                                                   self.sys_params.types_cache.NSInteger)
+        self.highlighted_segment = self.get_child_value("_highlightedSegment")
         return self.highlighted_segment
 
     def summary(self):
@@ -132,7 +103,7 @@ class UISegmentedControl_SynthProvider(UIControl.UIControl_SynthProvider):
 
 
 def UISegmentedControl_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UISegmentedControl_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UISegmentedControl_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

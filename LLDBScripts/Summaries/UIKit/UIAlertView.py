@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import UIView
 import UILabel
 import UIButton
@@ -126,11 +126,8 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
     # BOOL _textFieldsHidden                                                252 = 0xfc / 1 + 3      488 = 0x1e8 / 1 + 7
     # _UIModalItem *_representedModalItem                                   256 = 0x100 / 4         496 = 0x1f0 / 8
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UIAlertView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
-
-        if not self.sys_params.types_cache.UILabel:
-            self.sys_params.types_cache.UILabel = self.value_obj.GetTarget().FindFirstType('UILabel').GetPointerType()
+    def __init__(self, value_obj, internal_dict):
+        super(UIAlertView_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.title = None
         self.title_provider = None
@@ -139,31 +136,12 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
         self.body = None
         self.body_provider = None
         self.buttons = None
-
-        self.update()
-
-    def update(self):
-        self.title = None
-        self.title_provider = None
-        self.subtitle = None
-        self.subtitle_provider = None
-        self.body = None
-        self.body_provider = None
-        self.buttons = None
-        super(UIAlertView_SynthProvider, self).update()
 
     def get_title(self):
         if self.title:
             return self.title
 
-        if self.sys_params.is_64_bit:
-            offset = 0xc0
-        else:
-            offset = 0x64
-
-        self.title = self.value_obj.CreateChildAtOffset("titleLabel",
-                                                        offset,
-                                                        self.sys_params.types_cache.UILabel)
+        self.title = self.get_child_value("_titleLabel")
         return self.title
 
     def get_title_provider(self):
@@ -171,21 +149,15 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
             return self.title_provider
 
         title = self.get_title()
-        self.title_provider = UILabel.UILabel_SynthProvider(title, self.sys_params, self.internal_dict)
+        if title:
+            self.title_provider = UILabel.UILabel_SynthProvider(title, self.internal_dict)
         return self.title_provider
 
     def get_subtitle(self):
         if self.subtitle:
             return self.subtitle
 
-        if self.sys_params.is_64_bit:
-            offset = 0xc8
-        else:
-            offset = 0x68
-
-        self.subtitle = self.value_obj.CreateChildAtOffset("subtitleLabel",
-                                                           offset,
-                                                           self.sys_params.types_cache.UILabel)
+        self.subtitle = self.get_child_value("_subtitleLabel")
         return self.subtitle
 
     def get_subtitle_provider(self):
@@ -193,21 +165,15 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
             return self.subtitle_provider
 
         subtitle = self.get_subtitle()
-        self.subtitle_provider = UILabel.UILabel_SynthProvider(subtitle, self.sys_params, self.internal_dict)
+        if subtitle:
+            self.subtitle_provider = UILabel.UILabel_SynthProvider(subtitle, self.internal_dict)
         return self.subtitle_provider
 
     def get_body(self):
         if self.body:
             return self.body
 
-        if self.sys_params.is_64_bit:
-            offset = 0xd0
-        else:
-            offset = 0x6c
-
-        self.body = self.value_obj.CreateChildAtOffset("bodyLabel",
-                                                       offset,
-                                                       self.sys_params.types_cache.UILabel)
+        self.body = self.get_child_value("_bodyTextLabel")
         return self.body
 
     def get_body_provider(self):
@@ -215,21 +181,15 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
             return self.body_provider
 
         body = self.get_body()
-        self.body_provider = UILabel.UILabel_SynthProvider(body, self.sys_params, self.internal_dict)
+        if body:
+            self.body_provider = UILabel.UILabel_SynthProvider(body, self.internal_dict)
         return self.body_provider
 
     def get_buttons(self):
         if self.buttons:
             return self.buttons
 
-        if self.sys_params.is_64_bit:
-            offset = 0x138
-        else:
-            offset = 0xa8
-
-        buttons = self.value_obj.CreateChildAtOffset("buttons",
-                                                     offset,
-                                                     self.sys_params.types_cache.NSArray)
+        buttons = self.get_child_value("_buttons")
         self.buttons = []
         for i in xrange(0, buttons.GetNumChildren()):
             b = buttons.GetChildAtIndex(i)
@@ -255,7 +215,7 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
         buttons = self.get_buttons()
         buttons_names = []
         for button in buttons:
-            button_provider = UIButton.UIButton_SynthProvider(button, self.sys_params, self.internal_dict)
+            button_provider = UIButton.UIButton_SynthProvider(button, self.internal_dict)
             button_label_text = button_provider.get_label_text()
             button_label_text_value = button_label_text.GetSummary()
             if button_label_text_value:
@@ -277,7 +237,7 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
 
 
 def UIAlertView_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIAlertView_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIAlertView_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

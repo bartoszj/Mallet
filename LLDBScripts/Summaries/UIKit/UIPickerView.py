@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import UIView
 
 
@@ -67,16 +67,16 @@ class UIPickerView_SynthProvider(UIView.UIView_SynthProvider):
     # BOOL _isInLayoutSubviews                                              168 = 0xa8 / 1          320 = 0x140 / 1
     # BOOL _magnifierEnabled                                                169 = 0xa9 / 1          321 = 0x141 / 1
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UIPickerView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(UIPickerView_SynthProvider, self).__init__(value_obj, internal_dict)
 
 
 def UIPickerView_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIPickerView_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIPickerView_SynthProvider)
 
 
-def __lldb_init_module(debugger, dict):
-    debugger.HandleCommand("type summary add -F UIPickerView.UIPickerView_SummaryProvider \
-                            --category UIKit \
-                            UIPickerView")
-    debugger.HandleCommand("type category enable UIKit")
+# def __lldb_init_module(debugger, dict):
+#     debugger.HandleCommand("type summary add -F UIPickerView.UIPickerView_SummaryProvider \
+#                             --category UIKit \
+#                             UIPickerView")
+#     debugger.HandleCommand("type category enable UIKit")

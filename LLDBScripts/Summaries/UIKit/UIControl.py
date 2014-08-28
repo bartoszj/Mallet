@@ -22,7 +22,6 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import lldb
 import UIView
 
 
@@ -51,5 +50,5 @@ class UIControl_SynthProvider(UIView.UIView_SynthProvider):
     #     unsigned touchHasHighlighted : 1;
     # } _controlFlags                                                       116 = 0x74 / 3 + 1      216 = 0xd8 / 3 + 1
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UIControl_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(UIControl_SynthProvider, self).__init__(value_obj, internal_dict)

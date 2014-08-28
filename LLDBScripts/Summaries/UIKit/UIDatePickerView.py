@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import UIPickerView
 
 
@@ -56,93 +56,93 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
     #     unsigned int usesBlackChrome:1;
     # } _datePickerFlags                                                    252 = 0xfc / 1 + 3      476 = 0x1dc / 1 + 3
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UIDatePickerView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(UIDatePickerView_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.date = None
         self.min_user_date = None
         self.max_user_date = None
         self.min_date = None
         self.max_date = None
-
-        self.update()
-
-    def update(self):
-        self.date = None
-        self.min_user_date = None
-        self.max_user_date = None
-        self.min_date = None
-        self.max_date = None
-        super(UIDatePickerView_SynthProvider, self).update()
 
     def get_date(self):
         if self.date:
             return self.date
 
-        if self.sys_params.is_64_bit:
-            offset = 0x150
-        else:
-            offset = 0xb0
+        self.date = self.get_child_value("_userSuppliedDate")
 
-        self.date = self.value_obj.CreateChildAtOffset("date",
-                                                       offset,
-                                                       self.sys_params.types_cache.NSDate)
+        # if self.sys_params.is_64_bit:
+        #     offset = 0x150
+        # else:
+        #     offset = 0xb0
+        #
+        # self.date = self.value_obj.CreateChildAtOffset("date",
+        #                                                offset,
+        #                                                self.sys_params.types_cache.NSDate)
         return self.date
 
     def get_min_user_date(self):
         if self.min_user_date:
             return self.min_user_date
 
-        if self.sys_params.is_64_bit:
-            offset = 0x158
-        else:
-            offset = 0xb4
+        self.min_user_date = self.get_child_value("_userSuppliedMinimumDate")
 
-        self.min_user_date = self.value_obj.CreateChildAtOffset("userSuppliedMinimumDate",
-                                                                offset,
-                                                                self.sys_params.types_cache.NSDate)
+        # if self.sys_params.is_64_bit:
+        #     offset = 0x158
+        # else:
+        #     offset = 0xb4
+        #
+        # self.min_user_date = self.value_obj.CreateChildAtOffset("userSuppliedMinimumDate",
+        #                                                         offset,
+        #                                                         self.sys_params.types_cache.NSDate)
         return self.min_user_date
 
     def get_max_user_date(self):
         if self.max_user_date:
             return self.max_user_date
 
-        if self.sys_params.is_64_bit:
-            offset = 0x160
-        else:
-            offset = 0xb8
+        self.max_user_date = self.get_child_value("_userSuppliedMaximumDate")
 
-        self.max_user_date = self.value_obj.CreateChildAtOffset("userSuppliedMaximumDate",
-                                                                offset,
-                                                                self.sys_params.types_cache.NSDate)
+        # if self.sys_params.is_64_bit:
+        #     offset = 0x160
+        # else:
+        #     offset = 0xb8
+        #
+        # self.max_user_date = self.value_obj.CreateChildAtOffset("userSuppliedMaximumDate",
+        #                                                         offset,
+        #                                                         self.sys_params.types_cache.NSDate)
         return self.max_user_date
 
     def get_min_date(self):
         if self.min_date:
             return self.min_date
 
-        if self.sys_params.is_64_bit:
-            offset = 0x180
-        else:
-            offset = 0xc8
+        self.min_date = self.get_child_value("_minimumDate")
 
-        self.min_date = self.value_obj.CreateChildAtOffset("minimumDate",
-                                                           offset,
-                                                           self.sys_params.types_cache.NSDate)
+        # if self.sys_params.is_64_bit:
+        #     offset = 0x180
+        # else:
+        #     offset = 0xc8
+        #
+        # self.min_date = self.value_obj.CreateChildAtOffset("minimumDate",
+        #                                                    offset,
+        #                                                    self.sys_params.types_cache.NSDate)
         return self.min_date
 
     def get_max_date(self):
         if self.max_date:
             return self.max_date
 
-        if self.sys_params.is_64_bit:
-            offset = 0x188
-        else:
-            offset = 0xcc
+        self.max_date = self.get_child_value("_maximumDate")
 
-        self.max_date = self.value_obj.CreateChildAtOffset("maximumDate",
-                                                           offset,
-                                                           self.sys_params.types_cache.NSDate)
+        # if self.sys_params.is_64_bit:
+        #     offset = 0x188
+        # else:
+        #     offset = 0xcc
+        #
+        # self.max_date = self.value_obj.CreateChildAtOffset("maximumDate",
+        #                                                    offset,
+        #                                                    self.sys_params.types_cache.NSDate)
         return self.max_date
 
     def summary(self):
@@ -180,7 +180,7 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
 
 
 def UIDatePickerView_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIDatePickerView_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIDatePickerView_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

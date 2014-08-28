@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import NSObject
 
 
@@ -54,72 +54,40 @@ class UIScreen_SynthProvider(NSObject.NSObject_SynthProvider):
     # UISoftwareDimmingWindow *_softwareDimmingWindow                       64 = 0x40 / 4           120 = 0x78 / 8
     # NSInteger _lastNotifiedBacklightLevel                                 68 = 0x44 / 4           128 = 0x80 / 8
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UIScreen_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(UIScreen_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.bounds = None
         self.scale = None
         self.horizontal_scale = None
         self.interface_idiom = None
         
-        self.update()
-
-    def update(self):
-        self.bounds = None
-        self.scale = None
-        self.horizontal_scale = None
-        self.interface_idiom = None
-        super(UIScreen_SynthProvider, self).update()
-
     def get_bounds(self):
         if self.bounds:
             return self.bounds
 
-        self.bounds = self.value_obj.CreateChildAtOffset("bounds",
-                                                         2 * self.sys_params.pointer_size,
-                                                         self.sys_params.types_cache.CGRect)
+        self.bounds = self.get_child_value("_bounds")
         return self.bounds
 
     def get_scale(self):
         if self.scale:
             return self.scale
 
-        if self.sys_params.is_64_bit:
-            offset = 0x30
-        else:
-            offset = 0x18
-
-        self.scale = self.value_obj.CreateChildAtOffset("scale",
-                                                        offset,
-                                                        self.sys_params.types_cache.CGFloat)
+        self.scale = self.get_child_value("_scale")
         return self.scale
 
     def get_horizontal_scale(self):
         if self.horizontal_scale:
             return self.horizontal_scale
 
-        if self.sys_params.is_64_bit:
-            offset = 0x38
-        else:
-            offset = 0x1c
-
-        self.horizontal_scale = self.value_obj.CreateChildAtOffset("horizontalScale",
-                                                                   offset,
-                                                                   self.sys_params.types_cache.CGFloat)
+        self.horizontal_scale = self.get_child_value("_horizontalScale")
         return self.horizontal_scale
 
     def get_interface_idiom(self):
         if self.interface_idiom:
             return self.interface_idiom
 
-        if self.sys_params.is_64_bit:
-            offset = 0x40
-        else:
-            offset = 0x20
-
-        self.interface_idiom = self.value_obj.CreateChildAtOffset("interfaceIdiom",
-                                                                  offset,
-                                                                  self.sys_params.types_cache.int)
+        self.interface_idiom = self.get_child_value("_userInterfaceIdiom")
         return self.interface_idiom
 
     def summary(self):
@@ -150,7 +118,7 @@ class UIScreen_SynthProvider(NSObject.NSObject_SynthProvider):
 
 
 def UIScreen_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIScreen_SynthProvider, ["UIScreen"])
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIScreen_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

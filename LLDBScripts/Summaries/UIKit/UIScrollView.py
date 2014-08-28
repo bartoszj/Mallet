@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import UIView
 
 
@@ -152,77 +152,40 @@ class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
     # NSArray *_automaticContentConstraints                                 444 = 0x1bc / 4         768 = 0x300 / 8
     # CADoublePoint _zoomAnchorPoint                                        448 = 0x1c0 / 16        776 = 0x308 / 16
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UIScrollView_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(UIScrollView_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.content_size = None
         self.content_inset = None
         self.minimum_zoom_scale = None
         self.maximum_zoom_scale = None
-
-        self.update()
-
-    def update(self):
-        self.content_size = None
-        self.content_inset = None
-        self.minimum_zoom_scale = None
-        self.maximum_zoom_scale = None
-        super(UIScrollView_SynthProvider, self).update()
 
     def get_content_size(self):
         if self.content_size:
             return self.content_size
 
-        if self.sys_params.is_64_bit:
-            offset = 0xc0
-        else:
-            offset = 0x64
-
-        self.content_size = self.value_obj.CreateChildAtOffset("contentSize",
-                                                               offset,
-                                                               self.sys_params.types_cache.CGSize)
+        self.content_size = self.get_child_value("_contentSize")
         return self.content_size
 
     def get_content_inset(self):
         if self.content_inset:
             return self.content_inset
 
-        if self.sys_params.is_64_bit:
-            offset = 0xd0
-        else:
-            offset = 0x6c
-
-        self.content_inset = self.value_obj.CreateChildAtOffset("contentInset",
-                                                                offset,
-                                                                self.sys_params.types_cache.UIEdgeInsets)
+        self.content_inset = self.get_child_value("_contentInset")
         return self.content_inset
 
     def get_minimum_zoom_scale(self):
         if self.minimum_zoom_scale:
             return self.minimum_zoom_scale
 
-        if self.sys_params.is_64_bit:
-            offset = 0x150
-        else:
-            offset = 0xc0
-
-        self.minimum_zoom_scale = self.value_obj.CreateChildAtOffset("minimumZoomScale",
-                                                                     offset,
-                                                                     self.sys_params.types_cache.CGFloat)
+        self.minimum_zoom_scale = self.get_child_value("_minimumZoomScale")
         return self.minimum_zoom_scale
 
     def get_maximum_zoom_scale(self):
         if self.maximum_zoom_scale:
             return self.maximum_zoom_scale
 
-        if self.sys_params.is_64_bit:
-            offset = 0x158
-        else:
-            offset = 0xc4
-
-        self.maximum_zoom_scale = self.value_obj.CreateChildAtOffset("maximumZoomScale",
-                                                                     offset,
-                                                                     self.sys_params.types_cache.CGFloat)
+        self.maximum_zoom_scale = self.get_child_value("_maximumZoomScale")
         return self.maximum_zoom_scale
 
     def summary(self):
@@ -260,7 +223,7 @@ class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
 
 
 def UIScrollView_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIScrollView_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIScrollView_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

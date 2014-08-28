@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import UIControl
 
 
@@ -68,61 +68,32 @@ class UISlider_SynthProvider(UIControl.UIControl_SynthProvider):
     # BOOL _maxColorIsValid                                                 216 = 0xd8 / 1 + 3      400 = 0x190 / 1 + 7
     # UIImageView *_innerThumbView                                          220 = 0xdc / 4          408 = 0x198 / 8
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UISlider_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(UISlider_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.value = None
         self.min = None
         self.max = None
-
-        self.update()
-
-    def update(self):
-        self.value = None
-        self.min = None
-        self.max = None
-        super(UISlider_SynthProvider, self).update()
 
     def get_value(self):
         if self.value:
             return self.value
 
-        if self.sys_params.is_64_bit:
-            offset = 0xdc
-        else:
-            offset = 0x78
-
-        self.value = self.value_obj.CreateChildAtOffset("value",
-                                                        offset,
-                                                        self.sys_params.types_cache.float)
+        self.value = self.get_child_value("_value")
         return self.value
 
     def get_min(self):
         if self.min:
             return self.min
 
-        if self.sys_params.is_64_bit:
-            offset = 0xe0
-        else:
-            offset = 0x7c
-
-        self.min = self.value_obj.CreateChildAtOffset("minValue",
-                                                      offset,
-                                                      self.sys_params.types_cache.float)
+        self.min = self.get_child_value("_minValue")
         return self.min
 
     def get_max(self):
         if self.max:
             return self.max
 
-        if self.sys_params.is_64_bit:
-            offset = 0xe4
-        else:
-            offset = 0x80
-
-        self.max = self.value_obj.CreateChildAtOffset("maxValue",
-                                                      offset,
-                                                      self.sys_params.types_cache.float)
+        self.max = self.get_child_value("_maxValue")
         return self.max
 
     def summary(self):
@@ -146,7 +117,7 @@ class UISlider_SynthProvider(UIControl.UIControl_SynthProvider):
 
 
 def UISlider_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UISlider_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UISlider_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

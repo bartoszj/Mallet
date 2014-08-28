@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import UIControl
 import UILabel
 
@@ -57,34 +57,17 @@ class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
     # NSArray *_contentConstraints                                          208 = 0xd4 / 4          400 = 0x190 / 8
     # UIEdgeInsets _internalTitlePaddingInsets                              212 = 0xd8 / 16         408 = 0x198 / 32
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UIButton_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
-
-        if not self.sys_params.types_cache.UILabel:
-            self.sys_params.types_cache.UILabel = self.value_obj.GetTarget().FindFirstType('UILabel').GetPointerType()
+    def __init__(self, value_obj, internal_dict):
+        super(UIButton_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.label = None
         self.label_provider = None
-
-        self.update()
-
-    def update(self):
-        self.label = None
-        self.label_provider = None
-        super(UIButton_SynthProvider, self).update()
 
     def get_label(self):
         if self.label:
             return self.label
 
-        if self.sys_params.is_64_bit:
-            offset = 0x158
-        else:
-            offset = 0xb4
-
-        self.label = self.value_obj.CreateChildAtOffset("titleView",
-                                                        offset,
-                                                        self.sys_params.types_cache.UILabel)
+        self.label = self.get_child_value("_titleView")
         return self.label
 
     def get_label_provider(self):
@@ -92,7 +75,7 @@ class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
             return self.label_provider
 
         label = self.get_label()
-        self.label_provider = UILabel.UILabel_SynthProvider(label, self.sys_params, self.internal_dict)
+        self.label_provider = UILabel.UILabel_SynthProvider(label, self.internal_dict)
         return self.label_provider
 
     def get_label_text(self):
@@ -109,7 +92,7 @@ class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
 
 
 def UIButton_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIButton_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIButton_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

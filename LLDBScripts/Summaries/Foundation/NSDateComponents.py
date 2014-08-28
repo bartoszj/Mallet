@@ -69,9 +69,9 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         self.leap_month = None
 
     def is_not_empty_value(self, value):
-        if self.is_64bit() and value == 0x7FFFFFFFFFFFFFFF:
+        if self.is_64bit and value == 0x7FFFFFFFFFFFFFFF:
             return False
-        elif not self.is_64bit() and value == 0x7FFFFFFF:
+        elif not self.is_64bit and value == 0x7FFFFFFF:
             return False
         return True
 
@@ -79,7 +79,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.era:
             return self.era
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x18
         else:
             offset = 0x0c
@@ -93,7 +93,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.year:
             return self.year
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x20
         else:
             offset = 0x10
@@ -107,7 +107,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.month:
             return self.month
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x28
         else:
             offset = 0x14
@@ -121,7 +121,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.day:
             return self.day
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x30
         else:
             offset = 0x18
@@ -135,7 +135,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.hour:
             return self.hour
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x38
         else:
             offset = 0x1c
@@ -149,7 +149,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.minute:
             return self.minute
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x40
         else:
             offset = 0x20
@@ -163,7 +163,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.second:
             return self.second
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x48
         else:
             offset = 0x24
@@ -177,7 +177,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.week:
             return self.week
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x50
         else:
             offset = 0x28
@@ -191,7 +191,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.weekday:
             return self.weekday
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x58
         else:
             offset = 0x2c
@@ -205,7 +205,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.weekday_ordinal:
             return self.weekday_ordinal
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x60
         else:
             offset = 0x30
@@ -219,7 +219,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.quarter:
             return self.quarter
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x68
         else:
             offset = 0x34
@@ -233,7 +233,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.week_of_year:
             return self.week_of_year
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x78
         else:
             offset = 0x3c
@@ -247,7 +247,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.week_of_month:
             return self.week_of_month
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x80
         else:
             offset = 0x40
@@ -261,7 +261,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.year_for_week_of_year:
             return self.year_for_week_of_year
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x88
         else:
             offset = 0x44
@@ -275,7 +275,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         if self.leap_month:
             return self.leap_month
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x90
         else:
             offset = 0x48

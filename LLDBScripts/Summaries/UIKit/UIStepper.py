@@ -22,8 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
-import SummaryBase
+import Helpers
 import UIControl
 
 
@@ -46,82 +45,40 @@ class UIStepper_SynthProvider(UIControl.UIControl_SynthProvider):
     # double _maximumValue                                                  168 = 0xa8 / 8          296 = 0x128 / 8
     # double _stepValue                                                     176 = 0xb0 / 8          304 = 0x130 / 8
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UIStepper_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(UIStepper_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.value = None
         self.min = None
         self.max = None
         self.step = None
-
-        self.update()
-
-    def update(self):
-        self.value = None
-        self.min = None
-        self.max = None
-        self.step = None
-        super(UIStepper_SynthProvider, self).update()
-
-    def adjust_for_architecture(self):
-        super(UIStepper_SynthProvider, self).adjust_for_architecture()
-        if self.architecture == SummaryBase.Architecture_i386:
-            self.arch_offset = 4
 
     def get_value(self):
         if self.value:
             return self.value
 
-        if self.sys_params.is_64_bit:
-            offset = 0x118
-        else:
-            offset = 0x98 + self.arch_offset
-
-        self.value = self.value_obj.CreateChildAtOffset("value",
-                                                        offset,
-                                                        self.sys_params.types_cache.double)
+        self.value = self.get_child_value("_value")
         return self.value
 
     def get_min(self):
         if self.min:
             return self.min
 
-        if self.sys_params.is_64_bit:
-            offset = 0x120
-        else:
-            offset = 0xa0 + self.arch_offset
-
-        self.min = self.value_obj.CreateChildAtOffset("minValue",
-                                                      offset,
-                                                      self.sys_params.types_cache.double)
+        self.min = self.get_child_value("_minimumValue")
         return self.min
 
     def get_max(self):
         if self.max:
             return self.max
 
-        if self.sys_params.is_64_bit:
-            offset = 0x128
-        else:
-            offset = 0xa8 + self.arch_offset
-
-        self.max = self.value_obj.CreateChildAtOffset("maxValue",
-                                                      offset,
-                                                      self.sys_params.types_cache.double)
+        self.max = self.get_child_value("_maximumValue")
         return self.max
 
     def get_step(self):
         if self.step:
             return self.step
 
-        if self.sys_params.is_64_bit:
-            offset = 0x130
-        else:
-            offset = 0xb0 + self.arch_offset
-
-        self.step = self.value_obj.CreateChildAtOffset("stepValue",
-                                                       offset,
-                                                       self.sys_params.types_cache.double)
+        self.step = self.get_child_value("_stepValue")
         return self.step
 
     def summary(self):
@@ -151,7 +108,7 @@ class UIStepper_SynthProvider(UIControl.UIControl_SynthProvider):
 
 
 def UIStepper_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIStepper_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIStepper_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

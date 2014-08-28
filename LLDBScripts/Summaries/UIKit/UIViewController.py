@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import UIResponder
 
 
@@ -140,29 +140,16 @@ class UIViewController_SynthProvider(UIResponder.UIResponder_SynthProvider):
     # struct UIEdgeInsets _contentOverlayInsets                             272 = 0x110 / 16        536 = 0x218 / 32
     # struct CGRect __embeddedViewFrame                                     288 = 0x120 / 16        568 = 0x238 / 32
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UIViewController_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(UIViewController_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.title = None
-
-        self.update()
-
-    def update(self):
-        self.title = None
-        super(UIViewController_SynthProvider, self).update()
 
     def get_title(self):
         if self.title:
             return self.title
 
-        if self.sys_params.is_64_bit:
-            offset = 0x28
-        else:
-            offset = 0x14
-
-        self.title = self.value_obj.CreateChildAtOffset("title",
-                                                        offset,
-                                                        self.sys_params.types_cache.NSString)
+        self.title = self.get_child_value("_title")
         return self.title
 
     def summary(self):
@@ -178,7 +165,7 @@ class UIViewController_SynthProvider(UIResponder.UIResponder_SynthProvider):
 
 
 def UIViewController_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UIViewController_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIViewController_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

@@ -51,7 +51,7 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         if self.url:
             return self.url
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x20
         else:
             offset = 0x10
@@ -63,7 +63,7 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         if self.tmp1_structure:
             return self.tmp1_structure
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x50
         else:
             offset = 0x2c
@@ -75,7 +75,7 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         if self.method:
             return self.method
 
-        if self.is_64bit():
+        if self.is_64bit:
             offset = 0x88
         else:
             offset = 0x44

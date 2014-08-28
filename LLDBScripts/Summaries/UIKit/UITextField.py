@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import UIControl
 import UILabel
 
@@ -97,38 +97,28 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
     # _UIBaselineLayoutStrut *_baselineLayoutLabel                          308 = 0x134 / 4         584 = 0x248 / 8
     # NSDictionary *_defaultTextAttributes                                  312 = 0x138 / 4         592 = 0x250 / 8
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UITextField_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
-
-        if not self.sys_params.types_cache.UILabel:
-            self.sys_params.types_cache.UILabel = self.value_obj.GetTarget().FindFirstType('UILabel').GetPointerType()
+    def __init__(self, value_obj, internal_dict):
+        super(UITextField_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.display_label = None
         self.display_label_provider = None
         self.placeholder_label = None
         self.placeholder_label_provider = None
-
-        self.update()
-
-    def update(self):
-        self.display_label = None
-        self.display_label_provider = None
-        self.placeholder_label = None
-        self.placeholder_label_provider = None
-        super(UITextField_SynthProvider, self).update()
 
     def get_display_label(self):
         if self.display_label:
             return self.display_label
 
-        if self.sys_params.is_64_bit:
-            offset = 0x1e0
-        else:
-            offset = 0xfc
+        self.display_label = self.get_child_value("_displayLabel")
 
-        self.display_label = self.value_obj.CreateChildAtOffset("displayLabel",
-                                                                offset,
-                                                                self.sys_params.types_cache.UILabel)
+        # if self.sys_params.is_64_bit:
+        #     offset = 0x1e0
+        # else:
+        #     offset = 0xfc
+        #
+        # self.display_label = self.value_obj.CreateChildAtOffset("displayLabel",
+        #                                                         offset,
+        #                                                         self.sys_params.types_cache.UILabel)
         return self.display_label
 
     def get_display_label_provider(self):
@@ -136,21 +126,23 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
             return self.display_label_provider
 
         display_label = self.get_display_label()
-        self.display_label_provider = UILabel.UILabel_SynthProvider(display_label, self.sys_params, self.internal_dict)
+        self.display_label_provider = UILabel.UILabel_SynthProvider(display_label, self.internal_dict)
         return self.display_label_provider
 
     def get_placeholder_label(self):
         if self.placeholder_label:
             return self.placeholder_label
 
-        if self.sys_params.is_64_bit:
-            offset = 0x1e8
-        else:
-            offset = 0x100
+        self.placeholder_label = self.get_child_value("_placeholderLabel")
 
-        self.placeholder_label = self.value_obj.CreateChildAtOffset("placeholderLabel",
-                                                                    offset,
-                                                                    self.sys_params.types_cache.UILabel)
+        # if self.sys_params.is_64_bit:
+        #     offset = 0x1e8
+        # else:
+        #     offset = 0x100
+        #
+        # self.placeholder_label = self.value_obj.CreateChildAtOffset("placeholderLabel",
+        #                                                             offset,
+        #                                                             self.sys_params.types_cache.UILabel)
         return self.placeholder_label
 
     def get_placeholder_label_provider(self):
@@ -158,9 +150,7 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
             return self.placeholder_label_provider
 
         placeholder_label = self.get_placeholder_label()
-        self.placeholder_label_provider = UILabel.UILabel_SynthProvider(placeholder_label,
-                                                                        self.sys_params,
-                                                                        self.internal_dict)
+        self.placeholder_label_provider = UILabel.UILabel_SynthProvider(placeholder_label, self.internal_dict)
         return self.placeholder_label_provider
 
     def summary(self):
@@ -187,7 +177,7 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
 
 
 def UITextField_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UITextField_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UITextField_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

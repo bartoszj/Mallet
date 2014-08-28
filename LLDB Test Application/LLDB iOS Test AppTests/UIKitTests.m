@@ -179,8 +179,8 @@
     UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(20, 10, 34, 234)];
     datePicker.minimumDate = [NSDate dateWithTimeIntervalSinceNow:-100];
     datePicker.maximumDate = [NSDate dateWithTimeIntervalSinceNow:100];
-    datePicker.date = [NSDate dateWithTimeIntervalSince1970:1405787604];
-//    [self compareObject:datePicker ofType:@"UIDatePicker *" toSumamry:@""];
+    datePicker.date = [NSDate dateWithTimeIntervalSince1970:14057876040];
+//    [self compareObject:datePicker ofType:@"UIDatePicker *" toSumamry:@"date=2001-01-01 01:00:00 CET"];
 }
 
 #pragma mark - UIPageControl

@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import UIView
 
 
@@ -67,29 +67,16 @@ class UILabel_SynthProvider(UIView.UIView_SynthProvider):
     # } _textLabelFlags                                                     156 = 0x9c / 3 + 1      296 = 0x128 / 3 + 5
     # CGFloat _preferredMaxLayoutWidth                                      160 = 0xa0 / 4          304 = 0x130 / 8
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(UILabel_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(UILabel_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.text = None
-
-        self.update()
-
-    def update(self):
-        self.text = None
-        super(UILabel_SynthProvider, self).update()
 
     def get_text(self):
         if self.text:
             return self.text
 
-        if self.sys_params.is_64_bit:
-            offset = 0xf0
-        else:
-            offset = 0x7c
-
-        self.text = self.value_obj.CreateChildAtOffset("attributedText",
-                                                       offset,
-                                                       self.sys_params.types_cache.NSAttributedString)
+        self.text = self.get_child_value("_content", "NSMutableAttributedString *")
         return self.text
 
     def summary(self):
@@ -100,7 +87,7 @@ class UILabel_SynthProvider(UIView.UIView_SynthProvider):
 
 
 def UILabel_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, UILabel_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UILabel_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):
