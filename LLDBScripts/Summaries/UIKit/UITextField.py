@@ -110,15 +110,6 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
             return self.display_label
 
         self.display_label = self.get_child_value("_displayLabel")
-
-        # if self.sys_params.is_64_bit:
-        #     offset = 0x1e0
-        # else:
-        #     offset = 0xfc
-        #
-        # self.display_label = self.value_obj.CreateChildAtOffset("displayLabel",
-        #                                                         offset,
-        #                                                         self.sys_params.types_cache.UILabel)
         return self.display_label
 
     def get_display_label_provider(self):
@@ -134,15 +125,6 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
             return self.placeholder_label
 
         self.placeholder_label = self.get_child_value("_placeholderLabel")
-
-        # if self.sys_params.is_64_bit:
-        #     offset = 0x1e8
-        # else:
-        #     offset = 0x100
-        #
-        # self.placeholder_label = self.value_obj.CreateChildAtOffset("placeholderLabel",
-        #                                                             offset,
-        #                                                             self.sys_params.types_cache.UILabel)
         return self.placeholder_label
 
     def get_placeholder_label_provider(self):
