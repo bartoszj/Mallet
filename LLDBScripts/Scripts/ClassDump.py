@@ -34,14 +34,14 @@ class LazyArchitecturesList(object):
     """
     def __init__(self, dir_path):
         super(LazyArchitecturesList, self).__init__()
-        self.dir_path = dir_path
-        self.architectures = list()
-        self.class_map = None
+        self.dir_path = dir_path        # Path from where classes are read.
+        self.architectures = list()     # List of architectures.
+        self.class_map = None           # Maps class name to path to file.
         self._read_class_map()
 
     def _read_class_map(self):
         """
-        Reads class.map file into memory.
+        Reads class.map file into memory (self.class_map).
         """
         class_map_file_path = os.path.join(self.dir_path, class_map_file_name)
         if not os.path.exists(class_map_file_path):
@@ -132,23 +132,35 @@ class LazyArchitecturesList(object):
 
 
 class ArchitecturesList(object):
+    """
+    Represent list of architectures. It loads all data at once.
+    """
     def __init__(self):
         super(ArchitecturesList, self).__init__()
         self.architectures = list()
 
     def get_architecture(self, name):
+        """
+        Finds Architecture object with given name.
+        """
         for a in self.architectures:
             if a.name == name:
                 return a
         return None
 
     def all_class_names(self):
+        """
+        Returns a list of all classe names from all architectures.
+        """
         s = set()
         for a in self.architectures:
             s = s.union(set(a.all_class_names()))
         return list(s)
 
     def read_json(self, j, framework):
+        """
+        Reads a JSON content.
+        """
         for archName in j:
             architecture = self.get_architecture(archName)
             if not architecture:
@@ -157,14 +169,23 @@ class ArchitecturesList(object):
             architecture.add_json(j[archName], framework)
 
     def read_file(self, f, framework):
+        """
+        Reads a file object.
+        """
         j = json.load(f)
         self.read_json(j, framework)
 
     def read_file_path(self, fp, framework):
+        """
+        Reads a file at given path.
+        """
         with open(fp, "r") as f:
             self.read_file(f, framework)
 
     def read_directory_path(self, dir_path):
+        """
+        Reads all files from directory.
+        """
         # Go through all files in input directory and read it.
         for root, dirs, files in os.walk(dir_path):
             for f in files:
@@ -180,6 +201,9 @@ class ArchitecturesList(object):
                 self.read_file_path(fi_path, framework_name)
 
     def save_to_folder(self, folder_path):
+        """
+        Saves all classes as JSON files to given folder path.
+        """
         classes = self.all_class_names()
         class_map = list()
         for class_name in classes:
@@ -216,6 +240,9 @@ class ArchitecturesList(object):
             class_map_file.write(class_map_str)
 
     def fix_ivars_offset(self, offsets_file_path):
+        """
+        Fixes ivars offset using offset information from file.
+        """
         # Current directory path.
         current_dir = os.path.abspath(__file__)
         current_dir, _ = os.path.split(current_dir)
@@ -238,6 +265,9 @@ class ArchitecturesList(object):
 
 
 class Architecture(object):
+    """
+    Represent one architecture.
+    """
     def __init__(self, name):
         super(Architecture, self).__init__()
         self.name = name            # Architecture name.
@@ -248,6 +278,9 @@ class Architecture(object):
         self._classes_map = None    # Maps class name to Class object.
 
     def _get_class_map(self):
+        """
+        Creates class map. Maps class name to Class object.
+        """
         # Create class map.
         if self._classes_map is None:
             m = dict()
@@ -258,10 +291,16 @@ class Architecture(object):
         return self._classes_map
 
     def all_class_names(self):
+        """
+        Returns all class names.
+        """
         self._get_class_map()
         return self._get_class_map().keys()
 
     def get_class(self, name):
+        """
+        Returns class with given name.
+        """
         self._get_class_map()
         if self._classes_map is None:
             return None
@@ -271,6 +310,9 @@ class Architecture(object):
         return None
 
     def add_json(self, j, framework=None):
+        """
+        Reads JSON content for architecture.
+        """
         if j is None:
             return
 
@@ -287,7 +329,7 @@ class Architecture(object):
 
     def class_inheritance(self, cl):
         """
-        Returns class hierarchy.
+        Returns class hierarchy as list.
         """
         ci = [cl.class_name, cl.super_class_name]
 
@@ -318,6 +360,9 @@ class Architecture(object):
         return None
 
     def fix_ivars_offset(self, offsets):
+        """
+        Adds offset to ivars using content from JSON.
+        """
         offsets_list = OffsetsList(offsets)
         for cl in self.classes:
             class_offset = self.class_offset_for_class(cl, offsets_list)

@@ -27,32 +27,35 @@ import NSObject
 
 
 class UIScreen_SynthProvider(NSObject.NSObject_SynthProvider):
-    # UIScreen:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
-    #
-    # id _display                                                             4 = 0x04 / 4            8 = 0x08 / 8
-    # CGRect _bounds                                                          8 = 0x08 / 16          16 = 0x10 / 32
-    # CGFloat _scale                                                         24 = 0x18 / 4           48 = 0x30 / 8
-    # CGFloat _horizontalScale                                               28 = 0x1c / 4           56 = 0x38 / 8
-    # NSInteger _userInterfaceIdiom                                          32 = 0x20 / 4           64 = 0x40 / 8
-    # NSDictionary *_capabilities                                            36 = 0x24 / 4           72 = 0x48 / 8
-    # NSInteger _workspaceCapableScreenType                                  40 = 0x28 / 4           80 = 0x50 / 8
-    # UIWindow *_screenDisablingWindow                                       44 = 0x2c / 4           88 = 0x58 / 8
-    # double _startedPausingWindows                                          48 = 0x30 / 8           96 = 0x60 / 8
-    # NSMutableArray *_pausedWindows                                         56 = 0x38 / 4          104 = 0x68 / 8
+    # Class: UIScreen
+    # Super class: NSObject
+    # Name:                                                 armv7                 i386                  arm64                 x86_64
+    # id _display                                         4 (0x004) / 4         4 (0x004) / 4         8 (0x008) / 8         8 (0x008) / 8
+    # CGRect _bounds                                      8 (0x008) / 16        8 (0x008) / 16       16 (0x010) / 32       16 (0x010) / 32
+    # CGFloat _scale                                     24 (0x018) / 4        24 (0x018) / 4        48 (0x030) / 8        48 (0x030) / 8
+    # CGFloat _horizontalScale                           28 (0x01C) / 4        28 (0x01C) / 4        56 (0x038) / 8        56 (0x038) / 8
+    # NSInteger _userInterfaceIdiom                      32 (0x020) / 4        32 (0x020) / 4        64 (0x040) / 8        64 (0x040) / 8
+    # NSDictionary * _capabilities                       36 (0x024) / 4        36 (0x024) / 4        72 (0x048) / 8        72 (0x048) / 8
+    # NSInteger _workspaceCapableScreenType              40 (0x028) / 4        40 (0x028) / 4        80 (0x050) / 8        80 (0x050) / 8
+    # UIWindow * _screenDisablingWindow                  44 (0x02C) / 4        44 (0x02C) / 4        88 (0x058) / 8        88 (0x058) / 8
+    # double _startedPausingWindows                      48 (0x030) / 8        48 (0x030) / 8        96 (0x060) / 8        96 (0x060) / 8
+    # NSMutableArray * _pausedWindows                    56 (0x038) / 4        56 (0x038) / 4       104 (0x068) / 8       104 (0x068) / 8
+    # NSDictionary * _touchMap                           60 (0x03C) / 4        60 (0x03C) / 4       112 (0x070) / 8       112 (0x070) / 8
+    # NSArray * _availableDisplayModes                   64 (0x040) / 4        64 (0x040) / 4       120 (0x078) / 8       120 (0x078) / 8
+    # unsigned int _canAccessDisplaySeed                 68 (0x044) / 4        68 (0x044) / 4       128 (0x080) / 4       128 (0x080) / 4
+    # unsigned int _connectionSeed                       72 (0x048) / 4        72 (0x048) / 4       132 (0x084) / 4       132 (0x084) / 4
     # struct {
-    #     unsigned bitsPerComponent : 4
-    #     unsigned initialized : 1
-    #     unsigned connected : 1
-    #     unsigned overscanCompensation : 2
-    #     unsigned hasShownWindows : 1
-    #     unsigned canAccessDisplay : 1
-    #     unsigned canAccessDisplayValid : 1
-    #     unsigned screenUpdatesDisabled : 1
-    # } _screenFlags                                                        60 = 0x3c / 2 (+ 2)     112 = 0x70 / 2 + 2
-    # BOOL _wantsSoftwareDimming                                            62 = 0x3e / 1 + 1       116 = 0x74 / 1 + 3
-    # UISoftwareDimmingWindow *_softwareDimmingWindow                       64 = 0x40 / 4           120 = 0x78 / 8
-    # NSInteger _lastNotifiedBacklightLevel                                 68 = 0x44 / 4           128 = 0x80 / 8
+    #         unsigned int bitsPerComponent:4;
+    #         unsigned int initialized:1;
+    #         unsigned int connected:1;
+    #         unsigned int overscanCompensation:2;
+    #         unsigned int canAccessDisplay:1;
+    #         unsigned int canAccessDisplaySeedValid:1;
+    #         unsigned int screenUpdatesDisabled:1;
+    #     } _screenFlags                                 76 (0x04C) / 2        76 (0x04C) / 4       136 (0x088) / 4       136 (0x088) / 4
+    # BOOL _wantsSoftwareDimming                         78 (0x04E) / 1  + 1   80 (0x050) / 1  + 3  140 (0x08C) / 1  + 3  140 (0x08C) / 1  + 3
+    # UISoftwareDimmingWindow * _softwareDimmingWindow   80 (0x050) / 4        84 (0x054) / 4       144 (0x090) / 8       144 (0x090) / 8
+    # NSInteger _lastNotifiedBacklightLevel              84 (0x054) / 4        88 (0x058) / 4       152 (0x098) / 8       152 (0x098) / 8
 
     def __init__(self, value_obj, internal_dict):
         super(UIScreen_SynthProvider, self).__init__(value_obj, internal_dict)

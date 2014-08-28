@@ -28,96 +28,102 @@ import UIResponder
 
 
 class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
-    # UIView:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
-    #
-    # CALayer *_layer                                                         4 = 0x04 / 4            8 = 0x08 / 8
-    # id _gestureInfo                                                         8 = 0x08 / 4           16 = 0x10 / 8
-    # NSMutableArray *_gestureRecognizers                                    12 = 0x0c / 4           24 = 0x18 / 8
-    # NSArray *_subviewCache                                                 16 = 0x10 / 4           32 = 0x20 / 8
-    # float _charge                                                          20 = 0x14 / 4           40 = 0x28 / 8
-    # NSInteger _tag                                                         24 = 0x18 / 4           48 = 0x30 / 8
-    # UIViewController *_viewDelegate                                        28 = 0x1c / 4           56 = 0x38 / 8
-    # NSString *_backgroundColorSystemColorName                              32 = 0x20 / 4           64 = 0x40 / 8
-    # NSUInteger _countOfMotionEffectsInSubtree                              36 = 0x24 / 4           72 = 0x48 / 8
+    # Class: UIView
+    # Super class: UIResponder
+    # Protocols: _UIScrollNotification, UITextEffectsOrdering, NSISVariableDelegate, NSLayoutItem, NSISEngineDelegate, NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem
+    # Name:                                                                       armv7                 i386                  arm64                 x86_64
+    # CALayer * _layer                                                         44 (0x02C) / 4        44 (0x02C) / 4        88 (0x058) / 8        88 (0x058) / 8
+    # id _gestureInfo                                                          48 (0x030) / 4        48 (0x030) / 4        96 (0x060) / 8        96 (0x060) / 8
+    # NSMutableArray * _gestureRecognizers                                     52 (0x034) / 4        52 (0x034) / 4       104 (0x068) / 8       104 (0x068) / 8
+    # NSArray * _subviewCache                                                  56 (0x038) / 4        56 (0x038) / 4       112 (0x070) / 8       112 (0x070) / 8
+    # float _charge                                                            60 (0x03C) / 4        60 (0x03C) / 4       120 (0x078) / 4  + 4  120 (0x078) / 4  + 4
+    # NSInteger _tag                                                           64 (0x040) / 4        64 (0x040) / 4       128 (0x080) / 8       128 (0x080) / 8
+    # UIViewController * _viewDelegate                                         68 (0x044) / 4        68 (0x044) / 4       136 (0x088) / 8       136 (0x088) / 8
+    # NSString * _backgroundColorSystemColorName                               72 (0x048) / 4        72 (0x048) / 4       144 (0x090) / 8       144 (0x090) / 8
+    # NSUInteger _countOfMotionEffectsInSubtree                                76 (0x04C) / 4        76 (0x04C) / 4       152 (0x098) / 8       152 (0x098) / 8
     # struct {
-    #     unsigned userInteractionDisabled : 1
-    #     unsigned implementsDrawRect : 1
-    #     unsigned implementsDidScroll : 1
-    #     unsigned implementsMouseTracking : 1
-    #     unsigned hasBackgroundColor : 1
-    #     unsigned isOpaque : 1
-    #     unsigned becomeFirstResponderWhenCapable : 1
-    #     unsigned interceptMouseEvent : 1
-    #     unsigned deallocating : 1
-    #     unsigned debugFlash : 1
-    #     unsigned debugSkippedSetNeedsDisplay : 1
-    #     unsigned debugScheduledDisplayIsRequired : 1
-    #     unsigned isInAWindow : 1
-    #     unsigned isAncestorOfFirstResponder : 1
-    #     unsigned dontAutoresizeSubviews : 1
-    #     unsigned autoresizeMask : 6
-    #     unsigned patternBackground : 1
-    #     unsigned fixedBackgroundPattern : 1
-    #     unsigned dontAnimate : 1
-    #     unsigned superLayerIsView : 1
-    #     unsigned layerKitPatternDrawing : 1
-    #     unsigned multipleTouchEnabled : 1
-    #     unsigned exclusiveTouch : 1
-    #     unsigned hasViewController : 1
-    #     unsigned needsDidAppearOrDisappear : 1
-    #     unsigned gesturesEnabled : 1
-    #     unsigned deliversTouchesForGesturesToSuperview : 1
-    #     unsigned chargeEnabled : 1
-    #     unsigned skipsSubviewEnumeration : 1
-    #     unsigned needsDisplayOnBoundsChange : 1
-    #     unsigned hasTiledLayer : 1
-    #     unsigned hasLargeContent : 1
-    #     unsigned unused : 1
-    #     unsigned traversalMark : 1
-    #     unsigned appearanceIsInvalid : 1
-    #     unsigned monitorsSubtree : 1
-    #     unsigned hostsAutolayoutEngine : 1
-    #     unsigned constraintsAreClean : 1
-    #     unsigned subviewLayoutConstraintsAreClean : 1
-    #     unsigned intrinsicContentSizeConstraintsAreClean : 1
-    #     unsigned potentiallyHasDanglyConstraints : 1
-    #     unsigned doesNotTranslateAutoresizingMaskIntoConstraints : 1
-    #     unsigned autolayoutIsClean : 1
-    #     unsigned subviewsAutolayoutIsClean : 1
-    #     unsigned layoutFlushingDisabled : 1
-    #     unsigned layingOutFromConstraints : 1
-    #     unsigned wantsAutolayout : 1
-    #     unsigned subviewWantsAutolayout : 1
-    #     unsigned isApplyingValuesFromEngine : 1
-    #     unsigned isInAutolayout : 1
-    #     unsigned isUpdatingAutoresizingConstraints : 1
-    #     unsigned isUpdatingConstraints : 1
-    #     unsigned stayHiddenAwaitingReuse : 1
-    #     unsigned stayHiddenAfterReuse : 1
-    #     unsigned skippedLayoutWhileHiddenForReuse : 1
-    #     unsigned hasMaskView : 1
-    #     unsigned hasVisualAltitude : 1
-    #     unsigned hasBackdropMaskViews : 1
-    #     unsigned backdropMaskViewFlags : 3
-    #     unsigned delaysTouchesForSystemGestures : 1
-    #     unsigned subclassShouldDelayTouchForSystemGestures : 1
-    #     unsigned hasMotionEffects : 1
-    #     unsigned backdropOverlayMode : 2
-    #     unsigned tintAdjustmentMode : 2
-    #     unsigned isReferenceView : 1
-    # } _viewFlags                                                           40 = 0x28 / 10 + 2      80 = 0x50 / 10 + 6
-    # NSInteger _retainCount                                                 52 = 0x34 / 4           96 = 0x60 / 8
-    # NSInteger _tintAdjustmentDimmingCount                                  56 = 0x38 / 4          100 = 0x64 / 8
-    # BOOL _shouldArchiveUIAppearanceTags                                    60 = 0x3c / 1 + 3      104 = 0x68 / 1 + 7
-    # UIColor *_interactionTintColor                                         64 = 0x40 / 4          120 = 0x78 / 8
-    # NSISEngine *_layoutEngine                                              68 = 0x44 / 4          128 = 0x80 / 8
-    # NSISVariable *_boundsWidthVariable                                     72 = 0x48 / 4          136 = 0x88 / 8
-    # NSISVariable *_boundsHeightVariable                                    76 = 0x4c / 4          144 = 0x90 / 8
-    # NSISVariable *_minXVariable                                            80 = 0x50 / 4          152 = 0x98 / 8
-    # NSISVariable *_minYVariable                                            84 = 0x54 / 4          160 = 0xa0 / 8
-    # NSMutableArray *_internalConstraints                                   88 = 0x58 / 4          168 = 0xa8 / 8
-    # NSArray *_constraintsExceptingSubviewAutoresizingConstraints           92 = 0x5c / 4          176 = 0xb0 / 8
+    #         unsigned int userInteractionDisabled:1;
+    #         unsigned int implementsDrawRect:1;
+    #         unsigned int implementsDidScroll:1;
+    #         unsigned int implementsMouseTracking:1;
+    #         unsigned int hasBackgroundColor:1;
+    #         unsigned int isOpaque:1;
+    #         unsigned int becomeFirstResponderWhenCapable:1;
+    #         unsigned int interceptMouseEvent:1;
+    #         unsigned int deallocating:1;
+    #         unsigned int debugFlash:1;
+    #         unsigned int debugSkippedSetNeedsDisplay:1;
+    #         unsigned int debugScheduledDisplayIsRequired:1;
+    #         unsigned int isInAWindow:1;
+    #         unsigned int isAncestorOfFirstResponder:1;
+    #         unsigned int dontAutoresizeSubviews:1;
+    #         unsigned int autoresizeMask:6;
+    #         unsigned int patternBackground:1;
+    #         unsigned int fixedBackgroundPattern:1;
+    #         unsigned int dontAnimate:1;
+    #         unsigned int superLayerIsView:1;
+    #         unsigned int layerKitPatternDrawing:1;
+    #         unsigned int multipleTouchEnabled:1;
+    #         unsigned int exclusiveTouch:1;
+    #         unsigned int hasViewController:1;
+    #         unsigned int needsDidAppearOrDisappear:1;
+    #         unsigned int gesturesEnabled:1;
+    #         unsigned int deliversTouchesForGesturesToSuperview:1;
+    #         unsigned int chargeEnabled:1;
+    #         unsigned int skipsSubviewEnumeration:1;
+    #         unsigned int needsDisplayOnBoundsChange:1;
+    #         unsigned int hasTiledLayer:1;
+    #         unsigned int hasLargeContent:1;
+    #         unsigned int unused:1;
+    #         unsigned int traversalMark:1;
+    #         unsigned int appearanceIsInvalid:1;
+    #         unsigned int monitorsSubtree:1;
+    #         unsigned int hostsAutolayoutEngine:1;
+    #         unsigned int constraintsAreClean:1;
+    #         unsigned int subviewLayoutConstraintsAreClean:1;
+    #         unsigned int intrinsicContentSizeConstraintsAreClean:1;
+    #         unsigned int potentiallyHasDanglyConstraints:1;
+    #         unsigned int doesNotTranslateAutoresizingMaskIntoConstraints:1;
+    #         unsigned int autolayoutIsClean:1;
+    #         unsigned int subviewsAutolayoutIsClean:1;
+    #         unsigned int layoutFlushingDisabled:1;
+    #         unsigned int layingOutFromConstraints:1;
+    #         unsigned int wantsAutolayout:1;
+    #         unsigned int subviewWantsAutolayout:1;
+    #         unsigned int isApplyingValuesFromEngine:1;
+    #         unsigned int isInAutolayout:1;
+    #         unsigned int isUpdatingAutoresizingConstraints:1;
+    #         unsigned int isUpdatingConstraints:1;
+    #         unsigned int stayHiddenAwaitingReuse:1;
+    #         unsigned int stayHiddenAfterReuse:1;
+    #         unsigned int skippedLayoutWhileHiddenForReuse:1;
+    #         unsigned int hasMaskView:1;
+    #         unsigned int hasVisualAltitude:1;
+    #         unsigned int hasBackdropMaskViews:1;
+    #         unsigned int backdropMaskViewFlags:3;
+    #         unsigned int delaysTouchesForSystemGestures:1;
+    #         unsigned int subclassShouldDelayTouchForSystemGestures:1;
+    #         unsigned int hasMotionEffects:1;
+    #         unsigned int backdropOverlayMode:2;
+    #         unsigned int tintAdjustmentMode:2;
+    #         unsigned int isReferenceView:1;
+    #         unsigned int focusState:2;
+    #         unsigned int hasUserInterfaceIdiom:1;
+    #         unsigned int userInterfaceIdiom:3;
+    #         unsigned int ancestorDefinesTintColor:1;
+    #         unsigned int ancestorDefinesTintAdjustmentMode:1;
+    #     } _viewFlags                                                         80 (0x050) / 11 + 1   80 (0x050) / 12      160 (0x0A0) / 12 + 4  160 (0x0A0) / 12 + 4
+    # NSInteger _retainCount                                                   92 (0x05C) / 4        92 (0x05C) / 4       176 (0x0B0) / 8       176 (0x0B0) / 8
+    # NSInteger _tintAdjustmentDimmingCount                                    96 (0x060) / 4        96 (0x060) / 4       184 (0x0B8) / 8       184 (0x0B8) / 8
+    # BOOL _shouldArchiveUIAppearanceTags                                     100 (0x064) / 1  + 3  100 (0x064) / 1  + 3  192 (0x0C0) / 1  + 7  192 (0x0C0) / 1  + 7
+    # UIColor * _interactionTintColor                                         104 (0x068) / 4       104 (0x068) / 4       200 (0x0C8) / 8       200 (0x0C8) / 8
+    # NSISEngine * _layoutEngine                                              108 (0x06C) / 4       108 (0x06C) / 4       208 (0x0D0) / 8       208 (0x0D0) / 8
+    # NSISVariable * _boundsWidthVariable                                     112 (0x070) / 4       112 (0x070) / 4       216 (0x0D8) / 8       216 (0x0D8) / 8
+    # NSISVariable * _boundsHeightVariable                                    116 (0x074) / 4       116 (0x074) / 4       224 (0x0E0) / 8       224 (0x0E0) / 8
+    # NSISVariable * _minXVariable                                            120 (0x078) / 4       120 (0x078) / 4       232 (0x0E8) / 8       232 (0x0E8) / 8
+    # NSISVariable * _minYVariable                                            124 (0x07C) / 4       124 (0x07C) / 4       240 (0x0F0) / 8       240 (0x0F0) / 8
+    # NSMutableArray * _internalConstraints                                   128 (0x080) / 4       128 (0x080) / 4       248 (0x0F8) / 8       248 (0x0F8) / 8
+    # NSArray * _constraintsExceptingSubviewAutoresizingConstraints           132 (0x084) / 4       132 (0x084) / 4       256 (0x100) / 8       256 (0x100) / 8
 
     def __init__(self, value_obj, internal_dict):
         super(UIView_SynthProvider, self).__init__(value_obj, internal_dict)

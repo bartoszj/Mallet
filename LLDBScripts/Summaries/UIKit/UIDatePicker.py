@@ -27,11 +27,12 @@ import UIControl
 
 
 class UIDatePicker_SynthProvider(UIControl.UIControl_SynthProvider):
-    # UIDatePicker:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
-    #
-    # _UIDatePickerView *_pickerView                                        120 = 0x78 / 4          224 = 0xe0 / 8
-    # BOOL _useCurrentDateDuringDecoding                                    124 = 0x7c / 1          232 = 0xe8 / 1
+    # Class: UIDatePicker
+    # Super class: UIControl
+    # Protocols: UIPickerViewScrollTesting, NSCoding
+    # Name:                                  armv7                 i386                  arm64                 x86_64
+    # _UIDatePickerView * _pickerView    120 (0x078) / 4       120 (0x078) / 4       224 (0x0E0) / 8       224 (0x0E0) / 8
+    # BOOL _useCurrentDateDuringDecoding 124 (0x07C) / 1       124 (0x07C) / 1       232 (0x0E8) / 1       232 (0x0E8) / 1
 
     def __init__(self, value_obj, internal_dict):
         super(UIDatePicker_SynthProvider, self).__init__(value_obj, internal_dict)

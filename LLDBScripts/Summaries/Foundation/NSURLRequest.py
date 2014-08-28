@@ -28,10 +28,11 @@ import NSURLRequestInternal
 
 
 class NSURLRequest_SynthProvider(NSObject.NSObject_SynthProvider):
-    # NSURLRequest:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
-    #
-    # NSURLRequestInternal *_internal                                         4 = 0x04 / 4            8 = 0x08 / 4
+    # Class: NSURLRequest
+    # Super class: NSObject
+    # Protocols: NSSecureCoding, NSCopying, NSMutableCopying
+    # Name:                                armv7                 i386                  arm64                 x86_64
+    # NSURLRequestInternal * _internal   4 (0x004) / 4         4 (0x004) / 4         8 (0x008) / 8         8 (0x008) / 8
 
     def __init__(self, value_obj, internal_dict):
         super(NSURLRequest_SynthProvider, self).__init__(value_obj, internal_dict)

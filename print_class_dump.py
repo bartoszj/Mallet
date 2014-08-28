@@ -30,31 +30,174 @@ imp.load_source("ClassDump", "LLDBScripts/Scripts/ClassDump.py")
 import ClassDump
 
 
+def normalize_type(type_32bit, type_64bit):
+    if type_32bit == type_64bit:
+        if type_32bit == u"struct CGPoint":
+            return u"CGPoint"
+        elif type_32bit == u"struct CGSize":
+            return u"CGSize"
+        elif type_32bit == u"struct CGRect":
+            return u"CGRect"
+        elif type_32bit == u"struct UIEdgeInsets":
+            return u"UIEdgeInsets"
+        elif type_32bit == u"struct __CFDictionary *":
+            return u"NSDictionary *"
+        return type_32bit
+    elif type_32bit == u"char" and type_64bit == u"_Bool":
+        return u"BOOL"
+    elif type_32bit == u"int" and type_64bit == u"long long":
+        return u"NSInteger"
+    elif type_32bit == u"unsigned int" and type_64bit == u"unsigned long long":
+        return u"NSUInteger"
+    elif type_32bit == u"float" and type_64bit == u"double":
+        return u"CGFloat"
+    elif type_32bit == u"struct CADoublePoint" and type_64bit == u"struct CGPoint":
+        return u"CADoublePoint"
+
+    print("Different types: {} != {}".format(type_32bit, type_64bit))
+    exit()
+    return None
+
+
 def dump_class(class_name):
     # Current directory path.
     current_dir = os.path.abspath(__file__)
     current_dir, _ = os.path.split(current_dir)
     input_dir = os.path.join(current_dir, "LLDBScripts/ClassDumps")
 
+    architecture_names = ["armv7", "i386", "arm64", "x86_64"]
+
     al = ClassDump.ArchitecturesList()
     al.read_directory_path(input_dir)
+
+    architecture_armv7 = al.get_architecture("armv7")
+    architecture_i386 = al.get_architecture("i386")
+    architecture_arm64 = al.get_architecture("arm64")
+    architecture_x86_64 = al.get_architecture("x86_64")
+
     all_classes = al.all_class_names()
     if class_name in all_classes:
+        # Classes for all architectures.
+        cl_armv7 = architecture_armv7.get_class(class_name)
+        cl_arm64 = architecture_arm64.get_class(class_name)
+        cl_i386 = architecture_i386.get_class(class_name)
+        cl_x86_64 = architecture_x86_64.get_class(class_name)
+        cl = cl_armv7
+
         output = u""
-        for architecture in al.architectures:
-            c = architecture.get_class(class_name)
-            output += u"Architecture: {}\n".format(architecture.name)
-            output += u"Class: {}\n".format(c.class_name)
-            if c.super_class_name:
-                output += u"Super class: {}\n".format(c.super_class_name)
-            if c.protocols:
-                output += u"Protocols: {}\n".format(u", ".join(c.protocols))
-            if c.ivars:
-                output += u"Ivars:\n"
-                ivars = sorted(c.ivars, key=lambda x: x.offset, reverse=False)
-                for ivar in ivars:
-                    output += u"  {0} {1}  {2} (0x{2:X}) + {3}\n".format(ivar.ivarType, ivar.name, ivar.offset, ivar.size)
-            output += u"\n"
+        # Class name.
+        output += u"Class: {}\n".format(cl.class_name)
+        # Super class name.
+        if cl.super_class_name:
+            output += u"Super class: {}\n".format(cl.super_class_name)
+        # Protocol names.
+        if cl.protocols:
+            output += u"Protocols: {}\n".format(u", ".join(cl.protocols))
+        # iVars.
+        ivars = sorted(cl.ivars, key=lambda x: x.offset, reverse=False)
+
+        if ivars:
+            # Find longest type name nad ivar name.
+            longest_type_length = 0
+            longest_ivar_length = 0
+            longest_type_and_ivar_length = 0
+            for ivar in ivars:
+                ivar_armv7 = cl_armv7.get_ivar(ivar.name)
+                ivar_arm64 = cl_arm64.get_ivar(ivar.name)
+                ivar_i386 = cl_i386.get_ivar(ivar.name)
+                ivar_x86_64 = cl_x86_64.get_ivar(ivar.name)
+
+                type_name = normalize_type(ivar_armv7.ivarType, ivar_arm64.ivarType)
+                max_type_length = max(len(nt) for nt in type_name.split(u"\n"))
+                last_type_length = len(type_name.split(u"\n")[-1])
+
+                longest_type_length = max(longest_type_length, max_type_length)
+                longest_ivar_length = max(longest_ivar_length, len(ivar.name))
+                longest_type_and_ivar_length = max(longest_type_and_ivar_length,
+                                                   max_type_length,
+                                                   last_type_length+len(ivar.name)+1)
+
+            offset_width = 21
+            output += u"{Name:{name_width}} {ArmV7:{o_width}} {i386:{o_width}} {Arm64:{o_width}} {x86_64:{o_width}}\n"\
+                .format(Name=u"Name:",
+                        ArmV7=u"    armv7", i386=u"    i386", Arm64=u"    arm64", x86_64=u"    x86_64",
+                        name_width=longest_type_and_ivar_length, o_width=offset_width)
+
+            for ivar in ivars:
+                # Ivars.
+                ivar_armv7 = cl_armv7.get_ivar(ivar.name)
+                ivar_arm64 = cl_arm64.get_ivar(ivar.name)
+                ivar_i386 = cl_i386.get_ivar(ivar.name)
+                ivar_x86_64 = cl_x86_64.get_ivar(ivar.name)
+
+                # Next ivars.
+                index = ivars.index(ivar) + 1
+                next_ivar = None
+                next_ivar_armv7 = None
+                next_ivar_arm64 = None
+                next_ivar_i386 = None
+                next_ivar_x86_64 = None
+                if index < len(ivars):
+                    next_ivar = ivars[index]
+                    next_ivar_armv7 = cl_armv7.get_ivar(next_ivar.name)
+                    next_ivar_arm64 = cl_arm64.get_ivar(next_ivar.name)
+                    next_ivar_i386 = cl_i386.get_ivar(next_ivar.name)
+                    next_ivar_x86_64 = cl_x86_64.get_ivar(next_ivar.name)
+
+                # Ivar padding.
+                ivar_armv7_padding = 0
+                ivar_arm64_padding = 0
+                ivar_i386_padding = 0
+                ivar_x86_64_padding = 0
+                if next_ivar:
+                    ivar_armv7_padding = next_ivar_armv7.offset - ivar_armv7.offset - ivar_armv7.size
+                    ivar_arm64_padding = next_ivar_arm64.offset - ivar_arm64.offset - ivar_arm64.size
+                    ivar_i386_padding = next_ivar_i386.offset - ivar_i386.offset - ivar_i386.size
+                    ivar_x86_64_padding = next_ivar_x86_64.offset - ivar_x86_64.offset - ivar_x86_64.size
+
+                # Normalized type name.
+                type_name = normalize_type(ivar_armv7.ivarType, ivar_arm64.ivarType)
+                # Split names by new lines.
+                first_type_name = u"\n".join(type_name.split(u"\n")[:-1])
+                if first_type_name:
+                    first_type_name += u"\n"
+                last_type_name = type_name.split(u"\n")[-1]
+                # Add ivar name to type name.
+                type_and_ivar = u"{} {}".format(last_type_name, ivar.name)
+
+                # Offsets values.
+                if ivar_armv7_padding:
+                    offset_armv7 = u"{0:>3} (0x{0:03X}) / {1:<2} + {2:<2}"\
+                        .format(ivar_armv7.offset, ivar_armv7.size, ivar_armv7_padding)
+                else:
+                    offset_armv7 = u"{0:>3} (0x{0:03X}) / {1:<2}"\
+                        .format(ivar_armv7.offset, ivar_armv7.size)
+                if ivar_arm64_padding:
+                    offset_arm64 = u"{0:>3} (0x{0:03X}) / {1:<2} + {2:<2}"\
+                        .format(ivar_arm64.offset, ivar_arm64.size, ivar_arm64_padding)
+                else:
+                    offset_arm64 = u"{0:>3} (0x{0:03X}) / {1:<2}"\
+                        .format(ivar_arm64.offset, ivar_arm64.size)
+                if ivar_i386_padding:
+                    offset_i386 = u"{0:>3} (0x{0:03X}) / {1:<2} + {2:<2}"\
+                        .format(ivar_i386.offset, ivar_i386.size, ivar_i386_padding)
+                else:
+                    offset_i386 = u"{0:>3} (0x{0:03X}) / {1:<2}"\
+                        .format(ivar_i386.offset, ivar_i386.size)
+
+                if ivar_x86_64_padding:
+                    offset_x86_64 = u"{0:>3} (0x{0:03X}) / {1:<2} + {2:<2}"\
+                        .format(ivar_x86_64.offset, ivar_x86_64.size, ivar_x86_64_padding)
+                else:
+                    offset_x86_64 = u"{0:>3} (0x{0:03X}) / {1:<2}"\
+                        .format(ivar_x86_64.offset, ivar_x86_64.size)
+
+                output += first_type_name
+                output += u"{Name:{name_width}} {ArmV7:{o_width}} {i386:{o_width}} {Arm64:{o_width}} {x86_64:{o_width}}\n"\
+                    .format(Name=type_and_ivar,
+                            ArmV7=offset_armv7, i386=offset_i386, Arm64=offset_arm64, x86_64=offset_x86_64,
+                            name_width=longest_type_and_ivar_length, o_width=offset_width)
+
         print output
 
 

@@ -26,8 +26,9 @@ import NSObject
 
 
 class UIResponder_SynthProvider(NSObject.NSObject_SynthProvider):
-    # UIResponder:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
+    # Class: UIResponder
+    # Super class: NSObject
+    # Protocols: UITextInput_Internal, UITextInputAdditions
 
     def __init__(self, value_obj, internal_dict):
         super(UIResponder_SynthProvider, self).__init__(value_obj, internal_dict)
