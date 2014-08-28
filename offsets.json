@@ -3,8 +3,7 @@
     {
       "super_class": "UIView",
       "offset": 80
-    }
-    ,
+    },
     {
       "class": "_UIDatePickerView",
       "offset": 128
@@ -18,17 +17,24 @@
     {
       "class": "_UIDatePickerView",
       "offset": 64
+    },
+    {
+      "class": "UIStepper",
+      "offset": 56
     }
   ],
   "armv7s": [
     {
       "super_class": "UIView",
       "offset": 40
-    }
-    ,
+    },
     {
       "class": "_UIDatePickerView",
       "offset": 64
+    },
+    {
+      "class": "UIStepper",
+      "offset": 56
     }
   ],
   "i386": [
@@ -53,6 +59,10 @@
     {
       "class": "_UIDatePickerView",
       "offset": 128
+    },
+    {
+      "class": "UIStepper",
+      "offset": 88
     }
   ]
 }

@@ -430,6 +430,9 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Bartosz Janda";
 				TargetAttributes = {
+					9636C84D182977A700FD4AEA = {
+						DevelopmentTeam = 36CHZQXF4C;
+					};
 					9636C871182977A700FD4AEA = {
 						TestTargetID = 9636C84D182977A700FD4AEA;
 					};
@@ -718,6 +721,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LLDB iOS Test App/LLDB iOS Test App-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/LLDB iOS Test App/LLDB iOS Test App-Info.plist";
@@ -732,6 +736,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LLDB iOS Test App/LLDB iOS Test App-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/LLDB iOS Test App/LLDB iOS Test App-Info.plist";
