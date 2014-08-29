@@ -24,6 +24,7 @@
 
 import Helpers
 import NSObject
+import CGRect
 
 
 class UIScreen_SynthProvider(NSObject.NSObject_SynthProvider):
@@ -73,6 +74,10 @@ class UIScreen_SynthProvider(NSObject.NSObject_SynthProvider):
         self.bounds = self.get_child_value("_bounds")
         return self.bounds
 
+    def get_bounds_provider(self):
+        bounds = self.get_bounds()
+        return CGRect.CGRect_SynthProvider(bounds, self.internal_dict)
+
     def get_scale(self):
         if self.scale:
             return self.scale
@@ -95,10 +100,8 @@ class UIScreen_SynthProvider(NSObject.NSObject_SynthProvider):
         return self.interface_idiom
 
     def summary(self):
-        bounds = self.get_bounds()
-        size = bounds.GetChildMemberWithName("size")
-        w = float(size.GetChildMemberWithName("width").GetValue())
-        h = float(size.GetChildMemberWithName("height").GetValue())
+        w = self.get_bounds_provider().get_size_provider().get_width_value()
+        h = self.get_bounds_provider().get_size_provider().get_height_value()
         bounds_summary = "size=({:.0f}, {:.0f})".format(w, h)
 
         scale = self.get_scale()

@@ -24,6 +24,7 @@
 
 import Helpers
 import UIView
+import CGSize
 
 
 class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
@@ -170,6 +171,10 @@ class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
         self.content_size = self.get_child_value("_contentSize")
         return self.content_size
 
+    def get_content_size_provider(self):
+        content_size = self.get_content_size()
+        return CGSize.CGSize_SynthProvider(content_size, self.internal_dict)
+
     def get_content_inset(self):
         if self.content_inset:
             return self.content_inset
@@ -193,8 +198,8 @@ class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
 
     def summary(self):
         content_size = self.get_content_size()
-        content_size_w = float(content_size.GetChildMemberWithName("width").GetValue())
-        content_size_h = float(content_size.GetChildMemberWithName("height").GetValue())
+        content_size_w = self.get_content_size_provider().get_width_value()
+        content_size_h = self.get_content_size_provider().get_height_value()
         content_size_summary = "contentSize=({:.0f}, {:.0f})".format(content_size_w, content_size_h)
 
         content_inset = self.get_content_inset()
