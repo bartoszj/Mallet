@@ -45,7 +45,7 @@
 - (void)testUIScreen
 {
     UIScreen *screen = [UIScreen mainScreen];
-    [self compareObject:screen ofType:@"UIScreen *" toSumamry:@"size=(320, 568), scale=2.0, idiom=Phone"];
+    [self compareObject:screen ofType:@"UIScreen *" toSumamry:@"size=(320, 568), scale=2, idiom=Phone"];
 }
 
 #pragma mark - UIView
@@ -120,7 +120,7 @@
     scrollView.contentSize = CGSizeMake(33, 44);
     scrollView.contentInset = UIEdgeInsetsMake(1, 2, 3, 4);
     scrollView.minimumZoomScale = 0.2;
-    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentSize=(33, 44), inset=(1, 2, 3, 4), minScale=0.20"];
+    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentSize=(33, 44), inset=(1, 2, 3, 4), minScale=0.2"];
 }
 
 - (void)testUIScrollView4
@@ -130,7 +130,7 @@
     scrollView.contentInset = UIEdgeInsetsMake(1, 2, 3, 4);
     scrollView.minimumZoomScale = 0.2;
     scrollView.maximumZoomScale = 3.5;
-    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentSize=(33, 44), inset=(1, 2, 3, 4), minScale=0.20, maxScale=3.50"];
+    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentSize=(33, 44), inset=(1, 2, 3, 4), minScale=0.2, maxScale=3.5"];
 }
 
 #pragma mark - UIAlertView

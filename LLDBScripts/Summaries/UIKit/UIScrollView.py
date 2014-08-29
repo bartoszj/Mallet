@@ -25,6 +25,7 @@
 import Helpers
 import UIView
 import CGSize
+import UIEdgeInsets
 
 
 class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
@@ -182,6 +183,10 @@ class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
         self.content_inset = self.get_child_value("_contentInset")
         return self.content_inset
 
+    def get_content_inset_provider(self):
+        content_inset = self.get_content_inset()
+        return UIEdgeInsets.UIEdgeInsets_SynthProvider(content_inset, self.internal_dict)
+
     def get_minimum_zoom_scale(self):
         if self.minimum_zoom_scale:
             return self.minimum_zoom_scale
@@ -197,26 +202,28 @@ class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
         return self.maximum_zoom_scale
 
     def summary(self):
-        content_size = self.get_content_size()
         content_size_w = self.get_content_size_provider().get_width_value()
         content_size_h = self.get_content_size_provider().get_height_value()
-        content_size_summary = "contentSize=({:.0f}, {:.0f})".format(content_size_w, content_size_h)
+        content_size_summary = "contentSize=({}, {})"\
+            .format(self.formatted_float(content_size_w), self.formatted_float(content_size_h))
 
-        content_inset = self.get_content_inset()
-        content_inset_t = float(content_inset.GetChildMemberWithName("top").GetValue())
-        content_inset_l = float(content_inset.GetChildMemberWithName("left").GetValue())
-        content_inset_b = float(content_inset.GetChildMemberWithName("bottom").GetValue())
-        content_inset_r = float(content_inset.GetChildMemberWithName("right").GetValue())
-        content_inset_summary = "inset=({:.0f}, {:.0f}, {:.0f}, {:.0f})".\
-            format(content_inset_t, content_inset_l, content_inset_b, content_inset_r)
+        content_inset_t = self.get_content_inset_provider().get_top_value()
+        content_inset_l = self.get_content_inset_provider().get_left_value()
+        content_inset_b = self.get_content_inset_provider().get_bottom_value()
+        content_inset_r = self.get_content_inset_provider().get_right_value()
+        content_inset_summary = "inset=({}, {}, {}, {})"\
+            .format(self.formatted_float(content_inset_t),
+                    self.formatted_float(content_inset_l),
+                    self.formatted_float(content_inset_b),
+                    self.formatted_float(content_inset_r))
 
         minimum_zoom_scale = self.get_minimum_zoom_scale()
         minimum_zoom_scale_value = float(minimum_zoom_scale.GetValue())
-        minimum_zoom_scale_summary = "minScale={:.2f}".format(minimum_zoom_scale_value)
+        minimum_zoom_scale_summary = "minScale={}".format(self.formatted_float(minimum_zoom_scale_value))
 
         maximum_zoom_scale = self.get_maximum_zoom_scale()
         maximum_zoom_scale_value = float(maximum_zoom_scale.GetValue())
-        maximum_zoom_scale_summary = "maxScale={:.2f}".format(maximum_zoom_scale_value)
+        maximum_zoom_scale_summary = "maxScale={}".format(self.formatted_float(maximum_zoom_scale_value))
 
         # Summaries
         summaries = [content_size_summary]

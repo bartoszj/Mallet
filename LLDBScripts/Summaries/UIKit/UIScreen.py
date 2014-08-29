@@ -102,10 +102,10 @@ class UIScreen_SynthProvider(NSObject.NSObject_SynthProvider):
     def summary(self):
         w = self.get_bounds_provider().get_size_provider().get_width_value()
         h = self.get_bounds_provider().get_size_provider().get_height_value()
-        bounds_summary = "size=({:.0f}, {:.0f})".format(w, h)
+        bounds_summary = "size=({}, {})".format(self.formatted_float(w), self.formatted_float(h))
 
         scale = self.get_scale()
-        scale_summary = "scale={:.1f}".format(float(scale.GetValue()))
+        scale_summary = "scale={}".format(self.formatted_float(float(scale.GetValue())))
 
         # horizontal_scale = self.get_horizontal_scale()
         # horizontal_scale_summary = "hScale={:.0f}".format(float(horizontal_scale.GetValue()))
