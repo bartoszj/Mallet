@@ -142,6 +142,7 @@ class UIViewController_SynthProvider(UIResponder.UIResponder_SynthProvider):
 
     def __init__(self, value_obj, internal_dict):
         super(UIViewController_SynthProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "UIViewController"
 
         self.title = None
 

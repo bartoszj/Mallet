@@ -59,6 +59,7 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
 
     def __init__(self, value_obj, internal_dict):
         super(UIDatePickerView_SynthProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "_UIDatePickerView"
 
         self.date = None
         self.min_user_date = None

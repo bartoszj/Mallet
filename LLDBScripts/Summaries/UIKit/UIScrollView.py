@@ -156,6 +156,7 @@ class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
 
     def __init__(self, value_obj, internal_dict):
         super(UIScrollView_SynthProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "UIScrollView"
 
         self.content_size = None
         self.content_inset = None

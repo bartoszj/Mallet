@@ -36,6 +36,7 @@ class NSURLRequest_SynthProvider(NSObject.NSObject_SynthProvider):
 
     def __init__(self, value_obj, internal_dict):
         super(NSURLRequest_SynthProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "NSURLRequest"
 
         self.request_internal = None
         self.request_internal_provider = None

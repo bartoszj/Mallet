@@ -68,6 +68,7 @@ class UISlider_SynthProvider(UIControl.UIControl_SynthProvider):
 
     def __init__(self, value_obj, internal_dict):
         super(UISlider_SynthProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "UISlider"
 
         self.value = None
         self.min = None

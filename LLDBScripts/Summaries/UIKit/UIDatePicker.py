@@ -36,6 +36,7 @@ class UIDatePicker_SynthProvider(UIControl.UIControl_SynthProvider):
 
     def __init__(self, value_obj, internal_dict):
         super(UIDatePicker_SynthProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "UIDatePicker"
 
         self.picker_view = None
 

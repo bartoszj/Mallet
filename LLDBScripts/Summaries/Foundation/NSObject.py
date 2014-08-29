@@ -33,3 +33,4 @@ class NSObject_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
 
     def __init__(self, value_obj, internal_dict):
         super(NSObject_SynthProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "NSObject"

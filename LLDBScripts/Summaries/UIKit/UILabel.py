@@ -72,6 +72,7 @@ class UILabel_SynthProvider(UIView.UIView_SynthProvider):
 
     def __init__(self, value_obj, internal_dict):
         super(UILabel_SynthProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "UILabel"
 
         self.text = None
 

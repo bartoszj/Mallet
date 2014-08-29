@@ -127,6 +127,7 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
 
     def __init__(self, value_obj, internal_dict):
         super(UIView_SynthProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "UIView"
 
         self.stream = lldb.SBStream()
         self.value_obj.GetExpressionPath(self.stream)

@@ -33,9 +33,6 @@ import LLDBLogger
 
 class SummaryBase_SynthProvider(object):
     # SummaryBase:
-
-    # _architectures_list = None
-
     def __init__(self, value_obj, internal_dict):
         # self.as_super = super(SummaryBase_SynthProvider, self)
         # self.as_super.__init__()
@@ -47,9 +44,8 @@ class SummaryBase_SynthProvider(object):
 
         self.value_obj = value_obj
         self.dynamic_value_obj = self.value_obj.GetDynamicValue(self.default_dynamic_type)
-        self.type_name = self.dynamic_value_obj.GetTypeName()
-        self.is_pointer_type = self.type_name.endswith("*")
-        self.normalized_type_name = self.type_name.rstrip("*").strip()
+        self.type_name = None
+
         self.target = self.dynamic_value_obj.GetTarget()
         self.architecture = Helpers.architecture_type_from_target(self.target)
         self.architecture_name = Helpers.architecture_name_from_target(self.target)
@@ -65,7 +61,10 @@ class SummaryBase_SynthProvider(object):
         """
         Returns Ivar object with given name.
         """
-        return get_architecture_list().get_ivar(self.architecture_name, self.normalized_type_name, ivar_name)
+        if self.type_name is None:
+            LLDBLogger.get_logger().error("SummaryBase: get_ivar: empty type_name.")
+            return None
+        return get_architecture_list().get_ivar(self.architecture_name, self.type_name, ivar_name)
 
     def get_child_value(self, value_name, type_name=None):
         """

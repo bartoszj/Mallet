@@ -52,7 +52,7 @@ class LazyArchitecturesList(object):
         """
         Reads class.map file into memory (self.class_map).
         """
-        LLDBLogger.get_logger().debug("LazyArchitecturesList: reading class map.")
+        LLDBLogger.get_logger().debug("LazyArchitecturesList: reading class_map.")
         class_map_file_path = os.path.join(self.dir_path, class_map_file_name)
         if not os.path.exists(class_map_file_path):
             LLDBLogger.get_logger().error("LazyArchitecturesList: Cannot find class.map file.")
@@ -108,7 +108,7 @@ class LazyArchitecturesList(object):
 
         # Check if class exists in class.map.
         if class_name not in self.class_map:
-            LLDBLogger.get_logger().error("LazyArchitecturesList: get_ivar: no class {} in class_map.".format(class_name))
+            LLDBLogger.get_logger().error("LazyArchitecturesList: get_ivar: no class \"{}\" in class_map.".format(class_name))
             return None
 
         # Get architecture.
@@ -124,12 +124,15 @@ class LazyArchitecturesList(object):
             # Reads JSON from file.
             LLDBLogger.get_logger().info("LazyArchitecturesList: get_ivar: reading \"{}\".".format(self.class_map[class_name]))
             file_path = os.path.join(self.dir_path, self.class_map[class_name])
+            if not os.path.exists(file_path):
+                LLDBLogger.get_logger().error("LazyArchitecturesList: get_ivar: missing \"{}\".".format(self.class_map[class_name]))
+                return None
             j = self.read_file_path(file_path)
 
             # Empty json data or missing architecture in JSON.
             if j is None or architecture_name not in j:
                 LLDBLogger.get_logger().error("LazyArchitecturesList: get_ivar: missing data in \"{}\".".format(self.class_map[class_name]))
-                return
+                return None
 
             # Get class json for given architecture.
             class_json = j[architecture_name]

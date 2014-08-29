@@ -35,6 +35,7 @@ class NSUUID_SynthProvider(NSObject.NSObject_SynthProvider):
 
     def __init__(self, value_obj, internal_dict):
         super(NSUUID_SynthProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "NSUUID"
 
         self.uuid_data = None
 

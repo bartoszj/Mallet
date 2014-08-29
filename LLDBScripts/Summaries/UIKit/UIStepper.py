@@ -47,6 +47,7 @@ class UIStepper_SynthProvider(UIControl.UIControl_SynthProvider):
 
     def __init__(self, value_obj, internal_dict):
         super(UIStepper_SynthProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "UIStepper"
 
         self.value = None
         self.min = None
