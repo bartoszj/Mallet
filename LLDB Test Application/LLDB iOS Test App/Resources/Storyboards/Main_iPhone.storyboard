@@ -58,6 +58,8 @@
                         <outlet property="tableView" destination="HYQ-60-IZ4" id="trX-ve-gh5"/>
                         <segue destination="Wh4-9B-u56" kind="push" identifier="ShowBasicControls" id="Lbb-92-eK6"/>
                         <segue destination="Yjm-EN-ndl" kind="push" identifier="ShowPickers" id="UKa-eZ-QD0"/>
+                        <segue destination="9Dm-Mj-Vij" kind="push" identifier="ShowAlerts" id="KRq-3g-5Pm"/>
+                        <segue destination="JB4-ne-H7y" kind="push" identifier="ShowScrollView" id="Tl1-7X-O8b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -135,6 +137,56 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pbz-So-Yv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1355" y="743"/>
+        </scene>
+        <!--Alerts View Controller-->
+        <scene sceneID="52V-JT-CpY">
+            <objects>
+                <viewController id="9Dm-Mj-Vij" customClass="AlertsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vJs-XM-PbI"/>
+                        <viewControllerLayoutGuide type="bottom" id="BIY-v2-hjc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IvO-Pu-7Ud">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qGR-1I-leT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xZn-Kj-guV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1355" y="1496"/>
+        </scene>
+        <!--Scroll View Controller-->
+        <scene sceneID="ISi-P4-EKA">
+            <objects>
+                <viewController id="JB4-ne-H7y" customClass="ScrollViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kyv-1d-VNh"/>
+                        <viewControllerLayoutGuide type="bottom" id="ueY-ZR-Pvl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rku-0L-iaF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SMU-j2-Zhi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="JB4-ne-H7y" id="McI-0a-7nH"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ky1-w8-Dz7"/>
+                    <connections>
+                        <outlet property="scrollView" destination="SMU-j2-Zhi" id="Mgk-af-CIL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JOm-bc-y4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1355" y="2251"/>
         </scene>
         <!--Basic View Controller-->
         <scene sceneID="cOs-TY-rDp">

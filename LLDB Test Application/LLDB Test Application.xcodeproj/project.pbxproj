@@ -39,6 +39,8 @@
 		9660196B1985897700BDBB71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9660196A1985897700BDBB71 /* Images.xcassets */; };
 		9677E6AC19B0878F002DBAE1 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9677E6AB19B0878F002DBAE1 /* BasicViewController.m */; };
 		96FCE39B19B0CE6E00A5A883 /* PickersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FCE39A19B0CE6E00A5A883 /* PickersViewController.m */; };
+		96FCE39E19B0D7B000A5A883 /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FCE39D19B0D7B000A5A883 /* AlertsViewController.m */; };
+		96FCE3A419B0D9D900A5A883 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FCE3A319B0D9D900A5A883 /* ScrollViewController.m */; };
 		B16225C58D39463287A04370 /* libPods-LLDB iOS Test App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F330B12F38F4AE0A6DD753E /* libPods-LLDB iOS Test App.a */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +113,10 @@
 		9677E6AB19B0878F002DBAE1 /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
 		96FCE39919B0CE6E00A5A883 /* PickersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickersViewController.h; sourceTree = "<group>"; };
 		96FCE39A19B0CE6E00A5A883 /* PickersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickersViewController.m; sourceTree = "<group>"; };
+		96FCE39C19B0D7B000A5A883 /* AlertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertsViewController.h; sourceTree = "<group>"; };
+		96FCE39D19B0D7B000A5A883 /* AlertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertsViewController.m; sourceTree = "<group>"; };
+		96FCE3A219B0D9D900A5A883 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
+		96FCE3A319B0D9D900A5A883 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,10 +276,14 @@
 		9660193B1985884F00BDBB71 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				96FCE39C19B0D7B000A5A883 /* AlertsViewController.h */,
+				96FCE39D19B0D7B000A5A883 /* AlertsViewController.m */,
 				9677E6AA19B0878F002DBAE1 /* BasicViewController.h */,
 				9677E6AB19B0878F002DBAE1 /* BasicViewController.m */,
 				96FCE39919B0CE6E00A5A883 /* PickersViewController.h */,
 				96FCE39A19B0CE6E00A5A883 /* PickersViewController.m */,
+				96FCE3A219B0D9D900A5A883 /* ScrollViewController.h */,
+				96FCE3A319B0D9D900A5A883 /* ScrollViewController.m */,
 				9660193C1985884F00BDBB71 /* ViewController.h */,
 				9660193D1985884F00BDBB71 /* ViewController.m */,
 			);
@@ -556,7 +566,9 @@
 				96FCE39B19B0CE6E00A5A883 /* PickersViewController.m in Sources */,
 				966019531985884F00BDBB71 /* main.m in Sources */,
 				9677E6AC19B0878F002DBAE1 /* BasicViewController.m in Sources */,
+				96FCE39E19B0D7B000A5A883 /* AlertsViewController.m in Sources */,
 				966019501985884F00BDBB71 /* ViewController.m in Sources */,
+				96FCE3A419B0D9D900A5A883 /* ScrollViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
