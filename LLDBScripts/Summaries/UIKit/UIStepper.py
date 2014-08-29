@@ -85,19 +85,19 @@ class UIStepper_SynthProvider(UIControl.UIControl_SynthProvider):
     def summary(self):
         value = self.get_value()
         value_value = float(value.GetValue())
-        value_summary = "value={}".format(value_value)
+        value_summary = "value={}".format(self.formatted_float(value_value))
 
         minimum = self.get_min()
         minimum_value = float(minimum.GetValue())
-        minimum_summary = "min={}".format(minimum_value)
+        minimum_summary = "min={}".format(self.formatted_float(minimum_value))
 
         maximum = self.get_max()
         maximum_value = float(maximum.GetValue())
-        maximum_summary = "max={}".format(maximum_value)
+        maximum_summary = "max={}".format(self.formatted_float(maximum_value))
 
         step = self.get_step()
         step_value = float(step.GetValue())
-        step_summary = "step={}".format(step_value)
+        step_summary = "step={}".format(self.formatted_float(step_value))
 
         # Summaries
         summaries = [value_summary]

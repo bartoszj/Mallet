@@ -34,7 +34,7 @@ LLDB commands and summaries
     - UISlider
     - UIStepper
     - UISwitch
-    - UITextField (only placeholder text works)
+    - UITextField
     - UIView (temporary disabled)
     - UIViewController
     - UIWindow (temporary disabled)
@@ -46,9 +46,6 @@ LLDB commands and summaries
     - SKProductsRequest
     - SKProductsResponse
     - SKRequest
-
-## Known problems:
-- Summaries doesn't work on devices with arm64 but they works on 64bit simulator.
 
 ## Summaries that I've failed to implement:
 - NSIndexPath

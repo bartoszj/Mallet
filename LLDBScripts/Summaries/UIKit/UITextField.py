@@ -47,7 +47,7 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
     # UITextInputTraits * _nonAtomTraits                            168 (0x0A8) / 4       168 (0x0A8) / 4       320 (0x140) / 8       320 (0x140) / 8
     # CGFloat _fullFontSize                                         172 (0x0AC) / 4       172 (0x0AC) / 4       328 (0x148) / 8       328 (0x148) / 8
     # UIEdgeInsets _padding                                         176 (0x0B0) / 16      176 (0x0B0) / 16      336 (0x150) / 32      336 (0x150) / 32
-    # struct _NSRange _selectionRangeWhenNotEditing                 192 (0x0C0) / 8       192 (0x0C0) / 8       368 (0x170) / 16      368 (0x170) / 16
+    # NSRange _selectionRangeWhenNotEditing                         192 (0x0C0) / 8       192 (0x0C0) / 8       368 (0x170) / 16      368 (0x170) / 16
     # int _scrollXOffset                                            200 (0x0C8) / 4       200 (0x0C8) / 4       384 (0x180) / 4       384 (0x180) / 4
     # int _scrollYOffset                                            204 (0x0CC) / 4       204 (0x0CC) / 4       388 (0x184) / 4       388 (0x184) / 4
     # float _progress                                               208 (0x0D0) / 4       208 (0x0D0) / 4       392 (0x188) / 4  + 4  392 (0x188) / 4  + 4
@@ -137,11 +137,10 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
         return self.placeholder_label_provider
 
     def summary(self):
-        # Display label doesn't work :(
-        # display_label_provider = self.get_display_label_provider()
-        # display_label_text = display_label_provider.get_text()
-        # display_label_text_value = display_label_text.GetSummary()
-        # display_label_text_summary = "text={}".format(display_label_text_value)
+        display_label_provider = self.get_display_label_provider()
+        display_label_text = display_label_provider.get_text()
+        display_label_text_value = display_label_text.GetSummary()
+        display_label_text_summary = "text={}".format(display_label_text_value)
 
         placeholder_label_provider = self.get_placeholder_label_provider()
         placeholder_label_text = placeholder_label_provider.get_text()
@@ -150,8 +149,8 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
 
         # Summary
         summaries = []
-        # if display_label_text_value:
-        #     summaries.append(display_label_text_summary)
+        if display_label_text_value:
+            summaries.append(display_label_text_summary)
         if placeholder_label_text_value:
             summaries.append(placeholder_label_text_summary)
 

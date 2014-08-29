@@ -60,7 +60,7 @@ class UIProgressView_SynthProvider(UIView.UIView_SynthProvider):
     def summary(self):
         progress = self.get_progress()
         progress_value = float(progress.GetValue())
-        progress_summary = "progress={:.4f}".format(progress_value)
+        progress_summary = "progress={}".format(self.formatted_float(progress_value))
 
         return progress_summary
 

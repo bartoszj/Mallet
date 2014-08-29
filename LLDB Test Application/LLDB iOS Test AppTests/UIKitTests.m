@@ -145,7 +145,7 @@
 {
     UIProgressView *progresView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 0, 66, 84)];
     progresView.progress = 0.453;
-    [self compareObject:progresView ofType:@"UIProgressView *" toSumamry:@"progress=0.4530"];
+    [self compareObject:progresView ofType:@"UIProgressView *" toSumamry:@"progress=0.45"];
 }
 
 #pragma mark - UIButton
@@ -161,11 +161,27 @@
 {
     CGRect frame = CGRectMake(0, 0, 10, 10);
     UITextField *textField = [[UITextField alloc] initWithFrame:frame];
+    textField.text = @"zzcxcx";
+    [self compareObject:textField ofType:@"UITextField *" toSumamry:@"text=@\"zzcxcx\""];
+}
+
+- (void)testUITextField2
+{
+    CGRect frame = CGRectMake(0, 0, 10, 10);
+    UITextField *textField = [[UITextField alloc] initWithFrame:frame];
+    textField.attributedText = [[NSAttributedString alloc] initWithString:@"ĘÓĄŚŁŻŹĆŃ"];
+    [self compareObject:textField ofType:@"UITextField *" toSumamry:@"text=@\"ĘÓĄŚŁŻŹĆŃ\""];
+}
+
+- (void)testUITextField3
+{
+    CGRect frame = CGRectMake(0, 0, 10, 10);
+    UITextField *textField = [[UITextField alloc] initWithFrame:frame];
     textField.placeholder = @"zzcxcx";
     [self compareObject:textField ofType:@"UITextField *" toSumamry:@"placeholder=@\"zzcxcx\""];
 }
 
-- (void)testUITextField2
+- (void)testUITextField4
 {
     CGRect frame = CGRectMake(0, 0, 10, 10);
     UITextField *textField = [[UITextField alloc] initWithFrame:frame];
@@ -207,7 +223,7 @@
     slider.minimumValue = 1.0;
     slider.maximumValue = 10.0;
     slider.value = 3.0;
-    [self compareObject:slider ofType:@"UISlider *" toSumamry:@"value=3.0, min=1.0, max=10.0"];
+    [self compareObject:slider ofType:@"UISlider *" toSumamry:@"value=3, min=1, max=10"];
 }
 
 #pragma mark - UIStepper
@@ -218,7 +234,7 @@
     stepper.maximumValue = 56.0;
     stepper.value = 6.0;
     stepper.stepValue = 1.5;
-    [self compareObject:stepper ofType:@"UIStepper *" toSumamry:@"value=6.0, step=1.5, min=1.0, max=56.0"];
+    [self compareObject:stepper ofType:@"UIStepper *" toSumamry:@"value=6, step=1.5, min=1, max=56"];
 }
 
 #pragma mark - UISwitch

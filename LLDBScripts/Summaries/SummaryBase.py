@@ -91,6 +91,10 @@ class SummaryBase_SynthProvider(object):
             value = value.GetDynamicValue(self.default_dynamic_type)
         return value
 
+    @staticmethod
+    def formatted_float(f, precision=2):
+        return "{:.{precision}f}".format(f, precision=precision).rstrip("0").rstrip(".")
+
     def summary(self):
         return None
 

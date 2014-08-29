@@ -42,6 +42,8 @@ def normalize_type(type_32bit, type_64bit):
             return u"UIEdgeInsets"
         elif type_32bit == u"struct __CFDictionary *":
             return u"NSDictionary *"
+        elif type_32bit == u"struct _NSRange":
+            return u"NSRange"
         return type_32bit
     elif type_32bit == u"char" and type_64bit == u"_Bool":
         return u"BOOL"
