@@ -192,11 +192,17 @@
 #pragma mark - UIDatePicker
 - (void)testUIDatePicker
 {
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    dateComponents.year = 2014;
+    dateComponents.month = 4;
+    dateComponents.day = 22;
+    dateComponents.hour = 11;
+    dateComponents.minute = 44;
+    dateComponents.second = 33;
+    
     UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(20, 10, 34, 234)];
-    datePicker.minimumDate = [NSDate dateWithTimeIntervalSinceNow:-100];
-    datePicker.maximumDate = [NSDate dateWithTimeIntervalSinceNow:100];
-    datePicker.date = [NSDate dateWithTimeIntervalSince1970:14057876040];
-//    [self compareObject:datePicker ofType:@"UIDatePicker *" toSumamry:@"date=2001-01-01 01:00:00 CET"];
+    datePicker.date = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+    [self compareObject:datePicker ofType:@"UIDatePicker *" toSumamry:@"era=1, 2014-04-22 11:44:33, leapMonth=NO"];
 }
 
 #pragma mark - UIPageControl

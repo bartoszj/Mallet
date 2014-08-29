@@ -25,7 +25,7 @@ LLDB commands and summaries
     - UILabel
     - UIOffset
     - UIPageControl
-    - UIPickerView
+    - UIPickerView (Don't know what / how to show)
     - UIProgressView
     - UIResponder
     - UIScreen

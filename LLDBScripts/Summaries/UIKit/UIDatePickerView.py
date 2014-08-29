@@ -66,21 +66,13 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
         self.max_user_date = None
         self.min_date = None
         self.max_date = None
+        self.date_components = None
 
     def get_date(self):
         if self.date:
             return self.date
 
         self.date = self.get_child_value("_userSuppliedDate")
-
-        # if self.sys_params.is_64_bit:
-        #     offset = 0x150
-        # else:
-        #     offset = 0xb0
-        #
-        # self.date = self.value_obj.CreateChildAtOffset("date",
-        #                                                offset,
-        #                                                self.sys_params.types_cache.NSDate)
         return self.date
 
     def get_min_user_date(self):
@@ -88,15 +80,6 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
             return self.min_user_date
 
         self.min_user_date = self.get_child_value("_userSuppliedMinimumDate")
-
-        # if self.sys_params.is_64_bit:
-        #     offset = 0x158
-        # else:
-        #     offset = 0xb4
-        #
-        # self.min_user_date = self.value_obj.CreateChildAtOffset("userSuppliedMinimumDate",
-        #                                                         offset,
-        #                                                         self.sys_params.types_cache.NSDate)
         return self.min_user_date
 
     def get_max_user_date(self):
@@ -104,15 +87,6 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
             return self.max_user_date
 
         self.max_user_date = self.get_child_value("_userSuppliedMaximumDate")
-
-        # if self.sys_params.is_64_bit:
-        #     offset = 0x160
-        # else:
-        #     offset = 0xb8
-        #
-        # self.max_user_date = self.value_obj.CreateChildAtOffset("userSuppliedMaximumDate",
-        #                                                         offset,
-        #                                                         self.sys_params.types_cache.NSDate)
         return self.max_user_date
 
     def get_min_date(self):
@@ -120,15 +94,6 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
             return self.min_date
 
         self.min_date = self.get_child_value("_minimumDate")
-
-        # if self.sys_params.is_64_bit:
-        #     offset = 0x180
-        # else:
-        #     offset = 0xc8
-        #
-        # self.min_date = self.value_obj.CreateChildAtOffset("minimumDate",
-        #                                                    offset,
-        #                                                    self.sys_params.types_cache.NSDate)
         return self.min_date
 
     def get_max_date(self):
@@ -136,21 +101,19 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
             return self.max_date
 
         self.max_date = self.get_child_value("_maximumDate")
-
-        # if self.sys_params.is_64_bit:
-        #     offset = 0x188
-        # else:
-        #     offset = 0xcc
-        #
-        # self.max_date = self.value_obj.CreateChildAtOffset("maximumDate",
-        #                                                    offset,
-        #                                                    self.sys_params.types_cache.NSDate)
         return self.max_date
 
+    def get_date_components(self):
+        if self.date_components:
+            return self.date_components
+
+        self.date_components = self.get_child_value("_lastSelectedDateComponents")
+        return self.date_components
+
     def summary(self):
-        date = self.get_date()
-        date_value = date.GetSummary()
-        date_summary = "date={}".format(date_value)
+        # date = self.get_date()
+        # date_value = date.GetSummary()
+        # date_summary = "date={}".format(date_value)
 
         # min_user_date = self.get_min_user_date()
         # min_user_date_value = min_user_date.GetSummary()
@@ -162,20 +125,25 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
 
         # min_date = self.get_min_date()
         # min_date_value = min_date.GetSummary()
-        # max_date_summary = "minDate={}".format(min_date_value)
-
+        # min_date_summary = "minDate={}".format(min_date_value)
+        #
         # max_date = self.get_max_date()
         # max_date_value = max_date.GetSummary()
         # max_date_summary = "maxDate={}".format(max_date_value)
 
+        date_components = self.get_date_components()
+        date_components_summary = "{}".format(date_components.GetSummary())
+
         # Summaries
         summaries = []
-        if date_value:
-            summaries.append(date_summary)
+        # if date_value:
+        #     summaries.append(date_summary)
         # if min_user_date_value:
         #     summaries.append(min_user_date_summary)
         # if max_user_date_value:
         #     summaries.append(max_user_date_summary)
+        if date_components_summary:
+            summaries.append(date_components_summary)
 
         summary = ", ".join(summaries)
         return summary

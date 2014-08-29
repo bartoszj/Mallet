@@ -57,11 +57,84 @@
                     <connections>
                         <outlet property="tableView" destination="HYQ-60-IZ4" id="trX-ve-gh5"/>
                         <segue destination="Wh4-9B-u56" kind="push" identifier="ShowBasicControls" id="Lbb-92-eK6"/>
+                        <segue destination="Yjm-EN-ndl" kind="push" identifier="ShowPickers" id="UKa-eZ-QD0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="835" y="-38"/>
+        </scene>
+        <!--Pickers View Controller-->
+        <scene sceneID="IvD-q4-CrP">
+            <objects>
+                <viewController id="Yjm-EN-ndl" customClass="PickersViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QF5-dH-Suv"/>
+                        <viewControllerLayoutGuide type="bottom" id="eRr-hj-iSJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qZ4-aC-PWM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="BQn-1r-ccS">
+                                <rect key="frame" x="0.0" y="406" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="431017777.46392697">
+                                    <!--2014-08-29 15:09:37 +0000-->
+                                </date>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <mutableData key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</mutableData>
+                                </timeZone>
+                                <connections>
+                                    <action selector="datePickerDateChanged:" destination="Yjm-EN-ndl" eventType="valueChanged" id="9us-gJ-FKC"/>
+                                </connections>
+                            </datePicker>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Imc-hg-qPJ">
+                                <rect key="frame" x="0.0" y="64" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yjm-EN-ndl" id="a3u-Ei-tcB"/>
+                                    <outlet property="delegate" destination="Yjm-EN-ndl" id="77F-SY-fmj"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BQn-1r-ccS" firstAttribute="leading" secondItem="qZ4-aC-PWM" secondAttribute="leading" id="3Wc-TF-N8F"/>
+                            <constraint firstAttribute="trailing" secondItem="Imc-hg-qPJ" secondAttribute="trailing" id="AIf-dm-qVL"/>
+                            <constraint firstItem="Imc-hg-qPJ" firstAttribute="leading" secondItem="qZ4-aC-PWM" secondAttribute="leading" id="Qvf-sg-BRv"/>
+                            <constraint firstItem="eRr-hj-iSJ" firstAttribute="top" secondItem="BQn-1r-ccS" secondAttribute="bottom" id="YNV-Tp-cmB"/>
+                            <constraint firstAttribute="trailing" secondItem="BQn-1r-ccS" secondAttribute="trailing" id="f2B-Ae-eby"/>
+                            <constraint firstItem="Imc-hg-qPJ" firstAttribute="top" secondItem="QF5-dH-Suv" secondAttribute="bottom" id="zHE-sK-rhh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="PJU-bP-dah"/>
+                    <connections>
+                        <outlet property="datePicker" destination="BQn-1r-ccS" id="h5K-Pz-C11"/>
+                        <outlet property="pickerView" destination="Imc-hg-qPJ" id="KAc-cR-A1E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pbz-So-Yv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1355" y="743"/>
         </scene>
         <!--Basic View Controller-->
         <scene sceneID="cOs-TY-rDp">
@@ -322,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icg-0z-Jgr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1309" y="-444"/>
+            <point key="canvasLocation" x="1355" y="-38"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hrh-Er-Z0L">

@@ -38,6 +38,7 @@
 		96601968198588E400BDBB71 /* UIKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96601962198588E400BDBB71 /* UIKitTests.m */; };
 		9660196B1985897700BDBB71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9660196A1985897700BDBB71 /* Images.xcassets */; };
 		9677E6AC19B0878F002DBAE1 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9677E6AB19B0878F002DBAE1 /* BasicViewController.m */; };
+		96FCE39B19B0CE6E00A5A883 /* PickersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FCE39A19B0CE6E00A5A883 /* PickersViewController.m */; };
 		B16225C58D39463287A04370 /* libPods-LLDB iOS Test App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F330B12F38F4AE0A6DD753E /* libPods-LLDB iOS Test App.a */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,8 @@
 		9660196F19858AA800BDBB71 /* LLDB iOS Test AppTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LLDB iOS Test AppTests-Info.plist"; sourceTree = "<group>"; };
 		9677E6AA19B0878F002DBAE1 /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
 		9677E6AB19B0878F002DBAE1 /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
+		96FCE39919B0CE6E00A5A883 /* PickersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickersViewController.h; sourceTree = "<group>"; };
+		96FCE39A19B0CE6E00A5A883 /* PickersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickersViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +272,8 @@
 			children = (
 				9677E6AA19B0878F002DBAE1 /* BasicViewController.h */,
 				9677E6AB19B0878F002DBAE1 /* BasicViewController.m */,
+				96FCE39919B0CE6E00A5A883 /* PickersViewController.h */,
+				96FCE39A19B0CE6E00A5A883 /* PickersViewController.m */,
 				9660193C1985884F00BDBB71 /* ViewController.h */,
 				9660193D1985884F00BDBB71 /* ViewController.m */,
 			);
@@ -548,6 +553,7 @@
 			files = (
 				966019511985884F00BDBB71 /* AppDelegate.m in Sources */,
 				966019521985884F00BDBB71 /* Compare.m in Sources */,
+				96FCE39B19B0CE6E00A5A883 /* PickersViewController.m in Sources */,
 				966019531985884F00BDBB71 /* main.m in Sources */,
 				9677E6AC19B0878F002DBAE1 /* BasicViewController.m in Sources */,
 				966019501985884F00BDBB71 /* ViewController.m in Sources */,

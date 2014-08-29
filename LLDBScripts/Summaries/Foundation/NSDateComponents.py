@@ -315,7 +315,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         second_value = second.GetValueAsSigned()
         second_summary = "second={}".format(second_value)
 
-        # Date in ISO format
+        # Date in ISO format.
         if self.is_not_empty_value(year_value) and \
            self.is_not_empty_value(month_value) and \
            self.is_not_empty_value(day_value) and \
@@ -324,11 +324,11 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
             if self.is_not_empty_value(second_value):
                 # YYYY-MM-dd HH:mm:ss
                 date_summary = "{}-{:02}-{:02} {:02}:{:02}:{:02}".format(year_value, month_value, day_value,
-                                                                        hour_value, minute_value, second_value)
+                                                                         hour_value, minute_value, second_value)
             else:
                 # YYYY-MM-dd HH:mm
                 date_summary = "{}-{:02}-{:02} {:02}:{:02}".format(year_value, month_value, day_value,
-                                                                  hour_value, minute_value)
+                                                                   hour_value, minute_value)
         else:
             if self.is_not_empty_value(year_value) and \
                self.is_not_empty_value(month_value) and \
