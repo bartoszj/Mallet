@@ -34,7 +34,7 @@ import LLDBLogger
 class SummaryBase_SynthProvider(object):
     # SummaryBase:
 
-    _architectures_list = None
+    # _architectures_list = None
 
     def __init__(self, value_obj, internal_dict):
         # self.as_super = super(SummaryBase_SynthProvider, self)
@@ -65,9 +65,7 @@ class SummaryBase_SynthProvider(object):
         """
         Returns Ivar object with given name.
         """
-        # LLDBLogger.get_logger().debug("Loading ivar {} for class {} for architecture {}.".
-        #                               format(ivar_name, self.normalized_type_name, self.architecture_name))
-        return self.get_architecture_list().get_ivar(self.architecture_name, self.normalized_type_name, ivar_name)
+        return get_architecture_list().get_ivar(self.architecture_name, self.normalized_type_name, ivar_name)
 
     def get_child_value(self, value_name, type_name=None):
         """
@@ -83,8 +81,6 @@ class SummaryBase_SynthProvider(object):
         # Find ivar and its offset.
         ivar = self.get_ivar(value_name)
         if ivar is None:
-            LLDBLogger.get_logger().debug("No ivar {} for class {} for architecture {}.".
-                                          format(value_name, self.normalized_type_name, self.architecture_name))
             return None
 
         # Get value from offset.
@@ -96,13 +92,16 @@ class SummaryBase_SynthProvider(object):
             value = value.GetDynamicValue(self.default_dynamic_type)
         return value
 
-    @classmethod
-    def get_architecture_list(cls):
-        if cls._architectures_list is None:
-            class_dump_dir = os.path.expanduser(os.path.join(LoadScripts.lldb_scripts_dir,
-                                                             LoadScripts.lldb_class_dump_dir))
-            cls._architectures_list = ClassDump.LazyArchitecturesList(class_dump_dir)
-        return cls._architectures_list
-
     def summary(self):
         return None
+
+
+def get_architecture_list():
+    """
+    Get shared architecture list.
+    """
+    if not hasattr(get_architecture_list, "architectures_list"):
+        LLDBLogger.get_logger().debug("SummaryBase: Creating shared TypeCache.")
+        class_dump_dir = os.path.expanduser(os.path.join(LoadScripts.lldb_scripts_dir, LoadScripts.lldb_class_dump_dir))
+        get_architecture_list.architectures_list = ClassDump.LazyArchitecturesList(class_dump_dir)
+    return get_architecture_list.architectures_list

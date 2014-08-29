@@ -17,7 +17,8 @@ UIButton:UIKit/UIButton.json
 UIPageControl:UIKit/UIPageControl.json
 UIAlertView:UIKit/UIAlertView.json
 UIPickerView:UIKit/UIPickerView.json
-UISlider:UIKit/UISlider.json
-UITextField:UIKit/UITextField.json
+UIButtonLabel:UIKit/UIButtonLabel.json
 UIViewController:UIKit/UIViewController.json
+UITextField:UIKit/UITextField.json
+UISlider:UIKit/UISlider.json
 UISegmentedControl:UIKit/UISegmentedControl.json

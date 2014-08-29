@@ -49,6 +49,9 @@ class TypeCache(object):
         return t
 
     def get_type(self, type_name, target):
+        """
+        Try to find type in cache or ask LLDB to return one.
+        """
         # Validate data.
         if type_name is None or target is None:
             return None
@@ -61,19 +64,22 @@ class TypeCache(object):
             return self.types[type_name]
 
         # Get type from name.
-        LLDBLogger.get_logger().debug("Adding type {} to cache.".format(type_name))
+        LLDBLogger.get_logger().info("TypeCache: Adding type \"{} to cache.".format(type_name))
         t = self._get_type_from_name(type_name, target)
         self.types[type_name] = t
         return t
 
     def _populate_standard_types(self, target):
+        """
+        Populates TypeCache with common LLDB types.
+        """
         # Do not populate if already data was populated.
         if self._populated:
             return
 
         self._populated = True
         is64bit = Helpers.is_64bit_architecture_from_target(target)
-        # LLDBLogger.get_logger().debug("Populating type cache.")
+        LLDBLogger.get_logger().debug("TypeCache: Populating type cache.")
 
         # char, unsigned char
         self.types["char"] = target.GetBasicType(lldb.eBasicTypeChar)
@@ -129,7 +135,10 @@ class TypeCache(object):
 
 
 def get_type_cache():
+    """
+    Get shared TypeCache.
+    """
     if not hasattr(get_type_cache, "type_cache"):
-        # LLDBLogger.get_logger().debug("Creating shared TypeCache.")
+        LLDBLogger.get_logger().debug("TypeCache: Creating shared TypeCache.")
         get_type_cache.type_cache = TypeCache()
     return get_type_cache.type_cache

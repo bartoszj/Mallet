@@ -94,38 +94,40 @@ def is_64bit_architecture_from_target(target):
 
 # Statistics for objc_runtime.
 statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric('invalid_isa')
-statistics.add_metric('invalid_pointer')
-statistics.add_metric('unknown_class')
-statistics.add_metric('code_notrun')
+statistics.add_metric("invalid_isa")
+statistics.add_metric("invalid_pointer")
+statistics.add_metric("unknown_class")
+statistics.add_metric("code_notrun")
 
 
 def generic_summary_provider(value_obj, internal_dict, class_synthetic_provider, supported_classes=[]):
-    # Class data
+    # Class data.
+    type_name = value_obj.GetTypeName() if value_obj.GetTypeName() else "Unknown type name"
     global statistics
     class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
 
     # Class data invalid.
     if not class_data.is_valid():
-        LLDBLogger.get_logger().debug("generic_summary_provider class_data invalid")
+        # LLDBLogger.get_logger().debug("generic_summary_provider: class_data invalid for {}".format(type_name))
         return ""
 
     # Not supported class.
     if len(supported_classes) > 0 and class_data.class_name() not in supported_classes:
-        LLDBLogger.get_logger().debug("generic_summary_provider not supported class")
+        # LLDBLogger.get_logger().debug("generic_summary_provider: not supported class {} in {}".format(type_name, supported_classes))
         return ""
 
     # Using wrapper if available.
     if wrapper is not None:
-        LLDBLogger.get_logger().debug("generic_summary_provider using wrapper")
+        # LLDBLogger.get_logger().debug("generic_summary_provider: using wrapper for {}".format(type_name))
         return wrapper.message()
 
     # Using Class Summary Provider.
     wrapper = class_synthetic_provider(value_obj, internal_dict)
     if wrapper is not None:
-        # LLDBLogger.get_logger().debug("generic_summary_provider using summary provider")
+        # LLDBLogger.get_logger().debug("generic_summary_provider: using summary provider {} for {}"
+        #                               .format(class_synthetic_provider, type_name))
         return wrapper.summary()
 
     # Summary not available.
-    LLDBLogger.get_logger().debug("generic_summary_provider summary unavailable")
+    # LLDBLogger.get_logger().debug("generic_summary_provider: summary unavailable")
     return "Summary Unavailable"

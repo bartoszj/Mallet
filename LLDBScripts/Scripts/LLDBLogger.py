@@ -31,13 +31,13 @@ def get_logger():
     Creates shared LLDB logger.
     """
     # Logger.
-    logger = logging.getLogger("LLDBSummariesLogger")
+    logger = logging.getLogger("LLDBLogger")
     if not hasattr(logger, "configured"):
         logger.setLevel(logging.DEBUG)
         logger.configured = True
 
         # Formatter.
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)-8s - %(message)s')
 
         # File handler.
         file_path = os.path.expanduser("~/Library/Logs/LLDBSummaries.log")
@@ -49,5 +49,6 @@ def get_logger():
 
         logger.addHandler(file_handler)
         # logger.addHandler(null_handler)
+        logger.debug("LLDBLogger: logger created.")
 
     return logger

@@ -37,6 +37,7 @@
 		96601967198588E400BDBB71 /* SharedTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 96601961198588E400BDBB71 /* SharedTestCase.m */; };
 		96601968198588E400BDBB71 /* UIKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96601962198588E400BDBB71 /* UIKitTests.m */; };
 		9660196B1985897700BDBB71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9660196A1985897700BDBB71 /* Images.xcassets */; };
+		9677E6AC19B0878F002DBAE1 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9677E6AB19B0878F002DBAE1 /* BasicViewController.m */; };
 		B16225C58D39463287A04370 /* libPods-LLDB iOS Test App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F330B12F38F4AE0A6DD753E /* libPods-LLDB iOS Test App.a */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +106,8 @@
 		9660196C1985898500BDBB71 /* LLDB iOS Test App-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LLDB iOS Test App-Info.plist"; sourceTree = "<group>"; };
 		9660196D1985898500BDBB71 /* LLDB iOS Test App-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LLDB iOS Test App-Prefix.pch"; sourceTree = "<group>"; };
 		9660196F19858AA800BDBB71 /* LLDB iOS Test AppTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LLDB iOS Test AppTests-Info.plist"; sourceTree = "<group>"; };
+		9677E6AA19B0878F002DBAE1 /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
+		9677E6AB19B0878F002DBAE1 /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +267,8 @@
 		9660193B1985884F00BDBB71 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9677E6AA19B0878F002DBAE1 /* BasicViewController.h */,
+				9677E6AB19B0878F002DBAE1 /* BasicViewController.m */,
 				9660193C1985884F00BDBB71 /* ViewController.h */,
 				9660193D1985884F00BDBB71 /* ViewController.m */,
 			);
@@ -544,6 +549,7 @@
 				966019511985884F00BDBB71 /* AppDelegate.m in Sources */,
 				966019521985884F00BDBB71 /* Compare.m in Sources */,
 				966019531985884F00BDBB71 /* main.m in Sources */,
+				9677E6AC19B0878F002DBAE1 /* BasicViewController.m in Sources */,
 				966019501985884F00BDBB71 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
