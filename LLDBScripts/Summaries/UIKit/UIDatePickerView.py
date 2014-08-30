@@ -31,31 +31,31 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
     # Super class: UIPickerView
     # Protocols: UIPickerViewDelegate, UIPickerViewDataSource
     # Name:                                              armv7                 i386                  arm64                 x86_64
-    # NSInteger _loadingDate                         180 (0x0B4) / 4       180 (0x0B4) / 4       352 (0x160) / 8       352 (0x160) / 8
-    # NSDate * _userSuppliedDate                     184 (0x0B8) / 4       184 (0x0B8) / 4       360 (0x168) / 8       360 (0x168) / 8
-    # NSDate * _userSuppliedMinimumDate              188 (0x0BC) / 4       188 (0x0BC) / 4       368 (0x170) / 8       368 (0x170) / 8
-    # NSDate * _userSuppliedMaximumDate              192 (0x0C0) / 4       192 (0x0C0) / 4       376 (0x178) / 8       376 (0x178) / 8
-    # NSLocale * _compositeLocale                    196 (0x0C4) / 4       196 (0x0C4) / 4       384 (0x180) / 8       384 (0x180) / 8
-    # NSLocale * _userProvidedLocale                 200 (0x0C8) / 4       200 (0x0C8) / 4       392 (0x188) / 8       392 (0x188) / 8
-    # NSCalendar * _userProvidedCalendar             204 (0x0CC) / 4       204 (0x0CC) / 4       400 (0x190) / 8       400 (0x190) / 8
-    # NSDate * _minimumDate                          208 (0x0D0) / 4       208 (0x0D0) / 4       408 (0x198) / 8       408 (0x198) / 8
-    # NSDate * _maximumDate                          212 (0x0D4) / 4       212 (0x0D4) / 4       416 (0x1A0) / 8       416 (0x1A0) / 8
-    # NSDateComponents * _lastSelectedDateComponents 216 (0x0D8) / 4       216 (0x0D8) / 4       424 (0x1A8) / 8       424 (0x1A8) / 8
-    # BOOL _allowsZeroTimeInterval                   220 (0x0DC) / 1  + 3  220 (0x0DC) / 1  + 3  432 (0x1B0) / 1  + 7  432 (0x1B0) / 1  + 7
-    # _UIDatePickerMode * _mode                      224 (0x0E0) / 4       224 (0x0E0) / 4       440 (0x1B8) / 8       440 (0x1B8) / 8
-    # NSTimeZone * _timeZone                         228 (0x0E4) / 4       228 (0x0E4) / 4       448 (0x1C0) / 8       448 (0x1C0) / 8
-    # double _timeInterval                           232 (0x0E8) / 8       232 (0x0E8) / 8       456 (0x1C8) / 8       456 (0x1C8) / 8
-    # UILabel * _hourLabel                           240 (0x0F0) / 4       240 (0x0F0) / 4       464 (0x1D0) / 8       464 (0x1D0) / 8
-    # UILabel * _minuteLabel                         244 (0x0F4) / 4       244 (0x0F4) / 4       472 (0x1D8) / 8       472 (0x1D8) / 8
-    # UIDatePicker * _datePickerDelegate             248 (0x0F8) / 4       248 (0x0F8) / 4       480 (0x1E0) / 8       480 (0x1E0) / 8
-    # id _delegateOfDatePicker                       252 (0x0FC) / 4       252 (0x0FC) / 4       488 (0x1E8) / 8       488 (0x1E8) / 8
-    # int _expectedAMPM                              256 (0x100) / 4       256 (0x100) / 4       496 (0x1F0) / 4       496 (0x1F0) / 4
+    # NSInteger _loadingDate                         180 (0x0B4) / 4       180 (0x0B4) / 4       336 (0x150) / 8       336 (0x150) / 8
+    # NSDate * _userSuppliedDate                     184 (0x0B8) / 4       184 (0x0B8) / 4       344 (0x158) / 8       344 (0x158) / 8
+    # NSDate * _userSuppliedMinimumDate              188 (0x0BC) / 4       188 (0x0BC) / 4       352 (0x160) / 8       352 (0x160) / 8
+    # NSDate * _userSuppliedMaximumDate              192 (0x0C0) / 4       192 (0x0C0) / 4       360 (0x168) / 8       360 (0x168) / 8
+    # NSLocale * _compositeLocale                    196 (0x0C4) / 4       196 (0x0C4) / 4       368 (0x170) / 8       368 (0x170) / 8
+    # NSLocale * _userProvidedLocale                 200 (0x0C8) / 4       200 (0x0C8) / 4       376 (0x178) / 8       376 (0x178) / 8
+    # NSCalendar * _userProvidedCalendar             204 (0x0CC) / 4       204 (0x0CC) / 4       384 (0x180) / 8       384 (0x180) / 8
+    # NSDate * _minimumDate                          208 (0x0D0) / 4       208 (0x0D0) / 4       392 (0x188) / 8       392 (0x188) / 8
+    # NSDate * _maximumDate                          212 (0x0D4) / 4       212 (0x0D4) / 4       400 (0x190) / 8       400 (0x190) / 8
+    # NSDateComponents * _lastSelectedDateComponents 216 (0x0D8) / 4       216 (0x0D8) / 4       408 (0x198) / 8       408 (0x198) / 8
+    # BOOL _allowsZeroTimeInterval                   220 (0x0DC) / 1  + 3  220 (0x0DC) / 1  + 3  416 (0x1A0) / 1  + 7  416 (0x1A0) / 1  + 7
+    # _UIDatePickerMode * _mode                      224 (0x0E0) / 4       224 (0x0E0) / 4       424 (0x1A8) / 8       424 (0x1A8) / 8
+    # NSTimeZone * _timeZone                         228 (0x0E4) / 4       228 (0x0E4) / 4       432 (0x1B0) / 8       432 (0x1B0) / 8
+    # double _timeInterval                           232 (0x0E8) / 8       232 (0x0E8) / 8       440 (0x1B8) / 8       440 (0x1B8) / 8
+    # UILabel * _hourLabel                           240 (0x0F0) / 4       240 (0x0F0) / 4       448 (0x1C0) / 8       448 (0x1C0) / 8
+    # UILabel * _minuteLabel                         244 (0x0F4) / 4       244 (0x0F4) / 4       456 (0x1C8) / 8       456 (0x1C8) / 8
+    # UIDatePicker * _datePickerDelegate             248 (0x0F8) / 4       248 (0x0F8) / 4       464 (0x1D0) / 8       464 (0x1D0) / 8
+    # id _delegateOfDatePicker                       252 (0x0FC) / 4       252 (0x0FC) / 4       472 (0x1D8) / 8       472 (0x1D8) / 8
+    # int _expectedAMPM                              256 (0x100) / 4       256 (0x100) / 4       480 (0x1E0) / 4       480 (0x1E0) / 4
     # struct {
     #         unsigned int staggerTimeIntervals:1;
     #         unsigned int loadingDateOrTime:1;
     #         unsigned int highlightsToday:1;
     #         unsigned int usesBlackChrome:1;
-    #     } _datePickerFlags                         260 (0x104) / 1       260 (0x104) / 4       500 (0x1F4) / 4       500 (0x1F4) / 4
+    #     } _datePickerFlags                         260 (0x104) / 1       260 (0x104) / 4       484 (0x1E4) / 4       484 (0x1E4) / 4
 
     def __init__(self, value_obj, internal_dict):
         super(UIDatePickerView_SynthProvider, self).__init__(value_obj, internal_dict)

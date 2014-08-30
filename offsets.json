@@ -6,7 +6,7 @@
     },
     {
       "class": "_UIDatePickerView",
-      "offset": 128
+      "offset": 112
     }
   ],
   "armv7": [
@@ -58,7 +58,7 @@
     },
     {
       "class": "_UIDatePickerView",
-      "offset": 128
+      "offset": 112
     },
     {
       "class": "UIStepper",
