@@ -60,6 +60,7 @@
                         <segue destination="Yjm-EN-ndl" kind="push" identifier="ShowPickers" id="UKa-eZ-QD0"/>
                         <segue destination="9Dm-Mj-Vij" kind="push" identifier="ShowAlerts" id="KRq-3g-5Pm"/>
                         <segue destination="JB4-ne-H7y" kind="push" identifier="ShowScrollView" id="Tl1-7X-O8b"/>
+                        <segue destination="xN1-2A-egQ" kind="push" identifier="ShowViews" id="okY-9b-NI9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -85,7 +86,7 @@
                                     <!--2014-08-29 15:09:37 +0000-->
                                 </date>
                                 <timeZone key="timeZone" name="America/Los_Angeles">
-                                    <mutableData key="data">
+                                    <data key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
 y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
 5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
@@ -103,7 +104,7 @@ f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</mutableData>
+</data>
                                 </timeZone>
                                 <connections>
                                     <action selector="datePickerDateChanged:" destination="Yjm-EN-ndl" eventType="valueChanged" id="9us-gJ-FKC"/>
@@ -157,6 +158,43 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1355" y="1496"/>
         </scene>
+        <!--Views View Controller-->
+        <scene sceneID="lAA-GU-cQ4">
+            <objects>
+                <viewController id="xN1-2A-egQ" customClass="ViewsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1kZ-In-2G2"/>
+                        <viewControllerLayoutGuide type="bottom" id="hH4-ta-hck"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O6H-kJ-IWa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKm-d0-OPW">
+                                <rect key="frame" x="42" y="72" width="123" height="157"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="0.31063015220000001" blue="0.27683297340000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="C8d-ve-J20"/>
+                                    <constraint firstAttribute="height" constant="157" id="Zm8-yz-Dg1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cKm-d0-OPW" firstAttribute="leading" secondItem="O6H-kJ-IWa" secondAttribute="leading" constant="42" id="DwL-Sf-HIM"/>
+                            <constraint firstItem="cKm-d0-OPW" firstAttribute="top" secondItem="1kZ-In-2G2" secondAttribute="bottom" constant="8" id="NdR-cD-NpC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9SR-Gc-SxM"/>
+                    <connections>
+                        <outlet property="rectView1" destination="cKm-d0-OPW" id="iZL-OQ-AIO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y85-r2-cjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1355" y="2255"/>
+        </scene>
         <!--Scroll View Controller-->
         <scene sceneID="ISi-P4-EKA">
             <objects>
@@ -186,7 +224,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOm-bc-y4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1355" y="2251"/>
+            <point key="canvasLocation" x="1355" y="3043"/>
         </scene>
         <!--Basic View Controller-->
         <scene sceneID="cOs-TY-rDp">

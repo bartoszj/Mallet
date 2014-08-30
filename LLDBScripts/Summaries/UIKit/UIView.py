@@ -22,9 +22,17 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import lldb
 import Helpers
 import UIResponder
+import CALayer
+
+
+class _Rect(object):
+    def __init__(self):
+        self.x = None
+        self.y = None
+        self.width = None
+        self.height = None
 
 
 class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
@@ -129,69 +137,58 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
         super(UIView_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIView"
 
-        self.stream = lldb.SBStream()
-        self.value_obj.GetExpressionPath(self.stream)
-
-    def get_origin(self):
-        origin = self.value_obj.CreateValueFromExpression("frameOrigin",
-                                                          "(CGPoint)[{} frameOrigin]"
-                                                          .format(self.stream.GetData()))
-        return origin
-
-    def get_size(self):
-        size = self.value_obj.CreateValueFromExpression("size",
-                                                        "(CGSize)[{} size]"
-                                                        .format(self.stream.GetData()))
-        return size
+        self.frame = None
+        self.layer = None
+        self.layer_provider = None
 
     def get_frame(self):
-        frame = self.value_obj.CreateValueFromExpression("frame",
-                                                         "(CGRect)[{} frame]"
-                                                         .format(self.stream.GetData()))
-        return frame
+        if self.frame:
+            return self.frame
 
-    def get_alpha(self):
-        alpha = self.value_obj.CreateValueFromExpression("alpha",
-                                                         "(CGFloat)[{} alpha]"
-                                                         .format(self.stream.GetData()))
-        return alpha
+        # In some cases CALayer object is invalid.
+        layer = self.get_layer()
+        class_data, wrapper = Helpers.get_class_data(layer)
+        if not class_data.is_valid():
+            return None
 
-    def get_hidden(self):
-        hidden = self.value_obj.CreateValueFromExpression("hidden",
-                                                          "(BOOL)[{} isHidden]"
-                                                          .format(self.stream.GetData()))
-        return hidden
+        position = self.get_layer_provider().get_position_provider()
+        bounds = self.get_layer_provider().get_bounds_provider()
 
-    # def summary(self):
-    #     # Frame
-    #     frame = self.get_frame()
-    #     # Origin
-    #     origin = frame.GetChildMemberWithName("origin")
-    #     x = float(origin.GetChildMemberWithName("x").GetValue())
-    #     y = float(origin.GetChildMemberWithName("y").GetValue())
-    #     # Size
-    #     size = frame.GetChildMemberWithName("size")
-    #     w = float(size.GetChildMemberWithName("width").GetValue())
-    #     h = float(size.GetChildMemberWithName("height").GetValue())
-    #
-    #     frame_summary = "frame=({:.0f}, {:.0f}; {:.0f}, {:.0f})".format(x, y, w, h)
-    #
-    #     # Alpha
-    #     alpha = float(self.get_alpha().GetValue())
-    #     alpha_summary = "alpha={:4.2}".format(alpha)
-    #
-    #     # Hidden
-    #     hidden = self.get_hidden().GetValueAsUnsigned()
-    #     hidden_summary = "hidden={}".format("YES" if hidden == 1 else "NO")
-    #
-    #     summaries = [frame_summary]
-    #     if alpha != 1.0:
-    #         summaries.append(alpha_summary)
-    #     if hidden != 0:
-    #         summaries.append(hidden_summary)
-    #
-    #     summary = ", ".join(summaries)
-    #     return summary
+        self.frame = _Rect()
+        self.frame.width = bounds.get_size_provider().get_width_value()
+        self.frame.height = bounds.get_size_provider().get_height_value()
+        self.frame.x = position.get_x_value() - self.frame.width / 2
+        self.frame.y = position.get_y_value() - self.frame.height / 2
+        return self.frame
+
+    def get_layer(self):
+        if self.layer:
+            return self.layer
+
+        self.layer = self.get_child_value("_layer")
+        return self.layer
+
+    def get_layer_provider(self):
+        if self.layer_provider:
+            return self.layer_provider
+
+        layer = self.get_layer()
+        self.layer_provider = CALayer.CALayer_SynthProvider(layer, self.internal_dict)
+        return self.layer_provider
+
+    def summary(self):
+        frame = self.get_frame()
+        if not frame:
+            return ""
+
+        frame_summary = "frame=({} {}; {} {})".format(self.formatted_float(frame.x),
+                                                      self.formatted_float(frame.y),
+                                                      self.formatted_float(frame.width),
+                                                      self.formatted_float(frame.height))
+        summaries = [frame_summary]
+        summary = ", ".join(summaries)
+
+        return summary
 
 
 def UIView_SummaryProvider(value_obj, internal_dict):
@@ -199,8 +196,8 @@ def UIView_SummaryProvider(value_obj, internal_dict):
                                             ["UIImageView", "UIView", "UIWindow"])
 
 
-# def __lldb_init_module(debugger, dict):
-    # debugger.HandleCommand("type summary add -F UIView.UIView_SummaryProvider \
-    #                         --category UIKit \
-    #                         UIImageView UIView UIWindow")
-    # debugger.HandleCommand("type category enable UIKit")
+def __lldb_init_module(debugger, dict):
+    debugger.HandleCommand("type summary add -F UIView.UIView_SummaryProvider \
+                            --category UIKit \
+                            UIImageView UIView UIWindow")
+    debugger.HandleCommand("type category enable UIKit")

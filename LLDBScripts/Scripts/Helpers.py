@@ -100,11 +100,16 @@ statistics.add_metric("unknown_class")
 statistics.add_metric("code_notrun")
 
 
+def get_class_data(value_obj):
+    global statistics
+    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
+    return class_data, wrapper
+
+
 def generic_summary_provider(value_obj, internal_dict, class_synthetic_provider, supported_classes=[]):
     # Class data.
     type_name = value_obj.GetTypeName() if value_obj.GetTypeName() else "Unknown type name"
-    global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
+    class_data, wrapper = get_class_date(value_obj)
 
     # Class data invalid.
     if not class_data.is_valid():
@@ -118,7 +123,7 @@ def generic_summary_provider(value_obj, internal_dict, class_synthetic_provider,
 
     # Using wrapper if available.
     if wrapper is not None:
-        # LLDBLogger.get_logger().debug("generic_summary_provider: using wrapper for {}".format(type_name))
+        LLDBLogger.get_logger().debug("generic_summary_provider: using wrapper for {}".format(type_name))
         return wrapper.message()
 
     # Using Class Summary Provider.

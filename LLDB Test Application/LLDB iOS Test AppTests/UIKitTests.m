@@ -49,37 +49,12 @@
 }
 
 #pragma mark - UIView
-//- (void)testUIView1
-//{
-//    CGRect frame = CGRectMake(10, 20, 300, 400);
-//    UIView *view = [[UIView alloc] initWithFrame:frame];
-//    [self compareObject:view ofType:@"UIView *" toSumamry:@""];
-//}
-//
-//- (void)testUIView2
-//{
-//    CGRect frame = CGRectMake(10, 20, 300, 400);
-//    UIView *view = [[UIView alloc] initWithFrame:frame];
-//    view.alpha = 0.98;
-//    [self compareObject:view ofType:@"UIView *" toSumamry:@"alpha=0.98"];
-//}
-//
-//- (void)testUIView3
-//{
-//    CGRect frame = CGRectMake(10, 20, 300, 400);
-//    UIView *view = [[UIView alloc] initWithFrame:frame];
-//    view.hidden = YES;
-//    [self compareObject:view ofType:@"UIView *" toSumamry:@"hidden=YES"];
-//}
-//
-//- (void)testUIView4
-//{
-//    CGRect frame = CGRectMake(10, 20, 300, 400);
-//    UIView *view = [[UIView alloc] initWithFrame:frame];
-//    view.alpha = 0.56;
-//    view.hidden = YES;
-//    [self compareObject:view ofType:@"UIView *" toSumamry:@"alpha=0.56, hidden=YES"];
-//}
+- (void)testUIView1
+{
+    CGRect frame = CGRectMake(10, 20, 300, 400);
+    UIView *view = [[UIView alloc] initWithFrame:frame];
+    [self compareObject:view ofType:@"UIView *" toSumamry:@"frame=(10 20; 300 400)"];
+}
 
 #pragma mark - UILabel
 - (void)testUILabel1

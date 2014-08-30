@@ -38,6 +38,7 @@
 		96601968198588E400BDBB71 /* UIKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96601962198588E400BDBB71 /* UIKitTests.m */; };
 		9660196B1985897700BDBB71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9660196A1985897700BDBB71 /* Images.xcassets */; };
 		9677E6AC19B0878F002DBAE1 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9677E6AB19B0878F002DBAE1 /* BasicViewController.m */; };
+		9686224619B2014D00096721 /* ViewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9686224519B2014D00096721 /* ViewsViewController.m */; };
 		96F0F8C119B1D74B0033ACED /* QuartzCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F0F8C019B1D74B0033ACED /* QuartzCoreTests.m */; };
 		96FCE39B19B0CE6E00A5A883 /* PickersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FCE39A19B0CE6E00A5A883 /* PickersViewController.m */; };
 		96FCE39E19B0D7B000A5A883 /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FCE39D19B0D7B000A5A883 /* AlertsViewController.m */; };
@@ -112,6 +113,8 @@
 		9660196F19858AA800BDBB71 /* LLDB iOS Test AppTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LLDB iOS Test AppTests-Info.plist"; sourceTree = "<group>"; };
 		9677E6AA19B0878F002DBAE1 /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
 		9677E6AB19B0878F002DBAE1 /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
+		9686224419B2014D00096721 /* ViewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewsViewController.h; sourceTree = "<group>"; };
+		9686224519B2014D00096721 /* ViewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewsViewController.m; sourceTree = "<group>"; };
 		96F0F8C019B1D74B0033ACED /* QuartzCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuartzCoreTests.m; sourceTree = "<group>"; };
 		96FCE39919B0CE6E00A5A883 /* PickersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickersViewController.h; sourceTree = "<group>"; };
 		96FCE39A19B0CE6E00A5A883 /* PickersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickersViewController.m; sourceTree = "<group>"; };
@@ -288,6 +291,8 @@
 				96FCE3A319B0D9D900A5A883 /* ScrollViewController.m */,
 				9660193C1985884F00BDBB71 /* ViewController.h */,
 				9660193D1985884F00BDBB71 /* ViewController.m */,
+				9686224419B2014D00096721 /* ViewsViewController.h */,
+				9686224519B2014D00096721 /* ViewsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -565,6 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				966019511985884F00BDBB71 /* AppDelegate.m in Sources */,
+				9686224619B2014D00096721 /* ViewsViewController.m in Sources */,
 				966019521985884F00BDBB71 /* Compare.m in Sources */,
 				96FCE39B19B0CE6E00A5A883 /* PickersViewController.m in Sources */,
 				966019531985884F00BDBB71 /* main.m in Sources */,
