@@ -64,8 +64,10 @@ class TypeCache(object):
             return self.types[type_name]
 
         # Get type from name.
-        LLDBLogger.get_logger().info("TypeCache: Adding type \"{} to cache.".format(type_name))
+        LLDBLogger.get_logger().info("TypeCache: Adding type \"{}\" to cache.".format(type_name))
         t = self._get_type_from_name(type_name, target)
+        if not t:
+            LLDBLogger.get_logger().warning("TypeCache: Type \"{}\" doesn't exists.".format(type_name))
         self.types[type_name] = t
         return t
 

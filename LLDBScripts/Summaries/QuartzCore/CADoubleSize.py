@@ -3,7 +3,7 @@
 
 # The MIT License (MIT)
 #
-# Copyright (c) 2013 Bartosz Janda
+# Copyright (c) 2014 Bartosz Janda
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
 # this software and associated documentation files (the "Software"), to deal in
@@ -26,36 +26,41 @@
 import SummaryBase
 
 
-class CGPoint_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
-    # struct CGPoint {
-    #   CGFloat x;
-    #   CGFloat y;
+class CADoubleSize_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
+    # struct CADoubleSize {
+    #     double width;
+    #     double height;
     # };
-    # typedef struct CGPoint CGPoint;
     def __init__(self, value_obj, internal_dict):
-        super(CGRect_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(CADoubleSize_SynthProvider, self).__init__(value_obj, internal_dict)
 
-        self.x = None
-        self.y = None
+        self.width = None
+        self.height = None
 
-    def get_x(self):
-        if self.x:
-            return self.x
+    def get_width(self):
+        if self.width:
+            return self.width
 
-        self.x = self.get_child_value("x")
-        return self.x
+        self.width = self.get_child_value("width", type_name="double", offset=0)
+        return self.width
 
-    def get_x_value(self):
-        x = self.get_x()
-        return float(x.GetValue())
+    def get_width_value(self):
+        width = self.get_width()
+        return float(width.GetValue())
 
-    def get_y(self):
-        if self.y:
-            return self.y
+    def get_height(self):
+        if self.height:
+            return self.height
 
-        self.y = self.get_child_value("y")
-        return self.y
+        self.height = self.get_child_value("height", type_name="double", offset=8)
+        return self.height
 
-    def get_y_value(self):
-        y = self.get_y()
-        return float(y.GetValue())
+    def get_height_value(self):
+        height = self.get_height()
+        return float(height.GetValue())
+
+    def summary(self):
+        w = self.get_width_value()
+        h = self.get_height_value()
+        summary = "(width={}, height={})".format(self.formatted_float(w), self.formatted_float(h))
+        return summary

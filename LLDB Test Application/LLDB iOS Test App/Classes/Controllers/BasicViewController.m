@@ -7,6 +7,7 @@
 //
 
 #import "BasicViewController.h"
+@import QuartzCore;
 
 @interface BasicViewController ()
 
@@ -41,6 +42,25 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+//    float f1 = 1;
+//    float f2 = 2;
+//    float f3 = 160;
+//    float f4 = 161;
+//    
+//    double d1 = 1;
+//    double d2 = 2;
+//    double d3 = 160;
+//    double d4 = 161;
+    
+    UIView *v = self.view;
+//    v.frame = CGRectMake(1, 2, 160, 161);
+    CALayer *l = v.layer;
+    l.bounds = CGRectMake(1, 2, 160, 161);
+    CGRect r1 = [l bounds];
+    CGRect r2 = [l frame];
+    [l position];
+
     
     CompareObjectWithSummary(self.label, @"UILabel *", @"text=@\"Label text\"");
     CompareObjectWithSummary(self.attributedLabel, @"UILabel *", @"text=@\"Attributed label text\"");

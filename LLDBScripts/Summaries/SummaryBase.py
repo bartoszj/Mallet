@@ -66,26 +66,38 @@ class SummaryBase_SynthProvider(object):
             return None
         return get_architecture_list().get_ivar(self.architecture_name, self.type_name, ivar_name)
 
-    def get_child_value(self, value_name, type_name=None):
+    def get_child_value(self, value_name, type_name=None, offset=None):
         """
-        Returns child value (SBValue) with given name. If variable cannot be find by name then uses ivar offset.
+        Returns child value (SBValue) with given name (or offset). If variable cannot be find by name then uses ivar offset.
         """
-        value = self.dynamic_value_obj.GetChildMemberWithName(value_name, self.default_dynamic_type)
-        if value:
-            # Get dynamic value.
-            if not value.IsDynamic():
-                value = value.GetDynamicValue(self.default_dynamic_type)
-            return value
+        # Using offset if provided.
+        if offset is not None:
+            if not type_name:
+                LLDBLogger.get_logger().error("SummaryBase: get_child_value: using offset {} without type name."
+                                              .format(offset))
+                return None
+            value = self.dynamic_value_obj.CreateChildAtOffset(value_name, offset, self.get_type(type_name))
+        # Using name od offset from ivar.
+        else:
+            value = self.dynamic_value_obj.GetChildMemberWithName(value_name, self.default_dynamic_type)
+            if value:
+                # Get dynamic value.
+                if not value.IsDynamic():
+                    value = value.GetDynamicValue(self.default_dynamic_type)
+                return value
 
-        # Find ivar and its offset.
-        ivar = self.get_ivar(value_name)
-        if ivar is None:
-            return None
+            # Find ivar and its offset.
+            ivar = self.get_ivar(value_name)
+            if ivar is None:
+                LLDBLogger.get_logger().error("SummaryBase: get_child_value: no ivar {} for type {}."
+                                              .format(value_name, self.type_name))
+                return None
 
-        # Get value from offset.
-        if type_name is None:
-            type_name = ivar.ivarType
-        value = self.dynamic_value_obj.CreateChildAtOffset(value_name, ivar.offset, self.get_type(type_name))
+            # Get value from offset.
+            if type_name is None:
+                type_name = ivar.ivarType
+            value = self.dynamic_value_obj.CreateChildAtOffset(value_name, ivar.offset, self.get_type(type_name))
+
         # Get dynamic value.
         if value and not value.IsDynamic():
             value = value.GetDynamicValue(self.default_dynamic_type)

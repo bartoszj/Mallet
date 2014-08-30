@@ -4,6 +4,7 @@ UIControl:UIKit/UIControl.json
 UIScrollView:UIKit/UIScrollView.json
 UIResponder:UIKit/UIResponder.json
 UILabel:UIKit/UILabel.json
+UIDatePicker:UIKit/UIDatePicker.json
 UISwitch:UIKit/UISwitch.json
 NSURLRequest:Foundation/NSURLRequest.json
 UIView:UIKit/UIView.json
@@ -13,7 +14,7 @@ UIPageControl:UIKit/UIPageControl.json
 UIStepper:UIKit/UIStepper.json
 UIPickerView:UIKit/UIPickerView.json
 UIViewController:UIKit/UIViewController.json
-UIDatePicker:UIKit/UIDatePicker.json
+CALayer:QuartzCore/CALayer.json
 UITextField:UIKit/UITextField.json
 UISlider:UIKit/UISlider.json
 UIProgressView:UIKit/UIProgressView.json

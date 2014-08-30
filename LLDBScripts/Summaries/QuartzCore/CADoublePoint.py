@@ -3,7 +3,7 @@
 
 # The MIT License (MIT)
 #
-# Copyright (c) 2013 Bartosz Janda
+# Copyright (c) 2014 Bartosz Janda
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
 # this software and associated documentation files (the "Software"), to deal in
@@ -26,14 +26,13 @@
 import SummaryBase
 
 
-class CGPoint_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
-    # struct CGPoint {
-    #   CGFloat x;
-    #   CGFloat y;
+class CADoublePoint_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
+    # struct CADoublePoint {
+    #     double x;
+    #     double y;
     # };
-    # typedef struct CGPoint CGPoint;
     def __init__(self, value_obj, internal_dict):
-        super(CGRect_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(CADoublePoint_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.x = None
         self.y = None
@@ -42,7 +41,7 @@ class CGPoint_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         if self.x:
             return self.x
 
-        self.x = self.get_child_value("x")
+        self.x = self.get_child_value("x", type_name="double", offset=0)
         return self.x
 
     def get_x_value(self):
@@ -53,9 +52,15 @@ class CGPoint_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         if self.y:
             return self.y
 
-        self.y = self.get_child_value("y")
+        self.y = self.get_child_value("y", type_name="double", offset=8)
         return self.y
 
     def get_y_value(self):
         y = self.get_y()
         return float(y.GetValue())
+
+    def summary(self):
+        x = self.get_x_value()
+        y = self.get_y_value()
+        summary = "(x={}, y={})".format(self.formatted_float(x), self.formatted_float(y))
+        return summary

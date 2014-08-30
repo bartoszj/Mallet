@@ -45,15 +45,6 @@ class UIDatePicker_SynthProvider(UIControl.UIControl_SynthProvider):
             return self.picker_view
 
         self.picker_view = self.get_child_value("_pickerView")
-
-        # if self.sys_params.is_64_bit:
-        #     offset = 0xe0
-        # else:
-        #     offset = 0x78
-        #
-        # self.picker_view = self.value_obj.CreateChildAtOffset("pickerView",
-        #                                                       offset,
-        #                                                       self.sys_params.types_cache.UIDatePickerView)
         return self.picker_view
 
     def summary(self):

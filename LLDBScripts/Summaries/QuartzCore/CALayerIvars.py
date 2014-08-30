@@ -3,7 +3,7 @@
 
 # The MIT License (MIT)
 #
-# Copyright (c) 2013 Bartosz Janda
+# Copyright (c) 2014 Bartosz Janda
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
 # this software and associated documentation files (the "Software"), to deal in
@@ -24,38 +24,42 @@
 
 
 import SummaryBase
+import CALayerInternalLayer
 
 
-class CGPoint_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
-    # struct CGPoint {
-    #   CGFloat x;
-    #   CGFloat y;
+class CALayerIvars_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
+    # armv7, armv7, i386:
+    # struct _CALayerIvars {
+    #     int refcount;
+    #     unsigned int magic;
+    #     void *layer;
+    #     void *unused1[8];
     # };
-    # typedef struct CGPoint CGPoint;
+    #
+    # arm64, x86_64:
+    # struct _CALayerIvars {
+    #     int refcount;
+    #     unsigned int magic;
+    #     void *layer;
+    # };
+
     def __init__(self, value_obj, internal_dict):
-        super(CGRect_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(CALayerIvars_SynthProvider, self).__init__(value_obj, internal_dict)
 
-        self.x = None
-        self.y = None
+        self.layer = None
+        self.layer_provider = None
 
-    def get_x(self):
-        if self.x:
-            return self.x
+    def get_layer(self):
+        if self.layer:
+            return self.layer
 
-        self.x = self.get_child_value("x")
-        return self.x
+        self.layer = self.get_child_value("layer")
+        return self.layer
 
-    def get_x_value(self):
-        x = self.get_x()
-        return float(x.GetValue())
+    def get_layer_provider(self):
+        if self.layer_provider:
+            return self.layer_provider
 
-    def get_y(self):
-        if self.y:
-            return self.y
-
-        self.y = self.get_child_value("y")
-        return self.y
-
-    def get_y_value(self):
-        y = self.get_y()
-        return float(y.GetValue())
+        layer = self.get_layer()
+        self.layer_provider = CALayerInternalLayer.CALayerInternalLayer_SynthProvider(layer, self.internal_dict)
+        return self.layer_provider
