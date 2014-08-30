@@ -12,6 +12,7 @@
 
 #pragma mark - Properties
 @property (weak, nonatomic) IBOutlet UIView *rectView1;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -29,6 +30,7 @@
     [super viewDidAppear:animated];
     
     CompareObjectWithSummary(self.rectView1, @"UIView *", @"frame=(42 72; 123 157)");
+    CompareObjectWithSummary(self.imageView, @"UIImageView *", @"frame=(173 72; 128 128)");
 }
 
 @end

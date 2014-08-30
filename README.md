@@ -8,26 +8,25 @@ LLDB commands and summaries
 2. Copy **LLDBScripts** to **~/Library/**.
 
 ## Supported types:
+- CoreGraphics:
+    - CGVector
 - Foundation:
     - NSDateComponents
-    - NSMutableURLRequest
     - NSObject
     - NSURLRequest
     - NSUUID
-- CoreFoundation:
-    - CGVector
+- QuartzCore:
+    - CALayer
 - UIKit:
     - UIAlertView
     - UIButton
     - UIDatePicker
     - UIEdgeInsets
-    - UIImageView (temporary disabled)
     - UILabel
     - UIOffset
     - UIPageControl
     - UIPickerView (Don't know what / how to show)
     - UIProgressView
-    - UIResponder
     - UIScreen
     - UIScrollView
     - UISegmentedControl
@@ -35,9 +34,8 @@ LLDB commands and summaries
     - UIStepper
     - UISwitch
     - UITextField
-    - UIView (temporary disabled)
+    - UIView
     - UIViewController
-    - UIWindow (temporary disabled)
 - StoreKit:
     - SKDownload (not tested!)
     - SKPayment

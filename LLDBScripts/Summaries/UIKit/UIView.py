@@ -145,10 +145,7 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
         if self.frame:
             return self.frame
 
-        # In some cases CALayer object is invalid.
-        layer = self.get_layer()
-        class_data, wrapper = Helpers.get_class_data(layer)
-        if not class_data.is_valid():
+        if not self.has_valid_layer():
             return None
 
         position = self.get_layer_provider().get_position_provider()
@@ -167,6 +164,14 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
 
         self.layer = self.get_child_value("_layer")
         return self.layer
+
+    def has_valid_layer(self):
+        # In some cases CALayer object is invalid.
+        layer = self.get_layer()
+        class_data, wrapper = Helpers.get_class_data(layer)
+        if not class_data.is_valid():
+            return False
+        return True
 
     def get_layer_provider(self):
         if self.layer_provider:
@@ -192,8 +197,7 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
 
 
 def UIView_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UIView_SynthProvider,
-                                            ["UIImageView", "UIView", "UIWindow"])
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIView_SynthProvider)
 
 
 def __lldb_init_module(debugger, dict):

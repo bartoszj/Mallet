@@ -179,16 +179,23 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <constraint firstAttribute="height" constant="157" id="Zm8-yz-Dg1"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="llvm" translatesAutoresizingMaskIntoConstraints="NO" id="7oz-We-Vum">
+                                <rect key="frame" x="173" y="72" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="7oz-We-Vum" firstAttribute="leading" secondItem="cKm-d0-OPW" secondAttribute="trailing" constant="8" symbolic="YES" id="1X6-Cw-SyK"/>
+                            <constraint firstItem="7oz-We-Vum" firstAttribute="top" secondItem="1kZ-In-2G2" secondAttribute="bottom" constant="20" symbolic="YES" id="5CP-VZ-gMJ"/>
                             <constraint firstItem="cKm-d0-OPW" firstAttribute="leading" secondItem="O6H-kJ-IWa" secondAttribute="leading" constant="42" id="DwL-Sf-HIM"/>
                             <constraint firstItem="cKm-d0-OPW" firstAttribute="top" secondItem="1kZ-In-2G2" secondAttribute="bottom" constant="8" id="NdR-cD-NpC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9SR-Gc-SxM"/>
                     <connections>
-                        <outlet property="rectView1" destination="cKm-d0-OPW" id="iZL-OQ-AIO"/>
+                        <outlet property="imageView" destination="7oz-We-Vum" id="9eF-BX-qUJ"/>
+                        <outlet property="rectView1" destination="cKm-d0-OPW" id="eiM-4c-Blt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y85-r2-cjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -506,6 +513,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <point key="canvasLocation" x="346" y="-38"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="llvm" width="128" height="128"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

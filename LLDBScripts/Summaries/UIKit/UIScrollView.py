@@ -202,6 +202,12 @@ class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
         return self.maximum_zoom_scale
 
     def summary(self):
+        content_offset_summary = None
+        if self.has_valid_layer():
+            origin = self.get_layer_provider().get_bounds_provider().get_origin_provider()
+            content_offset_summary = "contentOffset=({}, {})".format(self.formatted_float(origin.get_x_value()),
+                                                                     self.formatted_float(origin.get_y_value()))
+
         content_size_w = self.get_content_size_provider().get_width_value()
         content_size_h = self.get_content_size_provider().get_height_value()
         content_size_summary = "contentSize=({}, {})"\
@@ -226,7 +232,11 @@ class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
         maximum_zoom_scale_summary = "maxScale={}".format(self.formatted_float(maximum_zoom_scale_value))
 
         # Summaries
-        summaries = [content_size_summary]
+        summaries = []
+        if content_offset_summary:
+            summaries.append(content_offset_summary)
+        if content_size_summary:
+            summaries.append(content_size_summary)
         if content_inset_t != 0 or content_inset_l != 0 or content_inset_b != 0 or content_inset_r != 0:
             summaries.append(content_inset_summary)
         if minimum_zoom_scale_value != 1:

@@ -56,6 +56,21 @@
     [self compareObject:view ofType:@"UIView *" toSumamry:@"frame=(10 20; 300 400)"];
 }
 
+#pragma mark - UIImageView
+- (void)testUIImageView1
+{
+    UIImage *image = [UIImage imageNamed:@"llvm"];
+    UIImageView *view = [[UIImageView alloc] initWithImage:image];
+    [self compareObject:view ofType:@"UIImageView *" toSumamry:@"frame=(0 0; 128 128)"];
+}
+
+#pragma mark - UIWindow
+- (void)testUIWindow
+{
+    UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+    [self compareObject:window ofType:@"UIWindow *" toSumamry:@"frame=(0 0; 320 568)"];
+}
+
 #pragma mark - UILabel
 - (void)testUILabel1
 {
@@ -78,15 +93,15 @@
 {
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 30, 40)];
     scrollView.contentSize = CGSizeMake(33, 44);
-    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentSize=(33, 44)"];
+    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentOffset=(0, 0), contentSize=(33, 44)"];
 }
 
 - (void)testUIScrollView2
 {
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 30, 40)];
     scrollView.contentSize = CGSizeMake(33, 44);
-    scrollView.contentInset = UIEdgeInsetsMake(1, 2, 3, 4);
-    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentSize=(33, 44), inset=(1, 2, 3, 4)"];
+    scrollView.contentOffset = CGPointMake(20, 21);
+    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentOffset=(20, 21), contentSize=(33, 44)"];
 }
 
 - (void)testUIScrollView3
@@ -94,8 +109,8 @@
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 30, 40)];
     scrollView.contentSize = CGSizeMake(33, 44);
     scrollView.contentInset = UIEdgeInsetsMake(1, 2, 3, 4);
-    scrollView.minimumZoomScale = 0.2;
-    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentSize=(33, 44), inset=(1, 2, 3, 4), minScale=0.2"];
+    scrollView.contentOffset = CGPointMake(20, 21);
+    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentOffset=(20, 21), contentSize=(33, 44), inset=(1, 2, 3, 4)"];
 }
 
 - (void)testUIScrollView4
@@ -103,9 +118,20 @@
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 30, 40)];
     scrollView.contentSize = CGSizeMake(33, 44);
     scrollView.contentInset = UIEdgeInsetsMake(1, 2, 3, 4);
+    scrollView.contentOffset = CGPointMake(20, 21);
+    scrollView.minimumZoomScale = 0.2;
+    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentOffset=(20, 21), contentSize=(33, 44), inset=(1, 2, 3, 4), minScale=0.2"];
+}
+
+- (void)testUIScrollView5
+{
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 30, 40)];
+    scrollView.contentSize = CGSizeMake(33, 44);
+    scrollView.contentInset = UIEdgeInsetsMake(1, 2, 3, 4);
+    scrollView.contentOffset = CGPointMake(20, 21);
     scrollView.minimumZoomScale = 0.2;
     scrollView.maximumZoomScale = 3.5;
-    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentSize=(33, 44), inset=(1, 2, 3, 4), minScale=0.2, maxScale=3.5"];
+    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentOffset=(20, 21), contentSize=(33, 44), inset=(1, 2, 3, 4), minScale=0.2, maxScale=3.5"];
 }
 
 #pragma mark - UIAlertView

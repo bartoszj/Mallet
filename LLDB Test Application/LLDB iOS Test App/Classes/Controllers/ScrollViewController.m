@@ -29,7 +29,7 @@
 {
     [super viewDidAppear:animated];
     
-    CompareObjectWithSummary(self.scrollView, @"UIScrollView *", @"contentSize=(3000, 1000), inset=(64, 0, 0, 0)");
+    CompareObjectWithSummary(self.scrollView, @"UIScrollView *", @"contentOffset=(0, -64), contentSize=(3000, 1000), inset=(64, 0, 0, 0)");
 }
 
 #pragma mark - UIScrollViewDelegate
