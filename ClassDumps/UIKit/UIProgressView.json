@@ -1,0 +1,2158 @@
+{
+  "i386" : {
+    "superClassName" : "UIView",
+    "className" : "UIProgressView",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)trackTintColor",
+        "type" : "method",
+        "name" : "trackTintColor",
+        "address" : 3212626
+      },
+      {
+        "declaration" : "(id)progressTintColor",
+        "type" : "method",
+        "name" : "progressTintColor",
+        "address" : 3212603
+      },
+      {
+        "declaration" : "(id)progressImage",
+        "type" : "method",
+        "name" : "progressImage",
+        "address" : 3212580
+      },
+      {
+        "declaration" : "(id)trackImage",
+        "type" : "method",
+        "name" : "trackImage",
+        "address" : 3212557
+      },
+      {
+        "declaration" : "(float)progress",
+        "type" : "method",
+        "name" : "progress",
+        "address" : 3212534
+      },
+      {
+        "declaration" : "(int)progressViewStyle",
+        "type" : "method",
+        "name" : "progressViewStyle",
+        "address" : 3212511
+      },
+      {
+        "declaration" : "(void)setTrackImage:(id)arg1",
+        "type" : "method",
+        "name" : "setTrackImage:",
+        "address" : 3211361
+      },
+      {
+        "declaration" : "(void)setTrackTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setTrackTintColor:",
+        "address" : 3211168
+      },
+      {
+        "declaration" : "(void)setProgressImage:(id)arg1",
+        "type" : "method",
+        "name" : "setProgressImage:",
+        "address" : 3210945
+      },
+      {
+        "declaration" : "(void)setProgressTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setProgressTintColor:",
+        "address" : 3210740
+      },
+      {
+        "declaration" : "(void)_setProgressColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setProgressColor:",
+        "address" : 3210695
+      },
+      {
+        "declaration" : "(id)_progressColor",
+        "type" : "method",
+        "name" : "_progressColor",
+        "address" : 3210657
+      },
+      {
+        "declaration" : "(void)_setProgressAnimated:(float)arg1 duration:(double)arg2 delay:(double)arg3 options:(unsigned int)arg4",
+        "type" : "method",
+        "name" : "_setProgressAnimated:duration:delay:options:",
+        "address" : 3210106
+      },
+      {
+        "declaration" : "(void)setProgress:(float)arg1 animated:(BOOL)arg2",
+        "type" : "method",
+        "name" : "setProgress:animated:",
+        "address" : 3209871
+      },
+      {
+        "declaration" : "(void)setProgress:(float)arg1",
+        "type" : "method",
+        "name" : "setProgress:",
+        "address" : 3209706
+      },
+      {
+        "declaration" : "(void)_setProgress:(float)arg1",
+        "type" : "method",
+        "name" : "_setProgress:",
+        "address" : 3209676
+      },
+      {
+        "declaration" : "(void)tintColorDidChange",
+        "type" : "method",
+        "name" : "tintColorDidChange",
+        "address" : 3209601
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 3209078
+      },
+      {
+        "declaration" : "(void)_updateImages",
+        "type" : "method",
+        "name" : "_updateImages",
+        "address" : 3207572
+      },
+      {
+        "declaration" : "(unsigned int)_roundedCornersForProgressForCurrentStyle",
+        "type" : "method",
+        "name" : "_roundedCornersForProgressForCurrentStyle",
+        "address" : 3207539
+      },
+      {
+        "declaration" : "(unsigned int)_roundedCornersForTrackForCurrentStyle",
+        "type" : "method",
+        "name" : "_roundedCornersForTrackForCurrentStyle",
+        "address" : 3207513
+      },
+      {
+        "declaration" : "(id)_defaultTrackColorForCurrentStyle",
+        "type" : "method",
+        "name" : "_defaultTrackColorForCurrentStyle",
+        "address" : 3207408
+      },
+      {
+        "declaration" : "(id)_appropriateProgressImage",
+        "type" : "method",
+        "name" : "_appropriateProgressImage",
+        "address" : 3206886
+      },
+      {
+        "declaration" : "(id)_appropriateTrackImage",
+        "type" : "method",
+        "name" : "_appropriateTrackImage",
+        "address" : 3206364
+      },
+      {
+        "declaration" : "(BOOL)_shouldTintTrack",
+        "type" : "method",
+        "name" : "_shouldTintTrack",
+        "address" : 3206334
+      },
+      {
+        "declaration" : "(BOOL)_shouldTintProgress",
+        "type" : "method",
+        "name" : "_shouldTintProgress",
+        "address" : 3206304
+      },
+      {
+        "declaration" : "(void)setProgressViewStyle:(int)arg1",
+        "type" : "method",
+        "name" : "setProgressViewStyle:",
+        "address" : 3205989
+      },
+      {
+        "declaration" : "(struct UIEdgeInsets)alignmentRectInsets",
+        "type" : "method",
+        "name" : "alignmentRectInsets",
+        "address" : 3205592
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 3205532
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 3205268
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 3205258
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 3204983
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 3204736
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 3204545
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 3204409
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 3204063
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 3203522
+      },
+      {
+        "declaration" : "(id)initWithProgressViewStyle:(int)arg1",
+        "type" : "method",
+        "name" : "initWithProgressViewStyle:",
+        "address" : 3203397
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 3203214
+      },
+      {
+        "declaration" : "(void)setBarStyle:(int)arg1",
+        "type" : "method",
+        "name" : "setBarStyle:",
+        "address" : 3212672
+      },
+      {
+        "declaration" : "(int)barStyle",
+        "type" : "method",
+        "name" : "barStyle",
+        "address" : 3212649
+      },
+      {
+        "declaration" : "(BOOL)isElementAccessibilityExposedToInterfaceBuilder",
+        "type" : "method",
+        "name" : "isElementAccessibilityExposedToInterfaceBuilder",
+        "address" : 3272676
+      }
+    ],
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 56,
+        "type" : "ivar",
+        "name" : "_progressViewStyle"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 60,
+        "type" : "ivar",
+        "name" : "_progress"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 64,
+        "type" : "ivar",
+        "name" : "_barStyle"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 68,
+        "type" : "ivar",
+        "name" : "_progressTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 72,
+        "type" : "ivar",
+        "name" : "_trackTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 76,
+        "type" : "ivar",
+        "name" : "_trackView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_progressView"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_isAnimating"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSArray *",
+        "size" : 4,
+        "offset" : 88,
+        "type" : "ivar",
+        "name" : "_trackColors"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSArray *",
+        "size" : 4,
+        "offset" : 92,
+        "type" : "ivar",
+        "name" : "_progressColors"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImage *",
+        "size" : 4,
+        "offset" : 96,
+        "type" : "ivar",
+        "name" : "_trackImage"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImage *",
+        "size" : 4,
+        "offset" : 100,
+        "type" : "ivar",
+        "name" : "_progressImage"
+      }
+    ],
+    "protocols" : [
+      "NSCoding"
+    ],
+    "properties" : [
+      {
+        "name" : "progressViewStyle",
+        "setter" : "setProgressViewStyle:",
+        "getter" : "progressViewStyle",
+        "type" : "property",
+        "propertyType" : "int"
+      },
+      {
+        "name" : "progress",
+        "setter" : "setProgress:",
+        "getter" : "progress",
+        "type" : "property",
+        "propertyType" : "float"
+      },
+      {
+        "name" : "progressTintColor",
+        "setter" : "setProgressTintColor:",
+        "getter" : "progressTintColor",
+        "type" : "property",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "name" : "trackTintColor",
+        "setter" : "setTrackTintColor:",
+        "getter" : "trackTintColor",
+        "type" : "property",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "name" : "progressImage",
+        "setter" : "setProgressImage:",
+        "getter" : "progressImage",
+        "type" : "property",
+        "propertyType" : "UIImage *"
+      },
+      {
+        "name" : "trackImage",
+        "setter" : "setTrackImage:",
+        "getter" : "trackImage",
+        "type" : "property",
+        "propertyType" : "UIImage *"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(id)_tintedImageForHeight:(float)arg1 andColors:(id)arg2",
+        "type" : "method",
+        "name" : "_tintedImageForHeight:andColors:",
+        "address" : 3212444
+      },
+      {
+        "declaration" : "(id)_tintedImageForHeight:(float)arg1 andColors:(id)arg2 roundingRectCorners:(unsigned int)arg3",
+        "type" : "method",
+        "name" : "_tintedImageForHeight:andColors:roundingRectCorners:",
+        "address" : 3211579
+      },
+      {
+        "declaration" : "(CDStruct_d58a15aa)_standardImagesForStyle:(int)arg1 barStyle:(int)arg2",
+        "type" : "method",
+        "name" : "_standardImagesForStyle:barStyle:",
+        "address" : 3202686
+      },
+      {
+        "declaration" : "(int)_indexForStyle:(int)arg1 barStyle:(int)arg2",
+        "type" : "method",
+        "name" : "_indexForStyle:barStyle:",
+        "address" : 3202592
+      },
+      {
+        "declaration" : "(struct CGSize)defaultSize",
+        "type" : "method",
+        "name" : "defaultSize",
+        "address" : 3212751
+      }
+    ]
+  },
+  "x86_64" : {
+    "superClassName" : "UIView",
+    "className" : "UIProgressView",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)trackTintColor",
+        "type" : "method",
+        "name" : "trackTintColor",
+        "address" : 2799638
+      },
+      {
+        "declaration" : "(id)progressTintColor",
+        "type" : "method",
+        "name" : "progressTintColor",
+        "address" : 2799621
+      },
+      {
+        "declaration" : "(id)progressImage",
+        "type" : "method",
+        "name" : "progressImage",
+        "address" : 2799604
+      },
+      {
+        "declaration" : "(id)trackImage",
+        "type" : "method",
+        "name" : "trackImage",
+        "address" : 2799587
+      },
+      {
+        "declaration" : "(float)progress",
+        "type" : "method",
+        "name" : "progress",
+        "address" : 2799569
+      },
+      {
+        "declaration" : "(long long)progressViewStyle",
+        "type" : "method",
+        "name" : "progressViewStyle",
+        "address" : 2799552
+      },
+      {
+        "declaration" : "(void)setTrackImage:(id)arg1",
+        "type" : "method",
+        "name" : "setTrackImage:",
+        "address" : 2798490
+      },
+      {
+        "declaration" : "(void)setTrackTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setTrackTintColor:",
+        "address" : 2798312
+      },
+      {
+        "declaration" : "(void)setProgressImage:(id)arg1",
+        "type" : "method",
+        "name" : "setProgressImage:",
+        "address" : 2798121
+      },
+      {
+        "declaration" : "(void)setProgressTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setProgressTintColor:",
+        "address" : 2797943
+      },
+      {
+        "declaration" : "(void)_setProgressColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setProgressColor:",
+        "address" : 2797925
+      },
+      {
+        "declaration" : "(id)_progressColor",
+        "type" : "method",
+        "name" : "_progressColor",
+        "address" : 2797907
+      },
+      {
+        "declaration" : "(void)_setProgressAnimated:(float)arg1 duration:(double)arg2 delay:(double)arg3 options:(unsigned long long)arg4",
+        "type" : "method",
+        "name" : "_setProgressAnimated:duration:delay:options:",
+        "address" : 2797456
+      },
+      {
+        "declaration" : "(void)setProgress:(float)arg1 animated:(_Bool)arg2",
+        "type" : "method",
+        "name" : "setProgress:animated:",
+        "address" : 2797279
+      },
+      {
+        "declaration" : "(void)setProgress:(float)arg1",
+        "type" : "method",
+        "name" : "setProgress:",
+        "address" : 2797133
+      },
+      {
+        "declaration" : "(void)_setProgress:(float)arg1",
+        "type" : "method",
+        "name" : "_setProgress:",
+        "address" : 2797115
+      },
+      {
+        "declaration" : "(void)tintColorDidChange",
+        "type" : "method",
+        "name" : "tintColorDidChange",
+        "address" : 2797049
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 2796490
+      },
+      {
+        "declaration" : "(void)_updateImages",
+        "type" : "method",
+        "name" : "_updateImages",
+        "address" : 2795138
+      },
+      {
+        "declaration" : "(unsigned long long)_roundedCornersForProgressForCurrentStyle",
+        "type" : "method",
+        "name" : "_roundedCornersForProgressForCurrentStyle",
+        "address" : 2795110
+      },
+      {
+        "declaration" : "(unsigned long long)_roundedCornersForTrackForCurrentStyle",
+        "type" : "method",
+        "name" : "_roundedCornersForTrackForCurrentStyle",
+        "address" : 2795089
+      },
+      {
+        "declaration" : "(id)_defaultTrackColorForCurrentStyle",
+        "type" : "method",
+        "name" : "_defaultTrackColorForCurrentStyle",
+        "address" : 2795011
+      },
+      {
+        "declaration" : "(id)_appropriateProgressImage",
+        "type" : "method",
+        "name" : "_appropriateProgressImage",
+        "address" : 2794535
+      },
+      {
+        "declaration" : "(id)_appropriateTrackImage",
+        "type" : "method",
+        "name" : "_appropriateTrackImage",
+        "address" : 2794059
+      },
+      {
+        "declaration" : "(_Bool)_shouldTintTrack",
+        "type" : "method",
+        "name" : "_shouldTintTrack",
+        "address" : 2794038
+      },
+      {
+        "declaration" : "(_Bool)_shouldTintProgress",
+        "type" : "method",
+        "name" : "_shouldTintProgress",
+        "address" : 2794017
+      },
+      {
+        "declaration" : "(void)setProgressViewStyle:(long long)arg1",
+        "type" : "method",
+        "name" : "setProgressViewStyle:",
+        "address" : 2793760
+      },
+      {
+        "declaration" : "(struct UIEdgeInsets)alignmentRectInsets",
+        "type" : "method",
+        "name" : "alignmentRectInsets",
+        "address" : 2793345
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 2793327
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 2793097
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 2793089
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 2792811
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 2792573
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 2792386
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 2792265
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 2791968
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 2791494
+      },
+      {
+        "declaration" : "(id)initWithProgressViewStyle:(long long)arg1",
+        "type" : "method",
+        "name" : "initWithProgressViewStyle:",
+        "address" : 2791358
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 2791195
+      },
+      {
+        "declaration" : "(void)setBarStyle:(long long)arg1",
+        "type" : "method",
+        "name" : "setBarStyle:",
+        "address" : 2799672
+      },
+      {
+        "declaration" : "(long long)barStyle",
+        "type" : "method",
+        "name" : "barStyle",
+        "address" : 2799655
+      },
+      {
+        "declaration" : "(_Bool)isElementAccessibilityExposedToInterfaceBuilder",
+        "type" : "method",
+        "name" : "isElementAccessibilityExposedToInterfaceBuilder",
+        "address" : 2851048
+      }
+    ],
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "long long",
+        "size" : 8,
+        "offset" : 104,
+        "type" : "ivar",
+        "name" : "_progressViewStyle"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 112,
+        "type" : "ivar",
+        "name" : "_progress"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "long long",
+        "size" : 8,
+        "offset" : 120,
+        "type" : "ivar",
+        "name" : "_barStyle"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 128,
+        "type" : "ivar",
+        "name" : "_progressTintColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 136,
+        "type" : "ivar",
+        "name" : "_trackTintColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 144,
+        "type" : "ivar",
+        "name" : "_trackView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 152,
+        "type" : "ivar",
+        "name" : "_progressView"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 160,
+        "type" : "ivar",
+        "name" : "_isAnimating"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSArray *",
+        "size" : 8,
+        "offset" : 168,
+        "type" : "ivar",
+        "name" : "_trackColors"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSArray *",
+        "size" : 8,
+        "offset" : 176,
+        "type" : "ivar",
+        "name" : "_progressColors"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImage *",
+        "size" : 8,
+        "offset" : 184,
+        "type" : "ivar",
+        "name" : "_trackImage"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImage *",
+        "size" : 8,
+        "offset" : 192,
+        "type" : "ivar",
+        "name" : "_progressImage"
+      }
+    ],
+    "protocols" : [
+      "NSCoding"
+    ],
+    "properties" : [
+      {
+        "propertyType" : "long long",
+        "getter" : "progressViewStyle",
+        "type" : "property",
+        "name" : "progressViewStyle",
+        "setter" : "setProgressViewStyle:"
+      },
+      {
+        "propertyType" : "float",
+        "getter" : "progress",
+        "type" : "property",
+        "name" : "progress",
+        "setter" : "setProgress:"
+      },
+      {
+        "propertyType" : "UIColor *",
+        "getter" : "progressTintColor",
+        "type" : "property",
+        "name" : "progressTintColor",
+        "setter" : "setProgressTintColor:"
+      },
+      {
+        "propertyType" : "UIColor *",
+        "getter" : "trackTintColor",
+        "type" : "property",
+        "name" : "trackTintColor",
+        "setter" : "setTrackTintColor:"
+      },
+      {
+        "propertyType" : "UIImage *",
+        "getter" : "progressImage",
+        "type" : "property",
+        "name" : "progressImage",
+        "setter" : "setProgressImage:"
+      },
+      {
+        "propertyType" : "UIImage *",
+        "getter" : "trackImage",
+        "type" : "property",
+        "name" : "trackImage",
+        "setter" : "setTrackImage:"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(id)_tintedImageForHeight:(double)arg1 andColors:(id)arg2",
+        "type" : "method",
+        "name" : "_tintedImageForHeight:andColors:",
+        "address" : 2799520
+      },
+      {
+        "declaration" : "(id)_tintedImageForHeight:(double)arg1 andColors:(id)arg2 roundingRectCorners:(unsigned long long)arg3",
+        "type" : "method",
+        "name" : "_tintedImageForHeight:andColors:roundingRectCorners:",
+        "address" : 2798699
+      },
+      {
+        "declaration" : "(CDStruct_d58a15aa)_standardImagesForStyle:(long long)arg1 barStyle:(long long)arg2",
+        "type" : "method",
+        "name" : "_standardImagesForStyle:barStyle:",
+        "address" : 2790670
+      },
+      {
+        "declaration" : "(int)_indexForStyle:(long long)arg1 barStyle:(long long)arg2",
+        "type" : "method",
+        "name" : "_indexForStyle:barStyle:",
+        "address" : 2790576
+      },
+      {
+        "declaration" : "(struct CGSize)defaultSize",
+        "type" : "method",
+        "name" : "defaultSize",
+        "address" : 2799745
+      }
+    ]
+  },
+  "armv7" : {
+    "superClassName" : "UIView",
+    "className" : "UIProgressView",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)trackTintColor",
+        "type" : "method",
+        "name" : "trackTintColor",
+        "address" : 2298321
+      },
+      {
+        "declaration" : "(id)progressTintColor",
+        "type" : "method",
+        "name" : "progressTintColor",
+        "address" : 2298337
+      },
+      {
+        "declaration" : "(id)progressImage",
+        "type" : "method",
+        "name" : "progressImage",
+        "address" : 3767365
+      },
+      {
+        "declaration" : "(id)trackImage",
+        "type" : "method",
+        "name" : "trackImage",
+        "address" : 3767349
+      },
+      {
+        "declaration" : "(float)progress",
+        "type" : "method",
+        "name" : "progress",
+        "address" : 3767333
+      },
+      {
+        "declaration" : "(int)progressViewStyle",
+        "type" : "method",
+        "name" : "progressViewStyle",
+        "address" : 3767317
+      },
+      {
+        "declaration" : "(void)setTrackImage:(id)arg1",
+        "type" : "method",
+        "name" : "setTrackImage:",
+        "address" : 3766481
+      },
+      {
+        "declaration" : "(void)setTrackTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setTrackTintColor:",
+        "address" : 3766301
+      },
+      {
+        "declaration" : "(void)setProgressImage:(id)arg1",
+        "type" : "method",
+        "name" : "setProgressImage:",
+        "address" : 3766085
+      },
+      {
+        "declaration" : "(void)setProgressTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setProgressTintColor:",
+        "address" : 3765889
+      },
+      {
+        "declaration" : "(void)_setProgressColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setProgressColor:",
+        "address" : 3765873
+      },
+      {
+        "declaration" : "(id)_progressColor",
+        "type" : "method",
+        "name" : "_progressColor",
+        "address" : 3765857
+      },
+      {
+        "declaration" : "(void)_setProgressAnimated:(float)arg1 duration:(double)arg2 delay:(double)arg3 options:(unsigned int)arg4",
+        "type" : "method",
+        "name" : "_setProgressAnimated:duration:delay:options:",
+        "address" : 3765473
+      },
+      {
+        "declaration" : "(void)setProgress:(float)arg1 animated:(BOOL)arg2",
+        "type" : "method",
+        "name" : "setProgress:animated:",
+        "address" : 3765253
+      },
+      {
+        "declaration" : "(void)setProgress:(float)arg1",
+        "type" : "method",
+        "name" : "setProgress:",
+        "address" : 2298353
+      },
+      {
+        "declaration" : "(void)_setProgress:(float)arg1",
+        "type" : "method",
+        "name" : "_setProgress:",
+        "address" : 2298773
+      },
+      {
+        "declaration" : "(void)tintColorDidChange",
+        "type" : "method",
+        "name" : "tintColorDidChange",
+        "address" : 3765189
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 2337005
+      },
+      {
+        "declaration" : "(void)_updateImages",
+        "type" : "method",
+        "name" : "_updateImages",
+        "address" : 2297037
+      },
+      {
+        "declaration" : "(unsigned int)_roundedCornersForProgressForCurrentStyle",
+        "type" : "method",
+        "name" : "_roundedCornersForProgressForCurrentStyle",
+        "address" : 3765165
+      },
+      {
+        "declaration" : "(unsigned int)_roundedCornersForTrackForCurrentStyle",
+        "type" : "method",
+        "name" : "_roundedCornersForTrackForCurrentStyle",
+        "address" : 3765137
+      },
+      {
+        "declaration" : "(id)_defaultTrackColorForCurrentStyle",
+        "type" : "method",
+        "name" : "_defaultTrackColorForCurrentStyle",
+        "address" : 3765041
+      },
+      {
+        "declaration" : "(id)_appropriateProgressImage",
+        "type" : "method",
+        "name" : "_appropriateProgressImage",
+        "address" : 3764509
+      },
+      {
+        "declaration" : "(id)_appropriateTrackImage",
+        "type" : "method",
+        "name" : "_appropriateTrackImage",
+        "address" : 3763977
+      },
+      {
+        "declaration" : "(BOOL)_shouldTintTrack",
+        "type" : "method",
+        "name" : "_shouldTintTrack",
+        "address" : 3763953
+      },
+      {
+        "declaration" : "(BOOL)_shouldTintProgress",
+        "type" : "method",
+        "name" : "_shouldTintProgress",
+        "address" : 3763929
+      },
+      {
+        "declaration" : "(void)setProgressViewStyle:(int)arg1",
+        "type" : "method",
+        "name" : "setProgressViewStyle:",
+        "address" : 2298521
+      },
+      {
+        "declaration" : "(struct UIEdgeInsets)alignmentRectInsets",
+        "type" : "method",
+        "name" : "alignmentRectInsets",
+        "address" : 2337461
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 2296057
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 2296105
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 3763901
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 3763621
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 2295825
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 3763441
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 3763325
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 3762997
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 3762485
+      },
+      {
+        "declaration" : "(id)initWithProgressViewStyle:(int)arg1",
+        "type" : "method",
+        "name" : "initWithProgressViewStyle:",
+        "address" : 2295609
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 2295685
+      },
+      {
+        "declaration" : "(void)setBarStyle:(int)arg1",
+        "type" : "method",
+        "name" : "setBarStyle:",
+        "address" : 3767397
+      },
+      {
+        "declaration" : "(int)barStyle",
+        "type" : "method",
+        "name" : "barStyle",
+        "address" : 3767381
+      },
+      {
+        "declaration" : "(BOOL)isElementAccessibilityExposedToInterfaceBuilder",
+        "type" : "method",
+        "name" : "isElementAccessibilityExposedToInterfaceBuilder",
+        "address" : 3792493
+      }
+    ],
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 56,
+        "type" : "ivar",
+        "name" : "_progressViewStyle"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 60,
+        "type" : "ivar",
+        "name" : "_progress"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 64,
+        "type" : "ivar",
+        "name" : "_barStyle"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 68,
+        "type" : "ivar",
+        "name" : "_progressTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 72,
+        "type" : "ivar",
+        "name" : "_trackTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 76,
+        "type" : "ivar",
+        "name" : "_trackView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_progressView"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_isAnimating"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSArray *",
+        "size" : 4,
+        "offset" : 88,
+        "type" : "ivar",
+        "name" : "_trackColors"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSArray *",
+        "size" : 4,
+        "offset" : 92,
+        "type" : "ivar",
+        "name" : "_progressColors"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImage *",
+        "size" : 4,
+        "offset" : 96,
+        "type" : "ivar",
+        "name" : "_trackImage"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImage *",
+        "size" : 4,
+        "offset" : 100,
+        "type" : "ivar",
+        "name" : "_progressImage"
+      }
+    ],
+    "protocols" : [
+      "NSCoding"
+    ],
+    "properties" : [
+      {
+        "name" : "progressViewStyle",
+        "propertyType" : "int",
+        "getter" : "progressViewStyle",
+        "type" : "property",
+        "setter" : "setProgressViewStyle:"
+      },
+      {
+        "name" : "progress",
+        "propertyType" : "float",
+        "getter" : "progress",
+        "type" : "property",
+        "setter" : "setProgress:"
+      },
+      {
+        "name" : "progressTintColor",
+        "propertyType" : "UIColor *",
+        "getter" : "progressTintColor",
+        "type" : "property",
+        "setter" : "setProgressTintColor:"
+      },
+      {
+        "name" : "trackTintColor",
+        "propertyType" : "UIColor *",
+        "getter" : "trackTintColor",
+        "type" : "property",
+        "setter" : "setTrackTintColor:"
+      },
+      {
+        "name" : "progressImage",
+        "propertyType" : "UIImage *",
+        "getter" : "progressImage",
+        "type" : "property",
+        "setter" : "setProgressImage:"
+      },
+      {
+        "name" : "trackImage",
+        "propertyType" : "UIImage *",
+        "getter" : "trackImage",
+        "type" : "property",
+        "setter" : "setTrackImage:"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(id)_tintedImageForHeight:(float)arg1 andColors:(id)arg2",
+        "type" : "method",
+        "name" : "_tintedImageForHeight:andColors:",
+        "address" : 3767269
+      },
+      {
+        "declaration" : "(id)_tintedImageForHeight:(float)arg1 andColors:(id)arg2 roundingRectCorners:(unsigned int)arg3",
+        "type" : "method",
+        "name" : "_tintedImageForHeight:andColors:roundingRectCorners:",
+        "address" : 3766685
+      },
+      {
+        "declaration" : "(CDStruct_d58a15aa)_standardImagesForStyle:(int)arg1 barStyle:(int)arg2",
+        "type" : "method",
+        "name" : "_standardImagesForStyle:barStyle:",
+        "address" : 2296457
+      },
+      {
+        "declaration" : "(int)_indexForStyle:(int)arg1 barStyle:(int)arg2",
+        "type" : "method",
+        "name" : "_indexForStyle:barStyle:",
+        "address" : 2296949
+      },
+      {
+        "declaration" : "(struct CGSize)defaultSize",
+        "type" : "method",
+        "name" : "defaultSize",
+        "address" : 3767465
+      }
+    ]
+  },
+  "armv7s" : {
+    "superClassName" : "UIView",
+    "className" : "UIProgressView",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)trackTintColor",
+        "type" : "method",
+        "name" : "trackTintColor",
+        "address" : 2300085
+      },
+      {
+        "declaration" : "(id)progressTintColor",
+        "type" : "method",
+        "name" : "progressTintColor",
+        "address" : 2300101
+      },
+      {
+        "declaration" : "(id)progressImage",
+        "type" : "method",
+        "name" : "progressImage",
+        "address" : 3769037
+      },
+      {
+        "declaration" : "(id)trackImage",
+        "type" : "method",
+        "name" : "trackImage",
+        "address" : 3769021
+      },
+      {
+        "declaration" : "(float)progress",
+        "type" : "method",
+        "name" : "progress",
+        "address" : 3769005
+      },
+      {
+        "declaration" : "(int)progressViewStyle",
+        "type" : "method",
+        "name" : "progressViewStyle",
+        "address" : 3768989
+      },
+      {
+        "declaration" : "(void)setTrackImage:(id)arg1",
+        "type" : "method",
+        "name" : "setTrackImage:",
+        "address" : 3768153
+      },
+      {
+        "declaration" : "(void)setTrackTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setTrackTintColor:",
+        "address" : 3767973
+      },
+      {
+        "declaration" : "(void)setProgressImage:(id)arg1",
+        "type" : "method",
+        "name" : "setProgressImage:",
+        "address" : 3767757
+      },
+      {
+        "declaration" : "(void)setProgressTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setProgressTintColor:",
+        "address" : 3767561
+      },
+      {
+        "declaration" : "(void)_setProgressColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setProgressColor:",
+        "address" : 3767545
+      },
+      {
+        "declaration" : "(id)_progressColor",
+        "type" : "method",
+        "name" : "_progressColor",
+        "address" : 3767529
+      },
+      {
+        "declaration" : "(void)_setProgressAnimated:(float)arg1 duration:(double)arg2 delay:(double)arg3 options:(unsigned int)arg4",
+        "type" : "method",
+        "name" : "_setProgressAnimated:duration:delay:options:",
+        "address" : 3767149
+      },
+      {
+        "declaration" : "(void)setProgress:(float)arg1 animated:(BOOL)arg2",
+        "type" : "method",
+        "name" : "setProgress:animated:",
+        "address" : 3766925
+      },
+      {
+        "declaration" : "(void)setProgress:(float)arg1",
+        "type" : "method",
+        "name" : "setProgress:",
+        "address" : 2300117
+      },
+      {
+        "declaration" : "(void)_setProgress:(float)arg1",
+        "type" : "method",
+        "name" : "_setProgress:",
+        "address" : 2300537
+      },
+      {
+        "declaration" : "(void)tintColorDidChange",
+        "type" : "method",
+        "name" : "tintColorDidChange",
+        "address" : 3766861
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 2338805
+      },
+      {
+        "declaration" : "(void)_updateImages",
+        "type" : "method",
+        "name" : "_updateImages",
+        "address" : 2298809
+      },
+      {
+        "declaration" : "(unsigned int)_roundedCornersForProgressForCurrentStyle",
+        "type" : "method",
+        "name" : "_roundedCornersForProgressForCurrentStyle",
+        "address" : 3766837
+      },
+      {
+        "declaration" : "(unsigned int)_roundedCornersForTrackForCurrentStyle",
+        "type" : "method",
+        "name" : "_roundedCornersForTrackForCurrentStyle",
+        "address" : 3766809
+      },
+      {
+        "declaration" : "(id)_defaultTrackColorForCurrentStyle",
+        "type" : "method",
+        "name" : "_defaultTrackColorForCurrentStyle",
+        "address" : 3766713
+      },
+      {
+        "declaration" : "(id)_appropriateProgressImage",
+        "type" : "method",
+        "name" : "_appropriateProgressImage",
+        "address" : 3766181
+      },
+      {
+        "declaration" : "(id)_appropriateTrackImage",
+        "type" : "method",
+        "name" : "_appropriateTrackImage",
+        "address" : 3765649
+      },
+      {
+        "declaration" : "(BOOL)_shouldTintTrack",
+        "type" : "method",
+        "name" : "_shouldTintTrack",
+        "address" : 3765625
+      },
+      {
+        "declaration" : "(BOOL)_shouldTintProgress",
+        "type" : "method",
+        "name" : "_shouldTintProgress",
+        "address" : 3765601
+      },
+      {
+        "declaration" : "(void)setProgressViewStyle:(int)arg1",
+        "type" : "method",
+        "name" : "setProgressViewStyle:",
+        "address" : 2300285
+      },
+      {
+        "declaration" : "(struct UIEdgeInsets)alignmentRectInsets",
+        "type" : "method",
+        "name" : "alignmentRectInsets",
+        "address" : 2339261
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 2297825
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 2297873
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 3765573
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 3765293
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 2297593
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 3765113
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 3764997
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 3764669
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 3764157
+      },
+      {
+        "declaration" : "(id)initWithProgressViewStyle:(int)arg1",
+        "type" : "method",
+        "name" : "initWithProgressViewStyle:",
+        "address" : 2297369
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 2297445
+      },
+      {
+        "declaration" : "(void)setBarStyle:(int)arg1",
+        "type" : "method",
+        "name" : "setBarStyle:",
+        "address" : 3769069
+      },
+      {
+        "declaration" : "(int)barStyle",
+        "type" : "method",
+        "name" : "barStyle",
+        "address" : 3769053
+      },
+      {
+        "declaration" : "(BOOL)isElementAccessibilityExposedToInterfaceBuilder",
+        "type" : "method",
+        "name" : "isElementAccessibilityExposedToInterfaceBuilder",
+        "address" : 3794221
+      }
+    ],
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 56,
+        "type" : "ivar",
+        "name" : "_progressViewStyle"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 60,
+        "type" : "ivar",
+        "name" : "_progress"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 64,
+        "type" : "ivar",
+        "name" : "_barStyle"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 68,
+        "type" : "ivar",
+        "name" : "_progressTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 72,
+        "type" : "ivar",
+        "name" : "_trackTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 76,
+        "type" : "ivar",
+        "name" : "_trackView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_progressView"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_isAnimating"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSArray *",
+        "size" : 4,
+        "offset" : 88,
+        "type" : "ivar",
+        "name" : "_trackColors"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSArray *",
+        "size" : 4,
+        "offset" : 92,
+        "type" : "ivar",
+        "name" : "_progressColors"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImage *",
+        "size" : 4,
+        "offset" : 96,
+        "type" : "ivar",
+        "name" : "_trackImage"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImage *",
+        "size" : 4,
+        "offset" : 100,
+        "type" : "ivar",
+        "name" : "_progressImage"
+      }
+    ],
+    "protocols" : [
+      "NSCoding"
+    ],
+    "properties" : [
+      {
+        "getter" : "progressViewStyle",
+        "setter" : "setProgressViewStyle:",
+        "type" : "property",
+        "name" : "progressViewStyle",
+        "propertyType" : "int"
+      },
+      {
+        "getter" : "progress",
+        "setter" : "setProgress:",
+        "type" : "property",
+        "name" : "progress",
+        "propertyType" : "float"
+      },
+      {
+        "getter" : "progressTintColor",
+        "setter" : "setProgressTintColor:",
+        "type" : "property",
+        "name" : "progressTintColor",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "getter" : "trackTintColor",
+        "setter" : "setTrackTintColor:",
+        "type" : "property",
+        "name" : "trackTintColor",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "getter" : "progressImage",
+        "setter" : "setProgressImage:",
+        "type" : "property",
+        "name" : "progressImage",
+        "propertyType" : "UIImage *"
+      },
+      {
+        "getter" : "trackImage",
+        "setter" : "setTrackImage:",
+        "type" : "property",
+        "name" : "trackImage",
+        "propertyType" : "UIImage *"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(id)_tintedImageForHeight:(float)arg1 andColors:(id)arg2",
+        "type" : "method",
+        "name" : "_tintedImageForHeight:andColors:",
+        "address" : 3768941
+      },
+      {
+        "declaration" : "(id)_tintedImageForHeight:(float)arg1 andColors:(id)arg2 roundingRectCorners:(unsigned int)arg3",
+        "type" : "method",
+        "name" : "_tintedImageForHeight:andColors:roundingRectCorners:",
+        "address" : 3768357
+      },
+      {
+        "declaration" : "(CDStruct_d58a15aa)_standardImagesForStyle:(int)arg1 barStyle:(int)arg2",
+        "type" : "method",
+        "name" : "_standardImagesForStyle:barStyle:",
+        "address" : 2298225
+      },
+      {
+        "declaration" : "(int)_indexForStyle:(int)arg1 barStyle:(int)arg2",
+        "type" : "method",
+        "name" : "_indexForStyle:barStyle:",
+        "address" : 2298721
+      },
+      {
+        "declaration" : "(struct CGSize)defaultSize",
+        "type" : "method",
+        "name" : "defaultSize",
+        "address" : 3769137
+      }
+    ]
+  },
+  "arm64" : {
+    "superClassName" : "UIView",
+    "className" : "UIProgressView",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)trackTintColor",
+        "type" : "method",
+        "name" : "trackTintColor",
+        "address" : 2509100
+      },
+      {
+        "declaration" : "(id)progressTintColor",
+        "type" : "method",
+        "name" : "progressTintColor",
+        "address" : 2509116
+      },
+      {
+        "declaration" : "(id)progressImage",
+        "type" : "method",
+        "name" : "progressImage",
+        "address" : 4129728
+      },
+      {
+        "declaration" : "(id)trackImage",
+        "type" : "method",
+        "name" : "trackImage",
+        "address" : 4129712
+      },
+      {
+        "declaration" : "(float)progress",
+        "type" : "method",
+        "name" : "progress",
+        "address" : 4129696
+      },
+      {
+        "declaration" : "(long long)progressViewStyle",
+        "type" : "method",
+        "name" : "progressViewStyle",
+        "address" : 4129680
+      },
+      {
+        "declaration" : "(void)setTrackImage:(id)arg1",
+        "type" : "method",
+        "name" : "setTrackImage:",
+        "address" : 4128668
+      },
+      {
+        "declaration" : "(void)setTrackTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setTrackTintColor:",
+        "address" : 4128448
+      },
+      {
+        "declaration" : "(void)setProgressImage:(id)arg1",
+        "type" : "method",
+        "name" : "setProgressImage:",
+        "address" : 4128192
+      },
+      {
+        "declaration" : "(void)setProgressTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setProgressTintColor:",
+        "address" : 4127956
+      },
+      {
+        "declaration" : "(void)_setProgressColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setProgressColor:",
+        "address" : 4127940
+      },
+      {
+        "declaration" : "(id)_progressColor",
+        "type" : "method",
+        "name" : "_progressColor",
+        "address" : 4127924
+      },
+      {
+        "declaration" : "(void)_setProgressAnimated:(float)arg1 duration:(double)arg2 delay:(double)arg3 options:(unsigned long long)arg4",
+        "type" : "method",
+        "name" : "_setProgressAnimated:duration:delay:options:",
+        "address" : 4127564
+      },
+      {
+        "declaration" : "(void)setProgress:(float)arg1 animated:(_Bool)arg2",
+        "type" : "method",
+        "name" : "setProgress:animated:",
+        "address" : 4127336
+      },
+      {
+        "declaration" : "(void)setProgress:(float)arg1",
+        "type" : "method",
+        "name" : "setProgress:",
+        "address" : 2509132
+      },
+      {
+        "declaration" : "(void)_setProgress:(float)arg1",
+        "type" : "method",
+        "name" : "_setProgress:",
+        "address" : 2509592
+      },
+      {
+        "declaration" : "(void)tintColorDidChange",
+        "type" : "method",
+        "name" : "tintColorDidChange",
+        "address" : 4127244
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 2553780
+      },
+      {
+        "declaration" : "(void)_updateImages",
+        "type" : "method",
+        "name" : "_updateImages",
+        "address" : 2507724
+      },
+      {
+        "declaration" : "(unsigned long long)_roundedCornersForProgressForCurrentStyle",
+        "type" : "method",
+        "name" : "_roundedCornersForProgressForCurrentStyle",
+        "address" : 4127216
+      },
+      {
+        "declaration" : "(unsigned long long)_roundedCornersForTrackForCurrentStyle",
+        "type" : "method",
+        "name" : "_roundedCornersForTrackForCurrentStyle",
+        "address" : 4127192
+      },
+      {
+        "declaration" : "(id)_defaultTrackColorForCurrentStyle",
+        "type" : "method",
+        "name" : "_defaultTrackColorForCurrentStyle",
+        "address" : 4127116
+      },
+      {
+        "declaration" : "(id)_appropriateProgressImage",
+        "type" : "method",
+        "name" : "_appropriateProgressImage",
+        "address" : 4126608
+      },
+      {
+        "declaration" : "(id)_appropriateTrackImage",
+        "type" : "method",
+        "name" : "_appropriateTrackImage",
+        "address" : 4126104
+      },
+      {
+        "declaration" : "(_Bool)_shouldTintTrack",
+        "type" : "method",
+        "name" : "_shouldTintTrack",
+        "address" : 4126080
+      },
+      {
+        "declaration" : "(_Bool)_shouldTintProgress",
+        "type" : "method",
+        "name" : "_shouldTintProgress",
+        "address" : 4126056
+      },
+      {
+        "declaration" : "(void)setProgressViewStyle:(long long)arg1",
+        "type" : "method",
+        "name" : "setProgressViewStyle:",
+        "address" : 2509300
+      },
+      {
+        "declaration" : "(struct UIEdgeInsets)alignmentRectInsets",
+        "type" : "method",
+        "name" : "alignmentRectInsets",
+        "address" : 2554168
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 2506876
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 2506892
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 4126004
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 4125680
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 2506600
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 4125476
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 4125328
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 4124984
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 4124436
+      },
+      {
+        "declaration" : "(id)initWithProgressViewStyle:(long long)arg1",
+        "type" : "method",
+        "name" : "initWithProgressViewStyle:",
+        "address" : 2506328
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 2506428
+      }
+    ],
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "long long",
+        "size" : 8,
+        "offset" : 104,
+        "type" : "ivar",
+        "name" : "_progressViewStyle"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 112,
+        "type" : "ivar",
+        "name" : "_progress"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "long long",
+        "size" : 8,
+        "offset" : 120,
+        "type" : "ivar",
+        "name" : "_barStyle"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 128,
+        "type" : "ivar",
+        "name" : "_progressTintColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 136,
+        "type" : "ivar",
+        "name" : "_trackTintColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 144,
+        "type" : "ivar",
+        "name" : "_trackView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 152,
+        "type" : "ivar",
+        "name" : "_progressView"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 160,
+        "type" : "ivar",
+        "name" : "_isAnimating"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSArray *",
+        "size" : 8,
+        "offset" : 168,
+        "type" : "ivar",
+        "name" : "_trackColors"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSArray *",
+        "size" : 8,
+        "offset" : 176,
+        "type" : "ivar",
+        "name" : "_progressColors"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImage *",
+        "size" : 8,
+        "offset" : 184,
+        "type" : "ivar",
+        "name" : "_trackImage"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImage *",
+        "size" : 8,
+        "offset" : 192,
+        "type" : "ivar",
+        "name" : "_progressImage"
+      }
+    ],
+    "protocols" : [
+      "NSCoding"
+    ],
+    "properties" : [
+      {
+        "type" : "property",
+        "propertyType" : "long long",
+        "name" : "progressViewStyle",
+        "getter" : "progressViewStyle",
+        "setter" : "setProgressViewStyle:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "float",
+        "name" : "progress",
+        "getter" : "progress",
+        "setter" : "setProgress:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIColor *",
+        "name" : "progressTintColor",
+        "getter" : "progressTintColor",
+        "setter" : "setProgressTintColor:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIColor *",
+        "name" : "trackTintColor",
+        "getter" : "trackTintColor",
+        "setter" : "setTrackTintColor:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIImage *",
+        "name" : "progressImage",
+        "getter" : "progressImage",
+        "setter" : "setProgressImage:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIImage *",
+        "name" : "trackImage",
+        "getter" : "trackImage",
+        "setter" : "setTrackImage:"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(id)_tintedImageForHeight:(double)arg1 andColors:(id)arg2",
+        "type" : "method",
+        "name" : "_tintedImageForHeight:andColors:",
+        "address" : 4129652
+      },
+      {
+        "declaration" : "(id)_tintedImageForHeight:(double)arg1 andColors:(id)arg2 roundingRectCorners:(unsigned long long)arg3",
+        "type" : "method",
+        "name" : "_tintedImageForHeight:andColors:roundingRectCorners:",
+        "address" : 4128928
+      },
+      {
+        "declaration" : "(CDStruct_d58a15aa)_standardImagesForStyle:(long long)arg1 barStyle:(long long)arg2",
+        "type" : "method",
+        "name" : "_standardImagesForStyle:barStyle:",
+        "address" : 2507148
+      },
+      {
+        "declaration" : "(int)_indexForStyle:(long long)arg1 barStyle:(long long)arg2",
+        "type" : "method",
+        "name" : "_indexForStyle:barStyle:",
+        "address" : 2507616
+      }
+    ]
+  }
+}

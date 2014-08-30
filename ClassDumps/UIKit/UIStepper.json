@@ -1,0 +1,2457 @@
+{
+  "i386" : {
+    "properties" : [
+      {
+        "name" : "continuous",
+        "setter" : "setContinuous:",
+        "getter" : "isContinuous",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "autorepeat",
+        "setter" : "setAutorepeat:",
+        "getter" : "autorepeat",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "wraps",
+        "setter" : "setWraps:",
+        "getter" : "wraps",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "value",
+        "setter" : "setValue:",
+        "getter" : "value",
+        "type" : "property",
+        "propertyType" : "double"
+      },
+      {
+        "name" : "minimumValue",
+        "setter" : "setMinimumValue:",
+        "getter" : "minimumValue",
+        "type" : "property",
+        "propertyType" : "double"
+      },
+      {
+        "name" : "maximumValue",
+        "setter" : "setMaximumValue:",
+        "getter" : "maximumValue",
+        "type" : "property",
+        "propertyType" : "double"
+      },
+      {
+        "name" : "stepValue",
+        "setter" : "setStepValue:",
+        "getter" : "stepValue",
+        "type" : "property",
+        "propertyType" : "double"
+      },
+      {
+        "name" : "tintColor",
+        "setter" : "setTintColor:",
+        "getter" : "tintColor",
+        "type" : "property",
+        "propertyType" : "UIColor *"
+      }
+    ],
+    "className" : "UIStepper",
+    "instanceMethods" : [
+      {
+        "declaration" : "(BOOL)wraps",
+        "type" : "method",
+        "name" : "wraps",
+        "address" : 5540807
+      },
+      {
+        "declaration" : "(void)setAutorepeat:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setAutorepeat:",
+        "address" : 5540781
+      },
+      {
+        "declaration" : "(BOOL)autorepeat",
+        "type" : "method",
+        "name" : "autorepeat",
+        "address" : 5540757
+      },
+      {
+        "declaration" : "(void)setContinuous:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setContinuous:",
+        "address" : 5540731
+      },
+      {
+        "declaration" : "(BOOL)isContinuous",
+        "type" : "method",
+        "name" : "isContinuous",
+        "address" : 5540707
+      },
+      {
+        "declaration" : "(double)stepValue",
+        "type" : "method",
+        "name" : "stepValue",
+        "address" : 5540684
+      },
+      {
+        "declaration" : "(double)maximumValue",
+        "type" : "method",
+        "name" : "maximumValue",
+        "address" : 5540661
+      },
+      {
+        "declaration" : "(double)minimumValue",
+        "type" : "method",
+        "name" : "minimumValue",
+        "address" : 5540638
+      },
+      {
+        "declaration" : "(double)value",
+        "type" : "method",
+        "name" : "value",
+        "address" : 5540615
+      },
+      {
+        "declaration" : "(void)_updateImages",
+        "type" : "method",
+        "name" : "_updateImages",
+        "address" : 5539498
+      },
+      {
+        "declaration" : "(void)setTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setTintColor:",
+        "address" : 5539394
+      },
+      {
+        "declaration" : "(id)decrementImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "decrementImageForState:",
+        "address" : 5539340
+      },
+      {
+        "declaration" : "(void)setDecrementImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setDecrementImage:forState:",
+        "address" : 5539288
+      },
+      {
+        "declaration" : "(void)_setDecrementImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setDecrementImage:forState:",
+        "address" : 5539134
+      },
+      {
+        "declaration" : "(id)incrementImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "incrementImageForState:",
+        "address" : 5539080
+      },
+      {
+        "declaration" : "(void)setIncrementImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setIncrementImage:forState:",
+        "address" : 5539028
+      },
+      {
+        "declaration" : "(void)_setIncrementImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setIncrementImage:forState:",
+        "address" : 5538874
+      },
+      {
+        "declaration" : "(id)dividerImageForLeftSegmentState:(unsigned int)arg1 rightSegmentState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "dividerImageForLeftSegmentState:rightSegmentState:",
+        "address" : 5538662
+      },
+      {
+        "declaration" : "(void)setDividerImage:(id)arg1 forLeftSegmentState:(unsigned int)arg2 rightSegmentState:(unsigned int)arg3",
+        "type" : "method",
+        "name" : "setDividerImage:forLeftSegmentState:rightSegmentState:",
+        "address" : 5538603
+      },
+      {
+        "declaration" : "(void)_setDividerImage:(id)arg1 forLeftSegmentState:(unsigned int)arg2 rightSegmentState:(unsigned int)arg3",
+        "type" : "method",
+        "name" : "_setDividerImage:forLeftSegmentState:rightSegmentState:",
+        "address" : 5538234
+      },
+      {
+        "declaration" : "(id)backgroundImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "backgroundImageForState:",
+        "address" : 5538180
+      },
+      {
+        "declaration" : "(void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setBackgroundImage:forState:",
+        "address" : 5538128
+      },
+      {
+        "declaration" : "(void)_setBackgroundImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setBackgroundImage:forState:",
+        "address" : 5537050
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 5536519
+      },
+      {
+        "declaration" : "(BOOL)gestureRecognizerShouldBegin:(id)arg1",
+        "type" : "method",
+        "name" : "gestureRecognizerShouldBegin:",
+        "address" : 5536341
+      },
+      {
+        "declaration" : "(void)_updateCount:(id)arg1",
+        "type" : "method",
+        "name" : "_updateCount:",
+        "address" : 5535770
+      },
+      {
+        "declaration" : "(void)_stopTimer",
+        "type" : "method",
+        "name" : "_stopTimer",
+        "address" : 5535712
+      },
+      {
+        "declaration" : "(void)_startTimer",
+        "type" : "method",
+        "name" : "_startTimer",
+        "address" : 5535584
+      },
+      {
+        "declaration" : "(void)cancelTrackingWithEvent:(id)arg1",
+        "type" : "method",
+        "name" : "cancelTrackingWithEvent:",
+        "address" : 5535476
+      },
+      {
+        "declaration" : "(void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "endTrackingWithTouch:withEvent:",
+        "address" : 5535328
+      },
+      {
+        "declaration" : "(BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "continueTrackingWithTouch:withEvent:",
+        "address" : 5535241
+      },
+      {
+        "declaration" : "(BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "beginTrackingWithTouch:withEvent:",
+        "address" : 5535136
+      },
+      {
+        "declaration" : "(id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "hitTest:withEvent:",
+        "address" : 5535026
+      },
+      {
+        "declaration" : "(void)_updateDividerImageForButtonState",
+        "type" : "method",
+        "name" : "_updateDividerImageForButtonState",
+        "address" : 5534860
+      },
+      {
+        "declaration" : "(void)_updateHighlightingAtPoint:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_updateHighlightingAtPoint:withEvent:",
+        "address" : 5534507
+      },
+      {
+        "declaration" : "(void)_updateButtonEnabled",
+        "type" : "method",
+        "name" : "_updateButtonEnabled",
+        "address" : 5534197
+      },
+      {
+        "declaration" : "(void)_commonStepperInit",
+        "type" : "method",
+        "name" : "_commonStepperInit",
+        "address" : 5533337
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 5532899
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 5532270
+      },
+      {
+        "declaration" : "(void)setWraps:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setWraps:",
+        "address" : 5532211
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 5532151
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 5531933
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 5531923
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 5531913
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 5531743
+      },
+      {
+        "declaration" : "(void)setStepValue:(double)arg1",
+        "type" : "method",
+        "name" : "setStepValue:",
+        "address" : 5531623
+      },
+      {
+        "declaration" : "(void)setMaximumValue:(double)arg1",
+        "type" : "method",
+        "name" : "setMaximumValue:",
+        "address" : 5531461
+      },
+      {
+        "declaration" : "(void)setMinimumValue:(double)arg1",
+        "type" : "method",
+        "name" : "setMinimumValue:",
+        "address" : 5531307
+      },
+      {
+        "declaration" : "(void)setValue:(double)arg1",
+        "type" : "method",
+        "name" : "setValue:",
+        "address" : 5531222
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 5531097
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 5530926
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 5530757
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 76,
+        "type" : "ivar",
+        "name" : "_isRtoL"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_middleView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIButton *",
+        "size" : 4,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_plusButton"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIButton *",
+        "size" : 4,
+        "offset" : 88,
+        "type" : "ivar",
+        "name" : "_minusButton"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSTimer *",
+        "size" : 4,
+        "offset" : 92,
+        "type" : "ivar",
+        "name" : "_repeatTimer"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 96,
+        "type" : "ivar",
+        "name" : "_repeatCount"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSMutableDictionary *",
+        "size" : 4,
+        "offset" : 100,
+        "type" : "ivar",
+        "name" : "_dividerImages"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 104,
+        "type" : "ivar",
+        "name" : "_continuous"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 105,
+        "type" : "ivar",
+        "name" : "_autorepeat"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 106,
+        "type" : "ivar",
+        "name" : "_wraps"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 108,
+        "type" : "ivar",
+        "name" : "_value"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 116,
+        "type" : "ivar",
+        "name" : "_minimumValue"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 124,
+        "type" : "ivar",
+        "name" : "_maximumValue"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 132,
+        "type" : "ivar",
+        "name" : "_stepValue"
+      }
+    ],
+    "superClassName" : "UIControl"
+  },
+  "x86_64" : {
+    "properties" : [
+      {
+        "propertyType" : "_Bool",
+        "getter" : "isContinuous",
+        "type" : "property",
+        "name" : "continuous",
+        "setter" : "setContinuous:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "autorepeat",
+        "type" : "property",
+        "name" : "autorepeat",
+        "setter" : "setAutorepeat:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "wraps",
+        "type" : "property",
+        "name" : "wraps",
+        "setter" : "setWraps:"
+      },
+      {
+        "propertyType" : "double",
+        "getter" : "value",
+        "type" : "property",
+        "name" : "value",
+        "setter" : "setValue:"
+      },
+      {
+        "propertyType" : "double",
+        "getter" : "minimumValue",
+        "type" : "property",
+        "name" : "minimumValue",
+        "setter" : "setMinimumValue:"
+      },
+      {
+        "propertyType" : "double",
+        "getter" : "maximumValue",
+        "type" : "property",
+        "name" : "maximumValue",
+        "setter" : "setMaximumValue:"
+      },
+      {
+        "propertyType" : "double",
+        "getter" : "stepValue",
+        "type" : "property",
+        "name" : "stepValue",
+        "setter" : "setStepValue:"
+      },
+      {
+        "propertyType" : "UIColor *",
+        "getter" : "tintColor",
+        "type" : "property",
+        "name" : "tintColor",
+        "setter" : "setTintColor:"
+      }
+    ],
+    "className" : "UIStepper",
+    "instanceMethods" : [
+      {
+        "declaration" : "(_Bool)wraps",
+        "type" : "method",
+        "name" : "wraps",
+        "address" : 4857002
+      },
+      {
+        "declaration" : "(void)setAutorepeat:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setAutorepeat:",
+        "address" : 4856986
+      },
+      {
+        "declaration" : "(_Bool)autorepeat",
+        "type" : "method",
+        "name" : "autorepeat",
+        "address" : 4856970
+      },
+      {
+        "declaration" : "(void)setContinuous:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setContinuous:",
+        "address" : 4856954
+      },
+      {
+        "declaration" : "(_Bool)isContinuous",
+        "type" : "method",
+        "name" : "isContinuous",
+        "address" : 4856938
+      },
+      {
+        "declaration" : "(double)stepValue",
+        "type" : "method",
+        "name" : "stepValue",
+        "address" : 4856920
+      },
+      {
+        "declaration" : "(double)maximumValue",
+        "type" : "method",
+        "name" : "maximumValue",
+        "address" : 4856902
+      },
+      {
+        "declaration" : "(double)minimumValue",
+        "type" : "method",
+        "name" : "minimumValue",
+        "address" : 4856884
+      },
+      {
+        "declaration" : "(double)value",
+        "type" : "method",
+        "name" : "value",
+        "address" : 4856866
+      },
+      {
+        "declaration" : "(void)_updateImages",
+        "type" : "method",
+        "name" : "_updateImages",
+        "address" : 4855971
+      },
+      {
+        "declaration" : "(void)setTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setTintColor:",
+        "address" : 4855877
+      },
+      {
+        "declaration" : "(id)decrementImageForState:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "decrementImageForState:",
+        "address" : 4855848
+      },
+      {
+        "declaration" : "(void)setDecrementImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "setDecrementImage:forState:",
+        "address" : 4855830
+      },
+      {
+        "declaration" : "(void)_setDecrementImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "_setDecrementImage:forState:",
+        "address" : 4855643
+      },
+      {
+        "declaration" : "(id)incrementImageForState:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "incrementImageForState:",
+        "address" : 4855614
+      },
+      {
+        "declaration" : "(void)setIncrementImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "setIncrementImage:forState:",
+        "address" : 4855596
+      },
+      {
+        "declaration" : "(void)_setIncrementImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "_setIncrementImage:forState:",
+        "address" : 4855417
+      },
+      {
+        "declaration" : "(id)dividerImageForLeftSegmentState:(unsigned long long)arg1 rightSegmentState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "dividerImageForLeftSegmentState:rightSegmentState:",
+        "address" : 4855218
+      },
+      {
+        "declaration" : "(void)setDividerImage:(id)arg1 forLeftSegmentState:(unsigned long long)arg2 rightSegmentState:(unsigned long long)arg3",
+        "type" : "method",
+        "name" : "setDividerImage:forLeftSegmentState:rightSegmentState:",
+        "address" : 4855200
+      },
+      {
+        "declaration" : "(void)_setDividerImage:(id)arg1 forLeftSegmentState:(unsigned long long)arg2 rightSegmentState:(unsigned long long)arg3",
+        "type" : "method",
+        "name" : "_setDividerImage:forLeftSegmentState:rightSegmentState:",
+        "address" : 4854860
+      },
+      {
+        "declaration" : "(id)backgroundImageForState:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "backgroundImageForState:",
+        "address" : 4854831
+      },
+      {
+        "declaration" : "(void)setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "setBackgroundImage:forState:",
+        "address" : 4854813
+      },
+      {
+        "declaration" : "(void)_setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "_setBackgroundImage:forState:",
+        "address" : 4853741
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 4853147
+      },
+      {
+        "declaration" : "(_Bool)gestureRecognizerShouldBegin:(id)arg1",
+        "type" : "method",
+        "name" : "gestureRecognizerShouldBegin:",
+        "address" : 4853001
+      },
+      {
+        "declaration" : "(void)_updateCount:(id)arg1",
+        "type" : "method",
+        "name" : "_updateCount:",
+        "address" : 4852444
+      },
+      {
+        "declaration" : "(void)_stopTimer",
+        "type" : "method",
+        "name" : "_stopTimer",
+        "address" : 4852397
+      },
+      {
+        "declaration" : "(void)_startTimer",
+        "type" : "method",
+        "name" : "_startTimer",
+        "address" : 4852295
+      },
+      {
+        "declaration" : "(void)cancelTrackingWithEvent:(id)arg1",
+        "type" : "method",
+        "name" : "cancelTrackingWithEvent:",
+        "address" : 4852209
+      },
+      {
+        "declaration" : "(void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "endTrackingWithTouch:withEvent:",
+        "address" : 4852093
+      },
+      {
+        "declaration" : "(_Bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "continueTrackingWithTouch:withEvent:",
+        "address" : 4852025
+      },
+      {
+        "declaration" : "(_Bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "beginTrackingWithTouch:withEvent:",
+        "address" : 4851945
+      },
+      {
+        "declaration" : "(id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "hitTest:withEvent:",
+        "address" : 4851866
+      },
+      {
+        "declaration" : "(void)_updateDividerImageForButtonState",
+        "type" : "method",
+        "name" : "_updateDividerImageForButtonState",
+        "address" : 4851704
+      },
+      {
+        "declaration" : "(void)_updateHighlightingAtPoint:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_updateHighlightingAtPoint:withEvent:",
+        "address" : 4851393
+      },
+      {
+        "declaration" : "(void)_updateButtonEnabled",
+        "type" : "method",
+        "name" : "_updateButtonEnabled",
+        "address" : 4851129
+      },
+      {
+        "declaration" : "(void)_commonStepperInit",
+        "type" : "method",
+        "name" : "_commonStepperInit",
+        "address" : 4850500
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 4850134
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 4849550
+      },
+      {
+        "declaration" : "(void)setWraps:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setWraps:",
+        "address" : 4849509
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 4849491
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 4849320
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 4849312
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 4849304
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 4849138
+      },
+      {
+        "declaration" : "(void)setStepValue:(double)arg1",
+        "type" : "method",
+        "name" : "setStepValue:",
+        "address" : 4849031
+      },
+      {
+        "declaration" : "(void)setMaximumValue:(double)arg1",
+        "type" : "method",
+        "name" : "setMaximumValue:",
+        "address" : 4848863
+      },
+      {
+        "declaration" : "(void)setMinimumValue:(double)arg1",
+        "type" : "method",
+        "name" : "setMinimumValue:",
+        "address" : 4848711
+      },
+      {
+        "declaration" : "(void)setValue:(double)arg1",
+        "type" : "method",
+        "name" : "setValue:",
+        "address" : 4848642
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 4848524
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 4848371
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 4848205
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 132,
+        "type" : "ivar",
+        "name" : "_isRtoL"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 136,
+        "type" : "ivar",
+        "name" : "_middleView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIButton *",
+        "size" : 8,
+        "offset" : 144,
+        "type" : "ivar",
+        "name" : "_plusButton"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIButton *",
+        "size" : 8,
+        "offset" : 152,
+        "type" : "ivar",
+        "name" : "_minusButton"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSTimer *",
+        "size" : 8,
+        "offset" : 160,
+        "type" : "ivar",
+        "name" : "_repeatTimer"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "long long",
+        "size" : 8,
+        "offset" : 168,
+        "type" : "ivar",
+        "name" : "_repeatCount"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSMutableDictionary *",
+        "size" : 8,
+        "offset" : 176,
+        "type" : "ivar",
+        "name" : "_dividerImages"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 184,
+        "type" : "ivar",
+        "name" : "_continuous"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 185,
+        "type" : "ivar",
+        "name" : "_autorepeat"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 186,
+        "type" : "ivar",
+        "name" : "_wraps"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 192,
+        "type" : "ivar",
+        "name" : "_value"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 200,
+        "type" : "ivar",
+        "name" : "_minimumValue"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 208,
+        "type" : "ivar",
+        "name" : "_maximumValue"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 216,
+        "type" : "ivar",
+        "name" : "_stepValue"
+      }
+    ],
+    "superClassName" : "UIControl"
+  },
+  "armv7" : {
+    "properties" : [
+      {
+        "name" : "continuous",
+        "propertyType" : "char",
+        "getter" : "isContinuous",
+        "type" : "property",
+        "setter" : "setContinuous:"
+      },
+      {
+        "name" : "autorepeat",
+        "propertyType" : "char",
+        "getter" : "autorepeat",
+        "type" : "property",
+        "setter" : "setAutorepeat:"
+      },
+      {
+        "name" : "wraps",
+        "propertyType" : "char",
+        "getter" : "wraps",
+        "type" : "property",
+        "setter" : "setWraps:"
+      },
+      {
+        "name" : "value",
+        "propertyType" : "double",
+        "getter" : "value",
+        "type" : "property",
+        "setter" : "setValue:"
+      },
+      {
+        "name" : "minimumValue",
+        "propertyType" : "double",
+        "getter" : "minimumValue",
+        "type" : "property",
+        "setter" : "setMinimumValue:"
+      },
+      {
+        "name" : "maximumValue",
+        "propertyType" : "double",
+        "getter" : "maximumValue",
+        "type" : "property",
+        "setter" : "setMaximumValue:"
+      },
+      {
+        "name" : "stepValue",
+        "propertyType" : "double",
+        "getter" : "stepValue",
+        "type" : "property",
+        "setter" : "setStepValue:"
+      },
+      {
+        "name" : "tintColor",
+        "propertyType" : "UIColor *",
+        "getter" : "tintColor",
+        "type" : "property",
+        "setter" : "setTintColor:"
+      }
+    ],
+    "className" : "UIStepper",
+    "instanceMethods" : [
+      {
+        "declaration" : "(BOOL)wraps",
+        "type" : "method",
+        "name" : "wraps",
+        "address" : 4968929
+      },
+      {
+        "declaration" : "(void)setAutorepeat:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setAutorepeat:",
+        "address" : 4968913
+      },
+      {
+        "declaration" : "(BOOL)autorepeat",
+        "type" : "method",
+        "name" : "autorepeat",
+        "address" : 4968897
+      },
+      {
+        "declaration" : "(void)setContinuous:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setContinuous:",
+        "address" : 4968881
+      },
+      {
+        "declaration" : "(BOOL)isContinuous",
+        "type" : "method",
+        "name" : "isContinuous",
+        "address" : 4968865
+      },
+      {
+        "declaration" : "(double)stepValue",
+        "type" : "method",
+        "name" : "stepValue",
+        "address" : 4968841
+      },
+      {
+        "declaration" : "(double)maximumValue",
+        "type" : "method",
+        "name" : "maximumValue",
+        "address" : 4968817
+      },
+      {
+        "declaration" : "(double)minimumValue",
+        "type" : "method",
+        "name" : "minimumValue",
+        "address" : 4968793
+      },
+      {
+        "declaration" : "(double)value",
+        "type" : "method",
+        "name" : "value",
+        "address" : 4968769
+      },
+      {
+        "declaration" : "(void)_updateImages",
+        "type" : "method",
+        "name" : "_updateImages",
+        "address" : 4967937
+      },
+      {
+        "declaration" : "(void)setTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setTintColor:",
+        "address" : 4967841
+      },
+      {
+        "declaration" : "(id)decrementImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "decrementImageForState:",
+        "address" : 4967809
+      },
+      {
+        "declaration" : "(void)setDecrementImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setDecrementImage:forState:",
+        "address" : 4967793
+      },
+      {
+        "declaration" : "(void)_setDecrementImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setDecrementImage:forState:",
+        "address" : 4967677
+      },
+      {
+        "declaration" : "(id)incrementImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "incrementImageForState:",
+        "address" : 4967645
+      },
+      {
+        "declaration" : "(void)setIncrementImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setIncrementImage:forState:",
+        "address" : 4967629
+      },
+      {
+        "declaration" : "(void)_setIncrementImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setIncrementImage:forState:",
+        "address" : 4967513
+      },
+      {
+        "declaration" : "(id)dividerImageForLeftSegmentState:(unsigned int)arg1 rightSegmentState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "dividerImageForLeftSegmentState:rightSegmentState:",
+        "address" : 4967329
+      },
+      {
+        "declaration" : "(void)setDividerImage:(id)arg1 forLeftSegmentState:(unsigned int)arg2 rightSegmentState:(unsigned int)arg3",
+        "type" : "method",
+        "name" : "setDividerImage:forLeftSegmentState:rightSegmentState:",
+        "address" : 4967313
+      },
+      {
+        "declaration" : "(void)_setDividerImage:(id)arg1 forLeftSegmentState:(unsigned int)arg2 rightSegmentState:(unsigned int)arg3",
+        "type" : "method",
+        "name" : "_setDividerImage:forLeftSegmentState:rightSegmentState:",
+        "address" : 4966945
+      },
+      {
+        "declaration" : "(id)backgroundImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "backgroundImageForState:",
+        "address" : 4966913
+      },
+      {
+        "declaration" : "(void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setBackgroundImage:forState:",
+        "address" : 4966897
+      },
+      {
+        "declaration" : "(void)_setBackgroundImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setBackgroundImage:forState:",
+        "address" : 4965973
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 4965489
+      },
+      {
+        "declaration" : "(BOOL)gestureRecognizerShouldBegin:(id)arg1",
+        "type" : "method",
+        "name" : "gestureRecognizerShouldBegin:",
+        "address" : 4965337
+      },
+      {
+        "declaration" : "(void)_updateCount:(id)arg1",
+        "type" : "method",
+        "name" : "_updateCount:",
+        "address" : 4964721
+      },
+      {
+        "declaration" : "(void)_stopTimer",
+        "type" : "method",
+        "name" : "_stopTimer",
+        "address" : 4964673
+      },
+      {
+        "declaration" : "(void)_startTimer",
+        "type" : "method",
+        "name" : "_startTimer",
+        "address" : 4964545
+      },
+      {
+        "declaration" : "(void)cancelTrackingWithEvent:(id)arg1",
+        "type" : "method",
+        "name" : "cancelTrackingWithEvent:",
+        "address" : 4964461
+      },
+      {
+        "declaration" : "(void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "endTrackingWithTouch:withEvent:",
+        "address" : 4964337
+      },
+      {
+        "declaration" : "(BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "continueTrackingWithTouch:withEvent:",
+        "address" : 4964261
+      },
+      {
+        "declaration" : "(BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "beginTrackingWithTouch:withEvent:",
+        "address" : 4964165
+      },
+      {
+        "declaration" : "(id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "hitTest:withEvent:",
+        "address" : 4964073
+      },
+      {
+        "declaration" : "(void)_updateDividerImageForButtonState",
+        "type" : "method",
+        "name" : "_updateDividerImageForButtonState",
+        "address" : 4963913
+      },
+      {
+        "declaration" : "(void)_updateHighlightingAtPoint:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_updateHighlightingAtPoint:withEvent:",
+        "address" : 4963601
+      },
+      {
+        "declaration" : "(void)_updateButtonEnabled",
+        "type" : "method",
+        "name" : "_updateButtonEnabled",
+        "address" : 4963289
+      },
+      {
+        "declaration" : "(void)_commonStepperInit",
+        "type" : "method",
+        "name" : "_commonStepperInit",
+        "address" : 4962625
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 4962169
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 4961537
+      },
+      {
+        "declaration" : "(void)setWraps:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setWraps:",
+        "address" : 4961493
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 4961445
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 4961177
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 4961169
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 4961165
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 4961005
+      },
+      {
+        "declaration" : "(void)setStepValue:(double)arg1",
+        "type" : "method",
+        "name" : "setStepValue:",
+        "address" : 4960885
+      },
+      {
+        "declaration" : "(void)setMaximumValue:(double)arg1",
+        "type" : "method",
+        "name" : "setMaximumValue:",
+        "address" : 4960697
+      },
+      {
+        "declaration" : "(void)setMinimumValue:(double)arg1",
+        "type" : "method",
+        "name" : "setMinimumValue:",
+        "address" : 4960509
+      },
+      {
+        "declaration" : "(void)setValue:(double)arg1",
+        "type" : "method",
+        "name" : "setValue:",
+        "address" : 4960389
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 4960289
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 4960137
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 4959993
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 75,
+        "type" : "ivar",
+        "name" : "_isRtoL"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 76,
+        "type" : "ivar",
+        "name" : "_middleView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIButton *",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_plusButton"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIButton *",
+        "size" : 4,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_minusButton"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSTimer *",
+        "size" : 4,
+        "offset" : 88,
+        "type" : "ivar",
+        "name" : "_repeatTimer"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 92,
+        "type" : "ivar",
+        "name" : "_repeatCount"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSMutableDictionary *",
+        "size" : 4,
+        "offset" : 96,
+        "type" : "ivar",
+        "name" : "_dividerImages"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 100,
+        "type" : "ivar",
+        "name" : "_continuous"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 101,
+        "type" : "ivar",
+        "name" : "_autorepeat"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 102,
+        "type" : "ivar",
+        "name" : "_wraps"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 104,
+        "type" : "ivar",
+        "name" : "_value"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 112,
+        "type" : "ivar",
+        "name" : "_minimumValue"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 120,
+        "type" : "ivar",
+        "name" : "_maximumValue"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 128,
+        "type" : "ivar",
+        "name" : "_stepValue"
+      }
+    ],
+    "superClassName" : "UIControl"
+  },
+  "armv7s" : {
+    "properties" : [
+      {
+        "getter" : "isContinuous",
+        "setter" : "setContinuous:",
+        "type" : "property",
+        "name" : "continuous",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "autorepeat",
+        "setter" : "setAutorepeat:",
+        "type" : "property",
+        "name" : "autorepeat",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "wraps",
+        "setter" : "setWraps:",
+        "type" : "property",
+        "name" : "wraps",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "value",
+        "setter" : "setValue:",
+        "type" : "property",
+        "name" : "value",
+        "propertyType" : "double"
+      },
+      {
+        "getter" : "minimumValue",
+        "setter" : "setMinimumValue:",
+        "type" : "property",
+        "name" : "minimumValue",
+        "propertyType" : "double"
+      },
+      {
+        "getter" : "maximumValue",
+        "setter" : "setMaximumValue:",
+        "type" : "property",
+        "name" : "maximumValue",
+        "propertyType" : "double"
+      },
+      {
+        "getter" : "stepValue",
+        "setter" : "setStepValue:",
+        "type" : "property",
+        "name" : "stepValue",
+        "propertyType" : "double"
+      },
+      {
+        "getter" : "tintColor",
+        "setter" : "setTintColor:",
+        "type" : "property",
+        "name" : "tintColor",
+        "propertyType" : "UIColor *"
+      }
+    ],
+    "className" : "UIStepper",
+    "instanceMethods" : [
+      {
+        "declaration" : "(BOOL)wraps",
+        "type" : "method",
+        "name" : "wraps",
+        "address" : 4969813
+      },
+      {
+        "declaration" : "(void)setAutorepeat:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setAutorepeat:",
+        "address" : 4969797
+      },
+      {
+        "declaration" : "(BOOL)autorepeat",
+        "type" : "method",
+        "name" : "autorepeat",
+        "address" : 4969781
+      },
+      {
+        "declaration" : "(void)setContinuous:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setContinuous:",
+        "address" : 4969765
+      },
+      {
+        "declaration" : "(BOOL)isContinuous",
+        "type" : "method",
+        "name" : "isContinuous",
+        "address" : 4969749
+      },
+      {
+        "declaration" : "(double)stepValue",
+        "type" : "method",
+        "name" : "stepValue",
+        "address" : 4969725
+      },
+      {
+        "declaration" : "(double)maximumValue",
+        "type" : "method",
+        "name" : "maximumValue",
+        "address" : 4969701
+      },
+      {
+        "declaration" : "(double)minimumValue",
+        "type" : "method",
+        "name" : "minimumValue",
+        "address" : 4969677
+      },
+      {
+        "declaration" : "(double)value",
+        "type" : "method",
+        "name" : "value",
+        "address" : 4969653
+      },
+      {
+        "declaration" : "(void)_updateImages",
+        "type" : "method",
+        "name" : "_updateImages",
+        "address" : 4968825
+      },
+      {
+        "declaration" : "(void)setTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setTintColor:",
+        "address" : 4968733
+      },
+      {
+        "declaration" : "(id)decrementImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "decrementImageForState:",
+        "address" : 4968701
+      },
+      {
+        "declaration" : "(void)setDecrementImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setDecrementImage:forState:",
+        "address" : 4968685
+      },
+      {
+        "declaration" : "(void)_setDecrementImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setDecrementImage:forState:",
+        "address" : 4968569
+      },
+      {
+        "declaration" : "(id)incrementImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "incrementImageForState:",
+        "address" : 4968537
+      },
+      {
+        "declaration" : "(void)setIncrementImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setIncrementImage:forState:",
+        "address" : 4968521
+      },
+      {
+        "declaration" : "(void)_setIncrementImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setIncrementImage:forState:",
+        "address" : 4968405
+      },
+      {
+        "declaration" : "(id)dividerImageForLeftSegmentState:(unsigned int)arg1 rightSegmentState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "dividerImageForLeftSegmentState:rightSegmentState:",
+        "address" : 4968221
+      },
+      {
+        "declaration" : "(void)setDividerImage:(id)arg1 forLeftSegmentState:(unsigned int)arg2 rightSegmentState:(unsigned int)arg3",
+        "type" : "method",
+        "name" : "setDividerImage:forLeftSegmentState:rightSegmentState:",
+        "address" : 4968205
+      },
+      {
+        "declaration" : "(void)_setDividerImage:(id)arg1 forLeftSegmentState:(unsigned int)arg2 rightSegmentState:(unsigned int)arg3",
+        "type" : "method",
+        "name" : "_setDividerImage:forLeftSegmentState:rightSegmentState:",
+        "address" : 4967837
+      },
+      {
+        "declaration" : "(id)backgroundImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "backgroundImageForState:",
+        "address" : 4967805
+      },
+      {
+        "declaration" : "(void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setBackgroundImage:forState:",
+        "address" : 4967789
+      },
+      {
+        "declaration" : "(void)_setBackgroundImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setBackgroundImage:forState:",
+        "address" : 4966869
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 4966393
+      },
+      {
+        "declaration" : "(BOOL)gestureRecognizerShouldBegin:(id)arg1",
+        "type" : "method",
+        "name" : "gestureRecognizerShouldBegin:",
+        "address" : 4966241
+      },
+      {
+        "declaration" : "(void)_updateCount:(id)arg1",
+        "type" : "method",
+        "name" : "_updateCount:",
+        "address" : 4965625
+      },
+      {
+        "declaration" : "(void)_stopTimer",
+        "type" : "method",
+        "name" : "_stopTimer",
+        "address" : 4965581
+      },
+      {
+        "declaration" : "(void)_startTimer",
+        "type" : "method",
+        "name" : "_startTimer",
+        "address" : 4965457
+      },
+      {
+        "declaration" : "(void)cancelTrackingWithEvent:(id)arg1",
+        "type" : "method",
+        "name" : "cancelTrackingWithEvent:",
+        "address" : 4965373
+      },
+      {
+        "declaration" : "(void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "endTrackingWithTouch:withEvent:",
+        "address" : 4965249
+      },
+      {
+        "declaration" : "(BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "continueTrackingWithTouch:withEvent:",
+        "address" : 4965173
+      },
+      {
+        "declaration" : "(BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "beginTrackingWithTouch:withEvent:",
+        "address" : 4965077
+      },
+      {
+        "declaration" : "(id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "hitTest:withEvent:",
+        "address" : 4964981
+      },
+      {
+        "declaration" : "(void)_updateDividerImageForButtonState",
+        "type" : "method",
+        "name" : "_updateDividerImageForButtonState",
+        "address" : 4964821
+      },
+      {
+        "declaration" : "(void)_updateHighlightingAtPoint:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_updateHighlightingAtPoint:withEvent:",
+        "address" : 4964513
+      },
+      {
+        "declaration" : "(void)_updateButtonEnabled",
+        "type" : "method",
+        "name" : "_updateButtonEnabled",
+        "address" : 4964201
+      },
+      {
+        "declaration" : "(void)_commonStepperInit",
+        "type" : "method",
+        "name" : "_commonStepperInit",
+        "address" : 4963537
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 4963081
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 4962457
+      },
+      {
+        "declaration" : "(void)setWraps:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setWraps:",
+        "address" : 4962413
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 4962365
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 4962097
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 4962093
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 4962089
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 4961929
+      },
+      {
+        "declaration" : "(void)setStepValue:(double)arg1",
+        "type" : "method",
+        "name" : "setStepValue:",
+        "address" : 4961809
+      },
+      {
+        "declaration" : "(void)setMaximumValue:(double)arg1",
+        "type" : "method",
+        "name" : "setMaximumValue:",
+        "address" : 4961621
+      },
+      {
+        "declaration" : "(void)setMinimumValue:(double)arg1",
+        "type" : "method",
+        "name" : "setMinimumValue:",
+        "address" : 4961433
+      },
+      {
+        "declaration" : "(void)setValue:(double)arg1",
+        "type" : "method",
+        "name" : "setValue:",
+        "address" : 4961309
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 4961209
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 4961057
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 4960913
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 75,
+        "type" : "ivar",
+        "name" : "_isRtoL"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 76,
+        "type" : "ivar",
+        "name" : "_middleView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIButton *",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_plusButton"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIButton *",
+        "size" : 4,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_minusButton"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSTimer *",
+        "size" : 4,
+        "offset" : 88,
+        "type" : "ivar",
+        "name" : "_repeatTimer"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 92,
+        "type" : "ivar",
+        "name" : "_repeatCount"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSMutableDictionary *",
+        "size" : 4,
+        "offset" : 96,
+        "type" : "ivar",
+        "name" : "_dividerImages"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 100,
+        "type" : "ivar",
+        "name" : "_continuous"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 101,
+        "type" : "ivar",
+        "name" : "_autorepeat"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 102,
+        "type" : "ivar",
+        "name" : "_wraps"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 104,
+        "type" : "ivar",
+        "name" : "_value"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 112,
+        "type" : "ivar",
+        "name" : "_minimumValue"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 120,
+        "type" : "ivar",
+        "name" : "_maximumValue"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 128,
+        "type" : "ivar",
+        "name" : "_stepValue"
+      }
+    ],
+    "superClassName" : "UIControl"
+  },
+  "arm64" : {
+    "properties" : [
+      {
+        "type" : "property",
+        "propertyType" : "_Bool",
+        "name" : "continuous",
+        "getter" : "isContinuous",
+        "setter" : "setContinuous:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "_Bool",
+        "name" : "autorepeat",
+        "getter" : "autorepeat",
+        "setter" : "setAutorepeat:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "_Bool",
+        "name" : "wraps",
+        "getter" : "wraps",
+        "setter" : "setWraps:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "double",
+        "name" : "value",
+        "getter" : "value",
+        "setter" : "setValue:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "double",
+        "name" : "minimumValue",
+        "getter" : "minimumValue",
+        "setter" : "setMinimumValue:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "double",
+        "name" : "maximumValue",
+        "getter" : "maximumValue",
+        "setter" : "setMaximumValue:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "double",
+        "name" : "stepValue",
+        "getter" : "stepValue",
+        "setter" : "setStepValue:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIColor *",
+        "name" : "tintColor",
+        "getter" : "tintColor",
+        "setter" : "setTintColor:"
+      }
+    ],
+    "className" : "UIStepper",
+    "instanceMethods" : [
+      {
+        "declaration" : "(_Bool)wraps",
+        "type" : "method",
+        "name" : "wraps",
+        "address" : 5445984
+      },
+      {
+        "declaration" : "(void)setAutorepeat:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setAutorepeat:",
+        "address" : 5445968
+      },
+      {
+        "declaration" : "(_Bool)autorepeat",
+        "type" : "method",
+        "name" : "autorepeat",
+        "address" : 5445952
+      },
+      {
+        "declaration" : "(void)setContinuous:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setContinuous:",
+        "address" : 5445936
+      },
+      {
+        "declaration" : "(_Bool)isContinuous",
+        "type" : "method",
+        "name" : "isContinuous",
+        "address" : 5445920
+      },
+      {
+        "declaration" : "(double)stepValue",
+        "type" : "method",
+        "name" : "stepValue",
+        "address" : 5445904
+      },
+      {
+        "declaration" : "(double)maximumValue",
+        "type" : "method",
+        "name" : "maximumValue",
+        "address" : 5445888
+      },
+      {
+        "declaration" : "(double)minimumValue",
+        "type" : "method",
+        "name" : "minimumValue",
+        "address" : 5445872
+      },
+      {
+        "declaration" : "(double)value",
+        "type" : "method",
+        "name" : "value",
+        "address" : 5445856
+      },
+      {
+        "declaration" : "(void)_updateImages",
+        "type" : "method",
+        "name" : "_updateImages",
+        "address" : 5444868
+      },
+      {
+        "declaration" : "(void)setTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setTintColor:",
+        "address" : 5444744
+      },
+      {
+        "declaration" : "(id)decrementImageForState:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "decrementImageForState:",
+        "address" : 5444716
+      },
+      {
+        "declaration" : "(void)setDecrementImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "setDecrementImage:forState:",
+        "address" : 5444700
+      },
+      {
+        "declaration" : "(void)_setDecrementImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "_setDecrementImage:forState:",
+        "address" : 5444544
+      },
+      {
+        "declaration" : "(id)incrementImageForState:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "incrementImageForState:",
+        "address" : 5444516
+      },
+      {
+        "declaration" : "(void)setIncrementImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "setIncrementImage:forState:",
+        "address" : 5444500
+      },
+      {
+        "declaration" : "(void)_setIncrementImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "_setIncrementImage:forState:",
+        "address" : 5444344
+      },
+      {
+        "declaration" : "(id)dividerImageForLeftSegmentState:(unsigned long long)arg1 rightSegmentState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "dividerImageForLeftSegmentState:rightSegmentState:",
+        "address" : 5444116
+      },
+      {
+        "declaration" : "(void)setDividerImage:(id)arg1 forLeftSegmentState:(unsigned long long)arg2 rightSegmentState:(unsigned long long)arg3",
+        "type" : "method",
+        "name" : "setDividerImage:forLeftSegmentState:rightSegmentState:",
+        "address" : 5444100
+      },
+      {
+        "declaration" : "(void)_setDividerImage:(id)arg1 forLeftSegmentState:(unsigned long long)arg2 rightSegmentState:(unsigned long long)arg3",
+        "type" : "method",
+        "name" : "_setDividerImage:forLeftSegmentState:rightSegmentState:",
+        "address" : 5443696
+      },
+      {
+        "declaration" : "(id)backgroundImageForState:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "backgroundImageForState:",
+        "address" : 5443668
+      },
+      {
+        "declaration" : "(void)setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "setBackgroundImage:forState:",
+        "address" : 5443652
+      },
+      {
+        "declaration" : "(void)_setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "_setBackgroundImage:forState:",
+        "address" : 5442716
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 5442284
+      },
+      {
+        "declaration" : "(_Bool)gestureRecognizerShouldBegin:(id)arg1",
+        "type" : "method",
+        "name" : "gestureRecognizerShouldBegin:",
+        "address" : 5442096
+      },
+      {
+        "declaration" : "(void)_updateCount:(id)arg1",
+        "type" : "method",
+        "name" : "_updateCount:",
+        "address" : 5441444
+      },
+      {
+        "declaration" : "(void)_stopTimer",
+        "type" : "method",
+        "name" : "_stopTimer",
+        "address" : 5441380
+      },
+      {
+        "declaration" : "(void)_startTimer",
+        "type" : "method",
+        "name" : "_startTimer",
+        "address" : 5441260
+      },
+      {
+        "declaration" : "(void)cancelTrackingWithEvent:(id)arg1",
+        "type" : "method",
+        "name" : "cancelTrackingWithEvent:",
+        "address" : 5441156
+      },
+      {
+        "declaration" : "(void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "endTrackingWithTouch:withEvent:",
+        "address" : 5441012
+      },
+      {
+        "declaration" : "(_Bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "continueTrackingWithTouch:withEvent:",
+        "address" : 5440928
+      },
+      {
+        "declaration" : "(_Bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "beginTrackingWithTouch:withEvent:",
+        "address" : 5440816
+      },
+      {
+        "declaration" : "(id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "hitTest:withEvent:",
+        "address" : 5440700
+      },
+      {
+        "declaration" : "(void)_updateDividerImageForButtonState",
+        "type" : "method",
+        "name" : "_updateDividerImageForButtonState",
+        "address" : 5440512
+      },
+      {
+        "declaration" : "(void)_updateHighlightingAtPoint:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_updateHighlightingAtPoint:withEvent:",
+        "address" : 5440240
+      },
+      {
+        "declaration" : "(void)_updateButtonEnabled",
+        "type" : "method",
+        "name" : "_updateButtonEnabled",
+        "address" : 5439912
+      },
+      {
+        "declaration" : "(void)_commonStepperInit",
+        "type" : "method",
+        "name" : "_commonStepperInit",
+        "address" : 5439128
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 5438688
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 5438048
+      },
+      {
+        "declaration" : "(void)setWraps:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setWraps:",
+        "address" : 5438004
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 5437988
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 5437800
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 5437792
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 5437784
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 5437600
+      },
+      {
+        "declaration" : "(void)setStepValue:(double)arg1",
+        "type" : "method",
+        "name" : "setStepValue:",
+        "address" : 5437480
+      },
+      {
+        "declaration" : "(void)setMaximumValue:(double)arg1",
+        "type" : "method",
+        "name" : "setMaximumValue:",
+        "address" : 5437296
+      },
+      {
+        "declaration" : "(void)setMinimumValue:(double)arg1",
+        "type" : "method",
+        "name" : "setMinimumValue:",
+        "address" : 5437112
+      },
+      {
+        "declaration" : "(void)setValue:(double)arg1",
+        "type" : "method",
+        "name" : "setValue:",
+        "address" : 5437028
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 5436900
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 5436716
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 5436536
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 132,
+        "type" : "ivar",
+        "name" : "_isRtoL"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 136,
+        "type" : "ivar",
+        "name" : "_middleView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIButton *",
+        "size" : 8,
+        "offset" : 144,
+        "type" : "ivar",
+        "name" : "_plusButton"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIButton *",
+        "size" : 8,
+        "offset" : 152,
+        "type" : "ivar",
+        "name" : "_minusButton"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSTimer *",
+        "size" : 8,
+        "offset" : 160,
+        "type" : "ivar",
+        "name" : "_repeatTimer"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "long long",
+        "size" : 8,
+        "offset" : 168,
+        "type" : "ivar",
+        "name" : "_repeatCount"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSMutableDictionary *",
+        "size" : 8,
+        "offset" : 176,
+        "type" : "ivar",
+        "name" : "_dividerImages"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 184,
+        "type" : "ivar",
+        "name" : "_continuous"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 185,
+        "type" : "ivar",
+        "name" : "_autorepeat"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 186,
+        "type" : "ivar",
+        "name" : "_wraps"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 192,
+        "type" : "ivar",
+        "name" : "_value"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 200,
+        "type" : "ivar",
+        "name" : "_minimumValue"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 208,
+        "type" : "ivar",
+        "name" : "_maximumValue"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 216,
+        "type" : "ivar",
+        "name" : "_stepValue"
+      }
+    ],
+    "superClassName" : "UIControl"
+  }
+}

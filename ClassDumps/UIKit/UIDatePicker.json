@@ -1,0 +1,2832 @@
+{
+  "i386" : {
+    "superClassName" : "UIControl",
+    "className" : "UIDatePicker",
+    "instanceMethods" : [
+      {
+        "declaration" : "(void)_performScrollTest:(id)arg1 withIterations:(int)arg2 rowsToScroll:(int)arg3 inComponent:(int)arg4",
+        "type" : "method",
+        "name" : "_performScrollTest:withIterations:rowsToScroll:inComponent:",
+        "address" : 2809156
+      },
+      {
+        "declaration" : "(id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "hitTest:withEvent:",
+        "address" : 2808981
+      },
+      {
+        "declaration" : "(void)invalidateIntrinsicContentSize",
+        "type" : "method",
+        "name" : "invalidateIntrinsicContentSize",
+        "address" : 2808901
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 2808841
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 2808794
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 2808784
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 2808774
+      },
+      {
+        "declaration" : "(void)setDate:(id)arg1 animated:(BOOL)arg2",
+        "type" : "method",
+        "name" : "setDate:animated:",
+        "address" : 2808712
+      },
+      {
+        "declaration" : "(void)setMinuteInterval:(int)arg1",
+        "type" : "method",
+        "name" : "setMinuteInterval:",
+        "address" : 2808658
+      },
+      {
+        "declaration" : "(int)minuteInterval",
+        "type" : "method",
+        "name" : "minuteInterval",
+        "address" : 2808611
+      },
+      {
+        "declaration" : "(void)setCountDownDuration:(double)arg1",
+        "type" : "method",
+        "name" : "setCountDownDuration:",
+        "address" : 2808562
+      },
+      {
+        "declaration" : "(double)countDownDuration",
+        "type" : "method",
+        "name" : "countDownDuration",
+        "address" : 2808524
+      },
+      {
+        "declaration" : "(void)setMaximumDate:(id)arg1",
+        "type" : "method",
+        "name" : "setMaximumDate:",
+        "address" : 2808470
+      },
+      {
+        "declaration" : "(id)maximumDate",
+        "type" : "method",
+        "name" : "maximumDate",
+        "address" : 2808423
+      },
+      {
+        "declaration" : "(void)setMinimumDate:(id)arg1",
+        "type" : "method",
+        "name" : "setMinimumDate:",
+        "address" : 2808369
+      },
+      {
+        "declaration" : "(id)minimumDate",
+        "type" : "method",
+        "name" : "minimumDate",
+        "address" : 2808322
+      },
+      {
+        "declaration" : "(void)setDate:(id)arg1",
+        "type" : "method",
+        "name" : "setDate:",
+        "address" : 2808268
+      },
+      {
+        "declaration" : "(id)date",
+        "type" : "method",
+        "name" : "date",
+        "address" : 2808221
+      },
+      {
+        "declaration" : "(void)setCalendar:(id)arg1",
+        "type" : "method",
+        "name" : "setCalendar:",
+        "address" : 2808167
+      },
+      {
+        "declaration" : "(id)calendar",
+        "type" : "method",
+        "name" : "calendar",
+        "address" : 2808120
+      },
+      {
+        "declaration" : "(void)setTimeZone:(id)arg1",
+        "type" : "method",
+        "name" : "setTimeZone:",
+        "address" : 2808066
+      },
+      {
+        "declaration" : "(id)timeZone",
+        "type" : "method",
+        "name" : "timeZone",
+        "address" : 2808019
+      },
+      {
+        "declaration" : "(void)setLocale:(id)arg1",
+        "type" : "method",
+        "name" : "setLocale:",
+        "address" : 2807974
+      },
+      {
+        "declaration" : "(id)locale",
+        "type" : "method",
+        "name" : "locale",
+        "address" : 2807936
+      },
+      {
+        "declaration" : "(void)_setLocale:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocale:",
+        "address" : 2807882
+      },
+      {
+        "declaration" : "(id)_locale",
+        "type" : "method",
+        "name" : "_locale",
+        "address" : 2807835
+      },
+      {
+        "declaration" : "(void)setDatePickerMode:(int)arg1",
+        "type" : "method",
+        "name" : "setDatePickerMode:",
+        "address" : 2807781
+      },
+      {
+        "declaration" : "(int)datePickerMode",
+        "type" : "method",
+        "name" : "datePickerMode",
+        "address" : 2807734
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 2806875
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 2806774
+      },
+      {
+        "declaration" : "(void)awakeFromNib",
+        "type" : "method",
+        "name" : "awakeFromNib",
+        "address" : 2806682
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 2805900
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 2805540
+      },
+      {
+        "declaration" : "(void)_insertPickerView",
+        "type" : "method",
+        "name" : "_insertPickerView",
+        "address" : 2805183
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 2809951
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 2809809
+      },
+      {
+        "declaration" : "(void)setDate:(id)arg1 animate:(BOOL)arg2",
+        "type" : "method",
+        "name" : "setDate:animate:",
+        "address" : 2809756
+      },
+      {
+        "declaration" : "(void)setBackgroundColor:(id)arg1",
+        "type" : "method",
+        "name" : "setBackgroundColor:",
+        "address" : 2809637
+      },
+      {
+        "declaration" : "(int)second",
+        "type" : "method",
+        "name" : "second",
+        "address" : 2809590
+      },
+      {
+        "declaration" : "(int)minute",
+        "type" : "method",
+        "name" : "minute",
+        "address" : 2809543
+      },
+      {
+        "declaration" : "(int)hour",
+        "type" : "method",
+        "name" : "hour",
+        "address" : 2809496
+      },
+      {
+        "declaration" : "(void)setHighlightsToday:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setHighlightsToday:",
+        "address" : 2809441
+      },
+      {
+        "declaration" : "(void)setStaggerTimeIntervals:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setStaggerTimeIntervals:",
+        "address" : 2809386
+      },
+      {
+        "declaration" : "(void)setDateComponents:(id)arg1",
+        "type" : "method",
+        "name" : "setDateComponents:",
+        "address" : 2809332
+      },
+      {
+        "declaration" : "(id)dateComponents",
+        "type" : "method",
+        "name" : "dateComponents",
+        "address" : 2809285
+      },
+      {
+        "declaration" : "(void)setDelegate:(id)arg1",
+        "type" : "method",
+        "name" : "setDelegate:",
+        "address" : 2809231
+      },
+      {
+        "declaration" : "(void)_setUseCurrentDateDuringDecoding:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUseCurrentDateDuringDecoding:",
+        "address" : 2811221
+      },
+      {
+        "declaration" : "(BOOL)_useCurrentDateDuringDecoding",
+        "type" : "method",
+        "name" : "_useCurrentDateDuringDecoding",
+        "address" : 2811197
+      },
+      {
+        "declaration" : "(void)_setTextShadowColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextShadowColor:",
+        "address" : 2811143
+      },
+      {
+        "declaration" : "(id)_textShadowColor",
+        "type" : "method",
+        "name" : "_textShadowColor",
+        "address" : 2811096
+      },
+      {
+        "declaration" : "(void)_setTextColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextColor:",
+        "address" : 2811042
+      },
+      {
+        "declaration" : "(id)_textColor",
+        "type" : "method",
+        "name" : "_textColor",
+        "address" : 2810995
+      },
+      {
+        "declaration" : "(void)_setHighlightColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setHighlightColor:",
+        "address" : 2810941
+      },
+      {
+        "declaration" : "(id)_highlightColor",
+        "type" : "method",
+        "name" : "_highlightColor",
+        "address" : 2810894
+      },
+      {
+        "declaration" : "(void)_setUsesModernStyle:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUsesModernStyle:",
+        "address" : 2810839
+      },
+      {
+        "declaration" : "(BOOL)_usesModernStyle",
+        "type" : "method",
+        "name" : "_usesModernStyle",
+        "address" : 2810789
+      },
+      {
+        "declaration" : "(void)_setAllowsZeroTimeInterval:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setAllowsZeroTimeInterval:",
+        "address" : 2810734
+      },
+      {
+        "declaration" : "(BOOL)_allowsZeroTimeInterval",
+        "type" : "method",
+        "name" : "_allowsZeroTimeInterval",
+        "address" : 2810684
+      },
+      {
+        "declaration" : "(void)_setAllowsZeroCountDownDuration:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setAllowsZeroCountDownDuration:",
+        "address" : 2810629
+      },
+      {
+        "declaration" : "(BOOL)_allowsZeroCountDownDuration",
+        "type" : "method",
+        "name" : "_allowsZeroCountDownDuration",
+        "address" : 2810579
+      },
+      {
+        "declaration" : "(BOOL)_drawsBackground",
+        "type" : "method",
+        "name" : "_drawsBackground",
+        "address" : 2810529
+      },
+      {
+        "declaration" : "(void)_setDrawsBackground:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setDrawsBackground:",
+        "address" : 2810474
+      },
+      {
+        "declaration" : "(BOOL)_usesBlackChrome",
+        "type" : "method",
+        "name" : "_usesBlackChrome",
+        "address" : 2810424
+      },
+      {
+        "declaration" : "(void)_setUsesBlackChrome:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUsesBlackChrome:",
+        "address" : 2810369
+      },
+      {
+        "declaration" : "(id)_dateUnderSelectionBar",
+        "type" : "method",
+        "name" : "_dateUnderSelectionBar",
+        "address" : 2810300
+      },
+      {
+        "declaration" : "(void)_setHidesLabels:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setHidesLabels:",
+        "address" : 2810245
+      },
+      {
+        "declaration" : "(void)_setHighlightsToday:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setHighlightsToday:",
+        "address" : 2810190
+      },
+      {
+        "declaration" : "(float)_contentWidth",
+        "type" : "method",
+        "name" : "_contentWidth",
+        "address" : 2810143
+      },
+      {
+        "declaration" : "(BOOL)_isTimeIntervalMode",
+        "type" : "method",
+        "name" : "_isTimeIntervalMode",
+        "address" : 2810093
+      },
+      {
+        "declaration" : "(id)_labelTextForCalendarUnit:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_labelTextForCalendarUnit:",
+        "address" : 2811406
+      },
+      {
+        "declaration" : "(id)_selectedTextForCalendarUnit:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_selectedTextForCalendarUnit:",
+        "address" : 2811352
+      },
+      {
+        "declaration" : "(void)setTimeInterval:(double)arg1",
+        "type" : "method",
+        "name" : "setTimeInterval:",
+        "address" : 2811294
+      },
+      {
+        "declaration" : "(double)timeInterval",
+        "type" : "method",
+        "name" : "timeInterval",
+        "address" : 2811247
+      }
+    ],
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "_UIDatePickerView *",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_pickerView"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_useCurrentDateDuringDecoding"
+      }
+    ],
+    "protocols" : [
+      "UIPickerViewScrollTesting",
+      "NSCoding"
+    ],
+    "properties" : [
+      {
+        "name" : "usesBlackChrome",
+        "setter" : "_setUsesBlackChrome:",
+        "getter" : "_usesBlackChrome",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "drawsBackground",
+        "setter" : "_setDrawsBackground:",
+        "getter" : "_drawsBackground",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "allowsZeroCountDownDuration",
+        "setter" : "_setAllowsZeroCountDownDuration:",
+        "getter" : "_allowsZeroCountDownDuration",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "allowsZeroTimeInterval",
+        "setter" : "_setAllowsZeroTimeInterval:",
+        "getter" : "_allowsZeroTimeInterval",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "dateUnderSelectionBar",
+        "setter" : "setDateUnderSelectionBar:",
+        "getter" : "_dateUnderSelectionBar",
+        "type" : "property",
+        "propertyType" : "NSDate *"
+      },
+      {
+        "name" : "contentWidth",
+        "setter" : "setContentWidth:",
+        "getter" : "_contentWidth",
+        "type" : "property",
+        "propertyType" : "float"
+      },
+      {
+        "name" : "isTimeIntervalMode",
+        "setter" : "setIsTimeIntervalMode:",
+        "getter" : "_isTimeIntervalMode",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "useCurrentDateDuringDecoding",
+        "setter" : "_setUseCurrentDateDuringDecoding:",
+        "getter" : "_useCurrentDateDuringDecoding",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "_usesModernStyle",
+        "setter" : "_setUsesModernStyle:",
+        "getter" : "_usesModernStyle",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "highlightColor",
+        "setter" : "_setHighlightColor:",
+        "getter" : "_highlightColor",
+        "type" : "property",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "name" : "textColor",
+        "setter" : "_setTextColor:",
+        "getter" : "_textColor",
+        "type" : "property",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "name" : "textShadowColor",
+        "setter" : "_setTextShadowColor:",
+        "getter" : "_textShadowColor",
+        "type" : "property",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "name" : "timeInterval",
+        "setter" : "setTimeInterval:",
+        "getter" : "timeInterval",
+        "type" : "property",
+        "propertyType" : "double"
+      },
+      {
+        "name" : "datePickerMode",
+        "setter" : "setDatePickerMode:",
+        "getter" : "datePickerMode",
+        "type" : "property",
+        "propertyType" : "int"
+      },
+      {
+        "name" : "locale",
+        "setter" : "setLocale:",
+        "getter" : "locale",
+        "type" : "property",
+        "propertyType" : "NSLocale *"
+      },
+      {
+        "name" : "calendar",
+        "setter" : "setCalendar:",
+        "getter" : "calendar",
+        "type" : "property",
+        "propertyType" : "NSCalendar *"
+      },
+      {
+        "name" : "timeZone",
+        "setter" : "setTimeZone:",
+        "getter" : "timeZone",
+        "type" : "property",
+        "propertyType" : "NSTimeZone *"
+      },
+      {
+        "name" : "date",
+        "setter" : "setDate:",
+        "getter" : "date",
+        "type" : "property",
+        "propertyType" : "NSDate *"
+      },
+      {
+        "name" : "minimumDate",
+        "setter" : "setMinimumDate:",
+        "getter" : "minimumDate",
+        "type" : "property",
+        "propertyType" : "NSDate *"
+      },
+      {
+        "name" : "maximumDate",
+        "setter" : "setMaximumDate:",
+        "getter" : "maximumDate",
+        "type" : "property",
+        "propertyType" : "NSDate *"
+      },
+      {
+        "name" : "countDownDuration",
+        "setter" : "setCountDownDuration:",
+        "getter" : "countDownDuration",
+        "type" : "property",
+        "propertyType" : "double"
+      },
+      {
+        "name" : "minuteInterval",
+        "setter" : "setMinuteInterval:",
+        "getter" : "minuteInterval",
+        "type" : "property",
+        "propertyType" : "int"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(Class)_pickerViewClass",
+        "type" : "method",
+        "name" : "_pickerViewClass",
+        "address" : 2805142
+      }
+    ]
+  },
+  "x86_64" : {
+    "superClassName" : "UIControl",
+    "className" : "UIDatePicker",
+    "instanceMethods" : [
+      {
+        "declaration" : "(void)_performScrollTest:(id)arg1 withIterations:(long long)arg2 rowsToScroll:(long long)arg3 inComponent:(long long)arg4",
+        "type" : "method",
+        "name" : "_performScrollTest:withIterations:rowsToScroll:inComponent:",
+        "address" : 2442392
+      },
+      {
+        "declaration" : "(id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "hitTest:withEvent:",
+        "address" : 2442243
+      },
+      {
+        "declaration" : "(void)invalidateIntrinsicContentSize",
+        "type" : "method",
+        "name" : "invalidateIntrinsicContentSize",
+        "address" : 2442169
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 2442151
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 2442122
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 2442114
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 2442106
+      },
+      {
+        "declaration" : "(void)setDate:(id)arg1 animated:(_Bool)arg2",
+        "type" : "method",
+        "name" : "setDate:animated:",
+        "address" : 2442074
+      },
+      {
+        "declaration" : "(void)setMinuteInterval:(long long)arg1",
+        "type" : "method",
+        "name" : "setMinuteInterval:",
+        "address" : 2442045
+      },
+      {
+        "declaration" : "(long long)minuteInterval",
+        "type" : "method",
+        "name" : "minuteInterval",
+        "address" : 2442016
+      },
+      {
+        "declaration" : "(void)setCountDownDuration:(double)arg1",
+        "type" : "method",
+        "name" : "setCountDownDuration:",
+        "address" : 2441998
+      },
+      {
+        "declaration" : "(double)countDownDuration",
+        "type" : "method",
+        "name" : "countDownDuration",
+        "address" : 2441980
+      },
+      {
+        "declaration" : "(void)setMaximumDate:(id)arg1",
+        "type" : "method",
+        "name" : "setMaximumDate:",
+        "address" : 2441951
+      },
+      {
+        "declaration" : "(id)maximumDate",
+        "type" : "method",
+        "name" : "maximumDate",
+        "address" : 2441922
+      },
+      {
+        "declaration" : "(void)setMinimumDate:(id)arg1",
+        "type" : "method",
+        "name" : "setMinimumDate:",
+        "address" : 2441893
+      },
+      {
+        "declaration" : "(id)minimumDate",
+        "type" : "method",
+        "name" : "minimumDate",
+        "address" : 2441864
+      },
+      {
+        "declaration" : "(void)setDate:(id)arg1",
+        "type" : "method",
+        "name" : "setDate:",
+        "address" : 2441835
+      },
+      {
+        "declaration" : "(id)date",
+        "type" : "method",
+        "name" : "date",
+        "address" : 2441806
+      },
+      {
+        "declaration" : "(void)setCalendar:(id)arg1",
+        "type" : "method",
+        "name" : "setCalendar:",
+        "address" : 2441777
+      },
+      {
+        "declaration" : "(id)calendar",
+        "type" : "method",
+        "name" : "calendar",
+        "address" : 2441748
+      },
+      {
+        "declaration" : "(void)setTimeZone:(id)arg1",
+        "type" : "method",
+        "name" : "setTimeZone:",
+        "address" : 2441719
+      },
+      {
+        "declaration" : "(id)timeZone",
+        "type" : "method",
+        "name" : "timeZone",
+        "address" : 2441690
+      },
+      {
+        "declaration" : "(void)setLocale:(id)arg1",
+        "type" : "method",
+        "name" : "setLocale:",
+        "address" : 2441672
+      },
+      {
+        "declaration" : "(id)locale",
+        "type" : "method",
+        "name" : "locale",
+        "address" : 2441654
+      },
+      {
+        "declaration" : "(void)_setLocale:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocale:",
+        "address" : 2441625
+      },
+      {
+        "declaration" : "(id)_locale",
+        "type" : "method",
+        "name" : "_locale",
+        "address" : 2441596
+      },
+      {
+        "declaration" : "(void)setDatePickerMode:(long long)arg1",
+        "type" : "method",
+        "name" : "setDatePickerMode:",
+        "address" : 2441567
+      },
+      {
+        "declaration" : "(long long)datePickerMode",
+        "type" : "method",
+        "name" : "datePickerMode",
+        "address" : 2441538
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 2440746
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 2440657
+      },
+      {
+        "declaration" : "(void)awakeFromNib",
+        "type" : "method",
+        "name" : "awakeFromNib",
+        "address" : 2440577
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 2439956
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 2439617
+      },
+      {
+        "declaration" : "(void)_insertPickerView",
+        "type" : "method",
+        "name" : "_insertPickerView",
+        "address" : 2439291
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 2442927
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 2442786
+      },
+      {
+        "declaration" : "(void)setDate:(id)arg1 animate:(_Bool)arg2",
+        "type" : "method",
+        "name" : "setDate:animate:",
+        "address" : 2442765
+      },
+      {
+        "declaration" : "(void)setBackgroundColor:(id)arg1",
+        "type" : "method",
+        "name" : "setBackgroundColor:",
+        "address" : 2442659
+      },
+      {
+        "declaration" : "(int)second",
+        "type" : "method",
+        "name" : "second",
+        "address" : 2442630
+      },
+      {
+        "declaration" : "(int)minute",
+        "type" : "method",
+        "name" : "minute",
+        "address" : 2442601
+      },
+      {
+        "declaration" : "(int)hour",
+        "type" : "method",
+        "name" : "hour",
+        "address" : 2442572
+      },
+      {
+        "declaration" : "(void)setHighlightsToday:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setHighlightsToday:",
+        "address" : 2442540
+      },
+      {
+        "declaration" : "(void)setStaggerTimeIntervals:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setStaggerTimeIntervals:",
+        "address" : 2442508
+      },
+      {
+        "declaration" : "(void)setDateComponents:(id)arg1",
+        "type" : "method",
+        "name" : "setDateComponents:",
+        "address" : 2442479
+      },
+      {
+        "declaration" : "(id)dateComponents",
+        "type" : "method",
+        "name" : "dateComponents",
+        "address" : 2442450
+      },
+      {
+        "declaration" : "(void)setDelegate:(id)arg1",
+        "type" : "method",
+        "name" : "setDelegate:",
+        "address" : 2442421
+      },
+      {
+        "declaration" : "(void)_setUseCurrentDateDuringDecoding:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setUseCurrentDateDuringDecoding:",
+        "address" : 2443750
+      },
+      {
+        "declaration" : "(_Bool)_useCurrentDateDuringDecoding",
+        "type" : "method",
+        "name" : "_useCurrentDateDuringDecoding",
+        "address" : 2443734
+      },
+      {
+        "declaration" : "(void)_setTextShadowColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextShadowColor:",
+        "address" : 2443705
+      },
+      {
+        "declaration" : "(id)_textShadowColor",
+        "type" : "method",
+        "name" : "_textShadowColor",
+        "address" : 2443676
+      },
+      {
+        "declaration" : "(void)_setTextColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextColor:",
+        "address" : 2443647
+      },
+      {
+        "declaration" : "(id)_textColor",
+        "type" : "method",
+        "name" : "_textColor",
+        "address" : 2443618
+      },
+      {
+        "declaration" : "(void)_setHighlightColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setHighlightColor:",
+        "address" : 2443589
+      },
+      {
+        "declaration" : "(id)_highlightColor",
+        "type" : "method",
+        "name" : "_highlightColor",
+        "address" : 2443560
+      },
+      {
+        "declaration" : "(void)_setUsesModernStyle:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setUsesModernStyle:",
+        "address" : 2443528
+      },
+      {
+        "declaration" : "(_Bool)_usesModernStyle",
+        "type" : "method",
+        "name" : "_usesModernStyle",
+        "address" : 2443498
+      },
+      {
+        "declaration" : "(void)_setAllowsZeroTimeInterval:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setAllowsZeroTimeInterval:",
+        "address" : 2443466
+      },
+      {
+        "declaration" : "(_Bool)_allowsZeroTimeInterval",
+        "type" : "method",
+        "name" : "_allowsZeroTimeInterval",
+        "address" : 2443436
+      },
+      {
+        "declaration" : "(void)_setAllowsZeroCountDownDuration:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setAllowsZeroCountDownDuration:",
+        "address" : 2443404
+      },
+      {
+        "declaration" : "(_Bool)_allowsZeroCountDownDuration",
+        "type" : "method",
+        "name" : "_allowsZeroCountDownDuration",
+        "address" : 2443374
+      },
+      {
+        "declaration" : "(_Bool)_drawsBackground",
+        "type" : "method",
+        "name" : "_drawsBackground",
+        "address" : 2443344
+      },
+      {
+        "declaration" : "(void)_setDrawsBackground:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setDrawsBackground:",
+        "address" : 2443312
+      },
+      {
+        "declaration" : "(_Bool)_usesBlackChrome",
+        "type" : "method",
+        "name" : "_usesBlackChrome",
+        "address" : 2443282
+      },
+      {
+        "declaration" : "(void)_setUsesBlackChrome:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setUsesBlackChrome:",
+        "address" : 2443250
+      },
+      {
+        "declaration" : "(id)_dateUnderSelectionBar",
+        "type" : "method",
+        "name" : "_dateUnderSelectionBar",
+        "address" : 2443191
+      },
+      {
+        "declaration" : "(void)_setHidesLabels:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setHidesLabels:",
+        "address" : 2443159
+      },
+      {
+        "declaration" : "(void)_setHighlightsToday:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setHighlightsToday:",
+        "address" : 2443127
+      },
+      {
+        "declaration" : "(double)_contentWidth",
+        "type" : "method",
+        "name" : "_contentWidth",
+        "address" : 2443098
+      },
+      {
+        "declaration" : "(_Bool)_isTimeIntervalMode",
+        "type" : "method",
+        "name" : "_isTimeIntervalMode",
+        "address" : 2443068
+      },
+      {
+        "declaration" : "(id)_labelTextForCalendarUnit:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "_labelTextForCalendarUnit:",
+        "address" : 2443853
+      },
+      {
+        "declaration" : "(id)_selectedTextForCalendarUnit:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "_selectedTextForCalendarUnit:",
+        "address" : 2443824
+      },
+      {
+        "declaration" : "(void)setTimeInterval:(double)arg1",
+        "type" : "method",
+        "name" : "setTimeInterval:",
+        "address" : 2443795
+      },
+      {
+        "declaration" : "(double)timeInterval",
+        "type" : "method",
+        "name" : "timeInterval",
+        "address" : 2443766
+      }
+    ],
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "_UIDatePickerView *",
+        "size" : 8,
+        "offset" : 144,
+        "type" : "ivar",
+        "name" : "_pickerView"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 152,
+        "type" : "ivar",
+        "name" : "_useCurrentDateDuringDecoding"
+      }
+    ],
+    "protocols" : [
+      "UIPickerViewScrollTesting",
+      "NSCoding"
+    ],
+    "properties" : [
+      {
+        "propertyType" : "_Bool",
+        "getter" : "_usesBlackChrome",
+        "type" : "property",
+        "name" : "usesBlackChrome",
+        "setter" : "_setUsesBlackChrome:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "_drawsBackground",
+        "type" : "property",
+        "name" : "drawsBackground",
+        "setter" : "_setDrawsBackground:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "_allowsZeroCountDownDuration",
+        "type" : "property",
+        "name" : "allowsZeroCountDownDuration",
+        "setter" : "_setAllowsZeroCountDownDuration:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "_allowsZeroTimeInterval",
+        "type" : "property",
+        "name" : "allowsZeroTimeInterval",
+        "setter" : "_setAllowsZeroTimeInterval:"
+      },
+      {
+        "propertyType" : "NSDate *",
+        "getter" : "_dateUnderSelectionBar",
+        "type" : "property",
+        "name" : "dateUnderSelectionBar",
+        "setter" : "setDateUnderSelectionBar:"
+      },
+      {
+        "propertyType" : "double",
+        "getter" : "_contentWidth",
+        "type" : "property",
+        "name" : "contentWidth",
+        "setter" : "setContentWidth:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "_isTimeIntervalMode",
+        "type" : "property",
+        "name" : "isTimeIntervalMode",
+        "setter" : "setIsTimeIntervalMode:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "_useCurrentDateDuringDecoding",
+        "type" : "property",
+        "name" : "useCurrentDateDuringDecoding",
+        "setter" : "_setUseCurrentDateDuringDecoding:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "_usesModernStyle",
+        "type" : "property",
+        "name" : "_usesModernStyle",
+        "setter" : "_setUsesModernStyle:"
+      },
+      {
+        "propertyType" : "UIColor *",
+        "getter" : "_highlightColor",
+        "type" : "property",
+        "name" : "highlightColor",
+        "setter" : "_setHighlightColor:"
+      },
+      {
+        "propertyType" : "UIColor *",
+        "getter" : "_textColor",
+        "type" : "property",
+        "name" : "textColor",
+        "setter" : "_setTextColor:"
+      },
+      {
+        "propertyType" : "UIColor *",
+        "getter" : "_textShadowColor",
+        "type" : "property",
+        "name" : "textShadowColor",
+        "setter" : "_setTextShadowColor:"
+      },
+      {
+        "propertyType" : "double",
+        "getter" : "timeInterval",
+        "type" : "property",
+        "name" : "timeInterval",
+        "setter" : "setTimeInterval:"
+      },
+      {
+        "propertyType" : "long long",
+        "getter" : "datePickerMode",
+        "type" : "property",
+        "name" : "datePickerMode",
+        "setter" : "setDatePickerMode:"
+      },
+      {
+        "propertyType" : "NSLocale *",
+        "getter" : "locale",
+        "type" : "property",
+        "name" : "locale",
+        "setter" : "setLocale:"
+      },
+      {
+        "propertyType" : "NSCalendar *",
+        "getter" : "calendar",
+        "type" : "property",
+        "name" : "calendar",
+        "setter" : "setCalendar:"
+      },
+      {
+        "propertyType" : "NSTimeZone *",
+        "getter" : "timeZone",
+        "type" : "property",
+        "name" : "timeZone",
+        "setter" : "setTimeZone:"
+      },
+      {
+        "propertyType" : "NSDate *",
+        "getter" : "date",
+        "type" : "property",
+        "name" : "date",
+        "setter" : "setDate:"
+      },
+      {
+        "propertyType" : "NSDate *",
+        "getter" : "minimumDate",
+        "type" : "property",
+        "name" : "minimumDate",
+        "setter" : "setMinimumDate:"
+      },
+      {
+        "propertyType" : "NSDate *",
+        "getter" : "maximumDate",
+        "type" : "property",
+        "name" : "maximumDate",
+        "setter" : "setMaximumDate:"
+      },
+      {
+        "propertyType" : "double",
+        "getter" : "countDownDuration",
+        "type" : "property",
+        "name" : "countDownDuration",
+        "setter" : "setCountDownDuration:"
+      },
+      {
+        "propertyType" : "long long",
+        "getter" : "minuteInterval",
+        "type" : "property",
+        "name" : "minuteInterval",
+        "setter" : "setMinuteInterval:"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(Class)_pickerViewClass",
+        "type" : "method",
+        "name" : "_pickerViewClass",
+        "address" : 2439266
+      }
+    ]
+  },
+  "armv7" : {
+    "superClassName" : "UIControl",
+    "className" : "UIDatePicker",
+    "instanceMethods" : [
+      {
+        "declaration" : "(void)_performScrollTest:(id)arg1 withIterations:(int)arg2 rowsToScroll:(int)arg3 inComponent:(int)arg4",
+        "type" : "method",
+        "name" : "_performScrollTest:withIterations:rowsToScroll:inComponent:",
+        "address" : 3590929
+      },
+      {
+        "declaration" : "(id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "hitTest:withEvent:",
+        "address" : 3590789
+      },
+      {
+        "declaration" : "(void)invalidateIntrinsicContentSize",
+        "type" : "method",
+        "name" : "invalidateIntrinsicContentSize",
+        "address" : 3590721
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 3590673
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 3590625
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 3590621
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 3590617
+      },
+      {
+        "declaration" : "(void)setDate:(id)arg1 animated:(BOOL)arg2",
+        "type" : "method",
+        "name" : "setDate:animated:",
+        "address" : 3590585
+      },
+      {
+        "declaration" : "(void)setMinuteInterval:(int)arg1",
+        "type" : "method",
+        "name" : "setMinuteInterval:",
+        "address" : 3590553
+      },
+      {
+        "declaration" : "(int)minuteInterval",
+        "type" : "method",
+        "name" : "minuteInterval",
+        "address" : 3590521
+      },
+      {
+        "declaration" : "(void)setCountDownDuration:(double)arg1",
+        "type" : "method",
+        "name" : "setCountDownDuration:",
+        "address" : 3590505
+      },
+      {
+        "declaration" : "(double)countDownDuration",
+        "type" : "method",
+        "name" : "countDownDuration",
+        "address" : 3590489
+      },
+      {
+        "declaration" : "(void)setMaximumDate:(id)arg1",
+        "type" : "method",
+        "name" : "setMaximumDate:",
+        "address" : 3590457
+      },
+      {
+        "declaration" : "(id)maximumDate",
+        "type" : "method",
+        "name" : "maximumDate",
+        "address" : 3590425
+      },
+      {
+        "declaration" : "(void)setMinimumDate:(id)arg1",
+        "type" : "method",
+        "name" : "setMinimumDate:",
+        "address" : 3590393
+      },
+      {
+        "declaration" : "(id)minimumDate",
+        "type" : "method",
+        "name" : "minimumDate",
+        "address" : 3590361
+      },
+      {
+        "declaration" : "(void)setDate:(id)arg1",
+        "type" : "method",
+        "name" : "setDate:",
+        "address" : 3590329
+      },
+      {
+        "declaration" : "(id)date",
+        "type" : "method",
+        "name" : "date",
+        "address" : 3590297
+      },
+      {
+        "declaration" : "(void)setCalendar:(id)arg1",
+        "type" : "method",
+        "name" : "setCalendar:",
+        "address" : 3590265
+      },
+      {
+        "declaration" : "(id)calendar",
+        "type" : "method",
+        "name" : "calendar",
+        "address" : 3590233
+      },
+      {
+        "declaration" : "(void)setTimeZone:(id)arg1",
+        "type" : "method",
+        "name" : "setTimeZone:",
+        "address" : 3590201
+      },
+      {
+        "declaration" : "(id)timeZone",
+        "type" : "method",
+        "name" : "timeZone",
+        "address" : 3590169
+      },
+      {
+        "declaration" : "(void)setLocale:(id)arg1",
+        "type" : "method",
+        "name" : "setLocale:",
+        "address" : 3590153
+      },
+      {
+        "declaration" : "(id)locale",
+        "type" : "method",
+        "name" : "locale",
+        "address" : 3590137
+      },
+      {
+        "declaration" : "(void)_setLocale:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocale:",
+        "address" : 3590105
+      },
+      {
+        "declaration" : "(id)_locale",
+        "type" : "method",
+        "name" : "_locale",
+        "address" : 3590073
+      },
+      {
+        "declaration" : "(void)setDatePickerMode:(int)arg1",
+        "type" : "method",
+        "name" : "setDatePickerMode:",
+        "address" : 3590041
+      },
+      {
+        "declaration" : "(int)datePickerMode",
+        "type" : "method",
+        "name" : "datePickerMode",
+        "address" : 3590009
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 3589237
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 3589153
+      },
+      {
+        "declaration" : "(void)awakeFromNib",
+        "type" : "method",
+        "name" : "awakeFromNib",
+        "address" : 3589069
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 3588365
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 3588013
+      },
+      {
+        "declaration" : "(void)_insertPickerView",
+        "type" : "method",
+        "name" : "_insertPickerView",
+        "address" : 3587705
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 3591445
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 3591341
+      },
+      {
+        "declaration" : "(void)setDate:(id)arg1 animate:(BOOL)arg2",
+        "type" : "method",
+        "name" : "setDate:animate:",
+        "address" : 3591325
+      },
+      {
+        "declaration" : "(void)setBackgroundColor:(id)arg1",
+        "type" : "method",
+        "name" : "setBackgroundColor:",
+        "address" : 3591217
+      },
+      {
+        "declaration" : "(int)second",
+        "type" : "method",
+        "name" : "second",
+        "address" : 3591185
+      },
+      {
+        "declaration" : "(int)minute",
+        "type" : "method",
+        "name" : "minute",
+        "address" : 3591153
+      },
+      {
+        "declaration" : "(int)hour",
+        "type" : "method",
+        "name" : "hour",
+        "address" : 3591121
+      },
+      {
+        "declaration" : "(void)setHighlightsToday:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setHighlightsToday:",
+        "address" : 3591089
+      },
+      {
+        "declaration" : "(void)setStaggerTimeIntervals:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setStaggerTimeIntervals:",
+        "address" : 3591057
+      },
+      {
+        "declaration" : "(void)setDateComponents:(id)arg1",
+        "type" : "method",
+        "name" : "setDateComponents:",
+        "address" : 3591025
+      },
+      {
+        "declaration" : "(id)dateComponents",
+        "type" : "method",
+        "name" : "dateComponents",
+        "address" : 3590993
+      },
+      {
+        "declaration" : "(void)setDelegate:(id)arg1",
+        "type" : "method",
+        "name" : "setDelegate:",
+        "address" : 3590961
+      },
+      {
+        "declaration" : "(void)_setUseCurrentDateDuringDecoding:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUseCurrentDateDuringDecoding:",
+        "address" : 3592289
+      },
+      {
+        "declaration" : "(BOOL)_useCurrentDateDuringDecoding",
+        "type" : "method",
+        "name" : "_useCurrentDateDuringDecoding",
+        "address" : 3592273
+      },
+      {
+        "declaration" : "(void)_setTextShadowColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextShadowColor:",
+        "address" : 3592241
+      },
+      {
+        "declaration" : "(id)_textShadowColor",
+        "type" : "method",
+        "name" : "_textShadowColor",
+        "address" : 3592209
+      },
+      {
+        "declaration" : "(void)_setTextColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextColor:",
+        "address" : 3592177
+      },
+      {
+        "declaration" : "(id)_textColor",
+        "type" : "method",
+        "name" : "_textColor",
+        "address" : 3592145
+      },
+      {
+        "declaration" : "(void)_setHighlightColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setHighlightColor:",
+        "address" : 3592113
+      },
+      {
+        "declaration" : "(id)_highlightColor",
+        "type" : "method",
+        "name" : "_highlightColor",
+        "address" : 3592081
+      },
+      {
+        "declaration" : "(void)_setUsesModernStyle:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUsesModernStyle:",
+        "address" : 3592049
+      },
+      {
+        "declaration" : "(BOOL)_usesModernStyle",
+        "type" : "method",
+        "name" : "_usesModernStyle",
+        "address" : 3592013
+      },
+      {
+        "declaration" : "(void)_setAllowsZeroTimeInterval:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setAllowsZeroTimeInterval:",
+        "address" : 3591981
+      },
+      {
+        "declaration" : "(BOOL)_allowsZeroTimeInterval",
+        "type" : "method",
+        "name" : "_allowsZeroTimeInterval",
+        "address" : 3591945
+      },
+      {
+        "declaration" : "(void)_setAllowsZeroCountDownDuration:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setAllowsZeroCountDownDuration:",
+        "address" : 3591913
+      },
+      {
+        "declaration" : "(BOOL)_allowsZeroCountDownDuration",
+        "type" : "method",
+        "name" : "_allowsZeroCountDownDuration",
+        "address" : 3591877
+      },
+      {
+        "declaration" : "(BOOL)_drawsBackground",
+        "type" : "method",
+        "name" : "_drawsBackground",
+        "address" : 3591841
+      },
+      {
+        "declaration" : "(void)_setDrawsBackground:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setDrawsBackground:",
+        "address" : 3591809
+      },
+      {
+        "declaration" : "(BOOL)_usesBlackChrome",
+        "type" : "method",
+        "name" : "_usesBlackChrome",
+        "address" : 3591773
+      },
+      {
+        "declaration" : "(void)_setUsesBlackChrome:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUsesBlackChrome:",
+        "address" : 3591741
+      },
+      {
+        "declaration" : "(id)_dateUnderSelectionBar",
+        "type" : "method",
+        "name" : "_dateUnderSelectionBar",
+        "address" : 3591681
+      },
+      {
+        "declaration" : "(void)_setHidesLabels:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setHidesLabels:",
+        "address" : 3591649
+      },
+      {
+        "declaration" : "(void)_setHighlightsToday:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setHighlightsToday:",
+        "address" : 3591617
+      },
+      {
+        "declaration" : "(float)_contentWidth",
+        "type" : "method",
+        "name" : "_contentWidth",
+        "address" : 3591585
+      },
+      {
+        "declaration" : "(BOOL)_isTimeIntervalMode",
+        "type" : "method",
+        "name" : "_isTimeIntervalMode",
+        "address" : 3591549
+      },
+      {
+        "declaration" : "(id)_labelTextForCalendarUnit:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_labelTextForCalendarUnit:",
+        "address" : 3592401
+      },
+      {
+        "declaration" : "(id)_selectedTextForCalendarUnit:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_selectedTextForCalendarUnit:",
+        "address" : 3592369
+      },
+      {
+        "declaration" : "(void)setTimeInterval:(double)arg1",
+        "type" : "method",
+        "name" : "setTimeInterval:",
+        "address" : 3592337
+      },
+      {
+        "declaration" : "(double)timeInterval",
+        "type" : "method",
+        "name" : "timeInterval",
+        "address" : 3592305
+      }
+    ],
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "_UIDatePickerView *",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_pickerView"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_useCurrentDateDuringDecoding"
+      }
+    ],
+    "protocols" : [
+      "UIPickerViewScrollTesting",
+      "NSCoding"
+    ],
+    "properties" : [
+      {
+        "name" : "usesBlackChrome",
+        "propertyType" : "char",
+        "getter" : "_usesBlackChrome",
+        "type" : "property",
+        "setter" : "_setUsesBlackChrome:"
+      },
+      {
+        "name" : "drawsBackground",
+        "propertyType" : "char",
+        "getter" : "_drawsBackground",
+        "type" : "property",
+        "setter" : "_setDrawsBackground:"
+      },
+      {
+        "name" : "allowsZeroCountDownDuration",
+        "propertyType" : "char",
+        "getter" : "_allowsZeroCountDownDuration",
+        "type" : "property",
+        "setter" : "_setAllowsZeroCountDownDuration:"
+      },
+      {
+        "name" : "allowsZeroTimeInterval",
+        "propertyType" : "char",
+        "getter" : "_allowsZeroTimeInterval",
+        "type" : "property",
+        "setter" : "_setAllowsZeroTimeInterval:"
+      },
+      {
+        "name" : "dateUnderSelectionBar",
+        "propertyType" : "NSDate *",
+        "getter" : "_dateUnderSelectionBar",
+        "type" : "property",
+        "setter" : "setDateUnderSelectionBar:"
+      },
+      {
+        "name" : "contentWidth",
+        "propertyType" : "float",
+        "getter" : "_contentWidth",
+        "type" : "property",
+        "setter" : "setContentWidth:"
+      },
+      {
+        "name" : "isTimeIntervalMode",
+        "propertyType" : "char",
+        "getter" : "_isTimeIntervalMode",
+        "type" : "property",
+        "setter" : "setIsTimeIntervalMode:"
+      },
+      {
+        "name" : "useCurrentDateDuringDecoding",
+        "propertyType" : "char",
+        "getter" : "_useCurrentDateDuringDecoding",
+        "type" : "property",
+        "setter" : "_setUseCurrentDateDuringDecoding:"
+      },
+      {
+        "name" : "_usesModernStyle",
+        "propertyType" : "char",
+        "getter" : "_usesModernStyle",
+        "type" : "property",
+        "setter" : "_setUsesModernStyle:"
+      },
+      {
+        "name" : "highlightColor",
+        "propertyType" : "UIColor *",
+        "getter" : "_highlightColor",
+        "type" : "property",
+        "setter" : "_setHighlightColor:"
+      },
+      {
+        "name" : "textColor",
+        "propertyType" : "UIColor *",
+        "getter" : "_textColor",
+        "type" : "property",
+        "setter" : "_setTextColor:"
+      },
+      {
+        "name" : "textShadowColor",
+        "propertyType" : "UIColor *",
+        "getter" : "_textShadowColor",
+        "type" : "property",
+        "setter" : "_setTextShadowColor:"
+      },
+      {
+        "name" : "timeInterval",
+        "propertyType" : "double",
+        "getter" : "timeInterval",
+        "type" : "property",
+        "setter" : "setTimeInterval:"
+      },
+      {
+        "name" : "datePickerMode",
+        "propertyType" : "int",
+        "getter" : "datePickerMode",
+        "type" : "property",
+        "setter" : "setDatePickerMode:"
+      },
+      {
+        "name" : "locale",
+        "propertyType" : "NSLocale *",
+        "getter" : "locale",
+        "type" : "property",
+        "setter" : "setLocale:"
+      },
+      {
+        "name" : "calendar",
+        "propertyType" : "NSCalendar *",
+        "getter" : "calendar",
+        "type" : "property",
+        "setter" : "setCalendar:"
+      },
+      {
+        "name" : "timeZone",
+        "propertyType" : "NSTimeZone *",
+        "getter" : "timeZone",
+        "type" : "property",
+        "setter" : "setTimeZone:"
+      },
+      {
+        "name" : "date",
+        "propertyType" : "NSDate *",
+        "getter" : "date",
+        "type" : "property",
+        "setter" : "setDate:"
+      },
+      {
+        "name" : "minimumDate",
+        "propertyType" : "NSDate *",
+        "getter" : "minimumDate",
+        "type" : "property",
+        "setter" : "setMinimumDate:"
+      },
+      {
+        "name" : "maximumDate",
+        "propertyType" : "NSDate *",
+        "getter" : "maximumDate",
+        "type" : "property",
+        "setter" : "setMaximumDate:"
+      },
+      {
+        "name" : "countDownDuration",
+        "propertyType" : "double",
+        "getter" : "countDownDuration",
+        "type" : "property",
+        "setter" : "setCountDownDuration:"
+      },
+      {
+        "name" : "minuteInterval",
+        "propertyType" : "int",
+        "getter" : "minuteInterval",
+        "type" : "property",
+        "setter" : "setMinuteInterval:"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(Class)_pickerViewClass",
+        "type" : "method",
+        "name" : "_pickerViewClass",
+        "address" : 3587677
+      }
+    ]
+  },
+  "armv7s" : {
+    "superClassName" : "UIControl",
+    "className" : "UIDatePicker",
+    "instanceMethods" : [
+      {
+        "declaration" : "(void)_performScrollTest:(id)arg1 withIterations:(int)arg2 rowsToScroll:(int)arg3 inComponent:(int)arg4",
+        "type" : "method",
+        "name" : "_performScrollTest:withIterations:rowsToScroll:inComponent:",
+        "address" : 3592609
+      },
+      {
+        "declaration" : "(id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "hitTest:withEvent:",
+        "address" : 3592469
+      },
+      {
+        "declaration" : "(void)invalidateIntrinsicContentSize",
+        "type" : "method",
+        "name" : "invalidateIntrinsicContentSize",
+        "address" : 3592401
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 3592353
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 3592305
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 3592301
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 3592297
+      },
+      {
+        "declaration" : "(void)setDate:(id)arg1 animated:(BOOL)arg2",
+        "type" : "method",
+        "name" : "setDate:animated:",
+        "address" : 3592265
+      },
+      {
+        "declaration" : "(void)setMinuteInterval:(int)arg1",
+        "type" : "method",
+        "name" : "setMinuteInterval:",
+        "address" : 3592233
+      },
+      {
+        "declaration" : "(int)minuteInterval",
+        "type" : "method",
+        "name" : "minuteInterval",
+        "address" : 3592201
+      },
+      {
+        "declaration" : "(void)setCountDownDuration:(double)arg1",
+        "type" : "method",
+        "name" : "setCountDownDuration:",
+        "address" : 3592185
+      },
+      {
+        "declaration" : "(double)countDownDuration",
+        "type" : "method",
+        "name" : "countDownDuration",
+        "address" : 3592169
+      },
+      {
+        "declaration" : "(void)setMaximumDate:(id)arg1",
+        "type" : "method",
+        "name" : "setMaximumDate:",
+        "address" : 3592137
+      },
+      {
+        "declaration" : "(id)maximumDate",
+        "type" : "method",
+        "name" : "maximumDate",
+        "address" : 3592105
+      },
+      {
+        "declaration" : "(void)setMinimumDate:(id)arg1",
+        "type" : "method",
+        "name" : "setMinimumDate:",
+        "address" : 3592073
+      },
+      {
+        "declaration" : "(id)minimumDate",
+        "type" : "method",
+        "name" : "minimumDate",
+        "address" : 3592041
+      },
+      {
+        "declaration" : "(void)setDate:(id)arg1",
+        "type" : "method",
+        "name" : "setDate:",
+        "address" : 3592009
+      },
+      {
+        "declaration" : "(id)date",
+        "type" : "method",
+        "name" : "date",
+        "address" : 3591977
+      },
+      {
+        "declaration" : "(void)setCalendar:(id)arg1",
+        "type" : "method",
+        "name" : "setCalendar:",
+        "address" : 3591945
+      },
+      {
+        "declaration" : "(id)calendar",
+        "type" : "method",
+        "name" : "calendar",
+        "address" : 3591913
+      },
+      {
+        "declaration" : "(void)setTimeZone:(id)arg1",
+        "type" : "method",
+        "name" : "setTimeZone:",
+        "address" : 3591881
+      },
+      {
+        "declaration" : "(id)timeZone",
+        "type" : "method",
+        "name" : "timeZone",
+        "address" : 3591849
+      },
+      {
+        "declaration" : "(void)setLocale:(id)arg1",
+        "type" : "method",
+        "name" : "setLocale:",
+        "address" : 3591833
+      },
+      {
+        "declaration" : "(id)locale",
+        "type" : "method",
+        "name" : "locale",
+        "address" : 3591817
+      },
+      {
+        "declaration" : "(void)_setLocale:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocale:",
+        "address" : 3591785
+      },
+      {
+        "declaration" : "(id)_locale",
+        "type" : "method",
+        "name" : "_locale",
+        "address" : 3591753
+      },
+      {
+        "declaration" : "(void)setDatePickerMode:(int)arg1",
+        "type" : "method",
+        "name" : "setDatePickerMode:",
+        "address" : 3591721
+      },
+      {
+        "declaration" : "(int)datePickerMode",
+        "type" : "method",
+        "name" : "datePickerMode",
+        "address" : 3591689
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 3590917
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 3590833
+      },
+      {
+        "declaration" : "(void)awakeFromNib",
+        "type" : "method",
+        "name" : "awakeFromNib",
+        "address" : 3590749
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 3590045
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 3589693
+      },
+      {
+        "declaration" : "(void)_insertPickerView",
+        "type" : "method",
+        "name" : "_insertPickerView",
+        "address" : 3589385
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 3593125
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 3593021
+      },
+      {
+        "declaration" : "(void)setDate:(id)arg1 animate:(BOOL)arg2",
+        "type" : "method",
+        "name" : "setDate:animate:",
+        "address" : 3593005
+      },
+      {
+        "declaration" : "(void)setBackgroundColor:(id)arg1",
+        "type" : "method",
+        "name" : "setBackgroundColor:",
+        "address" : 3592897
+      },
+      {
+        "declaration" : "(int)second",
+        "type" : "method",
+        "name" : "second",
+        "address" : 3592865
+      },
+      {
+        "declaration" : "(int)minute",
+        "type" : "method",
+        "name" : "minute",
+        "address" : 3592833
+      },
+      {
+        "declaration" : "(int)hour",
+        "type" : "method",
+        "name" : "hour",
+        "address" : 3592801
+      },
+      {
+        "declaration" : "(void)setHighlightsToday:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setHighlightsToday:",
+        "address" : 3592769
+      },
+      {
+        "declaration" : "(void)setStaggerTimeIntervals:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setStaggerTimeIntervals:",
+        "address" : 3592737
+      },
+      {
+        "declaration" : "(void)setDateComponents:(id)arg1",
+        "type" : "method",
+        "name" : "setDateComponents:",
+        "address" : 3592705
+      },
+      {
+        "declaration" : "(id)dateComponents",
+        "type" : "method",
+        "name" : "dateComponents",
+        "address" : 3592673
+      },
+      {
+        "declaration" : "(void)setDelegate:(id)arg1",
+        "type" : "method",
+        "name" : "setDelegate:",
+        "address" : 3592641
+      },
+      {
+        "declaration" : "(void)_setUseCurrentDateDuringDecoding:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUseCurrentDateDuringDecoding:",
+        "address" : 3593969
+      },
+      {
+        "declaration" : "(BOOL)_useCurrentDateDuringDecoding",
+        "type" : "method",
+        "name" : "_useCurrentDateDuringDecoding",
+        "address" : 3593953
+      },
+      {
+        "declaration" : "(void)_setTextShadowColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextShadowColor:",
+        "address" : 3593921
+      },
+      {
+        "declaration" : "(id)_textShadowColor",
+        "type" : "method",
+        "name" : "_textShadowColor",
+        "address" : 3593889
+      },
+      {
+        "declaration" : "(void)_setTextColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextColor:",
+        "address" : 3593857
+      },
+      {
+        "declaration" : "(id)_textColor",
+        "type" : "method",
+        "name" : "_textColor",
+        "address" : 3593825
+      },
+      {
+        "declaration" : "(void)_setHighlightColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setHighlightColor:",
+        "address" : 3593793
+      },
+      {
+        "declaration" : "(id)_highlightColor",
+        "type" : "method",
+        "name" : "_highlightColor",
+        "address" : 3593761
+      },
+      {
+        "declaration" : "(void)_setUsesModernStyle:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUsesModernStyle:",
+        "address" : 3593729
+      },
+      {
+        "declaration" : "(BOOL)_usesModernStyle",
+        "type" : "method",
+        "name" : "_usesModernStyle",
+        "address" : 3593693
+      },
+      {
+        "declaration" : "(void)_setAllowsZeroTimeInterval:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setAllowsZeroTimeInterval:",
+        "address" : 3593661
+      },
+      {
+        "declaration" : "(BOOL)_allowsZeroTimeInterval",
+        "type" : "method",
+        "name" : "_allowsZeroTimeInterval",
+        "address" : 3593625
+      },
+      {
+        "declaration" : "(void)_setAllowsZeroCountDownDuration:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setAllowsZeroCountDownDuration:",
+        "address" : 3593593
+      },
+      {
+        "declaration" : "(BOOL)_allowsZeroCountDownDuration",
+        "type" : "method",
+        "name" : "_allowsZeroCountDownDuration",
+        "address" : 3593557
+      },
+      {
+        "declaration" : "(BOOL)_drawsBackground",
+        "type" : "method",
+        "name" : "_drawsBackground",
+        "address" : 3593521
+      },
+      {
+        "declaration" : "(void)_setDrawsBackground:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setDrawsBackground:",
+        "address" : 3593489
+      },
+      {
+        "declaration" : "(BOOL)_usesBlackChrome",
+        "type" : "method",
+        "name" : "_usesBlackChrome",
+        "address" : 3593453
+      },
+      {
+        "declaration" : "(void)_setUsesBlackChrome:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUsesBlackChrome:",
+        "address" : 3593421
+      },
+      {
+        "declaration" : "(id)_dateUnderSelectionBar",
+        "type" : "method",
+        "name" : "_dateUnderSelectionBar",
+        "address" : 3593361
+      },
+      {
+        "declaration" : "(void)_setHidesLabels:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setHidesLabels:",
+        "address" : 3593329
+      },
+      {
+        "declaration" : "(void)_setHighlightsToday:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setHighlightsToday:",
+        "address" : 3593297
+      },
+      {
+        "declaration" : "(float)_contentWidth",
+        "type" : "method",
+        "name" : "_contentWidth",
+        "address" : 3593265
+      },
+      {
+        "declaration" : "(BOOL)_isTimeIntervalMode",
+        "type" : "method",
+        "name" : "_isTimeIntervalMode",
+        "address" : 3593229
+      },
+      {
+        "declaration" : "(id)_labelTextForCalendarUnit:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_labelTextForCalendarUnit:",
+        "address" : 3594081
+      },
+      {
+        "declaration" : "(id)_selectedTextForCalendarUnit:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_selectedTextForCalendarUnit:",
+        "address" : 3594049
+      },
+      {
+        "declaration" : "(void)setTimeInterval:(double)arg1",
+        "type" : "method",
+        "name" : "setTimeInterval:",
+        "address" : 3594017
+      },
+      {
+        "declaration" : "(double)timeInterval",
+        "type" : "method",
+        "name" : "timeInterval",
+        "address" : 3593985
+      }
+    ],
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "_UIDatePickerView *",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_pickerView"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_useCurrentDateDuringDecoding"
+      }
+    ],
+    "protocols" : [
+      "UIPickerViewScrollTesting",
+      "NSCoding"
+    ],
+    "properties" : [
+      {
+        "getter" : "_usesBlackChrome",
+        "setter" : "_setUsesBlackChrome:",
+        "type" : "property",
+        "name" : "usesBlackChrome",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "_drawsBackground",
+        "setter" : "_setDrawsBackground:",
+        "type" : "property",
+        "name" : "drawsBackground",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "_allowsZeroCountDownDuration",
+        "setter" : "_setAllowsZeroCountDownDuration:",
+        "type" : "property",
+        "name" : "allowsZeroCountDownDuration",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "_allowsZeroTimeInterval",
+        "setter" : "_setAllowsZeroTimeInterval:",
+        "type" : "property",
+        "name" : "allowsZeroTimeInterval",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "_dateUnderSelectionBar",
+        "setter" : "setDateUnderSelectionBar:",
+        "type" : "property",
+        "name" : "dateUnderSelectionBar",
+        "propertyType" : "NSDate *"
+      },
+      {
+        "getter" : "_contentWidth",
+        "setter" : "setContentWidth:",
+        "type" : "property",
+        "name" : "contentWidth",
+        "propertyType" : "float"
+      },
+      {
+        "getter" : "_isTimeIntervalMode",
+        "setter" : "setIsTimeIntervalMode:",
+        "type" : "property",
+        "name" : "isTimeIntervalMode",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "_useCurrentDateDuringDecoding",
+        "setter" : "_setUseCurrentDateDuringDecoding:",
+        "type" : "property",
+        "name" : "useCurrentDateDuringDecoding",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "_usesModernStyle",
+        "setter" : "_setUsesModernStyle:",
+        "type" : "property",
+        "name" : "_usesModernStyle",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "_highlightColor",
+        "setter" : "_setHighlightColor:",
+        "type" : "property",
+        "name" : "highlightColor",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "getter" : "_textColor",
+        "setter" : "_setTextColor:",
+        "type" : "property",
+        "name" : "textColor",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "getter" : "_textShadowColor",
+        "setter" : "_setTextShadowColor:",
+        "type" : "property",
+        "name" : "textShadowColor",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "getter" : "timeInterval",
+        "setter" : "setTimeInterval:",
+        "type" : "property",
+        "name" : "timeInterval",
+        "propertyType" : "double"
+      },
+      {
+        "getter" : "datePickerMode",
+        "setter" : "setDatePickerMode:",
+        "type" : "property",
+        "name" : "datePickerMode",
+        "propertyType" : "int"
+      },
+      {
+        "getter" : "locale",
+        "setter" : "setLocale:",
+        "type" : "property",
+        "name" : "locale",
+        "propertyType" : "NSLocale *"
+      },
+      {
+        "getter" : "calendar",
+        "setter" : "setCalendar:",
+        "type" : "property",
+        "name" : "calendar",
+        "propertyType" : "NSCalendar *"
+      },
+      {
+        "getter" : "timeZone",
+        "setter" : "setTimeZone:",
+        "type" : "property",
+        "name" : "timeZone",
+        "propertyType" : "NSTimeZone *"
+      },
+      {
+        "getter" : "date",
+        "setter" : "setDate:",
+        "type" : "property",
+        "name" : "date",
+        "propertyType" : "NSDate *"
+      },
+      {
+        "getter" : "minimumDate",
+        "setter" : "setMinimumDate:",
+        "type" : "property",
+        "name" : "minimumDate",
+        "propertyType" : "NSDate *"
+      },
+      {
+        "getter" : "maximumDate",
+        "setter" : "setMaximumDate:",
+        "type" : "property",
+        "name" : "maximumDate",
+        "propertyType" : "NSDate *"
+      },
+      {
+        "getter" : "countDownDuration",
+        "setter" : "setCountDownDuration:",
+        "type" : "property",
+        "name" : "countDownDuration",
+        "propertyType" : "double"
+      },
+      {
+        "getter" : "minuteInterval",
+        "setter" : "setMinuteInterval:",
+        "type" : "property",
+        "name" : "minuteInterval",
+        "propertyType" : "int"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(Class)_pickerViewClass",
+        "type" : "method",
+        "name" : "_pickerViewClass",
+        "address" : 3589357
+      }
+    ]
+  },
+  "arm64" : {
+    "superClassName" : "UIControl",
+    "className" : "UIDatePicker",
+    "instanceMethods" : [
+      {
+        "declaration" : "(void)_performScrollTest:(id)arg1 withIterations:(long long)arg2 rowsToScroll:(long long)arg3 inComponent:(long long)arg4",
+        "type" : "method",
+        "name" : "_performScrollTest:withIterations:rowsToScroll:inComponent:",
+        "address" : 3935436
+      },
+      {
+        "declaration" : "(id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "hitTest:withEvent:",
+        "address" : 3935256
+      },
+      {
+        "declaration" : "(void)invalidateIntrinsicContentSize",
+        "type" : "method",
+        "name" : "invalidateIntrinsicContentSize",
+        "address" : 3935160
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 3935144
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 3935116
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 3935108
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 3935100
+      },
+      {
+        "declaration" : "(void)setDate:(id)arg1 animated:(_Bool)arg2",
+        "type" : "method",
+        "name" : "setDate:animated:",
+        "address" : 3935072
+      },
+      {
+        "declaration" : "(void)setMinuteInterval:(long long)arg1",
+        "type" : "method",
+        "name" : "setMinuteInterval:",
+        "address" : 3935044
+      },
+      {
+        "declaration" : "(long long)minuteInterval",
+        "type" : "method",
+        "name" : "minuteInterval",
+        "address" : 3935016
+      },
+      {
+        "declaration" : "(void)setCountDownDuration:(double)arg1",
+        "type" : "method",
+        "name" : "setCountDownDuration:",
+        "address" : 3935000
+      },
+      {
+        "declaration" : "(double)countDownDuration",
+        "type" : "method",
+        "name" : "countDownDuration",
+        "address" : 3934984
+      },
+      {
+        "declaration" : "(void)setMaximumDate:(id)arg1",
+        "type" : "method",
+        "name" : "setMaximumDate:",
+        "address" : 3934956
+      },
+      {
+        "declaration" : "(id)maximumDate",
+        "type" : "method",
+        "name" : "maximumDate",
+        "address" : 3934928
+      },
+      {
+        "declaration" : "(void)setMinimumDate:(id)arg1",
+        "type" : "method",
+        "name" : "setMinimumDate:",
+        "address" : 3934900
+      },
+      {
+        "declaration" : "(id)minimumDate",
+        "type" : "method",
+        "name" : "minimumDate",
+        "address" : 3934872
+      },
+      {
+        "declaration" : "(void)setDate:(id)arg1",
+        "type" : "method",
+        "name" : "setDate:",
+        "address" : 3934844
+      },
+      {
+        "declaration" : "(id)date",
+        "type" : "method",
+        "name" : "date",
+        "address" : 3934816
+      },
+      {
+        "declaration" : "(void)setCalendar:(id)arg1",
+        "type" : "method",
+        "name" : "setCalendar:",
+        "address" : 3934788
+      },
+      {
+        "declaration" : "(id)calendar",
+        "type" : "method",
+        "name" : "calendar",
+        "address" : 3934760
+      },
+      {
+        "declaration" : "(void)setTimeZone:(id)arg1",
+        "type" : "method",
+        "name" : "setTimeZone:",
+        "address" : 3934732
+      },
+      {
+        "declaration" : "(id)timeZone",
+        "type" : "method",
+        "name" : "timeZone",
+        "address" : 3934704
+      },
+      {
+        "declaration" : "(void)setLocale:(id)arg1",
+        "type" : "method",
+        "name" : "setLocale:",
+        "address" : 3934688
+      },
+      {
+        "declaration" : "(id)locale",
+        "type" : "method",
+        "name" : "locale",
+        "address" : 3934672
+      },
+      {
+        "declaration" : "(void)_setLocale:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocale:",
+        "address" : 3934644
+      },
+      {
+        "declaration" : "(id)_locale",
+        "type" : "method",
+        "name" : "_locale",
+        "address" : 3934616
+      },
+      {
+        "declaration" : "(void)setDatePickerMode:(long long)arg1",
+        "type" : "method",
+        "name" : "setDatePickerMode:",
+        "address" : 3934588
+      },
+      {
+        "declaration" : "(long long)datePickerMode",
+        "type" : "method",
+        "name" : "datePickerMode",
+        "address" : 3934560
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 3933656
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 3933544
+      },
+      {
+        "declaration" : "(void)awakeFromNib",
+        "type" : "method",
+        "name" : "awakeFromNib",
+        "address" : 3933440
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 3932656
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 3932256
+      },
+      {
+        "declaration" : "(void)_insertPickerView",
+        "type" : "method",
+        "name" : "_insertPickerView",
+        "address" : 3931924
+      }
+    ],
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "_UIDatePickerView *",
+        "size" : 8,
+        "offset" : 144,
+        "type" : "ivar",
+        "name" : "_pickerView"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 152,
+        "type" : "ivar",
+        "name" : "_useCurrentDateDuringDecoding"
+      }
+    ],
+    "protocols" : [
+      "UIPickerViewScrollTesting",
+      "NSCoding"
+    ],
+    "properties" : [
+      {
+        "type" : "property",
+        "propertyType" : "long long",
+        "name" : "datePickerMode",
+        "getter" : "datePickerMode",
+        "setter" : "setDatePickerMode:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "NSLocale *",
+        "name" : "locale",
+        "getter" : "locale",
+        "setter" : "setLocale:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "NSCalendar *",
+        "name" : "calendar",
+        "getter" : "calendar",
+        "setter" : "setCalendar:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "NSTimeZone *",
+        "name" : "timeZone",
+        "getter" : "timeZone",
+        "setter" : "setTimeZone:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "NSDate *",
+        "name" : "date",
+        "getter" : "date",
+        "setter" : "setDate:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "NSDate *",
+        "name" : "minimumDate",
+        "getter" : "minimumDate",
+        "setter" : "setMinimumDate:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "NSDate *",
+        "name" : "maximumDate",
+        "getter" : "maximumDate",
+        "setter" : "setMaximumDate:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "double",
+        "name" : "countDownDuration",
+        "getter" : "countDownDuration",
+        "setter" : "setCountDownDuration:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "long long",
+        "name" : "minuteInterval",
+        "getter" : "minuteInterval",
+        "setter" : "setMinuteInterval:"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(Class)_pickerViewClass",
+        "type" : "method",
+        "name" : "_pickerViewClass",
+        "address" : 3931900
+      }
+    ]
+  }
+}

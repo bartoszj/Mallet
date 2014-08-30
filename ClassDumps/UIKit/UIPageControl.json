@@ -1,0 +1,2531 @@
+{
+  "i386" : {
+    "properties" : [
+      {
+        "name" : "numberOfPages",
+        "setter" : "setNumberOfPages:",
+        "getter" : "numberOfPages",
+        "type" : "property",
+        "propertyType" : "int"
+      },
+      {
+        "name" : "currentPage",
+        "setter" : "setCurrentPage:",
+        "getter" : "currentPage",
+        "type" : "property",
+        "propertyType" : "int"
+      },
+      {
+        "name" : "hidesForSinglePage",
+        "setter" : "setHidesForSinglePage:",
+        "getter" : "hidesForSinglePage",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "defersCurrentPageDisplay",
+        "setter" : "setDefersCurrentPageDisplay:",
+        "getter" : "defersCurrentPageDisplay",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "pageIndicatorTintColor",
+        "setter" : "setPageIndicatorTintColor:",
+        "getter" : "pageIndicatorTintColor",
+        "type" : "property",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "name" : "currentPageIndicatorTintColor",
+        "setter" : "setCurrentPageIndicatorTintColor:",
+        "getter" : "currentPageIndicatorTintColor",
+        "type" : "property",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "name" : "legibilityStyle",
+        "setter" : "_setLegibilityStyle:",
+        "getter" : "_legibilityStyle",
+        "type" : "property",
+        "propertyType" : "int"
+      },
+      {
+        "name" : "legibilitySettings",
+        "setter" : "_setLegibilitySettings:",
+        "getter" : "_legibilitySettings",
+        "type" : "property",
+        "propertyType" : "_UILegibilitySettings *"
+      }
+    ],
+    "className" : "UIPageControl",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)_legibilitySettings",
+        "type" : "method",
+        "name" : "_legibilitySettings",
+        "address" : 2598755
+      },
+      {
+        "declaration" : "(id)pageIndicatorTintColor",
+        "type" : "method",
+        "name" : "pageIndicatorTintColor",
+        "address" : 2598732
+      },
+      {
+        "declaration" : "(id)currentPageIndicatorTintColor",
+        "type" : "method",
+        "name" : "currentPageIndicatorTintColor",
+        "address" : 2598709
+      },
+      {
+        "declaration" : "(id)_createModernIndicatorImageFromView:(id)arg1",
+        "type" : "method",
+        "name" : "_createModernIndicatorImageFromView:",
+        "address" : 2598450
+      },
+      {
+        "declaration" : "(id)_modernIndicatorImageEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_modernIndicatorImageEnabled:",
+        "address" : 2598362
+      },
+      {
+        "declaration" : "(void)_drawModernIndicatorInView:(id)arg1 enabled:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_drawModernIndicatorInView:enabled:",
+        "address" : 2598082
+      },
+      {
+        "declaration" : "(BOOL)_shouldDrawLegibly",
+        "type" : "method",
+        "name" : "_shouldDrawLegibly",
+        "address" : 2598027
+      },
+      {
+        "declaration" : "(void)_setLegibilitySettings:(id)arg1",
+        "type" : "method",
+        "name" : "_setLegibilitySettings:",
+        "address" : 2597894
+      },
+      {
+        "declaration" : "(int)_legibilityStyle",
+        "type" : "method",
+        "name" : "_legibilityStyle",
+        "address" : 2597847
+      },
+      {
+        "declaration" : "(void)_setLegibilityStyle:(int)arg1",
+        "type" : "method",
+        "name" : "_setLegibilityStyle:",
+        "address" : 2597772
+      },
+      {
+        "declaration" : "(id)_modernColorEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_modernColorEnabled:",
+        "address" : 2597621
+      },
+      {
+        "declaration" : "(float)_modernCornerRadius",
+        "type" : "method",
+        "name" : "_modernCornerRadius",
+        "address" : 2597534
+      },
+      {
+        "declaration" : "(struct CGRect)_modernBounds",
+        "type" : "method",
+        "name" : "_modernBounds",
+        "address" : 2597488
+      },
+      {
+        "declaration" : "(void)_modernTransitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3 legible:(BOOL)arg4",
+        "type" : "method",
+        "name" : "_modernTransitionIndicator:toEnabled:index:legible:",
+        "address" : 2597371
+      },
+      {
+        "declaration" : "(id)_indicatorViewEnabled:(BOOL)arg1 index:(int)arg2",
+        "type" : "method",
+        "name" : "_indicatorViewEnabled:index:",
+        "address" : 2597289
+      },
+      {
+        "declaration" : "(id)_indicatorViewEnabled:(BOOL)arg1 index:(int)arg2 legible:(BOOL)arg3",
+        "type" : "method",
+        "name" : "_indicatorViewEnabled:index:legible:",
+        "address" : 2596920
+      },
+      {
+        "declaration" : "(void)_transitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3",
+        "type" : "method",
+        "name" : "_transitionIndicator:toEnabled:index:",
+        "address" : 2596831
+      },
+      {
+        "declaration" : "(void)_transitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3 legible:(BOOL)arg4",
+        "type" : "method",
+        "name" : "_transitionIndicator:toEnabled:index:legible:",
+        "address" : 2596634
+      },
+      {
+        "declaration" : "(float)_indicatorSpacing",
+        "type" : "method",
+        "name" : "_indicatorSpacing",
+        "address" : 2596597
+      },
+      {
+        "declaration" : "(struct CGRect)_indicatorFrameAtIndex:(int)arg1",
+        "type" : "method",
+        "name" : "_indicatorFrameAtIndex:",
+        "address" : 2596360
+      },
+      {
+        "declaration" : "(id)_correctIdiomaticNameForImageNamed:(id)arg1",
+        "type" : "method",
+        "name" : "_correctIdiomaticNameForImageNamed:",
+        "address" : 2596276
+      },
+      {
+        "declaration" : "(id)_activePageIndicatorImage",
+        "type" : "method",
+        "name" : "_activePageIndicatorImage",
+        "address" : 2596220
+      },
+      {
+        "declaration" : "(id)_pageIndicatorImage",
+        "type" : "method",
+        "name" : "_pageIndicatorImage",
+        "address" : 2596164
+      },
+      {
+        "declaration" : "(void)_updateCurrentPageDisplay",
+        "type" : "method",
+        "name" : "_updateCurrentPageDisplay",
+        "address" : 2596113
+      },
+      {
+        "declaration" : "(void)_setCurrentPage:(int)arg1",
+        "type" : "method",
+        "name" : "_setCurrentPage:",
+        "address" : 2596037
+      },
+      {
+        "declaration" : "(int)_displayedPage",
+        "type" : "method",
+        "name" : "_displayedPage",
+        "address" : 2596014
+      },
+      {
+        "declaration" : "(void)_setDisplayedPage:(int)arg1",
+        "type" : "method",
+        "name" : "_setDisplayedPage:",
+        "address" : 2595749
+      },
+      {
+        "declaration" : "(BOOL)gestureRecognizerShouldBegin:(id)arg1",
+        "type" : "method",
+        "name" : "gestureRecognizerShouldBegin:",
+        "address" : 2595571
+      },
+      {
+        "declaration" : "(struct CGSize)sizeForNumberOfPages:(int)arg1",
+        "type" : "method",
+        "name" : "sizeForNumberOfPages:",
+        "address" : 2595107
+      },
+      {
+        "declaration" : "(void)updateCurrentPageDisplay",
+        "type" : "method",
+        "name" : "updateCurrentPageDisplay",
+        "address" : 2595057
+      },
+      {
+        "declaration" : "(void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "endTrackingWithTouch:withEvent:",
+        "address" : 2594594
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 2593282
+      },
+      {
+        "declaration" : "(struct CGSize)intrinsicContentSize",
+        "type" : "method",
+        "name" : "intrinsicContentSize",
+        "address" : 2592820
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 2592810
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 2592800
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 2592650
+      },
+      {
+        "declaration" : "(BOOL)defersCurrentPageDisplay",
+        "type" : "method",
+        "name" : "defersCurrentPageDisplay",
+        "address" : 2592620
+      },
+      {
+        "declaration" : "(void)setDefersCurrentPageDisplay:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setDefersCurrentPageDisplay:",
+        "address" : 2592562
+      },
+      {
+        "declaration" : "(BOOL)hidesForSinglePage",
+        "type" : "method",
+        "name" : "hidesForSinglePage",
+        "address" : 2592535
+      },
+      {
+        "declaration" : "(void)setHidesForSinglePage:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setHidesForSinglePage:",
+        "address" : 2592415
+      },
+      {
+        "declaration" : "(int)currentPage",
+        "type" : "method",
+        "name" : "currentPage",
+        "address" : 2592392
+      },
+      {
+        "declaration" : "(void)setCurrentPage:(int)arg1",
+        "type" : "method",
+        "name" : "setCurrentPage:",
+        "address" : 2592325
+      },
+      {
+        "declaration" : "(int)numberOfPages",
+        "type" : "method",
+        "name" : "numberOfPages",
+        "address" : 2592278
+      },
+      {
+        "declaration" : "(void)_invalidateIndicators",
+        "type" : "method",
+        "name" : "_invalidateIndicators",
+        "address" : 2591723
+      },
+      {
+        "declaration" : "(void)setNumberOfPages:(int)arg1",
+        "type" : "method",
+        "name" : "setNumberOfPages:",
+        "address" : 2590893
+      },
+      {
+        "declaration" : "(id)_pageIndicatorCurrentImageForPage:(int)arg1",
+        "type" : "method",
+        "name" : "_pageIndicatorCurrentImageForPage:",
+        "address" : 2590842
+      },
+      {
+        "declaration" : "(id)_pageIndicatorImageForPage:(int)arg1",
+        "type" : "method",
+        "name" : "_pageIndicatorImageForPage:",
+        "address" : 2590791
+      },
+      {
+        "declaration" : "(id)_customPageIndicatorCurrentImageForPage:(int)arg1",
+        "type" : "method",
+        "name" : "_customPageIndicatorCurrentImageForPage:",
+        "address" : 2590687
+      },
+      {
+        "declaration" : "(id)_customPageIndicatorImageForPage:(int)arg1",
+        "type" : "method",
+        "name" : "_customPageIndicatorImageForPage:",
+        "address" : 2590583
+      },
+      {
+        "declaration" : "(BOOL)_hasCustomImageForPage:(int)arg1 enabled:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_hasCustomImageForPage:enabled:",
+        "address" : 2590507
+      },
+      {
+        "declaration" : "(void)setCurrentPageIndicatorTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setCurrentPageIndicatorTintColor:",
+        "address" : 2590089
+      },
+      {
+        "declaration" : "(void)setPageIndicatorTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setPageIndicatorTintColor:",
+        "address" : 2589554
+      },
+      {
+        "declaration" : "(void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3",
+        "type" : "method",
+        "name" : "_didChangeFromIdiom:onScreen:traverseHierarchy:",
+        "address" : 2589425
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 2589255
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 2588899
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 2588601
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 2588026
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 2587895
+      },
+      {
+        "declaration" : "(void)_commonPageControlInit",
+        "type" : "method",
+        "name" : "_commonPageControlInit",
+        "address" : 2587818
+      },
+      {
+        "declaration" : "(BOOL)isElementAccessibilityExposedToInterfaceBuilder",
+        "type" : "method",
+        "name" : "isElementAccessibilityExposedToInterfaceBuilder",
+        "address" : 3272662
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "NSMutableArray *",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_indicators"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_currentPage"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 88,
+        "type" : "ivar",
+        "name" : "_displayedPage"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "struct {\n        unsigned int hideForSinglePage:1;\n        unsigned int defersCurrentPageDisplay:1;\n    }",
+        "size" : 4,
+        "offset" : 92,
+        "type" : "ivar",
+        "name" : "_pageControlFlags"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImage *",
+        "size" : 4,
+        "offset" : 96,
+        "type" : "ivar",
+        "name" : "_currentPageImage"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImage *",
+        "size" : 4,
+        "offset" : 100,
+        "type" : "ivar",
+        "name" : "_pageImage"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 104,
+        "type" : "ivar",
+        "name" : "_lastUserInterfaceIdiom"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 108,
+        "type" : "ivar",
+        "name" : "_currentPageIndicatorTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 112,
+        "type" : "ivar",
+        "name" : "_pageIndicatorTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "_UILegibilitySettings *",
+        "size" : 4,
+        "offset" : 116,
+        "type" : "ivar",
+        "name" : "_legibilitySettings"
+      }
+    ],
+    "superClassName" : "UIControl"
+  },
+  "x86_64" : {
+    "properties" : [
+      {
+        "propertyType" : "long long",
+        "getter" : "numberOfPages",
+        "type" : "property",
+        "name" : "numberOfPages",
+        "setter" : "setNumberOfPages:"
+      },
+      {
+        "propertyType" : "long long",
+        "getter" : "currentPage",
+        "type" : "property",
+        "name" : "currentPage",
+        "setter" : "setCurrentPage:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "hidesForSinglePage",
+        "type" : "property",
+        "name" : "hidesForSinglePage",
+        "setter" : "setHidesForSinglePage:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "defersCurrentPageDisplay",
+        "type" : "property",
+        "name" : "defersCurrentPageDisplay",
+        "setter" : "setDefersCurrentPageDisplay:"
+      },
+      {
+        "propertyType" : "UIColor *",
+        "getter" : "pageIndicatorTintColor",
+        "type" : "property",
+        "name" : "pageIndicatorTintColor",
+        "setter" : "setPageIndicatorTintColor:"
+      },
+      {
+        "propertyType" : "UIColor *",
+        "getter" : "currentPageIndicatorTintColor",
+        "type" : "property",
+        "name" : "currentPageIndicatorTintColor",
+        "setter" : "setCurrentPageIndicatorTintColor:"
+      },
+      {
+        "propertyType" : "long long",
+        "getter" : "_legibilityStyle",
+        "type" : "property",
+        "name" : "legibilityStyle",
+        "setter" : "_setLegibilityStyle:"
+      },
+      {
+        "propertyType" : "_UILegibilitySettings *",
+        "getter" : "_legibilitySettings",
+        "type" : "property",
+        "name" : "legibilitySettings",
+        "setter" : "_setLegibilitySettings:"
+      }
+    ],
+    "className" : "UIPageControl",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)_legibilitySettings",
+        "type" : "method",
+        "name" : "_legibilitySettings",
+        "address" : 2252778
+      },
+      {
+        "declaration" : "(id)pageIndicatorTintColor",
+        "type" : "method",
+        "name" : "pageIndicatorTintColor",
+        "address" : 2252761
+      },
+      {
+        "declaration" : "(id)currentPageIndicatorTintColor",
+        "type" : "method",
+        "name" : "currentPageIndicatorTintColor",
+        "address" : 2252744
+      },
+      {
+        "declaration" : "(id)_createModernIndicatorImageFromView:(id)arg1",
+        "type" : "method",
+        "name" : "_createModernIndicatorImageFromView:",
+        "address" : 2252522
+      },
+      {
+        "declaration" : "(id)_modernIndicatorImageEnabled:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_modernIndicatorImageEnabled:",
+        "address" : 2252463
+      },
+      {
+        "declaration" : "(void)_drawModernIndicatorInView:(id)arg1 enabled:(_Bool)arg2",
+        "type" : "method",
+        "name" : "_drawModernIndicatorInView:enabled:",
+        "address" : 2252208
+      },
+      {
+        "declaration" : "(_Bool)_shouldDrawLegibly",
+        "type" : "method",
+        "name" : "_shouldDrawLegibly",
+        "address" : 2252172
+      },
+      {
+        "declaration" : "(void)_setLegibilitySettings:(id)arg1",
+        "type" : "method",
+        "name" : "_setLegibilitySettings:",
+        "address" : 2252029
+      },
+      {
+        "declaration" : "(long long)_legibilityStyle",
+        "type" : "method",
+        "name" : "_legibilityStyle",
+        "address" : 2252000
+      },
+      {
+        "declaration" : "(void)_setLegibilityStyle:(long long)arg1",
+        "type" : "method",
+        "name" : "_setLegibilityStyle:",
+        "address" : 2251942
+      },
+      {
+        "declaration" : "(id)_modernColorEnabled:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_modernColorEnabled:",
+        "address" : 2251795
+      },
+      {
+        "declaration" : "(double)_modernCornerRadius",
+        "type" : "method",
+        "name" : "_modernCornerRadius",
+        "address" : 2251725
+      },
+      {
+        "declaration" : "(struct CGRect)_modernBounds",
+        "type" : "method",
+        "name" : "_modernBounds",
+        "address" : 2251677
+      },
+      {
+        "declaration" : "(void)_modernTransitionIndicator:(id)arg1 toEnabled:(_Bool)arg2 index:(long long)arg3 legible:(_Bool)arg4",
+        "type" : "method",
+        "name" : "_modernTransitionIndicator:toEnabled:index:legible:",
+        "address" : 2251593
+      },
+      {
+        "declaration" : "(id)_indicatorViewEnabled:(_Bool)arg1 index:(long long)arg2",
+        "type" : "method",
+        "name" : "_indicatorViewEnabled:index:",
+        "address" : 2251520
+      },
+      {
+        "declaration" : "(id)_indicatorViewEnabled:(_Bool)arg1 index:(long long)arg2 legible:(_Bool)arg3",
+        "type" : "method",
+        "name" : "_indicatorViewEnabled:index:legible:",
+        "address" : 2251203
+      },
+      {
+        "declaration" : "(void)_transitionIndicator:(id)arg1 toEnabled:(_Bool)arg2 index:(long long)arg3",
+        "type" : "method",
+        "name" : "_transitionIndicator:toEnabled:index:",
+        "address" : 2251115
+      },
+      {
+        "declaration" : "(void)_transitionIndicator:(id)arg1 toEnabled:(_Bool)arg2 index:(long long)arg3 legible:(_Bool)arg4",
+        "type" : "method",
+        "name" : "_transitionIndicator:toEnabled:index:legible:",
+        "address" : 2250935
+      },
+      {
+        "declaration" : "(double)_indicatorSpacing",
+        "type" : "method",
+        "name" : "_indicatorSpacing",
+        "address" : 2250902
+      },
+      {
+        "declaration" : "(struct CGRect)_indicatorFrameAtIndex:(long long)arg1",
+        "type" : "method",
+        "name" : "_indicatorFrameAtIndex:",
+        "address" : 2250717
+      },
+      {
+        "declaration" : "(id)_correctIdiomaticNameForImageNamed:(id)arg1",
+        "type" : "method",
+        "name" : "_correctIdiomaticNameForImageNamed:",
+        "address" : 2250651
+      },
+      {
+        "declaration" : "(id)_activePageIndicatorImage",
+        "type" : "method",
+        "name" : "_activePageIndicatorImage",
+        "address" : 2250618
+      },
+      {
+        "declaration" : "(id)_pageIndicatorImage",
+        "type" : "method",
+        "name" : "_pageIndicatorImage",
+        "address" : 2250585
+      },
+      {
+        "declaration" : "(void)_updateCurrentPageDisplay",
+        "type" : "method",
+        "name" : "_updateCurrentPageDisplay",
+        "address" : 2250556
+      },
+      {
+        "declaration" : "(void)_setCurrentPage:(long long)arg1",
+        "type" : "method",
+        "name" : "_setCurrentPage:",
+        "address" : 2250484
+      },
+      {
+        "declaration" : "(long long)_displayedPage",
+        "type" : "method",
+        "name" : "_displayedPage",
+        "address" : 2250467
+      },
+      {
+        "declaration" : "(void)_setDisplayedPage:(long long)arg1",
+        "type" : "method",
+        "name" : "_setDisplayedPage:",
+        "address" : 2250216
+      },
+      {
+        "declaration" : "(_Bool)gestureRecognizerShouldBegin:(id)arg1",
+        "type" : "method",
+        "name" : "gestureRecognizerShouldBegin:",
+        "address" : 2250070
+      },
+      {
+        "declaration" : "(struct CGSize)sizeForNumberOfPages:(long long)arg1",
+        "type" : "method",
+        "name" : "sizeForNumberOfPages:",
+        "address" : 2249685
+      },
+      {
+        "declaration" : "(void)updateCurrentPageDisplay",
+        "type" : "method",
+        "name" : "updateCurrentPageDisplay",
+        "address" : 2249652
+      },
+      {
+        "declaration" : "(void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "endTrackingWithTouch:withEvent:",
+        "address" : 2249254
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 2248238
+      },
+      {
+        "declaration" : "(struct CGSize)intrinsicContentSize",
+        "type" : "method",
+        "name" : "intrinsicContentSize",
+        "address" : 2247747
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 2247739
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 2247731
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 2247592
+      },
+      {
+        "declaration" : "(_Bool)defersCurrentPageDisplay",
+        "type" : "method",
+        "name" : "defersCurrentPageDisplay",
+        "address" : 2247572
+      },
+      {
+        "declaration" : "(void)setDefersCurrentPageDisplay:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setDefersCurrentPageDisplay:",
+        "address" : 2247528
+      },
+      {
+        "declaration" : "(_Bool)hidesForSinglePage",
+        "type" : "method",
+        "name" : "hidesForSinglePage",
+        "address" : 2247510
+      },
+      {
+        "declaration" : "(void)setHidesForSinglePage:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setHidesForSinglePage:",
+        "address" : 2247405
+      },
+      {
+        "declaration" : "(long long)currentPage",
+        "type" : "method",
+        "name" : "currentPage",
+        "address" : 2247388
+      },
+      {
+        "declaration" : "(void)setCurrentPage:(long long)arg1",
+        "type" : "method",
+        "name" : "setCurrentPage:",
+        "address" : 2247340
+      },
+      {
+        "declaration" : "(long long)numberOfPages",
+        "type" : "method",
+        "name" : "numberOfPages",
+        "address" : 2247311
+      },
+      {
+        "declaration" : "(void)_invalidateIndicators",
+        "type" : "method",
+        "name" : "_invalidateIndicators",
+        "address" : 2246832
+      },
+      {
+        "declaration" : "(void)setNumberOfPages:(long long)arg1",
+        "type" : "method",
+        "name" : "setNumberOfPages:",
+        "address" : 2246176
+      },
+      {
+        "declaration" : "(id)_pageIndicatorCurrentImageForPage:(long long)arg1",
+        "type" : "method",
+        "name" : "_pageIndicatorCurrentImageForPage:",
+        "address" : 2246140
+      },
+      {
+        "declaration" : "(id)_pageIndicatorImageForPage:(long long)arg1",
+        "type" : "method",
+        "name" : "_pageIndicatorImageForPage:",
+        "address" : 2246104
+      },
+      {
+        "declaration" : "(id)_customPageIndicatorCurrentImageForPage:(long long)arg1",
+        "type" : "method",
+        "name" : "_customPageIndicatorCurrentImageForPage:",
+        "address" : 2246013
+      },
+      {
+        "declaration" : "(id)_customPageIndicatorImageForPage:(long long)arg1",
+        "type" : "method",
+        "name" : "_customPageIndicatorImageForPage:",
+        "address" : 2245922
+      },
+      {
+        "declaration" : "(_Bool)_hasCustomImageForPage:(long long)arg1 enabled:(_Bool)arg2",
+        "type" : "method",
+        "name" : "_hasCustomImageForPage:enabled:",
+        "address" : 2245875
+      },
+      {
+        "declaration" : "(void)setCurrentPageIndicatorTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setCurrentPageIndicatorTintColor:",
+        "address" : 2245525
+      },
+      {
+        "declaration" : "(void)setPageIndicatorTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setPageIndicatorTintColor:",
+        "address" : 2245101
+      },
+      {
+        "declaration" : "(void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(_Bool)arg3",
+        "type" : "method",
+        "name" : "_didChangeFromIdiom:onScreen:traverseHierarchy:",
+        "address" : 2244998
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 2244832
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 2244527
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 2244246
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 2243762
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 2243627
+      },
+      {
+        "declaration" : "(void)_commonPageControlInit",
+        "type" : "method",
+        "name" : "_commonPageControlInit",
+        "address" : 2243564
+      },
+      {
+        "declaration" : "(_Bool)isElementAccessibilityExposedToInterfaceBuilder",
+        "type" : "method",
+        "name" : "isElementAccessibilityExposedToInterfaceBuilder",
+        "address" : 2851032
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "NSMutableArray *",
+        "size" : 8,
+        "offset" : 144,
+        "type" : "ivar",
+        "name" : "_indicators"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "long long",
+        "size" : 8,
+        "offset" : 152,
+        "type" : "ivar",
+        "name" : "_currentPage"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "long long",
+        "size" : 8,
+        "offset" : 160,
+        "type" : "ivar",
+        "name" : "_displayedPage"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "struct {\n        unsigned int hideForSinglePage:1;\n        unsigned int defersCurrentPageDisplay:1;\n    }",
+        "size" : 4,
+        "offset" : 168,
+        "type" : "ivar",
+        "name" : "_pageControlFlags"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImage *",
+        "size" : 8,
+        "offset" : 176,
+        "type" : "ivar",
+        "name" : "_currentPageImage"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImage *",
+        "size" : 8,
+        "offset" : 184,
+        "type" : "ivar",
+        "name" : "_pageImage"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "long long",
+        "size" : 8,
+        "offset" : 192,
+        "type" : "ivar",
+        "name" : "_lastUserInterfaceIdiom"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 200,
+        "type" : "ivar",
+        "name" : "_currentPageIndicatorTintColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 208,
+        "type" : "ivar",
+        "name" : "_pageIndicatorTintColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "_UILegibilitySettings *",
+        "size" : 8,
+        "offset" : 216,
+        "type" : "ivar",
+        "name" : "_legibilitySettings"
+      }
+    ],
+    "superClassName" : "UIControl"
+  },
+  "armv7" : {
+    "properties" : [
+      {
+        "name" : "numberOfPages",
+        "propertyType" : "int",
+        "getter" : "numberOfPages",
+        "type" : "property",
+        "setter" : "setNumberOfPages:"
+      },
+      {
+        "name" : "currentPage",
+        "propertyType" : "int",
+        "getter" : "currentPage",
+        "type" : "property",
+        "setter" : "setCurrentPage:"
+      },
+      {
+        "name" : "hidesForSinglePage",
+        "propertyType" : "char",
+        "getter" : "hidesForSinglePage",
+        "type" : "property",
+        "setter" : "setHidesForSinglePage:"
+      },
+      {
+        "name" : "defersCurrentPageDisplay",
+        "propertyType" : "char",
+        "getter" : "defersCurrentPageDisplay",
+        "type" : "property",
+        "setter" : "setDefersCurrentPageDisplay:"
+      },
+      {
+        "name" : "pageIndicatorTintColor",
+        "propertyType" : "UIColor *",
+        "getter" : "pageIndicatorTintColor",
+        "type" : "property",
+        "setter" : "setPageIndicatorTintColor:"
+      },
+      {
+        "name" : "currentPageIndicatorTintColor",
+        "propertyType" : "UIColor *",
+        "getter" : "currentPageIndicatorTintColor",
+        "type" : "property",
+        "setter" : "setCurrentPageIndicatorTintColor:"
+      },
+      {
+        "name" : "legibilityStyle",
+        "propertyType" : "int",
+        "getter" : "_legibilityStyle",
+        "type" : "property",
+        "setter" : "_setLegibilityStyle:"
+      },
+      {
+        "name" : "legibilitySettings",
+        "propertyType" : "_UILegibilitySettings *",
+        "getter" : "_legibilitySettings",
+        "type" : "property",
+        "setter" : "_setLegibilitySettings:"
+      }
+    ],
+    "className" : "UIPageControl",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)_legibilitySettings",
+        "type" : "method",
+        "name" : "_legibilitySettings",
+        "address" : 3516297
+      },
+      {
+        "declaration" : "(id)pageIndicatorTintColor",
+        "type" : "method",
+        "name" : "pageIndicatorTintColor",
+        "address" : 3516281
+      },
+      {
+        "declaration" : "(id)currentPageIndicatorTintColor",
+        "type" : "method",
+        "name" : "currentPageIndicatorTintColor",
+        "address" : 3516265
+      },
+      {
+        "declaration" : "(id)_createModernIndicatorImageFromView:(id)arg1",
+        "type" : "method",
+        "name" : "_createModernIndicatorImageFromView:",
+        "address" : 3516085
+      },
+      {
+        "declaration" : "(id)_modernIndicatorImageEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_modernIndicatorImageEnabled:",
+        "address" : 3516025
+      },
+      {
+        "declaration" : "(void)_drawModernIndicatorInView:(id)arg1 enabled:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_drawModernIndicatorInView:enabled:",
+        "address" : 3515809
+      },
+      {
+        "declaration" : "(BOOL)_shouldDrawLegibly",
+        "type" : "method",
+        "name" : "_shouldDrawLegibly",
+        "address" : 3515765
+      },
+      {
+        "declaration" : "(void)_setLegibilitySettings:(id)arg1",
+        "type" : "method",
+        "name" : "_setLegibilitySettings:",
+        "address" : 3515641
+      },
+      {
+        "declaration" : "(int)_legibilityStyle",
+        "type" : "method",
+        "name" : "_legibilityStyle",
+        "address" : 3515609
+      },
+      {
+        "declaration" : "(void)_setLegibilityStyle:(int)arg1",
+        "type" : "method",
+        "name" : "_setLegibilityStyle:",
+        "address" : 3515549
+      },
+      {
+        "declaration" : "(id)_modernColorEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_modernColorEnabled:",
+        "address" : 3515397
+      },
+      {
+        "declaration" : "(float)_modernCornerRadius",
+        "type" : "method",
+        "name" : "_modernCornerRadius",
+        "address" : 3515333
+      },
+      {
+        "declaration" : "(struct CGRect)_modernBounds",
+        "type" : "method",
+        "name" : "_modernBounds",
+        "address" : 3515301
+      },
+      {
+        "declaration" : "(void)_modernTransitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3 legible:(BOOL)arg4",
+        "type" : "method",
+        "name" : "_modernTransitionIndicator:toEnabled:index:legible:",
+        "address" : 3515221
+      },
+      {
+        "declaration" : "(id)_indicatorViewEnabled:(BOOL)arg1 index:(int)arg2",
+        "type" : "method",
+        "name" : "_indicatorViewEnabled:index:",
+        "address" : 3515161
+      },
+      {
+        "declaration" : "(id)_indicatorViewEnabled:(BOOL)arg1 index:(int)arg2 legible:(BOOL)arg3",
+        "type" : "method",
+        "name" : "_indicatorViewEnabled:index:legible:",
+        "address" : 3514825
+      },
+      {
+        "declaration" : "(void)_transitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3",
+        "type" : "method",
+        "name" : "_transitionIndicator:toEnabled:index:",
+        "address" : 3514761
+      },
+      {
+        "declaration" : "(void)_transitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3 legible:(BOOL)arg4",
+        "type" : "method",
+        "name" : "_transitionIndicator:toEnabled:index:legible:",
+        "address" : 3514597
+      },
+      {
+        "declaration" : "(float)_indicatorSpacing",
+        "type" : "method",
+        "name" : "_indicatorSpacing",
+        "address" : 3514565
+      },
+      {
+        "declaration" : "(struct CGRect)_indicatorFrameAtIndex:(int)arg1",
+        "type" : "method",
+        "name" : "_indicatorFrameAtIndex:",
+        "address" : 3514405
+      },
+      {
+        "declaration" : "(id)_correctIdiomaticNameForImageNamed:(id)arg1",
+        "type" : "method",
+        "name" : "_correctIdiomaticNameForImageNamed:",
+        "address" : 3514333
+      },
+      {
+        "declaration" : "(id)_activePageIndicatorImage",
+        "type" : "method",
+        "name" : "_activePageIndicatorImage",
+        "address" : 3514293
+      },
+      {
+        "declaration" : "(id)_pageIndicatorImage",
+        "type" : "method",
+        "name" : "_pageIndicatorImage",
+        "address" : 3514253
+      },
+      {
+        "declaration" : "(void)_updateCurrentPageDisplay",
+        "type" : "method",
+        "name" : "_updateCurrentPageDisplay",
+        "address" : 3514221
+      },
+      {
+        "declaration" : "(void)_setCurrentPage:(int)arg1",
+        "type" : "method",
+        "name" : "_setCurrentPage:",
+        "address" : 3514153
+      },
+      {
+        "declaration" : "(int)_displayedPage",
+        "type" : "method",
+        "name" : "_displayedPage",
+        "address" : 3514137
+      },
+      {
+        "declaration" : "(void)_setDisplayedPage:(int)arg1",
+        "type" : "method",
+        "name" : "_setDisplayedPage:",
+        "address" : 3513929
+      },
+      {
+        "declaration" : "(BOOL)gestureRecognizerShouldBegin:(id)arg1",
+        "type" : "method",
+        "name" : "gestureRecognizerShouldBegin:",
+        "address" : 3513777
+      },
+      {
+        "declaration" : "(struct CGSize)sizeForNumberOfPages:(int)arg1",
+        "type" : "method",
+        "name" : "sizeForNumberOfPages:",
+        "address" : 3513361
+      },
+      {
+        "declaration" : "(void)updateCurrentPageDisplay",
+        "type" : "method",
+        "name" : "updateCurrentPageDisplay",
+        "address" : 3513321
+      },
+      {
+        "declaration" : "(void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "endTrackingWithTouch:withEvent:",
+        "address" : 3512873
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 3512021
+      },
+      {
+        "declaration" : "(struct CGSize)intrinsicContentSize",
+        "type" : "method",
+        "name" : "intrinsicContentSize",
+        "address" : 3511625
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 3511621
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 3511617
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 3511485
+      },
+      {
+        "declaration" : "(BOOL)defersCurrentPageDisplay",
+        "type" : "method",
+        "name" : "defersCurrentPageDisplay",
+        "address" : 3511465
+      },
+      {
+        "declaration" : "(void)setDefersCurrentPageDisplay:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setDefersCurrentPageDisplay:",
+        "address" : 3511417
+      },
+      {
+        "declaration" : "(BOOL)hidesForSinglePage",
+        "type" : "method",
+        "name" : "hidesForSinglePage",
+        "address" : 3511397
+      },
+      {
+        "declaration" : "(void)setHidesForSinglePage:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setHidesForSinglePage:",
+        "address" : 3511289
+      },
+      {
+        "declaration" : "(int)currentPage",
+        "type" : "method",
+        "name" : "currentPage",
+        "address" : 3511273
+      },
+      {
+        "declaration" : "(void)setCurrentPage:(int)arg1",
+        "type" : "method",
+        "name" : "setCurrentPage:",
+        "address" : 3511225
+      },
+      {
+        "declaration" : "(int)numberOfPages",
+        "type" : "method",
+        "name" : "numberOfPages",
+        "address" : 3511193
+      },
+      {
+        "declaration" : "(void)_invalidateIndicators",
+        "type" : "method",
+        "name" : "_invalidateIndicators",
+        "address" : 3510773
+      },
+      {
+        "declaration" : "(void)setNumberOfPages:(int)arg1",
+        "type" : "method",
+        "name" : "setNumberOfPages:",
+        "address" : 3510077
+      },
+      {
+        "declaration" : "(id)_pageIndicatorCurrentImageForPage:(int)arg1",
+        "type" : "method",
+        "name" : "_pageIndicatorCurrentImageForPage:",
+        "address" : 3510037
+      },
+      {
+        "declaration" : "(id)_pageIndicatorImageForPage:(int)arg1",
+        "type" : "method",
+        "name" : "_pageIndicatorImageForPage:",
+        "address" : 3509997
+      },
+      {
+        "declaration" : "(id)_customPageIndicatorCurrentImageForPage:(int)arg1",
+        "type" : "method",
+        "name" : "_customPageIndicatorCurrentImageForPage:",
+        "address" : 3509913
+      },
+      {
+        "declaration" : "(id)_customPageIndicatorImageForPage:(int)arg1",
+        "type" : "method",
+        "name" : "_customPageIndicatorImageForPage:",
+        "address" : 3509829
+      },
+      {
+        "declaration" : "(BOOL)_hasCustomImageForPage:(int)arg1 enabled:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_hasCustomImageForPage:enabled:",
+        "address" : 3509769
+      },
+      {
+        "declaration" : "(void)setCurrentPageIndicatorTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setCurrentPageIndicatorTintColor:",
+        "address" : 3509485
+      },
+      {
+        "declaration" : "(void)setPageIndicatorTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setPageIndicatorTintColor:",
+        "address" : 3509133
+      },
+      {
+        "declaration" : "(void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3",
+        "type" : "method",
+        "name" : "_didChangeFromIdiom:onScreen:traverseHierarchy:",
+        "address" : 3508913
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 3508753
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 3508437
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 3508205
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 3507669
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 3507569
+      },
+      {
+        "declaration" : "(void)_commonPageControlInit",
+        "type" : "method",
+        "name" : "_commonPageControlInit",
+        "address" : 3507505
+      },
+      {
+        "declaration" : "(BOOL)isElementAccessibilityExposedToInterfaceBuilder",
+        "type" : "method",
+        "name" : "isElementAccessibilityExposedToInterfaceBuilder",
+        "address" : 3792485
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "NSMutableArray *",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_indicators"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_currentPage"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 88,
+        "type" : "ivar",
+        "name" : "_displayedPage"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "struct {\n        unsigned int hideForSinglePage:1;\n        unsigned int defersCurrentPageDisplay:1;\n    }",
+        "size" : 1,
+        "offset" : 92,
+        "type" : "ivar",
+        "name" : "_pageControlFlags"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImage *",
+        "size" : 4,
+        "offset" : 96,
+        "type" : "ivar",
+        "name" : "_currentPageImage"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImage *",
+        "size" : 4,
+        "offset" : 100,
+        "type" : "ivar",
+        "name" : "_pageImage"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 104,
+        "type" : "ivar",
+        "name" : "_lastUserInterfaceIdiom"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 108,
+        "type" : "ivar",
+        "name" : "_currentPageIndicatorTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 112,
+        "type" : "ivar",
+        "name" : "_pageIndicatorTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "_UILegibilitySettings *",
+        "size" : 4,
+        "offset" : 116,
+        "type" : "ivar",
+        "name" : "_legibilitySettings"
+      }
+    ],
+    "superClassName" : "UIControl"
+  },
+  "armv7s" : {
+    "properties" : [
+      {
+        "getter" : "numberOfPages",
+        "setter" : "setNumberOfPages:",
+        "type" : "property",
+        "name" : "numberOfPages",
+        "propertyType" : "int"
+      },
+      {
+        "getter" : "currentPage",
+        "setter" : "setCurrentPage:",
+        "type" : "property",
+        "name" : "currentPage",
+        "propertyType" : "int"
+      },
+      {
+        "getter" : "hidesForSinglePage",
+        "setter" : "setHidesForSinglePage:",
+        "type" : "property",
+        "name" : "hidesForSinglePage",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "defersCurrentPageDisplay",
+        "setter" : "setDefersCurrentPageDisplay:",
+        "type" : "property",
+        "name" : "defersCurrentPageDisplay",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "pageIndicatorTintColor",
+        "setter" : "setPageIndicatorTintColor:",
+        "type" : "property",
+        "name" : "pageIndicatorTintColor",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "getter" : "currentPageIndicatorTintColor",
+        "setter" : "setCurrentPageIndicatorTintColor:",
+        "type" : "property",
+        "name" : "currentPageIndicatorTintColor",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "getter" : "_legibilityStyle",
+        "setter" : "_setLegibilityStyle:",
+        "type" : "property",
+        "name" : "legibilityStyle",
+        "propertyType" : "int"
+      },
+      {
+        "getter" : "_legibilitySettings",
+        "setter" : "_setLegibilitySettings:",
+        "type" : "property",
+        "name" : "legibilitySettings",
+        "propertyType" : "_UILegibilitySettings *"
+      }
+    ],
+    "className" : "UIPageControl",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)_legibilitySettings",
+        "type" : "method",
+        "name" : "_legibilitySettings",
+        "address" : 3517997
+      },
+      {
+        "declaration" : "(id)pageIndicatorTintColor",
+        "type" : "method",
+        "name" : "pageIndicatorTintColor",
+        "address" : 3517981
+      },
+      {
+        "declaration" : "(id)currentPageIndicatorTintColor",
+        "type" : "method",
+        "name" : "currentPageIndicatorTintColor",
+        "address" : 3517965
+      },
+      {
+        "declaration" : "(id)_createModernIndicatorImageFromView:(id)arg1",
+        "type" : "method",
+        "name" : "_createModernIndicatorImageFromView:",
+        "address" : 3517785
+      },
+      {
+        "declaration" : "(id)_modernIndicatorImageEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_modernIndicatorImageEnabled:",
+        "address" : 3517725
+      },
+      {
+        "declaration" : "(void)_drawModernIndicatorInView:(id)arg1 enabled:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_drawModernIndicatorInView:enabled:",
+        "address" : 3517509
+      },
+      {
+        "declaration" : "(BOOL)_shouldDrawLegibly",
+        "type" : "method",
+        "name" : "_shouldDrawLegibly",
+        "address" : 3517465
+      },
+      {
+        "declaration" : "(void)_setLegibilitySettings:(id)arg1",
+        "type" : "method",
+        "name" : "_setLegibilitySettings:",
+        "address" : 3517341
+      },
+      {
+        "declaration" : "(int)_legibilityStyle",
+        "type" : "method",
+        "name" : "_legibilityStyle",
+        "address" : 3517309
+      },
+      {
+        "declaration" : "(void)_setLegibilityStyle:(int)arg1",
+        "type" : "method",
+        "name" : "_setLegibilityStyle:",
+        "address" : 3517249
+      },
+      {
+        "declaration" : "(id)_modernColorEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_modernColorEnabled:",
+        "address" : 3517097
+      },
+      {
+        "declaration" : "(float)_modernCornerRadius",
+        "type" : "method",
+        "name" : "_modernCornerRadius",
+        "address" : 3517033
+      },
+      {
+        "declaration" : "(struct CGRect)_modernBounds",
+        "type" : "method",
+        "name" : "_modernBounds",
+        "address" : 3517001
+      },
+      {
+        "declaration" : "(void)_modernTransitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3 legible:(BOOL)arg4",
+        "type" : "method",
+        "name" : "_modernTransitionIndicator:toEnabled:index:legible:",
+        "address" : 3516921
+      },
+      {
+        "declaration" : "(id)_indicatorViewEnabled:(BOOL)arg1 index:(int)arg2",
+        "type" : "method",
+        "name" : "_indicatorViewEnabled:index:",
+        "address" : 3516861
+      },
+      {
+        "declaration" : "(id)_indicatorViewEnabled:(BOOL)arg1 index:(int)arg2 legible:(BOOL)arg3",
+        "type" : "method",
+        "name" : "_indicatorViewEnabled:index:legible:",
+        "address" : 3516525
+      },
+      {
+        "declaration" : "(void)_transitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3",
+        "type" : "method",
+        "name" : "_transitionIndicator:toEnabled:index:",
+        "address" : 3516461
+      },
+      {
+        "declaration" : "(void)_transitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3 legible:(BOOL)arg4",
+        "type" : "method",
+        "name" : "_transitionIndicator:toEnabled:index:legible:",
+        "address" : 3516297
+      },
+      {
+        "declaration" : "(float)_indicatorSpacing",
+        "type" : "method",
+        "name" : "_indicatorSpacing",
+        "address" : 3516265
+      },
+      {
+        "declaration" : "(struct CGRect)_indicatorFrameAtIndex:(int)arg1",
+        "type" : "method",
+        "name" : "_indicatorFrameAtIndex:",
+        "address" : 3516105
+      },
+      {
+        "declaration" : "(id)_correctIdiomaticNameForImageNamed:(id)arg1",
+        "type" : "method",
+        "name" : "_correctIdiomaticNameForImageNamed:",
+        "address" : 3516033
+      },
+      {
+        "declaration" : "(id)_activePageIndicatorImage",
+        "type" : "method",
+        "name" : "_activePageIndicatorImage",
+        "address" : 3515993
+      },
+      {
+        "declaration" : "(id)_pageIndicatorImage",
+        "type" : "method",
+        "name" : "_pageIndicatorImage",
+        "address" : 3515953
+      },
+      {
+        "declaration" : "(void)_updateCurrentPageDisplay",
+        "type" : "method",
+        "name" : "_updateCurrentPageDisplay",
+        "address" : 3515921
+      },
+      {
+        "declaration" : "(void)_setCurrentPage:(int)arg1",
+        "type" : "method",
+        "name" : "_setCurrentPage:",
+        "address" : 3515853
+      },
+      {
+        "declaration" : "(int)_displayedPage",
+        "type" : "method",
+        "name" : "_displayedPage",
+        "address" : 3515837
+      },
+      {
+        "declaration" : "(void)_setDisplayedPage:(int)arg1",
+        "type" : "method",
+        "name" : "_setDisplayedPage:",
+        "address" : 3515629
+      },
+      {
+        "declaration" : "(BOOL)gestureRecognizerShouldBegin:(id)arg1",
+        "type" : "method",
+        "name" : "gestureRecognizerShouldBegin:",
+        "address" : 3515477
+      },
+      {
+        "declaration" : "(struct CGSize)sizeForNumberOfPages:(int)arg1",
+        "type" : "method",
+        "name" : "sizeForNumberOfPages:",
+        "address" : 3515065
+      },
+      {
+        "declaration" : "(void)updateCurrentPageDisplay",
+        "type" : "method",
+        "name" : "updateCurrentPageDisplay",
+        "address" : 3515025
+      },
+      {
+        "declaration" : "(void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "endTrackingWithTouch:withEvent:",
+        "address" : 3514577
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 3513705
+      },
+      {
+        "declaration" : "(struct CGSize)intrinsicContentSize",
+        "type" : "method",
+        "name" : "intrinsicContentSize",
+        "address" : 3513313
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 3513309
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 3513305
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 3513177
+      },
+      {
+        "declaration" : "(BOOL)defersCurrentPageDisplay",
+        "type" : "method",
+        "name" : "defersCurrentPageDisplay",
+        "address" : 3513157
+      },
+      {
+        "declaration" : "(void)setDefersCurrentPageDisplay:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setDefersCurrentPageDisplay:",
+        "address" : 3513109
+      },
+      {
+        "declaration" : "(BOOL)hidesForSinglePage",
+        "type" : "method",
+        "name" : "hidesForSinglePage",
+        "address" : 3513089
+      },
+      {
+        "declaration" : "(void)setHidesForSinglePage:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setHidesForSinglePage:",
+        "address" : 3512985
+      },
+      {
+        "declaration" : "(int)currentPage",
+        "type" : "method",
+        "name" : "currentPage",
+        "address" : 3512969
+      },
+      {
+        "declaration" : "(void)setCurrentPage:(int)arg1",
+        "type" : "method",
+        "name" : "setCurrentPage:",
+        "address" : 3512921
+      },
+      {
+        "declaration" : "(int)numberOfPages",
+        "type" : "method",
+        "name" : "numberOfPages",
+        "address" : 3512889
+      },
+      {
+        "declaration" : "(void)_invalidateIndicators",
+        "type" : "method",
+        "name" : "_invalidateIndicators",
+        "address" : 3512469
+      },
+      {
+        "declaration" : "(void)setNumberOfPages:(int)arg1",
+        "type" : "method",
+        "name" : "setNumberOfPages:",
+        "address" : 3511769
+      },
+      {
+        "declaration" : "(id)_pageIndicatorCurrentImageForPage:(int)arg1",
+        "type" : "method",
+        "name" : "_pageIndicatorCurrentImageForPage:",
+        "address" : 3511729
+      },
+      {
+        "declaration" : "(id)_pageIndicatorImageForPage:(int)arg1",
+        "type" : "method",
+        "name" : "_pageIndicatorImageForPage:",
+        "address" : 3511689
+      },
+      {
+        "declaration" : "(id)_customPageIndicatorCurrentImageForPage:(int)arg1",
+        "type" : "method",
+        "name" : "_customPageIndicatorCurrentImageForPage:",
+        "address" : 3511605
+      },
+      {
+        "declaration" : "(id)_customPageIndicatorImageForPage:(int)arg1",
+        "type" : "method",
+        "name" : "_customPageIndicatorImageForPage:",
+        "address" : 3511521
+      },
+      {
+        "declaration" : "(BOOL)_hasCustomImageForPage:(int)arg1 enabled:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_hasCustomImageForPage:enabled:",
+        "address" : 3511461
+      },
+      {
+        "declaration" : "(void)setCurrentPageIndicatorTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setCurrentPageIndicatorTintColor:",
+        "address" : 3511177
+      },
+      {
+        "declaration" : "(void)setPageIndicatorTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setPageIndicatorTintColor:",
+        "address" : 3510825
+      },
+      {
+        "declaration" : "(void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3",
+        "type" : "method",
+        "name" : "_didChangeFromIdiom:onScreen:traverseHierarchy:",
+        "address" : 3510601
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 3510441
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 3510125
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 3509893
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 3509357
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 3509249
+      },
+      {
+        "declaration" : "(void)_commonPageControlInit",
+        "type" : "method",
+        "name" : "_commonPageControlInit",
+        "address" : 3509185
+      },
+      {
+        "declaration" : "(BOOL)isElementAccessibilityExposedToInterfaceBuilder",
+        "type" : "method",
+        "name" : "isElementAccessibilityExposedToInterfaceBuilder",
+        "address" : 3794213
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "NSMutableArray *",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_indicators"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_currentPage"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 88,
+        "type" : "ivar",
+        "name" : "_displayedPage"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "struct {\n        unsigned int hideForSinglePage:1;\n        unsigned int defersCurrentPageDisplay:1;\n    }",
+        "size" : 1,
+        "offset" : 92,
+        "type" : "ivar",
+        "name" : "_pageControlFlags"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImage *",
+        "size" : 4,
+        "offset" : 96,
+        "type" : "ivar",
+        "name" : "_currentPageImage"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImage *",
+        "size" : 4,
+        "offset" : 100,
+        "type" : "ivar",
+        "name" : "_pageImage"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 104,
+        "type" : "ivar",
+        "name" : "_lastUserInterfaceIdiom"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 108,
+        "type" : "ivar",
+        "name" : "_currentPageIndicatorTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 112,
+        "type" : "ivar",
+        "name" : "_pageIndicatorTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "_UILegibilitySettings *",
+        "size" : 4,
+        "offset" : 116,
+        "type" : "ivar",
+        "name" : "_legibilitySettings"
+      }
+    ],
+    "superClassName" : "UIControl"
+  },
+  "arm64" : {
+    "properties" : [
+      {
+        "type" : "property",
+        "propertyType" : "long long",
+        "name" : "numberOfPages",
+        "getter" : "numberOfPages",
+        "setter" : "setNumberOfPages:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "long long",
+        "name" : "currentPage",
+        "getter" : "currentPage",
+        "setter" : "setCurrentPage:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "_Bool",
+        "name" : "hidesForSinglePage",
+        "getter" : "hidesForSinglePage",
+        "setter" : "setHidesForSinglePage:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "_Bool",
+        "name" : "defersCurrentPageDisplay",
+        "getter" : "defersCurrentPageDisplay",
+        "setter" : "setDefersCurrentPageDisplay:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIColor *",
+        "name" : "pageIndicatorTintColor",
+        "getter" : "pageIndicatorTintColor",
+        "setter" : "setPageIndicatorTintColor:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIColor *",
+        "name" : "currentPageIndicatorTintColor",
+        "getter" : "currentPageIndicatorTintColor",
+        "setter" : "setCurrentPageIndicatorTintColor:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "long long",
+        "name" : "legibilityStyle",
+        "getter" : "_legibilityStyle",
+        "setter" : "_setLegibilityStyle:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "_UILegibilitySettings *",
+        "name" : "legibilitySettings",
+        "getter" : "_legibilitySettings",
+        "setter" : "_setLegibilitySettings:"
+      }
+    ],
+    "className" : "UIPageControl",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)_legibilitySettings",
+        "type" : "method",
+        "name" : "_legibilitySettings",
+        "address" : 3854708
+      },
+      {
+        "declaration" : "(id)pageIndicatorTintColor",
+        "type" : "method",
+        "name" : "pageIndicatorTintColor",
+        "address" : 3854692
+      },
+      {
+        "declaration" : "(id)currentPageIndicatorTintColor",
+        "type" : "method",
+        "name" : "currentPageIndicatorTintColor",
+        "address" : 3854676
+      },
+      {
+        "declaration" : "(id)_createModernIndicatorImageFromView:(id)arg1",
+        "type" : "method",
+        "name" : "_createModernIndicatorImageFromView:",
+        "address" : 3854476
+      },
+      {
+        "declaration" : "(id)_modernIndicatorImageEnabled:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_modernIndicatorImageEnabled:",
+        "address" : 3854404
+      },
+      {
+        "declaration" : "(void)_drawModernIndicatorInView:(id)arg1 enabled:(_Bool)arg2",
+        "type" : "method",
+        "name" : "_drawModernIndicatorInView:enabled:",
+        "address" : 3854112
+      },
+      {
+        "declaration" : "(_Bool)_shouldDrawLegibly",
+        "type" : "method",
+        "name" : "_shouldDrawLegibly",
+        "address" : 3854060
+      },
+      {
+        "declaration" : "(void)_setLegibilitySettings:(id)arg1",
+        "type" : "method",
+        "name" : "_setLegibilitySettings:",
+        "address" : 3853896
+      },
+      {
+        "declaration" : "(long long)_legibilityStyle",
+        "type" : "method",
+        "name" : "_legibilityStyle",
+        "address" : 3853868
+      },
+      {
+        "declaration" : "(void)_setLegibilityStyle:(long long)arg1",
+        "type" : "method",
+        "name" : "_setLegibilityStyle:",
+        "address" : 3853796
+      },
+      {
+        "declaration" : "(id)_modernColorEnabled:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_modernColorEnabled:",
+        "address" : 3853624
+      },
+      {
+        "declaration" : "(double)_modernCornerRadius",
+        "type" : "method",
+        "name" : "_modernCornerRadius",
+        "address" : 3853584
+      },
+      {
+        "declaration" : "(struct CGRect)_modernBounds",
+        "type" : "method",
+        "name" : "_modernBounds",
+        "address" : 3853560
+      },
+      {
+        "declaration" : "(void)_modernTransitionIndicator:(id)arg1 toEnabled:(_Bool)arg2 index:(long long)arg3 legible:(_Bool)arg4",
+        "type" : "method",
+        "name" : "_modernTransitionIndicator:toEnabled:index:legible:",
+        "address" : 3853456
+      },
+      {
+        "declaration" : "(id)_indicatorViewEnabled:(_Bool)arg1 index:(long long)arg2",
+        "type" : "method",
+        "name" : "_indicatorViewEnabled:index:",
+        "address" : 3853368
+      },
+      {
+        "declaration" : "(id)_indicatorViewEnabled:(_Bool)arg1 index:(long long)arg2 legible:(_Bool)arg3",
+        "type" : "method",
+        "name" : "_indicatorViewEnabled:index:legible:",
+        "address" : 3852984
+      },
+      {
+        "declaration" : "(void)_transitionIndicator:(id)arg1 toEnabled:(_Bool)arg2 index:(long long)arg3",
+        "type" : "method",
+        "name" : "_transitionIndicator:toEnabled:index:",
+        "address" : 3852888
+      },
+      {
+        "declaration" : "(void)_transitionIndicator:(id)arg1 toEnabled:(_Bool)arg2 index:(long long)arg3 legible:(_Bool)arg4",
+        "type" : "method",
+        "name" : "_transitionIndicator:toEnabled:index:legible:",
+        "address" : 3852676
+      },
+      {
+        "declaration" : "(double)_indicatorSpacing",
+        "type" : "method",
+        "name" : "_indicatorSpacing",
+        "address" : 3852640
+      },
+      {
+        "declaration" : "(struct CGRect)_indicatorFrameAtIndex:(long long)arg1",
+        "type" : "method",
+        "name" : "_indicatorFrameAtIndex:",
+        "address" : 3852484
+      },
+      {
+        "declaration" : "(id)_correctIdiomaticNameForImageNamed:(id)arg1",
+        "type" : "method",
+        "name" : "_correctIdiomaticNameForImageNamed:",
+        "address" : 3852396
+      },
+      {
+        "declaration" : "(id)_activePageIndicatorImage",
+        "type" : "method",
+        "name" : "_activePageIndicatorImage",
+        "address" : 3852356
+      },
+      {
+        "declaration" : "(id)_pageIndicatorImage",
+        "type" : "method",
+        "name" : "_pageIndicatorImage",
+        "address" : 3852316
+      },
+      {
+        "declaration" : "(void)_updateCurrentPageDisplay",
+        "type" : "method",
+        "name" : "_updateCurrentPageDisplay",
+        "address" : 3852288
+      },
+      {
+        "declaration" : "(void)_setCurrentPage:(long long)arg1",
+        "type" : "method",
+        "name" : "_setCurrentPage:",
+        "address" : 3852196
+      },
+      {
+        "declaration" : "(long long)_displayedPage",
+        "type" : "method",
+        "name" : "_displayedPage",
+        "address" : 3852180
+      },
+      {
+        "declaration" : "(void)_setDisplayedPage:(long long)arg1",
+        "type" : "method",
+        "name" : "_setDisplayedPage:",
+        "address" : 3851880
+      },
+      {
+        "declaration" : "(_Bool)gestureRecognizerShouldBegin:(id)arg1",
+        "type" : "method",
+        "name" : "gestureRecognizerShouldBegin:",
+        "address" : 3851692
+      },
+      {
+        "declaration" : "(struct CGSize)sizeForNumberOfPages:(long long)arg1",
+        "type" : "method",
+        "name" : "sizeForNumberOfPages:",
+        "address" : 3851352
+      },
+      {
+        "declaration" : "(void)updateCurrentPageDisplay",
+        "type" : "method",
+        "name" : "updateCurrentPageDisplay",
+        "address" : 3851316
+      },
+      {
+        "declaration" : "(void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "endTrackingWithTouch:withEvent:",
+        "address" : 3850880
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 3850076
+      },
+      {
+        "declaration" : "(struct CGSize)intrinsicContentSize",
+        "type" : "method",
+        "name" : "intrinsicContentSize",
+        "address" : 3849784
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 3849776
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 3849768
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 3849640
+      },
+      {
+        "declaration" : "(_Bool)defersCurrentPageDisplay",
+        "type" : "method",
+        "name" : "defersCurrentPageDisplay",
+        "address" : 3849620
+      },
+      {
+        "declaration" : "(void)setDefersCurrentPageDisplay:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setDefersCurrentPageDisplay:",
+        "address" : 3849576
+      },
+      {
+        "declaration" : "(_Bool)hidesForSinglePage",
+        "type" : "method",
+        "name" : "hidesForSinglePage",
+        "address" : 3849556
+      },
+      {
+        "declaration" : "(void)setHidesForSinglePage:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setHidesForSinglePage:",
+        "address" : 3849416
+      },
+      {
+        "declaration" : "(long long)currentPage",
+        "type" : "method",
+        "name" : "currentPage",
+        "address" : 3849400
+      },
+      {
+        "declaration" : "(void)setCurrentPage:(long long)arg1",
+        "type" : "method",
+        "name" : "setCurrentPage:",
+        "address" : 3849340
+      },
+      {
+        "declaration" : "(long long)numberOfPages",
+        "type" : "method",
+        "name" : "numberOfPages",
+        "address" : 3849312
+      },
+      {
+        "declaration" : "(void)_invalidateIndicators",
+        "type" : "method",
+        "name" : "_invalidateIndicators",
+        "address" : 3848784
+      },
+      {
+        "declaration" : "(void)setNumberOfPages:(long long)arg1",
+        "type" : "method",
+        "name" : "setNumberOfPages:",
+        "address" : 3847936
+      },
+      {
+        "declaration" : "(id)_pageIndicatorCurrentImageForPage:(long long)arg1",
+        "type" : "method",
+        "name" : "_pageIndicatorCurrentImageForPage:",
+        "address" : 3847896
+      },
+      {
+        "declaration" : "(id)_pageIndicatorImageForPage:(long long)arg1",
+        "type" : "method",
+        "name" : "_pageIndicatorImageForPage:",
+        "address" : 3847856
+      },
+      {
+        "declaration" : "(id)_customPageIndicatorCurrentImageForPage:(long long)arg1",
+        "type" : "method",
+        "name" : "_customPageIndicatorCurrentImageForPage:",
+        "address" : 3847736
+      },
+      {
+        "declaration" : "(id)_customPageIndicatorImageForPage:(long long)arg1",
+        "type" : "method",
+        "name" : "_customPageIndicatorImageForPage:",
+        "address" : 3847616
+      },
+      {
+        "declaration" : "(_Bool)_hasCustomImageForPage:(long long)arg1 enabled:(_Bool)arg2",
+        "type" : "method",
+        "name" : "_hasCustomImageForPage:enabled:",
+        "address" : 3847544
+      },
+      {
+        "declaration" : "(void)setCurrentPageIndicatorTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setCurrentPageIndicatorTintColor:",
+        "address" : 3847108
+      },
+      {
+        "declaration" : "(void)setPageIndicatorTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setPageIndicatorTintColor:",
+        "address" : 3846536
+      },
+      {
+        "declaration" : "(void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(_Bool)arg3",
+        "type" : "method",
+        "name" : "_didChangeFromIdiom:onScreen:traverseHierarchy:",
+        "address" : 3846400
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 3846216
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 3845848
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 3845520
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 3844932
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 3844808
+      },
+      {
+        "declaration" : "(void)_commonPageControlInit",
+        "type" : "method",
+        "name" : "_commonPageControlInit",
+        "address" : 3844752
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "NSMutableArray *",
+        "size" : 8,
+        "offset" : 144,
+        "type" : "ivar",
+        "name" : "_indicators"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "long long",
+        "size" : 8,
+        "offset" : 152,
+        "type" : "ivar",
+        "name" : "_currentPage"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "long long",
+        "size" : 8,
+        "offset" : 160,
+        "type" : "ivar",
+        "name" : "_displayedPage"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "struct {\n        unsigned int hideForSinglePage:1;\n        unsigned int defersCurrentPageDisplay:1;\n    }",
+        "size" : 4,
+        "offset" : 168,
+        "type" : "ivar",
+        "name" : "_pageControlFlags"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImage *",
+        "size" : 8,
+        "offset" : 176,
+        "type" : "ivar",
+        "name" : "_currentPageImage"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImage *",
+        "size" : 8,
+        "offset" : 184,
+        "type" : "ivar",
+        "name" : "_pageImage"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "long long",
+        "size" : 8,
+        "offset" : 192,
+        "type" : "ivar",
+        "name" : "_lastUserInterfaceIdiom"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 200,
+        "type" : "ivar",
+        "name" : "_currentPageIndicatorTintColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 208,
+        "type" : "ivar",
+        "name" : "_pageIndicatorTintColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "_UILegibilitySettings *",
+        "size" : 8,
+        "offset" : 216,
+        "type" : "ivar",
+        "name" : "_legibilitySettings"
+      }
+    ],
+    "superClassName" : "UIControl"
+  }
+}

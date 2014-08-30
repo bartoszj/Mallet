@@ -1,0 +1,725 @@
+{
+  "arm64":{
+    "className":"UIButton",
+    "ivars":[
+      {
+        "alignment":3,
+        "ivarType":"unsigned long long",
+        "name":"_externalFlatEdge",
+        "offset":224,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"struct __CFDictionary *",
+        "name":"_contentLookup",
+        "offset":232,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_contentEdgeInsets",
+        "offset":240,
+        "size":32,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_titleEdgeInsets",
+        "offset":272,
+        "size":32,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_imageEdgeInsets",
+        "offset":304,
+        "size":32,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIImageView *",
+        "name":"_backgroundView",
+        "offset":336,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIImageView *",
+        "name":"_imageView",
+        "offset":344,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UILabel *",
+        "name":"_titleView",
+        "offset":352,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_initialized",
+        "offset":360,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"unsigned long long",
+        "name":"_lastDrawingControlState",
+        "offset":368,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UITapGestureRecognizer *",
+        "name":"_selectGestureRecognizer",
+        "offset":376,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct {\n        unsigned int reversesTitleShadowWhenHighlighted:1;\n        unsigned int adjustsImageWhenHighlighted:1;\n        unsigned int adjustsImageWhenDisabled:1;\n        unsigned int autosizeToFit:1;\n        unsigned int disabledDimsImage:1;\n        unsigned int showsTouchWhenHighlighted:1;\n        unsigned int buttonType:8;\n        unsigned int shouldHandleScrollerMouseEvent:1;\n        unsigned int titleFrozen:1;\n    }",
+        "name":"_buttonFlags",
+        "offset":384,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"_UIButtonMaskAnimationView *",
+        "name":"_maskAnimationView",
+        "offset":392,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_selectionView",
+        "offset":400,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIFont *",
+        "name":"_lazyTitleViewFont",
+        "offset":408,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSArray *",
+        "name":"_contentConstraints",
+        "offset":416,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_internalTitlePaddingInsets",
+        "offset":424,
+        "size":32,
+        "type":"ivar"
+      }
+    ],
+    "protocols":[
+      "NSCoding"
+    ],
+    "superClassName":"UIControl",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"UIButton",
+    "ivars":[
+      {
+        "alignment":2,
+        "ivarType":"unsigned int",
+        "name":"_externalFlatEdge",
+        "offset":120,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct __CFDictionary *",
+        "name":"_contentLookup",
+        "offset":124,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_contentEdgeInsets",
+        "offset":128,
+        "size":16,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_titleEdgeInsets",
+        "offset":144,
+        "size":16,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_imageEdgeInsets",
+        "offset":160,
+        "size":16,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIImageView *",
+        "name":"_backgroundView",
+        "offset":176,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIImageView *",
+        "name":"_imageView",
+        "offset":180,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UILabel *",
+        "name":"_titleView",
+        "offset":184,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_initialized",
+        "offset":188,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"unsigned int",
+        "name":"_lastDrawingControlState",
+        "offset":192,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UITapGestureRecognizer *",
+        "name":"_selectGestureRecognizer",
+        "offset":196,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int reversesTitleShadowWhenHighlighted:1;\n        unsigned int adjustsImageWhenHighlighted:1;\n        unsigned int adjustsImageWhenDisabled:1;\n        unsigned int autosizeToFit:1;\n        unsigned int disabledDimsImage:1;\n        unsigned int showsTouchWhenHighlighted:1;\n        unsigned int buttonType:8;\n        unsigned int shouldHandleScrollerMouseEvent:1;\n        unsigned int titleFrozen:1;\n    }",
+        "name":"_buttonFlags",
+        "offset":200,
+        "size":2,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"_UIButtonMaskAnimationView *",
+        "name":"_maskAnimationView",
+        "offset":204,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_selectionView",
+        "offset":208,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIFont *",
+        "name":"_lazyTitleViewFont",
+        "offset":212,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSArray *",
+        "name":"_contentConstraints",
+        "offset":216,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_internalTitlePaddingInsets",
+        "offset":220,
+        "size":16,
+        "type":"ivar"
+      }
+    ],
+    "protocols":[
+      "NSCoding"
+    ],
+    "superClassName":"UIControl",
+    "type":"class"
+  },
+  "armv7s":{
+    "className":"UIButton",
+    "ivars":[
+      {
+        "alignment":2,
+        "ivarType":"unsigned int",
+        "name":"_externalFlatEdge",
+        "offset":120,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct __CFDictionary *",
+        "name":"_contentLookup",
+        "offset":124,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_contentEdgeInsets",
+        "offset":128,
+        "size":16,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_titleEdgeInsets",
+        "offset":144,
+        "size":16,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_imageEdgeInsets",
+        "offset":160,
+        "size":16,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIImageView *",
+        "name":"_backgroundView",
+        "offset":176,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIImageView *",
+        "name":"_imageView",
+        "offset":180,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UILabel *",
+        "name":"_titleView",
+        "offset":184,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_initialized",
+        "offset":188,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"unsigned int",
+        "name":"_lastDrawingControlState",
+        "offset":192,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UITapGestureRecognizer *",
+        "name":"_selectGestureRecognizer",
+        "offset":196,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int reversesTitleShadowWhenHighlighted:1;\n        unsigned int adjustsImageWhenHighlighted:1;\n        unsigned int adjustsImageWhenDisabled:1;\n        unsigned int autosizeToFit:1;\n        unsigned int disabledDimsImage:1;\n        unsigned int showsTouchWhenHighlighted:1;\n        unsigned int buttonType:8;\n        unsigned int shouldHandleScrollerMouseEvent:1;\n        unsigned int titleFrozen:1;\n    }",
+        "name":"_buttonFlags",
+        "offset":200,
+        "size":2,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"_UIButtonMaskAnimationView *",
+        "name":"_maskAnimationView",
+        "offset":204,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_selectionView",
+        "offset":208,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIFont *",
+        "name":"_lazyTitleViewFont",
+        "offset":212,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSArray *",
+        "name":"_contentConstraints",
+        "offset":216,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_internalTitlePaddingInsets",
+        "offset":220,
+        "size":16,
+        "type":"ivar"
+      }
+    ],
+    "protocols":[
+      "NSCoding"
+    ],
+    "superClassName":"UIControl",
+    "type":"class"
+  },
+  "i386":{
+    "className":"UIButton",
+    "ivars":[
+      {
+        "alignment":2,
+        "ivarType":"unsigned int",
+        "name":"_externalFlatEdge",
+        "offset":120,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct __CFDictionary *",
+        "name":"_contentLookup",
+        "offset":124,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_contentEdgeInsets",
+        "offset":128,
+        "size":16,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_titleEdgeInsets",
+        "offset":144,
+        "size":16,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_imageEdgeInsets",
+        "offset":160,
+        "size":16,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIImageView *",
+        "name":"_backgroundView",
+        "offset":176,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIImageView *",
+        "name":"_imageView",
+        "offset":180,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UILabel *",
+        "name":"_titleView",
+        "offset":184,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_initialized",
+        "offset":188,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"unsigned int",
+        "name":"_lastDrawingControlState",
+        "offset":192,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UITapGestureRecognizer *",
+        "name":"_selectGestureRecognizer",
+        "offset":196,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct {\n        unsigned int reversesTitleShadowWhenHighlighted:1;\n        unsigned int adjustsImageWhenHighlighted:1;\n        unsigned int adjustsImageWhenDisabled:1;\n        unsigned int autosizeToFit:1;\n        unsigned int disabledDimsImage:1;\n        unsigned int showsTouchWhenHighlighted:1;\n        unsigned int buttonType:8;\n        unsigned int shouldHandleScrollerMouseEvent:1;\n        unsigned int titleFrozen:1;\n    }",
+        "name":"_buttonFlags",
+        "offset":200,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"_UIButtonMaskAnimationView *",
+        "name":"_maskAnimationView",
+        "offset":204,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_selectionView",
+        "offset":208,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIFont *",
+        "name":"_lazyTitleViewFont",
+        "offset":212,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSArray *",
+        "name":"_contentConstraints",
+        "offset":216,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_internalTitlePaddingInsets",
+        "offset":220,
+        "size":16,
+        "type":"ivar"
+      }
+    ],
+    "protocols":[
+      "NSCoding"
+    ],
+    "superClassName":"UIControl",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"UIButton",
+    "ivars":[
+      {
+        "alignment":3,
+        "ivarType":"unsigned long long",
+        "name":"_externalFlatEdge",
+        "offset":224,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"struct __CFDictionary *",
+        "name":"_contentLookup",
+        "offset":232,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_contentEdgeInsets",
+        "offset":240,
+        "size":32,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_titleEdgeInsets",
+        "offset":272,
+        "size":32,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_imageEdgeInsets",
+        "offset":304,
+        "size":32,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIImageView *",
+        "name":"_backgroundView",
+        "offset":336,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIImageView *",
+        "name":"_imageView",
+        "offset":344,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UILabel *",
+        "name":"_titleView",
+        "offset":352,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_initialized",
+        "offset":360,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"unsigned long long",
+        "name":"_lastDrawingControlState",
+        "offset":368,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UITapGestureRecognizer *",
+        "name":"_selectGestureRecognizer",
+        "offset":376,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct {\n        unsigned int reversesTitleShadowWhenHighlighted:1;\n        unsigned int adjustsImageWhenHighlighted:1;\n        unsigned int adjustsImageWhenDisabled:1;\n        unsigned int autosizeToFit:1;\n        unsigned int disabledDimsImage:1;\n        unsigned int showsTouchWhenHighlighted:1;\n        unsigned int buttonType:8;\n        unsigned int shouldHandleScrollerMouseEvent:1;\n        unsigned int titleFrozen:1;\n    }",
+        "name":"_buttonFlags",
+        "offset":384,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"_UIButtonMaskAnimationView *",
+        "name":"_maskAnimationView",
+        "offset":392,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_selectionView",
+        "offset":400,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIFont *",
+        "name":"_lazyTitleViewFont",
+        "offset":408,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSArray *",
+        "name":"_contentConstraints",
+        "offset":416,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_internalTitlePaddingInsets",
+        "offset":424,
+        "size":32,
+        "type":"ivar"
+      }
+    ],
+    "protocols":[
+      "NSCoding"
+    ],
+    "superClassName":"UIControl",
+    "type":"class"
+  }
+}

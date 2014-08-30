@@ -1,0 +1,1630 @@
+{
+  "arm64":{
+    "className":"UIAlertView",
+    "ivars":[
+      {
+        "alignment":3,
+        "ivarType":"id <UIAlertViewDelegate>",
+        "name":"_delegate",
+        "offset":184,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UILabel *",
+        "name":"_titleLabel",
+        "offset":192,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UILabel *",
+        "name":"_subtitleLabel",
+        "offset":200,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UILabel *",
+        "name":"_bodyTextLabel",
+        "offset":208,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UILabel *",
+        "name":"_taglineTextLabel",
+        "offset":216,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"double",
+        "name":"_startY",
+        "offset":224,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"struct CGPoint",
+        "name":"_center",
+        "offset":232,
+        "size":16,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"id",
+        "name":"_context",
+        "offset":248,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"long long",
+        "name":"_cancelButton",
+        "offset":256,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"long long",
+        "name":"_defaultButton",
+        "offset":264,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"long long",
+        "name":"_firstOtherButton",
+        "offset":272,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIToolbar *",
+        "name":"_toolbar",
+        "offset":280,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIWindow *",
+        "name":"_originalWindow",
+        "offset":288,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIWindow *",
+        "name":"_dimWindow",
+        "offset":296,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"long long",
+        "name":"_suspendTag",
+        "offset":304,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"long long",
+        "name":"_dismissButtonIndex",
+        "offset":312,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"double",
+        "name":"_bodyTextHeight",
+        "offset":320,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSMutableArray *",
+        "name":"_buttons",
+        "offset":328,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSMutableArray *",
+        "name":"_textFields",
+        "offset":336,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_keyboard",
+        "offset":344,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_table",
+        "offset":352,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_dimView",
+        "offset":360,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_backgroundImageView",
+        "offset":368,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_contentViewNeue",
+        "offset":376,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_textFieldBackgroundView",
+        "offset":384,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIWindow *",
+        "name":"_blurWindow",
+        "offset":392,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_backdropView",
+        "offset":400,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSMutableDictionary *",
+        "name":"_separatorsViews",
+        "offset":408,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct {\n        unsigned int numberOfRows:7;\n        unsigned int delegateAlertSheetButtonClicked:1;\n        unsigned int delegateDidPresentAlertSheet:1;\n        unsigned int delegateDidDismissAlertSheet:1;\n        unsigned int hideButtonBar:1;\n        unsigned int alertStyle:3;\n        unsigned int dontDimBackground:1;\n        unsigned int dismissSuspended:1;\n        unsigned int dontBlockInteraction:1;\n        unsigned int sheetWasPoppedUp:1;\n        unsigned int animating:1;\n        unsigned int hideWhenDoneAnimating:1;\n        unsigned int layoutWhenDoneAnimating:1;\n        unsigned int titleMaxLineCount:2;\n        unsigned int bodyTextMaxLineCount:3;\n        unsigned int runsModal:1;\n        unsigned int runningModal:1;\n        unsigned int addedTextView:1;\n        unsigned int addedTableShadows:1;\n        unsigned int showOverSBAlerts:1;\n        unsigned int showMinTableContent:1;\n        unsigned int bodyTextTruncated:1;\n        unsigned int orientation:3;\n        unsigned int groupsTextFields:1;\n        unsigned int includesCancel:1;\n        unsigned int useUndoStyle:1;\n        unsigned int delegateBodyTextAlignment:1;\n        unsigned int delegateClickedButtonAtIndex:1;\n        unsigned int delegateClickedButtonAtIndex2:1;\n        unsigned int delegateCancel:1;\n        unsigned int delegateCancel2:1;\n        unsigned int delegateWillPresent:1;\n        unsigned int delegateWillPresent2:1;\n        unsigned int delegateDidPresent:1;\n        unsigned int delegateDidPresent2:1;\n        unsigned int delegateWillDismiss:1;\n        unsigned int delegateWillDismiss2:1;\n        unsigned int delegateDidDismiss:1;\n        unsigned int delegateDidDismiss2:1;\n        unsigned int delegateShouldEnableFirstOtherButton:1;\n        unsigned int forceHorizontalButtonsLayout:1;\n        unsigned int suppressKeyboardOnPopup:1;\n        unsigned int keyboardShowing:1;\n        unsigned int dontCallDismissDelegate:1;\n        unsigned int useAutomaticKB:1;\n        unsigned int manualKeyboardVisible:1;\n        unsigned int rotatingManualKeybaord:1;\n        unsigned int shouldHandleFirstKeyUpEvent:1;\n        unsigned int forceKeyboardUse:1;\n        unsigned int cancelWhenDoneAnimating:1;\n        unsigned int alertViewStyle:3;\n        unsigned int isSBAlert:1;\n        unsigned int isBeingDismissed:1;\n        unsigned int useLookNeue:1;\n    }",
+        "name":"_modalViewFlags",
+        "offset":416,
+        "size":12,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSMutableArray *",
+        "name":"_buttonTitlesNeue",
+        "offset":432,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSString *",
+        "name":"_titleTextNeue",
+        "offset":440,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSString *",
+        "name":"_messageTextNeue",
+        "offset":448,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIViewController *",
+        "name":"_hostingViewControllerNeue",
+        "offset":456,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIWindow *",
+        "name":"_windowFOrSBNeueCompatibility",
+        "offset":464,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_accessoryView",
+        "offset":472,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIViewController *",
+        "name":"_accessoryViewController",
+        "offset":480,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_textFieldsHidden",
+        "offset":488,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"_UIModalItem *",
+        "name":"_representedModalItem",
+        "offset":496,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"_UIAlertExternalViewController *",
+        "name":"_externalAlertViewController",
+        "offset":504,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIViewController *",
+        "name":"externalViewControllerForPresentation",
+        "offset":512,
+        "size":8,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIView",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"UIAlertView",
+    "ivars":[
+      {
+        "alignment":2,
+        "ivarType":"id <UIAlertViewDelegate>",
+        "name":"_delegate",
+        "offset":96,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UILabel *",
+        "name":"_titleLabel",
+        "offset":100,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UILabel *",
+        "name":"_subtitleLabel",
+        "offset":104,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UILabel *",
+        "name":"_bodyTextLabel",
+        "offset":108,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UILabel *",
+        "name":"_taglineTextLabel",
+        "offset":112,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"float",
+        "name":"_startY",
+        "offset":116,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct CGPoint",
+        "name":"_center",
+        "offset":120,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"id",
+        "name":"_context",
+        "offset":128,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_cancelButton",
+        "offset":132,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_defaultButton",
+        "offset":136,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_firstOtherButton",
+        "offset":140,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIToolbar *",
+        "name":"_toolbar",
+        "offset":144,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIWindow *",
+        "name":"_originalWindow",
+        "offset":148,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIWindow *",
+        "name":"_dimWindow",
+        "offset":152,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_suspendTag",
+        "offset":156,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_dismissButtonIndex",
+        "offset":160,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"float",
+        "name":"_bodyTextHeight",
+        "offset":164,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_buttons",
+        "offset":168,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_textFields",
+        "offset":172,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_keyboard",
+        "offset":176,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_table",
+        "offset":180,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_dimView",
+        "offset":184,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_backgroundImageView",
+        "offset":188,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_contentViewNeue",
+        "offset":192,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_textFieldBackgroundView",
+        "offset":196,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIWindow *",
+        "name":"_blurWindow",
+        "offset":200,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_backdropView",
+        "offset":204,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableDictionary *",
+        "name":"_separatorsViews",
+        "offset":208,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int numberOfRows:7;\n        unsigned int delegateAlertSheetButtonClicked:1;\n        unsigned int delegateDidPresentAlertSheet:1;\n        unsigned int delegateDidDismissAlertSheet:1;\n        unsigned int hideButtonBar:1;\n        unsigned int alertStyle:3;\n        unsigned int dontDimBackground:1;\n        unsigned int dismissSuspended:1;\n        unsigned int dontBlockInteraction:1;\n        unsigned int sheetWasPoppedUp:1;\n        unsigned int animating:1;\n        unsigned int hideWhenDoneAnimating:1;\n        unsigned int layoutWhenDoneAnimating:1;\n        unsigned int titleMaxLineCount:2;\n        unsigned int bodyTextMaxLineCount:3;\n        unsigned int runsModal:1;\n        unsigned int runningModal:1;\n        unsigned int addedTextView:1;\n        unsigned int addedTableShadows:1;\n        unsigned int showOverSBAlerts:1;\n        unsigned int showMinTableContent:1;\n        unsigned int bodyTextTruncated:1;\n        unsigned int orientation:3;\n        unsigned int groupsTextFields:1;\n        unsigned int includesCancel:1;\n        unsigned int useUndoStyle:1;\n        unsigned int delegateBodyTextAlignment:1;\n        unsigned int delegateClickedButtonAtIndex:1;\n        unsigned int delegateClickedButtonAtIndex2:1;\n        unsigned int delegateCancel:1;\n        unsigned int delegateCancel2:1;\n        unsigned int delegateWillPresent:1;\n        unsigned int delegateWillPresent2:1;\n        unsigned int delegateDidPresent:1;\n        unsigned int delegateDidPresent2:1;\n        unsigned int delegateWillDismiss:1;\n        unsigned int delegateWillDismiss2:1;\n        unsigned int delegateDidDismiss:1;\n        unsigned int delegateDidDismiss2:1;\n        unsigned int delegateShouldEnableFirstOtherButton:1;\n        unsigned int forceHorizontalButtonsLayout:1;\n        unsigned int suppressKeyboardOnPopup:1;\n        unsigned int keyboardShowing:1;\n        unsigned int dontCallDismissDelegate:1;\n        unsigned int useAutomaticKB:1;\n        unsigned int manualKeyboardVisible:1;\n        unsigned int rotatingManualKeybaord:1;\n        unsigned int shouldHandleFirstKeyUpEvent:1;\n        unsigned int forceKeyboardUse:1;\n        unsigned int cancelWhenDoneAnimating:1;\n        unsigned int alertViewStyle:3;\n        unsigned int isSBAlert:1;\n        unsigned int isBeingDismissed:1;\n        unsigned int useLookNeue:1;\n    }",
+        "name":"_modalViewFlags",
+        "offset":212,
+        "size":9,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_buttonTitlesNeue",
+        "offset":224,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSString *",
+        "name":"_titleTextNeue",
+        "offset":228,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSString *",
+        "name":"_messageTextNeue",
+        "offset":232,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIViewController *",
+        "name":"_hostingViewControllerNeue",
+        "offset":236,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIWindow *",
+        "name":"_windowFOrSBNeueCompatibility",
+        "offset":240,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_accessoryView",
+        "offset":244,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIViewController *",
+        "name":"_accessoryViewController",
+        "offset":248,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_textFieldsHidden",
+        "offset":252,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"_UIModalItem *",
+        "name":"_representedModalItem",
+        "offset":256,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"_UIAlertExternalViewController *",
+        "name":"_externalAlertViewController",
+        "offset":260,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIViewController *",
+        "name":"externalViewControllerForPresentation",
+        "offset":264,
+        "size":4,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIView",
+    "type":"class"
+  },
+  "armv7s":{
+    "className":"UIAlertView",
+    "ivars":[
+      {
+        "alignment":2,
+        "ivarType":"id <UIAlertViewDelegate>",
+        "name":"_delegate",
+        "offset":96,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UILabel *",
+        "name":"_titleLabel",
+        "offset":100,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UILabel *",
+        "name":"_subtitleLabel",
+        "offset":104,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UILabel *",
+        "name":"_bodyTextLabel",
+        "offset":108,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UILabel *",
+        "name":"_taglineTextLabel",
+        "offset":112,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"float",
+        "name":"_startY",
+        "offset":116,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct CGPoint",
+        "name":"_center",
+        "offset":120,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"id",
+        "name":"_context",
+        "offset":128,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_cancelButton",
+        "offset":132,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_defaultButton",
+        "offset":136,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_firstOtherButton",
+        "offset":140,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIToolbar *",
+        "name":"_toolbar",
+        "offset":144,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIWindow *",
+        "name":"_originalWindow",
+        "offset":148,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIWindow *",
+        "name":"_dimWindow",
+        "offset":152,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_suspendTag",
+        "offset":156,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_dismissButtonIndex",
+        "offset":160,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"float",
+        "name":"_bodyTextHeight",
+        "offset":164,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_buttons",
+        "offset":168,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_textFields",
+        "offset":172,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_keyboard",
+        "offset":176,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_table",
+        "offset":180,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_dimView",
+        "offset":184,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_backgroundImageView",
+        "offset":188,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_contentViewNeue",
+        "offset":192,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_textFieldBackgroundView",
+        "offset":196,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIWindow *",
+        "name":"_blurWindow",
+        "offset":200,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_backdropView",
+        "offset":204,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableDictionary *",
+        "name":"_separatorsViews",
+        "offset":208,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int numberOfRows:7;\n        unsigned int delegateAlertSheetButtonClicked:1;\n        unsigned int delegateDidPresentAlertSheet:1;\n        unsigned int delegateDidDismissAlertSheet:1;\n        unsigned int hideButtonBar:1;\n        unsigned int alertStyle:3;\n        unsigned int dontDimBackground:1;\n        unsigned int dismissSuspended:1;\n        unsigned int dontBlockInteraction:1;\n        unsigned int sheetWasPoppedUp:1;\n        unsigned int animating:1;\n        unsigned int hideWhenDoneAnimating:1;\n        unsigned int layoutWhenDoneAnimating:1;\n        unsigned int titleMaxLineCount:2;\n        unsigned int bodyTextMaxLineCount:3;\n        unsigned int runsModal:1;\n        unsigned int runningModal:1;\n        unsigned int addedTextView:1;\n        unsigned int addedTableShadows:1;\n        unsigned int showOverSBAlerts:1;\n        unsigned int showMinTableContent:1;\n        unsigned int bodyTextTruncated:1;\n        unsigned int orientation:3;\n        unsigned int groupsTextFields:1;\n        unsigned int includesCancel:1;\n        unsigned int useUndoStyle:1;\n        unsigned int delegateBodyTextAlignment:1;\n        unsigned int delegateClickedButtonAtIndex:1;\n        unsigned int delegateClickedButtonAtIndex2:1;\n        unsigned int delegateCancel:1;\n        unsigned int delegateCancel2:1;\n        unsigned int delegateWillPresent:1;\n        unsigned int delegateWillPresent2:1;\n        unsigned int delegateDidPresent:1;\n        unsigned int delegateDidPresent2:1;\n        unsigned int delegateWillDismiss:1;\n        unsigned int delegateWillDismiss2:1;\n        unsigned int delegateDidDismiss:1;\n        unsigned int delegateDidDismiss2:1;\n        unsigned int delegateShouldEnableFirstOtherButton:1;\n        unsigned int forceHorizontalButtonsLayout:1;\n        unsigned int suppressKeyboardOnPopup:1;\n        unsigned int keyboardShowing:1;\n        unsigned int dontCallDismissDelegate:1;\n        unsigned int useAutomaticKB:1;\n        unsigned int manualKeyboardVisible:1;\n        unsigned int rotatingManualKeybaord:1;\n        unsigned int shouldHandleFirstKeyUpEvent:1;\n        unsigned int forceKeyboardUse:1;\n        unsigned int cancelWhenDoneAnimating:1;\n        unsigned int alertViewStyle:3;\n        unsigned int isSBAlert:1;\n        unsigned int isBeingDismissed:1;\n        unsigned int useLookNeue:1;\n    }",
+        "name":"_modalViewFlags",
+        "offset":212,
+        "size":9,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_buttonTitlesNeue",
+        "offset":224,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSString *",
+        "name":"_titleTextNeue",
+        "offset":228,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSString *",
+        "name":"_messageTextNeue",
+        "offset":232,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIViewController *",
+        "name":"_hostingViewControllerNeue",
+        "offset":236,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIWindow *",
+        "name":"_windowFOrSBNeueCompatibility",
+        "offset":240,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_accessoryView",
+        "offset":244,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIViewController *",
+        "name":"_accessoryViewController",
+        "offset":248,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_textFieldsHidden",
+        "offset":252,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"_UIModalItem *",
+        "name":"_representedModalItem",
+        "offset":256,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"_UIAlertExternalViewController *",
+        "name":"_externalAlertViewController",
+        "offset":260,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIViewController *",
+        "name":"externalViewControllerForPresentation",
+        "offset":264,
+        "size":4,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIView",
+    "type":"class"
+  },
+  "i386":{
+    "className":"UIAlertView",
+    "ivars":[
+      {
+        "alignment":2,
+        "ivarType":"id <UIAlertViewDelegate>",
+        "name":"_delegate",
+        "offset":96,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UILabel *",
+        "name":"_titleLabel",
+        "offset":100,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UILabel *",
+        "name":"_subtitleLabel",
+        "offset":104,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UILabel *",
+        "name":"_bodyTextLabel",
+        "offset":108,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UILabel *",
+        "name":"_taglineTextLabel",
+        "offset":112,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"float",
+        "name":"_startY",
+        "offset":116,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct CGPoint",
+        "name":"_center",
+        "offset":120,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"id",
+        "name":"_context",
+        "offset":128,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_cancelButton",
+        "offset":132,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_defaultButton",
+        "offset":136,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_firstOtherButton",
+        "offset":140,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIToolbar *",
+        "name":"_toolbar",
+        "offset":144,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIWindow *",
+        "name":"_originalWindow",
+        "offset":148,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIWindow *",
+        "name":"_dimWindow",
+        "offset":152,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_suspendTag",
+        "offset":156,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_dismissButtonIndex",
+        "offset":160,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"float",
+        "name":"_bodyTextHeight",
+        "offset":164,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_buttons",
+        "offset":168,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_textFields",
+        "offset":172,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_keyboard",
+        "offset":176,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_table",
+        "offset":180,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_dimView",
+        "offset":184,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_backgroundImageView",
+        "offset":188,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_contentViewNeue",
+        "offset":192,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_textFieldBackgroundView",
+        "offset":196,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIWindow *",
+        "name":"_blurWindow",
+        "offset":200,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_backdropView",
+        "offset":204,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableDictionary *",
+        "name":"_separatorsViews",
+        "offset":208,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct {\n        unsigned int numberOfRows:7;\n        unsigned int delegateAlertSheetButtonClicked:1;\n        unsigned int delegateDidPresentAlertSheet:1;\n        unsigned int delegateDidDismissAlertSheet:1;\n        unsigned int hideButtonBar:1;\n        unsigned int alertStyle:3;\n        unsigned int dontDimBackground:1;\n        unsigned int dismissSuspended:1;\n        unsigned int dontBlockInteraction:1;\n        unsigned int sheetWasPoppedUp:1;\n        unsigned int animating:1;\n        unsigned int hideWhenDoneAnimating:1;\n        unsigned int layoutWhenDoneAnimating:1;\n        unsigned int titleMaxLineCount:2;\n        unsigned int bodyTextMaxLineCount:3;\n        unsigned int runsModal:1;\n        unsigned int runningModal:1;\n        unsigned int addedTextView:1;\n        unsigned int addedTableShadows:1;\n        unsigned int showOverSBAlerts:1;\n        unsigned int showMinTableContent:1;\n        unsigned int bodyTextTruncated:1;\n        unsigned int orientation:3;\n        unsigned int groupsTextFields:1;\n        unsigned int includesCancel:1;\n        unsigned int useUndoStyle:1;\n        unsigned int delegateBodyTextAlignment:1;\n        unsigned int delegateClickedButtonAtIndex:1;\n        unsigned int delegateClickedButtonAtIndex2:1;\n        unsigned int delegateCancel:1;\n        unsigned int delegateCancel2:1;\n        unsigned int delegateWillPresent:1;\n        unsigned int delegateWillPresent2:1;\n        unsigned int delegateDidPresent:1;\n        unsigned int delegateDidPresent2:1;\n        unsigned int delegateWillDismiss:1;\n        unsigned int delegateWillDismiss2:1;\n        unsigned int delegateDidDismiss:1;\n        unsigned int delegateDidDismiss2:1;\n        unsigned int delegateShouldEnableFirstOtherButton:1;\n        unsigned int forceHorizontalButtonsLayout:1;\n        unsigned int suppressKeyboardOnPopup:1;\n        unsigned int keyboardShowing:1;\n        unsigned int dontCallDismissDelegate:1;\n        unsigned int useAutomaticKB:1;\n        unsigned int manualKeyboardVisible:1;\n        unsigned int rotatingManualKeybaord:1;\n        unsigned int shouldHandleFirstKeyUpEvent:1;\n        unsigned int forceKeyboardUse:1;\n        unsigned int cancelWhenDoneAnimating:1;\n        unsigned int alertViewStyle:3;\n        unsigned int isSBAlert:1;\n        unsigned int isBeingDismissed:1;\n        unsigned int useLookNeue:1;\n    }",
+        "name":"_modalViewFlags",
+        "offset":212,
+        "size":12,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_buttonTitlesNeue",
+        "offset":224,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSString *",
+        "name":"_titleTextNeue",
+        "offset":228,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSString *",
+        "name":"_messageTextNeue",
+        "offset":232,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIViewController *",
+        "name":"_hostingViewControllerNeue",
+        "offset":236,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIWindow *",
+        "name":"_windowFOrSBNeueCompatibility",
+        "offset":240,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_accessoryView",
+        "offset":244,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIViewController *",
+        "name":"_accessoryViewController",
+        "offset":248,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_textFieldsHidden",
+        "offset":252,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"_UIModalItem *",
+        "name":"_representedModalItem",
+        "offset":256,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"_UIAlertExternalViewController *",
+        "name":"_externalAlertViewController",
+        "offset":260,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIViewController *",
+        "name":"externalViewControllerForPresentation",
+        "offset":264,
+        "size":4,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIView",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"UIAlertView",
+    "ivars":[
+      {
+        "alignment":3,
+        "ivarType":"id <UIAlertViewDelegate>",
+        "name":"_delegate",
+        "offset":184,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UILabel *",
+        "name":"_titleLabel",
+        "offset":192,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UILabel *",
+        "name":"_subtitleLabel",
+        "offset":200,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UILabel *",
+        "name":"_bodyTextLabel",
+        "offset":208,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UILabel *",
+        "name":"_taglineTextLabel",
+        "offset":216,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"double",
+        "name":"_startY",
+        "offset":224,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"struct CGPoint",
+        "name":"_center",
+        "offset":232,
+        "size":16,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"id",
+        "name":"_context",
+        "offset":248,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"long long",
+        "name":"_cancelButton",
+        "offset":256,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"long long",
+        "name":"_defaultButton",
+        "offset":264,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"long long",
+        "name":"_firstOtherButton",
+        "offset":272,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIToolbar *",
+        "name":"_toolbar",
+        "offset":280,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIWindow *",
+        "name":"_originalWindow",
+        "offset":288,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIWindow *",
+        "name":"_dimWindow",
+        "offset":296,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"long long",
+        "name":"_suspendTag",
+        "offset":304,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"long long",
+        "name":"_dismissButtonIndex",
+        "offset":312,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"double",
+        "name":"_bodyTextHeight",
+        "offset":320,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSMutableArray *",
+        "name":"_buttons",
+        "offset":328,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSMutableArray *",
+        "name":"_textFields",
+        "offset":336,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_keyboard",
+        "offset":344,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_table",
+        "offset":352,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_dimView",
+        "offset":360,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_backgroundImageView",
+        "offset":368,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_contentViewNeue",
+        "offset":376,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_textFieldBackgroundView",
+        "offset":384,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIWindow *",
+        "name":"_blurWindow",
+        "offset":392,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_backdropView",
+        "offset":400,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSMutableDictionary *",
+        "name":"_separatorsViews",
+        "offset":408,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct {\n        unsigned int numberOfRows:7;\n        unsigned int delegateAlertSheetButtonClicked:1;\n        unsigned int delegateDidPresentAlertSheet:1;\n        unsigned int delegateDidDismissAlertSheet:1;\n        unsigned int hideButtonBar:1;\n        unsigned int alertStyle:3;\n        unsigned int dontDimBackground:1;\n        unsigned int dismissSuspended:1;\n        unsigned int dontBlockInteraction:1;\n        unsigned int sheetWasPoppedUp:1;\n        unsigned int animating:1;\n        unsigned int hideWhenDoneAnimating:1;\n        unsigned int layoutWhenDoneAnimating:1;\n        unsigned int titleMaxLineCount:2;\n        unsigned int bodyTextMaxLineCount:3;\n        unsigned int runsModal:1;\n        unsigned int runningModal:1;\n        unsigned int addedTextView:1;\n        unsigned int addedTableShadows:1;\n        unsigned int showOverSBAlerts:1;\n        unsigned int showMinTableContent:1;\n        unsigned int bodyTextTruncated:1;\n        unsigned int orientation:3;\n        unsigned int groupsTextFields:1;\n        unsigned int includesCancel:1;\n        unsigned int useUndoStyle:1;\n        unsigned int delegateBodyTextAlignment:1;\n        unsigned int delegateClickedButtonAtIndex:1;\n        unsigned int delegateClickedButtonAtIndex2:1;\n        unsigned int delegateCancel:1;\n        unsigned int delegateCancel2:1;\n        unsigned int delegateWillPresent:1;\n        unsigned int delegateWillPresent2:1;\n        unsigned int delegateDidPresent:1;\n        unsigned int delegateDidPresent2:1;\n        unsigned int delegateWillDismiss:1;\n        unsigned int delegateWillDismiss2:1;\n        unsigned int delegateDidDismiss:1;\n        unsigned int delegateDidDismiss2:1;\n        unsigned int delegateShouldEnableFirstOtherButton:1;\n        unsigned int forceHorizontalButtonsLayout:1;\n        unsigned int suppressKeyboardOnPopup:1;\n        unsigned int keyboardShowing:1;\n        unsigned int dontCallDismissDelegate:1;\n        unsigned int useAutomaticKB:1;\n        unsigned int manualKeyboardVisible:1;\n        unsigned int rotatingManualKeybaord:1;\n        unsigned int shouldHandleFirstKeyUpEvent:1;\n        unsigned int forceKeyboardUse:1;\n        unsigned int cancelWhenDoneAnimating:1;\n        unsigned int alertViewStyle:3;\n        unsigned int isSBAlert:1;\n        unsigned int isBeingDismissed:1;\n        unsigned int useLookNeue:1;\n    }",
+        "name":"_modalViewFlags",
+        "offset":416,
+        "size":12,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSMutableArray *",
+        "name":"_buttonTitlesNeue",
+        "offset":432,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSString *",
+        "name":"_titleTextNeue",
+        "offset":440,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSString *",
+        "name":"_messageTextNeue",
+        "offset":448,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIViewController *",
+        "name":"_hostingViewControllerNeue",
+        "offset":456,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIWindow *",
+        "name":"_windowFOrSBNeueCompatibility",
+        "offset":464,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_accessoryView",
+        "offset":472,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIViewController *",
+        "name":"_accessoryViewController",
+        "offset":480,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_textFieldsHidden",
+        "offset":488,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"_UIModalItem *",
+        "name":"_representedModalItem",
+        "offset":496,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"_UIAlertExternalViewController *",
+        "name":"_externalAlertViewController",
+        "offset":504,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIViewController *",
+        "name":"externalViewControllerForPresentation",
+        "offset":512,
+        "size":8,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIView",
+    "type":"class"
+  }
+}

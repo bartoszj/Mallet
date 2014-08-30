@@ -1,0 +1,4480 @@
+{
+  "i386" : {
+    "superClassName" : "UIControl",
+    "className" : "UISlider",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_value"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_minValue"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 88,
+        "type" : "ivar",
+        "name" : "_maxValue"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 92,
+        "type" : "ivar",
+        "name" : "_alpha"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "struct __CFDictionary *",
+        "size" : 4,
+        "offset" : 96,
+        "type" : "ivar",
+        "name" : "_contentLookup"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 100,
+        "type" : "ivar",
+        "name" : "_minValueImageView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 104,
+        "type" : "ivar",
+        "name" : "_maxValueImageView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 108,
+        "type" : "ivar",
+        "name" : "_thumbView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 112,
+        "type" : "ivar",
+        "name" : "_minTrackView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 116,
+        "type" : "ivar",
+        "name" : "_maxTrackView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 120,
+        "type" : "ivar",
+        "name" : "_maxTrackClipView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "struct {\n        unsigned int continuous:1;\n        unsigned int animating:1;\n        unsigned int preparingToAnimate:1;\n        unsigned int showValue:1;\n        unsigned int trackEnabled:1;\n        unsigned int creatingSnapshot:1;\n        unsigned int thumbDisabled:1;\n        unsigned int minTrackHidden:1;\n    }",
+        "size" : 4,
+        "offset" : 124,
+        "type" : "ivar",
+        "name" : "_sliderFlags"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 128,
+        "type" : "ivar",
+        "name" : "_hitOffset"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 132,
+        "type" : "ivar",
+        "name" : "_minTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 136,
+        "type" : "ivar",
+        "name" : "_maxTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 140,
+        "type" : "ivar",
+        "name" : "_thumbTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 144,
+        "type" : "ivar",
+        "name" : "_thumbViewNeue"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "CAShapeLayer *",
+        "size" : 4,
+        "offset" : 148,
+        "type" : "ivar",
+        "name" : "_thumbViewNeueShape"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 152,
+        "type" : "ivar",
+        "name" : "_useLookNeue"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSArray *",
+        "size" : 4,
+        "offset" : 156,
+        "type" : "ivar",
+        "name" : "_trackColors"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 160,
+        "type" : "ivar",
+        "name" : "_trackIsArtworkBased"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 161,
+        "type" : "ivar",
+        "name" : "_thumbIsArtworkBased"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 162,
+        "type" : "ivar",
+        "name" : "_maxColorIsValid"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 163,
+        "type" : "ivar",
+        "name" : "_animatingWithDynamics"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 164,
+        "type" : "ivar",
+        "name" : "_innerThumbView"
+      }
+    ],
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)thumbTintColor",
+        "type" : "method",
+        "name" : "thumbTintColor",
+        "address" : 1884132
+      },
+      {
+        "declaration" : "(id)maximumTrackTintColor",
+        "type" : "method",
+        "name" : "maximumTrackTintColor",
+        "address" : 1884109
+      },
+      {
+        "declaration" : "(id)minimumTrackTintColor",
+        "type" : "method",
+        "name" : "minimumTrackTintColor",
+        "address" : 1884086
+      },
+      {
+        "declaration" : "(BOOL)cancelTouchTracking",
+        "type" : "method",
+        "name" : "cancelTouchTracking",
+        "address" : 1883937
+      },
+      {
+        "declaration" : "(void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchEnded:withEvent:",
+        "address" : 1883932
+      },
+      {
+        "declaration" : "(void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchMoved:withEvent:",
+        "address" : 1883927
+      },
+      {
+        "declaration" : "(void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchBegan:withEvent:",
+        "address" : 1883922
+      },
+      {
+        "declaration" : "(void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "endTrackingWithTouch:withEvent:",
+        "address" : 1883601
+      },
+      {
+        "declaration" : "(BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "continueTrackingWithTouch:withEvent:",
+        "address" : 1883367
+      },
+      {
+        "declaration" : "(BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "beginTrackingWithTouch:withEvent:",
+        "address" : 1881895
+      },
+      {
+        "declaration" : "(BOOL)cancelMouseTracking",
+        "type" : "method",
+        "name" : "cancelMouseTracking",
+        "address" : 1881792
+      },
+      {
+        "declaration" : "(void)_sendDelayedActions",
+        "type" : "method",
+        "name" : "_sendDelayedActions",
+        "address" : 1881679
+      },
+      {
+        "declaration" : "(void)_sliderAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3",
+        "type" : "method",
+        "name" : "_sliderAnimationDidStop:finished:context:",
+        "address" : 1881542
+      },
+      {
+        "declaration" : "(void)_sliderAnimationWillStart:(id)arg1 context:(id)arg2",
+        "type" : "method",
+        "name" : "_sliderAnimationWillStart:context:",
+        "address" : 1881510
+      },
+      {
+        "declaration" : "(void)setMaximumValue:(float)arg1",
+        "type" : "method",
+        "name" : "setMaximumValue:",
+        "address" : 1881398
+      },
+      {
+        "declaration" : "(float)maximumValue",
+        "type" : "method",
+        "name" : "maximumValue",
+        "address" : 1881375
+      },
+      {
+        "declaration" : "(void)setMinimumValue:(float)arg1",
+        "type" : "method",
+        "name" : "setMinimumValue:",
+        "address" : 1881263
+      },
+      {
+        "declaration" : "(float)minimumValue",
+        "type" : "method",
+        "name" : "minimumValue",
+        "address" : 1881240
+      },
+      {
+        "declaration" : "(void)_setValue:(float)arg1 andSendAction:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_setValue:andSendAction:",
+        "address" : 1881149
+      },
+      {
+        "declaration" : "(void)_setValue:(float)arg1 minValue:(float)arg2 maxValue:(float)arg3 andSendAction:(BOOL)arg4",
+        "type" : "method",
+        "name" : "_setValue:minValue:maxValue:andSendAction:",
+        "address" : 1880665
+      },
+      {
+        "declaration" : "(void)setValue:(float)arg1 animated:(BOOL)arg2",
+        "type" : "method",
+        "name" : "setValue:animated:",
+        "address" : 1879745
+      },
+      {
+        "declaration" : "(void)setValue:(float)arg1",
+        "type" : "method",
+        "name" : "setValue:",
+        "address" : 1879688
+      },
+      {
+        "declaration" : "(float)value",
+        "type" : "method",
+        "name" : "value",
+        "address" : 1879665
+      },
+      {
+        "declaration" : "(void)setAlpha:(float)arg1",
+        "type" : "method",
+        "name" : "setAlpha:",
+        "address" : 1879590
+      },
+      {
+        "declaration" : "(BOOL)isContinuous",
+        "type" : "method",
+        "name" : "isContinuous",
+        "address" : 1879563
+      },
+      {
+        "declaration" : "(void)setContinuous:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setContinuous:",
+        "address" : 1879526
+      },
+      {
+        "declaration" : "(void)setSelected:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setSelected:",
+        "address" : 1879419
+      },
+      {
+        "declaration" : "(void)setHighlighted:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setHighlighted:",
+        "address" : 1879312
+      },
+      {
+        "declaration" : "(void)setEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setEnabled:",
+        "address" : 1879205
+      },
+      {
+        "declaration" : "(void)_updateAppearanceForEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_updateAppearanceForEnabled:",
+        "address" : 1878967
+      },
+      {
+        "declaration" : "(void)_layoutSubviewsForBoundsChange:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_layoutSubviewsForBoundsChange:",
+        "address" : 1875153
+      },
+      {
+        "declaration" : "(void)_updateMaxTrackColor",
+        "type" : "method",
+        "name" : "_updateMaxTrackColor",
+        "address" : 1874300
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 1874129
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 1873945
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 1873761
+      },
+      {
+        "declaration" : "(struct UIEdgeInsets)alignmentRectInsets",
+        "type" : "method",
+        "name" : "alignmentRectInsets",
+        "address" : 1873364
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 1873304
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 1872460
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 1872450
+      },
+      {
+        "declaration" : "(struct CGRect)thumbRectForBounds:(struct CGRect)arg1 trackRect:(struct CGRect)arg2 value:(float)arg3",
+        "type" : "method",
+        "name" : "thumbRectForBounds:trackRect:value:",
+        "address" : 1871868
+      },
+      {
+        "declaration" : "(struct CGRect)trackRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "trackRectForBounds:",
+        "address" : 1871244
+      },
+      {
+        "declaration" : "(struct CGRect)maximumValueImageRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "maximumValueImageRectForBounds:",
+        "address" : 1871016
+      },
+      {
+        "declaration" : "(struct CGRect)minimumValueImageRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "minimumValueImageRectForBounds:",
+        "address" : 1870809
+      },
+      {
+        "declaration" : "(void)tintColorDidChange",
+        "type" : "method",
+        "name" : "tintColorDidChange",
+        "address" : 1870726
+      },
+      {
+        "declaration" : "(id)maximumValueImage",
+        "type" : "method",
+        "name" : "maximumValueImage",
+        "address" : 1870641
+      },
+      {
+        "declaration" : "(void)setMaximumValueImage:(id)arg1",
+        "type" : "method",
+        "name" : "setMaximumValueImage:",
+        "address" : 1870349
+      },
+      {
+        "declaration" : "(id)minimumValueImage",
+        "type" : "method",
+        "name" : "minimumValueImage",
+        "address" : 1870264
+      },
+      {
+        "declaration" : "(void)setMinimumValueImage:(id)arg1",
+        "type" : "method",
+        "name" : "setMinimumValueImage:",
+        "address" : 1869972
+      },
+      {
+        "declaration" : "(id)currentMaximumTrackImage",
+        "type" : "method",
+        "name" : "currentMaximumTrackImage",
+        "address" : 1869872
+      },
+      {
+        "declaration" : "(id)currentMinimumTrackImage",
+        "type" : "method",
+        "name" : "currentMinimumTrackImage",
+        "address" : 1869772
+      },
+      {
+        "declaration" : "(id)currentThumbImage",
+        "type" : "method",
+        "name" : "currentThumbImage",
+        "address" : 1869672
+      },
+      {
+        "declaration" : "(id)maximumTrackImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "maximumTrackImageForState:",
+        "address" : 1869627
+      },
+      {
+        "declaration" : "(id)minimumTrackImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "minimumTrackImageForState:",
+        "address" : 1869582
+      },
+      {
+        "declaration" : "(id)thumbImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "thumbImageForState:",
+        "address" : 1869537
+      },
+      {
+        "declaration" : "(void)setMaximumTrackTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setMaximumTrackTintColor:",
+        "address" : 1869201
+      },
+      {
+        "declaration" : "(void)setMaximumTrackImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setMaximumTrackImage:forState:",
+        "address" : 1868762
+      },
+      {
+        "declaration" : "(void)setMinimumTrackTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setMinimumTrackTintColor:",
+        "address" : 1868451
+      },
+      {
+        "declaration" : "(void)setMinimumTrackImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setMinimumTrackImage:forState:",
+        "address" : 1868012
+      },
+      {
+        "declaration" : "(void)setThumbTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setThumbTintColor:",
+        "address" : 1867291
+      },
+      {
+        "declaration" : "(void)setThumbImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setThumbImage:forState:",
+        "address" : 1866895
+      },
+      {
+        "declaration" : "(BOOL)gestureRecognizerShouldBegin:(id)arg1",
+        "type" : "method",
+        "name" : "gestureRecognizerShouldBegin:",
+        "address" : 1866354
+      },
+      {
+        "declaration" : "(id)description",
+        "type" : "method",
+        "name" : "description",
+        "address" : 1866192
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 1865833
+      },
+      {
+        "declaration" : "(void)_rebuildControlThumb:(BOOL)arg1 track:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_rebuildControlThumb:track:",
+        "address" : 1865309
+      },
+      {
+        "declaration" : "(void)_buildTrackArtwork",
+        "type" : "method",
+        "name" : "_buildTrackArtwork",
+        "address" : 1864509
+      },
+      {
+        "declaration" : "(float)_cornerRadiusForRect:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "_cornerRadiusForRect:",
+        "address" : 1864468
+      },
+      {
+        "declaration" : "(void)_initSubviews",
+        "type" : "method",
+        "name" : "_initSubviews",
+        "address" : 1864278
+      },
+      {
+        "declaration" : "(void)_initImages",
+        "type" : "method",
+        "name" : "_initImages",
+        "address" : 1863334
+      },
+      {
+        "declaration" : "(id)createThumbViewNeue",
+        "type" : "method",
+        "name" : "createThumbViewNeue",
+        "address" : 1862587
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 1862029
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 1861819
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 1860911
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 1860618
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 1860508
+      },
+      {
+        "declaration" : "(id)_maxValueView",
+        "type" : "method",
+        "name" : "_maxValueView",
+        "address" : 1886332
+      },
+      {
+        "declaration" : "(id)_minValueView",
+        "type" : "method",
+        "name" : "_minValueView",
+        "address" : 1886309
+      },
+      {
+        "declaration" : "(id)_maxTrackView",
+        "type" : "method",
+        "name" : "_maxTrackView",
+        "address" : 1886286
+      },
+      {
+        "declaration" : "(id)_minTrackView",
+        "type" : "method",
+        "name" : "_minTrackView",
+        "address" : 1886263
+      },
+      {
+        "declaration" : "(void)_setUseLookNeue:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUseLookNeue:",
+        "address" : 1886204
+      },
+      {
+        "declaration" : "(struct UIEdgeInsets)_thumbHitEdgeInsets",
+        "type" : "method",
+        "name" : "_thumbHitEdgeInsets",
+        "address" : 1885911
+      },
+      {
+        "declaration" : "(BOOL)_isThumbEnabled",
+        "type" : "method",
+        "name" : "_isThumbEnabled",
+        "address" : 1885878
+      },
+      {
+        "declaration" : "(void)_setMinimumTrackVisible:(BOOL)arg1 withDuration:(double)arg2",
+        "type" : "method",
+        "name" : "_setMinimumTrackVisible:withDuration:",
+        "address" : 1885563
+      },
+      {
+        "declaration" : "(void)_setThumbEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setThumbEnabled:",
+        "address" : 1885297
+      },
+      {
+        "declaration" : "(BOOL)_trackEnabled",
+        "type" : "method",
+        "name" : "_trackEnabled",
+        "address" : 1885266
+      },
+      {
+        "declaration" : "(void)_setTrackEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setTrackEnabled:",
+        "address" : 1885226
+      },
+      {
+        "declaration" : "(void)setMaximumTrackImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setMaximumTrackImage:forStates:",
+        "address" : 1885134
+      },
+      {
+        "declaration" : "(void)setMinimumTrackImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setMinimumTrackImage:forStates:",
+        "address" : 1885042
+      },
+      {
+        "declaration" : "(void)setThumbImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setThumbImage:forStates:",
+        "address" : 1884950
+      },
+      {
+        "declaration" : "(id)createThumbView",
+        "type" : "method",
+        "name" : "createThumbView",
+        "address" : 1884518
+      },
+      {
+        "declaration" : "(struct CGRect)valueTextRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "valueTextRectForBounds:",
+        "address" : 1884330
+      },
+      {
+        "declaration" : "(void)setShowValue:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setShowValue:",
+        "address" : 1884226
+      },
+      {
+        "declaration" : "(BOOL)isAnimatingValueChange",
+        "type" : "method",
+        "name" : "isAnimatingValueChange",
+        "address" : 1884196
+      },
+      {
+        "declaration" : "(BOOL)_alwaysHandleScrollerMouseEvent",
+        "type" : "method",
+        "name" : "_alwaysHandleScrollerMouseEvent",
+        "address" : 1884155
+      },
+      {
+        "declaration" : "(id)_maximumTrackImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_maximumTrackImageForState:",
+        "address" : 1888201
+      },
+      {
+        "declaration" : "(id)_minimumTrackImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_minimumTrackImageForState:",
+        "address" : 1888096
+      },
+      {
+        "declaration" : "(id)_thumbImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_thumbImageForState:",
+        "address" : 1887991
+      },
+      {
+        "declaration" : "(id)_contentForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_contentForState:",
+        "address" : 1887939
+      },
+      {
+        "declaration" : "(void)_setMaximumTrackImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setMaximumTrackImage:forStates:",
+        "address" : 1887581
+      },
+      {
+        "declaration" : "(void)_setMinimumTrackImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setMinimumTrackImage:forStates:",
+        "address" : 1887223
+      },
+      {
+        "declaration" : "(void)_setThumbTintColor:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setThumbTintColor:forStates:",
+        "address" : 1886846
+      },
+      {
+        "declaration" : "(void)_setThumbImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setThumbImage:forStates:",
+        "address" : 1886488
+      },
+      {
+        "declaration" : "(void)_setContent:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setContent:forState:",
+        "address" : 1886355
+      },
+      {
+        "declaration" : "(id)scriptingInfoWithChildren",
+        "type" : "method",
+        "name" : "scriptingInfoWithChildren",
+        "address" : 1892898
+      },
+      {
+        "declaration" : "(id)_scriptingInfo",
+        "type" : "method",
+        "name" : "_scriptingInfo",
+        "address" : 1892706
+      },
+      {
+        "declaration" : "(BOOL)isElementAccessibilityExposedToInterfaceBuilder",
+        "type" : "method",
+        "name" : "isElementAccessibilityExposedToInterfaceBuilder",
+        "address" : 3272476
+      },
+      {
+        "declaration" : "(BOOL)isAccessibilityElementByDefault",
+        "type" : "method",
+        "name" : "isAccessibilityElementByDefault",
+        "address" : 3272466
+      }
+    ],
+    "protocols" : [
+      "NSCoding"
+    ],
+    "properties" : [
+      {
+        "name" : "value",
+        "setter" : "setValue:",
+        "getter" : "value",
+        "type" : "property",
+        "propertyType" : "float"
+      },
+      {
+        "name" : "minimumValue",
+        "setter" : "setMinimumValue:",
+        "getter" : "minimumValue",
+        "type" : "property",
+        "propertyType" : "float"
+      },
+      {
+        "name" : "maximumValue",
+        "setter" : "setMaximumValue:",
+        "getter" : "maximumValue",
+        "type" : "property",
+        "propertyType" : "float"
+      },
+      {
+        "name" : "minimumValueImage",
+        "setter" : "setMinimumValueImage:",
+        "getter" : "minimumValueImage",
+        "type" : "property",
+        "propertyType" : "UIImage *"
+      },
+      {
+        "name" : "maximumValueImage",
+        "setter" : "setMaximumValueImage:",
+        "getter" : "maximumValueImage",
+        "type" : "property",
+        "propertyType" : "UIImage *"
+      },
+      {
+        "name" : "continuous",
+        "setter" : "setContinuous:",
+        "getter" : "isContinuous",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "minimumTrackTintColor",
+        "setter" : "setMinimumTrackTintColor:",
+        "getter" : "minimumTrackTintColor",
+        "type" : "property",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "name" : "maximumTrackTintColor",
+        "setter" : "setMaximumTrackTintColor:",
+        "getter" : "maximumTrackTintColor",
+        "type" : "property",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "name" : "thumbTintColor",
+        "setter" : "setThumbTintColor:",
+        "getter" : "thumbTintColor",
+        "type" : "property",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "name" : "currentThumbImage",
+        "setter" : "setCurrentThumbImage:",
+        "getter" : "currentThumbImage",
+        "type" : "property",
+        "propertyType" : "UIImage *"
+      },
+      {
+        "name" : "currentMinimumTrackImage",
+        "setter" : "setCurrentMinimumTrackImage:",
+        "getter" : "currentMinimumTrackImage",
+        "type" : "property",
+        "propertyType" : "UIImage *"
+      },
+      {
+        "name" : "currentMaximumTrackImage",
+        "setter" : "setCurrentMaximumTrackImage:",
+        "getter" : "currentMaximumTrackImage",
+        "type" : "property",
+        "propertyType" : "UIImage *"
+      }
+    ],
+    "type" : "class"
+  },
+  "x86_64" : {
+    "superClassName" : "UIControl",
+    "className" : "UISlider",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 140,
+        "type" : "ivar",
+        "name" : "_value"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 144,
+        "type" : "ivar",
+        "name" : "_minValue"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 148,
+        "type" : "ivar",
+        "name" : "_maxValue"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 152,
+        "type" : "ivar",
+        "name" : "_alpha"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "struct __CFDictionary *",
+        "size" : 8,
+        "offset" : 160,
+        "type" : "ivar",
+        "name" : "_contentLookup"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 168,
+        "type" : "ivar",
+        "name" : "_minValueImageView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 176,
+        "type" : "ivar",
+        "name" : "_maxValueImageView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 184,
+        "type" : "ivar",
+        "name" : "_thumbView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 192,
+        "type" : "ivar",
+        "name" : "_minTrackView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 200,
+        "type" : "ivar",
+        "name" : "_maxTrackView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIView *",
+        "size" : 8,
+        "offset" : 208,
+        "type" : "ivar",
+        "name" : "_maxTrackClipView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "struct {\n        unsigned int continuous:1;\n        unsigned int animating:1;\n        unsigned int preparingToAnimate:1;\n        unsigned int showValue:1;\n        unsigned int trackEnabled:1;\n        unsigned int creatingSnapshot:1;\n        unsigned int thumbDisabled:1;\n        unsigned int minTrackHidden:1;\n    }",
+        "size" : 4,
+        "offset" : 216,
+        "type" : "ivar",
+        "name" : "_sliderFlags"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 224,
+        "type" : "ivar",
+        "name" : "_hitOffset"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 232,
+        "type" : "ivar",
+        "name" : "_minTintColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 240,
+        "type" : "ivar",
+        "name" : "_maxTintColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 248,
+        "type" : "ivar",
+        "name" : "_thumbTintColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIView *",
+        "size" : 8,
+        "offset" : 256,
+        "type" : "ivar",
+        "name" : "_thumbViewNeue"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "CAShapeLayer *",
+        "size" : 8,
+        "offset" : 264,
+        "type" : "ivar",
+        "name" : "_thumbViewNeueShape"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 272,
+        "type" : "ivar",
+        "name" : "_useLookNeue"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSArray *",
+        "size" : 8,
+        "offset" : 280,
+        "type" : "ivar",
+        "name" : "_trackColors"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 288,
+        "type" : "ivar",
+        "name" : "_trackIsArtworkBased"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 289,
+        "type" : "ivar",
+        "name" : "_thumbIsArtworkBased"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 290,
+        "type" : "ivar",
+        "name" : "_maxColorIsValid"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 291,
+        "type" : "ivar",
+        "name" : "_animatingWithDynamics"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 296,
+        "type" : "ivar",
+        "name" : "_innerThumbView"
+      }
+    ],
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)thumbTintColor",
+        "type" : "method",
+        "name" : "thumbTintColor",
+        "address" : 1630887
+      },
+      {
+        "declaration" : "(id)maximumTrackTintColor",
+        "type" : "method",
+        "name" : "maximumTrackTintColor",
+        "address" : 1630870
+      },
+      {
+        "declaration" : "(id)minimumTrackTintColor",
+        "type" : "method",
+        "name" : "minimumTrackTintColor",
+        "address" : 1630853
+      },
+      {
+        "declaration" : "(_Bool)cancelTouchTracking",
+        "type" : "method",
+        "name" : "cancelTouchTracking",
+        "address" : 1630748
+      },
+      {
+        "declaration" : "(void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchEnded:withEvent:",
+        "address" : 1630742
+      },
+      {
+        "declaration" : "(void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchMoved:withEvent:",
+        "address" : 1630736
+      },
+      {
+        "declaration" : "(void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchBegan:withEvent:",
+        "address" : 1630730
+      },
+      {
+        "declaration" : "(void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "endTrackingWithTouch:withEvent:",
+        "address" : 1630461
+      },
+      {
+        "declaration" : "(_Bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "continueTrackingWithTouch:withEvent:",
+        "address" : 1630272
+      },
+      {
+        "declaration" : "(_Bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "beginTrackingWithTouch:withEvent:",
+        "address" : 1628804
+      },
+      {
+        "declaration" : "(_Bool)cancelMouseTracking",
+        "type" : "method",
+        "name" : "cancelMouseTracking",
+        "address" : 1628729
+      },
+      {
+        "declaration" : "(void)_sendDelayedActions",
+        "type" : "method",
+        "name" : "_sendDelayedActions",
+        "address" : 1628629
+      },
+      {
+        "declaration" : "(void)_sliderAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3",
+        "type" : "method",
+        "name" : "_sliderAnimationDidStop:finished:context:",
+        "address" : 1628528
+      },
+      {
+        "declaration" : "(void)_sliderAnimationWillStart:(id)arg1 context:(id)arg2",
+        "type" : "method",
+        "name" : "_sliderAnimationWillStart:context:",
+        "address" : 1628503
+      },
+      {
+        "declaration" : "(void)setMaximumValue:(float)arg1",
+        "type" : "method",
+        "name" : "setMaximumValue:",
+        "address" : 1628432
+      },
+      {
+        "declaration" : "(float)maximumValue",
+        "type" : "method",
+        "name" : "maximumValue",
+        "address" : 1628414
+      },
+      {
+        "declaration" : "(void)setMinimumValue:(float)arg1",
+        "type" : "method",
+        "name" : "setMinimumValue:",
+        "address" : 1628343
+      },
+      {
+        "declaration" : "(float)minimumValue",
+        "type" : "method",
+        "name" : "minimumValue",
+        "address" : 1628325
+      },
+      {
+        "declaration" : "(void)_setValue:(float)arg1 andSendAction:(_Bool)arg2",
+        "type" : "method",
+        "name" : "_setValue:andSendAction:",
+        "address" : 1628280
+      },
+      {
+        "declaration" : "(void)_setValue:(float)arg1 minValue:(float)arg2 maxValue:(float)arg3 andSendAction:(_Bool)arg4",
+        "type" : "method",
+        "name" : "_setValue:minValue:maxValue:andSendAction:",
+        "address" : 1627801
+      },
+      {
+        "declaration" : "(void)setValue:(float)arg1 animated:(_Bool)arg2",
+        "type" : "method",
+        "name" : "setValue:animated:",
+        "address" : 1626946
+      },
+      {
+        "declaration" : "(void)setValue:(float)arg1",
+        "type" : "method",
+        "name" : "setValue:",
+        "address" : 1626926
+      },
+      {
+        "declaration" : "(float)value",
+        "type" : "method",
+        "name" : "value",
+        "address" : 1626908
+      },
+      {
+        "declaration" : "(void)setAlpha:(double)arg1",
+        "type" : "method",
+        "name" : "setAlpha:",
+        "address" : 1626851
+      },
+      {
+        "declaration" : "(_Bool)isContinuous",
+        "type" : "method",
+        "name" : "isContinuous",
+        "address" : 1626833
+      },
+      {
+        "declaration" : "(void)setContinuous:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setContinuous:",
+        "address" : 1626809
+      },
+      {
+        "declaration" : "(void)setSelected:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setSelected:",
+        "address" : 1626714
+      },
+      {
+        "declaration" : "(void)setHighlighted:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setHighlighted:",
+        "address" : 1626619
+      },
+      {
+        "declaration" : "(void)setEnabled:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setEnabled:",
+        "address" : 1626524
+      },
+      {
+        "declaration" : "(void)_updateAppearanceForEnabled:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_updateAppearanceForEnabled:",
+        "address" : 1626323
+      },
+      {
+        "declaration" : "(void)_layoutSubviewsForBoundsChange:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_layoutSubviewsForBoundsChange:",
+        "address" : 1622739
+      },
+      {
+        "declaration" : "(void)_updateMaxTrackColor",
+        "type" : "method",
+        "name" : "_updateMaxTrackColor",
+        "address" : 1621981
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 1621825
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 1621641
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 1621457
+      },
+      {
+        "declaration" : "(struct UIEdgeInsets)alignmentRectInsets",
+        "type" : "method",
+        "name" : "alignmentRectInsets",
+        "address" : 1621078
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 1621060
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 1620254
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 1620246
+      },
+      {
+        "declaration" : "(struct CGRect)thumbRectForBounds:(struct CGRect)arg1 trackRect:(struct CGRect)arg2 value:(float)arg3",
+        "type" : "method",
+        "name" : "thumbRectForBounds:trackRect:value:",
+        "address" : 1619684
+      },
+      {
+        "declaration" : "(struct CGRect)trackRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "trackRectForBounds:",
+        "address" : 1618959
+      },
+      {
+        "declaration" : "(struct CGRect)maximumValueImageRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "maximumValueImageRectForBounds:",
+        "address" : 1618719
+      },
+      {
+        "declaration" : "(struct CGRect)minimumValueImageRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "minimumValueImageRectForBounds:",
+        "address" : 1618499
+      },
+      {
+        "declaration" : "(void)tintColorDidChange",
+        "type" : "method",
+        "name" : "tintColorDidChange",
+        "address" : 1618431
+      },
+      {
+        "declaration" : "(id)maximumValueImage",
+        "type" : "method",
+        "name" : "maximumValueImage",
+        "address" : 1618359
+      },
+      {
+        "declaration" : "(void)setMaximumValueImage:(id)arg1",
+        "type" : "method",
+        "name" : "setMaximumValueImage:",
+        "address" : 1618080
+      },
+      {
+        "declaration" : "(id)minimumValueImage",
+        "type" : "method",
+        "name" : "minimumValueImage",
+        "address" : 1618008
+      },
+      {
+        "declaration" : "(void)setMinimumValueImage:(id)arg1",
+        "type" : "method",
+        "name" : "setMinimumValueImage:",
+        "address" : 1617729
+      },
+      {
+        "declaration" : "(id)currentMaximumTrackImage",
+        "type" : "method",
+        "name" : "currentMaximumTrackImage",
+        "address" : 1617648
+      },
+      {
+        "declaration" : "(id)currentMinimumTrackImage",
+        "type" : "method",
+        "name" : "currentMinimumTrackImage",
+        "address" : 1617567
+      },
+      {
+        "declaration" : "(id)currentThumbImage",
+        "type" : "method",
+        "name" : "currentThumbImage",
+        "address" : 1617486
+      },
+      {
+        "declaration" : "(id)maximumTrackImageForState:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "maximumTrackImageForState:",
+        "address" : 1617468
+      },
+      {
+        "declaration" : "(id)minimumTrackImageForState:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "minimumTrackImageForState:",
+        "address" : 1617450
+      },
+      {
+        "declaration" : "(id)thumbImageForState:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "thumbImageForState:",
+        "address" : 1617432
+      },
+      {
+        "declaration" : "(void)setMaximumTrackTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setMaximumTrackTintColor:",
+        "address" : 1617146
+      },
+      {
+        "declaration" : "(void)setMaximumTrackImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "setMaximumTrackImage:forState:",
+        "address" : 1616774
+      },
+      {
+        "declaration" : "(void)setMinimumTrackTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setMinimumTrackTintColor:",
+        "address" : 1616538
+      },
+      {
+        "declaration" : "(void)setMinimumTrackImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "setMinimumTrackImage:forState:",
+        "address" : 1616166
+      },
+      {
+        "declaration" : "(void)setThumbTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setThumbTintColor:",
+        "address" : 1615607
+      },
+      {
+        "declaration" : "(void)setThumbImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "setThumbImage:forState:",
+        "address" : 1615267
+      },
+      {
+        "declaration" : "(_Bool)gestureRecognizerShouldBegin:(id)arg1",
+        "type" : "method",
+        "name" : "gestureRecognizerShouldBegin:",
+        "address" : 1614792
+      },
+      {
+        "declaration" : "(id)description",
+        "type" : "method",
+        "name" : "description",
+        "address" : 1614647
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 1614289
+      },
+      {
+        "declaration" : "(void)_rebuildControlThumb:(_Bool)arg1 track:(_Bool)arg2",
+        "type" : "method",
+        "name" : "_rebuildControlThumb:track:",
+        "address" : 1613796
+      },
+      {
+        "declaration" : "(void)_buildTrackArtwork",
+        "type" : "method",
+        "name" : "_buildTrackArtwork",
+        "address" : 1613082
+      },
+      {
+        "declaration" : "(double)_cornerRadiusForRect:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "_cornerRadiusForRect:",
+        "address" : 1613058
+      },
+      {
+        "declaration" : "(void)_initSubviews",
+        "type" : "method",
+        "name" : "_initSubviews",
+        "address" : 1612875
+      },
+      {
+        "declaration" : "(void)_initImages",
+        "type" : "method",
+        "name" : "_initImages",
+        "address" : 1612020
+      },
+      {
+        "declaration" : "(id)createThumbViewNeue",
+        "type" : "method",
+        "name" : "createThumbViewNeue",
+        "address" : 1611281
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 1610800
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 1610573
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 1609788
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 1609484
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 1609361
+      },
+      {
+        "declaration" : "(id)_maxValueView",
+        "type" : "method",
+        "name" : "_maxValueView",
+        "address" : 1632805
+      },
+      {
+        "declaration" : "(id)_minValueView",
+        "type" : "method",
+        "name" : "_minValueView",
+        "address" : 1632788
+      },
+      {
+        "declaration" : "(id)_maxTrackView",
+        "type" : "method",
+        "name" : "_maxTrackView",
+        "address" : 1632771
+      },
+      {
+        "declaration" : "(id)_minTrackView",
+        "type" : "method",
+        "name" : "_minTrackView",
+        "address" : 1632754
+      },
+      {
+        "declaration" : "(void)_setUseLookNeue:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setUseLookNeue:",
+        "address" : 1632713
+      },
+      {
+        "declaration" : "(struct UIEdgeInsets)_thumbHitEdgeInsets",
+        "type" : "method",
+        "name" : "_thumbHitEdgeInsets",
+        "address" : 1632466
+      },
+      {
+        "declaration" : "(_Bool)_isThumbEnabled",
+        "type" : "method",
+        "name" : "_isThumbEnabled",
+        "address" : 1632446
+      },
+      {
+        "declaration" : "(void)_setMinimumTrackVisible:(_Bool)arg1 withDuration:(double)arg2",
+        "type" : "method",
+        "name" : "_setMinimumTrackVisible:withDuration:",
+        "address" : 1632155
+      },
+      {
+        "declaration" : "(void)_setThumbEnabled:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setThumbEnabled:",
+        "address" : 1631898
+      },
+      {
+        "declaration" : "(_Bool)_trackEnabled",
+        "type" : "method",
+        "name" : "_trackEnabled",
+        "address" : 1631877
+      },
+      {
+        "declaration" : "(void)_setTrackEnabled:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setTrackEnabled:",
+        "address" : 1631850
+      },
+      {
+        "declaration" : "(void)setMaximumTrackImage:(id)arg1 forStates:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "setMaximumTrackImage:forStates:",
+        "address" : 1631787
+      },
+      {
+        "declaration" : "(void)setMinimumTrackImage:(id)arg1 forStates:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "setMinimumTrackImage:forStates:",
+        "address" : 1631724
+      },
+      {
+        "declaration" : "(void)setThumbImage:(id)arg1 forStates:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "setThumbImage:forStates:",
+        "address" : 1631661
+      },
+      {
+        "declaration" : "(id)createThumbView",
+        "type" : "method",
+        "name" : "createThumbView",
+        "address" : 1631227
+      },
+      {
+        "declaration" : "(struct CGRect)valueTextRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "valueTextRectForBounds:",
+        "address" : 1631039
+      },
+      {
+        "declaration" : "(void)setShowValue:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setShowValue:",
+        "address" : 1630943
+      },
+      {
+        "declaration" : "(_Bool)isAnimatingValueChange",
+        "type" : "method",
+        "name" : "isAnimatingValueChange",
+        "address" : 1630923
+      },
+      {
+        "declaration" : "(_Bool)_alwaysHandleScrollerMouseEvent",
+        "type" : "method",
+        "name" : "_alwaysHandleScrollerMouseEvent",
+        "address" : 1630904
+      },
+      {
+        "declaration" : "(id)_maximumTrackImageForState:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "_maximumTrackImageForState:",
+        "address" : 1634354
+      },
+      {
+        "declaration" : "(id)_minimumTrackImageForState:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "_minimumTrackImageForState:",
+        "address" : 1634262
+      },
+      {
+        "declaration" : "(id)_thumbImageForState:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "_thumbImageForState:",
+        "address" : 1634170
+      },
+      {
+        "declaration" : "(id)_contentForState:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "_contentForState:",
+        "address" : 1634136
+      },
+      {
+        "declaration" : "(void)_setMaximumTrackImage:(id)arg1 forStates:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "_setMaximumTrackImage:forStates:",
+        "address" : 1633842
+      },
+      {
+        "declaration" : "(void)_setMinimumTrackImage:(id)arg1 forStates:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "_setMinimumTrackImage:forStates:",
+        "address" : 1633548
+      },
+      {
+        "declaration" : "(void)_setThumbTintColor:(id)arg1 forStates:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "_setThumbTintColor:forStates:",
+        "address" : 1633230
+      },
+      {
+        "declaration" : "(void)_setThumbImage:(id)arg1 forStates:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "_setThumbImage:forStates:",
+        "address" : 1632936
+      },
+      {
+        "declaration" : "(void)_setContent:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "_setContent:forState:",
+        "address" : 1632822
+      },
+      {
+        "declaration" : "(id)scriptingInfoWithChildren",
+        "type" : "method",
+        "name" : "scriptingInfoWithChildren",
+        "address" : 1638724
+      },
+      {
+        "declaration" : "(id)_scriptingInfo",
+        "type" : "method",
+        "name" : "_scriptingInfo",
+        "address" : 1638553
+      },
+      {
+        "declaration" : "(_Bool)isElementAccessibilityExposedToInterfaceBuilder",
+        "type" : "method",
+        "name" : "isElementAccessibilityExposedToInterfaceBuilder",
+        "address" : 2850874
+      },
+      {
+        "declaration" : "(_Bool)isAccessibilityElementByDefault",
+        "type" : "method",
+        "name" : "isAccessibilityElementByDefault",
+        "address" : 2850866
+      }
+    ],
+    "protocols" : [
+      "NSCoding"
+    ],
+    "properties" : [
+      {
+        "propertyType" : "float",
+        "getter" : "value",
+        "type" : "property",
+        "name" : "value",
+        "setter" : "setValue:"
+      },
+      {
+        "propertyType" : "float",
+        "getter" : "minimumValue",
+        "type" : "property",
+        "name" : "minimumValue",
+        "setter" : "setMinimumValue:"
+      },
+      {
+        "propertyType" : "float",
+        "getter" : "maximumValue",
+        "type" : "property",
+        "name" : "maximumValue",
+        "setter" : "setMaximumValue:"
+      },
+      {
+        "propertyType" : "UIImage *",
+        "getter" : "minimumValueImage",
+        "type" : "property",
+        "name" : "minimumValueImage",
+        "setter" : "setMinimumValueImage:"
+      },
+      {
+        "propertyType" : "UIImage *",
+        "getter" : "maximumValueImage",
+        "type" : "property",
+        "name" : "maximumValueImage",
+        "setter" : "setMaximumValueImage:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "isContinuous",
+        "type" : "property",
+        "name" : "continuous",
+        "setter" : "setContinuous:"
+      },
+      {
+        "propertyType" : "UIColor *",
+        "getter" : "minimumTrackTintColor",
+        "type" : "property",
+        "name" : "minimumTrackTintColor",
+        "setter" : "setMinimumTrackTintColor:"
+      },
+      {
+        "propertyType" : "UIColor *",
+        "getter" : "maximumTrackTintColor",
+        "type" : "property",
+        "name" : "maximumTrackTintColor",
+        "setter" : "setMaximumTrackTintColor:"
+      },
+      {
+        "propertyType" : "UIColor *",
+        "getter" : "thumbTintColor",
+        "type" : "property",
+        "name" : "thumbTintColor",
+        "setter" : "setThumbTintColor:"
+      },
+      {
+        "propertyType" : "UIImage *",
+        "getter" : "currentThumbImage",
+        "type" : "property",
+        "name" : "currentThumbImage",
+        "setter" : "setCurrentThumbImage:"
+      },
+      {
+        "propertyType" : "UIImage *",
+        "getter" : "currentMinimumTrackImage",
+        "type" : "property",
+        "name" : "currentMinimumTrackImage",
+        "setter" : "setCurrentMinimumTrackImage:"
+      },
+      {
+        "propertyType" : "UIImage *",
+        "getter" : "currentMaximumTrackImage",
+        "type" : "property",
+        "name" : "currentMaximumTrackImage",
+        "setter" : "setCurrentMaximumTrackImage:"
+      }
+    ],
+    "type" : "class"
+  },
+  "armv7" : {
+    "superClassName" : "UIControl",
+    "className" : "UISlider",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_value"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_minValue"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 88,
+        "type" : "ivar",
+        "name" : "_maxValue"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 92,
+        "type" : "ivar",
+        "name" : "_alpha"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "struct __CFDictionary *",
+        "size" : 4,
+        "offset" : 96,
+        "type" : "ivar",
+        "name" : "_contentLookup"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 100,
+        "type" : "ivar",
+        "name" : "_minValueImageView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 104,
+        "type" : "ivar",
+        "name" : "_maxValueImageView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 108,
+        "type" : "ivar",
+        "name" : "_thumbView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 112,
+        "type" : "ivar",
+        "name" : "_minTrackView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 116,
+        "type" : "ivar",
+        "name" : "_maxTrackView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 120,
+        "type" : "ivar",
+        "name" : "_maxTrackClipView"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "struct {\n        unsigned int continuous:1;\n        unsigned int animating:1;\n        unsigned int preparingToAnimate:1;\n        unsigned int showValue:1;\n        unsigned int trackEnabled:1;\n        unsigned int creatingSnapshot:1;\n        unsigned int thumbDisabled:1;\n        unsigned int minTrackHidden:1;\n    }",
+        "size" : 1,
+        "offset" : 124,
+        "type" : "ivar",
+        "name" : "_sliderFlags"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 128,
+        "type" : "ivar",
+        "name" : "_hitOffset"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 132,
+        "type" : "ivar",
+        "name" : "_minTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 136,
+        "type" : "ivar",
+        "name" : "_maxTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 140,
+        "type" : "ivar",
+        "name" : "_thumbTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 144,
+        "type" : "ivar",
+        "name" : "_thumbViewNeue"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "CAShapeLayer *",
+        "size" : 4,
+        "offset" : 148,
+        "type" : "ivar",
+        "name" : "_thumbViewNeueShape"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 152,
+        "type" : "ivar",
+        "name" : "_useLookNeue"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSArray *",
+        "size" : 4,
+        "offset" : 156,
+        "type" : "ivar",
+        "name" : "_trackColors"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 160,
+        "type" : "ivar",
+        "name" : "_trackIsArtworkBased"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 161,
+        "type" : "ivar",
+        "name" : "_thumbIsArtworkBased"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 162,
+        "type" : "ivar",
+        "name" : "_maxColorIsValid"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 163,
+        "type" : "ivar",
+        "name" : "_animatingWithDynamics"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 164,
+        "type" : "ivar",
+        "name" : "_innerThumbView"
+      }
+    ],
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)thumbTintColor",
+        "type" : "method",
+        "name" : "thumbTintColor",
+        "address" : 3171533
+      },
+      {
+        "declaration" : "(id)maximumTrackTintColor",
+        "type" : "method",
+        "name" : "maximumTrackTintColor",
+        "address" : 3171517
+      },
+      {
+        "declaration" : "(id)minimumTrackTintColor",
+        "type" : "method",
+        "name" : "minimumTrackTintColor",
+        "address" : 3171501
+      },
+      {
+        "declaration" : "(BOOL)cancelTouchTracking",
+        "type" : "method",
+        "name" : "cancelTouchTracking",
+        "address" : 3171377
+      },
+      {
+        "declaration" : "(void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchEnded:withEvent:",
+        "address" : 3171373
+      },
+      {
+        "declaration" : "(void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchMoved:withEvent:",
+        "address" : 3171369
+      },
+      {
+        "declaration" : "(void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchBegan:withEvent:",
+        "address" : 3171365
+      },
+      {
+        "declaration" : "(void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "endTrackingWithTouch:withEvent:",
+        "address" : 3171061
+      },
+      {
+        "declaration" : "(BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "continueTrackingWithTouch:withEvent:",
+        "address" : 3170857
+      },
+      {
+        "declaration" : "(BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "beginTrackingWithTouch:withEvent:",
+        "address" : 3169553
+      },
+      {
+        "declaration" : "(BOOL)cancelMouseTracking",
+        "type" : "method",
+        "name" : "cancelMouseTracking",
+        "address" : 3169473
+      },
+      {
+        "declaration" : "(void)_sendDelayedActions",
+        "type" : "method",
+        "name" : "_sendDelayedActions",
+        "address" : 2386909
+      },
+      {
+        "declaration" : "(void)_sliderAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3",
+        "type" : "method",
+        "name" : "_sliderAnimationDidStop:finished:context:",
+        "address" : 2385857
+      },
+      {
+        "declaration" : "(void)_sliderAnimationWillStart:(id)arg1 context:(id)arg2",
+        "type" : "method",
+        "name" : "_sliderAnimationWillStart:context:",
+        "address" : 3169445
+      },
+      {
+        "declaration" : "(void)setMaximumValue:(float)arg1",
+        "type" : "method",
+        "name" : "setMaximumValue:",
+        "address" : 2591361
+      },
+      {
+        "declaration" : "(float)maximumValue",
+        "type" : "method",
+        "name" : "maximumValue",
+        "address" : 2377553
+      },
+      {
+        "declaration" : "(void)setMinimumValue:(float)arg1",
+        "type" : "method",
+        "name" : "setMinimumValue:",
+        "address" : 2591241
+      },
+      {
+        "declaration" : "(float)minimumValue",
+        "type" : "method",
+        "name" : "minimumValue",
+        "address" : 2377537
+      },
+      {
+        "declaration" : "(void)_setValue:(float)arg1 andSendAction:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_setValue:andSendAction:",
+        "address" : 2385257
+      },
+      {
+        "declaration" : "(void)_setValue:(float)arg1 minValue:(float)arg2 maxValue:(float)arg3 andSendAction:(BOOL)arg4",
+        "type" : "method",
+        "name" : "_setValue:minValue:maxValue:andSendAction:",
+        "address" : 2385337
+      },
+      {
+        "declaration" : "(void)setValue:(float)arg1 animated:(BOOL)arg2",
+        "type" : "method",
+        "name" : "setValue:animated:",
+        "address" : 151585
+      },
+      {
+        "declaration" : "(void)setValue:(float)arg1",
+        "type" : "method",
+        "name" : "setValue:",
+        "address" : 151565
+      },
+      {
+        "declaration" : "(float)value",
+        "type" : "method",
+        "name" : "value",
+        "address" : 2377029
+      },
+      {
+        "declaration" : "(void)setAlpha:(float)arg1",
+        "type" : "method",
+        "name" : "setAlpha:",
+        "address" : 2378953
+      },
+      {
+        "declaration" : "(BOOL)isContinuous",
+        "type" : "method",
+        "name" : "isContinuous",
+        "address" : 2387029
+      },
+      {
+        "declaration" : "(void)setContinuous:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setContinuous:",
+        "address" : 3169417
+      },
+      {
+        "declaration" : "(void)setSelected:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setSelected:",
+        "address" : 3169321
+      },
+      {
+        "declaration" : "(void)setHighlighted:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setHighlighted:",
+        "address" : 3169225
+      },
+      {
+        "declaration" : "(void)setEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setEnabled:",
+        "address" : 3169129
+      },
+      {
+        "declaration" : "(void)_updateAppearanceForEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_updateAppearanceForEnabled:",
+        "address" : 2378749
+      },
+      {
+        "declaration" : "(void)_layoutSubviewsForBoundsChange:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_layoutSubviewsForBoundsChange:",
+        "address" : 2373577
+      },
+      {
+        "declaration" : "(void)_updateMaxTrackColor",
+        "type" : "method",
+        "name" : "_updateMaxTrackColor",
+        "address" : 2377829
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 2383305
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 3168789
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 2373401
+      },
+      {
+        "declaration" : "(struct UIEdgeInsets)alignmentRectInsets",
+        "type" : "method",
+        "name" : "alignmentRectInsets",
+        "address" : 3168449
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 2380817
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 2380869
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 3168441
+      },
+      {
+        "declaration" : "(struct CGRect)thumbRectForBounds:(struct CGRect)arg1 trackRect:(struct CGRect)arg2 value:(float)arg3",
+        "type" : "method",
+        "name" : "thumbRectForBounds:trackRect:value:",
+        "address" : 2377045
+      },
+      {
+        "declaration" : "(struct CGRect)trackRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "trackRectForBounds:",
+        "address" : 2376373
+      },
+      {
+        "declaration" : "(struct CGRect)maximumValueImageRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "maximumValueImageRectForBounds:",
+        "address" : 2378513
+      },
+      {
+        "declaration" : "(struct CGRect)minimumValueImageRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "minimumValueImageRectForBounds:",
+        "address" : 2378329
+      },
+      {
+        "declaration" : "(void)tintColorDidChange",
+        "type" : "method",
+        "name" : "tintColorDidChange",
+        "address" : 2382125
+      },
+      {
+        "declaration" : "(id)maximumValueImage",
+        "type" : "method",
+        "name" : "maximumValueImage",
+        "address" : 2381909
+      },
+      {
+        "declaration" : "(void)setMaximumValueImage:(id)arg1",
+        "type" : "method",
+        "name" : "setMaximumValueImage:",
+        "address" : 2382789
+      },
+      {
+        "declaration" : "(id)minimumValueImage",
+        "type" : "method",
+        "name" : "minimumValueImage",
+        "address" : 2381837
+      },
+      {
+        "declaration" : "(void)setMinimumValueImage:(id)arg1",
+        "type" : "method",
+        "name" : "setMinimumValueImage:",
+        "address" : 2383045
+      },
+      {
+        "declaration" : "(id)currentMaximumTrackImage",
+        "type" : "method",
+        "name" : "currentMaximumTrackImage",
+        "address" : 2377749
+      },
+      {
+        "declaration" : "(id)currentMinimumTrackImage",
+        "type" : "method",
+        "name" : "currentMinimumTrackImage",
+        "address" : 2377573
+      },
+      {
+        "declaration" : "(id)currentThumbImage",
+        "type" : "method",
+        "name" : "currentThumbImage",
+        "address" : 2381981
+      },
+      {
+        "declaration" : "(id)maximumTrackImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "maximumTrackImageForState:",
+        "address" : 2376893
+      },
+      {
+        "declaration" : "(id)minimumTrackImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "minimumTrackImageForState:",
+        "address" : 2377653
+      },
+      {
+        "declaration" : "(id)thumbImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "thumbImageForState:",
+        "address" : 2381725
+      },
+      {
+        "declaration" : "(void)setMaximumTrackTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setMaximumTrackTintColor:",
+        "address" : 3168209
+      },
+      {
+        "declaration" : "(void)setMaximumTrackImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setMaximumTrackImage:forState:",
+        "address" : 2380381
+      },
+      {
+        "declaration" : "(void)setMinimumTrackTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setMinimumTrackTintColor:",
+        "address" : 3168009
+      },
+      {
+        "declaration" : "(void)setMinimumTrackImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setMinimumTrackImage:forState:",
+        "address" : 2379949
+      },
+      {
+        "declaration" : "(void)setThumbTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setThumbTintColor:",
+        "address" : 3167461
+      },
+      {
+        "declaration" : "(void)setThumbImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setThumbImage:forState:",
+        "address" : 2379013
+      },
+      {
+        "declaration" : "(BOOL)gestureRecognizerShouldBegin:(id)arg1",
+        "type" : "method",
+        "name" : "gestureRecognizerShouldBegin:",
+        "address" : 3166937
+      },
+      {
+        "declaration" : "(id)description",
+        "type" : "method",
+        "name" : "description",
+        "address" : 3166785
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 2382197
+      },
+      {
+        "declaration" : "(void)_rebuildControlThumb:(BOOL)arg1 track:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_rebuildControlThumb:track:",
+        "address" : 2379381
+      },
+      {
+        "declaration" : "(void)_buildTrackArtwork",
+        "type" : "method",
+        "name" : "_buildTrackArtwork",
+        "address" : 2384297
+      },
+      {
+        "declaration" : "(float)_cornerRadiusForRect:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "_cornerRadiusForRect:",
+        "address" : 3166749
+      },
+      {
+        "declaration" : "(void)_initSubviews",
+        "type" : "method",
+        "name" : "_initSubviews",
+        "address" : 2384097
+      },
+      {
+        "declaration" : "(void)_initImages",
+        "type" : "method",
+        "name" : "_initImages",
+        "address" : 2383473
+      },
+      {
+        "declaration" : "(id)createThumbViewNeue",
+        "type" : "method",
+        "name" : "createThumbViewNeue",
+        "address" : 2386073
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 3166113
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 3165885
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 3165037
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 2373089
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 3164965
+      },
+      {
+        "declaration" : "(id)_maxValueView",
+        "type" : "method",
+        "name" : "_maxValueView",
+        "address" : 3173045
+      },
+      {
+        "declaration" : "(id)_minValueView",
+        "type" : "method",
+        "name" : "_minValueView",
+        "address" : 3173029
+      },
+      {
+        "declaration" : "(id)_maxTrackView",
+        "type" : "method",
+        "name" : "_maxTrackView",
+        "address" : 3173013
+      },
+      {
+        "declaration" : "(id)_minTrackView",
+        "type" : "method",
+        "name" : "_minTrackView",
+        "address" : 3172997
+      },
+      {
+        "declaration" : "(void)_setUseLookNeue:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUseLookNeue:",
+        "address" : 3172953
+      },
+      {
+        "declaration" : "(struct UIEdgeInsets)_thumbHitEdgeInsets",
+        "type" : "method",
+        "name" : "_thumbHitEdgeInsets",
+        "address" : 3172681
+      },
+      {
+        "declaration" : "(BOOL)_isThumbEnabled",
+        "type" : "method",
+        "name" : "_isThumbEnabled",
+        "address" : 3172657
+      },
+      {
+        "declaration" : "(void)_setMinimumTrackVisible:(BOOL)arg1 withDuration:(double)arg2",
+        "type" : "method",
+        "name" : "_setMinimumTrackVisible:withDuration:",
+        "address" : 3172377
+      },
+      {
+        "declaration" : "(void)_setThumbEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setThumbEnabled:",
+        "address" : 3172129
+      },
+      {
+        "declaration" : "(BOOL)_trackEnabled",
+        "type" : "method",
+        "name" : "_trackEnabled",
+        "address" : 3172109
+      },
+      {
+        "declaration" : "(void)_setTrackEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setTrackEnabled:",
+        "address" : 3172077
+      },
+      {
+        "declaration" : "(void)setMaximumTrackImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setMaximumTrackImage:forStates:",
+        "address" : 3172013
+      },
+      {
+        "declaration" : "(void)setMinimumTrackImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setMinimumTrackImage:forStates:",
+        "address" : 3171949
+      },
+      {
+        "declaration" : "(void)setThumbImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setThumbImage:forStates:",
+        "address" : 3171885
+      },
+      {
+        "declaration" : "(id)createThumbView",
+        "type" : "method",
+        "name" : "createThumbView",
+        "address" : 2384865
+      },
+      {
+        "declaration" : "(struct CGRect)valueTextRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "valueTextRectForBounds:",
+        "address" : 3171681
+      },
+      {
+        "declaration" : "(void)setShowValue:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setShowValue:",
+        "address" : 3171593
+      },
+      {
+        "declaration" : "(BOOL)isAnimatingValueChange",
+        "type" : "method",
+        "name" : "isAnimatingValueChange",
+        "address" : 3171573
+      },
+      {
+        "declaration" : "(BOOL)_alwaysHandleScrollerMouseEvent",
+        "type" : "method",
+        "name" : "_alwaysHandleScrollerMouseEvent",
+        "address" : 3171549
+      },
+      {
+        "declaration" : "(id)_maximumTrackImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_maximumTrackImageForState:",
+        "address" : 2376913
+      },
+      {
+        "declaration" : "(id)_minimumTrackImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_minimumTrackImageForState:",
+        "address" : 2377673
+      },
+      {
+        "declaration" : "(id)_thumbImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_thumbImageForState:",
+        "address" : 2381745
+      },
+      {
+        "declaration" : "(id)_contentForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_contentForState:",
+        "address" : 2376989
+      },
+      {
+        "declaration" : "(void)_setMaximumTrackImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setMaximumTrackImage:forStates:",
+        "address" : 3173909
+      },
+      {
+        "declaration" : "(void)_setMinimumTrackImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setMinimumTrackImage:forStates:",
+        "address" : 3173629
+      },
+      {
+        "declaration" : "(void)_setThumbTintColor:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setThumbTintColor:forStates:",
+        "address" : 3173341
+      },
+      {
+        "declaration" : "(void)_setThumbImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setThumbImage:forStates:",
+        "address" : 3173061
+      },
+      {
+        "declaration" : "(void)_setContent:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setContent:forState:",
+        "address" : 2379829
+      },
+      {
+        "declaration" : "(id)scriptingInfoWithChildren",
+        "type" : "method",
+        "name" : "scriptingInfoWithChildren",
+        "address" : 3177685
+      },
+      {
+        "declaration" : "(id)_scriptingInfo",
+        "type" : "method",
+        "name" : "_scriptingInfo",
+        "address" : 3177493
+      },
+      {
+        "declaration" : "(BOOL)isElementAccessibilityExposedToInterfaceBuilder",
+        "type" : "method",
+        "name" : "isElementAccessibilityExposedToInterfaceBuilder",
+        "address" : 3792333
+      },
+      {
+        "declaration" : "(BOOL)isAccessibilityElementByDefault",
+        "type" : "method",
+        "name" : "isAccessibilityElementByDefault",
+        "address" : 3792329
+      }
+    ],
+    "protocols" : [
+      "NSCoding"
+    ],
+    "properties" : [
+      {
+        "name" : "value",
+        "propertyType" : "float",
+        "getter" : "value",
+        "type" : "property",
+        "setter" : "setValue:"
+      },
+      {
+        "name" : "minimumValue",
+        "propertyType" : "float",
+        "getter" : "minimumValue",
+        "type" : "property",
+        "setter" : "setMinimumValue:"
+      },
+      {
+        "name" : "maximumValue",
+        "propertyType" : "float",
+        "getter" : "maximumValue",
+        "type" : "property",
+        "setter" : "setMaximumValue:"
+      },
+      {
+        "name" : "minimumValueImage",
+        "propertyType" : "UIImage *",
+        "getter" : "minimumValueImage",
+        "type" : "property",
+        "setter" : "setMinimumValueImage:"
+      },
+      {
+        "name" : "maximumValueImage",
+        "propertyType" : "UIImage *",
+        "getter" : "maximumValueImage",
+        "type" : "property",
+        "setter" : "setMaximumValueImage:"
+      },
+      {
+        "name" : "continuous",
+        "propertyType" : "char",
+        "getter" : "isContinuous",
+        "type" : "property",
+        "setter" : "setContinuous:"
+      },
+      {
+        "name" : "minimumTrackTintColor",
+        "propertyType" : "UIColor *",
+        "getter" : "minimumTrackTintColor",
+        "type" : "property",
+        "setter" : "setMinimumTrackTintColor:"
+      },
+      {
+        "name" : "maximumTrackTintColor",
+        "propertyType" : "UIColor *",
+        "getter" : "maximumTrackTintColor",
+        "type" : "property",
+        "setter" : "setMaximumTrackTintColor:"
+      },
+      {
+        "name" : "thumbTintColor",
+        "propertyType" : "UIColor *",
+        "getter" : "thumbTintColor",
+        "type" : "property",
+        "setter" : "setThumbTintColor:"
+      },
+      {
+        "name" : "currentThumbImage",
+        "propertyType" : "UIImage *",
+        "getter" : "currentThumbImage",
+        "type" : "property",
+        "setter" : "setCurrentThumbImage:"
+      },
+      {
+        "name" : "currentMinimumTrackImage",
+        "propertyType" : "UIImage *",
+        "getter" : "currentMinimumTrackImage",
+        "type" : "property",
+        "setter" : "setCurrentMinimumTrackImage:"
+      },
+      {
+        "name" : "currentMaximumTrackImage",
+        "propertyType" : "UIImage *",
+        "getter" : "currentMaximumTrackImage",
+        "type" : "property",
+        "setter" : "setCurrentMaximumTrackImage:"
+      }
+    ],
+    "type" : "class"
+  },
+  "armv7s" : {
+    "superClassName" : "UIControl",
+    "className" : "UISlider",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_value"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_minValue"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 88,
+        "type" : "ivar",
+        "name" : "_maxValue"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 92,
+        "type" : "ivar",
+        "name" : "_alpha"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "struct __CFDictionary *",
+        "size" : 4,
+        "offset" : 96,
+        "type" : "ivar",
+        "name" : "_contentLookup"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 100,
+        "type" : "ivar",
+        "name" : "_minValueImageView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 104,
+        "type" : "ivar",
+        "name" : "_maxValueImageView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 108,
+        "type" : "ivar",
+        "name" : "_thumbView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 112,
+        "type" : "ivar",
+        "name" : "_minTrackView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 116,
+        "type" : "ivar",
+        "name" : "_maxTrackView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 120,
+        "type" : "ivar",
+        "name" : "_maxTrackClipView"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "struct {\n        unsigned int continuous:1;\n        unsigned int animating:1;\n        unsigned int preparingToAnimate:1;\n        unsigned int showValue:1;\n        unsigned int trackEnabled:1;\n        unsigned int creatingSnapshot:1;\n        unsigned int thumbDisabled:1;\n        unsigned int minTrackHidden:1;\n    }",
+        "size" : 1,
+        "offset" : 124,
+        "type" : "ivar",
+        "name" : "_sliderFlags"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 128,
+        "type" : "ivar",
+        "name" : "_hitOffset"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 132,
+        "type" : "ivar",
+        "name" : "_minTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 136,
+        "type" : "ivar",
+        "name" : "_maxTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 140,
+        "type" : "ivar",
+        "name" : "_thumbTintColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 144,
+        "type" : "ivar",
+        "name" : "_thumbViewNeue"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "CAShapeLayer *",
+        "size" : 4,
+        "offset" : 148,
+        "type" : "ivar",
+        "name" : "_thumbViewNeueShape"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 152,
+        "type" : "ivar",
+        "name" : "_useLookNeue"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSArray *",
+        "size" : 4,
+        "offset" : 156,
+        "type" : "ivar",
+        "name" : "_trackColors"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 160,
+        "type" : "ivar",
+        "name" : "_trackIsArtworkBased"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 161,
+        "type" : "ivar",
+        "name" : "_thumbIsArtworkBased"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 162,
+        "type" : "ivar",
+        "name" : "_maxColorIsValid"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 163,
+        "type" : "ivar",
+        "name" : "_animatingWithDynamics"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 164,
+        "type" : "ivar",
+        "name" : "_innerThumbView"
+      }
+    ],
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)thumbTintColor",
+        "type" : "method",
+        "name" : "thumbTintColor",
+        "address" : 3173385
+      },
+      {
+        "declaration" : "(id)maximumTrackTintColor",
+        "type" : "method",
+        "name" : "maximumTrackTintColor",
+        "address" : 3173369
+      },
+      {
+        "declaration" : "(id)minimumTrackTintColor",
+        "type" : "method",
+        "name" : "minimumTrackTintColor",
+        "address" : 3173353
+      },
+      {
+        "declaration" : "(BOOL)cancelTouchTracking",
+        "type" : "method",
+        "name" : "cancelTouchTracking",
+        "address" : 3173229
+      },
+      {
+        "declaration" : "(void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchEnded:withEvent:",
+        "address" : 3173225
+      },
+      {
+        "declaration" : "(void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchMoved:withEvent:",
+        "address" : 3173221
+      },
+      {
+        "declaration" : "(void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchBegan:withEvent:",
+        "address" : 3173217
+      },
+      {
+        "declaration" : "(void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "endTrackingWithTouch:withEvent:",
+        "address" : 3172913
+      },
+      {
+        "declaration" : "(BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "continueTrackingWithTouch:withEvent:",
+        "address" : 3172709
+      },
+      {
+        "declaration" : "(BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "beginTrackingWithTouch:withEvent:",
+        "address" : 3171409
+      },
+      {
+        "declaration" : "(BOOL)cancelMouseTracking",
+        "type" : "method",
+        "name" : "cancelMouseTracking",
+        "address" : 3171329
+      },
+      {
+        "declaration" : "(void)_sendDelayedActions",
+        "type" : "method",
+        "name" : "_sendDelayedActions",
+        "address" : 2388797
+      },
+      {
+        "declaration" : "(void)_sliderAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3",
+        "type" : "method",
+        "name" : "_sliderAnimationDidStop:finished:context:",
+        "address" : 2387753
+      },
+      {
+        "declaration" : "(void)_sliderAnimationWillStart:(id)arg1 context:(id)arg2",
+        "type" : "method",
+        "name" : "_sliderAnimationWillStart:context:",
+        "address" : 3171301
+      },
+      {
+        "declaration" : "(void)setMaximumValue:(float)arg1",
+        "type" : "method",
+        "name" : "setMaximumValue:",
+        "address" : 2593349
+      },
+      {
+        "declaration" : "(float)maximumValue",
+        "type" : "method",
+        "name" : "maximumValue",
+        "address" : 2379477
+      },
+      {
+        "declaration" : "(void)setMinimumValue:(float)arg1",
+        "type" : "method",
+        "name" : "setMinimumValue:",
+        "address" : 2593229
+      },
+      {
+        "declaration" : "(float)minimumValue",
+        "type" : "method",
+        "name" : "minimumValue",
+        "address" : 2379461
+      },
+      {
+        "declaration" : "(void)_setValue:(float)arg1 andSendAction:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_setValue:andSendAction:",
+        "address" : 2387153
+      },
+      {
+        "declaration" : "(void)_setValue:(float)arg1 minValue:(float)arg2 maxValue:(float)arg3 andSendAction:(BOOL)arg4",
+        "type" : "method",
+        "name" : "_setValue:minValue:maxValue:andSendAction:",
+        "address" : 2387233
+      },
+      {
+        "declaration" : "(void)setValue:(float)arg1 animated:(BOOL)arg2",
+        "type" : "method",
+        "name" : "setValue:animated:",
+        "address" : 153097
+      },
+      {
+        "declaration" : "(void)setValue:(float)arg1",
+        "type" : "method",
+        "name" : "setValue:",
+        "address" : 153073
+      },
+      {
+        "declaration" : "(float)value",
+        "type" : "method",
+        "name" : "value",
+        "address" : 2378953
+      },
+      {
+        "declaration" : "(void)setAlpha:(float)arg1",
+        "type" : "method",
+        "name" : "setAlpha:",
+        "address" : 2380853
+      },
+      {
+        "declaration" : "(BOOL)isContinuous",
+        "type" : "method",
+        "name" : "isContinuous",
+        "address" : 2388913
+      },
+      {
+        "declaration" : "(void)setContinuous:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setContinuous:",
+        "address" : 3171269
+      },
+      {
+        "declaration" : "(void)setSelected:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setSelected:",
+        "address" : 3171173
+      },
+      {
+        "declaration" : "(void)setHighlighted:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setHighlighted:",
+        "address" : 3171077
+      },
+      {
+        "declaration" : "(void)setEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setEnabled:",
+        "address" : 3170981
+      },
+      {
+        "declaration" : "(void)_updateAppearanceForEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_updateAppearanceForEnabled:",
+        "address" : 2380649
+      },
+      {
+        "declaration" : "(void)_layoutSubviewsForBoundsChange:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_layoutSubviewsForBoundsChange:",
+        "address" : 2375489
+      },
+      {
+        "declaration" : "(void)_updateMaxTrackColor",
+        "type" : "method",
+        "name" : "_updateMaxTrackColor",
+        "address" : 2379745
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 2385205
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 3170637
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 2375309
+      },
+      {
+        "declaration" : "(struct UIEdgeInsets)alignmentRectInsets",
+        "type" : "method",
+        "name" : "alignmentRectInsets",
+        "address" : 3170293
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 2382717
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 2382765
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 3170289
+      },
+      {
+        "declaration" : "(struct CGRect)thumbRectForBounds:(struct CGRect)arg1 trackRect:(struct CGRect)arg2 value:(float)arg3",
+        "type" : "method",
+        "name" : "thumbRectForBounds:trackRect:value:",
+        "address" : 2378973
+      },
+      {
+        "declaration" : "(struct CGRect)trackRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "trackRectForBounds:",
+        "address" : 2378297
+      },
+      {
+        "declaration" : "(struct CGRect)maximumValueImageRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "maximumValueImageRectForBounds:",
+        "address" : 2380417
+      },
+      {
+        "declaration" : "(struct CGRect)minimumValueImageRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "minimumValueImageRectForBounds:",
+        "address" : 2380237
+      },
+      {
+        "declaration" : "(void)tintColorDidChange",
+        "type" : "method",
+        "name" : "tintColorDidChange",
+        "address" : 2384025
+      },
+      {
+        "declaration" : "(id)maximumValueImage",
+        "type" : "method",
+        "name" : "maximumValueImage",
+        "address" : 2383809
+      },
+      {
+        "declaration" : "(void)setMaximumValueImage:(id)arg1",
+        "type" : "method",
+        "name" : "setMaximumValueImage:",
+        "address" : 2384689
+      },
+      {
+        "declaration" : "(id)minimumValueImage",
+        "type" : "method",
+        "name" : "minimumValueImage",
+        "address" : 2383737
+      },
+      {
+        "declaration" : "(void)setMinimumValueImage:(id)arg1",
+        "type" : "method",
+        "name" : "setMinimumValueImage:",
+        "address" : 2384945
+      },
+      {
+        "declaration" : "(id)currentMaximumTrackImage",
+        "type" : "method",
+        "name" : "currentMaximumTrackImage",
+        "address" : 2379665
+      },
+      {
+        "declaration" : "(id)currentMinimumTrackImage",
+        "type" : "method",
+        "name" : "currentMinimumTrackImage",
+        "address" : 2379497
+      },
+      {
+        "declaration" : "(id)currentThumbImage",
+        "type" : "method",
+        "name" : "currentThumbImage",
+        "address" : 2383881
+      },
+      {
+        "declaration" : "(id)maximumTrackImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "maximumTrackImageForState:",
+        "address" : 2378825
+      },
+      {
+        "declaration" : "(id)minimumTrackImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "minimumTrackImageForState:",
+        "address" : 2379577
+      },
+      {
+        "declaration" : "(id)thumbImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "thumbImageForState:",
+        "address" : 2383625
+      },
+      {
+        "declaration" : "(void)setMaximumTrackTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setMaximumTrackTintColor:",
+        "address" : 3170061
+      },
+      {
+        "declaration" : "(void)setMaximumTrackImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setMaximumTrackImage:forState:",
+        "address" : 2382289
+      },
+      {
+        "declaration" : "(void)setMinimumTrackTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setMinimumTrackTintColor:",
+        "address" : 3169861
+      },
+      {
+        "declaration" : "(void)setMinimumTrackImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setMinimumTrackImage:forState:",
+        "address" : 2381857
+      },
+      {
+        "declaration" : "(void)setThumbTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setThumbTintColor:",
+        "address" : 3169313
+      },
+      {
+        "declaration" : "(void)setThumbImage:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setThumbImage:forState:",
+        "address" : 2380913
+      },
+      {
+        "declaration" : "(BOOL)gestureRecognizerShouldBegin:(id)arg1",
+        "type" : "method",
+        "name" : "gestureRecognizerShouldBegin:",
+        "address" : 3168789
+      },
+      {
+        "declaration" : "(id)description",
+        "type" : "method",
+        "name" : "description",
+        "address" : 3168637
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 2384097
+      },
+      {
+        "declaration" : "(void)_rebuildControlThumb:(BOOL)arg1 track:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_rebuildControlThumb:track:",
+        "address" : 2381281
+      },
+      {
+        "declaration" : "(void)_buildTrackArtwork",
+        "type" : "method",
+        "name" : "_buildTrackArtwork",
+        "address" : 2386197
+      },
+      {
+        "declaration" : "(float)_cornerRadiusForRect:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "_cornerRadiusForRect:",
+        "address" : 3168601
+      },
+      {
+        "declaration" : "(void)_initSubviews",
+        "type" : "method",
+        "name" : "_initSubviews",
+        "address" : 2385997
+      },
+      {
+        "declaration" : "(void)_initImages",
+        "type" : "method",
+        "name" : "_initImages",
+        "address" : 2385369
+      },
+      {
+        "declaration" : "(id)createThumbViewNeue",
+        "type" : "method",
+        "name" : "createThumbViewNeue",
+        "address" : 2387957
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 3167965
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 3167741
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 3166893
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 2375001
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 3166821
+      },
+      {
+        "declaration" : "(id)_maxValueView",
+        "type" : "method",
+        "name" : "_maxValueView",
+        "address" : 3174917
+      },
+      {
+        "declaration" : "(id)_minValueView",
+        "type" : "method",
+        "name" : "_minValueView",
+        "address" : 3174901
+      },
+      {
+        "declaration" : "(id)_maxTrackView",
+        "type" : "method",
+        "name" : "_maxTrackView",
+        "address" : 3174885
+      },
+      {
+        "declaration" : "(id)_minTrackView",
+        "type" : "method",
+        "name" : "_minTrackView",
+        "address" : 3174869
+      },
+      {
+        "declaration" : "(void)_setUseLookNeue:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUseLookNeue:",
+        "address" : 3174825
+      },
+      {
+        "declaration" : "(struct UIEdgeInsets)_thumbHitEdgeInsets",
+        "type" : "method",
+        "name" : "_thumbHitEdgeInsets",
+        "address" : 3174553
+      },
+      {
+        "declaration" : "(BOOL)_isThumbEnabled",
+        "type" : "method",
+        "name" : "_isThumbEnabled",
+        "address" : 3174529
+      },
+      {
+        "declaration" : "(void)_setMinimumTrackVisible:(BOOL)arg1 withDuration:(double)arg2",
+        "type" : "method",
+        "name" : "_setMinimumTrackVisible:withDuration:",
+        "address" : 3174249
+      },
+      {
+        "declaration" : "(void)_setThumbEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setThumbEnabled:",
+        "address" : 3174001
+      },
+      {
+        "declaration" : "(BOOL)_trackEnabled",
+        "type" : "method",
+        "name" : "_trackEnabled",
+        "address" : 3173981
+      },
+      {
+        "declaration" : "(void)_setTrackEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setTrackEnabled:",
+        "address" : 3173949
+      },
+      {
+        "declaration" : "(void)setMaximumTrackImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setMaximumTrackImage:forStates:",
+        "address" : 3173885
+      },
+      {
+        "declaration" : "(void)setMinimumTrackImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setMinimumTrackImage:forStates:",
+        "address" : 3173821
+      },
+      {
+        "declaration" : "(void)setThumbImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "setThumbImage:forStates:",
+        "address" : 3173757
+      },
+      {
+        "declaration" : "(id)createThumbView",
+        "type" : "method",
+        "name" : "createThumbView",
+        "address" : 2386761
+      },
+      {
+        "declaration" : "(struct CGRect)valueTextRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "valueTextRectForBounds:",
+        "address" : 3173537
+      },
+      {
+        "declaration" : "(void)setShowValue:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setShowValue:",
+        "address" : 3173445
+      },
+      {
+        "declaration" : "(BOOL)isAnimatingValueChange",
+        "type" : "method",
+        "name" : "isAnimatingValueChange",
+        "address" : 3173425
+      },
+      {
+        "declaration" : "(BOOL)_alwaysHandleScrollerMouseEvent",
+        "type" : "method",
+        "name" : "_alwaysHandleScrollerMouseEvent",
+        "address" : 3173401
+      },
+      {
+        "declaration" : "(id)_maximumTrackImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_maximumTrackImageForState:",
+        "address" : 2378845
+      },
+      {
+        "declaration" : "(id)_minimumTrackImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_minimumTrackImageForState:",
+        "address" : 2379593
+      },
+      {
+        "declaration" : "(id)_thumbImageForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_thumbImageForState:",
+        "address" : 2383645
+      },
+      {
+        "declaration" : "(id)_contentForState:(unsigned int)arg1",
+        "type" : "method",
+        "name" : "_contentForState:",
+        "address" : 2378917
+      },
+      {
+        "declaration" : "(void)_setMaximumTrackImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setMaximumTrackImage:forStates:",
+        "address" : 3175781
+      },
+      {
+        "declaration" : "(void)_setMinimumTrackImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setMinimumTrackImage:forStates:",
+        "address" : 3175501
+      },
+      {
+        "declaration" : "(void)_setThumbTintColor:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setThumbTintColor:forStates:",
+        "address" : 3175213
+      },
+      {
+        "declaration" : "(void)_setThumbImage:(id)arg1 forStates:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setThumbImage:forStates:",
+        "address" : 3174933
+      },
+      {
+        "declaration" : "(void)_setContent:(id)arg1 forState:(unsigned int)arg2",
+        "type" : "method",
+        "name" : "_setContent:forState:",
+        "address" : 2381733
+      },
+      {
+        "declaration" : "(id)scriptingInfoWithChildren",
+        "type" : "method",
+        "name" : "scriptingInfoWithChildren",
+        "address" : 3179585
+      },
+      {
+        "declaration" : "(id)_scriptingInfo",
+        "type" : "method",
+        "name" : "_scriptingInfo",
+        "address" : 3179393
+      },
+      {
+        "declaration" : "(BOOL)isElementAccessibilityExposedToInterfaceBuilder",
+        "type" : "method",
+        "name" : "isElementAccessibilityExposedToInterfaceBuilder",
+        "address" : 3794053
+      },
+      {
+        "declaration" : "(BOOL)isAccessibilityElementByDefault",
+        "type" : "method",
+        "name" : "isAccessibilityElementByDefault",
+        "address" : 3794049
+      }
+    ],
+    "protocols" : [
+      "NSCoding"
+    ],
+    "properties" : [
+      {
+        "getter" : "value",
+        "setter" : "setValue:",
+        "type" : "property",
+        "name" : "value",
+        "propertyType" : "float"
+      },
+      {
+        "getter" : "minimumValue",
+        "setter" : "setMinimumValue:",
+        "type" : "property",
+        "name" : "minimumValue",
+        "propertyType" : "float"
+      },
+      {
+        "getter" : "maximumValue",
+        "setter" : "setMaximumValue:",
+        "type" : "property",
+        "name" : "maximumValue",
+        "propertyType" : "float"
+      },
+      {
+        "getter" : "minimumValueImage",
+        "setter" : "setMinimumValueImage:",
+        "type" : "property",
+        "name" : "minimumValueImage",
+        "propertyType" : "UIImage *"
+      },
+      {
+        "getter" : "maximumValueImage",
+        "setter" : "setMaximumValueImage:",
+        "type" : "property",
+        "name" : "maximumValueImage",
+        "propertyType" : "UIImage *"
+      },
+      {
+        "getter" : "isContinuous",
+        "setter" : "setContinuous:",
+        "type" : "property",
+        "name" : "continuous",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "minimumTrackTintColor",
+        "setter" : "setMinimumTrackTintColor:",
+        "type" : "property",
+        "name" : "minimumTrackTintColor",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "getter" : "maximumTrackTintColor",
+        "setter" : "setMaximumTrackTintColor:",
+        "type" : "property",
+        "name" : "maximumTrackTintColor",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "getter" : "thumbTintColor",
+        "setter" : "setThumbTintColor:",
+        "type" : "property",
+        "name" : "thumbTintColor",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "getter" : "currentThumbImage",
+        "setter" : "setCurrentThumbImage:",
+        "type" : "property",
+        "name" : "currentThumbImage",
+        "propertyType" : "UIImage *"
+      },
+      {
+        "getter" : "currentMinimumTrackImage",
+        "setter" : "setCurrentMinimumTrackImage:",
+        "type" : "property",
+        "name" : "currentMinimumTrackImage",
+        "propertyType" : "UIImage *"
+      },
+      {
+        "getter" : "currentMaximumTrackImage",
+        "setter" : "setCurrentMaximumTrackImage:",
+        "type" : "property",
+        "name" : "currentMaximumTrackImage",
+        "propertyType" : "UIImage *"
+      }
+    ],
+    "type" : "class"
+  },
+  "arm64" : {
+    "superClassName" : "UIControl",
+    "className" : "UISlider",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 140,
+        "type" : "ivar",
+        "name" : "_value"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 144,
+        "type" : "ivar",
+        "name" : "_minValue"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "float",
+        "size" : 4,
+        "offset" : 148,
+        "type" : "ivar",
+        "name" : "_maxValue"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 152,
+        "type" : "ivar",
+        "name" : "_alpha"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "struct __CFDictionary *",
+        "size" : 8,
+        "offset" : 160,
+        "type" : "ivar",
+        "name" : "_contentLookup"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 168,
+        "type" : "ivar",
+        "name" : "_minValueImageView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 176,
+        "type" : "ivar",
+        "name" : "_maxValueImageView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 184,
+        "type" : "ivar",
+        "name" : "_thumbView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 192,
+        "type" : "ivar",
+        "name" : "_minTrackView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 200,
+        "type" : "ivar",
+        "name" : "_maxTrackView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIView *",
+        "size" : 8,
+        "offset" : 208,
+        "type" : "ivar",
+        "name" : "_maxTrackClipView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "struct {\n        unsigned int continuous:1;\n        unsigned int animating:1;\n        unsigned int preparingToAnimate:1;\n        unsigned int showValue:1;\n        unsigned int trackEnabled:1;\n        unsigned int creatingSnapshot:1;\n        unsigned int thumbDisabled:1;\n        unsigned int minTrackHidden:1;\n    }",
+        "size" : 4,
+        "offset" : 216,
+        "type" : "ivar",
+        "name" : "_sliderFlags"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "double",
+        "size" : 8,
+        "offset" : 224,
+        "type" : "ivar",
+        "name" : "_hitOffset"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 232,
+        "type" : "ivar",
+        "name" : "_minTintColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 240,
+        "type" : "ivar",
+        "name" : "_maxTintColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 248,
+        "type" : "ivar",
+        "name" : "_thumbTintColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIView *",
+        "size" : 8,
+        "offset" : 256,
+        "type" : "ivar",
+        "name" : "_thumbViewNeue"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "CAShapeLayer *",
+        "size" : 8,
+        "offset" : 264,
+        "type" : "ivar",
+        "name" : "_thumbViewNeueShape"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 272,
+        "type" : "ivar",
+        "name" : "_useLookNeue"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSArray *",
+        "size" : 8,
+        "offset" : 280,
+        "type" : "ivar",
+        "name" : "_trackColors"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 288,
+        "type" : "ivar",
+        "name" : "_trackIsArtworkBased"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 289,
+        "type" : "ivar",
+        "name" : "_thumbIsArtworkBased"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 290,
+        "type" : "ivar",
+        "name" : "_maxColorIsValid"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 291,
+        "type" : "ivar",
+        "name" : "_animatingWithDynamics"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 296,
+        "type" : "ivar",
+        "name" : "_innerThumbView"
+      }
+    ],
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)thumbTintColor",
+        "type" : "method",
+        "name" : "thumbTintColor",
+        "address" : 3464164
+      },
+      {
+        "declaration" : "(id)maximumTrackTintColor",
+        "type" : "method",
+        "name" : "maximumTrackTintColor",
+        "address" : 3464148
+      },
+      {
+        "declaration" : "(id)minimumTrackTintColor",
+        "type" : "method",
+        "name" : "minimumTrackTintColor",
+        "address" : 3464132
+      },
+      {
+        "declaration" : "(_Bool)cancelTouchTracking",
+        "type" : "method",
+        "name" : "cancelTouchTracking",
+        "address" : 3463988
+      },
+      {
+        "declaration" : "(void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchEnded:withEvent:",
+        "address" : 3463984
+      },
+      {
+        "declaration" : "(void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchMoved:withEvent:",
+        "address" : 3463980
+      },
+      {
+        "declaration" : "(void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "_controlTouchBegan:withEvent:",
+        "address" : 3463976
+      },
+      {
+        "declaration" : "(void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "endTrackingWithTouch:withEvent:",
+        "address" : 3463628
+      },
+      {
+        "declaration" : "(_Bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "continueTrackingWithTouch:withEvent:",
+        "address" : 3463392
+      },
+      {
+        "declaration" : "(_Bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "beginTrackingWithTouch:withEvent:",
+        "address" : 3462420
+      },
+      {
+        "declaration" : "(_Bool)cancelMouseTracking",
+        "type" : "method",
+        "name" : "cancelMouseTracking",
+        "address" : 3462316
+      },
+      {
+        "declaration" : "(void)_sendDelayedActions",
+        "type" : "method",
+        "name" : "_sendDelayedActions",
+        "address" : 2606536
+      },
+      {
+        "declaration" : "(void)_sliderAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3",
+        "type" : "method",
+        "name" : "_sliderAnimationDidStop:finished:context:",
+        "address" : 2605484
+      },
+      {
+        "declaration" : "(void)_sliderAnimationWillStart:(id)arg1 context:(id)arg2",
+        "type" : "method",
+        "name" : "_sliderAnimationWillStart:context:",
+        "address" : 3462284
+      },
+      {
+        "declaration" : "(void)setMaximumValue:(float)arg1",
+        "type" : "method",
+        "name" : "setMaximumValue:",
+        "address" : 2823360
+      },
+      {
+        "declaration" : "(float)maximumValue",
+        "type" : "method",
+        "name" : "maximumValue",
+        "address" : 2596580
+      },
+      {
+        "declaration" : "(void)setMinimumValue:(float)arg1",
+        "type" : "method",
+        "name" : "setMinimumValue:",
+        "address" : 2823280
+      },
+      {
+        "declaration" : "(float)minimumValue",
+        "type" : "method",
+        "name" : "minimumValue",
+        "address" : 2596564
+      },
+      {
+        "declaration" : "(void)_setValue:(float)arg1 andSendAction:(_Bool)arg2",
+        "type" : "method",
+        "name" : "_setValue:andSendAction:",
+        "address" : 2605016
+      },
+      {
+        "declaration" : "(void)_setValue:(float)arg1 minValue:(float)arg2 maxValue:(float)arg3 andSendAction:(_Bool)arg4",
+        "type" : "method",
+        "name" : "_setValue:minValue:maxValue:andSendAction:",
+        "address" : 2605056
+      },
+      {
+        "declaration" : "(void)setValue:(float)arg1 animated:(_Bool)arg2",
+        "type" : "method",
+        "name" : "setValue:animated:",
+        "address" : 178580
+      },
+      {
+        "declaration" : "(void)setValue:(float)arg1",
+        "type" : "method",
+        "name" : "setValue:",
+        "address" : 178560
+      },
+      {
+        "declaration" : "(float)value",
+        "type" : "method",
+        "name" : "value",
+        "address" : 2596104
+      },
+      {
+        "declaration" : "(void)setAlpha:(double)arg1",
+        "type" : "method",
+        "name" : "setAlpha:",
+        "address" : 2597980
+      },
+      {
+        "declaration" : "(_Bool)isContinuous",
+        "type" : "method",
+        "name" : "isContinuous",
+        "address" : 2606668
+      },
+      {
+        "declaration" : "(void)setContinuous:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setContinuous:",
+        "address" : 3462256
+      },
+      {
+        "declaration" : "(void)setSelected:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setSelected:",
+        "address" : 3462128
+      },
+      {
+        "declaration" : "(void)setHighlighted:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setHighlighted:",
+        "address" : 3462000
+      },
+      {
+        "declaration" : "(void)setEnabled:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setEnabled:",
+        "address" : 3461872
+      },
+      {
+        "declaration" : "(void)_updateAppearanceForEnabled:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_updateAppearanceForEnabled:",
+        "address" : 2597744
+      },
+      {
+        "declaration" : "(void)_layoutSubviewsForBoundsChange:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_layoutSubviewsForBoundsChange:",
+        "address" : 2592668
+      },
+      {
+        "declaration" : "(void)_updateMaxTrackColor",
+        "type" : "method",
+        "name" : "_updateMaxTrackColor",
+        "address" : 2596920
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 2602708
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 3461524
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 2592472
+      },
+      {
+        "declaration" : "(struct UIEdgeInsets)alignmentRectInsets",
+        "type" : "method",
+        "name" : "alignmentRectInsets",
+        "address" : 3461216
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 2600136
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 2600152
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 3461208
+      },
+      {
+        "declaration" : "(struct CGRect)thumbRectForBounds:(struct CGRect)arg1 trackRect:(struct CGRect)arg2 value:(float)arg3",
+        "type" : "method",
+        "name" : "thumbRectForBounds:trackRect:value:",
+        "address" : 2596120
+      },
+      {
+        "declaration" : "(struct CGRect)trackRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "trackRectForBounds:",
+        "address" : 2595456
+      },
+      {
+        "declaration" : "(struct CGRect)maximumValueImageRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "maximumValueImageRectForBounds:",
+        "address" : 2597588
+      },
+      {
+        "declaration" : "(struct CGRect)minimumValueImageRectForBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "minimumValueImageRectForBounds:",
+        "address" : 2597440
+      },
+      {
+        "declaration" : "(void)tintColorDidChange",
+        "type" : "method",
+        "name" : "tintColorDidChange",
+        "address" : 2601308
+      },
+      {
+        "declaration" : "(id)maximumValueImage",
+        "type" : "method",
+        "name" : "maximumValueImage",
+        "address" : 2601104
+      },
+      {
+        "declaration" : "(void)setMaximumValueImage:(id)arg1",
+        "type" : "method",
+        "name" : "setMaximumValueImage:",
+        "address" : 2602060
+      },
+      {
+        "declaration" : "(id)minimumValueImage",
+        "type" : "method",
+        "name" : "minimumValueImage",
+        "address" : 2601032
+      },
+      {
+        "declaration" : "(void)setMinimumValueImage:(id)arg1",
+        "type" : "method",
+        "name" : "setMinimumValueImage:",
+        "address" : 2602384
+      },
+      {
+        "declaration" : "(id)currentMaximumTrackImage",
+        "type" : "method",
+        "name" : "currentMaximumTrackImage",
+        "address" : 2596824
+      },
+      {
+        "declaration" : "(id)currentMinimumTrackImage",
+        "type" : "method",
+        "name" : "currentMinimumTrackImage",
+        "address" : 2596596
+      },
+      {
+        "declaration" : "(id)currentThumbImage",
+        "type" : "method",
+        "name" : "currentThumbImage",
+        "address" : 2601176
+      },
+      {
+        "declaration" : "(id)maximumTrackImageForState:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "maximumTrackImageForState:",
+        "address" : 2595920
+      },
+      {
+        "declaration" : "(id)minimumTrackImageForState:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "minimumTrackImageForState:",
+        "address" : 2596692
+      },
+      {
+        "declaration" : "(id)thumbImageForState:(unsigned long long)arg1",
+        "type" : "method",
+        "name" : "thumbImageForState:",
+        "address" : 2600884
+      },
+      {
+        "declaration" : "(void)setMaximumTrackTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setMaximumTrackTintColor:",
+        "address" : 3460900
+      },
+      {
+        "declaration" : "(void)setMaximumTrackImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "setMaximumTrackImage:forState:",
+        "address" : 2599648
+      },
+      {
+        "declaration" : "(void)setMinimumTrackTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setMinimumTrackTintColor:",
+        "address" : 3460624
+      },
+      {
+        "declaration" : "(void)setMinimumTrackImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "setMinimumTrackImage:forState:",
+        "address" : 2599160
+      },
+      {
+        "declaration" : "(void)setThumbTintColor:(id)arg1",
+        "type" : "method",
+        "name" : "setThumbTintColor:",
+        "address" : 3459944
+      },
+      {
+        "declaration" : "(void)setThumbImage:(id)arg1 forState:(unsigned long long)arg2",
+        "type" : "method",
+        "name" : "setThumbImage:forState:",
+        "address" : 2598056
+      },
+      {
+        "declaration" : "(_Bool)gestureRecognizerShouldBegin:(id)arg1",
+        "type" : "method",
+        "name" : "gestureRecognizerShouldBegin:",
+        "address" : 3459364
+      },
+      {
+        "declaration" : "(id)description",
+        "type" : "method",
+        "name" : "description",
+        "address" : 3459184
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 2601404
+      },
+      {
+        "declaration" : "(void)_rebuildControlThumb:(_Bool)arg1 track:(_Bool)arg2",
+        "type" : "method",
+        "name" : "_rebuildControlThumb:track:",
+        "address" : 2598476
+      },
+      {
+        "declaration" : "(void)_buildTrackArtwork",
+        "type" : "method",
+        "name" : "_buildTrackArtwork",
+        "address" : 2603820
+      },
+      {
+        "declaration" : "(double)_cornerRadiusForRect:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "_cornerRadiusForRect:",
+        "address" : 3459164
+      },
+      {
+        "declaration" : "(void)_initSubviews",
+        "type" : "method",
+        "name" : "_initSubviews",
+        "address" : 2603608
+      },
+      {
+        "declaration" : "(void)_initImages",
+        "type" : "method",
+        "name" : "_initImages",
+        "address" : 2602904
+      },
+      {
+        "declaration" : "(id)createThumbViewNeue",
+        "type" : "method",
+        "name" : "createThumbViewNeue",
+        "address" : 2605696
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 3458472
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 3458200
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 3457272
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 2592124
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 3457188
+      }
+    ],
+    "protocols" : [
+      "NSCoding"
+    ],
+    "properties" : [
+      {
+        "type" : "property",
+        "propertyType" : "float",
+        "name" : "value",
+        "getter" : "value",
+        "setter" : "setValue:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "float",
+        "name" : "minimumValue",
+        "getter" : "minimumValue",
+        "setter" : "setMinimumValue:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "float",
+        "name" : "maximumValue",
+        "getter" : "maximumValue",
+        "setter" : "setMaximumValue:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIImage *",
+        "name" : "minimumValueImage",
+        "getter" : "minimumValueImage",
+        "setter" : "setMinimumValueImage:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIImage *",
+        "name" : "maximumValueImage",
+        "getter" : "maximumValueImage",
+        "setter" : "setMaximumValueImage:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "_Bool",
+        "name" : "continuous",
+        "getter" : "isContinuous",
+        "setter" : "setContinuous:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIColor *",
+        "name" : "minimumTrackTintColor",
+        "getter" : "minimumTrackTintColor",
+        "setter" : "setMinimumTrackTintColor:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIColor *",
+        "name" : "maximumTrackTintColor",
+        "getter" : "maximumTrackTintColor",
+        "setter" : "setMaximumTrackTintColor:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIColor *",
+        "name" : "thumbTintColor",
+        "getter" : "thumbTintColor",
+        "setter" : "setThumbTintColor:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIImage *",
+        "name" : "currentThumbImage",
+        "getter" : "currentThumbImage",
+        "setter" : "setCurrentThumbImage:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIImage *",
+        "name" : "currentMinimumTrackImage",
+        "getter" : "currentMinimumTrackImage",
+        "setter" : "setCurrentMinimumTrackImage:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIImage *",
+        "name" : "currentMaximumTrackImage",
+        "getter" : "currentMaximumTrackImage",
+        "setter" : "setCurrentMaximumTrackImage:"
+      }
+    ],
+    "type" : "class"
+  }
+}

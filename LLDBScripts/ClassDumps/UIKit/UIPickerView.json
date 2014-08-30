@@ -1,0 +1,895 @@
+{
+  "arm64":{
+    "className":"UIPickerView",
+    "ivars":[
+      {
+        "alignment":3,
+        "ivarType":"NSMutableArray *",
+        "name":"_tables",
+        "offset":184,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_topFrame",
+        "offset":192,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSMutableArray *",
+        "name":"_dividers",
+        "offset":200,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSMutableArray *",
+        "name":"_selectionBars",
+        "offset":208,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"id <UIPickerViewDataSource>",
+        "name":"_dataSource",
+        "offset":216,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"id <UIPickerViewDelegate>",
+        "name":"_delegate",
+        "offset":224,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_backgroundView",
+        "offset":232,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"long long",
+        "name":"_numberOfComponents",
+        "offset":240,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIImageView *",
+        "name":"_topGradient",
+        "offset":248,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIImageView *",
+        "name":"_bottomGradient",
+        "offset":256,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_foregroundView",
+        "offset":264,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"CALayer *",
+        "name":"_maskGradientLayer",
+        "offset":272,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_topLineView",
+        "offset":280,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_bottomLineView",
+        "offset":288,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct {\n        unsigned int needsLayout:1;\n        unsigned int delegateRespondsToNumberOfComponentsInPickerView:1;\n        unsigned int delegateRespondsToNumberOfRowsInComponent:1;\n        unsigned int delegateRespondsToDidSelectRow:1;\n        unsigned int delegateRespondsToViewForRow:1;\n        unsigned int delegateRespondsToTitleForRow:1;\n        unsigned int delegateRespondsToAttributedTitleForRow:1;\n        unsigned int delegateRespondsToWidthForComponent:1;\n        unsigned int delegateRespondsToRowHeightForComponent:1;\n        unsigned int showsSelectionBar:1;\n        unsigned int allowsMultipleSelection:1;\n        unsigned int allowSelectingCells:1;\n        unsigned int soundsDisabled:1;\n        unsigned int usesCheckedSelection:1;\n        unsigned int skipsBackground:1;\n    }",
+        "name":"_pickerViewFlags",
+        "offset":296,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_usesModernStyle",
+        "offset":300,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIColor *",
+        "name":"_textColor",
+        "offset":304,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIColor *",
+        "name":"_textShadowColor",
+        "offset":312,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"_UIPickerViewTestParameters *",
+        "name":"_currentTestParameters",
+        "offset":320,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_isInLayoutSubviews",
+        "offset":328,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_magnifierEnabled",
+        "offset":329,
+        "size":1,
+        "type":"ivar"
+      }
+    ],
+    "protocols":[
+      "UIPickerTableViewContainerDelegate",
+      "UITableViewDelegate",
+      "UIPickerViewScrollTesting",
+      "NSCoding",
+      "UITableViewDataSource"
+    ],
+    "superClassName":"UIView",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"UIPickerView",
+    "ivars":[
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_tables",
+        "offset":96,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_topFrame",
+        "offset":100,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_dividers",
+        "offset":104,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_selectionBars",
+        "offset":108,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"id <UIPickerViewDataSource>",
+        "name":"_dataSource",
+        "offset":112,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"id <UIPickerViewDelegate>",
+        "name":"_delegate",
+        "offset":116,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_backgroundView",
+        "offset":120,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_numberOfComponents",
+        "offset":124,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIImageView *",
+        "name":"_topGradient",
+        "offset":128,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIImageView *",
+        "name":"_bottomGradient",
+        "offset":132,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_foregroundView",
+        "offset":136,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"CALayer *",
+        "name":"_maskGradientLayer",
+        "offset":140,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_topLineView",
+        "offset":144,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_bottomLineView",
+        "offset":148,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int needsLayout:1;\n        unsigned int delegateRespondsToNumberOfComponentsInPickerView:1;\n        unsigned int delegateRespondsToNumberOfRowsInComponent:1;\n        unsigned int delegateRespondsToDidSelectRow:1;\n        unsigned int delegateRespondsToViewForRow:1;\n        unsigned int delegateRespondsToTitleForRow:1;\n        unsigned int delegateRespondsToAttributedTitleForRow:1;\n        unsigned int delegateRespondsToWidthForComponent:1;\n        unsigned int delegateRespondsToRowHeightForComponent:1;\n        unsigned int showsSelectionBar:1;\n        unsigned int allowsMultipleSelection:1;\n        unsigned int allowSelectingCells:1;\n        unsigned int soundsDisabled:1;\n        unsigned int usesCheckedSelection:1;\n        unsigned int skipsBackground:1;\n    }",
+        "name":"_pickerViewFlags",
+        "offset":152,
+        "size":2,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_usesModernStyle",
+        "offset":154,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIColor *",
+        "name":"_textColor",
+        "offset":156,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIColor *",
+        "name":"_textShadowColor",
+        "offset":160,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"_UIPickerViewTestParameters *",
+        "name":"_currentTestParameters",
+        "offset":164,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_isInLayoutSubviews",
+        "offset":168,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_magnifierEnabled",
+        "offset":169,
+        "size":1,
+        "type":"ivar"
+      }
+    ],
+    "protocols":[
+      "UIPickerTableViewContainerDelegate",
+      "UITableViewDelegate",
+      "UIPickerViewScrollTesting",
+      "NSCoding",
+      "UITableViewDataSource"
+    ],
+    "superClassName":"UIView",
+    "type":"class"
+  },
+  "armv7s":{
+    "className":"UIPickerView",
+    "ivars":[
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_tables",
+        "offset":96,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_topFrame",
+        "offset":100,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_dividers",
+        "offset":104,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_selectionBars",
+        "offset":108,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"id <UIPickerViewDataSource>",
+        "name":"_dataSource",
+        "offset":112,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"id <UIPickerViewDelegate>",
+        "name":"_delegate",
+        "offset":116,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_backgroundView",
+        "offset":120,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_numberOfComponents",
+        "offset":124,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIImageView *",
+        "name":"_topGradient",
+        "offset":128,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIImageView *",
+        "name":"_bottomGradient",
+        "offset":132,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_foregroundView",
+        "offset":136,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"CALayer *",
+        "name":"_maskGradientLayer",
+        "offset":140,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_topLineView",
+        "offset":144,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_bottomLineView",
+        "offset":148,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int needsLayout:1;\n        unsigned int delegateRespondsToNumberOfComponentsInPickerView:1;\n        unsigned int delegateRespondsToNumberOfRowsInComponent:1;\n        unsigned int delegateRespondsToDidSelectRow:1;\n        unsigned int delegateRespondsToViewForRow:1;\n        unsigned int delegateRespondsToTitleForRow:1;\n        unsigned int delegateRespondsToAttributedTitleForRow:1;\n        unsigned int delegateRespondsToWidthForComponent:1;\n        unsigned int delegateRespondsToRowHeightForComponent:1;\n        unsigned int showsSelectionBar:1;\n        unsigned int allowsMultipleSelection:1;\n        unsigned int allowSelectingCells:1;\n        unsigned int soundsDisabled:1;\n        unsigned int usesCheckedSelection:1;\n        unsigned int skipsBackground:1;\n    }",
+        "name":"_pickerViewFlags",
+        "offset":152,
+        "size":2,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_usesModernStyle",
+        "offset":154,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIColor *",
+        "name":"_textColor",
+        "offset":156,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIColor *",
+        "name":"_textShadowColor",
+        "offset":160,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"_UIPickerViewTestParameters *",
+        "name":"_currentTestParameters",
+        "offset":164,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_isInLayoutSubviews",
+        "offset":168,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_magnifierEnabled",
+        "offset":169,
+        "size":1,
+        "type":"ivar"
+      }
+    ],
+    "protocols":[
+      "UIPickerTableViewContainerDelegate",
+      "UITableViewDelegate",
+      "UIPickerViewScrollTesting",
+      "NSCoding",
+      "UITableViewDataSource"
+    ],
+    "superClassName":"UIView",
+    "type":"class"
+  },
+  "i386":{
+    "className":"UIPickerView",
+    "ivars":[
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_tables",
+        "offset":96,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_topFrame",
+        "offset":100,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_dividers",
+        "offset":104,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"NSMutableArray *",
+        "name":"_selectionBars",
+        "offset":108,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"id <UIPickerViewDataSource>",
+        "name":"_dataSource",
+        "offset":112,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"id <UIPickerViewDelegate>",
+        "name":"_delegate",
+        "offset":116,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_backgroundView",
+        "offset":120,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"int",
+        "name":"_numberOfComponents",
+        "offset":124,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIImageView *",
+        "name":"_topGradient",
+        "offset":128,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIImageView *",
+        "name":"_bottomGradient",
+        "offset":132,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_foregroundView",
+        "offset":136,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"CALayer *",
+        "name":"_maskGradientLayer",
+        "offset":140,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_topLineView",
+        "offset":144,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIView *",
+        "name":"_bottomLineView",
+        "offset":148,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct {\n        unsigned int needsLayout:1;\n        unsigned int delegateRespondsToNumberOfComponentsInPickerView:1;\n        unsigned int delegateRespondsToNumberOfRowsInComponent:1;\n        unsigned int delegateRespondsToDidSelectRow:1;\n        unsigned int delegateRespondsToViewForRow:1;\n        unsigned int delegateRespondsToTitleForRow:1;\n        unsigned int delegateRespondsToAttributedTitleForRow:1;\n        unsigned int delegateRespondsToWidthForComponent:1;\n        unsigned int delegateRespondsToRowHeightForComponent:1;\n        unsigned int showsSelectionBar:1;\n        unsigned int allowsMultipleSelection:1;\n        unsigned int allowSelectingCells:1;\n        unsigned int soundsDisabled:1;\n        unsigned int usesCheckedSelection:1;\n        unsigned int skipsBackground:1;\n    }",
+        "name":"_pickerViewFlags",
+        "offset":152,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_usesModernStyle",
+        "offset":156,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIColor *",
+        "name":"_textColor",
+        "offset":160,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"UIColor *",
+        "name":"_textShadowColor",
+        "offset":164,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"_UIPickerViewTestParameters *",
+        "name":"_currentTestParameters",
+        "offset":168,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_isInLayoutSubviews",
+        "offset":172,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_magnifierEnabled",
+        "offset":173,
+        "size":1,
+        "type":"ivar"
+      }
+    ],
+    "protocols":[
+      "UIPickerTableViewContainerDelegate",
+      "UITableViewDelegate",
+      "UIPickerViewScrollTesting",
+      "NSCoding",
+      "UITableViewDataSource"
+    ],
+    "superClassName":"UIView",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"UIPickerView",
+    "ivars":[
+      {
+        "alignment":3,
+        "ivarType":"NSMutableArray *",
+        "name":"_tables",
+        "offset":184,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_topFrame",
+        "offset":192,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSMutableArray *",
+        "name":"_dividers",
+        "offset":200,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"NSMutableArray *",
+        "name":"_selectionBars",
+        "offset":208,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"id <UIPickerViewDataSource>",
+        "name":"_dataSource",
+        "offset":216,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"id <UIPickerViewDelegate>",
+        "name":"_delegate",
+        "offset":224,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_backgroundView",
+        "offset":232,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"long long",
+        "name":"_numberOfComponents",
+        "offset":240,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIImageView *",
+        "name":"_topGradient",
+        "offset":248,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIImageView *",
+        "name":"_bottomGradient",
+        "offset":256,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_foregroundView",
+        "offset":264,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"CALayer *",
+        "name":"_maskGradientLayer",
+        "offset":272,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_topLineView",
+        "offset":280,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIView *",
+        "name":"_bottomLineView",
+        "offset":288,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":2,
+        "ivarType":"struct {\n        unsigned int needsLayout:1;\n        unsigned int delegateRespondsToNumberOfComponentsInPickerView:1;\n        unsigned int delegateRespondsToNumberOfRowsInComponent:1;\n        unsigned int delegateRespondsToDidSelectRow:1;\n        unsigned int delegateRespondsToViewForRow:1;\n        unsigned int delegateRespondsToTitleForRow:1;\n        unsigned int delegateRespondsToAttributedTitleForRow:1;\n        unsigned int delegateRespondsToWidthForComponent:1;\n        unsigned int delegateRespondsToRowHeightForComponent:1;\n        unsigned int showsSelectionBar:1;\n        unsigned int allowsMultipleSelection:1;\n        unsigned int allowSelectingCells:1;\n        unsigned int soundsDisabled:1;\n        unsigned int usesCheckedSelection:1;\n        unsigned int skipsBackground:1;\n    }",
+        "name":"_pickerViewFlags",
+        "offset":296,
+        "size":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_usesModernStyle",
+        "offset":300,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIColor *",
+        "name":"_textColor",
+        "offset":304,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"UIColor *",
+        "name":"_textShadowColor",
+        "offset":312,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "alignment":3,
+        "ivarType":"_UIPickerViewTestParameters *",
+        "name":"_currentTestParameters",
+        "offset":320,
+        "size":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_isInLayoutSubviews",
+        "offset":328,
+        "size":1,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_magnifierEnabled",
+        "offset":329,
+        "size":1,
+        "type":"ivar"
+      }
+    ],
+    "protocols":[
+      "UIPickerTableViewContainerDelegate",
+      "UITableViewDelegate",
+      "UIPickerViewScrollTesting",
+      "NSCoding",
+      "UITableViewDataSource"
+    ],
+    "superClassName":"UIView",
+    "type":"class"
+  }
+}

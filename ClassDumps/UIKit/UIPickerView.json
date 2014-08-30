@@ -1,0 +1,4646 @@
+{
+  "i386" : {
+    "superClassName" : "UIView",
+    "className" : "UIPickerView",
+    "instanceMethods" : [
+      {
+        "declaration" : "(BOOL)_magnifierEnabled",
+        "type" : "method",
+        "name" : "_magnifierEnabled",
+        "address" : 38917
+      },
+      {
+        "declaration" : "(void)_setInLayoutSubviews:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setInLayoutSubviews:",
+        "address" : 38891
+      },
+      {
+        "declaration" : "(BOOL)_isInLayoutSubviews",
+        "type" : "method",
+        "name" : "_isInLayoutSubviews",
+        "address" : 38867
+      },
+      {
+        "declaration" : "(id)delegate",
+        "type" : "method",
+        "name" : "delegate",
+        "address" : 38844
+      },
+      {
+        "declaration" : "(id)dataSource",
+        "type" : "method",
+        "name" : "dataSource",
+        "address" : 38821
+      },
+      {
+        "declaration" : "(void)_noteScrollingFinishedForComponent:(int)arg1",
+        "type" : "method",
+        "name" : "_noteScrollingFinishedForComponent:",
+        "address" : 38743
+      },
+      {
+        "declaration" : "(void)_completeCurrentTest",
+        "type" : "method",
+        "name" : "_completeCurrentTest",
+        "address" : 38599
+      },
+      {
+        "declaration" : "(void)_iterateOnCurrentTest",
+        "type" : "method",
+        "name" : "_iterateOnCurrentTest",
+        "address" : 38452
+      },
+      {
+        "declaration" : "(void)_performScrollTest:(id)arg1 withIterations:(int)arg2 rowsToScroll:(int)arg3 inComponent:(int)arg4",
+        "type" : "method",
+        "name" : "_performScrollTest:withIterations:rowsToScroll:inComponent:",
+        "address" : 37835
+      },
+      {
+        "declaration" : "(struct CATransform3D)_perspectiveTransform",
+        "type" : "method",
+        "name" : "_perspectiveTransform",
+        "address" : 37732
+      },
+      {
+        "declaration" : "(BOOL)_shouldDrawWithModernStyle",
+        "type" : "method",
+        "name" : "_shouldDrawWithModernStyle",
+        "address" : 37393
+      },
+      {
+        "declaration" : "(void)_setTextShadowColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextShadowColor:",
+        "address" : 37278
+      },
+      {
+        "declaration" : "(id)_textShadowColor",
+        "type" : "method",
+        "name" : "_textShadowColor",
+        "address" : 37255
+      },
+      {
+        "declaration" : "(void)_setTextColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextColor:",
+        "address" : 37146
+      },
+      {
+        "declaration" : "(id)_textColor",
+        "type" : "method",
+        "name" : "_textColor",
+        "address" : 37123
+      },
+      {
+        "declaration" : "(void)_setHighlightColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setHighlightColor:",
+        "address" : 37056
+      },
+      {
+        "declaration" : "(id)_highlightColor",
+        "type" : "method",
+        "name" : "_highlightColor",
+        "address" : 37018
+      },
+      {
+        "declaration" : "(void)_setUsesModernStyle:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUsesModernStyle:",
+        "address" : 37013
+      },
+      {
+        "declaration" : "(BOOL)_usesModernStyle",
+        "type" : "method",
+        "name" : "_usesModernStyle",
+        "address" : 36989
+      },
+      {
+        "declaration" : "(void)_setMagnifierEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setMagnifierEnabled:",
+        "address" : 36937
+      },
+      {
+        "declaration" : "(id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2",
+        "type" : "method",
+        "name" : "tableView:cellForRowAtIndexPath:",
+        "address" : 36072
+      },
+      {
+        "declaration" : "(int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2",
+        "type" : "method",
+        "name" : "tableView:numberOfRowsInSection:",
+        "address" : 35872
+      },
+      {
+        "declaration" : "(void)selectRow:(int)arg1 inColumn:(int)arg2 animated:(BOOL)arg3",
+        "type" : "method",
+        "name" : "selectRow:inColumn:animated:",
+        "address" : 35812
+      },
+      {
+        "declaration" : "(void)selectRow:(int)arg1 inComponent:(int)arg2 animated:(BOOL)arg3",
+        "type" : "method",
+        "name" : "selectRow:inComponent:animated:",
+        "address" : 35744
+      },
+      {
+        "declaration" : "(void)_selectRow:(int)arg1 inComponent:(int)arg2 animated:(BOOL)arg3 notify:(BOOL)arg4",
+        "type" : "method",
+        "name" : "_selectRow:inComponent:animated:notify:",
+        "address" : 35500
+      },
+      {
+        "declaration" : "(struct CGRect)_effectiveTableViewFrameForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "_effectiveTableViewFrameForColumn:",
+        "address" : 35336
+      },
+      {
+        "declaration" : "(id)tableViewForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "tableViewForColumn:",
+        "address" : 35234
+      },
+      {
+        "declaration" : "(int)columnForTableView:(id)arg1",
+        "type" : "method",
+        "name" : "columnForTableView:",
+        "address" : 35038
+      },
+      {
+        "declaration" : "(int)selectedRowForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "selectedRowForColumn:",
+        "address" : 34993
+      },
+      {
+        "declaration" : "(int)selectedRowInComponent:(int)arg1",
+        "type" : "method",
+        "name" : "selectedRowInComponent:",
+        "address" : 34885
+      },
+      {
+        "declaration" : "(struct _NSRange)visibleRowsForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "visibleRowsForColumn:",
+        "address" : 34801
+      },
+      {
+        "declaration" : "(BOOL)_drawsBackground",
+        "type" : "method",
+        "name" : "_drawsBackground",
+        "address" : 34768
+      },
+      {
+        "declaration" : "(void)_setDrawsBackground:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setDrawsBackground:",
+        "address" : 34577
+      },
+      {
+        "declaration" : "(BOOL)_usesCheckedSelection",
+        "type" : "method",
+        "name" : "_usesCheckedSelection",
+        "address" : 34547
+      },
+      {
+        "declaration" : "(void)_setUsesCheckedSelection:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUsesCheckedSelection:",
+        "address" : 34500
+      },
+      {
+        "declaration" : "(void)_sendSelectionChangedFromTable:(id)arg1 notify:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_sendSelectionChangedFromTable:notify:",
+        "address" : 34174
+      },
+      {
+        "declaration" : "(BOOL)_usesCheckSelection",
+        "type" : "method",
+        "name" : "_usesCheckSelection",
+        "address" : 34167
+      },
+      {
+        "declaration" : "(BOOL)allowsMultipleSelection",
+        "type" : "method",
+        "name" : "allowsMultipleSelection",
+        "address" : 34137
+      },
+      {
+        "declaration" : "(void)setAllowsMultipleSelection:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setAllowsMultipleSelection:",
+        "address" : 33951
+      },
+      {
+        "declaration" : "(void)_sendSelectionChangedForComponent:(int)arg1 notify:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_sendSelectionChangedForComponent:notify:",
+        "address" : 33820
+      },
+      {
+        "declaration" : "(BOOL)showsSelectionIndicator",
+        "type" : "method",
+        "name" : "showsSelectionIndicator",
+        "address" : 33790
+      },
+      {
+        "declaration" : "(void)setShowsSelectionIndicator:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setShowsSelectionIndicator:",
+        "address" : 33699
+      },
+      {
+        "declaration" : "(void)setDelegate:(id)arg1",
+        "type" : "method",
+        "name" : "setDelegate:",
+        "address" : 33156
+      },
+      {
+        "declaration" : "(void)setDataSource:(id)arg1",
+        "type" : "method",
+        "name" : "setDataSource:",
+        "address" : 32731
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 32226
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 31841
+      },
+      {
+        "declaration" : "(void)_updateWithOldSize:(struct CGSize)arg1 newSize:(struct CGSize)arg2",
+        "type" : "method",
+        "name" : "_updateWithOldSize:newSize:",
+        "address" : 31079
+      },
+      {
+        "declaration" : "(void)_resetSelectionOfTables",
+        "type" : "method",
+        "name" : "_resetSelectionOfTables",
+        "address" : 30880
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 21866
+      },
+      {
+        "declaration" : "(id)_contentView",
+        "type" : "method",
+        "name" : "_contentView",
+        "address" : 21809
+      },
+      {
+        "declaration" : "(float)_wheelShift",
+        "type" : "method",
+        "name" : "_wheelShift",
+        "address" : 21802
+      },
+      {
+        "declaration" : "(void)reloadAllPickerPieces",
+        "type" : "method",
+        "name" : "reloadAllPickerPieces",
+        "address" : 21752
+      },
+      {
+        "declaration" : "(id)viewForRow:(int)arg1 forComponent:(int)arg2",
+        "type" : "method",
+        "name" : "viewForRow:forComponent:",
+        "address" : 21508
+      },
+      {
+        "declaration" : "(int)numberOfComponents",
+        "type" : "method",
+        "name" : "numberOfComponents",
+        "address" : 21441
+      },
+      {
+        "declaration" : "(int)numberOfColumns",
+        "type" : "method",
+        "name" : "numberOfColumns",
+        "address" : 21403
+      },
+      {
+        "declaration" : "(int)numberOfRowsInColumn:(int)arg1",
+        "type" : "method",
+        "name" : "numberOfRowsInColumn:",
+        "address" : 21358
+      },
+      {
+        "declaration" : "(int)numberOfRowsInComponent:(int)arg1",
+        "type" : "method",
+        "name" : "numberOfRowsInComponent:",
+        "address" : 21251
+      },
+      {
+        "declaration" : "(struct CGSize)rowSizeForComponent:(int)arg1",
+        "type" : "method",
+        "name" : "rowSizeForComponent:",
+        "address" : 21029
+      },
+      {
+        "declaration" : "(id)_createTableWithFrame:(struct CGRect)arg1 forComponent:(int)arg2",
+        "type" : "method",
+        "name" : "_createTableWithFrame:forComponent:",
+        "address" : 20748
+      },
+      {
+        "declaration" : "(id)_createColumnWithTableFrame:(struct CGRect)arg1 rowHeight:(float)arg2",
+        "type" : "method",
+        "name" : "_createColumnWithTableFrame:rowHeight:",
+        "address" : 20308
+      },
+      {
+        "declaration" : "(void)_addMagnifierLinesForRowHeight:(float)arg1",
+        "type" : "method",
+        "name" : "_addMagnifierLinesForRowHeight:",
+        "address" : 19430
+      },
+      {
+        "declaration" : "(float)_delegateRowHeightForComponent:(int)arg1",
+        "type" : "method",
+        "name" : "_delegateRowHeightForComponent:",
+        "address" : 19342
+      },
+      {
+        "declaration" : "(float)_delegateWidthForComponent:(int)arg1 ofCount:(int)arg2 withSizeLeft:(float)arg3",
+        "type" : "method",
+        "name" : "_delegateWidthForComponent:ofCount:withSizeLeft:",
+        "address" : 19240
+      },
+      {
+        "declaration" : "(id)_delegateAttributedTitleForRow:(int)arg1 forComponent:(int)arg2",
+        "type" : "method",
+        "name" : "_delegateAttributedTitleForRow:forComponent:",
+        "address" : 19155
+      },
+      {
+        "declaration" : "(id)_delegateTitleForRow:(int)arg1 forComponent:(int)arg2",
+        "type" : "method",
+        "name" : "_delegateTitleForRow:forComponent:",
+        "address" : 19070
+      },
+      {
+        "declaration" : "(int)_delegateNumberOfRowsInComponent:(int)arg1",
+        "type" : "method",
+        "name" : "_delegateNumberOfRowsInComponent:",
+        "address" : 18981
+      },
+      {
+        "declaration" : "(int)_delegateNumberOfComponents",
+        "type" : "method",
+        "name" : "_delegateNumberOfComponents",
+        "address" : 18898
+      },
+      {
+        "declaration" : "(double)scrollAnimationDuration",
+        "type" : "method",
+        "name" : "scrollAnimationDuration",
+        "address" : 18881
+      },
+      {
+        "declaration" : "(void)_sendCheckedRow:(int)arg1 inTableView:(id)arg2 checked:(BOOL)arg3",
+        "type" : "method",
+        "name" : "_sendCheckedRow:inTableView:checked:",
+        "address" : 18742
+      },
+      {
+        "declaration" : "(struct CGSize)_sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_sizeThatFits:",
+        "address" : 18546
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 18486
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 18448
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 18438
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 18428
+      },
+      {
+        "declaration" : "(id)createDividerWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "createDividerWithFrame:",
+        "address" : 18199
+      },
+      {
+        "declaration" : "(id)_createViewForPickerPiece:(int)arg1",
+        "type" : "method",
+        "name" : "_createViewForPickerPiece:",
+        "address" : 17905
+      },
+      {
+        "declaration" : "(struct CGRect)_selectionBarRectForHeight:(float)arg1",
+        "type" : "method",
+        "name" : "_selectionBarRectForHeight:",
+        "address" : 17572
+      },
+      {
+        "declaration" : "(id)imageForPickerPiece:(int)arg1",
+        "type" : "method",
+        "name" : "imageForPickerPiece:",
+        "address" : 17054
+      },
+      {
+        "declaration" : "(id)_popoverSuffix",
+        "type" : "method",
+        "name" : "_popoverSuffix",
+        "address" : 16809
+      },
+      {
+        "declaration" : "(id)_selectionBarSuffix",
+        "type" : "method",
+        "name" : "_selectionBarSuffix",
+        "address" : 16763
+      },
+      {
+        "declaration" : "(id)pickerImageNamePrefix",
+        "type" : "method",
+        "name" : "pickerImageNamePrefix",
+        "address" : 16746
+      },
+      {
+        "declaration" : "(void)reloadComponent:(int)arg1",
+        "type" : "method",
+        "name" : "reloadComponent:",
+        "address" : 16660
+      },
+      {
+        "declaration" : "(void)reloadDataForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "reloadDataForColumn:",
+        "address" : 16615
+      },
+      {
+        "declaration" : "(void)reloadAllComponents",
+        "type" : "method",
+        "name" : "reloadAllComponents",
+        "address" : 16422
+      },
+      {
+        "declaration" : "(void)reloadData",
+        "type" : "method",
+        "name" : "reloadData",
+        "address" : 16384
+      },
+      {
+        "declaration" : "(void)reload",
+        "type" : "method",
+        "name" : "reload",
+        "address" : 16346
+      },
+      {
+        "declaration" : "(void)didMoveToWindow",
+        "type" : "method",
+        "name" : "didMoveToWindow",
+        "address" : 16253
+      },
+      {
+        "declaration" : "(void)setAlpha:(float)arg1",
+        "type" : "method",
+        "name" : "setAlpha:",
+        "address" : 16167
+      },
+      {
+        "declaration" : "(void)setHidden:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setHidden:",
+        "address" : 16084
+      },
+      {
+        "declaration" : "(void)_updateSelectedRows",
+        "type" : "method",
+        "name" : "_updateSelectedRows",
+        "address" : 15900
+      },
+      {
+        "declaration" : "(void)_updateSound",
+        "type" : "method",
+        "name" : "_updateSound",
+        "address" : 15718
+      },
+      {
+        "declaration" : "(void)setNeedsLayout",
+        "type" : "method",
+        "name" : "setNeedsLayout",
+        "address" : 15654
+      },
+      {
+        "declaration" : "(id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "hitTest:withEvent:",
+        "address" : 14605
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 13786
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 13498
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 13009
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 12495
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 11162
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 11097
+      },
+      {
+        "declaration" : "(BOOL)_soundsEnabled",
+        "type" : "method",
+        "name" : "_soundsEnabled",
+        "address" : 11064
+      },
+      {
+        "declaration" : "(void)setSoundsEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setSoundsEnabled:",
+        "address" : 11011
+      },
+      {
+        "declaration" : "(id)_orientationImageSuffix",
+        "type" : "method",
+        "name" : "_orientationImageSuffix",
+        "address" : 10720
+      },
+      {
+        "declaration" : "(float)_tableRowHeight",
+        "type" : "method",
+        "name" : "_tableRowHeight",
+        "address" : 10604
+      },
+      {
+        "declaration" : "(BOOL)_isLandscapeOrientation",
+        "type" : "method",
+        "name" : "_isLandscapeOrientation",
+        "address" : 10521
+      },
+      {
+        "declaration" : "(struct CGSize)defaultSize",
+        "type" : "method",
+        "name" : "defaultSize",
+        "address" : 10240
+      },
+      {
+        "declaration" : "(void)setBackgroundColor:(id)arg1",
+        "type" : "method",
+        "name" : "setBackgroundColor:",
+        "address" : 9491
+      },
+      {
+        "declaration" : "(BOOL)isAccessibilityElementByDefault",
+        "type" : "method",
+        "name" : "isAccessibilityElementByDefault",
+        "address" : 3272669
+      }
+    ],
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "NSMutableArray *",
+        "size" : 4,
+        "offset" : 56,
+        "type" : "ivar",
+        "name" : "_tables"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 60,
+        "type" : "ivar",
+        "name" : "_topFrame"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSMutableArray *",
+        "size" : 4,
+        "offset" : 64,
+        "type" : "ivar",
+        "name" : "_dividers"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSMutableArray *",
+        "size" : 4,
+        "offset" : 68,
+        "type" : "ivar",
+        "name" : "_selectionBars"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "id <UIPickerViewDataSource>",
+        "size" : 4,
+        "offset" : 72,
+        "type" : "ivar",
+        "name" : "_dataSource"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "id <UIPickerViewDelegate>",
+        "size" : 4,
+        "offset" : 76,
+        "type" : "ivar",
+        "name" : "_delegate"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_backgroundView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_numberOfComponents"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 88,
+        "type" : "ivar",
+        "name" : "_topGradient"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 92,
+        "type" : "ivar",
+        "name" : "_bottomGradient"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 96,
+        "type" : "ivar",
+        "name" : "_foregroundView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "CALayer *",
+        "size" : 4,
+        "offset" : 100,
+        "type" : "ivar",
+        "name" : "_maskGradientLayer"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 104,
+        "type" : "ivar",
+        "name" : "_topLineView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 108,
+        "type" : "ivar",
+        "name" : "_bottomLineView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "struct {\n        unsigned int needsLayout:1;\n        unsigned int delegateRespondsToNumberOfComponentsInPickerView:1;\n        unsigned int delegateRespondsToNumberOfRowsInComponent:1;\n        unsigned int delegateRespondsToDidSelectRow:1;\n        unsigned int delegateRespondsToViewForRow:1;\n        unsigned int delegateRespondsToTitleForRow:1;\n        unsigned int delegateRespondsToAttributedTitleForRow:1;\n        unsigned int delegateRespondsToWidthForComponent:1;\n        unsigned int delegateRespondsToRowHeightForComponent:1;\n        unsigned int showsSelectionBar:1;\n        unsigned int allowsMultipleSelection:1;\n        unsigned int allowSelectingCells:1;\n        unsigned int soundsDisabled:1;\n        unsigned int usesCheckedSelection:1;\n        unsigned int skipsBackground:1;\n    }",
+        "size" : 4,
+        "offset" : 112,
+        "type" : "ivar",
+        "name" : "_pickerViewFlags"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 116,
+        "type" : "ivar",
+        "name" : "_usesModernStyle"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 120,
+        "type" : "ivar",
+        "name" : "_textColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 124,
+        "type" : "ivar",
+        "name" : "_textShadowColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "_UIPickerViewTestParameters *",
+        "size" : 4,
+        "offset" : 128,
+        "type" : "ivar",
+        "name" : "_currentTestParameters"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 132,
+        "type" : "ivar",
+        "name" : "_isInLayoutSubviews"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 133,
+        "type" : "ivar",
+        "name" : "_magnifierEnabled"
+      }
+    ],
+    "protocols" : [
+      "UIPickerTableViewContainerDelegate",
+      "UITableViewDelegate",
+      "UIPickerViewScrollTesting",
+      "NSCoding",
+      "UITableViewDataSource"
+    ],
+    "properties" : [
+      {
+        "name" : "dataSource",
+        "setter" : "setDataSource:",
+        "getter" : "dataSource",
+        "type" : "property",
+        "propertyType" : "id <UIPickerViewDataSource>"
+      },
+      {
+        "name" : "delegate",
+        "setter" : "setDelegate:",
+        "getter" : "delegate",
+        "type" : "property",
+        "propertyType" : "id <UIPickerViewDelegate>"
+      },
+      {
+        "name" : "showsSelectionIndicator",
+        "setter" : "setShowsSelectionIndicator:",
+        "getter" : "showsSelectionIndicator",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "numberOfComponents",
+        "setter" : "setNumberOfComponents:",
+        "getter" : "numberOfComponents",
+        "type" : "property",
+        "propertyType" : "int"
+      },
+      {
+        "name" : "_magnifierEnabled",
+        "setter" : "_setMagnifierEnabled:",
+        "getter" : "_magnifierEnabled",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "usesModernStyle",
+        "setter" : "_setUsesModernStyle:",
+        "getter" : "_usesModernStyle",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "highlightColor",
+        "setter" : "_setHighlightColor:",
+        "getter" : "_highlightColor",
+        "type" : "property",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "name" : "textColor",
+        "setter" : "_setTextColor:",
+        "getter" : "_textColor",
+        "type" : "property",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "name" : "textShadowColor",
+        "setter" : "_setTextShadowColor:",
+        "getter" : "_textShadowColor",
+        "type" : "property",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "name" : "_isInLayoutSubviews",
+        "setter" : "_setInLayoutSubviews:",
+        "getter" : "_isInLayoutSubviews",
+        "type" : "property",
+        "propertyType" : "char"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(id)_modernNonCenterCellFont",
+        "type" : "method",
+        "name" : "_modernNonCenterCellFont",
+        "address" : 37586
+      },
+      {
+        "declaration" : "(id)_modernCenterCellFont",
+        "type" : "method",
+        "name" : "_modernCenterCellFont",
+        "address" : 37440
+      },
+      {
+        "declaration" : "(struct CGSize)defaultSizeForCurrentOrientation",
+        "type" : "method",
+        "name" : "defaultSizeForCurrentOrientation",
+        "address" : 9913
+      },
+      {
+        "declaration" : "(struct CGSize)sizeForCurrentOrientationThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeForCurrentOrientationThatFits:",
+        "address" : 9821
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1 forInterfaceOrientation:(int)arg2",
+        "type" : "method",
+        "name" : "sizeThatFits:forInterfaceOrientation:",
+        "address" : 9551
+      }
+    ]
+  },
+  "x86_64" : {
+    "superClassName" : "UIView",
+    "className" : "UIPickerView",
+    "instanceMethods" : [
+      {
+        "declaration" : "(_Bool)_magnifierEnabled",
+        "type" : "method",
+        "name" : "_magnifierEnabled",
+        "address" : 35431
+      },
+      {
+        "declaration" : "(void)_setInLayoutSubviews:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setInLayoutSubviews:",
+        "address" : 35415
+      },
+      {
+        "declaration" : "(_Bool)_isInLayoutSubviews",
+        "type" : "method",
+        "name" : "_isInLayoutSubviews",
+        "address" : 35399
+      },
+      {
+        "declaration" : "(id)delegate",
+        "type" : "method",
+        "name" : "delegate",
+        "address" : 35382
+      },
+      {
+        "declaration" : "(id)dataSource",
+        "type" : "method",
+        "name" : "dataSource",
+        "address" : 35365
+      },
+      {
+        "declaration" : "(void)_noteScrollingFinishedForComponent:(long long)arg1",
+        "type" : "method",
+        "name" : "_noteScrollingFinishedForComponent:",
+        "address" : 35305
+      },
+      {
+        "declaration" : "(void)_completeCurrentTest",
+        "type" : "method",
+        "name" : "_completeCurrentTest",
+        "address" : 35175
+      },
+      {
+        "declaration" : "(void)_iterateOnCurrentTest",
+        "type" : "method",
+        "name" : "_iterateOnCurrentTest",
+        "address" : 35026
+      },
+      {
+        "declaration" : "(void)_performScrollTest:(id)arg1 withIterations:(long long)arg2 rowsToScroll:(long long)arg3 inComponent:(long long)arg4",
+        "type" : "method",
+        "name" : "_performScrollTest:withIterations:rowsToScroll:inComponent:",
+        "address" : 34447
+      },
+      {
+        "declaration" : "(struct CATransform3D)_perspectiveTransform",
+        "type" : "method",
+        "name" : "_perspectiveTransform",
+        "address" : 34374
+      },
+      {
+        "declaration" : "(_Bool)_shouldDrawWithModernStyle",
+        "type" : "method",
+        "name" : "_shouldDrawWithModernStyle",
+        "address" : 34111
+      },
+      {
+        "declaration" : "(void)_setTextShadowColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextShadowColor:",
+        "address" : 34009
+      },
+      {
+        "declaration" : "(id)_textShadowColor",
+        "type" : "method",
+        "name" : "_textShadowColor",
+        "address" : 33992
+      },
+      {
+        "declaration" : "(void)_setTextColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextColor:",
+        "address" : 33897
+      },
+      {
+        "declaration" : "(id)_textColor",
+        "type" : "method",
+        "name" : "_textColor",
+        "address" : 33880
+      },
+      {
+        "declaration" : "(void)_setHighlightColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setHighlightColor:",
+        "address" : 33832
+      },
+      {
+        "declaration" : "(id)_highlightColor",
+        "type" : "method",
+        "name" : "_highlightColor",
+        "address" : 33814
+      },
+      {
+        "declaration" : "(void)_setUsesModernStyle:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setUsesModernStyle:",
+        "address" : 33808
+      },
+      {
+        "declaration" : "(_Bool)_usesModernStyle",
+        "type" : "method",
+        "name" : "_usesModernStyle",
+        "address" : 33795
+      },
+      {
+        "declaration" : "(void)_setMagnifierEnabled:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setMagnifierEnabled:",
+        "address" : 33767
+      },
+      {
+        "declaration" : "(id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2",
+        "type" : "method",
+        "name" : "tableView:cellForRowAtIndexPath:",
+        "address" : 33024
+      },
+      {
+        "declaration" : "(long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2",
+        "type" : "method",
+        "name" : "tableView:numberOfRowsInSection:",
+        "address" : 32848
+      },
+      {
+        "declaration" : "(void)selectRow:(int)arg1 inColumn:(int)arg2 animated:(_Bool)arg3",
+        "type" : "method",
+        "name" : "selectRow:inColumn:animated:",
+        "address" : 32820
+      },
+      {
+        "declaration" : "(void)selectRow:(long long)arg1 inComponent:(long long)arg2 animated:(_Bool)arg3",
+        "type" : "method",
+        "name" : "selectRow:inComponent:animated:",
+        "address" : 32795
+      },
+      {
+        "declaration" : "(void)_selectRow:(long long)arg1 inComponent:(long long)arg2 animated:(_Bool)arg3 notify:(_Bool)arg4",
+        "type" : "method",
+        "name" : "_selectRow:inComponent:animated:notify:",
+        "address" : 32563
+      },
+      {
+        "declaration" : "(struct CGRect)_effectiveTableViewFrameForColumn:(long long)arg1",
+        "type" : "method",
+        "name" : "_effectiveTableViewFrameForColumn:",
+        "address" : 32405
+      },
+      {
+        "declaration" : "(id)tableViewForColumn:(long long)arg1",
+        "type" : "method",
+        "name" : "tableViewForColumn:",
+        "address" : 32314
+      },
+      {
+        "declaration" : "(long long)columnForTableView:(id)arg1",
+        "type" : "method",
+        "name" : "columnForTableView:",
+        "address" : 32133
+      },
+      {
+        "declaration" : "(int)selectedRowForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "selectedRowForColumn:",
+        "address" : 32112
+      },
+      {
+        "declaration" : "(long long)selectedRowInComponent:(long long)arg1",
+        "type" : "method",
+        "name" : "selectedRowInComponent:",
+        "address" : 32018
+      },
+      {
+        "declaration" : "(struct _NSRange)visibleRowsForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "visibleRowsForColumn:",
+        "address" : 31958
+      },
+      {
+        "declaration" : "(_Bool)_drawsBackground",
+        "type" : "method",
+        "name" : "_drawsBackground",
+        "address" : 31937
+      },
+      {
+        "declaration" : "(void)_setDrawsBackground:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setDrawsBackground:",
+        "address" : 31783
+      },
+      {
+        "declaration" : "(_Bool)_usesCheckedSelection",
+        "type" : "method",
+        "name" : "_usesCheckedSelection",
+        "address" : 31761
+      },
+      {
+        "declaration" : "(void)_setUsesCheckedSelection:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setUsesCheckedSelection:",
+        "address" : 31726
+      },
+      {
+        "declaration" : "(void)_sendSelectionChangedFromTable:(id)arg1 notify:(_Bool)arg2",
+        "type" : "method",
+        "name" : "_sendSelectionChangedFromTable:notify:",
+        "address" : 31418
+      },
+      {
+        "declaration" : "(_Bool)_usesCheckSelection",
+        "type" : "method",
+        "name" : "_usesCheckSelection",
+        "address" : 31410
+      },
+      {
+        "declaration" : "(_Bool)allowsMultipleSelection",
+        "type" : "method",
+        "name" : "allowsMultipleSelection",
+        "address" : 31388
+      },
+      {
+        "declaration" : "(void)setAllowsMultipleSelection:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setAllowsMultipleSelection:",
+        "address" : 31237
+      },
+      {
+        "declaration" : "(void)_sendSelectionChangedForComponent:(long long)arg1 notify:(_Bool)arg2",
+        "type" : "method",
+        "name" : "_sendSelectionChangedForComponent:notify:",
+        "address" : 31121
+      },
+      {
+        "declaration" : "(_Bool)showsSelectionIndicator",
+        "type" : "method",
+        "name" : "showsSelectionIndicator",
+        "address" : 31100
+      },
+      {
+        "declaration" : "(void)setShowsSelectionIndicator:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setShowsSelectionIndicator:",
+        "address" : 31039
+      },
+      {
+        "declaration" : "(void)setDelegate:(id)arg1",
+        "type" : "method",
+        "name" : "setDelegate:",
+        "address" : 30593
+      },
+      {
+        "declaration" : "(void)setDataSource:(id)arg1",
+        "type" : "method",
+        "name" : "setDataSource:",
+        "address" : 30242
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 29753
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 29411
+      },
+      {
+        "declaration" : "(void)_updateWithOldSize:(struct CGSize)arg1 newSize:(struct CGSize)arg2",
+        "type" : "method",
+        "name" : "_updateWithOldSize:newSize:",
+        "address" : 28773
+      },
+      {
+        "declaration" : "(void)_resetSelectionOfTables",
+        "type" : "method",
+        "name" : "_resetSelectionOfTables",
+        "address" : 28617
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 20516
+      },
+      {
+        "declaration" : "(id)_contentView",
+        "type" : "method",
+        "name" : "_contentView",
+        "address" : 20469
+      },
+      {
+        "declaration" : "(double)_wheelShift",
+        "type" : "method",
+        "name" : "_wheelShift",
+        "address" : 20460
+      },
+      {
+        "declaration" : "(void)reloadAllPickerPieces",
+        "type" : "method",
+        "name" : "reloadAllPickerPieces",
+        "address" : 20426
+      },
+      {
+        "declaration" : "(id)viewForRow:(long long)arg1 forComponent:(long long)arg2",
+        "type" : "method",
+        "name" : "viewForRow:forComponent:",
+        "address" : 20192
+      },
+      {
+        "declaration" : "(long long)numberOfComponents",
+        "type" : "method",
+        "name" : "numberOfComponents",
+        "address" : 20136
+      },
+      {
+        "declaration" : "(long long)numberOfColumns",
+        "type" : "method",
+        "name" : "numberOfColumns",
+        "address" : 20118
+      },
+      {
+        "declaration" : "(long long)numberOfRowsInColumn:(long long)arg1",
+        "type" : "method",
+        "name" : "numberOfRowsInColumn:",
+        "address" : 20100
+      },
+      {
+        "declaration" : "(long long)numberOfRowsInComponent:(long long)arg1",
+        "type" : "method",
+        "name" : "numberOfRowsInComponent:",
+        "address" : 20003
+      },
+      {
+        "declaration" : "(struct CGSize)rowSizeForComponent:(long long)arg1",
+        "type" : "method",
+        "name" : "rowSizeForComponent:",
+        "address" : 19799
+      },
+      {
+        "declaration" : "(id)_createTableWithFrame:(struct CGRect)arg1 forComponent:(long long)arg2",
+        "type" : "method",
+        "name" : "_createTableWithFrame:forComponent:",
+        "address" : 19541
+      },
+      {
+        "declaration" : "(id)_createColumnWithTableFrame:(struct CGRect)arg1 rowHeight:(double)arg2",
+        "type" : "method",
+        "name" : "_createColumnWithTableFrame:rowHeight:",
+        "address" : 19117
+      },
+      {
+        "declaration" : "(void)_addMagnifierLinesForRowHeight:(double)arg1",
+        "type" : "method",
+        "name" : "_addMagnifierLinesForRowHeight:",
+        "address" : 18278
+      },
+      {
+        "declaration" : "(double)_delegateRowHeightForComponent:(long long)arg1",
+        "type" : "method",
+        "name" : "_delegateRowHeightForComponent:",
+        "address" : 18209
+      },
+      {
+        "declaration" : "(double)_delegateWidthForComponent:(long long)arg1 ofCount:(int)arg2 withSizeLeft:(double)arg3",
+        "type" : "method",
+        "name" : "_delegateWidthForComponent:ofCount:withSizeLeft:",
+        "address" : 18137
+      },
+      {
+        "declaration" : "(id)_delegateAttributedTitleForRow:(long long)arg1 forComponent:(long long)arg2",
+        "type" : "method",
+        "name" : "_delegateAttributedTitleForRow:forComponent:",
+        "address" : 18079
+      },
+      {
+        "declaration" : "(id)_delegateTitleForRow:(long long)arg1 forComponent:(long long)arg2",
+        "type" : "method",
+        "name" : "_delegateTitleForRow:forComponent:",
+        "address" : 18021
+      },
+      {
+        "declaration" : "(long long)_delegateNumberOfRowsInComponent:(long long)arg1",
+        "type" : "method",
+        "name" : "_delegateNumberOfRowsInComponent:",
+        "address" : 17953
+      },
+      {
+        "declaration" : "(long long)_delegateNumberOfComponents",
+        "type" : "method",
+        "name" : "_delegateNumberOfComponents",
+        "address" : 17885
+      },
+      {
+        "declaration" : "(double)scrollAnimationDuration",
+        "type" : "method",
+        "name" : "scrollAnimationDuration",
+        "address" : 17871
+      },
+      {
+        "declaration" : "(void)_sendCheckedRow:(long long)arg1 inTableView:(id)arg2 checked:(_Bool)arg3",
+        "type" : "method",
+        "name" : "_sendCheckedRow:inTableView:checked:",
+        "address" : 17722
+      },
+      {
+        "declaration" : "(struct CGSize)_sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_sizeThatFits:",
+        "address" : 17537
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 17519
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 17501
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 17493
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 17485
+      },
+      {
+        "declaration" : "(id)createDividerWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "createDividerWithFrame:",
+        "address" : 17278
+      },
+      {
+        "declaration" : "(id)_createViewForPickerPiece:(int)arg1",
+        "type" : "method",
+        "name" : "_createViewForPickerPiece:",
+        "address" : 17026
+      },
+      {
+        "declaration" : "(struct CGRect)_selectionBarRectForHeight:(double)arg1",
+        "type" : "method",
+        "name" : "_selectionBarRectForHeight:",
+        "address" : 16624
+      },
+      {
+        "declaration" : "(id)imageForPickerPiece:(int)arg1",
+        "type" : "method",
+        "name" : "imageForPickerPiece:",
+        "address" : 16159
+      },
+      {
+        "declaration" : "(id)_popoverSuffix",
+        "type" : "method",
+        "name" : "_popoverSuffix",
+        "address" : 15929
+      },
+      {
+        "declaration" : "(id)_selectionBarSuffix",
+        "type" : "method",
+        "name" : "_selectionBarSuffix",
+        "address" : 15887
+      },
+      {
+        "declaration" : "(id)pickerImageNamePrefix",
+        "type" : "method",
+        "name" : "pickerImageNamePrefix",
+        "address" : 15874
+      },
+      {
+        "declaration" : "(void)reloadComponent:(long long)arg1",
+        "type" : "method",
+        "name" : "reloadComponent:",
+        "address" : 15797
+      },
+      {
+        "declaration" : "(void)reloadDataForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "reloadDataForColumn:",
+        "address" : 15776
+      },
+      {
+        "declaration" : "(void)reloadAllComponents",
+        "type" : "method",
+        "name" : "reloadAllComponents",
+        "address" : 15615
+      },
+      {
+        "declaration" : "(void)reloadData",
+        "type" : "method",
+        "name" : "reloadData",
+        "address" : 15597
+      },
+      {
+        "declaration" : "(void)reload",
+        "type" : "method",
+        "name" : "reload",
+        "address" : 15579
+      },
+      {
+        "declaration" : "(void)didMoveToWindow",
+        "type" : "method",
+        "name" : "didMoveToWindow",
+        "address" : 15492
+      },
+      {
+        "declaration" : "(void)setAlpha:(double)arg1",
+        "type" : "method",
+        "name" : "setAlpha:",
+        "address" : 15426
+      },
+      {
+        "declaration" : "(void)setHidden:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setHidden:",
+        "address" : 15357
+      },
+      {
+        "declaration" : "(void)_updateSelectedRows",
+        "type" : "method",
+        "name" : "_updateSelectedRows",
+        "address" : 15192
+      },
+      {
+        "declaration" : "(void)_updateSound",
+        "type" : "method",
+        "name" : "_updateSound",
+        "address" : 15035
+      },
+      {
+        "declaration" : "(void)setNeedsLayout",
+        "type" : "method",
+        "name" : "setNeedsLayout",
+        "address" : 14978
+      },
+      {
+        "declaration" : "(id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "hitTest:withEvent:",
+        "address" : 13976
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 13235
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 13007
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 12499
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 12081
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 10854
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 10786
+      },
+      {
+        "declaration" : "(_Bool)_soundsEnabled",
+        "type" : "method",
+        "name" : "_soundsEnabled",
+        "address" : 10765
+      },
+      {
+        "declaration" : "(void)setSoundsEnabled:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setSoundsEnabled:",
+        "address" : 10724
+      },
+      {
+        "declaration" : "(id)_orientationImageSuffix",
+        "type" : "method",
+        "name" : "_orientationImageSuffix",
+        "address" : 10436
+      },
+      {
+        "declaration" : "(double)_tableRowHeight",
+        "type" : "method",
+        "name" : "_tableRowHeight",
+        "address" : 10328
+      },
+      {
+        "declaration" : "(_Bool)_isLandscapeOrientation",
+        "type" : "method",
+        "name" : "_isLandscapeOrientation",
+        "address" : 10253
+      },
+      {
+        "declaration" : "(struct CGSize)defaultSize",
+        "type" : "method",
+        "name" : "defaultSize",
+        "address" : 9984
+      },
+      {
+        "declaration" : "(void)setBackgroundColor:(id)arg1",
+        "type" : "method",
+        "name" : "setBackgroundColor:",
+        "address" : 9252
+      },
+      {
+        "declaration" : "(_Bool)isAccessibilityElementByDefault",
+        "type" : "method",
+        "name" : "isAccessibilityElementByDefault",
+        "address" : 2851040
+      }
+    ],
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "NSMutableArray *",
+        "size" : 8,
+        "offset" : 104,
+        "type" : "ivar",
+        "name" : "_tables"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIView *",
+        "size" : 8,
+        "offset" : 112,
+        "type" : "ivar",
+        "name" : "_topFrame"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSMutableArray *",
+        "size" : 8,
+        "offset" : 120,
+        "type" : "ivar",
+        "name" : "_dividers"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSMutableArray *",
+        "size" : 8,
+        "offset" : 128,
+        "type" : "ivar",
+        "name" : "_selectionBars"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "id <UIPickerViewDataSource>",
+        "size" : 8,
+        "offset" : 136,
+        "type" : "ivar",
+        "name" : "_dataSource"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "id <UIPickerViewDelegate>",
+        "size" : 8,
+        "offset" : 144,
+        "type" : "ivar",
+        "name" : "_delegate"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIView *",
+        "size" : 8,
+        "offset" : 152,
+        "type" : "ivar",
+        "name" : "_backgroundView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "long long",
+        "size" : 8,
+        "offset" : 160,
+        "type" : "ivar",
+        "name" : "_numberOfComponents"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 168,
+        "type" : "ivar",
+        "name" : "_topGradient"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 176,
+        "type" : "ivar",
+        "name" : "_bottomGradient"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIView *",
+        "size" : 8,
+        "offset" : 184,
+        "type" : "ivar",
+        "name" : "_foregroundView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "CALayer *",
+        "size" : 8,
+        "offset" : 192,
+        "type" : "ivar",
+        "name" : "_maskGradientLayer"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIView *",
+        "size" : 8,
+        "offset" : 200,
+        "type" : "ivar",
+        "name" : "_topLineView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIView *",
+        "size" : 8,
+        "offset" : 208,
+        "type" : "ivar",
+        "name" : "_bottomLineView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "struct {\n        unsigned int needsLayout:1;\n        unsigned int delegateRespondsToNumberOfComponentsInPickerView:1;\n        unsigned int delegateRespondsToNumberOfRowsInComponent:1;\n        unsigned int delegateRespondsToDidSelectRow:1;\n        unsigned int delegateRespondsToViewForRow:1;\n        unsigned int delegateRespondsToTitleForRow:1;\n        unsigned int delegateRespondsToAttributedTitleForRow:1;\n        unsigned int delegateRespondsToWidthForComponent:1;\n        unsigned int delegateRespondsToRowHeightForComponent:1;\n        unsigned int showsSelectionBar:1;\n        unsigned int allowsMultipleSelection:1;\n        unsigned int allowSelectingCells:1;\n        unsigned int soundsDisabled:1;\n        unsigned int usesCheckedSelection:1;\n        unsigned int skipsBackground:1;\n    }",
+        "size" : 4,
+        "offset" : 216,
+        "type" : "ivar",
+        "name" : "_pickerViewFlags"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 220,
+        "type" : "ivar",
+        "name" : "_usesModernStyle"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 224,
+        "type" : "ivar",
+        "name" : "_textColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 232,
+        "type" : "ivar",
+        "name" : "_textShadowColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "_UIPickerViewTestParameters *",
+        "size" : 8,
+        "offset" : 240,
+        "type" : "ivar",
+        "name" : "_currentTestParameters"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 248,
+        "type" : "ivar",
+        "name" : "_isInLayoutSubviews"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 249,
+        "type" : "ivar",
+        "name" : "_magnifierEnabled"
+      }
+    ],
+    "protocols" : [
+      "UIPickerTableViewContainerDelegate",
+      "UITableViewDelegate",
+      "UIPickerViewScrollTesting",
+      "NSCoding",
+      "UITableViewDataSource"
+    ],
+    "properties" : [
+      {
+        "propertyType" : "id <UIPickerViewDataSource>",
+        "getter" : "dataSource",
+        "type" : "property",
+        "name" : "dataSource",
+        "setter" : "setDataSource:"
+      },
+      {
+        "propertyType" : "id <UIPickerViewDelegate>",
+        "getter" : "delegate",
+        "type" : "property",
+        "name" : "delegate",
+        "setter" : "setDelegate:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "showsSelectionIndicator",
+        "type" : "property",
+        "name" : "showsSelectionIndicator",
+        "setter" : "setShowsSelectionIndicator:"
+      },
+      {
+        "propertyType" : "long long",
+        "getter" : "numberOfComponents",
+        "type" : "property",
+        "name" : "numberOfComponents",
+        "setter" : "setNumberOfComponents:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "_magnifierEnabled",
+        "type" : "property",
+        "name" : "_magnifierEnabled",
+        "setter" : "_setMagnifierEnabled:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "_usesModernStyle",
+        "type" : "property",
+        "name" : "usesModernStyle",
+        "setter" : "_setUsesModernStyle:"
+      },
+      {
+        "propertyType" : "UIColor *",
+        "getter" : "_highlightColor",
+        "type" : "property",
+        "name" : "highlightColor",
+        "setter" : "_setHighlightColor:"
+      },
+      {
+        "propertyType" : "UIColor *",
+        "getter" : "_textColor",
+        "type" : "property",
+        "name" : "textColor",
+        "setter" : "_setTextColor:"
+      },
+      {
+        "propertyType" : "UIColor *",
+        "getter" : "_textShadowColor",
+        "type" : "property",
+        "name" : "textShadowColor",
+        "setter" : "_setTextShadowColor:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "_isInLayoutSubviews",
+        "type" : "property",
+        "name" : "_isInLayoutSubviews",
+        "setter" : "_setInLayoutSubviews:"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(id)_modernNonCenterCellFont",
+        "type" : "method",
+        "name" : "_modernNonCenterCellFont",
+        "address" : 34264
+      },
+      {
+        "declaration" : "(id)_modernCenterCellFont",
+        "type" : "method",
+        "name" : "_modernCenterCellFont",
+        "address" : 34154
+      },
+      {
+        "declaration" : "(struct CGSize)defaultSizeForCurrentOrientation",
+        "type" : "method",
+        "name" : "defaultSizeForCurrentOrientation",
+        "address" : 9683
+      },
+      {
+        "declaration" : "(struct CGSize)sizeForCurrentOrientationThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeForCurrentOrientationThatFits:",
+        "address" : 9594
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1 forInterfaceOrientation:(long long)arg2",
+        "type" : "method",
+        "name" : "sizeThatFits:forInterfaceOrientation:",
+        "address" : 9297
+      }
+    ]
+  },
+  "armv7" : {
+    "superClassName" : "UIView",
+    "className" : "UIPickerView",
+    "instanceMethods" : [
+      {
+        "declaration" : "(BOOL)_magnifierEnabled",
+        "type" : "method",
+        "name" : "_magnifierEnabled",
+        "address" : 2616737
+      },
+      {
+        "declaration" : "(void)_setInLayoutSubviews:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setInLayoutSubviews:",
+        "address" : 2616721
+      },
+      {
+        "declaration" : "(BOOL)_isInLayoutSubviews",
+        "type" : "method",
+        "name" : "_isInLayoutSubviews",
+        "address" : 2616705
+      },
+      {
+        "declaration" : "(id)delegate",
+        "type" : "method",
+        "name" : "delegate",
+        "address" : 2616689
+      },
+      {
+        "declaration" : "(id)dataSource",
+        "type" : "method",
+        "name" : "dataSource",
+        "address" : 2616673
+      },
+      {
+        "declaration" : "(void)_noteScrollingFinishedForComponent:(int)arg1",
+        "type" : "method",
+        "name" : "_noteScrollingFinishedForComponent:",
+        "address" : 2616597
+      },
+      {
+        "declaration" : "(void)_completeCurrentTest",
+        "type" : "method",
+        "name" : "_completeCurrentTest",
+        "address" : 2616469
+      },
+      {
+        "declaration" : "(void)_iterateOnCurrentTest",
+        "type" : "method",
+        "name" : "_iterateOnCurrentTest",
+        "address" : 2616325
+      },
+      {
+        "declaration" : "(void)_performScrollTest:(id)arg1 withIterations:(int)arg2 rowsToScroll:(int)arg3 inComponent:(int)arg4",
+        "type" : "method",
+        "name" : "_performScrollTest:withIterations:rowsToScroll:inComponent:",
+        "address" : 2615697
+      },
+      {
+        "declaration" : "(struct CATransform3D)_perspectiveTransform",
+        "type" : "method",
+        "name" : "_perspectiveTransform",
+        "address" : 2615621
+      },
+      {
+        "declaration" : "(BOOL)_shouldDrawWithModernStyle",
+        "type" : "method",
+        "name" : "_shouldDrawWithModernStyle",
+        "address" : 2615325
+      },
+      {
+        "declaration" : "(void)_setTextShadowColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextShadowColor:",
+        "address" : 2615225
+      },
+      {
+        "declaration" : "(id)_textShadowColor",
+        "type" : "method",
+        "name" : "_textShadowColor",
+        "address" : 2615209
+      },
+      {
+        "declaration" : "(void)_setTextColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextColor:",
+        "address" : 2615121
+      },
+      {
+        "declaration" : "(id)_textColor",
+        "type" : "method",
+        "name" : "_textColor",
+        "address" : 2615105
+      },
+      {
+        "declaration" : "(void)_setHighlightColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setHighlightColor:",
+        "address" : 2615057
+      },
+      {
+        "declaration" : "(id)_highlightColor",
+        "type" : "method",
+        "name" : "_highlightColor",
+        "address" : 2615041
+      },
+      {
+        "declaration" : "(void)_setUsesModernStyle:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUsesModernStyle:",
+        "address" : 2615037
+      },
+      {
+        "declaration" : "(BOOL)_usesModernStyle",
+        "type" : "method",
+        "name" : "_usesModernStyle",
+        "address" : 2615013
+      },
+      {
+        "declaration" : "(void)_setMagnifierEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setMagnifierEnabled:",
+        "address" : 2614981
+      },
+      {
+        "declaration" : "(id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2",
+        "type" : "method",
+        "name" : "tableView:cellForRowAtIndexPath:",
+        "address" : 2614189
+      },
+      {
+        "declaration" : "(int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2",
+        "type" : "method",
+        "name" : "tableView:numberOfRowsInSection:",
+        "address" : 2614005
+      },
+      {
+        "declaration" : "(void)selectRow:(int)arg1 inColumn:(int)arg2 animated:(BOOL)arg3",
+        "type" : "method",
+        "name" : "selectRow:inColumn:animated:",
+        "address" : 2613969
+      },
+      {
+        "declaration" : "(void)selectRow:(int)arg1 inComponent:(int)arg2 animated:(BOOL)arg3",
+        "type" : "method",
+        "name" : "selectRow:inComponent:animated:",
+        "address" : 2613933
+      },
+      {
+        "declaration" : "(void)_selectRow:(int)arg1 inComponent:(int)arg2 animated:(BOOL)arg3 notify:(BOOL)arg4",
+        "type" : "method",
+        "name" : "_selectRow:inComponent:animated:notify:",
+        "address" : 2613729
+      },
+      {
+        "declaration" : "(struct CGRect)_effectiveTableViewFrameForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "_effectiveTableViewFrameForColumn:",
+        "address" : 2613605
+      },
+      {
+        "declaration" : "(id)tableViewForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "tableViewForColumn:",
+        "address" : 2613517
+      },
+      {
+        "declaration" : "(int)columnForTableView:(id)arg1",
+        "type" : "method",
+        "name" : "columnForTableView:",
+        "address" : 2613329
+      },
+      {
+        "declaration" : "(int)selectedRowForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "selectedRowForColumn:",
+        "address" : 2613313
+      },
+      {
+        "declaration" : "(int)selectedRowInComponent:(int)arg1",
+        "type" : "method",
+        "name" : "selectedRowInComponent:",
+        "address" : 2613213
+      },
+      {
+        "declaration" : "(struct _NSRange)visibleRowsForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "visibleRowsForColumn:",
+        "address" : 2613137
+      },
+      {
+        "declaration" : "(BOOL)_drawsBackground",
+        "type" : "method",
+        "name" : "_drawsBackground",
+        "address" : 2613113
+      },
+      {
+        "declaration" : "(void)_setDrawsBackground:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setDrawsBackground:",
+        "address" : 2612941
+      },
+      {
+        "declaration" : "(BOOL)_usesCheckedSelection",
+        "type" : "method",
+        "name" : "_usesCheckedSelection",
+        "address" : 2612921
+      },
+      {
+        "declaration" : "(void)_setUsesCheckedSelection:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUsesCheckedSelection:",
+        "address" : 2612885
+      },
+      {
+        "declaration" : "(void)_sendSelectionChangedFromTable:(id)arg1 notify:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_sendSelectionChangedFromTable:notify:",
+        "address" : 2612629
+      },
+      {
+        "declaration" : "(BOOL)_usesCheckSelection",
+        "type" : "method",
+        "name" : "_usesCheckSelection",
+        "address" : 2612625
+      },
+      {
+        "declaration" : "(BOOL)allowsMultipleSelection",
+        "type" : "method",
+        "name" : "allowsMultipleSelection",
+        "address" : 2612605
+      },
+      {
+        "declaration" : "(void)setAllowsMultipleSelection:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setAllowsMultipleSelection:",
+        "address" : 2612449
+      },
+      {
+        "declaration" : "(void)_sendSelectionChangedForComponent:(int)arg1 notify:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_sendSelectionChangedForComponent:notify:",
+        "address" : 2612329
+      },
+      {
+        "declaration" : "(BOOL)showsSelectionIndicator",
+        "type" : "method",
+        "name" : "showsSelectionIndicator",
+        "address" : 2612309
+      },
+      {
+        "declaration" : "(void)setShowsSelectionIndicator:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setShowsSelectionIndicator:",
+        "address" : 2612245
+      },
+      {
+        "declaration" : "(void)setDelegate:(id)arg1",
+        "type" : "method",
+        "name" : "setDelegate:",
+        "address" : 2611877
+      },
+      {
+        "declaration" : "(void)setDataSource:(id)arg1",
+        "type" : "method",
+        "name" : "setDataSource:",
+        "address" : 2611573
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 2611149
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 2610801
+      },
+      {
+        "declaration" : "(void)_updateWithOldSize:(struct CGSize)arg1 newSize:(struct CGSize)arg2",
+        "type" : "method",
+        "name" : "_updateWithOldSize:newSize:",
+        "address" : 2610217
+      },
+      {
+        "declaration" : "(void)_resetSelectionOfTables",
+        "type" : "method",
+        "name" : "_resetSelectionOfTables",
+        "address" : 2610041
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 2604409
+      },
+      {
+        "declaration" : "(id)_contentView",
+        "type" : "method",
+        "name" : "_contentView",
+        "address" : 2604357
+      },
+      {
+        "declaration" : "(float)_wheelShift",
+        "type" : "method",
+        "name" : "_wheelShift",
+        "address" : 2604353
+      },
+      {
+        "declaration" : "(void)reloadAllPickerPieces",
+        "type" : "method",
+        "name" : "reloadAllPickerPieces",
+        "address" : 2604317
+      },
+      {
+        "declaration" : "(id)viewForRow:(int)arg1 forComponent:(int)arg2",
+        "type" : "method",
+        "name" : "viewForRow:forComponent:",
+        "address" : 2604085
+      },
+      {
+        "declaration" : "(int)numberOfComponents",
+        "type" : "method",
+        "name" : "numberOfComponents",
+        "address" : 2604017
+      },
+      {
+        "declaration" : "(int)numberOfColumns",
+        "type" : "method",
+        "name" : "numberOfColumns",
+        "address" : 2604001
+      },
+      {
+        "declaration" : "(int)numberOfRowsInColumn:(int)arg1",
+        "type" : "method",
+        "name" : "numberOfRowsInColumn:",
+        "address" : 2603985
+      },
+      {
+        "declaration" : "(int)numberOfRowsInComponent:(int)arg1",
+        "type" : "method",
+        "name" : "numberOfRowsInComponent:",
+        "address" : 2603897
+      },
+      {
+        "declaration" : "(struct CGSize)rowSizeForComponent:(int)arg1",
+        "type" : "method",
+        "name" : "rowSizeForComponent:",
+        "address" : 2603697
+      },
+      {
+        "declaration" : "(id)_createTableWithFrame:(struct CGRect)arg1 forComponent:(int)arg2",
+        "type" : "method",
+        "name" : "_createTableWithFrame:forComponent:",
+        "address" : 2603441
+      },
+      {
+        "declaration" : "(id)_createColumnWithTableFrame:(struct CGRect)arg1 rowHeight:(float)arg2",
+        "type" : "method",
+        "name" : "_createColumnWithTableFrame:rowHeight:",
+        "address" : 2602961
+      },
+      {
+        "declaration" : "(void)_addMagnifierLinesForRowHeight:(float)arg1",
+        "type" : "method",
+        "name" : "_addMagnifierLinesForRowHeight:",
+        "address" : 2602305
+      },
+      {
+        "declaration" : "(float)_delegateRowHeightForComponent:(int)arg1",
+        "type" : "method",
+        "name" : "_delegateRowHeightForComponent:",
+        "address" : 2602229
+      },
+      {
+        "declaration" : "(float)_delegateWidthForComponent:(int)arg1 ofCount:(int)arg2 withSizeLeft:(float)arg3",
+        "type" : "method",
+        "name" : "_delegateWidthForComponent:ofCount:withSizeLeft:",
+        "address" : 2602145
+      },
+      {
+        "declaration" : "(id)_delegateAttributedTitleForRow:(int)arg1 forComponent:(int)arg2",
+        "type" : "method",
+        "name" : "_delegateAttributedTitleForRow:forComponent:",
+        "address" : 2602069
+      },
+      {
+        "declaration" : "(id)_delegateTitleForRow:(int)arg1 forComponent:(int)arg2",
+        "type" : "method",
+        "name" : "_delegateTitleForRow:forComponent:",
+        "address" : 2601993
+      },
+      {
+        "declaration" : "(int)_delegateNumberOfRowsInComponent:(int)arg1",
+        "type" : "method",
+        "name" : "_delegateNumberOfRowsInComponent:",
+        "address" : 2601901
+      },
+      {
+        "declaration" : "(int)_delegateNumberOfComponents",
+        "type" : "method",
+        "name" : "_delegateNumberOfComponents",
+        "address" : 2601809
+      },
+      {
+        "declaration" : "(double)scrollAnimationDuration",
+        "type" : "method",
+        "name" : "scrollAnimationDuration",
+        "address" : 2601785
+      },
+      {
+        "declaration" : "(void)_sendCheckedRow:(int)arg1 inTableView:(id)arg2 checked:(BOOL)arg3",
+        "type" : "method",
+        "name" : "_sendCheckedRow:inTableView:checked:",
+        "address" : 2601661
+      },
+      {
+        "declaration" : "(struct CGSize)_sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_sizeThatFits:",
+        "address" : 2601461
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 2601413
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 2601381
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 2601377
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 2601373
+      },
+      {
+        "declaration" : "(id)createDividerWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "createDividerWithFrame:",
+        "address" : 2601153
+      },
+      {
+        "declaration" : "(id)_createViewForPickerPiece:(int)arg1",
+        "type" : "method",
+        "name" : "_createViewForPickerPiece:",
+        "address" : 2600913
+      },
+      {
+        "declaration" : "(struct CGRect)_selectionBarRectForHeight:(float)arg1",
+        "type" : "method",
+        "name" : "_selectionBarRectForHeight:",
+        "address" : 2600665
+      },
+      {
+        "declaration" : "(id)imageForPickerPiece:(int)arg1",
+        "type" : "method",
+        "name" : "imageForPickerPiece:",
+        "address" : 2600197
+      },
+      {
+        "declaration" : "(id)_popoverSuffix",
+        "type" : "method",
+        "name" : "_popoverSuffix",
+        "address" : 2599941
+      },
+      {
+        "declaration" : "(id)_selectionBarSuffix",
+        "type" : "method",
+        "name" : "_selectionBarSuffix",
+        "address" : 2599893
+      },
+      {
+        "declaration" : "(id)pickerImageNamePrefix",
+        "type" : "method",
+        "name" : "pickerImageNamePrefix",
+        "address" : 2599881
+      },
+      {
+        "declaration" : "(void)reloadComponent:(int)arg1",
+        "type" : "method",
+        "name" : "reloadComponent:",
+        "address" : 2599801
+      },
+      {
+        "declaration" : "(void)reloadDataForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "reloadDataForColumn:",
+        "address" : 2599785
+      },
+      {
+        "declaration" : "(void)reloadAllComponents",
+        "type" : "method",
+        "name" : "reloadAllComponents",
+        "address" : 2599621
+      },
+      {
+        "declaration" : "(void)reloadData",
+        "type" : "method",
+        "name" : "reloadData",
+        "address" : 2599605
+      },
+      {
+        "declaration" : "(void)reload",
+        "type" : "method",
+        "name" : "reload",
+        "address" : 2599589
+      },
+      {
+        "declaration" : "(void)didMoveToWindow",
+        "type" : "method",
+        "name" : "didMoveToWindow",
+        "address" : 2599505
+      },
+      {
+        "declaration" : "(void)setAlpha:(float)arg1",
+        "type" : "method",
+        "name" : "setAlpha:",
+        "address" : 2599441
+      },
+      {
+        "declaration" : "(void)setHidden:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setHidden:",
+        "address" : 2599377
+      },
+      {
+        "declaration" : "(void)_updateSelectedRows",
+        "type" : "method",
+        "name" : "_updateSelectedRows",
+        "address" : 2599209
+      },
+      {
+        "declaration" : "(void)_updateSound",
+        "type" : "method",
+        "name" : "_updateSound",
+        "address" : 2599017
+      },
+      {
+        "declaration" : "(void)setNeedsLayout",
+        "type" : "method",
+        "name" : "setNeedsLayout",
+        "address" : 2598949
+      },
+      {
+        "declaration" : "(id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "hitTest:withEvent:",
+        "address" : 2598229
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 2597581
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 2597365
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 2596925
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 2596537
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 2595341
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 2595293
+      },
+      {
+        "declaration" : "(BOOL)_soundsEnabled",
+        "type" : "method",
+        "name" : "_soundsEnabled",
+        "address" : 2595269
+      },
+      {
+        "declaration" : "(void)setSoundsEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setSoundsEnabled:",
+        "address" : 2595229
+      },
+      {
+        "declaration" : "(id)_orientationImageSuffix",
+        "type" : "method",
+        "name" : "_orientationImageSuffix",
+        "address" : 2594929
+      },
+      {
+        "declaration" : "(float)_tableRowHeight",
+        "type" : "method",
+        "name" : "_tableRowHeight",
+        "address" : 2594817
+      },
+      {
+        "declaration" : "(BOOL)_isLandscapeOrientation",
+        "type" : "method",
+        "name" : "_isLandscapeOrientation",
+        "address" : 2594745
+      },
+      {
+        "declaration" : "(struct CGSize)defaultSize",
+        "type" : "method",
+        "name" : "defaultSize",
+        "address" : 2594465
+      },
+      {
+        "declaration" : "(void)setBackgroundColor:(id)arg1",
+        "type" : "method",
+        "name" : "setBackgroundColor:",
+        "address" : 2593741
+      },
+      {
+        "declaration" : "(BOOL)isAccessibilityElementByDefault",
+        "type" : "method",
+        "name" : "isAccessibilityElementByDefault",
+        "address" : 3792489
+      }
+    ],
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "NSMutableArray *",
+        "size" : 4,
+        "offset" : 56,
+        "type" : "ivar",
+        "name" : "_tables"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 60,
+        "type" : "ivar",
+        "name" : "_topFrame"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSMutableArray *",
+        "size" : 4,
+        "offset" : 64,
+        "type" : "ivar",
+        "name" : "_dividers"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSMutableArray *",
+        "size" : 4,
+        "offset" : 68,
+        "type" : "ivar",
+        "name" : "_selectionBars"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "id <UIPickerViewDataSource>",
+        "size" : 4,
+        "offset" : 72,
+        "type" : "ivar",
+        "name" : "_dataSource"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "id <UIPickerViewDelegate>",
+        "size" : 4,
+        "offset" : 76,
+        "type" : "ivar",
+        "name" : "_delegate"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_backgroundView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_numberOfComponents"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 88,
+        "type" : "ivar",
+        "name" : "_topGradient"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 92,
+        "type" : "ivar",
+        "name" : "_bottomGradient"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 96,
+        "type" : "ivar",
+        "name" : "_foregroundView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "CALayer *",
+        "size" : 4,
+        "offset" : 100,
+        "type" : "ivar",
+        "name" : "_maskGradientLayer"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 104,
+        "type" : "ivar",
+        "name" : "_topLineView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 108,
+        "type" : "ivar",
+        "name" : "_bottomLineView"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "struct {\n        unsigned int needsLayout:1;\n        unsigned int delegateRespondsToNumberOfComponentsInPickerView:1;\n        unsigned int delegateRespondsToNumberOfRowsInComponent:1;\n        unsigned int delegateRespondsToDidSelectRow:1;\n        unsigned int delegateRespondsToViewForRow:1;\n        unsigned int delegateRespondsToTitleForRow:1;\n        unsigned int delegateRespondsToAttributedTitleForRow:1;\n        unsigned int delegateRespondsToWidthForComponent:1;\n        unsigned int delegateRespondsToRowHeightForComponent:1;\n        unsigned int showsSelectionBar:1;\n        unsigned int allowsMultipleSelection:1;\n        unsigned int allowSelectingCells:1;\n        unsigned int soundsDisabled:1;\n        unsigned int usesCheckedSelection:1;\n        unsigned int skipsBackground:1;\n    }",
+        "size" : 2,
+        "offset" : 112,
+        "type" : "ivar",
+        "name" : "_pickerViewFlags"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 114,
+        "type" : "ivar",
+        "name" : "_usesModernStyle"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 116,
+        "type" : "ivar",
+        "name" : "_textColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 120,
+        "type" : "ivar",
+        "name" : "_textShadowColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "_UIPickerViewTestParameters *",
+        "size" : 4,
+        "offset" : 124,
+        "type" : "ivar",
+        "name" : "_currentTestParameters"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 128,
+        "type" : "ivar",
+        "name" : "_isInLayoutSubviews"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 129,
+        "type" : "ivar",
+        "name" : "_magnifierEnabled"
+      }
+    ],
+    "protocols" : [
+      "UIPickerTableViewContainerDelegate",
+      "UITableViewDelegate",
+      "UIPickerViewScrollTesting",
+      "NSCoding",
+      "UITableViewDataSource"
+    ],
+    "properties" : [
+      {
+        "name" : "dataSource",
+        "propertyType" : "id <UIPickerViewDataSource>",
+        "getter" : "dataSource",
+        "type" : "property",
+        "setter" : "setDataSource:"
+      },
+      {
+        "name" : "delegate",
+        "propertyType" : "id <UIPickerViewDelegate>",
+        "getter" : "delegate",
+        "type" : "property",
+        "setter" : "setDelegate:"
+      },
+      {
+        "name" : "showsSelectionIndicator",
+        "propertyType" : "char",
+        "getter" : "showsSelectionIndicator",
+        "type" : "property",
+        "setter" : "setShowsSelectionIndicator:"
+      },
+      {
+        "name" : "numberOfComponents",
+        "propertyType" : "int",
+        "getter" : "numberOfComponents",
+        "type" : "property",
+        "setter" : "setNumberOfComponents:"
+      },
+      {
+        "name" : "_magnifierEnabled",
+        "propertyType" : "char",
+        "getter" : "_magnifierEnabled",
+        "type" : "property",
+        "setter" : "_setMagnifierEnabled:"
+      },
+      {
+        "name" : "usesModernStyle",
+        "propertyType" : "char",
+        "getter" : "_usesModernStyle",
+        "type" : "property",
+        "setter" : "_setUsesModernStyle:"
+      },
+      {
+        "name" : "highlightColor",
+        "propertyType" : "UIColor *",
+        "getter" : "_highlightColor",
+        "type" : "property",
+        "setter" : "_setHighlightColor:"
+      },
+      {
+        "name" : "textColor",
+        "propertyType" : "UIColor *",
+        "getter" : "_textColor",
+        "type" : "property",
+        "setter" : "_setTextColor:"
+      },
+      {
+        "name" : "textShadowColor",
+        "propertyType" : "UIColor *",
+        "getter" : "_textShadowColor",
+        "type" : "property",
+        "setter" : "_setTextShadowColor:"
+      },
+      {
+        "name" : "_isInLayoutSubviews",
+        "propertyType" : "char",
+        "getter" : "_isInLayoutSubviews",
+        "type" : "property",
+        "setter" : "_setInLayoutSubviews:"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(id)_modernNonCenterCellFont",
+        "type" : "method",
+        "name" : "_modernNonCenterCellFont",
+        "address" : 2615497
+      },
+      {
+        "declaration" : "(id)_modernCenterCellFont",
+        "type" : "method",
+        "name" : "_modernCenterCellFont",
+        "address" : 2615369
+      },
+      {
+        "declaration" : "(struct CGSize)defaultSizeForCurrentOrientation",
+        "type" : "method",
+        "name" : "defaultSizeForCurrentOrientation",
+        "address" : 2594157
+      },
+      {
+        "declaration" : "(struct CGSize)sizeForCurrentOrientationThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeForCurrentOrientationThatFits:",
+        "address" : 2594069
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1 forInterfaceOrientation:(int)arg2",
+        "type" : "method",
+        "name" : "sizeThatFits:forInterfaceOrientation:",
+        "address" : 2593785
+      }
+    ]
+  },
+  "armv7s" : {
+    "superClassName" : "UIView",
+    "className" : "UIPickerView",
+    "instanceMethods" : [
+      {
+        "declaration" : "(BOOL)_magnifierEnabled",
+        "type" : "method",
+        "name" : "_magnifierEnabled",
+        "address" : 2618781
+      },
+      {
+        "declaration" : "(void)_setInLayoutSubviews:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setInLayoutSubviews:",
+        "address" : 2618765
+      },
+      {
+        "declaration" : "(BOOL)_isInLayoutSubviews",
+        "type" : "method",
+        "name" : "_isInLayoutSubviews",
+        "address" : 2618749
+      },
+      {
+        "declaration" : "(id)delegate",
+        "type" : "method",
+        "name" : "delegate",
+        "address" : 2618733
+      },
+      {
+        "declaration" : "(id)dataSource",
+        "type" : "method",
+        "name" : "dataSource",
+        "address" : 2618717
+      },
+      {
+        "declaration" : "(void)_noteScrollingFinishedForComponent:(int)arg1",
+        "type" : "method",
+        "name" : "_noteScrollingFinishedForComponent:",
+        "address" : 2618641
+      },
+      {
+        "declaration" : "(void)_completeCurrentTest",
+        "type" : "method",
+        "name" : "_completeCurrentTest",
+        "address" : 2618513
+      },
+      {
+        "declaration" : "(void)_iterateOnCurrentTest",
+        "type" : "method",
+        "name" : "_iterateOnCurrentTest",
+        "address" : 2618369
+      },
+      {
+        "declaration" : "(void)_performScrollTest:(id)arg1 withIterations:(int)arg2 rowsToScroll:(int)arg3 inComponent:(int)arg4",
+        "type" : "method",
+        "name" : "_performScrollTest:withIterations:rowsToScroll:inComponent:",
+        "address" : 2617741
+      },
+      {
+        "declaration" : "(struct CATransform3D)_perspectiveTransform",
+        "type" : "method",
+        "name" : "_perspectiveTransform",
+        "address" : 2617665
+      },
+      {
+        "declaration" : "(BOOL)_shouldDrawWithModernStyle",
+        "type" : "method",
+        "name" : "_shouldDrawWithModernStyle",
+        "address" : 2617369
+      },
+      {
+        "declaration" : "(void)_setTextShadowColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextShadowColor:",
+        "address" : 2617269
+      },
+      {
+        "declaration" : "(id)_textShadowColor",
+        "type" : "method",
+        "name" : "_textShadowColor",
+        "address" : 2617253
+      },
+      {
+        "declaration" : "(void)_setTextColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextColor:",
+        "address" : 2617165
+      },
+      {
+        "declaration" : "(id)_textColor",
+        "type" : "method",
+        "name" : "_textColor",
+        "address" : 2617149
+      },
+      {
+        "declaration" : "(void)_setHighlightColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setHighlightColor:",
+        "address" : 2617101
+      },
+      {
+        "declaration" : "(id)_highlightColor",
+        "type" : "method",
+        "name" : "_highlightColor",
+        "address" : 2617085
+      },
+      {
+        "declaration" : "(void)_setUsesModernStyle:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUsesModernStyle:",
+        "address" : 2617081
+      },
+      {
+        "declaration" : "(BOOL)_usesModernStyle",
+        "type" : "method",
+        "name" : "_usesModernStyle",
+        "address" : 2617057
+      },
+      {
+        "declaration" : "(void)_setMagnifierEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setMagnifierEnabled:",
+        "address" : 2617025
+      },
+      {
+        "declaration" : "(id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2",
+        "type" : "method",
+        "name" : "tableView:cellForRowAtIndexPath:",
+        "address" : 2616233
+      },
+      {
+        "declaration" : "(int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2",
+        "type" : "method",
+        "name" : "tableView:numberOfRowsInSection:",
+        "address" : 2616049
+      },
+      {
+        "declaration" : "(void)selectRow:(int)arg1 inColumn:(int)arg2 animated:(BOOL)arg3",
+        "type" : "method",
+        "name" : "selectRow:inColumn:animated:",
+        "address" : 2616013
+      },
+      {
+        "declaration" : "(void)selectRow:(int)arg1 inComponent:(int)arg2 animated:(BOOL)arg3",
+        "type" : "method",
+        "name" : "selectRow:inComponent:animated:",
+        "address" : 2615977
+      },
+      {
+        "declaration" : "(void)_selectRow:(int)arg1 inComponent:(int)arg2 animated:(BOOL)arg3 notify:(BOOL)arg4",
+        "type" : "method",
+        "name" : "_selectRow:inComponent:animated:notify:",
+        "address" : 2615773
+      },
+      {
+        "declaration" : "(struct CGRect)_effectiveTableViewFrameForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "_effectiveTableViewFrameForColumn:",
+        "address" : 2615649
+      },
+      {
+        "declaration" : "(id)tableViewForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "tableViewForColumn:",
+        "address" : 2615565
+      },
+      {
+        "declaration" : "(int)columnForTableView:(id)arg1",
+        "type" : "method",
+        "name" : "columnForTableView:",
+        "address" : 2615377
+      },
+      {
+        "declaration" : "(int)selectedRowForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "selectedRowForColumn:",
+        "address" : 2615361
+      },
+      {
+        "declaration" : "(int)selectedRowInComponent:(int)arg1",
+        "type" : "method",
+        "name" : "selectedRowInComponent:",
+        "address" : 2615261
+      },
+      {
+        "declaration" : "(struct _NSRange)visibleRowsForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "visibleRowsForColumn:",
+        "address" : 2615189
+      },
+      {
+        "declaration" : "(BOOL)_drawsBackground",
+        "type" : "method",
+        "name" : "_drawsBackground",
+        "address" : 2615165
+      },
+      {
+        "declaration" : "(void)_setDrawsBackground:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setDrawsBackground:",
+        "address" : 2614993
+      },
+      {
+        "declaration" : "(BOOL)_usesCheckedSelection",
+        "type" : "method",
+        "name" : "_usesCheckedSelection",
+        "address" : 2614973
+      },
+      {
+        "declaration" : "(void)_setUsesCheckedSelection:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setUsesCheckedSelection:",
+        "address" : 2614937
+      },
+      {
+        "declaration" : "(void)_sendSelectionChangedFromTable:(id)arg1 notify:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_sendSelectionChangedFromTable:notify:",
+        "address" : 2614681
+      },
+      {
+        "declaration" : "(BOOL)_usesCheckSelection",
+        "type" : "method",
+        "name" : "_usesCheckSelection",
+        "address" : 2614677
+      },
+      {
+        "declaration" : "(BOOL)allowsMultipleSelection",
+        "type" : "method",
+        "name" : "allowsMultipleSelection",
+        "address" : 2614657
+      },
+      {
+        "declaration" : "(void)setAllowsMultipleSelection:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setAllowsMultipleSelection:",
+        "address" : 2614497
+      },
+      {
+        "declaration" : "(void)_sendSelectionChangedForComponent:(int)arg1 notify:(BOOL)arg2",
+        "type" : "method",
+        "name" : "_sendSelectionChangedForComponent:notify:",
+        "address" : 2614377
+      },
+      {
+        "declaration" : "(BOOL)showsSelectionIndicator",
+        "type" : "method",
+        "name" : "showsSelectionIndicator",
+        "address" : 2614357
+      },
+      {
+        "declaration" : "(void)setShowsSelectionIndicator:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setShowsSelectionIndicator:",
+        "address" : 2614289
+      },
+      {
+        "declaration" : "(void)setDelegate:(id)arg1",
+        "type" : "method",
+        "name" : "setDelegate:",
+        "address" : 2613909
+      },
+      {
+        "declaration" : "(void)setDataSource:(id)arg1",
+        "type" : "method",
+        "name" : "setDataSource:",
+        "address" : 2613585
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 2613161
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 2612813
+      },
+      {
+        "declaration" : "(void)_updateWithOldSize:(struct CGSize)arg1 newSize:(struct CGSize)arg2",
+        "type" : "method",
+        "name" : "_updateWithOldSize:newSize:",
+        "address" : 2612225
+      },
+      {
+        "declaration" : "(void)_resetSelectionOfTables",
+        "type" : "method",
+        "name" : "_resetSelectionOfTables",
+        "address" : 2612049
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 2606409
+      },
+      {
+        "declaration" : "(id)_contentView",
+        "type" : "method",
+        "name" : "_contentView",
+        "address" : 2606361
+      },
+      {
+        "declaration" : "(float)_wheelShift",
+        "type" : "method",
+        "name" : "_wheelShift",
+        "address" : 2606357
+      },
+      {
+        "declaration" : "(void)reloadAllPickerPieces",
+        "type" : "method",
+        "name" : "reloadAllPickerPieces",
+        "address" : 2606321
+      },
+      {
+        "declaration" : "(id)viewForRow:(int)arg1 forComponent:(int)arg2",
+        "type" : "method",
+        "name" : "viewForRow:forComponent:",
+        "address" : 2606089
+      },
+      {
+        "declaration" : "(int)numberOfComponents",
+        "type" : "method",
+        "name" : "numberOfComponents",
+        "address" : 2606021
+      },
+      {
+        "declaration" : "(int)numberOfColumns",
+        "type" : "method",
+        "name" : "numberOfColumns",
+        "address" : 2606005
+      },
+      {
+        "declaration" : "(int)numberOfRowsInColumn:(int)arg1",
+        "type" : "method",
+        "name" : "numberOfRowsInColumn:",
+        "address" : 2605989
+      },
+      {
+        "declaration" : "(int)numberOfRowsInComponent:(int)arg1",
+        "type" : "method",
+        "name" : "numberOfRowsInComponent:",
+        "address" : 2605901
+      },
+      {
+        "declaration" : "(struct CGSize)rowSizeForComponent:(int)arg1",
+        "type" : "method",
+        "name" : "rowSizeForComponent:",
+        "address" : 2605701
+      },
+      {
+        "declaration" : "(id)_createTableWithFrame:(struct CGRect)arg1 forComponent:(int)arg2",
+        "type" : "method",
+        "name" : "_createTableWithFrame:forComponent:",
+        "address" : 2605445
+      },
+      {
+        "declaration" : "(id)_createColumnWithTableFrame:(struct CGRect)arg1 rowHeight:(float)arg2",
+        "type" : "method",
+        "name" : "_createColumnWithTableFrame:rowHeight:",
+        "address" : 2604969
+      },
+      {
+        "declaration" : "(void)_addMagnifierLinesForRowHeight:(float)arg1",
+        "type" : "method",
+        "name" : "_addMagnifierLinesForRowHeight:",
+        "address" : 2604305
+      },
+      {
+        "declaration" : "(float)_delegateRowHeightForComponent:(int)arg1",
+        "type" : "method",
+        "name" : "_delegateRowHeightForComponent:",
+        "address" : 2604229
+      },
+      {
+        "declaration" : "(float)_delegateWidthForComponent:(int)arg1 ofCount:(int)arg2 withSizeLeft:(float)arg3",
+        "type" : "method",
+        "name" : "_delegateWidthForComponent:ofCount:withSizeLeft:",
+        "address" : 2604145
+      },
+      {
+        "declaration" : "(id)_delegateAttributedTitleForRow:(int)arg1 forComponent:(int)arg2",
+        "type" : "method",
+        "name" : "_delegateAttributedTitleForRow:forComponent:",
+        "address" : 2604069
+      },
+      {
+        "declaration" : "(id)_delegateTitleForRow:(int)arg1 forComponent:(int)arg2",
+        "type" : "method",
+        "name" : "_delegateTitleForRow:forComponent:",
+        "address" : 2603993
+      },
+      {
+        "declaration" : "(int)_delegateNumberOfRowsInComponent:(int)arg1",
+        "type" : "method",
+        "name" : "_delegateNumberOfRowsInComponent:",
+        "address" : 2603901
+      },
+      {
+        "declaration" : "(int)_delegateNumberOfComponents",
+        "type" : "method",
+        "name" : "_delegateNumberOfComponents",
+        "address" : 2603809
+      },
+      {
+        "declaration" : "(double)scrollAnimationDuration",
+        "type" : "method",
+        "name" : "scrollAnimationDuration",
+        "address" : 2603785
+      },
+      {
+        "declaration" : "(void)_sendCheckedRow:(int)arg1 inTableView:(id)arg2 checked:(BOOL)arg3",
+        "type" : "method",
+        "name" : "_sendCheckedRow:inTableView:checked:",
+        "address" : 2603665
+      },
+      {
+        "declaration" : "(struct CGSize)_sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_sizeThatFits:",
+        "address" : 2603461
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 2603413
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 2603381
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 2603377
+      },
+      {
+        "declaration" : "(BOOL)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 2603373
+      },
+      {
+        "declaration" : "(id)createDividerWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "createDividerWithFrame:",
+        "address" : 2603153
+      },
+      {
+        "declaration" : "(id)_createViewForPickerPiece:(int)arg1",
+        "type" : "method",
+        "name" : "_createViewForPickerPiece:",
+        "address" : 2602913
+      },
+      {
+        "declaration" : "(struct CGRect)_selectionBarRectForHeight:(float)arg1",
+        "type" : "method",
+        "name" : "_selectionBarRectForHeight:",
+        "address" : 2602665
+      },
+      {
+        "declaration" : "(id)imageForPickerPiece:(int)arg1",
+        "type" : "method",
+        "name" : "imageForPickerPiece:",
+        "address" : 2602193
+      },
+      {
+        "declaration" : "(id)_popoverSuffix",
+        "type" : "method",
+        "name" : "_popoverSuffix",
+        "address" : 2601937
+      },
+      {
+        "declaration" : "(id)_selectionBarSuffix",
+        "type" : "method",
+        "name" : "_selectionBarSuffix",
+        "address" : 2601889
+      },
+      {
+        "declaration" : "(id)pickerImageNamePrefix",
+        "type" : "method",
+        "name" : "pickerImageNamePrefix",
+        "address" : 2601877
+      },
+      {
+        "declaration" : "(void)reloadComponent:(int)arg1",
+        "type" : "method",
+        "name" : "reloadComponent:",
+        "address" : 2601801
+      },
+      {
+        "declaration" : "(void)reloadDataForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "reloadDataForColumn:",
+        "address" : 2601785
+      },
+      {
+        "declaration" : "(void)reloadAllComponents",
+        "type" : "method",
+        "name" : "reloadAllComponents",
+        "address" : 2601621
+      },
+      {
+        "declaration" : "(void)reloadData",
+        "type" : "method",
+        "name" : "reloadData",
+        "address" : 2601605
+      },
+      {
+        "declaration" : "(void)reload",
+        "type" : "method",
+        "name" : "reload",
+        "address" : 2601589
+      },
+      {
+        "declaration" : "(void)didMoveToWindow",
+        "type" : "method",
+        "name" : "didMoveToWindow",
+        "address" : 2601505
+      },
+      {
+        "declaration" : "(void)setAlpha:(float)arg1",
+        "type" : "method",
+        "name" : "setAlpha:",
+        "address" : 2601441
+      },
+      {
+        "declaration" : "(void)setHidden:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setHidden:",
+        "address" : 2601377
+      },
+      {
+        "declaration" : "(void)_updateSelectedRows",
+        "type" : "method",
+        "name" : "_updateSelectedRows",
+        "address" : 2601209
+      },
+      {
+        "declaration" : "(void)_updateSound",
+        "type" : "method",
+        "name" : "_updateSound",
+        "address" : 2601017
+      },
+      {
+        "declaration" : "(void)setNeedsLayout",
+        "type" : "method",
+        "name" : "setNeedsLayout",
+        "address" : 2600949
+      },
+      {
+        "declaration" : "(id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "hitTest:withEvent:",
+        "address" : 2600229
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 2599581
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 2599365
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 2598925
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 2598537
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 2597333
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 2597285
+      },
+      {
+        "declaration" : "(BOOL)_soundsEnabled",
+        "type" : "method",
+        "name" : "_soundsEnabled",
+        "address" : 2597261
+      },
+      {
+        "declaration" : "(void)setSoundsEnabled:(BOOL)arg1",
+        "type" : "method",
+        "name" : "setSoundsEnabled:",
+        "address" : 2597221
+      },
+      {
+        "declaration" : "(id)_orientationImageSuffix",
+        "type" : "method",
+        "name" : "_orientationImageSuffix",
+        "address" : 2596921
+      },
+      {
+        "declaration" : "(float)_tableRowHeight",
+        "type" : "method",
+        "name" : "_tableRowHeight",
+        "address" : 2596809
+      },
+      {
+        "declaration" : "(BOOL)_isLandscapeOrientation",
+        "type" : "method",
+        "name" : "_isLandscapeOrientation",
+        "address" : 2596737
+      },
+      {
+        "declaration" : "(struct CGSize)defaultSize",
+        "type" : "method",
+        "name" : "defaultSize",
+        "address" : 2596465
+      },
+      {
+        "declaration" : "(void)setBackgroundColor:(id)arg1",
+        "type" : "method",
+        "name" : "setBackgroundColor:",
+        "address" : 2595745
+      },
+      {
+        "declaration" : "(BOOL)isAccessibilityElementByDefault",
+        "type" : "method",
+        "name" : "isAccessibilityElementByDefault",
+        "address" : 3794217
+      }
+    ],
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "NSMutableArray *",
+        "size" : 4,
+        "offset" : 56,
+        "type" : "ivar",
+        "name" : "_tables"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 60,
+        "type" : "ivar",
+        "name" : "_topFrame"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSMutableArray *",
+        "size" : 4,
+        "offset" : 64,
+        "type" : "ivar",
+        "name" : "_dividers"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSMutableArray *",
+        "size" : 4,
+        "offset" : 68,
+        "type" : "ivar",
+        "name" : "_selectionBars"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "id <UIPickerViewDataSource>",
+        "size" : 4,
+        "offset" : 72,
+        "type" : "ivar",
+        "name" : "_dataSource"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "id <UIPickerViewDelegate>",
+        "size" : 4,
+        "offset" : 76,
+        "type" : "ivar",
+        "name" : "_delegate"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 80,
+        "type" : "ivar",
+        "name" : "_backgroundView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "int",
+        "size" : 4,
+        "offset" : 84,
+        "type" : "ivar",
+        "name" : "_numberOfComponents"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 88,
+        "type" : "ivar",
+        "name" : "_topGradient"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIImageView *",
+        "size" : 4,
+        "offset" : 92,
+        "type" : "ivar",
+        "name" : "_bottomGradient"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 96,
+        "type" : "ivar",
+        "name" : "_foregroundView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "CALayer *",
+        "size" : 4,
+        "offset" : 100,
+        "type" : "ivar",
+        "name" : "_maskGradientLayer"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 104,
+        "type" : "ivar",
+        "name" : "_topLineView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIView *",
+        "size" : 4,
+        "offset" : 108,
+        "type" : "ivar",
+        "name" : "_bottomLineView"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "struct {\n        unsigned int needsLayout:1;\n        unsigned int delegateRespondsToNumberOfComponentsInPickerView:1;\n        unsigned int delegateRespondsToNumberOfRowsInComponent:1;\n        unsigned int delegateRespondsToDidSelectRow:1;\n        unsigned int delegateRespondsToViewForRow:1;\n        unsigned int delegateRespondsToTitleForRow:1;\n        unsigned int delegateRespondsToAttributedTitleForRow:1;\n        unsigned int delegateRespondsToWidthForComponent:1;\n        unsigned int delegateRespondsToRowHeightForComponent:1;\n        unsigned int showsSelectionBar:1;\n        unsigned int allowsMultipleSelection:1;\n        unsigned int allowSelectingCells:1;\n        unsigned int soundsDisabled:1;\n        unsigned int usesCheckedSelection:1;\n        unsigned int skipsBackground:1;\n    }",
+        "size" : 2,
+        "offset" : 112,
+        "type" : "ivar",
+        "name" : "_pickerViewFlags"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 114,
+        "type" : "ivar",
+        "name" : "_usesModernStyle"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 116,
+        "type" : "ivar",
+        "name" : "_textColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "UIColor *",
+        "size" : 4,
+        "offset" : 120,
+        "type" : "ivar",
+        "name" : "_textShadowColor"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "_UIPickerViewTestParameters *",
+        "size" : 4,
+        "offset" : 124,
+        "type" : "ivar",
+        "name" : "_currentTestParameters"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 128,
+        "type" : "ivar",
+        "name" : "_isInLayoutSubviews"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 129,
+        "type" : "ivar",
+        "name" : "_magnifierEnabled"
+      }
+    ],
+    "protocols" : [
+      "UIPickerTableViewContainerDelegate",
+      "UITableViewDelegate",
+      "UIPickerViewScrollTesting",
+      "NSCoding",
+      "UITableViewDataSource"
+    ],
+    "properties" : [
+      {
+        "getter" : "dataSource",
+        "setter" : "setDataSource:",
+        "type" : "property",
+        "name" : "dataSource",
+        "propertyType" : "id <UIPickerViewDataSource>"
+      },
+      {
+        "getter" : "delegate",
+        "setter" : "setDelegate:",
+        "type" : "property",
+        "name" : "delegate",
+        "propertyType" : "id <UIPickerViewDelegate>"
+      },
+      {
+        "getter" : "showsSelectionIndicator",
+        "setter" : "setShowsSelectionIndicator:",
+        "type" : "property",
+        "name" : "showsSelectionIndicator",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "numberOfComponents",
+        "setter" : "setNumberOfComponents:",
+        "type" : "property",
+        "name" : "numberOfComponents",
+        "propertyType" : "int"
+      },
+      {
+        "getter" : "_magnifierEnabled",
+        "setter" : "_setMagnifierEnabled:",
+        "type" : "property",
+        "name" : "_magnifierEnabled",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "_usesModernStyle",
+        "setter" : "_setUsesModernStyle:",
+        "type" : "property",
+        "name" : "usesModernStyle",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "_highlightColor",
+        "setter" : "_setHighlightColor:",
+        "type" : "property",
+        "name" : "highlightColor",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "getter" : "_textColor",
+        "setter" : "_setTextColor:",
+        "type" : "property",
+        "name" : "textColor",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "getter" : "_textShadowColor",
+        "setter" : "_setTextShadowColor:",
+        "type" : "property",
+        "name" : "textShadowColor",
+        "propertyType" : "UIColor *"
+      },
+      {
+        "getter" : "_isInLayoutSubviews",
+        "setter" : "_setInLayoutSubviews:",
+        "type" : "property",
+        "name" : "_isInLayoutSubviews",
+        "propertyType" : "char"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(id)_modernNonCenterCellFont",
+        "type" : "method",
+        "name" : "_modernNonCenterCellFont",
+        "address" : 2617541
+      },
+      {
+        "declaration" : "(id)_modernCenterCellFont",
+        "type" : "method",
+        "name" : "_modernCenterCellFont",
+        "address" : 2617413
+      },
+      {
+        "declaration" : "(struct CGSize)defaultSizeForCurrentOrientation",
+        "type" : "method",
+        "name" : "defaultSizeForCurrentOrientation",
+        "address" : 2596165
+      },
+      {
+        "declaration" : "(struct CGSize)sizeForCurrentOrientationThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeForCurrentOrientationThatFits:",
+        "address" : 2596077
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1 forInterfaceOrientation:(int)arg2",
+        "type" : "method",
+        "name" : "sizeThatFits:forInterfaceOrientation:",
+        "address" : 2595789
+      }
+    ]
+  },
+  "arm64" : {
+    "superClassName" : "UIView",
+    "className" : "UIPickerView",
+    "instanceMethods" : [
+      {
+        "declaration" : "(_Bool)_magnifierEnabled",
+        "type" : "method",
+        "name" : "_magnifierEnabled",
+        "address" : 2851004
+      },
+      {
+        "declaration" : "(void)_setInLayoutSubviews:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setInLayoutSubviews:",
+        "address" : 2850988
+      },
+      {
+        "declaration" : "(_Bool)_isInLayoutSubviews",
+        "type" : "method",
+        "name" : "_isInLayoutSubviews",
+        "address" : 2850972
+      },
+      {
+        "declaration" : "(id)delegate",
+        "type" : "method",
+        "name" : "delegate",
+        "address" : 2850956
+      },
+      {
+        "declaration" : "(id)dataSource",
+        "type" : "method",
+        "name" : "dataSource",
+        "address" : 2850940
+      },
+      {
+        "declaration" : "(void)_noteScrollingFinishedForComponent:(long long)arg1",
+        "type" : "method",
+        "name" : "_noteScrollingFinishedForComponent:",
+        "address" : 2850864
+      },
+      {
+        "declaration" : "(void)_completeCurrentTest",
+        "type" : "method",
+        "name" : "_completeCurrentTest",
+        "address" : 2850708
+      },
+      {
+        "declaration" : "(void)_iterateOnCurrentTest",
+        "type" : "method",
+        "name" : "_iterateOnCurrentTest",
+        "address" : 2850528
+      },
+      {
+        "declaration" : "(void)_performScrollTest:(id)arg1 withIterations:(long long)arg2 rowsToScroll:(long long)arg3 inComponent:(long long)arg4",
+        "type" : "method",
+        "name" : "_performScrollTest:withIterations:rowsToScroll:inComponent:",
+        "address" : 2849884
+      },
+      {
+        "declaration" : "(struct CATransform3D)_perspectiveTransform",
+        "type" : "method",
+        "name" : "_perspectiveTransform",
+        "address" : 2849804
+      },
+      {
+        "declaration" : "(_Bool)_shouldDrawWithModernStyle",
+        "type" : "method",
+        "name" : "_shouldDrawWithModernStyle",
+        "address" : 2849440
+      },
+      {
+        "declaration" : "(void)_setTextShadowColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextShadowColor:",
+        "address" : 2849308
+      },
+      {
+        "declaration" : "(id)_textShadowColor",
+        "type" : "method",
+        "name" : "_textShadowColor",
+        "address" : 2849292
+      },
+      {
+        "declaration" : "(void)_setTextColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setTextColor:",
+        "address" : 2849164
+      },
+      {
+        "declaration" : "(id)_textColor",
+        "type" : "method",
+        "name" : "_textColor",
+        "address" : 2849148
+      },
+      {
+        "declaration" : "(void)_setHighlightColor:(id)arg1",
+        "type" : "method",
+        "name" : "_setHighlightColor:",
+        "address" : 2849088
+      },
+      {
+        "declaration" : "(id)_highlightColor",
+        "type" : "method",
+        "name" : "_highlightColor",
+        "address" : 2849072
+      },
+      {
+        "declaration" : "(void)_setUsesModernStyle:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setUsesModernStyle:",
+        "address" : 2849068
+      },
+      {
+        "declaration" : "(_Bool)_usesModernStyle",
+        "type" : "method",
+        "name" : "_usesModernStyle",
+        "address" : 2849044
+      },
+      {
+        "declaration" : "(void)_setMagnifierEnabled:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setMagnifierEnabled:",
+        "address" : 2849016
+      },
+      {
+        "declaration" : "(id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2",
+        "type" : "method",
+        "name" : "tableView:cellForRowAtIndexPath:",
+        "address" : 2848156
+      },
+      {
+        "declaration" : "(long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2",
+        "type" : "method",
+        "name" : "tableView:numberOfRowsInSection:",
+        "address" : 2847960
+      },
+      {
+        "declaration" : "(void)selectRow:(int)arg1 inColumn:(int)arg2 animated:(_Bool)arg3",
+        "type" : "method",
+        "name" : "selectRow:inColumn:animated:",
+        "address" : 2847936
+      },
+      {
+        "declaration" : "(void)selectRow:(long long)arg1 inComponent:(long long)arg2 animated:(_Bool)arg3",
+        "type" : "method",
+        "name" : "selectRow:inComponent:animated:",
+        "address" : 2847916
+      },
+      {
+        "declaration" : "(void)_selectRow:(long long)arg1 inComponent:(long long)arg2 animated:(_Bool)arg3 notify:(_Bool)arg4",
+        "type" : "method",
+        "name" : "_selectRow:inComponent:animated:notify:",
+        "address" : 2847668
+      },
+      {
+        "declaration" : "(struct CGRect)_effectiveTableViewFrameForColumn:(long long)arg1",
+        "type" : "method",
+        "name" : "_effectiveTableViewFrameForColumn:",
+        "address" : 2847544
+      },
+      {
+        "declaration" : "(id)tableViewForColumn:(long long)arg1",
+        "type" : "method",
+        "name" : "tableViewForColumn:",
+        "address" : 2847432
+      },
+      {
+        "declaration" : "(long long)columnForTableView:(id)arg1",
+        "type" : "method",
+        "name" : "columnForTableView:",
+        "address" : 2847192
+      },
+      {
+        "declaration" : "(int)selectedRowForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "selectedRowForColumn:",
+        "address" : 2847172
+      },
+      {
+        "declaration" : "(long long)selectedRowInComponent:(long long)arg1",
+        "type" : "method",
+        "name" : "selectedRowInComponent:",
+        "address" : 2847060
+      },
+      {
+        "declaration" : "(struct _NSRange)visibleRowsForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "visibleRowsForColumn:",
+        "address" : 2846980
+      },
+      {
+        "declaration" : "(_Bool)_drawsBackground",
+        "type" : "method",
+        "name" : "_drawsBackground",
+        "address" : 2846952
+      },
+      {
+        "declaration" : "(void)_setDrawsBackground:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setDrawsBackground:",
+        "address" : 2846764
+      },
+      {
+        "declaration" : "(_Bool)_usesCheckedSelection",
+        "type" : "method",
+        "name" : "_usesCheckedSelection",
+        "address" : 2846740
+      },
+      {
+        "declaration" : "(void)_setUsesCheckedSelection:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setUsesCheckedSelection:",
+        "address" : 2846708
+      },
+      {
+        "declaration" : "(void)_sendSelectionChangedFromTable:(id)arg1 notify:(_Bool)arg2",
+        "type" : "method",
+        "name" : "_sendSelectionChangedFromTable:notify:",
+        "address" : 2846340
+      },
+      {
+        "declaration" : "(_Bool)_usesCheckSelection",
+        "type" : "method",
+        "name" : "_usesCheckSelection",
+        "address" : 2846332
+      },
+      {
+        "declaration" : "(_Bool)allowsMultipleSelection",
+        "type" : "method",
+        "name" : "allowsMultipleSelection",
+        "address" : 2846308
+      },
+      {
+        "declaration" : "(void)setAllowsMultipleSelection:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setAllowsMultipleSelection:",
+        "address" : 2846148
+      },
+      {
+        "declaration" : "(void)_sendSelectionChangedForComponent:(long long)arg1 notify:(_Bool)arg2",
+        "type" : "method",
+        "name" : "_sendSelectionChangedForComponent:notify:",
+        "address" : 2846008
+      },
+      {
+        "declaration" : "(_Bool)showsSelectionIndicator",
+        "type" : "method",
+        "name" : "showsSelectionIndicator",
+        "address" : 2845984
+      },
+      {
+        "declaration" : "(void)setShowsSelectionIndicator:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setShowsSelectionIndicator:",
+        "address" : 2845924
+      },
+      {
+        "declaration" : "(void)setDelegate:(id)arg1",
+        "type" : "method",
+        "name" : "setDelegate:",
+        "address" : 2845428
+      },
+      {
+        "declaration" : "(void)setDataSource:(id)arg1",
+        "type" : "method",
+        "name" : "setDataSource:",
+        "address" : 2845032
+      },
+      {
+        "declaration" : "(void)setBounds:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setBounds:",
+        "address" : 2844640
+      },
+      {
+        "declaration" : "(void)setFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "setFrame:",
+        "address" : 2844320
+      },
+      {
+        "declaration" : "(void)_updateWithOldSize:(struct CGSize)arg1 newSize:(struct CGSize)arg2",
+        "type" : "method",
+        "name" : "_updateWithOldSize:newSize:",
+        "address" : 2843580
+      },
+      {
+        "declaration" : "(void)_resetSelectionOfTables",
+        "type" : "method",
+        "name" : "_resetSelectionOfTables",
+        "address" : 2843360
+      },
+      {
+        "declaration" : "(void)layoutSubviews",
+        "type" : "method",
+        "name" : "layoutSubviews",
+        "address" : 2837144
+      },
+      {
+        "declaration" : "(id)_contentView",
+        "type" : "method",
+        "name" : "_contentView",
+        "address" : 2837080
+      },
+      {
+        "declaration" : "(double)_wheelShift",
+        "type" : "method",
+        "name" : "_wheelShift",
+        "address" : 2837072
+      },
+      {
+        "declaration" : "(void)reloadAllPickerPieces",
+        "type" : "method",
+        "name" : "reloadAllPickerPieces",
+        "address" : 2837036
+      },
+      {
+        "declaration" : "(id)viewForRow:(long long)arg1 forComponent:(long long)arg2",
+        "type" : "method",
+        "name" : "viewForRow:forComponent:",
+        "address" : 2836760
+      },
+      {
+        "declaration" : "(long long)numberOfComponents",
+        "type" : "method",
+        "name" : "numberOfComponents",
+        "address" : 2836700
+      },
+      {
+        "declaration" : "(long long)numberOfColumns",
+        "type" : "method",
+        "name" : "numberOfColumns",
+        "address" : 2836684
+      },
+      {
+        "declaration" : "(long long)numberOfRowsInColumn:(long long)arg1",
+        "type" : "method",
+        "name" : "numberOfRowsInColumn:",
+        "address" : 2836668
+      },
+      {
+        "declaration" : "(long long)numberOfRowsInComponent:(long long)arg1",
+        "type" : "method",
+        "name" : "numberOfRowsInComponent:",
+        "address" : 2836560
+      },
+      {
+        "declaration" : "(struct CGSize)rowSizeForComponent:(long long)arg1",
+        "type" : "method",
+        "name" : "rowSizeForComponent:",
+        "address" : 2836356
+      },
+      {
+        "declaration" : "(id)_createTableWithFrame:(struct CGRect)arg1 forComponent:(long long)arg2",
+        "type" : "method",
+        "name" : "_createTableWithFrame:forComponent:",
+        "address" : 2836052
+      },
+      {
+        "declaration" : "(id)_createColumnWithTableFrame:(struct CGRect)arg1 rowHeight:(double)arg2",
+        "type" : "method",
+        "name" : "_createColumnWithTableFrame:rowHeight:",
+        "address" : 2835696
+      },
+      {
+        "declaration" : "(void)_addMagnifierLinesForRowHeight:(double)arg1",
+        "type" : "method",
+        "name" : "_addMagnifierLinesForRowHeight:",
+        "address" : 2835096
+      },
+      {
+        "declaration" : "(double)_delegateRowHeightForComponent:(long long)arg1",
+        "type" : "method",
+        "name" : "_delegateRowHeightForComponent:",
+        "address" : 2835012
+      },
+      {
+        "declaration" : "(double)_delegateWidthForComponent:(long long)arg1 ofCount:(int)arg2 withSizeLeft:(double)arg3",
+        "type" : "method",
+        "name" : "_delegateWidthForComponent:ofCount:withSizeLeft:",
+        "address" : 2834924
+      },
+      {
+        "declaration" : "(id)_delegateAttributedTitleForRow:(long long)arg1 forComponent:(long long)arg2",
+        "type" : "method",
+        "name" : "_delegateAttributedTitleForRow:forComponent:",
+        "address" : 2834848
+      },
+      {
+        "declaration" : "(id)_delegateTitleForRow:(long long)arg1 forComponent:(long long)arg2",
+        "type" : "method",
+        "name" : "_delegateTitleForRow:forComponent:",
+        "address" : 2834772
+      },
+      {
+        "declaration" : "(long long)_delegateNumberOfRowsInComponent:(long long)arg1",
+        "type" : "method",
+        "name" : "_delegateNumberOfRowsInComponent:",
+        "address" : 2834680
+      },
+      {
+        "declaration" : "(long long)_delegateNumberOfComponents",
+        "type" : "method",
+        "name" : "_delegateNumberOfComponents",
+        "address" : 2834608
+      },
+      {
+        "declaration" : "(double)scrollAnimationDuration",
+        "type" : "method",
+        "name" : "scrollAnimationDuration",
+        "address" : 2834596
+      },
+      {
+        "declaration" : "(void)_sendCheckedRow:(long long)arg1 inTableView:(id)arg2 checked:(_Bool)arg3",
+        "type" : "method",
+        "name" : "_sendCheckedRow:inTableView:checked:",
+        "address" : 2834416
+      },
+      {
+        "declaration" : "(struct CGSize)_sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_sizeThatFits:",
+        "address" : 2834212
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeThatFits:",
+        "address" : 2834196
+      },
+      {
+        "declaration" : "(struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "_intrinsicSizeWithinSize:",
+        "address" : 2834180
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedWidth",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedWidth",
+        "address" : 2834172
+      },
+      {
+        "declaration" : "(_Bool)_contentHuggingDefault_isUsuallyFixedHeight",
+        "type" : "method",
+        "name" : "_contentHuggingDefault_isUsuallyFixedHeight",
+        "address" : 2834164
+      },
+      {
+        "declaration" : "(id)createDividerWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "createDividerWithFrame:",
+        "address" : 2833912
+      },
+      {
+        "declaration" : "(id)_createViewForPickerPiece:(int)arg1",
+        "type" : "method",
+        "name" : "_createViewForPickerPiece:",
+        "address" : 2833612
+      },
+      {
+        "declaration" : "(struct CGRect)_selectionBarRectForHeight:(double)arg1",
+        "type" : "method",
+        "name" : "_selectionBarRectForHeight:",
+        "address" : 2833408
+      },
+      {
+        "declaration" : "(id)imageForPickerPiece:(int)arg1",
+        "type" : "method",
+        "name" : "imageForPickerPiece:",
+        "address" : 2832848
+      },
+      {
+        "declaration" : "(id)_popoverSuffix",
+        "type" : "method",
+        "name" : "_popoverSuffix",
+        "address" : 2832620
+      },
+      {
+        "declaration" : "(id)_selectionBarSuffix",
+        "type" : "method",
+        "name" : "_selectionBarSuffix",
+        "address" : 2832576
+      },
+      {
+        "declaration" : "(id)pickerImageNamePrefix",
+        "type" : "method",
+        "name" : "pickerImageNamePrefix",
+        "address" : 2832564
+      },
+      {
+        "declaration" : "(void)reloadComponent:(long long)arg1",
+        "type" : "method",
+        "name" : "reloadComponent:",
+        "address" : 2832484
+      },
+      {
+        "declaration" : "(void)reloadDataForColumn:(int)arg1",
+        "type" : "method",
+        "name" : "reloadDataForColumn:",
+        "address" : 2832464
+      },
+      {
+        "declaration" : "(void)reloadAllComponents",
+        "type" : "method",
+        "name" : "reloadAllComponents",
+        "address" : 2832244
+      },
+      {
+        "declaration" : "(void)reloadData",
+        "type" : "method",
+        "name" : "reloadData",
+        "address" : 2832228
+      },
+      {
+        "declaration" : "(void)reload",
+        "type" : "method",
+        "name" : "reload",
+        "address" : 2832212
+      },
+      {
+        "declaration" : "(void)didMoveToWindow",
+        "type" : "method",
+        "name" : "didMoveToWindow",
+        "address" : 2832100
+      },
+      {
+        "declaration" : "(void)setAlpha:(double)arg1",
+        "type" : "method",
+        "name" : "setAlpha:",
+        "address" : 2832008
+      },
+      {
+        "declaration" : "(void)setHidden:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setHidden:",
+        "address" : 2831916
+      },
+      {
+        "declaration" : "(void)_updateSelectedRows",
+        "type" : "method",
+        "name" : "_updateSelectedRows",
+        "address" : 2831700
+      },
+      {
+        "declaration" : "(void)_updateSound",
+        "type" : "method",
+        "name" : "_updateSound",
+        "address" : 2831516
+      },
+      {
+        "declaration" : "(void)setNeedsLayout",
+        "type" : "method",
+        "name" : "setNeedsLayout",
+        "address" : 2831432
+      },
+      {
+        "declaration" : "(id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2",
+        "type" : "method",
+        "name" : "hitTest:withEvent:",
+        "address" : 2830596
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 2829840
+      },
+      {
+        "declaration" : "(void)encodeWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "encodeWithCoder:",
+        "address" : 2829576
+      },
+      {
+        "declaration" : "(void)_populateArchivedSubviews:(id)arg1",
+        "type" : "method",
+        "name" : "_populateArchivedSubviews:",
+        "address" : 2829056
+      },
+      {
+        "declaration" : "(id)initWithCoder:(id)arg1",
+        "type" : "method",
+        "name" : "initWithCoder:",
+        "address" : 2828604
+      },
+      {
+        "declaration" : "(id)initWithFrame:(struct CGRect)arg1",
+        "type" : "method",
+        "name" : "initWithFrame:",
+        "address" : 2827356
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 2827324
+      },
+      {
+        "declaration" : "(_Bool)_soundsEnabled",
+        "type" : "method",
+        "name" : "_soundsEnabled",
+        "address" : 2827296
+      },
+      {
+        "declaration" : "(void)setSoundsEnabled:(_Bool)arg1",
+        "type" : "method",
+        "name" : "setSoundsEnabled:",
+        "address" : 2827260
+      },
+      {
+        "declaration" : "(id)_orientationImageSuffix",
+        "type" : "method",
+        "name" : "_orientationImageSuffix",
+        "address" : 2827008
+      },
+      {
+        "declaration" : "(double)_tableRowHeight",
+        "type" : "method",
+        "name" : "_tableRowHeight",
+        "address" : 2826888
+      },
+      {
+        "declaration" : "(_Bool)_isLandscapeOrientation",
+        "type" : "method",
+        "name" : "_isLandscapeOrientation",
+        "address" : 2826840
+      },
+      {
+        "declaration" : "(struct CGSize)defaultSize",
+        "type" : "method",
+        "name" : "defaultSize",
+        "address" : 2826576
+      },
+      {
+        "declaration" : "(void)setBackgroundColor:(id)arg1",
+        "type" : "method",
+        "name" : "setBackgroundColor:",
+        "address" : 2825828
+      }
+    ],
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "NSMutableArray *",
+        "size" : 8,
+        "offset" : 104,
+        "type" : "ivar",
+        "name" : "_tables"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIView *",
+        "size" : 8,
+        "offset" : 112,
+        "type" : "ivar",
+        "name" : "_topFrame"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSMutableArray *",
+        "size" : 8,
+        "offset" : 120,
+        "type" : "ivar",
+        "name" : "_dividers"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSMutableArray *",
+        "size" : 8,
+        "offset" : 128,
+        "type" : "ivar",
+        "name" : "_selectionBars"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "id <UIPickerViewDataSource>",
+        "size" : 8,
+        "offset" : 136,
+        "type" : "ivar",
+        "name" : "_dataSource"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "id <UIPickerViewDelegate>",
+        "size" : 8,
+        "offset" : 144,
+        "type" : "ivar",
+        "name" : "_delegate"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIView *",
+        "size" : 8,
+        "offset" : 152,
+        "type" : "ivar",
+        "name" : "_backgroundView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "long long",
+        "size" : 8,
+        "offset" : 160,
+        "type" : "ivar",
+        "name" : "_numberOfComponents"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 168,
+        "type" : "ivar",
+        "name" : "_topGradient"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIImageView *",
+        "size" : 8,
+        "offset" : 176,
+        "type" : "ivar",
+        "name" : "_bottomGradient"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIView *",
+        "size" : 8,
+        "offset" : 184,
+        "type" : "ivar",
+        "name" : "_foregroundView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "CALayer *",
+        "size" : 8,
+        "offset" : 192,
+        "type" : "ivar",
+        "name" : "_maskGradientLayer"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIView *",
+        "size" : 8,
+        "offset" : 200,
+        "type" : "ivar",
+        "name" : "_topLineView"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIView *",
+        "size" : 8,
+        "offset" : 208,
+        "type" : "ivar",
+        "name" : "_bottomLineView"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "struct {\n        unsigned int needsLayout:1;\n        unsigned int delegateRespondsToNumberOfComponentsInPickerView:1;\n        unsigned int delegateRespondsToNumberOfRowsInComponent:1;\n        unsigned int delegateRespondsToDidSelectRow:1;\n        unsigned int delegateRespondsToViewForRow:1;\n        unsigned int delegateRespondsToTitleForRow:1;\n        unsigned int delegateRespondsToAttributedTitleForRow:1;\n        unsigned int delegateRespondsToWidthForComponent:1;\n        unsigned int delegateRespondsToRowHeightForComponent:1;\n        unsigned int showsSelectionBar:1;\n        unsigned int allowsMultipleSelection:1;\n        unsigned int allowSelectingCells:1;\n        unsigned int soundsDisabled:1;\n        unsigned int usesCheckedSelection:1;\n        unsigned int skipsBackground:1;\n    }",
+        "size" : 4,
+        "offset" : 216,
+        "type" : "ivar",
+        "name" : "_pickerViewFlags"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 220,
+        "type" : "ivar",
+        "name" : "_usesModernStyle"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 224,
+        "type" : "ivar",
+        "name" : "_textColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "UIColor *",
+        "size" : 8,
+        "offset" : 232,
+        "type" : "ivar",
+        "name" : "_textShadowColor"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "_UIPickerViewTestParameters *",
+        "size" : 8,
+        "offset" : 240,
+        "type" : "ivar",
+        "name" : "_currentTestParameters"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 248,
+        "type" : "ivar",
+        "name" : "_isInLayoutSubviews"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 249,
+        "type" : "ivar",
+        "name" : "_magnifierEnabled"
+      }
+    ],
+    "protocols" : [
+      "UIPickerTableViewContainerDelegate",
+      "UITableViewDelegate",
+      "UIPickerViewScrollTesting",
+      "NSCoding",
+      "UITableViewDataSource"
+    ],
+    "properties" : [
+      {
+        "type" : "property",
+        "propertyType" : "id <UIPickerViewDataSource>",
+        "name" : "dataSource",
+        "getter" : "dataSource",
+        "setter" : "setDataSource:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "id <UIPickerViewDelegate>",
+        "name" : "delegate",
+        "getter" : "delegate",
+        "setter" : "setDelegate:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "_Bool",
+        "name" : "showsSelectionIndicator",
+        "getter" : "showsSelectionIndicator",
+        "setter" : "setShowsSelectionIndicator:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "long long",
+        "name" : "numberOfComponents",
+        "getter" : "numberOfComponents",
+        "setter" : "setNumberOfComponents:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "_Bool",
+        "name" : "_magnifierEnabled",
+        "getter" : "_magnifierEnabled",
+        "setter" : "_setMagnifierEnabled:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "_Bool",
+        "name" : "usesModernStyle",
+        "getter" : "_usesModernStyle",
+        "setter" : "_setUsesModernStyle:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIColor *",
+        "name" : "highlightColor",
+        "getter" : "_highlightColor",
+        "setter" : "_setHighlightColor:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIColor *",
+        "name" : "textColor",
+        "getter" : "_textColor",
+        "setter" : "_setTextColor:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "UIColor *",
+        "name" : "textShadowColor",
+        "getter" : "_textShadowColor",
+        "setter" : "_setTextShadowColor:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "_Bool",
+        "name" : "_isInLayoutSubviews",
+        "getter" : "_isInLayoutSubviews",
+        "setter" : "_setInLayoutSubviews:"
+      }
+    ],
+    "type" : "class",
+    "classMethods" : [
+      {
+        "declaration" : "(id)_modernNonCenterCellFont",
+        "type" : "method",
+        "name" : "_modernNonCenterCellFont",
+        "address" : 2849656
+      },
+      {
+        "declaration" : "(id)_modernCenterCellFont",
+        "type" : "method",
+        "name" : "_modernCenterCellFont",
+        "address" : 2849504
+      },
+      {
+        "declaration" : "(struct CGSize)defaultSizeForCurrentOrientation",
+        "type" : "method",
+        "name" : "defaultSizeForCurrentOrientation",
+        "address" : 2826280
+      },
+      {
+        "declaration" : "(struct CGSize)sizeForCurrentOrientationThatFits:(struct CGSize)arg1",
+        "type" : "method",
+        "name" : "sizeForCurrentOrientationThatFits:",
+        "address" : 2826180
+      },
+      {
+        "declaration" : "(struct CGSize)sizeThatFits:(struct CGSize)arg1 forInterfaceOrientation:(long long)arg2",
+        "type" : "method",
+        "name" : "sizeThatFits:forInterfaceOrientation:",
+        "address" : 2825892
+      }
+    ]
+  }
+}
