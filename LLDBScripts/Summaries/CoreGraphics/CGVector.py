@@ -59,3 +59,12 @@ class CGVector_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
     def get_dy_value(self):
         dy = self.get_dy()
         return float(dy.GetValue())
+
+
+def __lldb_init_module(debugger, dict):
+    # CGVector
+    debugger.HandleCommand("type summary add -s \
+            \"(dx=${var.dx}, dy=${var.dy})\" -v \
+            --category CoreGraphics CGVector")
+
+    debugger.HandleCommand("type category enable CoreGraphics")

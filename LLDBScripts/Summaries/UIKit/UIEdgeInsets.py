@@ -81,3 +81,12 @@ class UIEdgeInsets_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
     def get_right_value(self):
         right = self.get_right()
         return float(right.GetValue())
+
+
+def __lldb_init_module(debugger, dict):
+    # UIEdgeInsets
+    debugger.HandleCommand("type summary add -s \
+            \"(top=${var.top}, left=${var.left}, bottom=${var.bottom}, right=${var.right})\" -v \
+            --category UIKit UIEdgeInsets")
+
+    debugger.HandleCommand("type category enable UIKit")

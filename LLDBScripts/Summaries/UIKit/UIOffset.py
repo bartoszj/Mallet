@@ -57,3 +57,12 @@ class UIOffset_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
     def get_vertical_value(self):
         vertical = self.get_vertical()
         return float(vertical.GetValue())
+
+
+def __lldb_init_module(debugger, dict):
+    # UIOffset
+    debugger.HandleCommand("type summary add -s \
+            \"(horizontal=${var.horizontal}, vertical=${var.vertical})\" -v \
+            --category UIKit UIOffset")
+
+    debugger.HandleCommand("type category enable UIKit")
