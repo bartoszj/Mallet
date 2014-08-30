@@ -25,6 +25,7 @@
 import Helpers
 import UIResponder
 import CALayer
+import LLDBLogger
 
 
 class _Rect(object):
@@ -170,6 +171,7 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
         layer = self.get_layer()
         class_data, wrapper = Helpers.get_class_data(layer)
         if not class_data.is_valid():
+            LLDBLogger.get_logger().info("UIView: has_valid_layer: not valid class_data.")
             return False
         return True
 

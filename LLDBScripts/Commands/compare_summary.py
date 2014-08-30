@@ -36,31 +36,39 @@ def compare_summary(debugger, command, result, internal_dict):
     thread = process.GetSelectedThread()
     frame = thread.GetSelectedFrame()
 
+    # Object name.
     obj_name = args[0]
     obj_val = frame.FindVariable(obj_name, lldb.eDynamicDontRunTarget)
     # obj_val = frame.FindVariable(obj_name, lldb.eDynamicCanRunTarget)
-    obj_summary = obj_val.GetSummary()
+    # obj_summary = obj_val.GetSummary()
 
+    # Class name.
     class_name = args[1]
     class_val = frame.FindVariable(class_name)
     class_type_name = class_val.GetSummary()[2:-1]
-    class_type = target.FindFirstType(class_type_name).GetPointerType()
+    # class_type = target.FindFirstType(class_type_name).GetPointerType()
 
+    # Casting object to given class.
     # casted_val = obj_val.Cast(class_type)
     casted_val = obj_val.CreateValueFromExpression("casted",
                                                    "({}){}".format(class_type_name, obj_name))
     casted_val = casted_val.GetDynamicValue(lldb.eDynamicDontRunTarget)
     # casted_val = casted_val.GetDynamicValue(lldb.eDynamicCanRunTarget)
+
+    # Summary.
     casted_summary = casted_val.GetSummary()
     # summary = obj_summary
     summary = casted_summary
 
+    # Compare string.
     compare_name = args[2]
     compare_val = frame.FindVariable(compare_name)
     compare_description = compare_val.GetObjectDescription()
 
+    # Result object.
     result_name = args[3]
 
+    # Comparison.
     options = lldb.SBExpressionOptions()
     options.SetIgnoreBreakpoints()
     if summary == compare_description:

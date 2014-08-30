@@ -30,7 +30,7 @@ lldb_class_dump_dir = "ClassDumps"
 lldb_commands_paths = ["Commands"]
 lldb_scripts_paths = ["Scripts"]
 lldb_scripts_load_order = ["objc_runtime",
-                           "summary_helpers",
+                           "Helpers",
                            "LLDBLogger"]
 lldb_script_extensions = [".py"]
 
@@ -38,12 +38,28 @@ lldb_summaries_paths = ["Summaries"]
 lldb_summaries_load_order = ["SummaryBase",
 
                              "NSObject",
+
+                             "CADoublePoint",
+                             "CADoubleSize",
+                             "CADoubleRect",
+                             "CALayerInternalLayer",
+                             "CALayerIvars",
+                             "CALayer",
+
                              "UIResponder",
                              "UIView",
                              "UIControl",
                              "UIPickerView",
 
-                             "SKRequest"]
+                             "SKRequestInternal",
+                             "SKRequest",
+                             "SKPaymentInternal",
+                             "SKPaymentQueueInternal",
+                             "SKPaymentTransactionInternal",
+                             "SKProductInternal",
+                             "SKProductsRequestInternal",
+                             "SKProductsResponseInternal"
+                             ]
 
 
 def scripts_in_directory(path):
