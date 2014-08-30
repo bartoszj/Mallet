@@ -46,7 +46,7 @@ def architecture_name_from_target(target):
         return "armv7"
     elif triple.startswith("armv7s"):
         return "armv7s"
-    elif triple.startswith(""):
+    elif triple.startswith("arm64"):
         return "arm64"
 
     return None
