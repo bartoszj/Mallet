@@ -1,0 +1,1127 @@
+{
+  "i386" : {
+    "properties" : [
+      {
+        "name" : "error",
+        "setter" : "setError:",
+        "getter" : "error",
+        "type" : "property",
+        "propertyType" : "NSError *"
+      },
+      {
+        "name" : "originalTransaction",
+        "setter" : "setOriginalTransaction:",
+        "getter" : "originalTransaction",
+        "type" : "property",
+        "propertyType" : "SKPaymentTransaction *"
+      },
+      {
+        "name" : "payment",
+        "setter" : "setPayment:",
+        "getter" : "payment",
+        "type" : "property",
+        "propertyType" : "SKPayment *"
+      },
+      {
+        "name" : "downloads",
+        "setter" : "setDownloads:",
+        "getter" : "downloads",
+        "type" : "property",
+        "propertyType" : "NSArray *"
+      },
+      {
+        "name" : "transactionDate",
+        "setter" : "setTransactionDate:",
+        "getter" : "transactionDate",
+        "type" : "property",
+        "propertyType" : "NSDate *"
+      },
+      {
+        "name" : "transactionIdentifier",
+        "setter" : "setTransactionIdentifier:",
+        "getter" : "transactionIdentifier",
+        "type" : "property",
+        "propertyType" : "NSString *"
+      },
+      {
+        "name" : "transactionReceipt",
+        "setter" : "setTransactionReceipt:",
+        "getter" : "transactionReceipt",
+        "type" : "property",
+        "propertyType" : "NSData *"
+      },
+      {
+        "name" : "transactionState",
+        "setter" : "setTransactionState:",
+        "getter" : "transactionState",
+        "type" : "property",
+        "propertyType" : "int"
+      }
+    ],
+    "className" : "SKPaymentTransaction",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)copyXPCEncoding",
+        "type" : "method",
+        "name" : "copyXPCEncoding",
+        "address" : 33473
+      },
+      {
+        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
+        "type" : "method",
+        "name" : "initWithXPCEncoding:",
+        "address" : 31149
+      },
+      {
+        "declaration" : "(id)_transactionIdentifier",
+        "type" : "method",
+        "name" : "_transactionIdentifier",
+        "address" : 31117
+      },
+      {
+        "declaration" : "(void)_setTransactionState:(int)arg1",
+        "type" : "method",
+        "name" : "_setTransactionState:",
+        "address" : 31082
+      },
+      {
+        "declaration" : "(void)_setTransactionReceipt:(id)arg1",
+        "type" : "method",
+        "name" : "_setTransactionReceipt:",
+        "address" : 30991
+      },
+      {
+        "declaration" : "(void)_setTransactionIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setTransactionIdentifier:",
+        "address" : 30900
+      },
+      {
+        "declaration" : "(void)_setTransactionDate:(id)arg1",
+        "type" : "method",
+        "name" : "_setTransactionDate:",
+        "address" : 30809
+      },
+      {
+        "declaration" : "(void)_setTemporaryIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setTemporaryIdentifier:",
+        "address" : 30718
+      },
+      {
+        "declaration" : "(void)_setOriginalTransaction:(id)arg1",
+        "type" : "method",
+        "name" : "_setOriginalTransaction:",
+        "address" : 30627
+      },
+      {
+        "declaration" : "(void)_setError:(id)arg1",
+        "type" : "method",
+        "name" : "_setError:",
+        "address" : 30536
+      },
+      {
+        "declaration" : "(void)_setDownloads:(id)arg1",
+        "type" : "method",
+        "name" : "_setDownloads:",
+        "address" : 30365
+      },
+      {
+        "declaration" : "(BOOL)mergeWithTransaction:(id)arg1",
+        "type" : "method",
+        "name" : "mergeWithTransaction:",
+        "address" : 29848
+      },
+      {
+        "declaration" : "(id)matchingIdentifier",
+        "type" : "method",
+        "name" : "matchingIdentifier",
+        "address" : 29803
+      },
+      {
+        "declaration" : "(BOOL)canMergeWithTransaction:(id)arg1",
+        "type" : "method",
+        "name" : "canMergeWithTransaction:",
+        "address" : 29591
+      },
+      {
+        "declaration" : "(int)transactionState",
+        "type" : "method",
+        "name" : "transactionState",
+        "address" : 29559
+      },
+      {
+        "declaration" : "(id)transactionReceipt",
+        "type" : "method",
+        "name" : "transactionReceipt",
+        "address" : 29483
+      },
+      {
+        "declaration" : "(id)transactionIdentifier",
+        "type" : "method",
+        "name" : "transactionIdentifier",
+        "address" : 29407
+      },
+      {
+        "declaration" : "(id)transactionDate",
+        "type" : "method",
+        "name" : "transactionDate",
+        "address" : 29331
+      },
+      {
+        "declaration" : "(id)payment",
+        "type" : "method",
+        "name" : "payment",
+        "address" : 29255
+      },
+      {
+        "declaration" : "(id)originalTransaction",
+        "type" : "method",
+        "name" : "originalTransaction",
+        "address" : 29179
+      },
+      {
+        "declaration" : "(id)error",
+        "type" : "method",
+        "name" : "error",
+        "address" : 29103
+      },
+      {
+        "declaration" : "(id)downloads",
+        "type" : "method",
+        "name" : "downloads",
+        "address" : 29027
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 28934
+      },
+      {
+        "declaration" : "(id)initWithPayment:(id)arg1",
+        "type" : "method",
+        "name" : "initWithPayment:",
+        "address" : 28816
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 28704
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "id",
+        "size" : 4,
+        "offset" : 4,
+        "type" : "ivar",
+        "name" : "_internal"
+      }
+    ],
+    "superClassName" : "NSObject"
+  },
+  "x86_64" : {
+    "properties" : [
+      {
+        "propertyType" : "NSError *",
+        "getter" : "error",
+        "type" : "property",
+        "name" : "error",
+        "setter" : "setError:"
+      },
+      {
+        "propertyType" : "SKPaymentTransaction *",
+        "getter" : "originalTransaction",
+        "type" : "property",
+        "name" : "originalTransaction",
+        "setter" : "setOriginalTransaction:"
+      },
+      {
+        "propertyType" : "SKPayment *",
+        "getter" : "payment",
+        "type" : "property",
+        "name" : "payment",
+        "setter" : "setPayment:"
+      },
+      {
+        "propertyType" : "NSArray *",
+        "getter" : "downloads",
+        "type" : "property",
+        "name" : "downloads",
+        "setter" : "setDownloads:"
+      },
+      {
+        "propertyType" : "NSDate *",
+        "getter" : "transactionDate",
+        "type" : "property",
+        "name" : "transactionDate",
+        "setter" : "setTransactionDate:"
+      },
+      {
+        "propertyType" : "NSString *",
+        "getter" : "transactionIdentifier",
+        "type" : "property",
+        "name" : "transactionIdentifier",
+        "setter" : "setTransactionIdentifier:"
+      },
+      {
+        "propertyType" : "NSData *",
+        "getter" : "transactionReceipt",
+        "type" : "property",
+        "name" : "transactionReceipt",
+        "setter" : "setTransactionReceipt:"
+      },
+      {
+        "propertyType" : "long long",
+        "getter" : "transactionState",
+        "type" : "property",
+        "name" : "transactionState",
+        "setter" : "setTransactionState:"
+      }
+    ],
+    "className" : "SKPaymentTransaction",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)copyXPCEncoding",
+        "type" : "method",
+        "name" : "copyXPCEncoding",
+        "address" : 30035
+      },
+      {
+        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
+        "type" : "method",
+        "name" : "initWithXPCEncoding:",
+        "address" : 27982
+      },
+      {
+        "declaration" : "(id)_transactionIdentifier",
+        "type" : "method",
+        "name" : "_transactionIdentifier",
+        "address" : 27954
+      },
+      {
+        "declaration" : "(void)_setTransactionState:(long long)arg1",
+        "type" : "method",
+        "name" : "_setTransactionState:",
+        "address" : 27926
+      },
+      {
+        "declaration" : "(void)_setTransactionReceipt:(id)arg1",
+        "type" : "method",
+        "name" : "_setTransactionReceipt:",
+        "address" : 27842
+      },
+      {
+        "declaration" : "(void)_setTransactionIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setTransactionIdentifier:",
+        "address" : 27758
+      },
+      {
+        "declaration" : "(void)_setTransactionDate:(id)arg1",
+        "type" : "method",
+        "name" : "_setTransactionDate:",
+        "address" : 27674
+      },
+      {
+        "declaration" : "(void)_setTemporaryIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setTemporaryIdentifier:",
+        "address" : 27590
+      },
+      {
+        "declaration" : "(void)_setOriginalTransaction:(id)arg1",
+        "type" : "method",
+        "name" : "_setOriginalTransaction:",
+        "address" : 27506
+      },
+      {
+        "declaration" : "(void)_setError:(id)arg1",
+        "type" : "method",
+        "name" : "_setError:",
+        "address" : 27422
+      },
+      {
+        "declaration" : "(void)_setDownloads:(id)arg1",
+        "type" : "method",
+        "name" : "_setDownloads:",
+        "address" : 27248
+      },
+      {
+        "declaration" : "(_Bool)mergeWithTransaction:(id)arg1",
+        "type" : "method",
+        "name" : "mergeWithTransaction:",
+        "address" : 26797
+      },
+      {
+        "declaration" : "(id)matchingIdentifier",
+        "type" : "method",
+        "name" : "matchingIdentifier",
+        "address" : 26753
+      },
+      {
+        "declaration" : "(_Bool)canMergeWithTransaction:(id)arg1",
+        "type" : "method",
+        "name" : "canMergeWithTransaction:",
+        "address" : 26572
+      },
+      {
+        "declaration" : "(long long)transactionState",
+        "type" : "method",
+        "name" : "transactionState",
+        "address" : 26544
+      },
+      {
+        "declaration" : "(id)transactionReceipt",
+        "type" : "method",
+        "name" : "transactionReceipt",
+        "address" : 26476
+      },
+      {
+        "declaration" : "(id)transactionIdentifier",
+        "type" : "method",
+        "name" : "transactionIdentifier",
+        "address" : 26408
+      },
+      {
+        "declaration" : "(id)transactionDate",
+        "type" : "method",
+        "name" : "transactionDate",
+        "address" : 26340
+      },
+      {
+        "declaration" : "(id)payment",
+        "type" : "method",
+        "name" : "payment",
+        "address" : 26272
+      },
+      {
+        "declaration" : "(id)originalTransaction",
+        "type" : "method",
+        "name" : "originalTransaction",
+        "address" : 26204
+      },
+      {
+        "declaration" : "(id)error",
+        "type" : "method",
+        "name" : "error",
+        "address" : 26136
+      },
+      {
+        "declaration" : "(id)downloads",
+        "type" : "method",
+        "name" : "downloads",
+        "address" : 26068
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 25982
+      },
+      {
+        "declaration" : "(id)initWithPayment:(id)arg1",
+        "type" : "method",
+        "name" : "initWithPayment:",
+        "address" : 25870
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 25760
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "id",
+        "size" : 8,
+        "offset" : 8,
+        "type" : "ivar",
+        "name" : "_internal"
+      }
+    ],
+    "superClassName" : "NSObject"
+  },
+  "armv7" : {
+    "properties" : [
+      {
+        "name" : "error",
+        "propertyType" : "NSError *",
+        "getter" : "error",
+        "type" : "property",
+        "setter" : "setError:"
+      },
+      {
+        "name" : "originalTransaction",
+        "propertyType" : "SKPaymentTransaction *",
+        "getter" : "originalTransaction",
+        "type" : "property",
+        "setter" : "setOriginalTransaction:"
+      },
+      {
+        "name" : "payment",
+        "propertyType" : "SKPayment *",
+        "getter" : "payment",
+        "type" : "property",
+        "setter" : "setPayment:"
+      },
+      {
+        "name" : "downloads",
+        "propertyType" : "NSArray *",
+        "getter" : "downloads",
+        "type" : "property",
+        "setter" : "setDownloads:"
+      },
+      {
+        "name" : "transactionDate",
+        "propertyType" : "NSDate *",
+        "getter" : "transactionDate",
+        "type" : "property",
+        "setter" : "setTransactionDate:"
+      },
+      {
+        "name" : "transactionIdentifier",
+        "propertyType" : "NSString *",
+        "getter" : "transactionIdentifier",
+        "type" : "property",
+        "setter" : "setTransactionIdentifier:"
+      },
+      {
+        "name" : "transactionReceipt",
+        "propertyType" : "NSData *",
+        "getter" : "transactionReceipt",
+        "type" : "property",
+        "setter" : "setTransactionReceipt:"
+      },
+      {
+        "name" : "transactionState",
+        "propertyType" : "int",
+        "getter" : "transactionState",
+        "type" : "property",
+        "setter" : "setTransactionState:"
+      }
+    ],
+    "className" : "SKPaymentTransaction",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)copyXPCEncoding",
+        "type" : "method",
+        "name" : "copyXPCEncoding",
+        "address" : 26397
+      },
+      {
+        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
+        "type" : "method",
+        "name" : "initWithXPCEncoding:",
+        "address" : 24501
+      },
+      {
+        "declaration" : "(id)_transactionIdentifier",
+        "type" : "method",
+        "name" : "_transactionIdentifier",
+        "address" : 24469
+      },
+      {
+        "declaration" : "(void)_setTransactionState:(int)arg1",
+        "type" : "method",
+        "name" : "_setTransactionState:",
+        "address" : 24437
+      },
+      {
+        "declaration" : "(void)_setTransactionReceipt:(id)arg1",
+        "type" : "method",
+        "name" : "_setTransactionReceipt:",
+        "address" : 24357
+      },
+      {
+        "declaration" : "(void)_setTransactionIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setTransactionIdentifier:",
+        "address" : 24277
+      },
+      {
+        "declaration" : "(void)_setTransactionDate:(id)arg1",
+        "type" : "method",
+        "name" : "_setTransactionDate:",
+        "address" : 24197
+      },
+      {
+        "declaration" : "(void)_setTemporaryIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setTemporaryIdentifier:",
+        "address" : 24117
+      },
+      {
+        "declaration" : "(void)_setOriginalTransaction:(id)arg1",
+        "type" : "method",
+        "name" : "_setOriginalTransaction:",
+        "address" : 24037
+      },
+      {
+        "declaration" : "(void)_setError:(id)arg1",
+        "type" : "method",
+        "name" : "_setError:",
+        "address" : 23957
+      },
+      {
+        "declaration" : "(void)_setDownloads:(id)arg1",
+        "type" : "method",
+        "name" : "_setDownloads:",
+        "address" : 23797
+      },
+      {
+        "declaration" : "(BOOL)mergeWithTransaction:(id)arg1",
+        "type" : "method",
+        "name" : "mergeWithTransaction:",
+        "address" : 23329
+      },
+      {
+        "declaration" : "(id)matchingIdentifier",
+        "type" : "method",
+        "name" : "matchingIdentifier",
+        "address" : 23277
+      },
+      {
+        "declaration" : "(BOOL)canMergeWithTransaction:(id)arg1",
+        "type" : "method",
+        "name" : "canMergeWithTransaction:",
+        "address" : 23081
+      },
+      {
+        "declaration" : "(int)transactionState",
+        "type" : "method",
+        "name" : "transactionState",
+        "address" : 23049
+      },
+      {
+        "declaration" : "(id)transactionReceipt",
+        "type" : "method",
+        "name" : "transactionReceipt",
+        "address" : 22977
+      },
+      {
+        "declaration" : "(id)transactionIdentifier",
+        "type" : "method",
+        "name" : "transactionIdentifier",
+        "address" : 22905
+      },
+      {
+        "declaration" : "(id)transactionDate",
+        "type" : "method",
+        "name" : "transactionDate",
+        "address" : 22833
+      },
+      {
+        "declaration" : "(id)payment",
+        "type" : "method",
+        "name" : "payment",
+        "address" : 22761
+      },
+      {
+        "declaration" : "(id)originalTransaction",
+        "type" : "method",
+        "name" : "originalTransaction",
+        "address" : 22689
+      },
+      {
+        "declaration" : "(id)error",
+        "type" : "method",
+        "name" : "error",
+        "address" : 22617
+      },
+      {
+        "declaration" : "(id)downloads",
+        "type" : "method",
+        "name" : "downloads",
+        "address" : 22545
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 22465
+      },
+      {
+        "declaration" : "(id)initWithPayment:(id)arg1",
+        "type" : "method",
+        "name" : "initWithPayment:",
+        "address" : 22361
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 22261
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "id",
+        "size" : 4,
+        "offset" : 4,
+        "type" : "ivar",
+        "name" : "_internal"
+      }
+    ],
+    "superClassName" : "NSObject"
+  },
+  "armv7s" : {
+    "properties" : [
+      {
+        "getter" : "error",
+        "setter" : "setError:",
+        "type" : "property",
+        "name" : "error",
+        "propertyType" : "NSError *"
+      },
+      {
+        "getter" : "originalTransaction",
+        "setter" : "setOriginalTransaction:",
+        "type" : "property",
+        "name" : "originalTransaction",
+        "propertyType" : "SKPaymentTransaction *"
+      },
+      {
+        "getter" : "payment",
+        "setter" : "setPayment:",
+        "type" : "property",
+        "name" : "payment",
+        "propertyType" : "SKPayment *"
+      },
+      {
+        "getter" : "downloads",
+        "setter" : "setDownloads:",
+        "type" : "property",
+        "name" : "downloads",
+        "propertyType" : "NSArray *"
+      },
+      {
+        "getter" : "transactionDate",
+        "setter" : "setTransactionDate:",
+        "type" : "property",
+        "name" : "transactionDate",
+        "propertyType" : "NSDate *"
+      },
+      {
+        "getter" : "transactionIdentifier",
+        "setter" : "setTransactionIdentifier:",
+        "type" : "property",
+        "name" : "transactionIdentifier",
+        "propertyType" : "NSString *"
+      },
+      {
+        "getter" : "transactionReceipt",
+        "setter" : "setTransactionReceipt:",
+        "type" : "property",
+        "name" : "transactionReceipt",
+        "propertyType" : "NSData *"
+      },
+      {
+        "getter" : "transactionState",
+        "setter" : "setTransactionState:",
+        "type" : "property",
+        "name" : "transactionState",
+        "propertyType" : "int"
+      }
+    ],
+    "className" : "SKPaymentTransaction",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)copyXPCEncoding",
+        "type" : "method",
+        "name" : "copyXPCEncoding",
+        "address" : 26529
+      },
+      {
+        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
+        "type" : "method",
+        "name" : "initWithXPCEncoding:",
+        "address" : 24633
+      },
+      {
+        "declaration" : "(id)_transactionIdentifier",
+        "type" : "method",
+        "name" : "_transactionIdentifier",
+        "address" : 24601
+      },
+      {
+        "declaration" : "(void)_setTransactionState:(int)arg1",
+        "type" : "method",
+        "name" : "_setTransactionState:",
+        "address" : 24569
+      },
+      {
+        "declaration" : "(void)_setTransactionReceipt:(id)arg1",
+        "type" : "method",
+        "name" : "_setTransactionReceipt:",
+        "address" : 24493
+      },
+      {
+        "declaration" : "(void)_setTransactionIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setTransactionIdentifier:",
+        "address" : 24417
+      },
+      {
+        "declaration" : "(void)_setTransactionDate:(id)arg1",
+        "type" : "method",
+        "name" : "_setTransactionDate:",
+        "address" : 24341
+      },
+      {
+        "declaration" : "(void)_setTemporaryIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setTemporaryIdentifier:",
+        "address" : 24265
+      },
+      {
+        "declaration" : "(void)_setOriginalTransaction:(id)arg1",
+        "type" : "method",
+        "name" : "_setOriginalTransaction:",
+        "address" : 24189
+      },
+      {
+        "declaration" : "(void)_setError:(id)arg1",
+        "type" : "method",
+        "name" : "_setError:",
+        "address" : 24113
+      },
+      {
+        "declaration" : "(void)_setDownloads:(id)arg1",
+        "type" : "method",
+        "name" : "_setDownloads:",
+        "address" : 23953
+      },
+      {
+        "declaration" : "(BOOL)mergeWithTransaction:(id)arg1",
+        "type" : "method",
+        "name" : "mergeWithTransaction:",
+        "address" : 23485
+      },
+      {
+        "declaration" : "(id)matchingIdentifier",
+        "type" : "method",
+        "name" : "matchingIdentifier",
+        "address" : 23433
+      },
+      {
+        "declaration" : "(BOOL)canMergeWithTransaction:(id)arg1",
+        "type" : "method",
+        "name" : "canMergeWithTransaction:",
+        "address" : 23237
+      },
+      {
+        "declaration" : "(int)transactionState",
+        "type" : "method",
+        "name" : "transactionState",
+        "address" : 23205
+      },
+      {
+        "declaration" : "(id)transactionReceipt",
+        "type" : "method",
+        "name" : "transactionReceipt",
+        "address" : 23137
+      },
+      {
+        "declaration" : "(id)transactionIdentifier",
+        "type" : "method",
+        "name" : "transactionIdentifier",
+        "address" : 23069
+      },
+      {
+        "declaration" : "(id)transactionDate",
+        "type" : "method",
+        "name" : "transactionDate",
+        "address" : 23001
+      },
+      {
+        "declaration" : "(id)payment",
+        "type" : "method",
+        "name" : "payment",
+        "address" : 22933
+      },
+      {
+        "declaration" : "(id)originalTransaction",
+        "type" : "method",
+        "name" : "originalTransaction",
+        "address" : 22865
+      },
+      {
+        "declaration" : "(id)error",
+        "type" : "method",
+        "name" : "error",
+        "address" : 22797
+      },
+      {
+        "declaration" : "(id)downloads",
+        "type" : "method",
+        "name" : "downloads",
+        "address" : 22729
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 22649
+      },
+      {
+        "declaration" : "(id)initWithPayment:(id)arg1",
+        "type" : "method",
+        "name" : "initWithPayment:",
+        "address" : 22545
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 22445
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "id",
+        "size" : 4,
+        "offset" : 4,
+        "type" : "ivar",
+        "name" : "_internal"
+      }
+    ],
+    "superClassName" : "NSObject"
+  },
+  "arm64" : {
+    "properties" : [
+      {
+        "type" : "property",
+        "propertyType" : "NSError *",
+        "name" : "error",
+        "getter" : "error",
+        "setter" : "setError:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "SKPaymentTransaction *",
+        "name" : "originalTransaction",
+        "getter" : "originalTransaction",
+        "setter" : "setOriginalTransaction:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "SKPayment *",
+        "name" : "payment",
+        "getter" : "payment",
+        "setter" : "setPayment:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "NSArray *",
+        "name" : "downloads",
+        "getter" : "downloads",
+        "setter" : "setDownloads:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "NSDate *",
+        "name" : "transactionDate",
+        "getter" : "transactionDate",
+        "setter" : "setTransactionDate:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "NSString *",
+        "name" : "transactionIdentifier",
+        "getter" : "transactionIdentifier",
+        "setter" : "setTransactionIdentifier:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "NSData *",
+        "name" : "transactionReceipt",
+        "getter" : "transactionReceipt",
+        "setter" : "setTransactionReceipt:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "long long",
+        "name" : "transactionState",
+        "getter" : "transactionState",
+        "setter" : "setTransactionState:"
+      }
+    ],
+    "className" : "SKPaymentTransaction",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)copyXPCEncoding",
+        "type" : "method",
+        "name" : "copyXPCEncoding",
+        "address" : 31736
+      },
+      {
+        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
+        "type" : "method",
+        "name" : "initWithXPCEncoding:",
+        "address" : 29620
+      },
+      {
+        "declaration" : "(id)_transactionIdentifier",
+        "type" : "method",
+        "name" : "_transactionIdentifier",
+        "address" : 29592
+      },
+      {
+        "declaration" : "(void)_setTransactionState:(long long)arg1",
+        "type" : "method",
+        "name" : "_setTransactionState:",
+        "address" : 29564
+      },
+      {
+        "declaration" : "(void)_setTransactionReceipt:(id)arg1",
+        "type" : "method",
+        "name" : "_setTransactionReceipt:",
+        "address" : 29452
+      },
+      {
+        "declaration" : "(void)_setTransactionIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setTransactionIdentifier:",
+        "address" : 29340
+      },
+      {
+        "declaration" : "(void)_setTransactionDate:(id)arg1",
+        "type" : "method",
+        "name" : "_setTransactionDate:",
+        "address" : 29228
+      },
+      {
+        "declaration" : "(void)_setTemporaryIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setTemporaryIdentifier:",
+        "address" : 29116
+      },
+      {
+        "declaration" : "(void)_setOriginalTransaction:(id)arg1",
+        "type" : "method",
+        "name" : "_setOriginalTransaction:",
+        "address" : 29004
+      },
+      {
+        "declaration" : "(void)_setError:(id)arg1",
+        "type" : "method",
+        "name" : "_setError:",
+        "address" : 28892
+      },
+      {
+        "declaration" : "(void)_setDownloads:(id)arg1",
+        "type" : "method",
+        "name" : "_setDownloads:",
+        "address" : 28688
+      },
+      {
+        "declaration" : "(_Bool)mergeWithTransaction:(id)arg1",
+        "type" : "method",
+        "name" : "mergeWithTransaction:",
+        "address" : 28080
+      },
+      {
+        "declaration" : "(id)matchingIdentifier",
+        "type" : "method",
+        "name" : "matchingIdentifier",
+        "address" : 28036
+      },
+      {
+        "declaration" : "(_Bool)canMergeWithTransaction:(id)arg1",
+        "type" : "method",
+        "name" : "canMergeWithTransaction:",
+        "address" : 27800
+      },
+      {
+        "declaration" : "(long long)transactionState",
+        "type" : "method",
+        "name" : "transactionState",
+        "address" : 27772
+      },
+      {
+        "declaration" : "(id)transactionReceipt",
+        "type" : "method",
+        "name" : "transactionReceipt",
+        "address" : 27704
+      },
+      {
+        "declaration" : "(id)transactionIdentifier",
+        "type" : "method",
+        "name" : "transactionIdentifier",
+        "address" : 27636
+      },
+      {
+        "declaration" : "(id)transactionDate",
+        "type" : "method",
+        "name" : "transactionDate",
+        "address" : 27568
+      },
+      {
+        "declaration" : "(id)payment",
+        "type" : "method",
+        "name" : "payment",
+        "address" : 27500
+      },
+      {
+        "declaration" : "(id)originalTransaction",
+        "type" : "method",
+        "name" : "originalTransaction",
+        "address" : 27432
+      },
+      {
+        "declaration" : "(id)error",
+        "type" : "method",
+        "name" : "error",
+        "address" : 27364
+      },
+      {
+        "declaration" : "(id)downloads",
+        "type" : "method",
+        "name" : "downloads",
+        "address" : 27296
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 27188
+      },
+      {
+        "declaration" : "(id)initWithPayment:(id)arg1",
+        "type" : "method",
+        "name" : "initWithPayment:",
+        "address" : 27056
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 26924
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "id",
+        "size" : 8,
+        "offset" : 8,
+        "type" : "ivar",
+        "name" : "_internal"
+      }
+    ],
+    "superClassName" : "NSObject"
+  }
+}

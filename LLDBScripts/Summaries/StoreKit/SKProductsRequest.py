@@ -22,65 +22,52 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import SKRequest
+import SKProductsRequestInternal
 
 
 class SKProductsRequest_SynthProvider(SKRequest.SKRequest_SynthProvider):
-    # SKProductsRequest:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
-    #
-    # SKRequestInternal *_requestInternal                                     4 = 0x04 / 4            8 = 0x08 / 8
-    # SKProductsRequestInternal *_productsRequestInternal                     8 = 0x08 / 4           16 = 0x10 / 8
+    # Class: SKProductsRequest
+    # Super class: SKRequest
+    # Name:                           armv7                 i386                  arm64                 x86_64
+    # id _productsRequestInternal   8 (0x008) / 4         8 (0x008) / 4        16 (0x010) / 8        16 (0x010) / 8
 
-    # SKProductsRequestInternal:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
-    #
-    # NSSet *_productIdentifiers                                             4 = 0x04 / 4             8 = 0x08 / 8
-
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(SKProductsRequest_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(SKProductsRequest_SynthProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "SKProductsRequest"
 
         self.products_request_internal = None
-        self.product_identifiers = None
-        self.product_identifiers_provider = None
+        self.products_request_internal_provider = None
 
-        self.update()
-
-    def update(self):
-        # _productsRequestInternal (self->_productsRequestInternal)
-        self.products_request_internal = self.value_obj.GetChildMemberWithName("_productsRequestInternal")
-        #self.products_request_internal = self.value_obj.CreateChildAtOffset("_productsRequestInternal",
-        #                                                                    2 * self.sys_params.pointer_size,
-        #                                                                    self.sys_params.types_cache.id)
-        self.product_identifiers = None
-        self.product_identifiers_provider = None
-        super(SKProductsRequest_SynthProvider, self).update()
-
-    # _productIdentifiers (self->_internal->_productIdentifiers)
-    def get_product_identifiers(self):
-        if self.product_identifiers:
-            return self.product_identifiers
-
+    def get_products_request_internal(self):
         if self.products_request_internal:
-            self.product_identifiers = self.products_request_internal.CreateChildAtOffset("productIdentifiers",
-                                                                                          1 * self.sys_params.pointer_size,
-                                                                                          self.sys_params.types_cache.NSSet)
-        return self.product_identifiers
+            return self.products_request_internal
+
+        self.products_request_internal = self.get_child_value("_productsRequestInternal")
+        return self.products_request_internal
+
+    def get_products_request_internal_provider(self):
+        if self.products_request_internal_provider:
+            return self.products_request_internal_provider
+
+        products_request_internal = self.get_products_request_internal()
+        self.products_request_internal_provider = SKProductsRequestInternal.SKProductsRequestInternal_SynthProvider(products_request_internal, self.internal_dict)
+        return self.products_request_internal_provider
 
     def summary(self):
-        identifiers = self.get_product_identifiers()
-        identifiers_count = identifiers.GetNumChildren()
+        product_identifiers = self.get_products_request_internal_provider().get_product_identifiers()
+        product_identifiers_count = product_identifiers.GetNumChildren()
 
-        if identifiers_count == 1:
-            summary = "@\"{} product\"".format(identifiers_count)
+        if product_identifiers_count == 1:
+            summary = "@\"{} product\"".format(product_identifiers_count)
         else:
-            summary = "@\"{} products\"".format(identifiers_count)
+            summary = "@\"{} products\"".format(product_identifiers_count)
         return summary
 
 
 def SKProductsRequest_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, SKProductsRequest_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, SKProductsRequest_SynthProvider)
 
 
 def __lldb_init_module(debugger, internal_dict):

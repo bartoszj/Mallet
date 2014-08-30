@@ -1,0 +1,77 @@
+{
+  "arm64":{
+    "className":"SKProductsRequestInternal",
+    "ivars":[
+      {
+        "alignment":3,
+        "ivarType":"NSSet *",
+        "name":"_productIdentifiers",
+        "offset":8,
+        "size":8,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"SKProductsRequestInternal",
+    "ivars":[
+      {
+        "alignment":2,
+        "ivarType":"NSSet *",
+        "name":"_productIdentifiers",
+        "offset":4,
+        "size":4,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "armv7s":{
+    "className":"SKProductsRequestInternal",
+    "ivars":[
+      {
+        "alignment":2,
+        "ivarType":"NSSet *",
+        "name":"_productIdentifiers",
+        "offset":4,
+        "size":4,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "i386":{
+    "className":"SKProductsRequestInternal",
+    "ivars":[
+      {
+        "alignment":2,
+        "ivarType":"NSSet *",
+        "name":"_productIdentifiers",
+        "offset":4,
+        "size":4,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"SKProductsRequestInternal",
+    "ivars":[
+      {
+        "alignment":3,
+        "ivarType":"NSSet *",
+        "name":"_productIdentifiers",
+        "offset":8,
+        "size":8,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  }
+}

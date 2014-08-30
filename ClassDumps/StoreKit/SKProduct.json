@@ -1,0 +1,1072 @@
+{
+  "i386" : {
+    "properties" : [
+      {
+        "name" : "localizedDescription",
+        "setter" : "setLocalizedDescription:",
+        "getter" : "localizedDescription",
+        "type" : "property",
+        "propertyType" : "NSString *"
+      },
+      {
+        "name" : "localizedTitle",
+        "setter" : "setLocalizedTitle:",
+        "getter" : "localizedTitle",
+        "type" : "property",
+        "propertyType" : "NSString *"
+      },
+      {
+        "name" : "price",
+        "setter" : "setPrice:",
+        "getter" : "price",
+        "type" : "property",
+        "propertyType" : "NSDecimalNumber *"
+      },
+      {
+        "name" : "priceLocale",
+        "setter" : "setPriceLocale:",
+        "getter" : "priceLocale",
+        "type" : "property",
+        "propertyType" : "NSLocale *"
+      },
+      {
+        "name" : "productIdentifier",
+        "setter" : "setProductIdentifier:",
+        "getter" : "productIdentifier",
+        "type" : "property",
+        "propertyType" : "NSString *"
+      },
+      {
+        "name" : "downloadable",
+        "setter" : "setDownloadable:",
+        "getter" : "isDownloadable",
+        "type" : "property",
+        "propertyType" : "char"
+      },
+      {
+        "name" : "downloadContentLengths",
+        "setter" : "setDownloadContentLengths:",
+        "getter" : "downloadContentLengths",
+        "type" : "property",
+        "propertyType" : "NSArray *"
+      },
+      {
+        "name" : "downloadContentVersion",
+        "setter" : "setDownloadContentVersion:",
+        "getter" : "downloadContentVersion",
+        "type" : "property",
+        "propertyType" : "NSString *"
+      },
+      {
+        "name" : "_localeIdentifier",
+        "setter" : "_setLocaleIdentifier:",
+        "getter" : "_localeIdentifier",
+        "type" : "property",
+        "propertyType" : "NSString *"
+      }
+    ],
+    "className" : "SKProduct",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)copyXPCEncoding",
+        "type" : "method",
+        "name" : "copyXPCEncoding",
+        "address" : 36961
+      },
+      {
+        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
+        "type" : "method",
+        "name" : "initWithXPCEncoding:",
+        "address" : 36068
+      },
+      {
+        "declaration" : "(void)_setProductIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setProductIdentifier:",
+        "address" : 35977
+      },
+      {
+        "declaration" : "(void)_setPriceLocale:(id)arg1",
+        "type" : "method",
+        "name" : "_setPriceLocale:",
+        "address" : 35886
+      },
+      {
+        "declaration" : "(void)_setPrice:(id)arg1",
+        "type" : "method",
+        "name" : "_setPrice:",
+        "address" : 35795
+      },
+      {
+        "declaration" : "(void)_setLocalizedTitle:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocalizedTitle:",
+        "address" : 35704
+      },
+      {
+        "declaration" : "(void)_setLocalizedDescription:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocalizedDescription:",
+        "address" : 35613
+      },
+      {
+        "declaration" : "(void)_setLocaleIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocaleIdentifier:",
+        "address" : 35522
+      },
+      {
+        "declaration" : "(void)_setDownloadable:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setDownloadable:",
+        "address" : 35487
+      },
+      {
+        "declaration" : "(void)_setDownloadContentLengths:(id)arg1",
+        "type" : "method",
+        "name" : "_setDownloadContentLengths:",
+        "address" : 35396
+      },
+      {
+        "declaration" : "(void)_setContentVersion:(id)arg1",
+        "type" : "method",
+        "name" : "_setContentVersion:",
+        "address" : 35305
+      },
+      {
+        "declaration" : "(id)_localeIdentifier",
+        "type" : "method",
+        "name" : "_localeIdentifier",
+        "address" : 35229
+      },
+      {
+        "declaration" : "(id)productIdentifier",
+        "type" : "method",
+        "name" : "productIdentifier",
+        "address" : 35153
+      },
+      {
+        "declaration" : "(id)priceLocale",
+        "type" : "method",
+        "name" : "priceLocale",
+        "address" : 35077
+      },
+      {
+        "declaration" : "(id)price",
+        "type" : "method",
+        "name" : "price",
+        "address" : 35001
+      },
+      {
+        "declaration" : "(id)localizedTitle",
+        "type" : "method",
+        "name" : "localizedTitle",
+        "address" : 34925
+      },
+      {
+        "declaration" : "(id)localizedDescription",
+        "type" : "method",
+        "name" : "localizedDescription",
+        "address" : 34849
+      },
+      {
+        "declaration" : "(BOOL)isDownloadable",
+        "type" : "method",
+        "name" : "isDownloadable",
+        "address" : 34816
+      },
+      {
+        "declaration" : "(id)downloadContentVersion",
+        "type" : "method",
+        "name" : "downloadContentVersion",
+        "address" : 34740
+      },
+      {
+        "declaration" : "(id)downloadContentLengths",
+        "type" : "method",
+        "name" : "downloadContentLengths",
+        "address" : 34664
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 34571
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 34459
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "id",
+        "size" : 4,
+        "offset" : 4,
+        "type" : "ivar",
+        "name" : "_internal"
+      }
+    ],
+    "superClassName" : "NSObject"
+  },
+  "x86_64" : {
+    "properties" : [
+      {
+        "propertyType" : "NSString *",
+        "getter" : "localizedDescription",
+        "type" : "property",
+        "name" : "localizedDescription",
+        "setter" : "setLocalizedDescription:"
+      },
+      {
+        "propertyType" : "NSString *",
+        "getter" : "localizedTitle",
+        "type" : "property",
+        "name" : "localizedTitle",
+        "setter" : "setLocalizedTitle:"
+      },
+      {
+        "propertyType" : "NSDecimalNumber *",
+        "getter" : "price",
+        "type" : "property",
+        "name" : "price",
+        "setter" : "setPrice:"
+      },
+      {
+        "propertyType" : "NSLocale *",
+        "getter" : "priceLocale",
+        "type" : "property",
+        "name" : "priceLocale",
+        "setter" : "setPriceLocale:"
+      },
+      {
+        "propertyType" : "NSString *",
+        "getter" : "productIdentifier",
+        "type" : "property",
+        "name" : "productIdentifier",
+        "setter" : "setProductIdentifier:"
+      },
+      {
+        "propertyType" : "_Bool",
+        "getter" : "isDownloadable",
+        "type" : "property",
+        "name" : "downloadable",
+        "setter" : "setDownloadable:"
+      },
+      {
+        "propertyType" : "NSArray *",
+        "getter" : "downloadContentLengths",
+        "type" : "property",
+        "name" : "downloadContentLengths",
+        "setter" : "setDownloadContentLengths:"
+      },
+      {
+        "propertyType" : "NSString *",
+        "getter" : "downloadContentVersion",
+        "type" : "property",
+        "name" : "downloadContentVersion",
+        "setter" : "setDownloadContentVersion:"
+      },
+      {
+        "propertyType" : "NSString *",
+        "getter" : "_localeIdentifier",
+        "type" : "property",
+        "name" : "_localeIdentifier",
+        "setter" : "_setLocaleIdentifier:"
+      }
+    ],
+    "className" : "SKProduct",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)copyXPCEncoding",
+        "type" : "method",
+        "name" : "copyXPCEncoding",
+        "address" : 33052
+      },
+      {
+        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
+        "type" : "method",
+        "name" : "initWithXPCEncoding:",
+        "address" : 32289
+      },
+      {
+        "declaration" : "(void)_setProductIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setProductIdentifier:",
+        "address" : 32205
+      },
+      {
+        "declaration" : "(void)_setPriceLocale:(id)arg1",
+        "type" : "method",
+        "name" : "_setPriceLocale:",
+        "address" : 32121
+      },
+      {
+        "declaration" : "(void)_setPrice:(id)arg1",
+        "type" : "method",
+        "name" : "_setPrice:",
+        "address" : 32037
+      },
+      {
+        "declaration" : "(void)_setLocalizedTitle:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocalizedTitle:",
+        "address" : 31953
+      },
+      {
+        "declaration" : "(void)_setLocalizedDescription:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocalizedDescription:",
+        "address" : 31869
+      },
+      {
+        "declaration" : "(void)_setLocaleIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocaleIdentifier:",
+        "address" : 31785
+      },
+      {
+        "declaration" : "(void)_setDownloadable:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setDownloadable:",
+        "address" : 31758
+      },
+      {
+        "declaration" : "(void)_setDownloadContentLengths:(id)arg1",
+        "type" : "method",
+        "name" : "_setDownloadContentLengths:",
+        "address" : 31674
+      },
+      {
+        "declaration" : "(void)_setContentVersion:(id)arg1",
+        "type" : "method",
+        "name" : "_setContentVersion:",
+        "address" : 31590
+      },
+      {
+        "declaration" : "(id)_localeIdentifier",
+        "type" : "method",
+        "name" : "_localeIdentifier",
+        "address" : 31522
+      },
+      {
+        "declaration" : "(id)productIdentifier",
+        "type" : "method",
+        "name" : "productIdentifier",
+        "address" : 31454
+      },
+      {
+        "declaration" : "(id)priceLocale",
+        "type" : "method",
+        "name" : "priceLocale",
+        "address" : 31386
+      },
+      {
+        "declaration" : "(id)price",
+        "type" : "method",
+        "name" : "price",
+        "address" : 31318
+      },
+      {
+        "declaration" : "(id)localizedTitle",
+        "type" : "method",
+        "name" : "localizedTitle",
+        "address" : 31250
+      },
+      {
+        "declaration" : "(id)localizedDescription",
+        "type" : "method",
+        "name" : "localizedDescription",
+        "address" : 31182
+      },
+      {
+        "declaration" : "(_Bool)isDownloadable",
+        "type" : "method",
+        "name" : "isDownloadable",
+        "address" : 31155
+      },
+      {
+        "declaration" : "(id)downloadContentVersion",
+        "type" : "method",
+        "name" : "downloadContentVersion",
+        "address" : 31087
+      },
+      {
+        "declaration" : "(id)downloadContentLengths",
+        "type" : "method",
+        "name" : "downloadContentLengths",
+        "address" : 31019
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 30933
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 30823
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "id",
+        "size" : 8,
+        "offset" : 8,
+        "type" : "ivar",
+        "name" : "_internal"
+      }
+    ],
+    "superClassName" : "NSObject"
+  },
+  "armv7" : {
+    "properties" : [
+      {
+        "name" : "localizedDescription",
+        "propertyType" : "NSString *",
+        "getter" : "localizedDescription",
+        "type" : "property",
+        "setter" : "setLocalizedDescription:"
+      },
+      {
+        "name" : "localizedTitle",
+        "propertyType" : "NSString *",
+        "getter" : "localizedTitle",
+        "type" : "property",
+        "setter" : "setLocalizedTitle:"
+      },
+      {
+        "name" : "price",
+        "propertyType" : "NSDecimalNumber *",
+        "getter" : "price",
+        "type" : "property",
+        "setter" : "setPrice:"
+      },
+      {
+        "name" : "priceLocale",
+        "propertyType" : "NSLocale *",
+        "getter" : "priceLocale",
+        "type" : "property",
+        "setter" : "setPriceLocale:"
+      },
+      {
+        "name" : "productIdentifier",
+        "propertyType" : "NSString *",
+        "getter" : "productIdentifier",
+        "type" : "property",
+        "setter" : "setProductIdentifier:"
+      },
+      {
+        "name" : "downloadable",
+        "propertyType" : "char",
+        "getter" : "isDownloadable",
+        "type" : "property",
+        "setter" : "setDownloadable:"
+      },
+      {
+        "name" : "downloadContentLengths",
+        "propertyType" : "NSArray *",
+        "getter" : "downloadContentLengths",
+        "type" : "property",
+        "setter" : "setDownloadContentLengths:"
+      },
+      {
+        "name" : "downloadContentVersion",
+        "propertyType" : "NSString *",
+        "getter" : "downloadContentVersion",
+        "type" : "property",
+        "setter" : "setDownloadContentVersion:"
+      },
+      {
+        "name" : "_localeIdentifier",
+        "propertyType" : "NSString *",
+        "getter" : "_localeIdentifier",
+        "type" : "property",
+        "setter" : "_setLocaleIdentifier:"
+      }
+    ],
+    "className" : "SKProduct",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)copyXPCEncoding",
+        "type" : "method",
+        "name" : "copyXPCEncoding",
+        "address" : 29481
+      },
+      {
+        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
+        "type" : "method",
+        "name" : "initWithXPCEncoding:",
+        "address" : 28705
+      },
+      {
+        "declaration" : "(void)_setProductIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setProductIdentifier:",
+        "address" : 28625
+      },
+      {
+        "declaration" : "(void)_setPriceLocale:(id)arg1",
+        "type" : "method",
+        "name" : "_setPriceLocale:",
+        "address" : 28545
+      },
+      {
+        "declaration" : "(void)_setPrice:(id)arg1",
+        "type" : "method",
+        "name" : "_setPrice:",
+        "address" : 28465
+      },
+      {
+        "declaration" : "(void)_setLocalizedTitle:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocalizedTitle:",
+        "address" : 28385
+      },
+      {
+        "declaration" : "(void)_setLocalizedDescription:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocalizedDescription:",
+        "address" : 28305
+      },
+      {
+        "declaration" : "(void)_setLocaleIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocaleIdentifier:",
+        "address" : 28225
+      },
+      {
+        "declaration" : "(void)_setDownloadable:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setDownloadable:",
+        "address" : 28193
+      },
+      {
+        "declaration" : "(void)_setDownloadContentLengths:(id)arg1",
+        "type" : "method",
+        "name" : "_setDownloadContentLengths:",
+        "address" : 28113
+      },
+      {
+        "declaration" : "(void)_setContentVersion:(id)arg1",
+        "type" : "method",
+        "name" : "_setContentVersion:",
+        "address" : 28033
+      },
+      {
+        "declaration" : "(id)_localeIdentifier",
+        "type" : "method",
+        "name" : "_localeIdentifier",
+        "address" : 27961
+      },
+      {
+        "declaration" : "(id)productIdentifier",
+        "type" : "method",
+        "name" : "productIdentifier",
+        "address" : 27889
+      },
+      {
+        "declaration" : "(id)priceLocale",
+        "type" : "method",
+        "name" : "priceLocale",
+        "address" : 27817
+      },
+      {
+        "declaration" : "(id)price",
+        "type" : "method",
+        "name" : "price",
+        "address" : 27745
+      },
+      {
+        "declaration" : "(id)localizedTitle",
+        "type" : "method",
+        "name" : "localizedTitle",
+        "address" : 27673
+      },
+      {
+        "declaration" : "(id)localizedDescription",
+        "type" : "method",
+        "name" : "localizedDescription",
+        "address" : 27601
+      },
+      {
+        "declaration" : "(BOOL)isDownloadable",
+        "type" : "method",
+        "name" : "isDownloadable",
+        "address" : 27569
+      },
+      {
+        "declaration" : "(id)downloadContentVersion",
+        "type" : "method",
+        "name" : "downloadContentVersion",
+        "address" : 27497
+      },
+      {
+        "declaration" : "(id)downloadContentLengths",
+        "type" : "method",
+        "name" : "downloadContentLengths",
+        "address" : 27425
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 27345
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 27245
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "id",
+        "size" : 4,
+        "offset" : 4,
+        "type" : "ivar",
+        "name" : "_internal"
+      }
+    ],
+    "superClassName" : "NSObject"
+  },
+  "armv7s" : {
+    "properties" : [
+      {
+        "getter" : "localizedDescription",
+        "setter" : "setLocalizedDescription:",
+        "type" : "property",
+        "name" : "localizedDescription",
+        "propertyType" : "NSString *"
+      },
+      {
+        "getter" : "localizedTitle",
+        "setter" : "setLocalizedTitle:",
+        "type" : "property",
+        "name" : "localizedTitle",
+        "propertyType" : "NSString *"
+      },
+      {
+        "getter" : "price",
+        "setter" : "setPrice:",
+        "type" : "property",
+        "name" : "price",
+        "propertyType" : "NSDecimalNumber *"
+      },
+      {
+        "getter" : "priceLocale",
+        "setter" : "setPriceLocale:",
+        "type" : "property",
+        "name" : "priceLocale",
+        "propertyType" : "NSLocale *"
+      },
+      {
+        "getter" : "productIdentifier",
+        "setter" : "setProductIdentifier:",
+        "type" : "property",
+        "name" : "productIdentifier",
+        "propertyType" : "NSString *"
+      },
+      {
+        "getter" : "isDownloadable",
+        "setter" : "setDownloadable:",
+        "type" : "property",
+        "name" : "downloadable",
+        "propertyType" : "char"
+      },
+      {
+        "getter" : "downloadContentLengths",
+        "setter" : "setDownloadContentLengths:",
+        "type" : "property",
+        "name" : "downloadContentLengths",
+        "propertyType" : "NSArray *"
+      },
+      {
+        "getter" : "downloadContentVersion",
+        "setter" : "setDownloadContentVersion:",
+        "type" : "property",
+        "name" : "downloadContentVersion",
+        "propertyType" : "NSString *"
+      },
+      {
+        "getter" : "_localeIdentifier",
+        "setter" : "_setLocaleIdentifier:",
+        "type" : "property",
+        "name" : "_localeIdentifier",
+        "propertyType" : "NSString *"
+      }
+    ],
+    "className" : "SKProduct",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)copyXPCEncoding",
+        "type" : "method",
+        "name" : "copyXPCEncoding",
+        "address" : 29549
+      },
+      {
+        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
+        "type" : "method",
+        "name" : "initWithXPCEncoding:",
+        "address" : 28773
+      },
+      {
+        "declaration" : "(void)_setProductIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setProductIdentifier:",
+        "address" : 28697
+      },
+      {
+        "declaration" : "(void)_setPriceLocale:(id)arg1",
+        "type" : "method",
+        "name" : "_setPriceLocale:",
+        "address" : 28621
+      },
+      {
+        "declaration" : "(void)_setPrice:(id)arg1",
+        "type" : "method",
+        "name" : "_setPrice:",
+        "address" : 28545
+      },
+      {
+        "declaration" : "(void)_setLocalizedTitle:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocalizedTitle:",
+        "address" : 28469
+      },
+      {
+        "declaration" : "(void)_setLocalizedDescription:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocalizedDescription:",
+        "address" : 28393
+      },
+      {
+        "declaration" : "(void)_setLocaleIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocaleIdentifier:",
+        "address" : 28317
+      },
+      {
+        "declaration" : "(void)_setDownloadable:(BOOL)arg1",
+        "type" : "method",
+        "name" : "_setDownloadable:",
+        "address" : 28285
+      },
+      {
+        "declaration" : "(void)_setDownloadContentLengths:(id)arg1",
+        "type" : "method",
+        "name" : "_setDownloadContentLengths:",
+        "address" : 28209
+      },
+      {
+        "declaration" : "(void)_setContentVersion:(id)arg1",
+        "type" : "method",
+        "name" : "_setContentVersion:",
+        "address" : 28133
+      },
+      {
+        "declaration" : "(id)_localeIdentifier",
+        "type" : "method",
+        "name" : "_localeIdentifier",
+        "address" : 28065
+      },
+      {
+        "declaration" : "(id)productIdentifier",
+        "type" : "method",
+        "name" : "productIdentifier",
+        "address" : 27997
+      },
+      {
+        "declaration" : "(id)priceLocale",
+        "type" : "method",
+        "name" : "priceLocale",
+        "address" : 27929
+      },
+      {
+        "declaration" : "(id)price",
+        "type" : "method",
+        "name" : "price",
+        "address" : 27861
+      },
+      {
+        "declaration" : "(id)localizedTitle",
+        "type" : "method",
+        "name" : "localizedTitle",
+        "address" : 27793
+      },
+      {
+        "declaration" : "(id)localizedDescription",
+        "type" : "method",
+        "name" : "localizedDescription",
+        "address" : 27725
+      },
+      {
+        "declaration" : "(BOOL)isDownloadable",
+        "type" : "method",
+        "name" : "isDownloadable",
+        "address" : 27693
+      },
+      {
+        "declaration" : "(id)downloadContentVersion",
+        "type" : "method",
+        "name" : "downloadContentVersion",
+        "address" : 27625
+      },
+      {
+        "declaration" : "(id)downloadContentLengths",
+        "type" : "method",
+        "name" : "downloadContentLengths",
+        "address" : 27557
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 27477
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 27377
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "id",
+        "size" : 4,
+        "offset" : 4,
+        "type" : "ivar",
+        "name" : "_internal"
+      }
+    ],
+    "superClassName" : "NSObject"
+  },
+  "arm64" : {
+    "properties" : [
+      {
+        "type" : "property",
+        "propertyType" : "NSString *",
+        "name" : "localizedDescription",
+        "getter" : "localizedDescription",
+        "setter" : "setLocalizedDescription:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "NSString *",
+        "name" : "localizedTitle",
+        "getter" : "localizedTitle",
+        "setter" : "setLocalizedTitle:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "NSDecimalNumber *",
+        "name" : "price",
+        "getter" : "price",
+        "setter" : "setPrice:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "NSLocale *",
+        "name" : "priceLocale",
+        "getter" : "priceLocale",
+        "setter" : "setPriceLocale:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "NSString *",
+        "name" : "productIdentifier",
+        "getter" : "productIdentifier",
+        "setter" : "setProductIdentifier:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "_Bool",
+        "name" : "downloadable",
+        "getter" : "isDownloadable",
+        "setter" : "setDownloadable:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "NSArray *",
+        "name" : "downloadContentLengths",
+        "getter" : "downloadContentLengths",
+        "setter" : "setDownloadContentLengths:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "NSString *",
+        "name" : "downloadContentVersion",
+        "getter" : "downloadContentVersion",
+        "setter" : "setDownloadContentVersion:"
+      },
+      {
+        "type" : "property",
+        "propertyType" : "NSString *",
+        "name" : "_localeIdentifier",
+        "getter" : "_localeIdentifier",
+        "setter" : "_setLocaleIdentifier:"
+      }
+    ],
+    "className" : "SKProduct",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)copyXPCEncoding",
+        "type" : "method",
+        "name" : "copyXPCEncoding",
+        "address" : 35244
+      },
+      {
+        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
+        "type" : "method",
+        "name" : "initWithXPCEncoding:",
+        "address" : 34396
+      },
+      {
+        "declaration" : "(void)_setProductIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setProductIdentifier:",
+        "address" : 34284
+      },
+      {
+        "declaration" : "(void)_setPriceLocale:(id)arg1",
+        "type" : "method",
+        "name" : "_setPriceLocale:",
+        "address" : 34172
+      },
+      {
+        "declaration" : "(void)_setPrice:(id)arg1",
+        "type" : "method",
+        "name" : "_setPrice:",
+        "address" : 34060
+      },
+      {
+        "declaration" : "(void)_setLocalizedTitle:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocalizedTitle:",
+        "address" : 33948
+      },
+      {
+        "declaration" : "(void)_setLocalizedDescription:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocalizedDescription:",
+        "address" : 33836
+      },
+      {
+        "declaration" : "(void)_setLocaleIdentifier:(id)arg1",
+        "type" : "method",
+        "name" : "_setLocaleIdentifier:",
+        "address" : 33724
+      },
+      {
+        "declaration" : "(void)_setDownloadable:(_Bool)arg1",
+        "type" : "method",
+        "name" : "_setDownloadable:",
+        "address" : 33696
+      },
+      {
+        "declaration" : "(void)_setDownloadContentLengths:(id)arg1",
+        "type" : "method",
+        "name" : "_setDownloadContentLengths:",
+        "address" : 33584
+      },
+      {
+        "declaration" : "(void)_setContentVersion:(id)arg1",
+        "type" : "method",
+        "name" : "_setContentVersion:",
+        "address" : 33472
+      },
+      {
+        "declaration" : "(id)_localeIdentifier",
+        "type" : "method",
+        "name" : "_localeIdentifier",
+        "address" : 33404
+      },
+      {
+        "declaration" : "(id)productIdentifier",
+        "type" : "method",
+        "name" : "productIdentifier",
+        "address" : 33336
+      },
+      {
+        "declaration" : "(id)priceLocale",
+        "type" : "method",
+        "name" : "priceLocale",
+        "address" : 33268
+      },
+      {
+        "declaration" : "(id)price",
+        "type" : "method",
+        "name" : "price",
+        "address" : 33200
+      },
+      {
+        "declaration" : "(id)localizedTitle",
+        "type" : "method",
+        "name" : "localizedTitle",
+        "address" : 33132
+      },
+      {
+        "declaration" : "(id)localizedDescription",
+        "type" : "method",
+        "name" : "localizedDescription",
+        "address" : 33064
+      },
+      {
+        "declaration" : "(_Bool)isDownloadable",
+        "type" : "method",
+        "name" : "isDownloadable",
+        "address" : 33036
+      },
+      {
+        "declaration" : "(id)downloadContentVersion",
+        "type" : "method",
+        "name" : "downloadContentVersion",
+        "address" : 32968
+      },
+      {
+        "declaration" : "(id)downloadContentLengths",
+        "type" : "method",
+        "name" : "downloadContentLengths",
+        "address" : 32900
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 32792
+      },
+      {
+        "declaration" : "(id)init",
+        "type" : "method",
+        "name" : "init",
+        "address" : 32660
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "id",
+        "size" : 8,
+        "offset" : 8,
+        "type" : "ivar",
+        "name" : "_internal"
+      }
+    ],
+    "superClassName" : "NSObject"
+  }
+}

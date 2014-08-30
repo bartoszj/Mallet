@@ -1,0 +1,117 @@
+{
+  "i386" : {
+    "instanceMethods" : [
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 41114
+      }
+    ],
+    "className" : "SKProductsRequestInternal",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "NSSet *",
+        "size" : 4,
+        "offset" : 4,
+        "type" : "ivar",
+        "name" : "_productIdentifiers"
+      }
+    ],
+    "type" : "class",
+    "superClassName" : "NSObject"
+  },
+  "x86_64" : {
+    "instanceMethods" : [
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 36652
+      }
+    ],
+    "className" : "SKProductsRequestInternal",
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "NSSet *",
+        "size" : 8,
+        "offset" : 8,
+        "type" : "ivar",
+        "name" : "_productIdentifiers"
+      }
+    ],
+    "type" : "class",
+    "superClassName" : "NSObject"
+  },
+  "armv7" : {
+    "instanceMethods" : [
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 32833
+      }
+    ],
+    "className" : "SKProductsRequestInternal",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "NSSet *",
+        "size" : 4,
+        "offset" : 4,
+        "type" : "ivar",
+        "name" : "_productIdentifiers"
+      }
+    ],
+    "type" : "class",
+    "superClassName" : "NSObject"
+  },
+  "armv7s" : {
+    "instanceMethods" : [
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 32885
+      }
+    ],
+    "className" : "SKProductsRequestInternal",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "NSSet *",
+        "size" : 4,
+        "offset" : 4,
+        "type" : "ivar",
+        "name" : "_productIdentifiers"
+      }
+    ],
+    "type" : "class",
+    "superClassName" : "NSObject"
+  },
+  "arm64" : {
+    "instanceMethods" : [
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 39272
+      }
+    ],
+    "className" : "SKProductsRequestInternal",
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "NSSet *",
+        "size" : 8,
+        "offset" : 8,
+        "type" : "ivar",
+        "name" : "_productIdentifiers"
+      }
+    ],
+    "type" : "class",
+    "superClassName" : "NSObject"
+  }
+}

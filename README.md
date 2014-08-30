@@ -39,10 +39,12 @@ LLDB commands and summaries
 - StoreKit:
     - SKDownload (not tested!)
     - SKPayment
+    - SKPaymentQueue
     - SKPaymentTransaction
     - SKProduct
     - SKProductsRequest
     - SKProductsResponse
+    - SKReceiptRefreshRequest (doesn't return anything)
     - SKRequest
 
 ## Summaries that I've failed to implement:

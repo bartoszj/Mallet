@@ -22,27 +22,28 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import NSObject
 
 
 class SKDownload_SynthProvider(NSObject.NSObject_SynthProvider):
-    # SKDownload:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
-    #
-    # NSString *_contentIdentifier                                            4 = 0x04 / 4            8 = 0x08 / 8
-    # long long _contentLength                                                8 = 0x08 / 8           16 = 0x10 / 8
-    # NSURL *_contentURL                                                     16 = 0x10 / 4           24 = 0x18 / 8
-    # NSNumber *_downloadID                                                  20 = 0x14 / 4           32 = 0x20 / 8
-    # NSInteger _downloadState                                               24 = 0x18 / 4           40 = 0x28 / 8
-    # NSError *_error                                                        28 = 0x1c / 4           48 = 0x30 / 8
-    # float _progress                                                        32 = 0x20 / 4           56 = 0x38 / 4 + 4
-    # double _timeRemaining                                                  36 = 0x24 / 8           64 = 0x40 / 8
-    # SKPaymentTransaction *_transaction                                     44 = 0x2c / 4           72 = 0x48 / 8
-    # NSString *_version                                                     48 = 0x30 / 4           80 = 0x50 / 8
+    # Class: SKDownload
+    # Super class: NSObject
+    # Name:                                   armv7                 i386                  arm64                 x86_64
+    # NSString * _contentIdentifier         4 (0x004) / 4         4 (0x004) / 4         8 (0x008) / 8         8 (0x008) / 8
+    # long long _contentLength              8 (0x008) / 8         8 (0x008) / 8        16 (0x010) / 8        16 (0x010) / 8
+    # NSURL * _contentURL                  16 (0x010) / 4        16 (0x010) / 4        24 (0x018) / 8        24 (0x018) / 8
+    # NSNumber * _downloadID               20 (0x014) / 4        20 (0x014) / 4        32 (0x020) / 8        32 (0x020) / 8
+    # NSInteger _downloadState             24 (0x018) / 4        24 (0x018) / 4        40 (0x028) / 8        40 (0x028) / 8
+    # NSError * _error                     28 (0x01C) / 4        28 (0x01C) / 4        48 (0x030) / 8        48 (0x030) / 8
+    # float _progress                      32 (0x020) / 4        32 (0x020) / 4        56 (0x038) / 4  + 4   56 (0x038) / 4  + 4
+    # double _timeRemaining                36 (0x024) / 8        36 (0x024) / 8        64 (0x040) / 8        64 (0x040) / 8
+    # SKPaymentTransaction * _transaction  44 (0x02C) / 4        44 (0x02C) / 4        72 (0x048) / 8        72 (0x048) / 8
+    # NSString * _version                  48 (0x030) / 4        48 (0x030) / 4        80 (0x050) / 8        80 (0x050) / 8
 
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(SKDownload_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(SKDownload_SynthProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "SKDownload"
 
         self.content_identifier = None
         self.content_length = None
@@ -52,132 +53,61 @@ class SKDownload_SynthProvider(NSObject.NSObject_SynthProvider):
         self.progress = None
         self.time_remaining = None
         self.version = None
-        
-        self.update()
 
-    def update(self):
-        self.content_identifier = None
-        self.content_length = None
-        self.content_url = None
-        self.download_id = None
-        self.download_state = None
-        self.progress = None
-        self.time_remaining = None
-        self.version = None
-        super(SKDownload_SynthProvider, self).update()
-
-    # _contentIdentifier (self->_contentIdentifier)
     def get_content_identifier(self):
         if self.content_identifier:
             return self.content_identifier
 
-        self.content_identifier = self.value_obj.CreateChildAtOffset("contentIdentifier",
-                                                                     1 * self.sys_params.pointer_size,
-                                                                     self.sys_params.types_cache.NSString)
+        self.content_identifier = self.get_child_value("_contentIdentifier")
         return self.content_identifier
 
-    # _contentLength (self->_contentLength)
     def get_content_length(self):
         if self.content_length:
             return self.content_length
 
-        self.content_length = self.value_obj.CreateChildAtOffset("contentLength",
-                                                                 2 * self.sys_params.pointer_size,
-                                                                 self.sys_params.types_cache.longlong)
+        self.content_length = self.get_child_value("_contentLength")
         return self.content_length
 
-    # _contentURL (self->_contentURL)
     def get_content_url(self):
         if self.content_url:
             return self.content_url
 
-        if self.sys_params.is_64_bit:
-            offset = 3 * self.sys_params.pointer_size
-        else:
-            offset = 4 * self.sys_params.pointer_size
-
-        self.content_url = self.value_obj.CreateChildAtOffset("contentURL",
-                                                              offset,
-                                                              self.sys_params.types_cache.longlong)
+        self.content_url = self.get_child_value("_contentURL")
         return self.content_url
 
-    # _downloadID (self->_downloadID)
     def get_download_id(self):
         if self.download_id:
             return self.download_id
 
-        if self.sys_params.is_64_bit:
-            offset = 4 * self.sys_params.pointer_size
-        else:
-            offset = 5 * self.sys_params.pointer_size
-
-        self.download_id = self.value_obj.CreateChildAtOffset("downloadID",
-                                                              offset,
-                                                              self.sys_params.types_cache.NSNumber)
+        self.download_id = self.get_child_value("_downloadID")
         return self.download_id
 
-    # _downloadState (self->_downloadState)
     def get_download_state(self):
         if self.download_state:
             return self.download_state
 
-        if self.sys_params.is_64_bit:
-            offset = 5 * self.sys_params.pointer_size
-        else:
-            offset = 4 * self.sys_params.pointer_size
-
-        self.download_state = self.value_obj.CreateChildAtOffset("downloadState",
-                                                                 offset,
-                                                                 self.sys_params.types_cache.int)
-
+        self.download_state = self.get_child_value("_downloadState")
         return self.download_state
 
-    # _progress (self->_progress)
     def get_progress(self):
         if self.progress:
             return self.progress
 
-        if self.sys_params.is_64_bit:
-            offset = 7 * self.sys_params.pointer_size
-        else:
-            offset = 8 * self.sys_params.pointer_size
-
-        self.progress = self.value_obj.CreateChildAtOffset("progress",
-                                                           offset,
-                                                           self.sys_params.types_cache.float)
-
+        self.progress = self.get_child_value("_progress")
         return self.progress
 
-    # _timeRemaining (self->_timeRemaining)
     def get_time_remaining(self):
         if self.time_remaining:
             return self.time_remaining
 
-        if self.sys_params.is_64_bit:
-            offset = 8 * self.sys_params.pointer_size
-        else:
-            offset = 9 * self.sys_params.pointer_size
-
-        self.time_remaining = self.value_obj.CreateChildAtOffset("timeRemaining",
-                                                                 offset,
-                                                                 self.sys_params.types_cache.double)
-
+        self.time_remaining = self.get_child_value("_timeRemaining")
         return self.time_remaining
 
-    # _version (self->_version)
     def get_version(self):
         if self.version:
             return self.version
 
-        if self.sys_params.is_64_bit:
-            offset = 10 * self.sys_params.pointer_size
-        else:
-            offset = 12 * self.sys_params.pointer_size
-
-        self.version = self.value_obj.CreateChildAtOffset("version",
-                                                          offset,
-                                                          self.sys_params.types_cache.NSString)
-
+        self.version = self.get_child_value("_version")
         return self.version
 
     def summary(self):
@@ -188,7 +118,7 @@ class SKDownload_SynthProvider(NSObject.NSObject_SynthProvider):
 
 
 def SKDownload_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, SKDownload_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, SKDownload_SynthProvider)
 
 
 def __lldb_init_module(debugger, internal_dict):

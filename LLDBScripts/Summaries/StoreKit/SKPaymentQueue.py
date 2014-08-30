@@ -3,7 +3,7 @@
 
 # The MIT License (MIT)
 #
-# Copyright (c) 2013 Bartosz Janda
+# Copyright (c) 2014 Bartosz Janda
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
 # this software and associated documentation files (the "Software"), to deal in
@@ -24,24 +24,18 @@
 
 import Helpers
 import NSObject
-import SKPaymentTransactionInternal
-
-SKPaymentTransactionStatePurchasing = 0
-SKPaymentTransactionStatePurchased = 1
-SKPaymentTransactionStateFailed = 2
-SKPaymentTransactionStateRestored = 3
-SKPaymentTransactionStateDeferred = 4
+import SKPaymentQueueInternal
 
 
-class SKPaymentTransaction_SynthProvider(NSObject.NSObject_SynthProvider):
-    # Class: SKPaymentTransaction
+class SKPaymentQueue_SynthProvider(NSObject.NSObject_SynthProvider):
+    # Class: SKPaymentQueue
     # Super class: NSObject
     # Name:            armv7                 i386                  arm64                 x86_64
     # id _internal   4 (0x004) / 4         4 (0x004) / 4         8 (0x008) / 8         8 (0x008) / 8
 
     def __init__(self, value_obj, internal_dict):
-        super(SKPaymentTransaction_SynthProvider, self).__init__(value_obj, internal_dict)
-        self.type_name = "SKPaymentTransaction"
+        super(SKPaymentQueue_SynthProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "SKPaymentQueue"
 
         self.internal = None
         self.internal_provider = None
@@ -58,41 +52,34 @@ class SKPaymentTransaction_SynthProvider(NSObject.NSObject_SynthProvider):
             return self.internal_provider
 
         internal = self.get_internal()
-        self.internal_provider = SKPaymentTransactionInternal.SKPaymentTransactionInternal_SynthProvider(internal, self.internal_dict)
+        self.internal_provider = SKPaymentQueueInternal.SKPaymentQueueInternal_SynthProvider(internal, self.internal_dict)
         return self.internal_provider
 
     def summary(self):
-        # transaction_identifier_value = self.get_internal_provider().get_transaction_identifier().GetSummary()
-        # transaction_identifier_summary = transaction_identifier_value
+        local_transactions = self.get_internal_provider().get_local_transactions()
+        local_transactions_count = local_transactions.GetNumChildren()
+        local_transactions_summary = "localTransactions={}".format(local_transactions_count)
 
-        transaction_state_value = self.get_internal_provider().get_transaction_state().GetValueAsUnsigned()
-        transaction_state_value_name = "Unknown"
-        if transaction_state_value == SKPaymentTransactionStatePurchasing:
-            transaction_state_value_name = "Purchasing"
-        elif transaction_state_value == SKPaymentTransactionStatePurchased:
-            transaction_state_value_name = "Purchased"
-        elif transaction_state_value == SKPaymentTransactionStateFailed:
-            transaction_state_value_name = "Failed"
-        elif transaction_state_value == SKPaymentTransactionStateRestored:
-            transaction_state_value_name = "Restored"
-        elif transaction_state_value == SKPaymentTransactionStateDeferred:
-            transaction_state_value_name = "Deferred"
+        transactions = self.get_internal_provider().get_transactions()
+        transactions_count = transactions.GetNumChildren()
+        transactions_summary = "transactions={}".format(transactions_count)
 
-        transaction_state_summary = "state={}".format(transaction_state_value_name)
-
-        # Summaries
-        summaries = [transaction_state_summary]
+        summaries = []
+        if local_transactions_count != 0:
+            summaries.append(local_transactions_summary)
+        if transactions_count != 0:
+            summaries.append(transactions_summary)
 
         summary = ", ".join(summaries)
         return summary
 
 
-def SKPaymentTransaction_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, SKPaymentTransaction_SynthProvider)
+def SKPaymentQueue_SummaryProvider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, SKPaymentQueue_SynthProvider)
 
 
 def __lldb_init_module(debugger, internal_dict):
-    debugger.HandleCommand("type summary add -F SKPaymentTransaction.SKPaymentTransaction_SummaryProvider \
+    debugger.HandleCommand("type summary add -F SKPaymentQueue.SKPaymentQueue_SummaryProvider \
                             --category StoreKit \
-                            SKPaymentTransaction")
+                            SKPaymentQueue")
     debugger.HandleCommand("type category enable StoreKit")

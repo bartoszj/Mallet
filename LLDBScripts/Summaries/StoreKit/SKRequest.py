@@ -22,43 +22,45 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import NSObject
+import SKRequestInternal
 
 
 class SKRequest_SynthProvider(NSObject.NSObject_SynthProvider):
-    # SKRequest:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
-    #
-    # SKRequestInternal *_requestInternal                                     4 = 0x04 / 4            8 = 0x08 / 8
+    # Class: SKRequest
+    # Super class: NSObject
+    # Name:                   armv7                 i386                  arm64                 x86_64
+    # id _requestInternal   4 (0x004) / 4         4 (0x004) / 4         8 (0x008) / 8         8 (0x008) / 8
 
-    # SKRequestInternal:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
-    #
-    # NSInteger _backgroundTaskIdentifier                                     4 = 0x04 / 4            8 = 0x08 / 8
-    # SKPaymentQueueClient *_client                                           8 = 0x08 / 4           16 = 0x10 / 8
-    # SKXPCConnection *_connection                                           12 = 0x0c / 4           24 = 0x18 / 8
-    # id<SKRequestDelegate> _delegate                                        16 = 0x10 / 4           32 = 0x20 / 8
-    # int _state                                                             20 = 0x14 / 4           40 = 0x28 / 4
-
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(SKRequest_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(SKRequest_SynthProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "SKRequest"
 
         self.request_internal = None
+        self.request_internal_provider = None
 
-        self.update()
+    def get_request_internal(self):
+        if self.request_internal:
+            return self.request_internal
 
-    def update(self):
-        # _requestInternal (self->_requestInternal)
-        self.request_internal = self.value_obj.GetChildMemberWithName("_requestInternal")
-        super(SKRequest_SynthProvider, self).update()
+        self.request_internal = self.get_child_value("_requestInternal")
+        return self.request_internal
+
+    def get_request_internal_provider(self):
+        if self.request_internal_provider:
+            return self.request_internal_provider
+
+        request_internal = self.get_request_internal()
+        self.request_internal_provider = SKRequestInternal.SKRequestInternal_SynthProvider(request_internal, self.internal_dict)
+        return self.request_internal_provider
 
     def summary(self):
         return ""
 
 
 def SKRequest_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, SKRequest_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, SKRequest_SynthProvider)
 
 
 def __lldb_init_module(debugger, internal_dict):

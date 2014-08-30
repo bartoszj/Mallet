@@ -1,0 +1,77 @@
+{
+  "arm64":{
+    "className":"SKReceiptRefreshRequest",
+    "ivars":[
+      {
+        "alignment":3,
+        "ivarType":"NSDictionary *",
+        "name":"_properties",
+        "offset":16,
+        "size":8,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"SKRequest",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"SKReceiptRefreshRequest",
+    "ivars":[
+      {
+        "alignment":2,
+        "ivarType":"NSDictionary *",
+        "name":"_properties",
+        "offset":8,
+        "size":4,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"SKRequest",
+    "type":"class"
+  },
+  "armv7s":{
+    "className":"SKReceiptRefreshRequest",
+    "ivars":[
+      {
+        "alignment":2,
+        "ivarType":"NSDictionary *",
+        "name":"_properties",
+        "offset":8,
+        "size":4,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"SKRequest",
+    "type":"class"
+  },
+  "i386":{
+    "className":"SKReceiptRefreshRequest",
+    "ivars":[
+      {
+        "alignment":2,
+        "ivarType":"NSDictionary *",
+        "name":"_properties",
+        "offset":8,
+        "size":4,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"SKRequest",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"SKReceiptRefreshRequest",
+    "ivars":[
+      {
+        "alignment":3,
+        "ivarType":"NSDictionary *",
+        "name":"_properties",
+        "offset":16,
+        "size":8,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"SKRequest",
+    "type":"class"
+  }
+}

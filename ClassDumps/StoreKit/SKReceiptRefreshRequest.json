@@ -1,0 +1,372 @@
+{
+  "i386" : {
+    "properties" : [
+      {
+        "name" : "receiptProperties",
+        "setter" : "setReceiptProperties:",
+        "getter" : "receiptProperties",
+        "type" : "property",
+        "propertyType" : "NSDictionary *"
+      }
+    ],
+    "className" : "SKReceiptRefreshRequest",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)receiptProperties",
+        "type" : "method",
+        "name" : "receiptProperties",
+        "address" : 49137
+      },
+      {
+        "declaration" : "(BOOL)_wantsVPP",
+        "type" : "method",
+        "name" : "_wantsVPP",
+        "address" : 49057
+      },
+      {
+        "declaration" : "(BOOL)_wantsRevoked",
+        "type" : "method",
+        "name" : "_wantsRevoked",
+        "address" : 48977
+      },
+      {
+        "declaration" : "(BOOL)_wantsExpired",
+        "type" : "method",
+        "name" : "_wantsExpired",
+        "address" : 48897
+      },
+      {
+        "declaration" : "(void)_sendXPCMessage",
+        "type" : "method",
+        "name" : "_sendXPCMessage",
+        "address" : 48374
+      },
+      {
+        "declaration" : "(void)_handleReply:(id)arg1",
+        "type" : "method",
+        "name" : "_handleReply:",
+        "address" : 47780
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 47696
+      },
+      {
+        "declaration" : "(id)initWithReceiptProperties:(id)arg1",
+        "type" : "method",
+        "name" : "initWithReceiptProperties:",
+        "address" : 47616
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "NSDictionary *",
+        "size" : 4,
+        "offset" : 8,
+        "type" : "ivar",
+        "name" : "_properties"
+      }
+    ],
+    "superClassName" : "SKRequest"
+  },
+  "x86_64" : {
+    "properties" : [
+      {
+        "propertyType" : "NSDictionary *",
+        "getter" : "receiptProperties",
+        "type" : "property",
+        "name" : "receiptProperties",
+        "setter" : "setReceiptProperties:"
+      }
+    ],
+    "className" : "SKReceiptRefreshRequest",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)receiptProperties",
+        "type" : "method",
+        "name" : "receiptProperties",
+        "address" : 43700
+      },
+      {
+        "declaration" : "(_Bool)_wantsVPP",
+        "type" : "method",
+        "name" : "_wantsVPP",
+        "address" : 43641
+      },
+      {
+        "declaration" : "(_Bool)_wantsRevoked",
+        "type" : "method",
+        "name" : "_wantsRevoked",
+        "address" : 43582
+      },
+      {
+        "declaration" : "(_Bool)_wantsExpired",
+        "type" : "method",
+        "name" : "_wantsExpired",
+        "address" : 43523
+      },
+      {
+        "declaration" : "(void)_sendXPCMessage",
+        "type" : "method",
+        "name" : "_sendXPCMessage",
+        "address" : 43099
+      },
+      {
+        "declaration" : "(void)_handleReply:(id)arg1",
+        "type" : "method",
+        "name" : "_handleReply:",
+        "address" : 42556
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 42482
+      },
+      {
+        "declaration" : "(id)initWithReceiptProperties:(id)arg1",
+        "type" : "method",
+        "name" : "initWithReceiptProperties:",
+        "address" : 42416
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "NSDictionary *",
+        "size" : 8,
+        "offset" : 16,
+        "type" : "ivar",
+        "name" : "_properties"
+      }
+    ],
+    "superClassName" : "SKRequest"
+  },
+  "armv7" : {
+    "properties" : [
+      {
+        "name" : "receiptProperties",
+        "propertyType" : "NSDictionary *",
+        "getter" : "receiptProperties",
+        "type" : "property",
+        "setter" : "setReceiptProperties:"
+      }
+    ],
+    "className" : "SKReceiptRefreshRequest",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)receiptProperties",
+        "type" : "method",
+        "name" : "receiptProperties",
+        "address" : 39157
+      },
+      {
+        "declaration" : "(BOOL)_wantsVPP",
+        "type" : "method",
+        "name" : "_wantsVPP",
+        "address" : 39093
+      },
+      {
+        "declaration" : "(BOOL)_wantsRevoked",
+        "type" : "method",
+        "name" : "_wantsRevoked",
+        "address" : 39029
+      },
+      {
+        "declaration" : "(BOOL)_wantsExpired",
+        "type" : "method",
+        "name" : "_wantsExpired",
+        "address" : 38965
+      },
+      {
+        "declaration" : "(void)_sendXPCMessage",
+        "type" : "method",
+        "name" : "_sendXPCMessage",
+        "address" : 38593
+      },
+      {
+        "declaration" : "(void)_handleReply:(id)arg1",
+        "type" : "method",
+        "name" : "_handleReply:",
+        "address" : 38121
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 38045
+      },
+      {
+        "declaration" : "(id)initWithReceiptProperties:(id)arg1",
+        "type" : "method",
+        "name" : "initWithReceiptProperties:",
+        "address" : 37981
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "NSDictionary *",
+        "size" : 4,
+        "offset" : 8,
+        "type" : "ivar",
+        "name" : "_properties"
+      }
+    ],
+    "superClassName" : "SKRequest"
+  },
+  "armv7s" : {
+    "properties" : [
+      {
+        "getter" : "receiptProperties",
+        "setter" : "setReceiptProperties:",
+        "type" : "property",
+        "name" : "receiptProperties",
+        "propertyType" : "NSDictionary *"
+      }
+    ],
+    "className" : "SKReceiptRefreshRequest",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)receiptProperties",
+        "type" : "method",
+        "name" : "receiptProperties",
+        "address" : 39197
+      },
+      {
+        "declaration" : "(BOOL)_wantsVPP",
+        "type" : "method",
+        "name" : "_wantsVPP",
+        "address" : 39133
+      },
+      {
+        "declaration" : "(BOOL)_wantsRevoked",
+        "type" : "method",
+        "name" : "_wantsRevoked",
+        "address" : 39069
+      },
+      {
+        "declaration" : "(BOOL)_wantsExpired",
+        "type" : "method",
+        "name" : "_wantsExpired",
+        "address" : 39005
+      },
+      {
+        "declaration" : "(void)_sendXPCMessage",
+        "type" : "method",
+        "name" : "_sendXPCMessage",
+        "address" : 38637
+      },
+      {
+        "declaration" : "(void)_handleReply:(id)arg1",
+        "type" : "method",
+        "name" : "_handleReply:",
+        "address" : 38165
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 38089
+      },
+      {
+        "declaration" : "(id)initWithReceiptProperties:(id)arg1",
+        "type" : "method",
+        "name" : "initWithReceiptProperties:",
+        "address" : 38025
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "NSDictionary *",
+        "size" : 4,
+        "offset" : 8,
+        "type" : "ivar",
+        "name" : "_properties"
+      }
+    ],
+    "superClassName" : "SKRequest"
+  },
+  "arm64" : {
+    "properties" : [
+      {
+        "type" : "property",
+        "propertyType" : "NSDictionary *",
+        "name" : "receiptProperties",
+        "getter" : "receiptProperties",
+        "setter" : "setReceiptProperties:"
+      }
+    ],
+    "className" : "SKReceiptRefreshRequest",
+    "instanceMethods" : [
+      {
+        "declaration" : "(id)receiptProperties",
+        "type" : "method",
+        "name" : "receiptProperties",
+        "address" : 46668
+      },
+      {
+        "declaration" : "(_Bool)_wantsVPP",
+        "type" : "method",
+        "name" : "_wantsVPP",
+        "address" : 46600
+      },
+      {
+        "declaration" : "(_Bool)_wantsRevoked",
+        "type" : "method",
+        "name" : "_wantsRevoked",
+        "address" : 46532
+      },
+      {
+        "declaration" : "(_Bool)_wantsExpired",
+        "type" : "method",
+        "name" : "_wantsExpired",
+        "address" : 46464
+      },
+      {
+        "declaration" : "(void)_sendXPCMessage",
+        "type" : "method",
+        "name" : "_sendXPCMessage",
+        "address" : 46032
+      },
+      {
+        "declaration" : "(void)_handleReply:(id)arg1",
+        "type" : "method",
+        "name" : "_handleReply:",
+        "address" : 45432
+      },
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 45332
+      },
+      {
+        "declaration" : "(id)initWithReceiptProperties:(id)arg1",
+        "type" : "method",
+        "name" : "initWithReceiptProperties:",
+        "address" : 45244
+      }
+    ],
+    "type" : "class",
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "NSDictionary *",
+        "size" : 8,
+        "offset" : 16,
+        "type" : "ivar",
+        "name" : "_properties"
+      }
+    ],
+    "superClassName" : "SKRequest"
+  }
+}

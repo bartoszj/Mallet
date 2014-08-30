@@ -22,157 +22,64 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import NSObject
+import SKProductInternal
 
 
 class SKProduct_SynthProvider(NSObject.NSObject_SynthProvider):
-    # SKProduct:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
-    #
-    # SKProductInternal *_internal                                            4 = 0x04 / 4            8 = 0x08 / 8
+    # Class: SKProduct
+    # Super class: NSObject
+    # Name:            armv7                 i386                  arm64                 x86_64
+    # id _internal   4 (0x004) / 4         4 (0x004) / 4         8 (0x008) / 8         8 (0x008) / 8
 
-    # SKProductInternal:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
-    #
-    # NSString *_contentVersion                                               4 = 0x04 / 4            8 = 0x08 / 8
-    # BOOL _downloadable                                                      8 = 0x08 / 1 + 3       16 = 0x10 / 1 + 7
-    # NSArray *_downloadContentLengths                                       12 = 0x0c / 4           24 = 0x18 / 8
-    # NSString *_localeIdentifier                                            16 = 0x10 / 4           32 = 0x20 / 8
-    # NSString *_localizedDescription                                        20 = 0x14 / 4           40 = 0x28 / 8
-    # NSString *_localizedTitle                                              24 = 0x18 / 4           48 = 0x30 / 8
-    # NSDecimalNumber *_price                                                28 = 0x1c / 4           56 = 0x38 / 8
-    # NSLocale *_priceLocale                                                 32 = 0x20 / 4           64 = 0x40 / 8
-    # NSString *_productIdentifier                                           36 = 0x24 / 4           72 = 0x48 / 8
-
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(SKProduct_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(SKProduct_SynthProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "SKProduct"
 
         self.internal = None
-        self.content_version = None
-        self.downloadable = None
-        self.locale_identifier = None
-        self.localized_description = None
-        self.localized_title = None
-        self.price = None
-        self.product_identifier = None
+        self.internal_provider = None
 
-        self.update()
-
-    def update(self):
-        # _internal (self->_internal)
-        self.internal = self.value_obj.GetChildMemberWithName("_internal")
-        self.content_version = None
-        self.downloadable = None
-        self.locale_identifier = None
-        self.localized_description = None
-        self.localized_title = None
-        self.product_identifier = None
-        self.price = None
-        super(SKProduct_SynthProvider, self).update()
-
-    # _contentVersion (self->_internal->_contentVersion)
-    def get_content_version(self):
-        if self.content_version:
-            return self.content_version
-
+    def get_internal(self):
         if self.internal:
-            self.content_version = self.internal.CreateChildAtOffset("contentVersion",
-                                                                     1 * self.sys_params.pointer_size,
-                                                                     self.sys_params.types_cache.NSString)
-        return self.content_version
+            return self.internal
 
-    # _downloadable (self->_internal->_downloadable)
-    def get_downloadable(self):
-        if self.downloadable:
-            return self.downloadable
+        self.internal = self.get_child_value("_internal")
+        return self.internal
 
-        if self.internal:
-            self.downloadable = self.internal.CreateChildAtOffset("downloadable",
-                                                                  2 * self.sys_params.pointer_size,
-                                                                  self.sys_params.types_cache.char)
-        return self.downloadable
+    def get_internal_provider(self):
+        if self.internal_provider:
+            return self.internal_provider
 
-    # _localeIdentifier (self->_internal->_localeIdentifier)
-    def get_locale_identifier(self):
-        if self.locale_identifier:
-            return self.locale_identifier
-
-        if self.internal:
-            self.locale_identifier = self.internal.CreateChildAtOffset("localeIdentifier",
-                                                                       4 * self.sys_params.pointer_size,
-                                                                       self.sys_params.types_cache.NSString)
-        return self.locale_identifier
-
-    # _localizedDescription (self->_internal->_localizedDescription)
-    def get_localized_description(self):
-        if self.localized_description:
-            return self.localized_description
-
-        if self.internal:
-            self.localized_description = self.internal.CreateChildAtOffset("localizedDescription",
-                                                                           5 * self.sys_params.pointer_size,
-                                                                           self.sys_params.types_cache.NSString)
-        return self.localized_description
-
-    # _localizedTitle (self->_internal->_localizedTitle)
-    def get_localized_title(self):
-        if self.localized_title:
-            return self.localized_title
-
-        if self.internal:
-            self.localized_title = self.internal.CreateChildAtOffset("localizedTitle",
-                                                                     6 * self.sys_params.pointer_size,
-                                                                     self.sys_params.types_cache.NSString)
-        return self.localized_title
-
-    # _price (self->internal->_price)
-    def get_price(self):
-        if self.price:
-            return self.price
-
-        if self.internal:
-            self.price = self.internal.CreateChildAtOffset("price",
-                                                           7 * self.sys_params.pointer_size,
-                                                           self.sys_params.types_cache.NSDecimalNumber)
-        return self.price
-
-    # _productIdentifier (self->_internal->_productIdentifier)
-    def get_product_identifier(self):
-        if self.product_identifier:
-            return self.product_identifier
-
-        if self.internal:
-            self.product_identifier = self.internal.CreateChildAtOffset("productIdentifier",
-                                                                        9 * self.sys_params.pointer_size,
-                                                                        self.sys_params.types_cache.NSString)
-        return self.product_identifier
+        internal = self.get_internal()
+        self.internal_provider = SKProductInternal.SKProductInternal_SynthProvider(internal, self.internal_dict)
+        return self.internal_provider
 
     def summary(self):
-        content_version_value = self.get_content_version().GetSummary()
+        content_version_value = self.get_internal_provider().get_content_version().GetSummary()
         content_version_summary = None
         if content_version_value:
             content_version_summary = "version={}".format(content_version_value[2:-1])
 
-        downloadable_value = self.get_downloadable().GetValueAsUnsigned()
+        downloadable_value = self.get_internal_provider().get_downloadable().GetValueAsUnsigned()
         downloadable_summary = "downloadable={}".format("YES" if downloadable_value != 0 else "NO")
 
-        #locale_identifier_value = self.get_locale_identifier().GetSummary()
-        #locale_identifier_summary = None
-        #if locale_identifier_value:
+        # locale_identifier_value = self.get_internal_provider().get_locale_identifier().GetSummary()
+        # locale_identifier_summary = None
+        # if locale_identifier_value:
         #    locale_identifier_summary = "locale = {}".format(locale_identifier_value[2:-1])
 
-        #localized_description_value = self.get_localized_description().GetSummary()
-        #localized_description_summary = "description = {}".format(localized_description_value)
+        # localized_description_value = self.get_internal_provider().get_localized_description().GetSummary()
+        # localized_description_summary = "description = {}".format(localized_description_value)
 
-        localized_title_value = self.get_localized_title().GetSummary()
+        localized_title_value = self.get_internal_provider().get_localized_title().GetSummary()
         localized_title_summary = localized_title_value
 
-        price_value = self.get_price().GetSummary()
+        price_value = self.get_internal_provider().get_price().GetSummary()
         price_summary = "price={}".format(price_value)
 
-        #product_identifier_value = self.get_product_identifier().GetSummary()
-        #product_identifier_summary = "productId = {}".format(product_identifier_value)
+        # product_identifier_value = self.get_internal_provider().get_product_identifier().GetSummary()
+        # product_identifier_summary = "productId = {}".format(product_identifier_value)
 
         summaries = []
         if localized_title_value:
@@ -188,7 +95,7 @@ class SKProduct_SynthProvider(NSObject.NSObject_SynthProvider):
 
 
 def SKProduct_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, SKProduct_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, SKProduct_SynthProvider)
 
 
 def __lldb_init_module(debugger, internal_dict):

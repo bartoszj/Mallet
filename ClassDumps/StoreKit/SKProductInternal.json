@@ -1,0 +1,437 @@
+{
+  "i386" : {
+    "instanceMethods" : [
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 37283
+      }
+    ],
+    "className" : "SKProductInternal",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "NSString *",
+        "size" : 4,
+        "offset" : 4,
+        "type" : "ivar",
+        "name" : "_contentVersion"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 8,
+        "type" : "ivar",
+        "name" : "_downloadable"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSArray *",
+        "size" : 4,
+        "offset" : 12,
+        "type" : "ivar",
+        "name" : "_downloadContentLengths"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSString *",
+        "size" : 4,
+        "offset" : 16,
+        "type" : "ivar",
+        "name" : "_localeIdentifier"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSString *",
+        "size" : 4,
+        "offset" : 20,
+        "type" : "ivar",
+        "name" : "_localizedDescription"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSString *",
+        "size" : 4,
+        "offset" : 24,
+        "type" : "ivar",
+        "name" : "_localizedTitle"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSDecimalNumber *",
+        "size" : 4,
+        "offset" : 28,
+        "type" : "ivar",
+        "name" : "_price"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSLocale *",
+        "size" : 4,
+        "offset" : 32,
+        "type" : "ivar",
+        "name" : "_priceLocale"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSString *",
+        "size" : 4,
+        "offset" : 36,
+        "type" : "ivar",
+        "name" : "_productIdentifier"
+      }
+    ],
+    "type" : "class",
+    "superClassName" : "NSObject"
+  },
+  "x86_64" : {
+    "instanceMethods" : [
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 33304
+      }
+    ],
+    "className" : "SKProductInternal",
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "NSString *",
+        "size" : 8,
+        "offset" : 8,
+        "type" : "ivar",
+        "name" : "_contentVersion"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 16,
+        "type" : "ivar",
+        "name" : "_downloadable"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSArray *",
+        "size" : 8,
+        "offset" : 24,
+        "type" : "ivar",
+        "name" : "_downloadContentLengths"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSString *",
+        "size" : 8,
+        "offset" : 32,
+        "type" : "ivar",
+        "name" : "_localeIdentifier"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSString *",
+        "size" : 8,
+        "offset" : 40,
+        "type" : "ivar",
+        "name" : "_localizedDescription"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSString *",
+        "size" : 8,
+        "offset" : 48,
+        "type" : "ivar",
+        "name" : "_localizedTitle"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSDecimalNumber *",
+        "size" : 8,
+        "offset" : 56,
+        "type" : "ivar",
+        "name" : "_price"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSLocale *",
+        "size" : 8,
+        "offset" : 64,
+        "type" : "ivar",
+        "name" : "_priceLocale"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSString *",
+        "size" : 8,
+        "offset" : 72,
+        "type" : "ivar",
+        "name" : "_productIdentifier"
+      }
+    ],
+    "type" : "class",
+    "superClassName" : "NSObject"
+  },
+  "armv7" : {
+    "instanceMethods" : [
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 29765
+      }
+    ],
+    "className" : "SKProductInternal",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "NSString *",
+        "size" : 4,
+        "offset" : 4,
+        "type" : "ivar",
+        "name" : "_contentVersion"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 8,
+        "type" : "ivar",
+        "name" : "_downloadable"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSArray *",
+        "size" : 4,
+        "offset" : 12,
+        "type" : "ivar",
+        "name" : "_downloadContentLengths"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSString *",
+        "size" : 4,
+        "offset" : 16,
+        "type" : "ivar",
+        "name" : "_localeIdentifier"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSString *",
+        "size" : 4,
+        "offset" : 20,
+        "type" : "ivar",
+        "name" : "_localizedDescription"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSString *",
+        "size" : 4,
+        "offset" : 24,
+        "type" : "ivar",
+        "name" : "_localizedTitle"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSDecimalNumber *",
+        "size" : 4,
+        "offset" : 28,
+        "type" : "ivar",
+        "name" : "_price"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSLocale *",
+        "size" : 4,
+        "offset" : 32,
+        "type" : "ivar",
+        "name" : "_priceLocale"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSString *",
+        "size" : 4,
+        "offset" : 36,
+        "type" : "ivar",
+        "name" : "_productIdentifier"
+      }
+    ],
+    "type" : "class",
+    "superClassName" : "NSObject"
+  },
+  "armv7s" : {
+    "instanceMethods" : [
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 29833
+      }
+    ],
+    "className" : "SKProductInternal",
+    "ivars" : [
+      {
+        "alignment" : 2,
+        "ivarType" : "NSString *",
+        "size" : 4,
+        "offset" : 4,
+        "type" : "ivar",
+        "name" : "_contentVersion"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "char",
+        "size" : 1,
+        "offset" : 8,
+        "type" : "ivar",
+        "name" : "_downloadable"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSArray *",
+        "size" : 4,
+        "offset" : 12,
+        "type" : "ivar",
+        "name" : "_downloadContentLengths"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSString *",
+        "size" : 4,
+        "offset" : 16,
+        "type" : "ivar",
+        "name" : "_localeIdentifier"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSString *",
+        "size" : 4,
+        "offset" : 20,
+        "type" : "ivar",
+        "name" : "_localizedDescription"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSString *",
+        "size" : 4,
+        "offset" : 24,
+        "type" : "ivar",
+        "name" : "_localizedTitle"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSDecimalNumber *",
+        "size" : 4,
+        "offset" : 28,
+        "type" : "ivar",
+        "name" : "_price"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSLocale *",
+        "size" : 4,
+        "offset" : 32,
+        "type" : "ivar",
+        "name" : "_priceLocale"
+      },
+      {
+        "alignment" : 2,
+        "ivarType" : "NSString *",
+        "size" : 4,
+        "offset" : 36,
+        "type" : "ivar",
+        "name" : "_productIdentifier"
+      }
+    ],
+    "type" : "class",
+    "superClassName" : "NSObject"
+  },
+  "arm64" : {
+    "instanceMethods" : [
+      {
+        "declaration" : "(void)dealloc",
+        "type" : "method",
+        "name" : "dealloc",
+        "address" : 35528
+      }
+    ],
+    "className" : "SKProductInternal",
+    "ivars" : [
+      {
+        "alignment" : 3,
+        "ivarType" : "NSString *",
+        "size" : 8,
+        "offset" : 8,
+        "type" : "ivar",
+        "name" : "_contentVersion"
+      },
+      {
+        "alignment" : 0,
+        "ivarType" : "_Bool",
+        "size" : 1,
+        "offset" : 16,
+        "type" : "ivar",
+        "name" : "_downloadable"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSArray *",
+        "size" : 8,
+        "offset" : 24,
+        "type" : "ivar",
+        "name" : "_downloadContentLengths"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSString *",
+        "size" : 8,
+        "offset" : 32,
+        "type" : "ivar",
+        "name" : "_localeIdentifier"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSString *",
+        "size" : 8,
+        "offset" : 40,
+        "type" : "ivar",
+        "name" : "_localizedDescription"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSString *",
+        "size" : 8,
+        "offset" : 48,
+        "type" : "ivar",
+        "name" : "_localizedTitle"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSDecimalNumber *",
+        "size" : 8,
+        "offset" : 56,
+        "type" : "ivar",
+        "name" : "_price"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSLocale *",
+        "size" : 8,
+        "offset" : 64,
+        "type" : "ivar",
+        "name" : "_priceLocale"
+      },
+      {
+        "alignment" : 3,
+        "ivarType" : "NSString *",
+        "size" : 8,
+        "offset" : 72,
+        "type" : "ivar",
+        "name" : "_productIdentifier"
+      }
+    ],
+    "type" : "class",
+    "superClassName" : "NSObject"
+  }
+}

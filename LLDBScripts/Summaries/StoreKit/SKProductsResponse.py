@@ -22,70 +22,45 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import summary_helpers
+import Helpers
 import NSObject
+import SKProductsResponseInternal
 
 
 class SKProductsResponse_SynthProvider(NSObject.NSObject_SynthProvider):
-    # SKProductsResponse:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
-    #
-    # SKProductsResponseInternal *_internal                                   4 = 0x04 / 4            8 = 0x08 / 8
+    # Class: SKProductsResponse
+    # Super class: NSObject
+    # Name:            armv7                 i386                  arm64                 x86_64
+    # id _internal   4 (0x004) / 4         4 (0x004) / 4         8 (0x008) / 8         8 (0x008) / 8
 
-    # SKProductsResponseInternal:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
-    #
-    # NSArray *_invalidIdentifiers                                            4 = 0x04 / 4            8 = 0x08 / 8
-    # NSArray *_products                                                      8 = 0x08 / 4           16 = 0x10 / 8
-
-    def __init__(self, value_obj, sys_params, internal_dict):
-        super(SKProductsResponse_SynthProvider, self).__init__(value_obj, sys_params, internal_dict)
+    def __init__(self, value_obj, internal_dict):
+        super(SKProductsResponse_SynthProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "SKProductsResponse"
 
         self.internal = None
-        self.invalid_identifiers = None
-        self.invalid_identifiers_provider = None
-        self.products = None
-        self.products_provider = None
+        self.internal_provider = None
 
-        self.update()
-
-    def update(self):
-        # _internal (self->_internal)
-        self.internal = self.value_obj.GetChildMemberWithName("_internal")
-        self.invalid_identifiers = None
-        self.invalid_identifiers_provider = None
-        self.products = None
-        self.products_provider = None
-        super(SKProductsResponse_SynthProvider, self).update()
-
-    # _invalidIdentifiers (self->_internal->_invalidIdentifiers)
-    def get_invalid_identifiers(self):
-        if self.invalid_identifiers:
-            return self.invalid_identifiers
-
+    def get_internal(self):
         if self.internal:
-            self.invalid_identifiers = self.internal.CreateChildAtOffset("invalidIdentifiers",
-                                                                         1 * self.sys_params.pointer_size,
-                                                                         self.sys_params.types_cache.NSArray)
-        return self.invalid_identifiers
+            return self.internal
 
-    # _products (self->_internal->_products)
-    def get_products(self):
-        if self.products:
-            return self.products
+        self.internal = self.get_child_value("_internal")
+        return self.internal
 
-        if self.internal:
-            self.products = self.internal.CreateChildAtOffset("products",
-                                                              2 * self.sys_params.pointer_size,
-                                                              self.sys_params.types_cache.NSArray)
-        return self.products
+    def get_internal_provider(self):
+        if self.internal_provider:
+            return self.internal_provider
+
+        internal = self.get_internal()
+        self.internal_provider = SKProductsResponseInternal.SKProductsResponseInternal_SynthProvider(internal, self.internal_dict)
+        return self.internal_provider
 
     def summary(self):
-        invalid_identifiers = self.get_invalid_identifiers()
+        invalid_identifiers = self.get_internal_provider().get_invalid_identifiers()
         invalid_identifiers_count = invalid_identifiers.GetNumChildren()
         invalid_identifiers_summary = "{} invalid".format(invalid_identifiers_count)
 
-        products = self.get_products()
+        products = self.get_internal_provider().get_products()
         products_count = products.GetNumChildren()
         products_summary = "{} valid".format(products_count)
 
@@ -102,7 +77,7 @@ class SKProductsResponse_SynthProvider(NSObject.NSObject_SynthProvider):
 
 
 def SKProductsResponse_SummaryProvider(value_obj, internal_dict):
-    return summary_helpers.generic_SummaryProvider(value_obj, internal_dict, SKProductsResponse_SynthProvider)
+    return Helpers.generic_summary_provider(value_obj, internal_dict, SKProductsResponse_SynthProvider)
 
 
 def __lldb_init_module(debugger, internal_dict):
