@@ -61,12 +61,30 @@ class UIStepper_SynthProvider(UIControl.UIControl_SynthProvider):
         self.value = self.get_child_value("_value")
         return self.value
 
+    def get_value_value(self):
+        return self.get_float_value(self.get_value())
+
+    def get_value_summary(self):
+        value_value = self.get_value_value()
+        if value_value is None:
+            return None
+        return "value={}".format(self.formatted_float(value_value))
+
     def get_min(self):
         if self.min:
             return self.min
 
         self.min = self.get_child_value("_minimumValue")
         return self.min
+
+    def get_min_value(self):
+        return self.get_float_value(self.get_min())
+
+    def get_min_summary(self):
+        minimum_value = self.get_min_value()
+        if minimum_value is None:
+            return None
+        return "min={}".format(self.formatted_float(minimum_value))
 
     def get_max(self):
         if self.max:
@@ -75,6 +93,15 @@ class UIStepper_SynthProvider(UIControl.UIControl_SynthProvider):
         self.max = self.get_child_value("_maximumValue")
         return self.max
 
+    def get_max_value(self):
+        return self.get_float_value(self.get_max())
+
+    def get_max_summary(self):
+        maximum_value = self.get_max_value()
+        if maximum_value is None:
+            return None
+        return "max={}".format(self.formatted_float(maximum_value))
+
     def get_step(self):
         if self.step:
             return self.step
@@ -82,22 +109,21 @@ class UIStepper_SynthProvider(UIControl.UIControl_SynthProvider):
         self.step = self.get_child_value("_stepValue")
         return self.step
 
+    def get_step_value(self):
+        return self.get_float_value(self.get_step())
+
+    def get_step_summary(self):
+        step_value = self.get_step_value()
+        if step_value is None:
+            return None
+        return "step={}".format(self.formatted_float(step_value))
+
     def summary(self):
-        value = self.get_value()
-        value_value = float(value.GetValue())
-        value_summary = "value={}".format(self.formatted_float(value_value))
-
-        minimum = self.get_min()
-        minimum_value = float(minimum.GetValue())
-        minimum_summary = "min={}".format(self.formatted_float(minimum_value))
-
-        maximum = self.get_max()
-        maximum_value = float(maximum.GetValue())
-        maximum_summary = "max={}".format(self.formatted_float(maximum_value))
-
-        step = self.get_step()
-        step_value = float(step.GetValue())
-        step_summary = "step={}".format(self.formatted_float(step_value))
+        value_summary = self.get_value_summary()
+        minimum_summary = self.get_min_summary()
+        maximum_summary = self.get_max_summary()
+        step_value = self.get_step_value()
+        step_summary = self.get_step_summary()
 
         # Summaries
         summaries = [value_summary]

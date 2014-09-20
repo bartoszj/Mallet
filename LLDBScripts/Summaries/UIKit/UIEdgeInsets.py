@@ -46,8 +46,7 @@ class UIEdgeInsets_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         return self.top
 
     def get_top_value(self):
-        top = self.get_top()
-        return float(top.GetValue())
+        return self.get_float_value(self.get_top())
 
     def get_left(self):
         if self.left:
@@ -57,8 +56,7 @@ class UIEdgeInsets_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         return self.left
 
     def get_left_value(self):
-        left = self.get_left()
-        return float(left.GetValue())
+        return self.get_float_value(self.get_left())
 
     def get_bottom(self):
         if self.bottom:
@@ -68,8 +66,7 @@ class UIEdgeInsets_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         return self.bottom
 
     def get_bottom_value(self):
-        bottom = self.get_bottom()
-        return float(bottom.GetValue())
+        return self.get_float_value(self.get_bottom())
 
     def get_right(self):
         if self.right:
@@ -79,8 +76,7 @@ class UIEdgeInsets_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         return self.right
 
     def get_right_value(self):
-        right = self.get_right()
-        return float(right.GetValue())
+        return self.get_float_value(self.get_right())
 
 
 def __lldb_init_module(debugger, dict):

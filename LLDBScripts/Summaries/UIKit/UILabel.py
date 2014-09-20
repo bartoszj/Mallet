@@ -80,14 +80,32 @@ class UILabel_SynthProvider(UIView.UIView_SynthProvider):
         if self.text:
             return self.text
 
-        self.text = self.get_child_value("_content", "NSMutableAttributedString *")
+        self.text = self.get_child_value("_content", "NSAttributedString *")
         return self.text
 
-    def summary(self):
-        text = self.get_text()
-        text_summary = "text={}".format(text.GetSummary())
+    def get_text_value(self):
+        return self.get_summary_value(self.get_text())
 
+    def get_text_summary(self):
+        text_value = self.get_text_value()
+        if text_value is None:
+            return None
+
+        text_summary = "text={}".format(text_value)
         return text_summary
+
+    def summary(self):
+        text_summary = self.get_text_summary()
+        tag_summary = self.get_tag_summary()
+
+        summaries = []
+        if text_summary:
+            summaries.append(text_summary)
+        if self.get_tag_value() != 0:
+            summaries.append(tag_summary)
+
+        summary = ", ".join(summaries)
+        return summary
 
 
 def UILabel_SummaryProvider(value_obj, internal_dict):

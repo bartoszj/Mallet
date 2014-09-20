@@ -85,9 +85,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         else:
             offset = 0x0c
 
-        self.era = self.value_obj.CreateChildAtOffset("era",
-                                                      offset,
-                                                      self.get_type("NSInteger"))
+        self.era = self.get_child_value("era", "NSInteger", offset)
         return self.era
 
     def get_year(self):
@@ -99,9 +97,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         else:
             offset = 0x10
 
-        self.year = self.value_obj.CreateChildAtOffset("year",
-                                                       offset,
-                                                       self.get_type("NSInteger"))
+        self.year = self.get_child_value("year", "NSInteger", offset)
         return self.year
 
     def get_month(self):
@@ -113,9 +109,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         else:
             offset = 0x14
 
-        self.month = self.value_obj.CreateChildAtOffset("month",
-                                                        offset,
-                                                        self.get_type("NSInteger"))
+        self.month = self.get_child_value("month", "NSInteger", offset)
         return self.month
 
     def get_day(self):
@@ -127,9 +121,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         else:
             offset = 0x18
 
-        self.day = self.value_obj.CreateChildAtOffset("day",
-                                                      offset,
-                                                      self.get_type("NSInteger"))
+        self.day = self.get_child_value("day", "NSInteger", offset)
         return self.day
 
     def get_hour(self):
@@ -141,9 +133,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         else:
             offset = 0x1c
 
-        self.hour = self.value_obj.CreateChildAtOffset("hour",
-                                                       offset,
-                                                       self.get_type("NSInteger"))
+        self.hour = self.get_child_value("hour", "NSInteger", offset)
         return self.hour
 
     def get_minute(self):
@@ -155,9 +145,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         else:
             offset = 0x20
 
-        self.minute = self.value_obj.CreateChildAtOffset("minute",
-                                                         offset,
-                                                         self.get_type("NSInteger"))
+        self.minute = self.get_child_value("minute", "NSInteger", offset)
         return self.minute
 
     def get_second(self):
@@ -169,9 +157,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         else:
             offset = 0x24
 
-        self.second = self.value_obj.CreateChildAtOffset("second",
-                                                         offset,
-                                                         self.get_type("NSInteger"))
+        self.second = self.get_child_value("second", "NSInteger", offset)
         return self.second
 
     def get_week(self):
@@ -183,9 +169,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         else:
             offset = 0x28
 
-        self.week = self.value_obj.CreateChildAtOffset("week",
-                                                       offset,
-                                                       self.get_type("NSInteger"))
+        self.week = self.get_child_value("week", "NSInteger", offset)
         return self.week
 
     def get_weekday(self):
@@ -197,9 +181,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         else:
             offset = 0x2c
 
-        self.weekday = self.value_obj.CreateChildAtOffset("weekday",
-                                                          offset,
-                                                          self.get_type("NSInteger"))
+        self.weekday = self.get_child_value("weekday", "NSInteger", offset)
         return self.weekday
 
     def get_weekday_ordinal(self):
@@ -211,9 +193,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         else:
             offset = 0x30
 
-        self.weekday_ordinal = self.value_obj.CreateChildAtOffset("weekday_ordinal",
-                                                                  offset,
-                                                                  self.get_type("NSInteger"))
+        self.weekday_ordinal = self.get_child_value("weekday_ordinal", "NSInteger", offset)
         return self.weekday_ordinal
 
     def get_quarter(self):
@@ -225,9 +205,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         else:
             offset = 0x34
 
-        self.quarter = self.value_obj.CreateChildAtOffset("quarter",
-                                                          offset,
-                                                          self.get_type("NSInteger"))
+        self.quarter = self.get_child_value("quarter", "NSInteger", offset)
         return self.quarter
 
     def get_week_of_year(self):
@@ -239,9 +217,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         else:
             offset = 0x3c
 
-        self.week_of_year = self.value_obj.CreateChildAtOffset("week_of_year",
-                                                               offset,
-                                                               self.get_type("NSInteger"))
+        self.week_of_year = self.get_child_value("week_of_year", "NSInteger", offset)
         return self.week_of_year
 
     def get_week_of_month(self):
@@ -253,9 +229,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         else:
             offset = 0x40
 
-        self.week_of_month = self.value_obj.CreateChildAtOffset("week_of_month",
-                                                                offset,
-                                                                self.get_type("NSInteger"))
+        self.week_of_month = self.get_child_value("week_of_month", "NSInteger", offset)
         return self.week_of_month
 
     def get_year_for_week_of_year(self):
@@ -267,9 +241,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         else:
             offset = 0x44
 
-        self.year_for_week_of_year = self.value_obj.CreateChildAtOffset("year_for_week_of_year",
-                                                                        offset,
-                                                                        self.get_type("NSInteger"))
+        self.year_for_week_of_year = self.get_child_value("year_of_week_of_year", "NSInteger", offset)
         return self.year_for_week_of_year
 
     def get_leap_month(self):
@@ -281,9 +253,7 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
         else:
             offset = 0x48
 
-        self.leap_month = self.value_obj.CreateChildAtOffset("leap_month",
-                                                             offset,
-                                                             self.get_type("NSInteger"))
+        self.leap_month = self.get_child_value("leap_month", "NSInteger", offset)
         return self.leap_month
 
     def summary(self):

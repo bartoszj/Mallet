@@ -55,6 +55,9 @@ class CGRect_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
             return self.origin_provider
 
         origin = self.get_origin()
+        if origin is None:
+            return None
+
         self.origin_provider = CGPoint.CGPoint_SynthProvider(origin, self.internal_dict)
         return self.origin_provider
 
@@ -70,5 +73,8 @@ class CGRect_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
             return self.size_provider
 
         size = self.get_size()
+        if size is None:
+            return None
+
         self.size_provider = CGSize.CGSize_SynthProvider(size, self.internal_dict)
         return self.size_provider

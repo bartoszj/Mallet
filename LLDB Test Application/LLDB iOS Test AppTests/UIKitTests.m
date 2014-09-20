@@ -56,6 +56,14 @@
     [self compareObject:view ofType:@"UIView *" toSumamry:@"frame=(10 20; 300 400)"];
 }
 
+- (void)testUIView2
+{
+    CGRect frame = CGRectMake(10, 20, 300, 400);
+    UIView *view = [[UIView alloc] initWithFrame:frame];
+    view.tag = 10;
+    [self compareObject:view ofType:@"UIView *" toSumamry:@"frame=(10 20; 300 400), tag=10"];
+}
+
 #pragma mark - UIImageView
 - (void)testUIImageView1
 {
@@ -88,12 +96,21 @@
     [self compareObject:label ofType:@"UILabel *" toSumamry:@"text=@\"ęóąśłżźćń\""];
 }
 
+- (void)testUILabel3
+{
+    CGRect frame = CGRectMake(10, 20, 100, 22);
+    UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    label.attributedText = [[NSAttributedString alloc] initWithString:@"ęóąśłżźćń"];
+    label.tag = 444;
+    [self compareObject:label ofType:@"UILabel *" toSumamry:@"text=@\"ęóąśłżźćń\", tag=444"];
+}
+
 #pragma mark - UIScrollView
 - (void)testUIScrollView1
 {
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 30, 40)];
     scrollView.contentSize = CGSizeMake(33, 44);
-    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentOffset=(0, 0), contentSize=(33, 44)"];
+    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"frame=(0 0; 30 40), contentOffset=(0, 0), contentSize=(33, 44)"];
 }
 
 - (void)testUIScrollView2
@@ -101,7 +118,7 @@
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 30, 40)];
     scrollView.contentSize = CGSizeMake(33, 44);
     scrollView.contentOffset = CGPointMake(20, 21);
-    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentOffset=(20, 21), contentSize=(33, 44)"];
+    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"frame=(0 0; 30 40), contentOffset=(20, 21), contentSize=(33, 44)"];
 }
 
 - (void)testUIScrollView3
@@ -110,7 +127,7 @@
     scrollView.contentSize = CGSizeMake(33, 44);
     scrollView.contentInset = UIEdgeInsetsMake(1, 2, 3, 4);
     scrollView.contentOffset = CGPointMake(20, 21);
-    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentOffset=(20, 21), contentSize=(33, 44), inset=(1, 2, 3, 4)"];
+    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"frame=(0 0; 30 40), contentOffset=(20, 21), contentSize=(33, 44), inset=(1, 2, 3, 4)"];
 }
 
 - (void)testUIScrollView4
@@ -120,7 +137,7 @@
     scrollView.contentInset = UIEdgeInsetsMake(1, 2, 3, 4);
     scrollView.contentOffset = CGPointMake(20, 21);
     scrollView.minimumZoomScale = 0.2;
-    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentOffset=(20, 21), contentSize=(33, 44), inset=(1, 2, 3, 4), minScale=0.2"];
+    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"frame=(0 0; 30 40), contentOffset=(20, 21), contentSize=(33, 44), inset=(1, 2, 3, 4), minScale=0.2"];
 }
 
 - (void)testUIScrollView5
@@ -131,7 +148,7 @@
     scrollView.contentOffset = CGPointMake(20, 21);
     scrollView.minimumZoomScale = 0.2;
     scrollView.maximumZoomScale = 3.5;
-    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"contentOffset=(20, 21), contentSize=(33, 44), inset=(1, 2, 3, 4), minScale=0.2, maxScale=3.5"];
+    [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"frame=(0 0; 30 40), contentOffset=(20, 21), contentSize=(33, 44), inset=(1, 2, 3, 4), minScale=0.2, maxScale=3.5"];
 }
 
 #pragma mark - UIAlertView
@@ -150,11 +167,19 @@
 }
 
 #pragma mark - UIButton
-- (void)testUIButton
+- (void)testUIButton1
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:@"title" forState:UIControlStateNormal];
 //    [self compareObject:button ofType:@"UIButton *" toSumamry:@"text=@\"title\""];
+}
+
+- (void)testUIButton2
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"title" forState:UIControlStateNormal];
+    button.tag = 123;
+//    [self compareObject:button ofType:@"UIButton *" toSumamry:@"text=@\"title\", tag=123"];
 }
 
 #pragma mark - UITextField
@@ -178,16 +203,16 @@
 {
     CGRect frame = CGRectMake(0, 0, 10, 10);
     UITextField *textField = [[UITextField alloc] initWithFrame:frame];
-    textField.placeholder = @"zzcxcx";
-    [self compareObject:textField ofType:@"UITextField *" toSumamry:@"placeholder=@\"zzcxcx\""];
+    textField.placeholder = @"asdfghj";
+    [self compareObject:textField ofType:@"UITextField *" toSumamry:@"placeholder=@\"asdfghj\""];
 }
 
 - (void)testUITextField4
 {
     CGRect frame = CGRectMake(0, 0, 10, 10);
     UITextField *textField = [[UITextField alloc] initWithFrame:frame];
-    textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"ĘÓĄŚŁŻŹĆŃ"];
-    [self compareObject:textField ofType:@"UITextField *" toSumamry:@"placeholder=@\"ĘÓĄŚŁŻŹĆŃ\""];
+    textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"ĘÓĄŚŁŻŹĆŃ2"];
+    [self compareObject:textField ofType:@"UITextField *" toSumamry:@"placeholder=@\"ĘÓĄŚŁŻŹĆŃ2\""];
 }
 
 #pragma mark - UIDatePicker
@@ -245,11 +270,18 @@
 }
 
 #pragma mark - UISwitch
-- (void)testUISwitch
+- (void)testUISwitch1
 {
     UISwitch *switchControl = [[UISwitch alloc] initWithFrame:CGRectMake(0, 0, 23, 523)];
     switchControl.on = YES;
     [self compareObject:switchControl ofType:@"UISwitch *" toSumamry:@"on=YES"];
+}
+
+- (void)testUISwitch2
+{
+    UISwitch *switchControl = [[UISwitch alloc] initWithFrame:CGRectMake(0, 0, 23, 523)];
+    switchControl.on = NO;
+    [self compareObject:switchControl ofType:@"UISwitch *" toSumamry:@"on=NO"];
 }
 
 #pragma mark - UIViewController

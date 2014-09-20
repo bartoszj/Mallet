@@ -75,12 +75,30 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
         self.date = self.get_child_value("_userSuppliedDate")
         return self.date
 
+    def get_date_value(self):
+        return self.get_summary_value(self.get_date())
+
+    def get_date_summary(self):
+        date_value = self.get_date_value()
+        if date_value is None:
+            return None
+        return "date={}".format(date_value)
+
     def get_min_user_date(self):
         if self.min_user_date:
             return self.min_user_date
 
         self.min_user_date = self.get_child_value("_userSuppliedMinimumDate")
         return self.min_user_date
+
+    def get_min_user_date_value(self):
+        return self.get_summary_value(self.get_min_user_date())
+
+    def get_min_user_date_summary(self):
+        min_user_date_value = self.get_min_user_date_value()
+        if min_user_date_value is None:
+            return None
+        return "minDate={}".format(min_user_date_value)
 
     def get_max_user_date(self):
         if self.max_user_date:
@@ -89,12 +107,30 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
         self.max_user_date = self.get_child_value("_userSuppliedMaximumDate")
         return self.max_user_date
 
+    def get_max_user_date_value(self):
+        return self.get_summary_value(self.get_max_user_date())
+
+    def get_max_user_date_summary(self):
+        max_user_date_value = self.get_max_user_date_value()
+        if max_user_date_value is None:
+            return None
+        return "maxDate={}".format(max_user_date_value)
+
     def get_min_date(self):
         if self.min_date:
             return self.min_date
 
         self.min_date = self.get_child_value("_minimumDate")
         return self.min_date
+
+    def get_min_date_value(self):
+        return self.get_summary_value(self.get_min_date())
+
+    def get_min_date_summary(self):
+        min_date_value = self.get_min_date_value()
+        if min_date_value is None:
+            return None
+        return "minDate={}".format(min_date_value)
 
     def get_max_date(self):
         if self.max_date:
@@ -103,6 +139,15 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
         self.max_date = self.get_child_value("_maximumDate")
         return self.max_date
 
+    def get_max_date_value(self):
+        return self.get_summary_value(self.get_max_user_date())
+
+    def get_max_date_summary(self):
+        max_date_value = self.get_max_date_value()
+        if max_date_value is None:
+            return None
+        return "maxDate={}".format(max_date_value)
+
     def get_date_components(self):
         if self.date_components:
             return self.date_components
@@ -110,29 +155,23 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
         self.date_components = self.get_child_value("_lastSelectedDateComponents")
         return self.date_components
 
+    def get_date_components_value(self):
+        return self.get_summary_value(self.get_date_components())
+
+    def get_date_components_summary(self):
+        date_components_value = self.get_date_components_value()
+        if date_components_value is None:
+            return None
+        return "{}".format(date_components_value)
+
     def summary(self):
-        # date = self.get_date()
-        # date_value = date.GetSummary()
-        # date_summary = "date={}".format(date_value)
+        # date_summary = self.get_date_summary()
+        # min_user_date_summary = self.get_min_user_date_summary()
+        # max_user_date_summary = self.get_max_user_date_summary()
+        # min_date_summary = self.get_min_date_summary()
+        # max_date_summary = self.get_max_date_summary()
 
-        # min_user_date = self.get_min_user_date()
-        # min_user_date_value = min_user_date.GetSummary()
-        # min_user_date_summary = "minDate={}".format(min_user_date_value)
-
-        # max_user_date = self.get_max_user_date()
-        # max_user_date_value = max_user_date.GetSummary()
-        # max_user_date_summary = "maxDate={}".format(max_user_date_value)
-
-        # min_date = self.get_min_date()
-        # min_date_value = min_date.GetSummary()
-        # min_date_summary = "minDate={}".format(min_date_value)
-        #
-        # max_date = self.get_max_date()
-        # max_date_value = max_date.GetSummary()
-        # max_date_summary = "maxDate={}".format(max_date_value)
-
-        date_components = self.get_date_components()
-        date_components_summary = "{}".format(date_components.GetSummary())
+        date_components_summary = self.get_date_components_summary()
 
         # Summaries
         summaries = []

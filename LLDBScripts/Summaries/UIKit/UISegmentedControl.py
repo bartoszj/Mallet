@@ -71,12 +71,30 @@ class UISegmentedControl_SynthProvider(UIControl.UIControl_SynthProvider):
         self.segments = self.get_child_value("_segments")
         return self.segments
 
+    def get_segments_value(self):
+        return self.get_count_value(self.get_segments())
+
+    def get_segments_summary(self):
+        segments_value = self.get_segments_value()
+        if segments_value is None:
+            return None
+        return "segments={}".format(segments_value)
+
     def get_selected_segments(self):
         if self.selected_segment:
             return self.selected_segment
 
         self.selected_segment = self.get_child_value("_selectedSegment")
         return self.selected_segment
+
+    def get_selected_segments_value(self):
+        return self.get_signed_value(self.get_selected_segments())
+
+    def get_selected_segments_summary(self):
+        selected_segments_value = self.get_selected_segments_value()
+        if selected_segments_value is None:
+            return None
+        return "selected={}".format(selected_segments_value)
 
     def get_highlighted_segment(self):
         if self.highlighted_segment:
@@ -85,18 +103,19 @@ class UISegmentedControl_SynthProvider(UIControl.UIControl_SynthProvider):
         self.highlighted_segment = self.get_child_value("_highlightedSegment")
         return self.highlighted_segment
 
+    def get_highlighted_segment_value(self):
+        return self.get_signed_value(self.get_highlighted_segment())
+
+    def get_highlighted_segment_summary(self):
+        highlighted_segment_value = self.get_highlighted_segment_value()
+        if highlighted_segment_value is None:
+            return None
+        return "highlighted={}".format(highlighted_segment_value)
+
     def summary(self):
-        segments = self.get_segments()
-        segments_value = segments.GetNumChildren()
-        segments_summary = "segments={}".format(segments_value)
-
-        selected_segment = self.get_selected_segments()
-        selected_segment_value = selected_segment.GetValueAsSigned()
-        selected_segment_summary = "selected={}".format(selected_segment_value)
-
-        # highlighted_segment = self.get_highlighted_segment()
-        # highlighted_segment_value = highlighted_segment.GetValueAsSigned()
-        # highlighted_segment_summary = "highlighted={}".format(highlighted_segment_value)
+        segments_summary = self.get_segments_summary()
+        selected_segment_summary = self.get_selected_segments_summary()
+        # highlighted_segment_summary = self.get_highlighted_segment_summary()
 
         # Summaries
         summaries = [selected_segment_summary, segments_summary]

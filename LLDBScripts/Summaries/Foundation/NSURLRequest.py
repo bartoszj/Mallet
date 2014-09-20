@@ -57,22 +57,45 @@ class NSURLRequest_SynthProvider(NSObject.NSObject_SynthProvider):
                                                                                                  self.internal_dict)
         return self.request_internal_provider
 
-    def summary(self):
+    def get_url(self):
         request_internal_provider = self.get_request_internal_provider()
+        if request_internal_provider is None:
+            return None
+        return request_internal_provider.get_url()
 
-        request_internal_url = request_internal_provider.get_url()
-        request_internal_url_value = request_internal_url.GetSummary()
-        request_internal_url_summary = "url={}".format(request_internal_url_value)
+    def get_url_value(self):
+        return self.get_summary_value(self.get_url())
 
-        request_internal_method = request_internal_provider.get_method()
-        request_internal_method_value = request_internal_method.GetSummary()
-        request_internal_method_summary = "method={}".format(request_internal_method_value)
+    def get_url_summary(self):
+        url_value = self.get_url_value()
+        if url_value is None:
+            return None
+        return "url={}".format(url_value)
+
+    def get_method(self):
+        request_internal_provider = self.get_request_internal_provider()
+        if request_internal_provider is None:
+            return None
+        return request_internal_provider.get_method()
+
+    def get_method_value(self):
+        return self.get_summary_value(self.get_method())
+
+    def get_method_summary(self):
+        method_value = self.get_method_value()
+        if method_value is None:
+            return None
+        return "method={}".format(method_value)
+
+    def summary(self):
+        request_internal_url_summary = self.get_url_summary()
+        request_internal_method_summary = self.get_method_summary()
 
         # Summaries
         summaries = []
-        if request_internal_url_value:
+        if request_internal_url_summary:
             summaries.append(request_internal_url_summary)
-        if request_internal_method_value:
+        if request_internal_method_summary:
             summaries.append(request_internal_method_summary)
 
         summary = ", ".join(summaries)

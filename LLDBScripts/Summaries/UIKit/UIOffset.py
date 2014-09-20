@@ -44,8 +44,7 @@ class UIOffset_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         return self.horizontal
 
     def get_horizontal_value(self):
-        horizontal = self.get_horizontal()
-        return float(horizontal.GetValue())
+        return self.get_float_value(self.get_horizontal())
 
     def get_vertical(self):
         if self.vertical:
@@ -55,8 +54,7 @@ class UIOffset_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         return self.vertical
 
     def get_vertical_value(self):
-        vertical = self.get_vertical()
-        return float(vertical.GetValue())
+        return self.get_float_value(self.get_vertical())
 
 
 def __lldb_init_module(debugger, dict):

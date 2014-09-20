@@ -13,8 +13,8 @@ LLDB commands and summaries
 - Foundation:
     - NSDateComponents
     - NSObject
-    - NSURLRequest
-    - NSUUID
+    - NSURLRequest (NSMutableURLRequest)
+    - NSUUID (__NSConcreteUUID)
 - QuartzCore:
     - CALayer
 - UIKit:
@@ -34,7 +34,7 @@ LLDB commands and summaries
     - UIStepper
     - UISwitch
     - UITextField
-    - UIView
+    - UIView (UIImageView, UIWindow)
     - UIViewController
 - StoreKit:
     - SKDownload (not tested!)

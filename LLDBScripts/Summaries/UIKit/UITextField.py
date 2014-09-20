@@ -118,8 +118,26 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
             return self.display_label_provider
 
         display_label = self.get_display_label()
+        if display_label is None:
+            return None
+
         self.display_label_provider = UILabel.UILabel_SynthProvider(display_label, self.internal_dict)
         return self.display_label_provider
+
+    def get_display_label_text(self):
+        display_label_provider = self.get_display_label_provider()
+        if display_label_provider is None:
+            return None
+        return display_label_provider.get_text()
+
+    def get_display_label_text_value(self):
+        return self.get_summary_value(self.get_display_label_text())
+
+    def get_display_label_text_summary(self):
+        display_label_text_value = self.get_display_label_text_value()
+        if display_label_text_value is None:
+            return None
+        return "text={}".format(display_label_text_value)
 
     def get_placeholder_label(self):
         if self.placeholder_label:
@@ -133,25 +151,36 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
             return self.placeholder_label_provider
 
         placeholder_label = self.get_placeholder_label()
+        if placeholder_label is None:
+            return None
+
         self.placeholder_label_provider = UILabel.UILabel_SynthProvider(placeholder_label, self.internal_dict)
         return self.placeholder_label_provider
 
-    def summary(self):
-        display_label_provider = self.get_display_label_provider()
-        display_label_text = display_label_provider.get_text()
-        display_label_text_value = display_label_text.GetSummary()
-        display_label_text_summary = "text={}".format(display_label_text_value)
-
+    def get_placeholder_label_text(self):
         placeholder_label_provider = self.get_placeholder_label_provider()
-        placeholder_label_text = placeholder_label_provider.get_text()
-        placeholder_label_text_value = placeholder_label_text.GetSummary()
-        placeholder_label_text_summary = "placeholder={}".format(placeholder_label_text_value)
+        if placeholder_label_provider is None:
+            return None
+        return placeholder_label_provider.get_text()
+
+    def get_placeholder_label_text_value(self):
+        return self.get_summary_value(self.get_placeholder_label_text())
+
+    def get_placeholder_label_text_summary(self):
+        placeholder_label_text_value = self.get_placeholder_label_text_value()
+        if placeholder_label_text_value is None:
+            return None
+        return "placeholder={}".format(placeholder_label_text_value)
+
+    def summary(self):
+        display_label_text_summary = self.get_display_label_text_summary()
+        placeholder_label_text_summary = self.get_placeholder_label_text_summary()
 
         # Summary
         summaries = []
-        if display_label_text_value:
+        if display_label_text_summary:
             summaries.append(display_label_text_summary)
-        if placeholder_label_text_value:
+        if placeholder_label_text_summary:
             summaries.append(placeholder_label_text_summary)
 
         summary = ", ".join(summaries)

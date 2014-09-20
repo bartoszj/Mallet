@@ -139,6 +139,7 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
         self.type_name = "UIView"
 
         self.frame = None
+        self.tag = None
         self.layer = None
         self.layer_provider = None
 
@@ -159,6 +160,33 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
         self.frame.y = position.get_y_value() - self.frame.height / 2
         return self.frame
 
+    def get_frame_summary(self):
+        frame = self.get_frame()
+        if frame is None:
+            return None
+
+        frame_summary = "frame=({} {}; {} {})".format(self.formatted_float(frame.x),
+                                                      self.formatted_float(frame.y),
+                                                      self.formatted_float(frame.width),
+                                                      self.formatted_float(frame.height))
+        return frame_summary
+
+    def get_tag(self):
+        if self.tag:
+            return self.tag
+
+        self.tag = self.get_child_value("_tag")
+        return self.tag
+
+    def get_tag_value(self):
+        tag = self.get_tag()
+        if tag is None:
+            return 0
+        return tag.GetValueAsSigned()
+
+    def get_tag_summary(self):
+        return "tag={}".format(self.get_tag_value())
+
     def get_layer(self):
         if self.layer:
             return self.layer
@@ -170,7 +198,7 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
         # In some cases CALayer object is invalid.
         layer = self.get_layer()
         class_data, wrapper = Helpers.get_class_data(layer)
-        if not class_data.is_valid():
+        if class_data.is_valid() is None:
             LLDBLogger.get_logger().info("UIView: has_valid_layer: not valid class_data.")
             return False
         return True
@@ -184,17 +212,16 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
         return self.layer_provider
 
     def summary(self):
-        frame = self.get_frame()
-        if not frame:
-            return ""
+        frame_summary = self.get_frame_summary()
+        tag_summary = self.get_tag_summary()
 
-        frame_summary = "frame=({} {}; {} {})".format(self.formatted_float(frame.x),
-                                                      self.formatted_float(frame.y),
-                                                      self.formatted_float(frame.width),
-                                                      self.formatted_float(frame.height))
-        summaries = [frame_summary]
+        summaries = []
+        if frame_summary:
+            summaries.append(frame_summary)
+        if self.get_tag_value() != 0:
+            summaries.append(tag_summary)
+
         summary = ", ".join(summaries)
-
         return summary
 
 

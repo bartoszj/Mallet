@@ -62,22 +62,31 @@ class CALayer_SynthProvider(NSObject.NSObject_SynthProvider):
     def get_position_provider(self):
         return self.get_attr_provider().get_layer_provider().get_position_provider()
 
+    def get_position_summary(self):
+        position = self.get_position_provider()
+        if position is None:
+            return None
+        return "position=({}, {})".format(self.formatted_float(position.get_x_value()),
+                                          self.formatted_float(position.get_y_value()))
+
     def get_bounds(self):
         return self.get_attr_provider().get_layer_provider().get_bounds()
 
     def get_bounds_provider(self):
         return self.get_attr_provider().get_layer_provider().get_bounds_provider()
 
-    def summary(self):
-        position = self.get_position_provider()
-        position_summary = "position=({}, {})".format(self.formatted_float(position.get_x_value()),
-                                                      self.formatted_float(position.get_y_value()))
-
+    def get_bounds_summary(self):
         bounds = self.get_bounds_provider()
-        bounds_summary = "bounds=({} {}; {} {})".format(self.formatted_float(bounds.get_origin_provider().get_x_value()),
-                                                        self.formatted_float(bounds.get_origin_provider().get_y_value()),
-                                                        self.formatted_float(bounds.get_size_provider().get_width_value()),
-                                                        self.formatted_float(bounds.get_size_provider().get_height_value()))
+        if bounds is None:
+            return None
+        return "bounds=({} {}; {} {})".format(self.formatted_float(bounds.get_origin_provider().get_x_value()),
+                                              self.formatted_float(bounds.get_origin_provider().get_y_value()),
+                                              self.formatted_float(bounds.get_size_provider().get_width_value()),
+                                              self.formatted_float(bounds.get_size_provider().get_height_value()))
+
+    def summary(self):
+        position_summary = self.get_position_summary()
+        bounds_summary = self.get_bounds_summary()
 
         summaries = [position_summary, bounds_summary]
         summary = ", ".join(summaries)

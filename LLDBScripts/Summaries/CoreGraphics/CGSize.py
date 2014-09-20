@@ -46,8 +46,7 @@ class CGSize_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         return self.width
 
     def get_width_value(self):
-        width = self.get_width()
-        return float(width.GetValue())
+        return self.get_float_value(self.get_width())
 
     def get_height(self):
         if self.height:
@@ -57,5 +56,4 @@ class CGSize_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         return self.height
 
     def get_height_value(self):
-        height = self.get_height()
-        return float(height.GetValue())
+        return self.get_float_value(self.get_height())

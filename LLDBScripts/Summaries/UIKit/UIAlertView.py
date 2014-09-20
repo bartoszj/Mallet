@@ -156,6 +156,18 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
             self.title_provider = UILabel.UILabel_SynthProvider(title, self.internal_dict)
         return self.title_provider
 
+    def get_title_value(self):
+        title_provider = self.get_title_provider()
+        if title_provider is None:
+            return None
+        return title_provider.get_text_value()
+
+    def get_title_summary(self):
+        title_value = self.get_title_value()
+        if title_value is None:
+            return None
+        return "title={}".format(self.get_title_value())
+
     def get_subtitle(self):
         if self.subtitle:
             return self.subtitle
@@ -171,6 +183,18 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
         if subtitle:
             self.subtitle_provider = UILabel.UILabel_SynthProvider(subtitle, self.internal_dict)
         return self.subtitle_provider
+
+    def get_subtitle_value(self):
+        subtitle_provider = self.get_subtitle_provider()
+        if subtitle_provider is None:
+            return None
+        return subtitle_provider.get_text_value()
+
+    def get_subtitle_summary(self):
+        subtitle_text = self.get_subtitle_value()
+        if subtitle_text is None:
+            return None
+        return "subtitle={}".format(self.get_subtitle_value())
 
     def get_body(self):
         if self.body:
@@ -188,6 +212,18 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
             self.body_provider = UILabel.UILabel_SynthProvider(body, self.internal_dict)
         return self.body_provider
 
+    def get_body_value(self):
+        body_provider = self.get_body_provider()
+        if body_provider is None:
+            return None
+        return body_provider.get_text_value()
+
+    def get_body_summary(self):
+        body_value = self.get_body_value()
+        if body_value is None:
+            return None
+        return "message={}".format(body_value)
+
     def get_buttons(self):
         if self.buttons:
             return self.buttons
@@ -199,42 +235,37 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
             self.buttons.append(b)
         return buttons
 
-    def summary(self):
-        title_provider = self.get_title_provider()
-        title_text = title_provider.get_text()
-        title_text_value = title_text.GetSummary()
-        title_summary = "title={}".format(title_text_value)
-
-        subtitle_provider = self.get_subtitle_provider()
-        subtitle_text = subtitle_provider.get_text()
-        subtitle_text_value = subtitle_text.GetSummary()
-        subtitle_summary = "subtitle={}".format(subtitle_text_value)
-
-        body_provider = self.get_body_provider()
-        body_text = body_provider.get_text()
-        body_text_value = body_text.GetSummary()
-        body_summary = "message={}".format(body_text_value)
-
+    def get_buttons_names(self):
         buttons = self.get_buttons()
         buttons_names = []
         for button in buttons:
             button_provider = UIButton.UIButton_SynthProvider(button, self.internal_dict)
-            button_label_text = button_provider.get_label_text()
-            button_label_text_value = button_label_text.GetSummary()
-            if button_label_text_value:
-                buttons_names.append(button_label_text_value)
-        buttons_summary = "buttons=[{}]".format(", ".join(buttons_names))
+            button_label_text = button_provider.get_label_value()
+            if button_label_text:
+                buttons_names.append(button_label_text)
+        return buttons_names
+
+    def get_buttons_summary(self):
+        return "buttons=[{}]".format(", ".join(self.get_buttons_names()))
+
+    def summary(self):
+        title_summary = self.get_title_summary()
+        subtitle_summary = self.get_subtitle_summary()
+        body_summary = self.get_body_summary()
+        buttons_names = self.get_buttons_names()
+        buttons_summary = self.get_buttons_summary()
 
         # Summaries
         summaries = []
-        if title_text_value:
+        if title_summary:
             summaries.append(title_summary)
-        if subtitle_text_value:
+        if subtitle_summary:
             summaries.append(subtitle_summary)
-        if body_text_value:
+        if body_summary:
             summaries.append(body_summary)
         if len(buttons_names) > 0:
             summaries.append(buttons_summary)
+
         summary = ", ".join(summaries)
         return summary
 

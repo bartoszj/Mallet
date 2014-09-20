@@ -59,12 +59,30 @@ class UIPageControl_SynthProvider(UIControl.UIControl_SynthProvider):
         self.indicators = self.get_child_value("_indicators")
         return self.indicators
 
+    def get_indicators_value(self):
+        return self.get_count_value(self.get_indicators())
+
+    def get_indicators_summary(self):
+        indicators_value = self.get_indicators_value()
+        if indicators_value is None:
+            return None
+        return "numberOfPages={}".format(indicators_value)
+
     def get_current_page(self):
         if self.current_page:
             return self.current_page
 
         self.current_page = self.get_child_value("_currentPage")
         return self.current_page
+
+    def get_current_page_value(self):
+        return self.get_signed_value(self.get_current_page())
+
+    def get_current_page_summary(self):
+        current_page_value = self.get_current_page_value()
+        if current_page_value is None:
+            return None
+        return "currentPage={}".format(current_page_value)
 
     def get_displayed_page(self):
         if self.displayed_page:
@@ -73,18 +91,19 @@ class UIPageControl_SynthProvider(UIControl.UIControl_SynthProvider):
         self.displayed_page = self.get_child_value("_displayedPage")
         return self.displayed_page
 
+    def get_displayed_page_value(self):
+        return self.get_signed_value(self.get_displayed_page())
+
+    def get_displayed_page_summary(self):
+        displayed_page_value = self.get_displayed_page_value()
+        if displayed_page_value is None:
+            return None
+        return "displayedPage={}".format(displayed_page_value)
+
     def summary(self):
-        indicators = self.get_indicators()
-        indicators_value = indicators.GetNumChildren()
-        indicators_summary = "numberOfPages={}".format(indicators_value)
-
-        current_page = self.get_current_page()
-        current_page_value = current_page.GetValueAsSigned()
-        current_page_summary = "currentPage={}".format(current_page_value)
-
-        # displayed_page = self.get_displayed_page()
-        # displayed_page_value = displayed_page.GetValueAsSigned()
-        # displayed_page_summary = "displayedPage={}".format(displayed_page_value)
+        indicators_summary = self.get_indicators_summary()
+        current_page_summary = self.get_current_page_summary()
+        # displayed_page_summary = self.get_displayed_page_summary()
 
         # Summaries
         summaries = [current_page_summary, indicators_summary]

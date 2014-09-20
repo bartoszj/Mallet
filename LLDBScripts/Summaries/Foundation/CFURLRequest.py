@@ -56,8 +56,17 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         else:
             offset = 0x10
 
-        self.url = self.value_obj.CreateChildAtOffset("url", offset, self.get_type("NSURL *"))
+        self.url = self.get_child_value("url", "NSURL *", offset)
         return self.url
+
+    def get_url_value(self):
+        return self.get_summary_value(self.get_url())
+
+    def get_url_summary(self):
+        url_value = self.get_url_value()
+        if url_value is None:
+            return None
+        return "url={}".format(url_value)
 
     def get_tmp1_structure(self):
         if self.tmp1_structure:
@@ -68,7 +77,7 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         else:
             offset = 0x2c
 
-        self.tmp1_structure = self.value_obj.CreateChildAtOffset("tmp1", offset, self.get_type("addr_ptr_type"))
+        self.tmp1_structure = self.get_child_value("tmp1", "addr_ptr_type", offset)
         return self.tmp1_structure
 
     def get_method(self):
@@ -84,20 +93,24 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         self.method = self.tmp1_structure.CreateChildAtOffset("HTTPMethod", offset, self.get_type("NSString *"))
         return self.method
 
-    def summary(self):
-        url = self.get_url()
-        url_value = url.GetSummary()
-        url_summary = "url={}".format(url_value)
+    def get_method_value(self):
+        return self.get_summary_value(self.get_method())
 
-        method = self.get_method()
-        method_value = method.GetSummary()
-        method_summary = "method={}".format(method_value)
+    def get_method_summary(self):
+        method_value = self.get_method_value()
+        if method_value is None:
+            return None
+        return "method={}".format(method_value)
+
+    def summary(self):
+        url_summary = self.get_url_summary()
+        method_summary = self.get_method_summary()
 
         # Summaries
         summaries = []
-        if url_value:
+        if url_summary:
             summaries.append(url_summary)
-        if method_value:
+        if method_summary:
             summaries.append(method_summary)
 
         summary = ", ".join(summaries)

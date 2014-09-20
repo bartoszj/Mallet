@@ -52,10 +52,17 @@ class UISwitch_SynthProvider(UIControl.UIControl_SynthProvider):
         self.on = self.get_child_value("_on")
         return self.on
 
+    def get_on_value(self):
+        return self.get_unsigned_value(self.get_on())
+
+    def get_on_summary(self):
+        on_value = self.get_on_value()
+        if on_value is None:
+            return None
+        return "on={}".format("YES" if on_value != 0 else "NO")
+
     def summary(self):
-        on = self.get_on()
-        on_value = on.GetValueAsUnsigned()
-        on_summary = "on={}".format("YES" if on_value != 0 else "NO")
+        on_summary = self.get_on_summary()
 
         # Summaries
         summaries = [on_summary]

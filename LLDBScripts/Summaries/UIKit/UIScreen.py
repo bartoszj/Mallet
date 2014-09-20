@@ -66,7 +66,7 @@ class UIScreen_SynthProvider(NSObject.NSObject_SynthProvider):
         self.scale = None
         self.horizontal_scale = None
         self.interface_idiom = None
-        
+
     def get_bounds(self):
         if self.bounds:
             return self.bounds
@@ -78,12 +78,26 @@ class UIScreen_SynthProvider(NSObject.NSObject_SynthProvider):
         bounds = self.get_bounds()
         return CGRect.CGRect_SynthProvider(bounds, self.internal_dict)
 
+    def get_bounds_summary(self):
+        w = self.get_bounds_provider().get_size_provider().get_width_value()
+        h = self.get_bounds_provider().get_size_provider().get_height_value()
+        return "size=({}, {})".format(self.formatted_float(w), self.formatted_float(h))
+
     def get_scale(self):
         if self.scale:
             return self.scale
 
         self.scale = self.get_child_value("_scale")
         return self.scale
+
+    def get_scale_value(self):
+        return self.get_float_value(self.get_scale())
+
+    def get_scale_summary(self):
+        scale_value = self.get_scale_value()
+        if scale_value is None:
+            return None
+        return "scale={}".format(self.formatted_float(scale_value))
 
     def get_horizontal_scale(self):
         if self.horizontal_scale:
@@ -92,6 +106,15 @@ class UIScreen_SynthProvider(NSObject.NSObject_SynthProvider):
         self.horizontal_scale = self.get_child_value("_horizontalScale")
         return self.horizontal_scale
 
+    def get_horizontal_scale_value(self):
+        return self.get_float_value(self.get_horizontal_scale())
+
+    def get_horizontal_scale_summary(self):
+        horizontal_scale_value = self.get_horizontal_scale_value()
+        if horizontal_scale_value is None:
+            return None
+        return "hScale={:.0f}".format(self.formatted_float(horizontal_scale_value))
+
     def get_interface_idiom(self):
         if self.interface_idiom:
             return self.interface_idiom
@@ -99,24 +122,26 @@ class UIScreen_SynthProvider(NSObject.NSObject_SynthProvider):
         self.interface_idiom = self.get_child_value("_userInterfaceIdiom")
         return self.interface_idiom
 
-    def summary(self):
-        w = self.get_bounds_provider().get_size_provider().get_width_value()
-        h = self.get_bounds_provider().get_size_provider().get_height_value()
-        bounds_summary = "size=({}, {})".format(self.formatted_float(w), self.formatted_float(h))
-
-        scale = self.get_scale()
-        scale_summary = "scale={}".format(self.formatted_float(float(scale.GetValue())))
-
-        # horizontal_scale = self.get_horizontal_scale()
-        # horizontal_scale_summary = "hScale={:.0f}".format(float(horizontal_scale.GetValue()))
-
+    def get_interface_idiom_value(self):
         interface_idiom_value = self.get_interface_idiom().GetValueAsSigned()
         interface_idiom_name = "Unknown"
         if interface_idiom_value == 0:
             interface_idiom_name = "Phone"
         elif interface_idiom_value == 1:
             interface_idiom_name = "Pad"
-        interface_idiom_summary = "idiom={}".format(interface_idiom_name)
+        return interface_idiom_name
+
+    def get_interface_idiom_summary(self):
+        interface_idiom_name = self.get_interface_idiom_value()
+        if interface_idiom_name is None:
+            return None
+        return "idiom={}".format(interface_idiom_name)
+
+    def summary(self):
+        bounds_summary = self.get_bounds_summary()
+        scale_summary = self.get_scale_summary()
+        # horizontal_scale_summary = self.get_horizontal_scale_summary()
+        interface_idiom_summary = self.get_interface_idiom_summary()
 
         # Summaries
         summaries = [bounds_summary, scale_summary, interface_idiom_summary]

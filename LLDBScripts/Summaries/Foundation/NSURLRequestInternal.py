@@ -49,7 +49,7 @@ class NSURLRequestInternal_SynthProvider(NSObject.NSObject_SynthProvider):
         else:
             offset = 0x04
 
-        self.request = self.value_obj.CreateChildAtOffset("request", offset, self.get_type("addr_ptr_type"))
+        self.request = self.get_child_value("request", "addr_ptr_type", offset)
         return self.request
 
     def get_request_provider(self):
@@ -62,28 +62,43 @@ class NSURLRequestInternal_SynthProvider(NSObject.NSObject_SynthProvider):
 
     def get_url(self):
         request_provider = self.get_request_provider()
-        request_url = request_provider.get_url()
-        return request_url
+        if request_provider is None:
+            return None
+        return request_provider.get_url()
+
+    def get_url_value(self):
+        return self.get_summary_value(self.get_url())
+
+    def get_url_summary(self):
+        url_value = self.get_url_value()
+        if url_value is None:
+            return None
+        return "url={}".format(url_value)
 
     def get_method(self):
         request_provider = self.get_request_provider()
-        request_method = request_provider.get_method()
-        return request_method
+        if request_provider is None:
+            return None
+        return request_provider.get_method()
+
+    def get_method_value(self):
+        return self.get_summary_value(self.get_method())
+
+    def get_method_summary(self):
+        method_value = self.get_method_value()
+        if method_value is None:
+            return None
+        return "method={}".format(method_value)
 
     def summary(self):
-        request_url = self.get_url()
-        request_url_value = request_url.GetSummary()
-        request_url_summary = "url={}".format(request_url_value)
-
-        request_method = self.get_method()
-        request_method_value = request_method.GetSummary()
-        request_method_summary = "method={}".format(request_method_value)
+        request_url_summary = self.get_url_summary()
+        request_method_summary = self.get_method_summary()
 
         # Summaries
         summaries = []
-        if request_url_value:
+        if request_url_summary:
             summaries.append(request_url_summary)
-        if request_method_value:
+        if request_method_summary:
             summaries.append(request_method_summary)
 
         summary = ", ".join(summaries)

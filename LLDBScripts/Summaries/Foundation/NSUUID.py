@@ -37,29 +37,42 @@ class NSUUID_SynthProvider(NSObject.NSObject_SynthProvider):
         super(NSUUID_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "NSUUID"
 
-        self.uuid_data = None
+        self.uuid = None
 
     def get_uuid(self):
-        if self.uuid_data:
-            return self.uuid_data
+        if self.uuid:
+            return self.uuid
 
         if self.is_64bit:
-            self.uuid_data = self.value_obj.CreateChildAtOffset("uuid", 8, self.get_type("uuid_t"))
+            offset = 8
         else:
-            self.uuid_data = self.value_obj.CreateChildAtOffset("uuid", 4, self.get_type("uuid_t"))
-        return self.uuid_data
+            offset = 4
 
-    def summary(self):
+        self.uuid = self.get_child_value("uuid", "uuid_t", offset)
+        return self.uuid
+
+    def get_uuid_data(self):
+        uuid = self.get_uuid()
+        if uuid is None:
+            return None
         uuid_data = self.get_uuid().GetData()
         uuid_data.SetByteOrder(lldb.eByteOrderBig)
+        return uuid_data
 
+    def get_uuid_summary(self):
+        uuid_data = self.get_uuid_data()
+        if uuid_data is None:
+            return None
         error = lldb.SBError()
-        uuid_summary = "{:08X}-{:04X}-{:04X}-{:04X}-{:08X}{:04X}".format(uuid_data.GetUnsignedInt32(error, 0),
-                                                                         uuid_data.GetUnsignedInt16(error, 4),
-                                                                         uuid_data.GetUnsignedInt16(error, 6),
-                                                                         uuid_data.GetUnsignedInt16(error, 8),
-                                                                         uuid_data.GetUnsignedInt32(error, 10),
-                                                                         uuid_data.GetUnsignedInt16(error, 14))
+        return "{:08X}-{:04X}-{:04X}-{:04X}-{:08X}{:04X}".format(uuid_data.GetUnsignedInt32(error, 0),
+                                                                 uuid_data.GetUnsignedInt16(error, 4),
+                                                                 uuid_data.GetUnsignedInt16(error, 6),
+                                                                 uuid_data.GetUnsignedInt16(error, 8),
+                                                                 uuid_data.GetUnsignedInt32(error, 10),
+                                                                 uuid_data.GetUnsignedInt16(error, 14))
+
+    def summary(self):
+        uuid_summary = self.get_uuid_summary()
 
         return uuid_summary
 

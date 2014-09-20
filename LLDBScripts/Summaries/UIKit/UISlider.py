@@ -81,12 +81,30 @@ class UISlider_SynthProvider(UIControl.UIControl_SynthProvider):
         self.value = self.get_child_value("_value")
         return self.value
 
+    def get_value_value(self):
+        return self.get_float_value(self.get_value())
+
+    def get_value_summary(self):
+        value_value = self.get_value_value()
+        if value_value is None:
+            return None
+        return "value={}".format(self.formatted_float(value_value))
+
     def get_min(self):
         if self.min:
             return self.min
 
         self.min = self.get_child_value("_minValue")
         return self.min
+
+    def get_min_value(self):
+        return self.get_float_value(self.get_min())
+
+    def get_min_summary(self):
+        minimum_value = self.get_min_value()
+        if minimum_value is None:
+            return None
+        return "min={}".format(self.formatted_float(minimum_value))
 
     def get_max(self):
         if self.max:
@@ -95,18 +113,19 @@ class UISlider_SynthProvider(UIControl.UIControl_SynthProvider):
         self.max = self.get_child_value("_maxValue")
         return self.max
 
+    def get_max_value(self):
+        return self.get_float_value(self.get_max())
+
+    def get_max_summary(self):
+        maximum_value = self.get_max_value()
+        if maximum_value is None:
+            return maximum_value
+        return "max={}".format(self.formatted_float(maximum_value))
+
     def summary(self):
-        value = self.get_value()
-        value_value = float(value.GetValue())
-        value_summary = "value={}".format(self.formatted_float(value_value))
-
-        minimum = self.get_min()
-        minimum_value = float(minimum.GetValue())
-        minimum_summary = "min={}".format(self.formatted_float(minimum_value))
-
-        maximum = self.get_max()
-        maximum_value = float(maximum.GetValue())
-        maximum_summary = "max={}".format(self.formatted_float(maximum_value))
+        value_summary = self.get_value_summary()
+        minimum_summary = self.get_min_summary()
+        maximum_summary = self.get_max_summary()
 
         # Summaries
         summaries = [value_summary, minimum_summary, maximum_summary]

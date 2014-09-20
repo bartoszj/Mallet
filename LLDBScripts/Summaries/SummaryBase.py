@@ -104,6 +104,36 @@ class SummaryBase_SynthProvider(object):
         return value
 
     @staticmethod
+    def get_signed_value(obj):
+        if obj is None:
+            return None
+        return obj.GetValueAsSigned()
+
+    @staticmethod
+    def get_unsigned_value(obj):
+        if obj is None:
+            return None
+        return obj.GetValueAsUnsigned()
+
+    @staticmethod
+    def get_float_value(obj):
+        if obj is None:
+            return None
+        return float(obj.GetValue())
+
+    @staticmethod
+    def get_summary_value(obj):
+        if obj is None:
+            return None
+        return obj.GetSummary()
+
+    @staticmethod
+    def get_count_value(obj):
+        if obj is None:
+            return None
+        return obj.GetNumChildren()
+
+    @staticmethod
     def formatted_float(f, precision=2):
         return "{:.{precision}f}".format(f, precision=precision).rstrip("0").rstrip(".")
 

@@ -22,7 +22,6 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 import SummaryBase
 
 
@@ -33,7 +32,7 @@ class CGPoint_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
     # };
     # typedef struct CGPoint CGPoint;
     def __init__(self, value_obj, internal_dict):
-        super(CGRect_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(CGPoint_SynthProvider, self).__init__(value_obj, internal_dict)
 
         self.x = None
         self.y = None
@@ -46,8 +45,7 @@ class CGPoint_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         return self.x
 
     def get_x_value(self):
-        x = self.get_x()
-        return float(x.GetValue())
+        return self.get_float_value(self.get_x())
 
     def get_y(self):
         if self.y:
@@ -57,5 +55,4 @@ class CGPoint_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         return self.y
 
     def get_y_value(self):
-        y = self.get_y()
-        return float(y.GetValue())
+        return self.get_float_value(self.get_y())

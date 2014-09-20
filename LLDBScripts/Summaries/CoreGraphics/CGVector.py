@@ -46,8 +46,7 @@ class CGVector_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         return self.dx
 
     def get_dx_value(self):
-        dx = self.get_dx()
-        return float(dx.GetValue())
+        return self.get_float_value(self.get_dx())
 
     def get_dy(self):
         if self.dy:
@@ -57,8 +56,7 @@ class CGVector_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         return self.dy
 
     def get_dy_value(self):
-        dy = self.get_dy()
-        return float(dy.GetValue())
+        return self.get_float_value(self.get_dy())
 
 
 def __lldb_init_module(debugger, dict):

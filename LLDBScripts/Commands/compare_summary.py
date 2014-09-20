@@ -74,7 +74,7 @@ def compare_summary(debugger, command, result, internal_dict):
     if summary == compare_description:
         frame.EvaluateExpression("{} = @YES".format(result_name), options)
     else:
-        print >> result, "object: {}".format(summary)
+        print >> result, "object: {}\nshould be: {}".format(summary, compare_description)
         frame.EvaluateExpression("{} = @NO".format(result_name), options)
 
 
