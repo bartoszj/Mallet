@@ -22,8 +22,8 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 import SummaryBase
+import Helpers
 import CGPoint
 import CGSize
 
@@ -43,38 +43,20 @@ class CGRect_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         self.origin_provider = None
         self.size_provider = None
 
+    @Helpers.save_parameter("origin")
     def get_origin(self):
-        if self.origin:
-            return self.origin
+        return self.get_child_value("origin")
 
-        self.origin = self.get_child_value("origin")
-        return self.origin
-
+    @Helpers.save_parameter("origin_provider")
     def get_origin_provider(self):
-        if self.origin_provider:
-            return self.origin_provider
-
         origin = self.get_origin()
-        if origin is None:
-            return None
+        return None if origin is None else CGPoint.CGPoint_SynthProvider(origin, self.internal_dict)
 
-        self.origin_provider = CGPoint.CGPoint_SynthProvider(origin, self.internal_dict)
-        return self.origin_provider
-
+    @Helpers.save_parameter("size")
     def get_size(self):
-        if self.size:
-            return self.size
+        return self.get_child_value("size")
 
-        self.size = self.get_child_value("size")
-        return self.size
-
+    @Helpers.save_parameter("size_provider")
     def get_size_provider(self):
-        if self.size_provider:
-            return self.size_provider
-
         size = self.get_size()
-        if size is None:
-            return None
-
-        self.size_provider = CGSize.CGSize_SynthProvider(size, self.internal_dict)
-        return self.size_provider
+        return None if size is None else CGSize.CGSize_SynthProvider(size, self.internal_dict)

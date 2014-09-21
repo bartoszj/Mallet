@@ -40,54 +40,50 @@ class SKProduct_SynthProvider(NSObject.NSObject_SynthProvider):
         self.internal = None
         self.internal_provider = None
 
+    @Helpers.save_parameter("internal")
     def get_internal(self):
-        if self.internal:
-            return self.internal
+        return self.get_child_value("_internal")
 
-        self.internal = self.get_child_value("_internal")
-        return self.internal
-
+    @Helpers.save_parameter("internal_provider")
     def get_internal_provider(self):
-        if self.internal_provider:
-            return self.internal_provider
-
         internal = self.get_internal()
-        self.internal_provider = SKProductInternal.SKProductInternal_SynthProvider(internal, self.internal_dict)
-        return self.internal_provider
+        return None if internal is None else SKProductInternal.SKProductInternal_SynthProvider(internal, self.internal_dict)
+
+    def get_content_version_summary(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_content_version_summary()
+
+    def get_downloadable_value(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_downloadable_value()
+
+    def get_downloadable_summary(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_downloadable_summary()
+
+    def get_localized_title_summary(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_localized_title_summary()
+
+    def get_price_summary(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_price_summary()
 
     def summary(self):
-        content_version_value = self.get_internal_provider().get_content_version().GetSummary()
-        content_version_summary = None
-        if content_version_value:
-            content_version_summary = "version={}".format(content_version_value[2:-1])
-
-        downloadable_value = self.get_internal_provider().get_downloadable().GetValueAsUnsigned()
-        downloadable_summary = "downloadable={}".format("YES" if downloadable_value != 0 else "NO")
-
-        # locale_identifier_value = self.get_internal_provider().get_locale_identifier().GetSummary()
-        # locale_identifier_summary = None
-        # if locale_identifier_value:
-        #    locale_identifier_summary = "locale = {}".format(locale_identifier_value[2:-1])
-
-        # localized_description_value = self.get_internal_provider().get_localized_description().GetSummary()
-        # localized_description_summary = "description = {}".format(localized_description_value)
-
-        localized_title_value = self.get_internal_provider().get_localized_title().GetSummary()
-        localized_title_summary = localized_title_value
-
-        price_value = self.get_internal_provider().get_price().GetSummary()
-        price_summary = "price={}".format(price_value)
-
-        # product_identifier_value = self.get_internal_provider().get_product_identifier().GetSummary()
-        # product_identifier_summary = "productId = {}".format(product_identifier_value)
+        localized_title_summary = self.get_localized_title_summary()
+        price_summary = self.get_price_summary()
+        downloadable_value = self.get_downloadable_value()
+        downloadable_summary = self.get_downloadable_summary()
+        content_version_summary = self.get_content_version_summary()
 
         summaries = []
-        if localized_title_value:
+        if localized_title_summary:
             summaries.append(localized_title_summary)
-        if price_value:
+        if price_summary:
             summaries.append(price_summary)
         if downloadable_value != 0:
             summaries.append(downloadable_summary)
+        if content_version_summary:
             summaries.append(content_version_summary)
 
         summary = ", ".join(summaries)

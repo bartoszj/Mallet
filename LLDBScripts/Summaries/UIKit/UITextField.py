@@ -106,71 +106,45 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
         self.placeholder_label = None
         self.placeholder_label_provider = None
 
+    @Helpers.save_parameter("display_label")
     def get_display_label(self):
-        if self.display_label:
-            return self.display_label
+        return self.get_child_value("_displayLabel")
 
-        self.display_label = self.get_child_value("_displayLabel")
-        return self.display_label
-
+    @Helpers.save_parameter("display_label_provider")
     def get_display_label_provider(self):
-        if self.display_label_provider:
-            return self.display_label_provider
-
         display_label = self.get_display_label()
-        if display_label is None:
-            return None
-
-        self.display_label_provider = UILabel.UILabel_SynthProvider(display_label, self.internal_dict)
-        return self.display_label_provider
+        return None if display_label is None else UILabel.UILabel_SynthProvider(display_label, self.internal_dict)
 
     def get_display_label_text(self):
         display_label_provider = self.get_display_label_provider()
-        if display_label_provider is None:
-            return None
-        return display_label_provider.get_text()
+        return None if display_label_provider is None else display_label_provider.get_text()
 
     def get_display_label_text_value(self):
         return self.get_summary_value(self.get_display_label_text())
 
     def get_display_label_text_summary(self):
         display_label_text_value = self.get_display_label_text_value()
-        if display_label_text_value is None:
-            return None
-        return "text={}".format(display_label_text_value)
+        return None if display_label_text_value is None else "text={}".format(display_label_text_value)
 
+    @Helpers.save_parameter("placeholder_label")
     def get_placeholder_label(self):
-        if self.placeholder_label:
-            return self.placeholder_label
+        return self.get_child_value("_placeholderLabel")
 
-        self.placeholder_label = self.get_child_value("_placeholderLabel")
-        return self.placeholder_label
-
+    @Helpers.save_parameter("placeholder_label_provider")
     def get_placeholder_label_provider(self):
-        if self.placeholder_label_provider:
-            return self.placeholder_label_provider
-
         placeholder_label = self.get_placeholder_label()
-        if placeholder_label is None:
-            return None
-
-        self.placeholder_label_provider = UILabel.UILabel_SynthProvider(placeholder_label, self.internal_dict)
-        return self.placeholder_label_provider
+        return None if placeholder_label is None else UILabel.UILabel_SynthProvider(placeholder_label, self.internal_dict)
 
     def get_placeholder_label_text(self):
         placeholder_label_provider = self.get_placeholder_label_provider()
-        if placeholder_label_provider is None:
-            return None
-        return placeholder_label_provider.get_text()
+        return None if placeholder_label_provider is None else placeholder_label_provider.get_text()
 
     def get_placeholder_label_text_value(self):
         return self.get_summary_value(self.get_placeholder_label_text())
 
     def get_placeholder_label_text_summary(self):
         placeholder_label_text_value = self.get_placeholder_label_text_value()
-        if placeholder_label_text_value is None:
-            return None
-        return "placeholder={}".format(placeholder_label_text_value)
+        return None if placeholder_label_text_value is None else "placeholder={}".format(placeholder_label_text_value)
 
     def summary(self):
         display_label_text_summary = self.get_display_label_text_summary()

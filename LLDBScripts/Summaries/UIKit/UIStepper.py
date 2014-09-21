@@ -54,69 +54,49 @@ class UIStepper_SynthProvider(UIControl.UIControl_SynthProvider):
         self.max = None
         self.step = None
 
+    @Helpers.save_parameter("value")
     def get_value(self):
-        if self.value:
-            return self.value
-
-        self.value = self.get_child_value("_value")
-        return self.value
+        return self.get_child_value("_value")
 
     def get_value_value(self):
         return self.get_float_value(self.get_value())
 
     def get_value_summary(self):
         value_value = self.get_value_value()
-        if value_value is None:
-            return None
-        return "value={}".format(self.formatted_float(value_value))
+        return None if value_value is None else "value={}".format(self.formatted_float(value_value))
 
+    @Helpers.save_parameter("min")
     def get_min(self):
-        if self.min:
-            return self.min
-
-        self.min = self.get_child_value("_minimumValue")
-        return self.min
+        return self.get_child_value("_minimumValue")
 
     def get_min_value(self):
         return self.get_float_value(self.get_min())
 
     def get_min_summary(self):
         minimum_value = self.get_min_value()
-        if minimum_value is None:
-            return None
-        return "min={}".format(self.formatted_float(minimum_value))
+        return None if minimum_value is None else "min={}".format(self.formatted_float(minimum_value))
 
+    @Helpers.save_parameter("max")
     def get_max(self):
-        if self.max:
-            return self.max
-
-        self.max = self.get_child_value("_maximumValue")
-        return self.max
+        return self.get_child_value("_maximumValue")
 
     def get_max_value(self):
         return self.get_float_value(self.get_max())
 
     def get_max_summary(self):
         maximum_value = self.get_max_value()
-        if maximum_value is None:
-            return None
-        return "max={}".format(self.formatted_float(maximum_value))
+        return None if maximum_value is None else "max={}".format(self.formatted_float(maximum_value))
 
+    @Helpers.save_parameter("step")
     def get_step(self):
-        if self.step:
-            return self.step
-
-        self.step = self.get_child_value("_stepValue")
-        return self.step
+        return self.get_child_value("_stepValue")
 
     def get_step_value(self):
         return self.get_float_value(self.get_step())
 
     def get_step_summary(self):
         step_value = self.get_step_value()
-        if step_value is None:
-            return None
-        return "step={}".format(self.formatted_float(step_value))
+        return None if step_value is None else "step={}".format(self.formatted_float(step_value))
 
     def summary(self):
         value_summary = self.get_value_summary()

@@ -76,185 +76,140 @@ class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
             return False
         return True
 
+    @Helpers.save_parameter("era")
     def get_era(self):
-        if self.era:
-            return self.era
-
         if self.is_64bit:
             offset = 0x18
         else:
             offset = 0x0c
 
-        self.era = self.get_child_value("era", "NSInteger", offset)
-        return self.era
+        return self.get_child_value("era", "NSInteger", offset)
 
+    @Helpers.save_parameter("year")
     def get_year(self):
-        if self.year:
-            return self.year
-
         if self.is_64bit:
             offset = 0x20
         else:
             offset = 0x10
 
-        self.year = self.get_child_value("year", "NSInteger", offset)
-        return self.year
+        return self.get_child_value("year", "NSInteger", offset)
 
+    @Helpers.save_parameter("month")
     def get_month(self):
-        if self.month:
-            return self.month
-
         if self.is_64bit:
             offset = 0x28
         else:
             offset = 0x14
 
-        self.month = self.get_child_value("month", "NSInteger", offset)
-        return self.month
+        return self.get_child_value("month", "NSInteger", offset)
 
+    @Helpers.save_parameter("day")
     def get_day(self):
-        if self.day:
-            return self.day
-
         if self.is_64bit:
             offset = 0x30
         else:
             offset = 0x18
 
-        self.day = self.get_child_value("day", "NSInteger", offset)
-        return self.day
+        return self.get_child_value("day", "NSInteger", offset)
 
+    @Helpers.save_parameter("hour")
     def get_hour(self):
-        if self.hour:
-            return self.hour
-
         if self.is_64bit:
             offset = 0x38
         else:
             offset = 0x1c
 
-        self.hour = self.get_child_value("hour", "NSInteger", offset)
-        return self.hour
+        return self.get_child_value("hour", "NSInteger", offset)
 
+    @Helpers.save_parameter("minute")
     def get_minute(self):
-        if self.minute:
-            return self.minute
-
         if self.is_64bit:
             offset = 0x40
         else:
             offset = 0x20
 
-        self.minute = self.get_child_value("minute", "NSInteger", offset)
-        return self.minute
+        return self.get_child_value("minute", "NSInteger", offset)
 
+    @Helpers.save_parameter("second")
     def get_second(self):
-        if self.second:
-            return self.second
-
         if self.is_64bit:
             offset = 0x48
         else:
             offset = 0x24
 
-        self.second = self.get_child_value("second", "NSInteger", offset)
-        return self.second
+        return self.get_child_value("second", "NSInteger", offset)
 
+    @Helpers.save_parameter("week")
     def get_week(self):
-        if self.week:
-            return self.week
-
         if self.is_64bit:
             offset = 0x50
         else:
             offset = 0x28
 
-        self.week = self.get_child_value("week", "NSInteger", offset)
-        return self.week
+        return self.get_child_value("week", "NSInteger", offset)
 
+    @Helpers.save_parameter("weekday")
     def get_weekday(self):
-        if self.weekday:
-            return self.weekday
-
         if self.is_64bit:
             offset = 0x58
         else:
             offset = 0x2c
 
-        self.weekday = self.get_child_value("weekday", "NSInteger", offset)
-        return self.weekday
+        return self.get_child_value("weekday", "NSInteger", offset)
 
+    @Helpers.save_parameter("weekday_ordinal")
     def get_weekday_ordinal(self):
-        if self.weekday_ordinal:
-            return self.weekday_ordinal
-
         if self.is_64bit:
             offset = 0x60
         else:
             offset = 0x30
 
-        self.weekday_ordinal = self.get_child_value("weekday_ordinal", "NSInteger", offset)
-        return self.weekday_ordinal
+        return self.get_child_value("weekday_ordinal", "NSInteger", offset)
 
+    @Helpers.save_parameter("quarter")
     def get_quarter(self):
-        if self.quarter:
-            return self.quarter
-
         if self.is_64bit:
             offset = 0x68
         else:
             offset = 0x34
 
-        self.quarter = self.get_child_value("quarter", "NSInteger", offset)
-        return self.quarter
+        return self.get_child_value("quarter", "NSInteger", offset)
 
+    @Helpers.save_parameter("week_of_year")
     def get_week_of_year(self):
-        if self.week_of_year:
-            return self.week_of_year
-
         if self.is_64bit:
             offset = 0x78
         else:
             offset = 0x3c
 
-        self.week_of_year = self.get_child_value("week_of_year", "NSInteger", offset)
-        return self.week_of_year
+        return self.get_child_value("week_of_year", "NSInteger", offset)
 
+    @Helpers.save_parameter("week_of_month")
     def get_week_of_month(self):
-        if self.week_of_month:
-            return self.week_of_month
-
         if self.is_64bit:
             offset = 0x80
         else:
             offset = 0x40
 
-        self.week_of_month = self.get_child_value("week_of_month", "NSInteger", offset)
-        return self.week_of_month
+        return self.get_child_value("week_of_month", "NSInteger", offset)
 
+    @Helpers.save_parameter("year_for_week_of_year")
     def get_year_for_week_of_year(self):
-        if self.year_for_week_of_year:
-            return self.year_for_week_of_year
-
         if self.is_64bit:
             offset = 0x88
         else:
             offset = 0x44
 
-        self.year_for_week_of_year = self.get_child_value("year_of_week_of_year", "NSInteger", offset)
-        return self.year_for_week_of_year
+        return self.get_child_value("year_of_week_of_year", "NSInteger", offset)
 
+    @Helpers.save_parameter("leap_month")
     def get_leap_month(self):
-        if self.leap_month:
-            return self.leap_month
-
         if self.is_64bit:
             offset = 0x90
         else:
             offset = 0x48
 
-        self.leap_month = self.get_child_value("leap_month", "NSInteger", offset)
-        return self.leap_month
+        return self.get_child_value("leap_month", "NSInteger", offset)
 
     def summary(self):
         era = self.get_era()

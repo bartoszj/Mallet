@@ -22,8 +22,8 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 import SummaryBase
+import Helpers
 
 
 class CADoubleSize_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
@@ -37,30 +37,28 @@ class CADoubleSize_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         self.width = None
         self.height = None
 
+    @Helpers.save_parameter("width")
     def get_width(self):
-        if self.width:
-            return self.width
-
-        self.width = self.get_child_value("width", type_name="double", offset=0)
-        return self.width
+        return self.get_child_value("width", type_name="double", offset=0)
 
     def get_width_value(self):
-        width = self.get_width()
-        return float(width.GetValue())
+        return self.get_float_value(self.get_width())
 
+    def get_width_summary(self):
+        width = self.get_width_value()
+        return None if width is None else "width={}".format(self.formatted_float(width))
+
+    @Helpers.save_parameter("height")
     def get_height(self):
-        if self.height:
-            return self.height
-
-        self.height = self.get_child_value("height", type_name="double", offset=8)
-        return self.height
+        return self.get_child_value("height", type_name="double", offset=8)
 
     def get_height_value(self):
-        height = self.get_height()
-        return float(height.GetValue())
+        return self.get_float_value(self.get_height())
+
+    def get_height_summary(self):
+        height = self.get_height_value()
+        return None if height is None else "height={}".format((self.formatted_float(height)))
 
     def summary(self):
-        w = self.get_width_value()
-        h = self.get_height_value()
-        summary = "(width={}, height={})".format(self.formatted_float(w), self.formatted_float(h))
+        summary = "(width={}, height={})".format(self.get_width_summary(), self.get_height_summary())
         return summary

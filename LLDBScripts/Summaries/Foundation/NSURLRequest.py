@@ -41,51 +41,37 @@ class NSURLRequest_SynthProvider(NSObject.NSObject_SynthProvider):
         self.request_internal = None
         self.request_internal_provider = None
 
+    @Helpers.save_parameter("request_internal")
     def get_request_internal(self):
-        if self.request_internal:
-            return self.request_internal
+        return self.get_child_value("_internal")
 
-        self.request_internal = self.get_child_value("_internal")
-        return self.request_internal
-
+    @Helpers.save_parameter("request_internal_provider")
     def get_request_internal_provider(self):
-        if self.request_internal_provider:
-            return self.request_internal_provider
-
         request_internal = self.get_request_internal()
-        self.request_internal_provider = NSURLRequestInternal.NSURLRequestInternal_SynthProvider(request_internal,
-                                                                                                 self.internal_dict)
-        return self.request_internal_provider
+        return None if request_internal is None else \
+            NSURLRequestInternal.NSURLRequestInternal_SynthProvider(request_internal, self.internal_dict)
 
     def get_url(self):
         request_internal_provider = self.get_request_internal_provider()
-        if request_internal_provider is None:
-            return None
-        return request_internal_provider.get_url()
+        return None if request_internal_provider is None else request_internal_provider.get_url()
 
     def get_url_value(self):
         return self.get_summary_value(self.get_url())
 
     def get_url_summary(self):
         url_value = self.get_url_value()
-        if url_value is None:
-            return None
-        return "url={}".format(url_value)
+        return None if url_value is None else "url={}".format(url_value)
 
     def get_method(self):
         request_internal_provider = self.get_request_internal_provider()
-        if request_internal_provider is None:
-            return None
-        return request_internal_provider.get_method()
+        return None if request_internal_provider is None else request_internal_provider.get_method()
 
     def get_method_value(self):
         return self.get_summary_value(self.get_method())
 
     def get_method_summary(self):
         method_value = self.get_method_value()
-        if method_value is None:
-            return None
-        return "method={}".format(method_value)
+        return None if method_value is None else "method={}".format(method_value)
 
     def summary(self):
         request_internal_url_summary = self.get_url_summary()

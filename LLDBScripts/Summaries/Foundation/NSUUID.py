@@ -39,17 +39,14 @@ class NSUUID_SynthProvider(NSObject.NSObject_SynthProvider):
 
         self.uuid = None
 
+    @Helpers.save_parameter("uuid")
     def get_uuid(self):
-        if self.uuid:
-            return self.uuid
-
         if self.is_64bit:
             offset = 8
         else:
             offset = 4
 
-        self.uuid = self.get_child_value("uuid", "uuid_t", offset)
-        return self.uuid
+        return self.get_child_value("uuid", "uuid_t", offset)
 
     def get_uuid_data(self):
         uuid = self.get_uuid()

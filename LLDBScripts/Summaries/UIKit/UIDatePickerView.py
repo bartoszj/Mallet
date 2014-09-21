@@ -68,101 +68,71 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
         self.max_date = None
         self.date_components = None
 
+    @Helpers.save_parameter("date")
     def get_date(self):
-        if self.date:
-            return self.date
-
-        self.date = self.get_child_value("_userSuppliedDate")
-        return self.date
+        return self.get_child_value("_userSuppliedDate")
 
     def get_date_value(self):
         return self.get_summary_value(self.get_date())
 
     def get_date_summary(self):
         date_value = self.get_date_value()
-        if date_value is None:
-            return None
-        return "date={}".format(date_value)
+        return None if date_value is None else "date={}".format(date_value)
 
+    @Helpers.save_parameter("min_user_date")
     def get_min_user_date(self):
-        if self.min_user_date:
-            return self.min_user_date
-
-        self.min_user_date = self.get_child_value("_userSuppliedMinimumDate")
-        return self.min_user_date
+        return self.get_child_value("_userSuppliedMinimumDate")
 
     def get_min_user_date_value(self):
         return self.get_summary_value(self.get_min_user_date())
 
     def get_min_user_date_summary(self):
         min_user_date_value = self.get_min_user_date_value()
-        if min_user_date_value is None:
-            return None
-        return "minDate={}".format(min_user_date_value)
+        return None if min_user_date_value is None else "minDate={}".format(min_user_date_value)
 
+    @Helpers.save_parameter("max_user_date")
     def get_max_user_date(self):
-        if self.max_user_date:
-            return self.max_user_date
-
-        self.max_user_date = self.get_child_value("_userSuppliedMaximumDate")
-        return self.max_user_date
+        return self.get_child_value("_userSuppliedMaximumDate")
 
     def get_max_user_date_value(self):
         return self.get_summary_value(self.get_max_user_date())
 
     def get_max_user_date_summary(self):
         max_user_date_value = self.get_max_user_date_value()
-        if max_user_date_value is None:
-            return None
-        return "maxDate={}".format(max_user_date_value)
+        return None if max_user_date_value is None else "maxDate={}".format(max_user_date_value)
 
+    @Helpers.save_parameter("min_date")
     def get_min_date(self):
-        if self.min_date:
-            return self.min_date
-
-        self.min_date = self.get_child_value("_minimumDate")
-        return self.min_date
+        return self.get_child_value("_minimumDate")
 
     def get_min_date_value(self):
         return self.get_summary_value(self.get_min_date())
 
     def get_min_date_summary(self):
         min_date_value = self.get_min_date_value()
-        if min_date_value is None:
-            return None
-        return "minDate={}".format(min_date_value)
+        return None if min_date_value is None else "minDate={}".format(min_date_value)
 
+    @Helpers.save_parameter("max_date")
     def get_max_date(self):
-        if self.max_date:
-            return self.max_date
-
-        self.max_date = self.get_child_value("_maximumDate")
-        return self.max_date
+        return self.get_child_value("_maximumDate")
 
     def get_max_date_value(self):
         return self.get_summary_value(self.get_max_user_date())
 
     def get_max_date_summary(self):
         max_date_value = self.get_max_date_value()
-        if max_date_value is None:
-            return None
-        return "maxDate={}".format(max_date_value)
+        return None if max_date_value is None else "maxDate={}".format(max_date_value)
 
+    @Helpers.save_parameter("date_components")
     def get_date_components(self):
-        if self.date_components:
-            return self.date_components
-
-        self.date_components = self.get_child_value("_lastSelectedDateComponents")
-        return self.date_components
+        return self.get_child_value("_lastSelectedDateComponents")
 
     def get_date_components_value(self):
         return self.get_summary_value(self.get_date_components())
 
     def get_date_components_summary(self):
         date_components_value = self.get_date_components_value()
-        if date_components_value is None:
-            return None
-        return "{}".format(date_components_value)
+        return None if date_components_value is None else "{}".format(date_components_value)
 
     def summary(self):
         # date_summary = self.get_date_summary()

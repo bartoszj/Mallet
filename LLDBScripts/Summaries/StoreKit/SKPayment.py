@@ -41,36 +41,41 @@ class SKPayment_SynthProvider(NSObject.NSObject_SynthProvider):
         self.internal = None
         self.internal_provider = None
 
+    @Helpers.save_parameter("internal")
     def get_internal(self):
-        if self.internal:
-            return self.internal
+        return self.get_child_value("_internal")
 
-        self.internal = self.get_child_value("_internal")
-        return self.internal
-
+    @Helpers.save_parameter("internal_provider")
     def get_internal_provider(self):
-        if self.internal_provider:
-            return self.internal_provider
-
         internal = self.get_internal()
-        self.internal_provider = SKPaymentInternal.SKPaymentInternal_SynthProvider(internal, self.internal_dict)
-        return self.internal_provider
+        return None if internal is None else SKPaymentInternal.SKPaymentInternal_SynthProvider(internal, self.internal_dict)
+
+    def get_application_username_summary(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_application_username_summary()
+
+    def get_product_identifier_summary(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_product_identifier_summary()
+
+    def get_quantity_value(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_quantity_value()
+
+    def get_quantity_summary(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_quantity_summary()
 
     def summary(self):
-        application_username_value = self.get_internal_provider().get_application_username().GetSummary()
-        application_username_summary = None
-        if application_username_value:
-            application_username_summary = "applicationUsername={}".format(application_username_value[2:-1])
+        product_identifier_summary = self.get_product_identifier_summary()
+        application_username_summary = self.get_application_username_summary()
 
-        product_identifier_value = self.get_internal_provider().get_product_identifier().GetSummary()
-        product_identifier_summary = product_identifier_value
-
-        quantity_value = self.get_internal_provider().get_quantity().GetValueAsSigned()
-        quantity_summary = "quantity={}".format(quantity_value)
+        quantity_value = self.get_quantity_value()
+        quantity_summary = self.get_quantity_summary()
 
         # Summaries
         summaries = [product_identifier_summary]
-        if application_username_value:
+        if application_username_summary:
             summaries.append(application_username_summary)
         if quantity_value != 1:
             summaries.append(quantity_summary)

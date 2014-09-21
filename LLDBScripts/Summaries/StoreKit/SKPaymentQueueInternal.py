@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import NSObject
+import Helpers
 
 
 class SKPaymentQueueInternal_SynthProvider(NSObject.NSObject_SynthProvider):
@@ -47,16 +48,24 @@ class SKPaymentQueueInternal_SynthProvider(NSObject.NSObject_SynthProvider):
         self.local_transactions = None
         self.transactions = None
 
+    @Helpers.save_parameter("local_transactions")
     def get_local_transactions(self):
-        if self.local_transactions:
-            return self.local_transactions
+        return self.get_child_value("_localTransactions")
 
-        self.local_transactions = self.get_child_value("_localTransactions")
-        return self.local_transactions
+    def get_local_transactions_value(self):
+        return self.get_signed_value(self.get_local_transactions())
 
+    def get_local_transactions_summary(self):
+        local_transactions_value = self.get_local_transactions_value()
+        return None if local_transactions_value is None else "localTransactions={}".format(local_transactions_value)
+
+    @Helpers.save_parameter("transactions")
     def get_transactions(self):
-        if self.transactions:
-            return self.transactions
+        return self.get_child_value("_transactions")
 
-        self.transactions = self.get_child_value("_transactions")
-        return self.transactions
+    def get_transactions_value(self):
+        return self.get_count_value(self.get_transactions())
+
+    def get_transactions_summary(self):
+        transactions_value = self.get_transactions_value()
+        return None if transactions_value is None else "transactions={}".format(transactions_value)

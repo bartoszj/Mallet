@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import SummaryBase
+import Helpers
 
 
 class CGPoint_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
@@ -37,22 +38,16 @@ class CGPoint_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         self.x = None
         self.y = None
 
+    @Helpers.save_parameter("x")
     def get_x(self):
-        if self.x:
-            return self.x
-
-        self.x = self.get_child_value("x")
-        return self.x
+        return self.get_child_value("x")
 
     def get_x_value(self):
         return self.get_float_value(self.get_x())
 
+    @Helpers.save_parameter("y")
     def get_y(self):
-        if self.y:
-            return self.y
-
-        self.y = self.get_child_value("y")
-        return self.y
+        return self.get_child_value("y")
 
     def get_y_value(self):
         return self.get_float_value(self.get_y())

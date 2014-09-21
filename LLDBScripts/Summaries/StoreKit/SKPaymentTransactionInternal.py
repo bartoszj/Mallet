@@ -23,6 +23,13 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import NSObject
+import Helpers
+
+SKPaymentTransactionStatePurchasing = 0
+SKPaymentTransactionStatePurchased = 1
+SKPaymentTransactionStateFailed = 2
+SKPaymentTransactionStateRestored = 3
+SKPaymentTransactionStateDeferred = 4
 
 
 class SKPaymentTransactionInternal_SynthProvider(NSObject.NSObject_SynthProvider):
@@ -48,30 +55,43 @@ class SKPaymentTransactionInternal_SynthProvider(NSObject.NSObject_SynthProvider
         self.transaction_receipt = None
         self.transaction_state = None
 
+    @Helpers.save_parameter("transaction_date")
     def get_transaction_date(self):
-        if self.transaction_date:
-            return self.transaction_date
+        return self.get_child_value("_transactionDate")
 
-        self.transaction_date = self.get_child_value("_transactionDate")
-        return self.transaction_date
-
+    @Helpers.save_parameter("transaction_identifier")
     def get_transaction_identifier(self):
-        if self.transaction_identifier:
-            return self.transaction_identifier
+        return self.get_child_value("_transactionIdentifier")
 
-        self.transaction_identifier = self.get_child_value("_transactionIdentifier")
-        return self.transaction_identifier
-
+    @Helpers.save_parameter("transaction_receipt")
     def get_transaction_receipt(self):
-        if self.transaction_receipt:
-            return self.transaction_receipt
+        return self.get_child_value("_transactionReceipt")
 
-        self.transaction_receipt = self.get_child_value("_transactionReceipt")
-        return self.transaction_receipt
-
+    @Helpers.save_parameter("transaction_state")
     def get_transaction_state(self):
-        if self.transaction_state:
-            return self.transaction_state
+        return self.get_child_value("_transactionState")
 
-        self.transaction_state = self.get_child_value("_transactionState")
-        return self.transaction_state
+    def get_transaction_state_value(self):
+        return self.get_unsigned_value(self.get_transaction_state())
+
+    def get_transaction_value_text(self):
+        transaction_state_value = self.get_transaction_state_value()
+        if transaction_state_value is None:
+            return None
+
+        transaction_state_value_name = "Unknown"
+        if transaction_state_value == SKPaymentTransactionStatePurchasing:
+            transaction_state_value_name = "Purchasing"
+        elif transaction_state_value == SKPaymentTransactionStatePurchased:
+            transaction_state_value_name = "Purchased"
+        elif transaction_state_value == SKPaymentTransactionStateFailed:
+            transaction_state_value_name = "Failed"
+        elif transaction_state_value == SKPaymentTransactionStateRestored:
+            transaction_state_value_name = "Restored"
+        elif transaction_state_value == SKPaymentTransactionStateDeferred:
+            transaction_state_value_name = "Deferred"
+        return transaction_state_value_name
+
+    def get_transaction_value_summary(self):
+        transaction_state_value_text = self.get_transaction_value_text()
+        return None if transaction_state_value_text is None else "state={}".format(transaction_state_value_text)

@@ -40,21 +40,16 @@ class UIDatePicker_SynthProvider(UIControl.UIControl_SynthProvider):
 
         self.picker_view = None
 
+    @Helpers.save_parameter("picker_view")
     def get_picker_view(self):
-        if self.picker_view:
-            return self.picker_view
-
-        self.picker_view = self.get_child_value("_pickerView")
-        return self.picker_view
+        return self.get_child_value("_pickerView")
 
     def get_picker_view_value(self):
         return self.get_summary_value(self.get_picker_view())
 
     def get_picker_view_summary(self):
         picker_view_value = self.get_picker_view_value()
-        if picker_view_value is None:
-            return None
-        return "{}".format(picker_view_value)
+        return None if picker_view_value is None else "{}".format(picker_view_value)
 
     def summary(self):
         picker_view_summary = self.get_picker_view_summary()

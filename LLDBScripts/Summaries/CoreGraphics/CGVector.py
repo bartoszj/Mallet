@@ -22,8 +22,8 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 import SummaryBase
+import Helpers
 
 
 class CGVector_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
@@ -38,22 +38,16 @@ class CGVector_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         self.dx = None
         self.dy = None
 
+    @Helpers.save_parameter("dx")
     def get_dx(self):
-        if self.dx:
-            return self.dx
-
-        self.dx = self.get_child_value("dx")
-        return self.dx
+        return self.get_child_value("dx")
 
     def get_dx_value(self):
         return self.get_float_value(self.get_dx())
 
+    @Helpers.save_parameter("dy")
     def get_dy(self):
-        if self.dy:
-            return self.dy
-
-        self.dy = self.get_child_value("dy")
-        return self.dy
+        return self.get_child_value("dy")
 
     def get_dy_value(self):
         return self.get_float_value(self.get_dy())

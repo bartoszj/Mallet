@@ -22,10 +22,10 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 import SummaryBase
 import CADoublePoint
 import CADoubleSize
+import Helpers
 
 
 class CADoubleRect_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
@@ -42,40 +42,38 @@ class CADoubleRect_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         self.origin_provider = None
         self.size_provider = None
 
+    @Helpers.save_parameter("origin")
     def get_origin(self):
-        if self.origin:
-            return self.origin
-
         # Using CGPoint for workaround. LLDB cannot find type CADoublePoint.
-        self.origin = self.get_child_value("origin", type_name="CGPoint", offset=0)
-        return self.origin
+        return self.get_child_value("origin", type_name="CGPoint", offset=0)
 
+    @Helpers.save_parameter("origin_provider")
     def get_origin_provider(self):
-        if self.origin_provider:
-            return self.origin_provider
-
         origin = self.get_origin()
-        self.origin_provider = CADoublePoint.CADoublePoint_SynthProvider(origin, self.internal_dict)
-        return self.origin_provider
+        return None if origin is None else CADoublePoint.CADoublePoint_SynthProvider(origin, self.internal_dict)
 
+    def get_origin_summary(self):
+        origin = self.get_origin_provider()
+        return None if origin is None else "origin={}".format(origin.summary())
+
+    @Helpers.save_parameter("size")
     def get_size(self):
-        if self.size:
-            return self.size
-
         # Using CGSize for workaround. LLDB cannot find type CADoubleSize.
-        self.size = self.get_child_value("size", type_name="CGSize", offset=16)
-        return self.size
+        return self.get_child_value("size", type_name="CGSize", offset=16)
 
+    @Helpers.save_parameter("size_provider")
     def get_size_provider(self):
-        if self.size_provider:
-            return self.size_provider
-
         size = self.get_size()
-        self.size_provider = CADoubleSize.CADoubleSize_SynthProvider(size, self.internal_dict)
-        return self.size_provider
+        return None if size is None else CADoubleSize.CADoubleSize_SynthProvider(size, self.internal_dict)
+
+    def get_size_summary(self):
+        size = self.get_size_provider()
+        return None if size is None else "size={}".format(size.summary())
 
     def summary(self):
-        o = self.get_origin_provider()
-        s = self.get_size_provider()
-        summary = "origin={}, size={}".format(o.summary(), s.summary())
+        origin_summary = self.get_origin_summary()
+        size_summary = self.get_size_summary()
+
+        summaries = [origin_summary, size_summary]
+        summary = ", ".join(summaries)
         return summary

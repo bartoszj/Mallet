@@ -25,6 +25,7 @@
 import SummaryBase
 import CADoublePoint
 import CADoubleRect
+import Helpers
 
 
 class CALayerInternalLayer_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
@@ -40,44 +41,32 @@ class CALayerInternalLayer_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         self.bounds = None
         self.bounds_provider = None
 
+    @Helpers.save_parameter("position")
     def get_position(self):
-        if self.position:
-            return self.position
-
         if self.is_64bit:
             offset = 0x30
         else:
             offset = 0x20
 
         # Using CGPoint for workaround. LLDB cannot find type CADoublePoint.
-        self.position = self.get_child_value("position", type_name="CGPoint", offset=offset)
-        return self.position
+        return self.get_child_value("position", type_name="CGPoint", offset=offset)
 
+    @Helpers.save_parameter("position_provider")
     def get_position_provider(self):
-        if self.position_provider:
-            return self.position_provider
-
         position = self.get_position()
-        self.position_provider = CADoublePoint.CADoublePoint_SynthProvider(position, self.internal_dict)
-        return self.position_provider
+        return None if position is None else CADoublePoint.CADoublePoint_SynthProvider(position, self.internal_dict)
 
+    @Helpers.save_parameter("bounds")
     def get_bounds(self):
-        if self.bounds:
-            return self.bounds
-
         if self.is_64bit:
             offset = 0x40
         else:
             offset = 0x30
 
         # Using CGRect for workaround. LLDB cannot find type CADoubleRect.
-        self.bounds = self.get_child_value("bounds", type_name="CGRect", offset=offset)
-        return self.bounds
+        return self.get_child_value("bounds", type_name="CGRect", offset=offset)
 
+    @Helpers.save_parameter("bounds_provider")
     def get_bounds_provider(self):
-        if self.bounds_provider:
-            return self.bounds_provider
-
         bounds = self.get_bounds()
-        self.bounds_provider = CADoubleRect.CADoubleRect_SynthProvider(bounds, self.internal_dict)
-        return self.bounds_provider
+        return None if bounds is None else CADoubleRect.CADoubleRect_SynthProvider(bounds, self.internal_dict)

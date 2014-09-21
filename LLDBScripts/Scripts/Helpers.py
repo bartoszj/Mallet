@@ -22,6 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+import functools
 import lldb
 import lldb.formatters
 import objc_runtime
@@ -136,3 +137,41 @@ def generic_summary_provider(value_obj, internal_dict, class_synthetic_provider,
     # Summary not available.
     # LLDBLogger.get_logger().debug("generic_summary_provider: summary unavailable")
     return "Summary Unavailable"
+
+
+class save_parameter(object):
+    """
+    save_parameter(function) -> method
+
+    Decorator. Saves method return value to object parameter.
+    """
+    def __init__(self, param_name):
+        """
+        "param_name" store name of object parameter.
+        """
+        super(save_parameter, self).__init__()
+        self._param_name = param_name
+
+    def __call__(self, func):
+        """
+        Returns method wrapper for method "func".
+        """
+        def decorator(s, *args, **kwargs):
+            """
+            Checks if method has attribute with given name. If not raise AttributeError exception.
+            If parameter has value returns it, if not execute method and save value to parameter.
+            """
+            if not hasattr(s, self._param_name):
+                # LLDBLogger.get_logger().error("SaveParam.save_parameter.wrapper: no attribute with name: \"{}\"".
+                #                               format(self._param_name if self._param_name else "No parameter name"))
+                raise AttributeError
+            value = getattr(s, self._param_name)
+            if value is None:
+                # LLDBLogger.get_logger().debug("SaveParam.save_parameter.wrapper: na value for: \"{}\"".format(self._param_name))
+                value = func(s, *args, **kwargs)
+                setattr(s, self._param_name, value)
+            # else:
+            #     LLDBLogger.get_logger().debug("SaveParam.save_parameter.wrapper: using value: \"{}\" for param: \"{}\"".
+            #                                   format(value, self._param_name))
+            return value
+        return decorator

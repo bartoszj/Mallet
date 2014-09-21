@@ -40,34 +40,42 @@ class SKProductsResponse_SynthProvider(NSObject.NSObject_SynthProvider):
         self.internal = None
         self.internal_provider = None
 
+    @Helpers.save_parameter("internal")
     def get_internal(self):
-        if self.internal:
-            return self.internal
+        return self.get_child_value("_internal")
 
-        self.internal = self.get_child_value("_internal")
-        return self.internal
-
+    @Helpers.save_parameter("internal_provider")
     def get_internal_provider(self):
-        if self.internal_provider:
-            return self.internal_provider
-
         internal = self.get_internal()
-        self.internal_provider = SKProductsResponseInternal.SKProductsResponseInternal_SynthProvider(internal, self.internal_dict)
-        return self.internal_provider
+        return None if internal is None else SKProductsResponseInternal.SKProductsResponseInternal_SynthProvider(internal, self.internal_dict)
+
+    def get_products_value(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_products_value()
+
+    def get_products_summary(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_products_summary()
+
+    def get_invalid_identifiers_value(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_invalid_identifiers_value()
+
+    def get_invalid_identifiers_summary(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_invalid_identifiers_summary()
 
     def summary(self):
-        invalid_identifiers = self.get_internal_provider().get_invalid_identifiers()
-        invalid_identifiers_count = invalid_identifiers.GetNumChildren()
-        invalid_identifiers_summary = "{} invalid".format(invalid_identifiers_count)
+        products_value = self.get_products_value()
+        products_summary = self.get_products_summary()
 
-        products = self.get_internal_provider().get_products()
-        products_count = products.GetNumChildren()
-        products_summary = "{} valid".format(products_count)
+        invalid_identifiers_value = self.get_invalid_identifiers_value()
+        invalid_identifiers_summary = self.get_invalid_identifiers_summary()
 
         summaries = []
-        if products_count != 0:
+        if products_value != 0:
             summaries.append(products_summary)
-        if invalid_identifiers_count != 0:
+        if invalid_identifiers_value != 0:
             summaries.append(invalid_identifiers_summary)
 
         summary = None

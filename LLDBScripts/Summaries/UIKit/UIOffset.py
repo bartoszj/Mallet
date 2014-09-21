@@ -22,8 +22,8 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 import SummaryBase
+import Helpers
 
 
 class UIOffset_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
@@ -36,22 +36,16 @@ class UIOffset_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         self.horizontal = None
         self.vertical = None
 
+    @Helpers.save_parameter("horizontal")
     def get_horizontal(self):
-        if self.horizontal:
-            return self.horizontal
-
-        self.horizontal = self.get_child_value("horizontal")
-        return self.horizontal
+        return self.get_child_value("horizontal")
 
     def get_horizontal_value(self):
         return self.get_float_value(self.get_horizontal())
 
+    @Helpers.save_parameter("vertical")
     def get_vertical(self):
-        if self.vertical:
-            return self.vertical
-
-        self.vertical = self.get_child_value("vertical")
-        return self.vertical
+        return self.get_child_value("vertical")
 
     def get_vertical_value(self):
         return self.get_float_value(self.get_vertical())

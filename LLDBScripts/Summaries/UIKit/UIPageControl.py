@@ -52,53 +52,38 @@ class UIPageControl_SynthProvider(UIControl.UIControl_SynthProvider):
         self.current_page = None
         self.displayed_page = None
 
+    @Helpers.save_parameter("indicators")
     def get_indicators(self):
-        if self.indicators:
-            return self.indicators
-
-        self.indicators = self.get_child_value("_indicators")
-        return self.indicators
+        return self.get_child_value("_indicators")
 
     def get_indicators_value(self):
         return self.get_count_value(self.get_indicators())
 
     def get_indicators_summary(self):
         indicators_value = self.get_indicators_value()
-        if indicators_value is None:
-            return None
-        return "numberOfPages={}".format(indicators_value)
+        return None if indicators_value is None else "numberOfPages={}".format(indicators_value)
 
+    @Helpers.save_parameter("current_page")
     def get_current_page(self):
-        if self.current_page:
-            return self.current_page
-
-        self.current_page = self.get_child_value("_currentPage")
-        return self.current_page
+        return self.get_child_value("_currentPage")
 
     def get_current_page_value(self):
         return self.get_signed_value(self.get_current_page())
 
     def get_current_page_summary(self):
         current_page_value = self.get_current_page_value()
-        if current_page_value is None:
-            return None
-        return "currentPage={}".format(current_page_value)
+        return None if current_page_value is None else "currentPage={}".format(current_page_value)
 
+    @Helpers.save_parameter("displayed_page")
     def get_displayed_page(self):
-        if self.displayed_page:
-            return self.displayed_page
-
-        self.displayed_page = self.get_child_value("_displayedPage")
-        return self.displayed_page
+        return self.get_child_value("_displayedPage")
 
     def get_displayed_page_value(self):
         return self.get_signed_value(self.get_displayed_page())
 
     def get_displayed_page_summary(self):
         displayed_page_value = self.get_displayed_page_value()
-        if displayed_page_value is None:
-            return None
-        return "displayedPage={}".format(displayed_page_value)
+        return None if displayed_page_value is None else "displayedPage={}".format(displayed_page_value)
 
     def summary(self):
         indicators_summary = self.get_indicators_summary()

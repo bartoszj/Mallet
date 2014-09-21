@@ -64,53 +64,38 @@ class UISegmentedControl_SynthProvider(UIControl.UIControl_SynthProvider):
         self.selected_segment = None
         self.highlighted_segment = None
 
+    @Helpers.save_parameter("segments")
     def get_segments(self):
-        if self.segments:
-            return self.segments
-
-        self.segments = self.get_child_value("_segments")
-        return self.segments
+        return self.get_child_value("_segments")
 
     def get_segments_value(self):
         return self.get_count_value(self.get_segments())
 
     def get_segments_summary(self):
         segments_value = self.get_segments_value()
-        if segments_value is None:
-            return None
-        return "segments={}".format(segments_value)
+        return None if segments_value is None else "segments={}".format(segments_value)
 
+    @Helpers.save_parameter("selected_segment")
     def get_selected_segments(self):
-        if self.selected_segment:
-            return self.selected_segment
-
-        self.selected_segment = self.get_child_value("_selectedSegment")
-        return self.selected_segment
+        return self.get_child_value("_selectedSegment")
 
     def get_selected_segments_value(self):
         return self.get_signed_value(self.get_selected_segments())
 
     def get_selected_segments_summary(self):
         selected_segments_value = self.get_selected_segments_value()
-        if selected_segments_value is None:
-            return None
-        return "selected={}".format(selected_segments_value)
+        return None if selected_segments_value is None else "selected={}".format(selected_segments_value)
 
+    @Helpers.save_parameter("highlighted_segment")
     def get_highlighted_segment(self):
-        if self.highlighted_segment:
-            return self.highlighted_segment
-
-        self.highlighted_segment = self.get_child_value("_highlightedSegment")
-        return self.highlighted_segment
+        return self.get_child_value("_highlightedSegment")
 
     def get_highlighted_segment_value(self):
         return self.get_signed_value(self.get_highlighted_segment())
 
     def get_highlighted_segment_summary(self):
         highlighted_segment_value = self.get_highlighted_segment_value()
-        if highlighted_segment_value is None:
-            return None
-        return "highlighted={}".format(highlighted_segment_value)
+        return None if highlighted_segment_value is None else "highlighted={}".format(highlighted_segment_value)
 
     def summary(self):
         segments_summary = self.get_segments_summary()

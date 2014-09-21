@@ -26,12 +26,6 @@ import Helpers
 import NSObject
 import SKPaymentTransactionInternal
 
-SKPaymentTransactionStatePurchasing = 0
-SKPaymentTransactionStatePurchased = 1
-SKPaymentTransactionStateFailed = 2
-SKPaymentTransactionStateRestored = 3
-SKPaymentTransactionStateDeferred = 4
-
 
 class SKPaymentTransaction_SynthProvider(NSObject.NSObject_SynthProvider):
     # Class: SKPaymentTransaction
@@ -46,39 +40,21 @@ class SKPaymentTransaction_SynthProvider(NSObject.NSObject_SynthProvider):
         self.internal = None
         self.internal_provider = None
 
+    @Helpers.save_parameter("internal")
     def get_internal(self):
-        if self.internal:
-            return self.internal
+        return self.get_child_value("_internal")
 
-        self.internal = self.get_child_value("_internal")
-        return self.internal
-
+    @Helpers.save_parameter("internal_provider")
     def get_internal_provider(self):
-        if self.internal_provider:
-            return self.internal_provider
-
         internal = self.get_internal()
-        self.internal_provider = SKPaymentTransactionInternal.SKPaymentTransactionInternal_SynthProvider(internal, self.internal_dict)
-        return self.internal_provider
+        return None if internal is None else SKPaymentTransactionInternal.SKPaymentTransactionInternal_SynthProvider(internal, self.internal_dict)
+
+    def get_transaction_value_summary(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_transaction_value_summary()
 
     def summary(self):
-        # transaction_identifier_value = self.get_internal_provider().get_transaction_identifier().GetSummary()
-        # transaction_identifier_summary = transaction_identifier_value
-
-        transaction_state_value = self.get_internal_provider().get_transaction_state().GetValueAsUnsigned()
-        transaction_state_value_name = "Unknown"
-        if transaction_state_value == SKPaymentTransactionStatePurchasing:
-            transaction_state_value_name = "Purchasing"
-        elif transaction_state_value == SKPaymentTransactionStatePurchased:
-            transaction_state_value_name = "Purchased"
-        elif transaction_state_value == SKPaymentTransactionStateFailed:
-            transaction_state_value_name = "Failed"
-        elif transaction_state_value == SKPaymentTransactionStateRestored:
-            transaction_state_value_name = "Restored"
-        elif transaction_state_value == SKPaymentTransactionStateDeferred:
-            transaction_state_value_name = "Deferred"
-
-        transaction_state_summary = "state={}".format(transaction_state_value_name)
+        transaction_state_summary = self.get_transaction_value_summary()
 
         # Summaries
         summaries = [transaction_state_summary]

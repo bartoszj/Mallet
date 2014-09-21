@@ -22,8 +22,8 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 import SummaryBase
+import Helpers
 
 
 class UIEdgeInsets_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
@@ -38,42 +38,30 @@ class UIEdgeInsets_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         self.bottom = None
         self.right = None
 
+    @Helpers.save_parameter("top")
     def get_top(self):
-        if self.top:
-            return self.top
-
-        self.top = self.get_child_value("top")
-        return self.top
+        return self.get_child_value("top")
 
     def get_top_value(self):
         return self.get_float_value(self.get_top())
 
+    @Helpers.save_parameter("left")
     def get_left(self):
-        if self.left:
-            return self.left
-
-        self.left = self.get_child_value("left")
-        return self.left
+        return self.get_child_value("left")
 
     def get_left_value(self):
         return self.get_float_value(self.get_left())
 
+    @Helpers.save_parameter("bottom")
     def get_bottom(self):
-        if self.bottom:
-            return self.bottom
-
-        self.bottom = self.get_child_value("bottom")
-        return self.bottom
+        return self.get_child_value("bottom")
 
     def get_bottom_value(self):
         return self.get_float_value(self.get_bottom())
 
+    @Helpers.save_parameter("right")
     def get_right(self):
-        if self.right:
-            return self.right
-
-        self.right = self.get_child_value("right")
-        return self.right
+        return self.get_child_value("right")
 
     def get_right_value(self):
         return self.get_float_value(self.get_right())

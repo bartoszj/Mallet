@@ -47,17 +47,14 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         self.tmp1_structure = None
         self.method = None
 
+    @Helpers.save_parameter("url")
     def get_url(self):
-        if self.url:
-            return self.url
-
         if self.is_64bit:
             offset = 0x20
         else:
             offset = 0x10
 
-        self.url = self.get_child_value("url", "NSURL *", offset)
-        return self.url
+        return self.get_child_value("url", "NSURL *", offset)
 
     def get_url_value(self):
         return self.get_summary_value(self.get_url())
@@ -68,39 +65,31 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
             return None
         return "url={}".format(url_value)
 
+    @Helpers.save_parameter("tmp1_structure")
     def get_tmp1_structure(self):
-        if self.tmp1_structure:
-            return self.tmp1_structure
-
         if self.is_64bit:
             offset = 0x50
         else:
             offset = 0x2c
 
-        self.tmp1_structure = self.get_child_value("tmp1", "addr_ptr_type", offset)
-        return self.tmp1_structure
+        return self.get_child_value("tmp1", "addr_ptr_type", offset)
 
+    @Helpers.save_parameter("method")
     def get_method(self):
-        if self.method:
-            return self.method
-
         if self.is_64bit:
             offset = 0x88
         else:
             offset = 0x44
 
         self.get_tmp1_structure()
-        self.method = self.tmp1_structure.CreateChildAtOffset("HTTPMethod", offset, self.get_type("NSString *"))
-        return self.method
+        return self.tmp1_structure.CreateChildAtOffset("HTTPMethod", offset, self.get_type("NSString *"))
 
     def get_method_value(self):
         return self.get_summary_value(self.get_method())
 
     def get_method_summary(self):
         method_value = self.get_method_value()
-        if method_value is None:
-            return None
-        return "method={}".format(method_value)
+        return None if method_value is None else "method={}".format(method_value)
 
     def summary(self):
         url_summary = self.get_url_summary()

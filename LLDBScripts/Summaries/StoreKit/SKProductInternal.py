@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import NSObject
+import Helpers
 
 
 class SKProductInternal_SynthProvider(NSObject.NSObject_SynthProvider):
@@ -51,51 +52,58 @@ class SKProductInternal_SynthProvider(NSObject.NSObject_SynthProvider):
         self.price = None
         self.product_identifier = None
 
+    @Helpers.save_parameter("content_version")
     def get_content_version(self):
-        if self.content_version:
-            return self.content_version
+        return self.get_child_value("_contentVersion")
 
-        self.content_version = self.get_child_value("_contentVersion")
-        return self.content_version
+    def get_content_version_value(self):
+        return self.get_stripped_summary_value(self.get_content_version())
 
+    def get_content_version_summary(self):
+        content_version_value = self.get_content_version_value()
+        return None if content_version_value is None else "version={}".format(content_version_value)
+
+    @Helpers.save_parameter("downloadable")
     def get_downloadable(self):
-        if self.downloadable:
-            return self.downloadable
+        return self.get_child_value("_downloadable")
 
-        self.downloadable = self.get_child_value("_downloadable")
-        return self.downloadable
+    def get_downloadable_value(self):
+        return self.get_unsigned_value(self.get_downloadable())
 
+    def get_downloadable_summary(self):
+        downloadable_value = self.get_downloadable_value()
+        return None if downloadable_value is None else "downloadable={}".format("YES" if downloadable_value != 0 else "NO")
+
+    @Helpers.save_parameter("locale_identifier")
     def get_locale_identifier(self):
-        if self.locale_identifier:
-            return self.locale_identifier
+        return self.get_child_value("_localeIdentifier")
 
-        self.locale_identifier = self.get_child_value("_localeIdentifier")
-        return self.locale_identifier
-
+    @Helpers.save_parameter("localized_description")
     def get_localized_description(self):
-        if self.localized_description:
-            return self.localized_description
+        return self.get_child_value("_localizedDescription")
 
-        self.localized_description = self.get_child_value("_localizedDescription")
-        return self.localized_description
-
+    @Helpers.save_parameter("localized_title")
     def get_localized_title(self):
-        if self.localized_title:
-            return self.localized_title
+        return self.get_child_value("_localizedTitle")
 
-        self.localized_title = self.get_child_value("_localizedTitle")
-        return self.localized_title
+    def get_localized_title_value(self):
+        return self.get_summary_value(self.localized_title())
 
+    def get_localized_title_summary(self):
+        localized_title_value = self.get_localized_title_value()
+        return None if localized_title_value is None else "{}".format(localized_title_value)
+
+    @Helpers.save_parameter("price")
     def get_price(self):
-        if self.price:
-            return self.price
+        return self.get_child_value("_price")
 
-        self.price = self.get_child_value("_price")
-        return self.price
+    def get_price_value(self):
+        return self.get_summary_value(self.get_price())
 
+    def get_price_summary(self):
+        price_value = self.get_price_value()
+        return None if price_value is None else "price={}".format(price_value)
+
+    @Helpers.save_parameter("product_identifier")
     def get_product_identifier(self):
-        if self.product_identifier:
-            return self.product_identifier
-
-        self.product_identifier = self.get_child_value("_productIdentifier")
-        return self.product_identifier
+        return self.get_child_value("_productIdentifier")

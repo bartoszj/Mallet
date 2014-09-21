@@ -105,33 +105,27 @@ class SummaryBase_SynthProvider(object):
 
     @staticmethod
     def get_signed_value(obj):
-        if obj is None:
-            return None
-        return obj.GetValueAsSigned()
+        return None if obj is None else obj.GetValueAsSigned()
 
     @staticmethod
     def get_unsigned_value(obj):
-        if obj is None:
-            return None
-        return obj.GetValueAsUnsigned()
+        return None if obj is None else obj.GetValueAsUnsigned()
 
     @staticmethod
     def get_float_value(obj):
-        if obj is None:
-            return None
-        return float(obj.GetValue())
+        return None if obj is None else float(obj.GetValue())
 
     @staticmethod
     def get_summary_value(obj):
-        if obj is None:
-            return None
-        return obj.GetSummary()
+        return None if obj is None else obj.GetSummary()
+
+    @staticmethod
+    def get_stripped_summary_value(obj):
+        return None if obj is None else obj.GetSummary()[2:-1]
 
     @staticmethod
     def get_count_value(obj):
-        if obj is None:
-            return None
-        return obj.GetNumChildren()
+        return None if obj is None else obj.GetNumChildren()
 
     @staticmethod
     def formatted_float(f, precision=2):
@@ -150,3 +144,4 @@ def get_architecture_list():
         class_dump_dir = os.path.expanduser(os.path.join(LoadScripts.lldb_scripts_dir, LoadScripts.lldb_class_dump_dir))
         get_architecture_list.architectures_list = ClassDump.LazyArchitecturesList(class_dump_dir)
     return get_architecture_list.architectures_list
+

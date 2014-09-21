@@ -140,103 +140,74 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
         self.body_provider = None
         self.buttons = None
 
+    @Helpers.save_parameter("title")
     def get_title(self):
-        if self.title:
-            return self.title
+        return self.get_child_value("_titleLabel")
 
-        self.title = self.get_child_value("_titleLabel")
-        return self.title
-
+    @Helpers.save_parameter("title_provider")
     def get_title_provider(self):
-        if self.title_provider:
-            return self.title_provider
-
         title = self.get_title()
-        if title:
-            self.title_provider = UILabel.UILabel_SynthProvider(title, self.internal_dict)
-        return self.title_provider
+        return None if title is None else UILabel.UILabel_SynthProvider(title, self.internal_dict)
 
     def get_title_value(self):
         title_provider = self.get_title_provider()
-        if title_provider is None:
-            return None
-        return title_provider.get_text_value()
+        return None if title_provider is None else title_provider.get_text_value()
 
     def get_title_summary(self):
         title_value = self.get_title_value()
-        if title_value is None:
-            return None
-        return "title={}".format(self.get_title_value())
+        return None if title_value is None else "title={}".format(self.get_title_value())
 
+    @Helpers.save_parameter("subtitle")
     def get_subtitle(self):
-        if self.subtitle:
-            return self.subtitle
+        return self.get_child_value("_subtitleLabel")
 
-        self.subtitle = self.get_child_value("_subtitleLabel")
-        return self.subtitle
-
+    @Helpers.save_parameter("subtitle_provider")
     def get_subtitle_provider(self):
-        if self.subtitle_provider:
-            return self.subtitle_provider
-
         subtitle = self.get_subtitle()
-        if subtitle:
-            self.subtitle_provider = UILabel.UILabel_SynthProvider(subtitle, self.internal_dict)
-        return self.subtitle_provider
+        return None if subtitle is None else UILabel.UILabel_SynthProvider(subtitle, self.internal_dict)
 
     def get_subtitle_value(self):
         subtitle_provider = self.get_subtitle_provider()
-        if subtitle_provider is None:
-            return None
-        return subtitle_provider.get_text_value()
+        return None if subtitle_provider is None else subtitle_provider.get_text_value()
 
     def get_subtitle_summary(self):
         subtitle_text = self.get_subtitle_value()
-        if subtitle_text is None:
-            return None
-        return "subtitle={}".format(self.get_subtitle_value())
+        return None if subtitle_text is None else "subtitle={}".format(self.get_subtitle_value())
 
+    @Helpers.save_parameter("body")
     def get_body(self):
-        if self.body:
-            return self.body
+        return self.get_child_value("_bodyTextLabel")
 
-        self.body = self.get_child_value("_bodyTextLabel")
-        return self.body
-
+    @Helpers.save_parameter("body_provider")
     def get_body_provider(self):
-        if self.body_provider:
-            return self.body_provider
-
         body = self.get_body()
-        if body:
-            self.body_provider = UILabel.UILabel_SynthProvider(body, self.internal_dict)
-        return self.body_provider
+        return None if body is None else UILabel.UILabel_SynthProvider(body, self.internal_dict)
 
     def get_body_value(self):
         body_provider = self.get_body_provider()
-        if body_provider is None:
-            return None
-        return body_provider.get_text_value()
+        return None if body_provider is None else body_provider.get_text_value()
 
     def get_body_summary(self):
         body_value = self.get_body_value()
-        if body_value is None:
-            return None
-        return "message={}".format(body_value)
+        return None if body_value is None else "message={}".format(body_value)
 
+    @Helpers.save_parameter("buttons")
     def get_buttons(self):
-        if self.buttons:
-            return self.buttons
+        return self.get_child_value("_buttons")
 
-        buttons = self.get_child_value("_buttons")
-        self.buttons = []
-        for i in xrange(0, buttons.GetNumChildren()):
+    def get_buttons_objects(self):
+        buttons = self.get_buttons()
+        if buttons is None:
+            return None
+
+        buttons_objects = []
+        for i in xrange(0, self.get_count_value(buttons)):
             b = buttons.GetChildAtIndex(i)
-            self.buttons.append(b)
-        return buttons
+            buttons_objects.append(b)
+        return buttons_objects
 
     def get_buttons_names(self):
-        buttons = self.get_buttons()
+        buttons = self.get_buttons_objects()
         buttons_names = []
         for button in buttons:
             button_provider = UIButton.UIButton_SynthProvider(button, self.internal_dict)

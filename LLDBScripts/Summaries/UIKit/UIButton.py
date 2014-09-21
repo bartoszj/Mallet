@@ -67,32 +67,22 @@ class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
         self.label = None
         self.label_provider = None
 
+    @Helpers.save_parameter("label")
     def get_label(self):
-        if self.label:
-            return self.label
+        return self.get_child_value("_titleView")
 
-        self.label = self.get_child_value("_titleView")
-        return self.label
-
+    @Helpers.save_parameter("label_provider")
     def get_label_provider(self):
-        if self.label_provider:
-            return self.label_provider
-
         label = self.get_label()
-        self.label_provider = UILabel.UILabel_SynthProvider(label, self.internal_dict)
-        return self.label_provider
+        return None if label is None else UILabel.UILabel_SynthProvider(label, self.internal_dict)
 
     def get_label_value(self):
         label_provider = self.get_label_provider()
-        if label_provider is None:
-            return None
-        return label_provider.get_text_value()
+        return None if label_provider is None else label_provider.get_text_value()
 
     def get_label_summary(self):
         label_value = self.get_label_value()
-        if label_value is None:
-            return None
-        return "text={}".format(self.get_label_value())
+        return None if label_value is None else "text={}".format(self.get_label_value())
 
     def summary(self):
         label_summary = self.get_label_summary()

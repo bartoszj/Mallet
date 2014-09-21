@@ -22,8 +22,8 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 import SummaryBase
+import Helpers
 
 
 class CADoublePoint_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
@@ -37,30 +37,28 @@ class CADoublePoint_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         self.x = None
         self.y = None
 
+    @Helpers.save_parameter("x")
     def get_x(self):
-        if self.x:
-            return self.x
-
-        self.x = self.get_child_value("x", type_name="double", offset=0)
-        return self.x
+        return self.get_child_value("x", type_name="double", offset=0)
 
     def get_x_value(self):
-        x = self.get_x()
-        return float(x.GetValue())
+        return self.get_float_value(self.get_x())
 
+    def get_x_summary(self):
+        x = self.get_x_value()
+        return None if x is None else "x={}".format(self.formatted_float(x))
+
+    @Helpers.save_parameter("y")
     def get_y(self):
-        if self.y:
-            return self.y
-
-        self.y = self.get_child_value("y", type_name="double", offset=8)
-        return self.y
+        return self.get_child_value("y", type_name="double", offset=8)
 
     def get_y_value(self):
-        y = self.get_y()
-        return float(y.GetValue())
+        return self.get_float_value(self.get_y())
+
+    def get_y_summary(self):
+        y = self.get_y_value()
+        return None if y is None else "y={}".format(self.formatted_float(y))
 
     def summary(self):
-        x = self.get_x_value()
-        y = self.get_y_value()
-        summary = "(x={}, y={})".format(self.formatted_float(x), self.formatted_float(y))
+        summary = "({}, {})".format(self.get_x_summary(), self.get_y_summary())
         return summary

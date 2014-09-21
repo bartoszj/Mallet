@@ -50,21 +50,16 @@ class UIProgressView_SynthProvider(UIView.UIView_SynthProvider):
 
         self.progress = None
 
+    @Helpers.save_parameter("progress")
     def get_progress(self):
-        if self.progress:
-            return self.progress
-
-        self.progress = self.get_child_value("_progress")
-        return self.progress
+        return self.get_child_value("_progress")
 
     def get_progress_value(self):
         return self.get_float_value(self.get_progress())
 
     def get_progress_summary(self):
         progress_value = self.get_progress_value()
-        if progress_value is None:
-            return None
-        return "progress={}".format(self.formatted_float(progress_value))
+        return None if progress_value is None else "progress={}".format(self.formatted_float(progress_value))
 
     def summary(self):
         progress_summary = self.get_progress_summary()

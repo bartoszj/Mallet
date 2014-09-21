@@ -41,20 +41,14 @@ class CALayer_SynthProvider(NSObject.NSObject_SynthProvider):
         self.attr = None
         self.attr_provider = None
 
+    @Helpers.save_parameter("attr")
     def get_attr(self):
-        if self.attr:
-            return self.attr
+        return self.get_child_value("_attr")
 
-        self.attr = self.get_child_value("_attr")
-        return self.attr
-
+    @Helpers.save_parameter("attr_provider")
     def get_attr_provider(self):
-        if self.attr_provider:
-            return self.attr_provider
-
         attr = self.get_attr()
-        self.attr_provider = CALayerIvars.CALayerIvars_SynthProvider(attr, self.internal_dict)
-        return self.attr_provider
+        return None if attr is None else CALayerIvars.CALayerIvars_SynthProvider(attr, self.internal_dict)
 
     def get_position(self):
         return self.get_attr_provider().get_layer_provider().get_position()
@@ -64,10 +58,8 @@ class CALayer_SynthProvider(NSObject.NSObject_SynthProvider):
 
     def get_position_summary(self):
         position = self.get_position_provider()
-        if position is None:
-            return None
-        return "position=({}, {})".format(self.formatted_float(position.get_x_value()),
-                                          self.formatted_float(position.get_y_value()))
+        return None if position is None else "position=({}, {})".format(self.formatted_float(position.get_x_value()),
+                                                                        self.formatted_float(position.get_y_value()))
 
     def get_bounds(self):
         return self.get_attr_provider().get_layer_provider().get_bounds()
@@ -77,12 +69,10 @@ class CALayer_SynthProvider(NSObject.NSObject_SynthProvider):
 
     def get_bounds_summary(self):
         bounds = self.get_bounds_provider()
-        if bounds is None:
-            return None
-        return "bounds=({} {}; {} {})".format(self.formatted_float(bounds.get_origin_provider().get_x_value()),
-                                              self.formatted_float(bounds.get_origin_provider().get_y_value()),
-                                              self.formatted_float(bounds.get_size_provider().get_width_value()),
-                                              self.formatted_float(bounds.get_size_provider().get_height_value()))
+        return None if bounds is None else "bounds=({} {}; {} {})".format(self.formatted_float(bounds.get_origin_provider().get_x_value()),
+                                                                          self.formatted_float(bounds.get_origin_provider().get_y_value()),
+                                                                          self.formatted_float(bounds.get_size_provider().get_width_value()),
+                                                                          self.formatted_float(bounds.get_size_provider().get_height_value()))
 
     def summary(self):
         position_summary = self.get_position_summary()

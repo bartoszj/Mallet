@@ -22,8 +22,9 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 import SummaryBase
+import Helpers
+
 
 
 class CGSize_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
@@ -38,22 +39,16 @@ class CGSize_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         self.width = None
         self.height = None
 
+    @Helpers.save_parameter("width")
     def get_width(self):
-        if self.width:
-            return self.width
-
-        self.width = self.get_child_value("width")
-        return self.width
+        return self.get_child_value("width")
 
     def get_width_value(self):
         return self.get_float_value(self.get_width())
 
+    @Helpers.save_parameter("height")
     def get_height(self):
-        if self.height:
-            return self.height
-
-        self.height = self.get_child_value("height")
-        return self.height
+        return self.get_child_value("height")
 
     def get_height_value(self):
         return self.get_float_value(self.get_height())

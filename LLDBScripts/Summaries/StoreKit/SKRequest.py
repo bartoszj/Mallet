@@ -40,20 +40,14 @@ class SKRequest_SynthProvider(NSObject.NSObject_SynthProvider):
         self.request_internal = None
         self.request_internal_provider = None
 
+    @Helpers.save_parameter("request_internal")
     def get_request_internal(self):
-        if self.request_internal:
-            return self.request_internal
+        return self.get_child_value("_requestInternal")
 
-        self.request_internal = self.get_child_value("_requestInternal")
-        return self.request_internal
-
+    @Helpers.save_parameter("request_internal_provider")
     def get_request_internal_provider(self):
-        if self.request_internal_provider:
-            return self.request_internal_provider
-
         request_internal = self.get_request_internal()
-        self.request_internal_provider = SKRequestInternal.SKRequestInternal_SynthProvider(request_internal, self.internal_dict)
-        return self.request_internal_provider
+        return request_internal if request_internal is None else SKRequestInternal.SKRequestInternal_SynthProvider(request_internal, self.internal_dict)
 
     def summary(self):
         return ""

@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import NSObject
+import Helpers
 
 
 class SKProductsRequestInternal_SynthProvider(NSObject.NSObject_SynthProvider):
@@ -37,9 +38,19 @@ class SKProductsRequestInternal_SynthProvider(NSObject.NSObject_SynthProvider):
 
         self.product_identifiers = None
 
+    @Helpers.save_parameter("product_identifiers")
     def get_product_identifiers(self):
-        if self.product_identifiers:
-            return self.product_identifiers
-
-        self.product_identifiers = self.get_child_value("_productIdentifiers")
         return self.product_identifiers
+
+    def get_product_identifiers_value(self):
+        return self.get_count_value(self.get_product_identifiers())
+
+    def get_product_identifiers_summary(self):
+        product_identifiers_value = self.get_product_identifiers_value()
+        if product_identifiers_value is None:
+            return None
+
+        if product_identifiers_value == 1:
+            return "@\"{} product\"".format(product_identifiers_value)
+        else:
+            return "@\"{} products\"".format(product_identifiers_value)

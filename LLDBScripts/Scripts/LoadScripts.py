@@ -31,7 +31,8 @@ lldb_commands_paths = ["Commands"]
 lldb_scripts_paths = ["Scripts"]
 lldb_scripts_load_order = ["objc_runtime",
                            "Helpers",
-                           "LLDBLogger"]
+                           "LLDBLogger",
+                           "SaveParam"]
 lldb_script_extensions = [".py"]
 
 lldb_summaries_paths = ["Summaries"]

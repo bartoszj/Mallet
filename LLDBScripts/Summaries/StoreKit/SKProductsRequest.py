@@ -40,29 +40,28 @@ class SKProductsRequest_SynthProvider(SKRequest.SKRequest_SynthProvider):
         self.products_request_internal = None
         self.products_request_internal_provider = None
 
+    @Helpers.save_parameter("products_request_internal")
     def get_products_request_internal(self):
-        if self.products_request_internal:
-            return self.products_request_internal
+        return self.get_child_value("_productsRequestInternal")
 
-        self.products_request_internal = self.get_child_value("_productsRequestInternal")
-        return self.products_request_internal
-
+    @Helpers.save_parameter("products_request_internal_provider")
     def get_products_request_internal_provider(self):
-        if self.products_request_internal_provider:
-            return self.products_request_internal_provider
-
         products_request_internal = self.get_products_request_internal()
-        self.products_request_internal_provider = SKProductsRequestInternal.SKProductsRequestInternal_SynthProvider(products_request_internal, self.internal_dict)
-        return self.products_request_internal_provider
+        return products_request_internal if products_request_internal is None else \
+            SKProductsRequestInternal.SKProductsRequestInternal_SynthProvider(products_request_internal, self.internal_dict)
+
+    def get_product_identifiers_summary(self):
+        products_request_internal_provider = self.get_products_request_internal_provider()
+        return None if products_request_internal_provider is None else products_request_internal_provider.get_product_identifiers_summary()
 
     def summary(self):
-        product_identifiers = self.get_products_request_internal_provider().get_product_identifiers()
-        product_identifiers_count = product_identifiers.GetNumChildren()
+        product_identifiers_summary = self.get_product_identifiers_summary()
 
-        if product_identifiers_count == 1:
-            summary = "@\"{} product\"".format(product_identifiers_count)
-        else:
-            summary = "@\"{} products\"".format(product_identifiers_count)
+        summaries = []
+        if product_identifiers_summary:
+            summaries.append(product_identifiers_summary)
+
+        summary = ", ".join(summaries)
         return summary
 
 

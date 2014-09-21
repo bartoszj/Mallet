@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import NSObject
+import Helpers
 
 
 class SKProductsResponseInternal_SynthProvider(NSObject.NSObject_SynthProvider):
@@ -39,16 +40,24 @@ class SKProductsResponseInternal_SynthProvider(NSObject.NSObject_SynthProvider):
         self.products = None
         self.invalid_identifiers = None
 
+    @Helpers.save_parameter("products")
     def get_products(self):
-        if self.products:
-            return self.products
+        return self.get_child_value("_products")
 
-        self.products = self.get_child_value("_products")
-        return self.products
+    def get_products_value(self):
+        return self.get_count_value(self.get_products())
 
+    def get_products_summary(self):
+        products_value = self.get_products_value()
+        return None if products_value is None else "{} valid".format(products_value)
+
+    @Helpers.save_parameter("invalid_identifiers")
     def get_invalid_identifiers(self):
-        if self.invalid_identifiers:
-            return self.invalid_identifiers
+        return self.get_child_value("_invalidIdentifiers")
 
-        self.invalid_identifiers = self.get_child_value("_invalidIdentifiers")
-        return self.invalid_identifiers
+    def get_invalid_identifiers_value(self):
+        return self.get_count_value(self.get_invalid_identifiers())
+
+    def get_invalid_identifiers_summary(self):
+        invalid_identifiers_value = self.get_invalid_identifiers_value()
+        return None if invalid_identifiers_value is None else "{} invalid".format(invalid_identifiers_value)

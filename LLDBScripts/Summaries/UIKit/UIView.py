@@ -28,7 +28,7 @@ import CALayer
 import LLDBLogger
 
 
-class _Rect(object):
+class Rect(object):
     def __init__(self):
         self.x = None
         self.y = None
@@ -143,22 +143,20 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
         self.layer = None
         self.layer_provider = None
 
+    @Helpers.save_parameter("frame")
     def get_frame(self):
-        if self.frame:
-            return self.frame
-
         if not self.has_valid_layer():
             return None
 
         position = self.get_layer_provider().get_position_provider()
         bounds = self.get_layer_provider().get_bounds_provider()
 
-        self.frame = _Rect()
-        self.frame.width = bounds.get_size_provider().get_width_value()
-        self.frame.height = bounds.get_size_provider().get_height_value()
-        self.frame.x = position.get_x_value() - self.frame.width / 2
-        self.frame.y = position.get_y_value() - self.frame.height / 2
-        return self.frame
+        frame = Rect()
+        frame.width = bounds.get_size_provider().get_width_value()
+        frame.height = bounds.get_size_provider().get_height_value()
+        frame.x = position.get_x_value() - frame.width / 2
+        frame.y = position.get_y_value() - frame.height / 2
+        return frame
 
     def get_frame_summary(self):
         frame = self.get_frame()
@@ -171,28 +169,19 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
                                                       self.formatted_float(frame.height))
         return frame_summary
 
+    @Helpers.save_parameter("tag")
     def get_tag(self):
-        if self.tag:
-            return self.tag
-
-        self.tag = self.get_child_value("_tag")
-        return self.tag
+        return self.get_child_value("_tag")
 
     def get_tag_value(self):
-        tag = self.get_tag()
-        if tag is None:
-            return 0
-        return tag.GetValueAsSigned()
+        return self.get_signed_value(self.get_tag())
 
     def get_tag_summary(self):
         return "tag={}".format(self.get_tag_value())
 
+    @Helpers.save_parameter("layer")
     def get_layer(self):
-        if self.layer:
-            return self.layer
-
-        self.layer = self.get_child_value("_layer")
-        return self.layer
+        return self.get_child_value("_layer")
 
     def has_valid_layer(self):
         # In some cases CALayer object is invalid.
@@ -203,13 +192,10 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
             return False
         return True
 
+    @Helpers.save_parameter("layer_provider")
     def get_layer_provider(self):
-        if self.layer_provider:
-            return self.layer_provider
-
         layer = self.get_layer()
-        self.layer_provider = CALayer.CALayer_SynthProvider(layer, self.internal_dict)
-        return self.layer_provider
+        return None if layer is None else CALayer.CALayer_SynthProvider(layer, self.internal_dict)
 
     def summary(self):
         frame_summary = self.get_frame_summary()

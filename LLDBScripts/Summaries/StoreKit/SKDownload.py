@@ -54,67 +54,64 @@ class SKDownload_SynthProvider(NSObject.NSObject_SynthProvider):
         self.time_remaining = None
         self.version = None
 
+    @Helpers.save_parameter("content_identifier")
     def get_content_identifier(self):
-        if self.content_identifier:
-            return self.content_identifier
+        return self.get_child_value("_contentIdentifier")
 
-        self.content_identifier = self.get_child_value("_contentIdentifier")
-        return self.content_identifier
+    def get_content_identifier_value(self):
+        return self.get_summary_value(self.get_content_identifier())
 
+    def get_content_identifier_summary(self):
+        content_identifier_value = self.get_content_identifier_value()
+        return None if content_identifier_value is None else "{}".format(content_identifier_value)
+
+    @Helpers.save_parameter("content_length")
     def get_content_length(self):
-        if self.content_length:
-            return self.content_length
+        return self.get_child_value("_contentLength")
 
-        self.content_length = self.get_child_value("_contentLength")
-        return self.content_length
+    def get_content_length_value(self):
+        return self.get_signed_value(self.get_content_length())
 
+    def get_content_length_summary(self):
+        content_length_value = self.get_content_length_value()
+        return None if content_length_value is None else "length={}".format(content_length_value)
+
+    @Helpers.save_parameter("content_url")
     def get_content_url(self):
-        if self.content_url:
-            return self.content_url
+        return self.get_child_value("_contentURL")
 
-        self.content_url = self.get_child_value("_contentURL")
-        return self.content_url
-
+    @Helpers.save_parameter("download_id")
     def get_download_id(self):
-        if self.download_id:
-            return self.download_id
+        return self.get_child_value("_downloadID")
 
-        self.download_id = self.get_child_value("_downloadID")
-        return self.download_id
-
+    @Helpers.save_parameter("download_state")
     def get_download_state(self):
-        if self.download_state:
-            return self.download_state
+        return self.get_child_value("_downloadState")
 
-        self.download_state = self.get_child_value("_downloadState")
-        return self.download_state
-
+    @Helpers.save_parameter("progress")
     def get_progress(self):
-        if self.progress:
-            return self.progress
+        return self.get_child_value("_progress")
 
-        self.progress = self.get_child_value("_progress")
-        return self.progress
-
+    @Helpers.save_parameter("time_remaining")
     def get_time_remaining(self):
-        if self.time_remaining:
-            return self.time_remaining
+        return self.get_child_value("_timeRemaining")
 
-        self.time_remaining = self.get_child_value("_timeRemaining")
-        return self.time_remaining
-
+    @Helpers.save_parameter("version")
     def get_version(self):
-        if self.version:
-            return self.version
-
-        self.version = self.get_child_value("_version")
-        return self.version
+        return self.get_child_value("_version")
 
     def summary(self):
-        content_id = self.get_content_identifier().GetSummary()
-        content_length = self.get_content_length().GetValueAsSigned()
+        content_id_summary = self.get_content_identifier_summary()
+        content_length_summary = self.get_content_length_summary()
 
-        return "{}, length={}".format(content_id, content_length)
+        summaries = []
+        if content_id_summary:
+            summaries.append(content_id_summary)
+        if content_length_summary:
+            summaries.append(content_length_summary)
+
+        summary = ", ".join(summaries)
+        return summary
 
 
 def SKDownload_SummaryProvider(value_obj, internal_dict):

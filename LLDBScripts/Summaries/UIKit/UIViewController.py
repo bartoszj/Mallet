@@ -146,21 +146,16 @@ class UIViewController_SynthProvider(UIResponder.UIResponder_SynthProvider):
 
         self.title = None
 
+    @Helpers.save_parameter("title")
     def get_title(self):
-        if self.title:
-            return self.title
-
-        self.title = self.get_child_value("_title")
-        return self.title
+        return self.get_child_value("_title")
 
     def get_title_value(self):
         return self.get_summary_value(self.get_title())
 
     def get_title_summary(self):
         title_value = self.get_title_value()
-        if title_value is None:
-            return None
-        return "title={}".format(title_value)
+        return None if title_value is None else "title={}".format(title_value)
 
     def summary(self):
         title_summary = self.get_title_summary()

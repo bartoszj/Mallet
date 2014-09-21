@@ -40,29 +40,37 @@ class SKPaymentQueue_SynthProvider(NSObject.NSObject_SynthProvider):
         self.internal = None
         self.internal_provider = None
 
+    @Helpers.save_parameter("internal")
     def get_internal(self):
-        if self.internal:
-            return self.internal
+        return self.get_child_value("_internal")
 
-        self.internal = self.get_child_value("_internal")
-        return self.internal
-
+    @Helpers.save_parameter("internal_provider")
     def get_internal_provider(self):
-        if self.internal_provider:
-            return self.internal_provider
-
         internal = self.get_internal()
-        self.internal_provider = SKPaymentQueueInternal.SKPaymentQueueInternal_SynthProvider(internal, self.internal_dict)
-        return self.internal_provider
+        return None if internal is None else SKPaymentQueueInternal.SKPaymentQueueInternal_SynthProvider(internal, self.internal_dict)
+
+    def get_local_transactions_value(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_local_transactions_value()
+
+    def get_local_transactions_summary(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_local_transactions_summary()
+
+    def get_transactions_value(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_transactions_value()
+
+    def get_transactions_summary(self):
+        internal_provider = self.get_internal_provider()
+        return None if internal_provider is None else internal_provider.get_transactions_summary()
 
     def summary(self):
-        local_transactions = self.get_internal_provider().get_local_transactions()
-        local_transactions_count = local_transactions.GetNumChildren()
-        local_transactions_summary = "localTransactions={}".format(local_transactions_count)
+        local_transactions_count = self.get_local_transactions_value()
+        local_transactions_summary = self.get_local_transactions_summary()
 
-        transactions = self.get_internal_provider().get_transactions()
-        transactions_count = transactions.GetNumChildren()
-        transactions_summary = "transactions={}".format(transactions_count)
+        transactions_count = self.get_local_transactions_value()
+        transactions_summary = self.get_local_transactions_summary()
 
         summaries = []
         if local_transactions_count != 0:

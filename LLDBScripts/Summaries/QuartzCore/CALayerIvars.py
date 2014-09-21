@@ -22,9 +22,9 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 import SummaryBase
 import CALayerInternalLayer
+import Helpers
 
 
 class CALayerIvars_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
@@ -49,17 +49,11 @@ class CALayerIvars_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
         self.layer = None
         self.layer_provider = None
 
+    @Helpers.save_parameter("layer")
     def get_layer(self):
-        if self.layer:
-            return self.layer
+        return self.get_child_value("layer")
 
-        self.layer = self.get_child_value("layer")
-        return self.layer
-
+    @Helpers.save_parameter("layer_provider")
     def get_layer_provider(self):
-        if self.layer_provider:
-            return self.layer_provider
-
         layer = self.get_layer()
-        self.layer_provider = CALayerInternalLayer.CALayerInternalLayer_SynthProvider(layer, self.internal_dict)
-        return self.layer_provider
+        return None if layer is None else CALayerInternalLayer.CALayerInternalLayer_SynthProvider(layer, self.internal_dict)

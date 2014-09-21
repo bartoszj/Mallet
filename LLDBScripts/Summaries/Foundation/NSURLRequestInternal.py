@@ -40,55 +40,41 @@ class NSURLRequestInternal_SynthProvider(NSObject.NSObject_SynthProvider):
         self.request = None
         self.request_provider = None
 
+    @Helpers.save_parameter("request")
     def get_request(self):
-        if self.request:
-            return self.request
-
         if self.is_64bit:
             offset = 0x08
         else:
             offset = 0x04
 
-        self.request = self.get_child_value("request", "addr_ptr_type", offset)
-        return self.request
+        return self.get_child_value("request", "addr_ptr_type", offset)
 
+    @Helpers.save_parameter("request_provider")
     def get_request_provider(self):
-        if self.request_provider:
-            return self.request_provider
-
         request = self.get_request()
-        self.request_provider = CFURLRequest.CFURLRequest_SynthProvider(request, self.internal_dict)
-        return self.request_provider
+        return None if request is None else CFURLRequest.CFURLRequest_SynthProvider(request, self.internal_dict)
 
     def get_url(self):
         request_provider = self.get_request_provider()
-        if request_provider is None:
-            return None
-        return request_provider.get_url()
+        return None if request_provider is None else request_provider.get_url()
 
     def get_url_value(self):
         return self.get_summary_value(self.get_url())
 
     def get_url_summary(self):
         url_value = self.get_url_value()
-        if url_value is None:
-            return None
-        return "url={}".format(url_value)
+        return None if url_value is None else "url={}".format(url_value)
 
     def get_method(self):
         request_provider = self.get_request_provider()
-        if request_provider is None:
-            return None
-        return request_provider.get_method()
+        return None if request_provider is None else request_provider.get_method()
 
     def get_method_value(self):
         return self.get_summary_value(self.get_method())
 
     def get_method_summary(self):
         method_value = self.get_method_value()
-        if method_value is None:
-            return None
-        return "method={}".format(method_value)
+        return None if method_value is None else "method={}".format(method_value)
 
     def summary(self):
         request_url_summary = self.get_url_summary()

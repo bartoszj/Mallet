@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import NSObject
+import Helpers
 
 
 class SKPaymentInternal_SynthProvider(NSObject.NSObject_SynthProvider):
@@ -48,37 +49,43 @@ class SKPaymentInternal_SynthProvider(NSObject.NSObject_SynthProvider):
         self.product_identifier = None
         self.quantity = None
 
+    @Helpers.save_parameter("application_username")
     def get_application_username(self):
-        if self.application_username:
-            return self.application_username
+        return self.get_child_value("_applicationUsername")
 
-        self.application_username = self.get_child_value("_applicationUsername")
-        return self.application_username
+    def get_application_username_value(self):
+        return self.get_stripped_summary_value(self.get_application_username())
 
+    def get_application_username_summary(self):
+        application_username_value = self.get_application_username_value()
+        return None if application_username_value is None else "applicationUsername={}".format(application_username_value)
+
+    @Helpers.save_parameter("partner_identifier")
     def get_partner_identifier(self):
-        if self.partner_identifier:
-            return self.partner_identifier
+        return self.get_child_value("_partnerIdentifier")
 
-        self.partner_identifier = self.get_child_value("_partnerIdentifier")
-        return self.partner_identifier
-
+    @Helpers.save_parameter("partner_transaction_identifier")
     def get_partner_transaction_identifier(self):
-        if self.partner_transaction_identifier:
-            return self.partner_transaction_identifier
+        return self.get_child_value("_partnerTransactionIdentifier")
 
-        self.partner_transaction_identifier = self.get_child_value("_partnerTransactionIdentifier")
-        return self.partner_transaction_identifier
-
+    @Helpers.save_parameter("product_identifier")
     def get_product_identifier(self):
-        if self.product_identifier:
-            return self.product_identifier
+        return self.get_child_value("_productIdentifier")
 
-        self.product_identifier = self.get_child_value("_productIdentifier")
-        return self.product_identifier
+    def get_product_identifier_value(self):
+        return self.get_summary_value(self.get_product_identifier())
 
+    def get_product_identifier_summary(self):
+        product_identifier_value = self.get_product_identifier_value()
+        return None if product_identifier_value is None else "{}".format(product_identifier_value)
+
+    @Helpers.save_parameter("quantity")
     def get_quantity(self):
-        if self.quantity:
-            return self.quantity
+        return self.get_child_value("_quantity")
 
-        self.quantity = self.get_child_value("_quantity")
-        return self.quantity
+    def get_quantity_value(self):
+        return self.get_signed_value(self.get_quantity())
+
+    def get_quantity_summary(self):
+        quantity_value = self.get_quantity_value()
+        return None if quantity_value is None else "quantity={}".format(quantity_value)

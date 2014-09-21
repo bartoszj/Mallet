@@ -74,53 +74,38 @@ class UISlider_SynthProvider(UIControl.UIControl_SynthProvider):
         self.min = None
         self.max = None
 
+    @Helpers.save_parameter("value")
     def get_value(self):
-        if self.value:
-            return self.value
-
-        self.value = self.get_child_value("_value")
-        return self.value
+        return self.get_child_value("_value")
 
     def get_value_value(self):
         return self.get_float_value(self.get_value())
 
     def get_value_summary(self):
         value_value = self.get_value_value()
-        if value_value is None:
-            return None
-        return "value={}".format(self.formatted_float(value_value))
+        return None if value_value is None else "value={}".format(self.formatted_float(value_value))
 
+    @Helpers.save_parameter("min")
     def get_min(self):
-        if self.min:
-            return self.min
-
-        self.min = self.get_child_value("_minValue")
-        return self.min
+        return self.get_child_value("_minValue")
 
     def get_min_value(self):
         return self.get_float_value(self.get_min())
 
     def get_min_summary(self):
         minimum_value = self.get_min_value()
-        if minimum_value is None:
-            return None
-        return "min={}".format(self.formatted_float(minimum_value))
+        return None if minimum_value is None else "min={}".format(self.formatted_float(minimum_value))
 
+    @Helpers.save_parameter("max")
     def get_max(self):
-        if self.max:
-            return self.max
-
-        self.max = self.get_child_value("_maxValue")
-        return self.max
+        return self.get_child_value("_maxValue")
 
     def get_max_value(self):
         return self.get_float_value(self.get_max())
 
     def get_max_summary(self):
         maximum_value = self.get_max_value()
-        if maximum_value is None:
-            return maximum_value
-        return "max={}".format(self.formatted_float(maximum_value))
+        return None if maximum_value is None else "max={}".format(self.formatted_float(maximum_value))
 
     def summary(self):
         value_summary = self.get_value_summary()
