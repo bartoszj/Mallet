@@ -3,19 +3,15 @@
     "className":"SKProductsResponseInternal",
     "ivars":[
       {
-        "alignment":3,
         "ivarType":"NSArray *",
         "name":"_invalidIdentifiers",
         "offset":8,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSArray *",
         "name":"_products",
         "offset":16,
-        "size":8,
         "type":"ivar"
       }
     ],
@@ -26,42 +22,15 @@
     "className":"SKProductsResponseInternal",
     "ivars":[
       {
-        "alignment":2,
         "ivarType":"NSArray *",
         "name":"_invalidIdentifiers",
         "offset":4,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSArray *",
         "name":"_products",
         "offset":8,
-        "size":4,
-        "type":"ivar"
-      }
-    ],
-    "superClassName":"NSObject",
-    "type":"class"
-  },
-  "armv7s":{
-    "className":"SKProductsResponseInternal",
-    "ivars":[
-      {
-        "alignment":2,
-        "ivarType":"NSArray *",
-        "name":"_invalidIdentifiers",
-        "offset":4,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSArray *",
-        "name":"_products",
-        "offset":8,
-        "size":4,
         "type":"ivar"
       }
     ],
@@ -72,19 +41,15 @@
     "className":"SKProductsResponseInternal",
     "ivars":[
       {
-        "alignment":2,
         "ivarType":"NSArray *",
         "name":"_invalidIdentifiers",
         "offset":4,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSArray *",
         "name":"_products",
         "offset":8,
-        "size":4,
         "type":"ivar"
       }
     ],
@@ -95,19 +60,15 @@
     "className":"SKProductsResponseInternal",
     "ivars":[
       {
-        "alignment":3,
         "ivarType":"NSArray *",
         "name":"_invalidIdentifiers",
         "offset":8,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSArray *",
         "name":"_products",
         "offset":16,
-        "size":8,
         "type":"ivar"
       }
     ],

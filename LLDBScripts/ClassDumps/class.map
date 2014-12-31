@@ -4,12 +4,10 @@ UIControl:UIKit/UIControl.json
 SKPayment:StoreKit/SKPayment.json
 SKPaymentQueue:StoreKit/SKPaymentQueue.json
 SKPaymentQueueInternal:StoreKit/SKPaymentQueueInternal.json
-UISwitch:UIKit/UISwitch.json
 SKPaymentInternal:StoreKit/SKPaymentInternal.json
 SKPaymentTransaction:StoreKit/SKPaymentTransaction.json
 UIScrollView:UIKit/UIScrollView.json
-UIViewController:UIKit/UIViewController.json
-NSURLRequest:Foundation/NSURLRequest.json
+NSURLRequest:CFNetwork/NSURLRequest.json
 SKProductsResponse:StoreKit/SKProductsResponse.json
 UIView:UIKit/UIView.json
 SKRequest:StoreKit/SKRequest.json
@@ -19,11 +17,13 @@ SKProductsRequestInternal:StoreKit/SKProductsRequestInternal.json
 UIDatePicker:UIKit/UIDatePicker.json
 SKProductInternal:StoreKit/SKProductInternal.json
 UIProgressView:UIKit/UIProgressView.json
-UIResponder:UIKit/UIResponder.json
-SKProduct:StoreKit/SKProduct.json
 SKPaymentTransactionInternal:StoreKit/SKPaymentTransactionInternal.json
-UILabel:UIKit/UILabel.json
+SKProduct:StoreKit/SKProduct.json
+UISlider:UIKit/UISlider.json
 UIButton:UIKit/UIButton.json
+UIResponder:UIKit/UIResponder.json
+UILabel:UIKit/UILabel.json
+UISwitch:UIKit/UISwitch.json
 UIPageControl:UIKit/UIPageControl.json
 UIAlertView:UIKit/UIAlertView.json
 SKReceiptRefreshRequest:StoreKit/SKReceiptRefreshRequest.json
@@ -33,5 +33,5 @@ SKRequestInternal:StoreKit/SKRequestInternal.json
 SKProductsResponseInternal:StoreKit/SKProductsResponseInternal.json
 CALayer:QuartzCore/CALayer.json
 UITextField:UIKit/UITextField.json
-UISlider:UIKit/UISlider.json
+UIViewController:UIKit/UIViewController.json
 UISegmentedControl:UIKit/UISegmentedControl.json

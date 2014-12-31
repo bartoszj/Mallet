@@ -1,407 +1,54 @@
 {
-  "i386" : {
-    "properties" : [
+  "arm64":{
+    "className":"SKProductsResponse",
+    "ivars":[
       {
-        "name" : "products",
-        "setter" : "setProducts:",
-        "getter" : "products",
-        "type" : "property",
-        "propertyType" : "NSArray *"
-      },
-      {
-        "name" : "invalidProductIdentifiers",
-        "setter" : "setInvalidProductIdentifiers:",
-        "getter" : "invalidProductIdentifiers",
-        "type" : "property",
-        "propertyType" : "NSArray *"
+        "ivarType":"id",
+        "name":"_internal",
+        "offset":8,
+        "type":"ivar"
       }
     ],
-    "className" : "SKProductsResponse",
-    "instanceMethods" : [
-      {
-        "declaration" : "(void)_setProducts:(id)arg1",
-        "type" : "method",
-        "name" : "_setProducts:",
-        "address" : 41023
-      },
-      {
-        "declaration" : "(void)_setInvalidIdentifiers:(id)arg1",
-        "type" : "method",
-        "name" : "_setInvalidIdentifiers:",
-        "address" : 40932
-      },
-      {
-        "declaration" : "(id)copyXPCEncoding",
-        "type" : "method",
-        "name" : "copyXPCEncoding",
-        "address" : 40470
-      },
-      {
-        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
-        "type" : "method",
-        "name" : "initWithXPCEncoding:",
-        "address" : 39558
-      },
-      {
-        "declaration" : "(id)products",
-        "type" : "method",
-        "name" : "products",
-        "address" : 39482
-      },
-      {
-        "declaration" : "(id)invalidProductIdentifiers",
-        "type" : "method",
-        "name" : "invalidProductIdentifiers",
-        "address" : 39406
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 39313
-      },
-      {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 39201
-      }
-    ],
-    "type" : "class",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "id",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_internal"
-      }
-    ],
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "x86_64" : {
-    "properties" : [
+  "armv7":{
+    "className":"SKProductsResponse",
+    "ivars":[
       {
-        "propertyType" : "NSArray *",
-        "getter" : "products",
-        "type" : "property",
-        "name" : "products",
-        "setter" : "setProducts:"
-      },
-      {
-        "propertyType" : "NSArray *",
-        "getter" : "invalidProductIdentifiers",
-        "type" : "property",
-        "name" : "invalidProductIdentifiers",
-        "setter" : "setInvalidProductIdentifiers:"
+        "ivarType":"id",
+        "name":"_internal",
+        "offset":4,
+        "type":"ivar"
       }
     ],
-    "className" : "SKProductsResponse",
-    "instanceMethods" : [
-      {
-        "declaration" : "(void)_setProducts:(id)arg1",
-        "type" : "method",
-        "name" : "_setProducts:",
-        "address" : 36568
-      },
-      {
-        "declaration" : "(void)_setInvalidIdentifiers:(id)arg1",
-        "type" : "method",
-        "name" : "_setInvalidIdentifiers:",
-        "address" : 36484
-      },
-      {
-        "declaration" : "(id)copyXPCEncoding",
-        "type" : "method",
-        "name" : "copyXPCEncoding",
-        "address" : 36091
-      },
-      {
-        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
-        "type" : "method",
-        "name" : "initWithXPCEncoding:",
-        "address" : 35295
-      },
-      {
-        "declaration" : "(id)products",
-        "type" : "method",
-        "name" : "products",
-        "address" : 35227
-      },
-      {
-        "declaration" : "(id)invalidProductIdentifiers",
-        "type" : "method",
-        "name" : "invalidProductIdentifiers",
-        "address" : 35159
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 35073
-      },
-      {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 34963
-      }
-    ],
-    "type" : "class",
-    "ivars" : [
-      {
-        "alignment" : 3,
-        "ivarType" : "id",
-        "size" : 8,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_internal"
-      }
-    ],
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "armv7" : {
-    "properties" : [
+  "i386":{
+    "className":"SKProductsResponse",
+    "ivars":[
       {
-        "name" : "products",
-        "propertyType" : "NSArray *",
-        "getter" : "products",
-        "type" : "property",
-        "setter" : "setProducts:"
-      },
-      {
-        "name" : "invalidProductIdentifiers",
-        "propertyType" : "NSArray *",
-        "getter" : "invalidProductIdentifiers",
-        "type" : "property",
-        "setter" : "setInvalidProductIdentifiers:"
+        "ivarType":"id",
+        "name":"_internal",
+        "offset":4,
+        "type":"ivar"
       }
     ],
-    "className" : "SKProductsResponse",
-    "instanceMethods" : [
-      {
-        "declaration" : "(void)_setProducts:(id)arg1",
-        "type" : "method",
-        "name" : "_setProducts:",
-        "address" : 32753
-      },
-      {
-        "declaration" : "(void)_setInvalidIdentifiers:(id)arg1",
-        "type" : "method",
-        "name" : "_setInvalidIdentifiers:",
-        "address" : 32673
-      },
-      {
-        "declaration" : "(id)copyXPCEncoding",
-        "type" : "method",
-        "name" : "copyXPCEncoding",
-        "address" : 32365
-      },
-      {
-        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
-        "type" : "method",
-        "name" : "initWithXPCEncoding:",
-        "address" : 31605
-      },
-      {
-        "declaration" : "(id)products",
-        "type" : "method",
-        "name" : "products",
-        "address" : 31533
-      },
-      {
-        "declaration" : "(id)invalidProductIdentifiers",
-        "type" : "method",
-        "name" : "invalidProductIdentifiers",
-        "address" : 31461
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 31381
-      },
-      {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 31281
-      }
-    ],
-    "type" : "class",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "id",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_internal"
-      }
-    ],
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "armv7s" : {
-    "properties" : [
+  "x86_64":{
+    "className":"SKProductsResponse",
+    "ivars":[
       {
-        "getter" : "products",
-        "setter" : "setProducts:",
-        "type" : "property",
-        "name" : "products",
-        "propertyType" : "NSArray *"
-      },
-      {
-        "getter" : "invalidProductIdentifiers",
-        "setter" : "setInvalidProductIdentifiers:",
-        "type" : "property",
-        "name" : "invalidProductIdentifiers",
-        "propertyType" : "NSArray *"
+        "ivarType":"id",
+        "name":"_internal",
+        "offset":8,
+        "type":"ivar"
       }
     ],
-    "className" : "SKProductsResponse",
-    "instanceMethods" : [
-      {
-        "declaration" : "(void)_setProducts:(id)arg1",
-        "type" : "method",
-        "name" : "_setProducts:",
-        "address" : 32809
-      },
-      {
-        "declaration" : "(void)_setInvalidIdentifiers:(id)arg1",
-        "type" : "method",
-        "name" : "_setInvalidIdentifiers:",
-        "address" : 32733
-      },
-      {
-        "declaration" : "(id)copyXPCEncoding",
-        "type" : "method",
-        "name" : "copyXPCEncoding",
-        "address" : 32425
-      },
-      {
-        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
-        "type" : "method",
-        "name" : "initWithXPCEncoding:",
-        "address" : 31665
-      },
-      {
-        "declaration" : "(id)products",
-        "type" : "method",
-        "name" : "products",
-        "address" : 31597
-      },
-      {
-        "declaration" : "(id)invalidProductIdentifiers",
-        "type" : "method",
-        "name" : "invalidProductIdentifiers",
-        "address" : 31529
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 31449
-      },
-      {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 31349
-      }
-    ],
-    "type" : "class",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "id",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_internal"
-      }
-    ],
-    "superClassName" : "NSObject"
-  },
-  "arm64" : {
-    "properties" : [
-      {
-        "type" : "property",
-        "propertyType" : "NSArray *",
-        "name" : "products",
-        "getter" : "products",
-        "setter" : "setProducts:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "NSArray *",
-        "name" : "invalidProductIdentifiers",
-        "getter" : "invalidProductIdentifiers",
-        "setter" : "setInvalidProductIdentifiers:"
-      }
-    ],
-    "className" : "SKProductsResponse",
-    "instanceMethods" : [
-      {
-        "declaration" : "(void)_setProducts:(id)arg1",
-        "type" : "method",
-        "name" : "_setProducts:",
-        "address" : 39160
-      },
-      {
-        "declaration" : "(void)_setInvalidIdentifiers:(id)arg1",
-        "type" : "method",
-        "name" : "_setInvalidIdentifiers:",
-        "address" : 39048
-      },
-      {
-        "declaration" : "(id)copyXPCEncoding",
-        "type" : "method",
-        "name" : "copyXPCEncoding",
-        "address" : 38632
-      },
-      {
-        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
-        "type" : "method",
-        "name" : "initWithXPCEncoding:",
-        "address" : 37720
-      },
-      {
-        "declaration" : "(id)products",
-        "type" : "method",
-        "name" : "products",
-        "address" : 37652
-      },
-      {
-        "declaration" : "(id)invalidProductIdentifiers",
-        "type" : "method",
-        "name" : "invalidProductIdentifiers",
-        "address" : 37584
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 37476
-      },
-      {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 37344
-      }
-    ],
-    "type" : "class",
-    "ivars" : [
-      {
-        "alignment" : 3,
-        "ivarType" : "id",
-        "size" : 8,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_internal"
-      }
-    ],
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   }
 }

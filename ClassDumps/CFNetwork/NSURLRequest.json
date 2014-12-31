@@ -3,18 +3,11 @@
     "className":"NSURLRequest",
     "ivars":[
       {
-        "alignment":3,
         "ivarType":"NSURLRequestInternal *",
         "name":"_internal",
         "offset":8,
-        "size":8,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "NSSecureCoding",
-      "NSCopying",
-      "NSMutableCopying"
     ],
     "superClassName":"NSObject",
     "type":"class"
@@ -23,38 +16,11 @@
     "className":"NSURLRequest",
     "ivars":[
       {
-        "alignment":2,
         "ivarType":"NSURLRequestInternal *",
         "name":"_internal",
         "offset":4,
-        "size":4,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "NSSecureCoding",
-      "NSCopying",
-      "NSMutableCopying"
-    ],
-    "superClassName":"NSObject",
-    "type":"class"
-  },
-  "armv7s":{
-    "className":"NSURLRequest",
-    "ivars":[
-      {
-        "alignment":2,
-        "ivarType":"NSURLRequestInternal *",
-        "name":"_internal",
-        "offset":4,
-        "size":4,
-        "type":"ivar"
-      }
-    ],
-    "protocols":[
-      "NSSecureCoding",
-      "NSCopying",
-      "NSMutableCopying"
     ],
     "superClassName":"NSObject",
     "type":"class"
@@ -63,18 +29,11 @@
     "className":"NSURLRequest",
     "ivars":[
       {
-        "alignment":2,
         "ivarType":"NSURLRequestInternal *",
         "name":"_internal",
         "offset":4,
-        "size":4,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "NSSecureCoding",
-      "NSCopying",
-      "NSMutableCopying"
     ],
     "superClassName":"NSObject",
     "type":"class"
@@ -83,18 +42,11 @@
     "className":"NSURLRequest",
     "ivars":[
       {
-        "alignment":3,
         "ivarType":"NSURLRequestInternal *",
         "name":"_internal",
         "offset":8,
-        "size":8,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "NSSecureCoding",
-      "NSCopying",
-      "NSMutableCopying"
     ],
     "superClassName":"NSObject",
     "type":"class"

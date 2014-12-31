@@ -3,146 +3,201 @@
     "className":"UIScreen",
     "ivars":[
       {
-        "alignment":3,
         "ivarType":"id",
         "name":"_display",
         "offset":8,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
-        "ivarType":"struct CGRect",
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
         "name":"_bounds",
         "offset":16,
-        "size":32,
         "type":"ivar"
       },
       {
-        "alignment":3,
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_referenceBounds",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_interfaceOrientedBounds",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_unjailedReferenceBounds",
+        "offset":112,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_mainSceneReferenceBounds",
+        "offset":144,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_interfaceOrientation",
+        "offset":176,
+        "type":"ivar"
+      },
+      {
         "ivarType":"double",
         "name":"_scale",
-        "offset":48,
-        "size":8,
+        "offset":184,
         "type":"ivar"
       },
       {
-        "alignment":3,
+        "ivarType":"double",
+        "name":"_touchScaleFactor",
+        "offset":192,
+        "type":"ivar"
+      },
+      {
         "ivarType":"double",
         "name":"_horizontalScale",
-        "offset":56,
-        "size":8,
+        "offset":200,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_userInterfaceIdiom",
-        "offset":64,
-        "size":8,
+        "offset":208,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSDictionary *",
         "name":"_capabilities",
-        "offset":72,
-        "size":8,
+        "offset":216,
         "type":"ivar"
       },
       {
-        "alignment":3,
-        "ivarType":"long long",
-        "name":"_workspaceCapableScreenType",
-        "offset":80,
-        "size":8,
-        "type":"ivar"
-      },
-      {
-        "alignment":3,
         "ivarType":"UIWindow *",
         "name":"_screenDisablingWindow",
-        "offset":88,
-        "size":8,
+        "offset":224,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_startedPausingWindows",
-        "offset":96,
-        "size":8,
+        "offset":232,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSMutableArray *",
         "name":"_pausedWindows",
-        "offset":104,
-        "size":8,
+        "offset":240,
         "type":"ivar"
       },
       {
-        "alignment":3,
-        "ivarType":"struct __CFDictionary *",
-        "name":"_touchMap",
-        "offset":112,
-        "size":8,
+        "ivarType":"_UIScreenTransparentHitTestWindow *",
+        "name":"_extendedJailHitTestWindow",
+        "offset":248,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSArray *",
         "name":"_availableDisplayModes",
-        "offset":120,
-        "size":8,
+        "offset":256,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"unsigned int",
-        "name":"_canAccessDisplaySeed",
-        "offset":128,
-        "size":4,
+        "ivarType":"double",
+        "name":"_pointsPerInch",
+        "offset":264,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"unsigned int",
-        "name":"_connectionSeed",
-        "offset":132,
-        "size":4,
+        "ivarType":"_UIScreenFixedCoordinateSpace *",
+        "name":"_fixedCoordinateSpace",
+        "offset":272,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int canAccessDisplay:1;\n        unsigned int canAccessDisplaySeedValid:1;\n        unsigned int screenUpdatesDisabled:1;\n    }",
+        "ivarType":"struct { \n        unsigned int bitsPerComponent : 4; \n        unsigned int initialized : 1; \n        unsigned int connected : 1; \n        unsigned int overscanCompensation : 2; \n        unsigned int screenUpdatesDisabled : 1; \n        unsigned int wantsWideContentMargins : 1; \n        unsigned int queriedDeviceContentMargins : 1; \n        unsigned int hasCalculatedPointsPerInch : 1; \n    }",
         "name":"_screenFlags",
-        "offset":136,
-        "size":4,
+        "offset":280,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_wantsSoftwareDimming",
-        "offset":140,
-        "size":1,
+        "offset":284,
         "type":"ivar"
       },
       {
-        "alignment":3,
+        "ivarType":"bool",
+        "name":"_jailUsesHitTestWindow",
+        "offset":285,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_defaultTraitCollection",
+        "offset":288,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_overrideTraitCollection",
+        "offset":296,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_lastNotifiedTraitCollection",
+        "offset":304,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"FBSDisplay *",
+        "name":"_fbsDisplay",
+        "offset":312,
+        "type":"ivar"
+      },
+      {
         "ivarType":"UISoftwareDimmingWindow *",
         "name":"_softwareDimmingWindow",
-        "offset":144,
-        "size":8,
+        "offset":320,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_lastNotifiedBacklightLevel",
-        "offset":152,
-        "size":8,
+        "offset":328,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_jailScale",
+        "offset":336,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_jailOrientation",
+        "offset":344,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "name":"_jailSize",
+        "offset":352,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGPoint { \n        double x; \n        double y; \n    }",
+        "name":"_jailOffset",
+        "offset":368,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct UIEdgeInsets { \n        double top; \n        double left; \n        double bottom; \n        double right; \n    }",
+        "name":"_jailTouchInsets",
+        "offset":384,
         "type":"ivar"
       }
     ],
@@ -153,294 +208,201 @@
     "className":"UIScreen",
     "ivars":[
       {
-        "alignment":2,
         "ivarType":"id",
         "name":"_display",
         "offset":4,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"struct CGRect",
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
         "name":"_bounds",
         "offset":8,
-        "size":16,
         "type":"ivar"
       },
       {
-        "alignment":2,
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_referenceBounds",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_interfaceOrientedBounds",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_unjailedReferenceBounds",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_mainSceneReferenceBounds",
+        "offset":72,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_interfaceOrientation",
+        "offset":88,
+        "type":"ivar"
+      },
+      {
         "ivarType":"float",
         "name":"_scale",
-        "offset":24,
-        "size":4,
+        "offset":92,
         "type":"ivar"
       },
       {
-        "alignment":2,
+        "ivarType":"float",
+        "name":"_touchScaleFactor",
+        "offset":96,
+        "type":"ivar"
+      },
+      {
         "ivarType":"float",
         "name":"_horizontalScale",
-        "offset":28,
-        "size":4,
+        "offset":100,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_userInterfaceIdiom",
-        "offset":32,
-        "size":4,
+        "offset":104,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSDictionary *",
         "name":"_capabilities",
-        "offset":36,
-        "size":4,
+        "offset":108,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"int",
-        "name":"_workspaceCapableScreenType",
-        "offset":40,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
         "ivarType":"UIWindow *",
         "name":"_screenDisablingWindow",
-        "offset":44,
-        "size":4,
+        "offset":112,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_startedPausingWindows",
-        "offset":48,
-        "size":8,
+        "offset":116,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSMutableArray *",
         "name":"_pausedWindows",
-        "offset":56,
-        "size":4,
+        "offset":124,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"struct __CFDictionary *",
-        "name":"_touchMap",
-        "offset":60,
-        "size":4,
+        "ivarType":"_UIScreenTransparentHitTestWindow *",
+        "name":"_extendedJailHitTestWindow",
+        "offset":128,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSArray *",
         "name":"_availableDisplayModes",
-        "offset":64,
-        "size":4,
+        "offset":132,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"unsigned int",
-        "name":"_canAccessDisplaySeed",
-        "offset":68,
-        "size":4,
+        "ivarType":"float",
+        "name":"_pointsPerInch",
+        "offset":136,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"unsigned int",
-        "name":"_connectionSeed",
-        "offset":72,
-        "size":4,
+        "ivarType":"_UIScreenFixedCoordinateSpace *",
+        "name":"_fixedCoordinateSpace",
+        "offset":140,
         "type":"ivar"
       },
       {
-        "ivarType":"struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int canAccessDisplay:1;\n        unsigned int canAccessDisplaySeedValid:1;\n        unsigned int screenUpdatesDisabled:1;\n    }",
+        "ivarType":"struct { \n        unsigned int bitsPerComponent : 4; \n        unsigned int initialized : 1; \n        unsigned int connected : 1; \n        unsigned int overscanCompensation : 2; \n        unsigned int screenUpdatesDisabled : 1; \n        unsigned int wantsWideContentMargins : 1; \n        unsigned int queriedDeviceContentMargins : 1; \n        unsigned int hasCalculatedPointsPerInch : 1; \n    }",
         "name":"_screenFlags",
-        "offset":76,
-        "size":2,
+        "offset":144,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_wantsSoftwareDimming",
-        "offset":78,
-        "size":1,
+        "offset":146,
         "type":"ivar"
       },
       {
-        "alignment":2,
+        "ivarType":"BOOL",
+        "name":"_jailUsesHitTestWindow",
+        "offset":147,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_defaultTraitCollection",
+        "offset":148,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_overrideTraitCollection",
+        "offset":152,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_lastNotifiedTraitCollection",
+        "offset":156,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"FBSDisplay *",
+        "name":"_fbsDisplay",
+        "offset":160,
+        "type":"ivar"
+      },
+      {
         "ivarType":"UISoftwareDimmingWindow *",
         "name":"_softwareDimmingWindow",
-        "offset":80,
-        "size":4,
+        "offset":164,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_lastNotifiedBacklightLevel",
-        "offset":84,
-        "size":4,
-        "type":"ivar"
-      }
-    ],
-    "superClassName":"NSObject",
-    "type":"class"
-  },
-  "armv7s":{
-    "className":"UIScreen",
-    "ivars":[
-      {
-        "alignment":2,
-        "ivarType":"id",
-        "name":"_display",
-        "offset":4,
-        "size":4,
+        "offset":168,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"struct CGRect",
-        "name":"_bounds",
-        "offset":8,
-        "size":16,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
         "ivarType":"float",
-        "name":"_scale",
-        "offset":24,
-        "size":4,
+        "name":"_jailScale",
+        "offset":172,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"float",
-        "name":"_horizontalScale",
-        "offset":28,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
         "ivarType":"int",
-        "name":"_userInterfaceIdiom",
-        "offset":32,
-        "size":4,
+        "name":"_jailOrientation",
+        "offset":176,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"NSDictionary *",
-        "name":"_capabilities",
-        "offset":36,
-        "size":4,
+        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "name":"_jailSize",
+        "offset":180,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"int",
-        "name":"_workspaceCapableScreenType",
-        "offset":40,
-        "size":4,
+        "ivarType":"struct CGPoint { \n        float x; \n        float y; \n    }",
+        "name":"_jailOffset",
+        "offset":188,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"UIWindow *",
-        "name":"_screenDisablingWindow",
-        "offset":44,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":3,
-        "ivarType":"double",
-        "name":"_startedPausingWindows",
-        "offset":48,
-        "size":8,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSMutableArray *",
-        "name":"_pausedWindows",
-        "offset":56,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"struct __CFDictionary *",
-        "name":"_touchMap",
-        "offset":60,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSArray *",
-        "name":"_availableDisplayModes",
-        "offset":64,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"unsigned int",
-        "name":"_canAccessDisplaySeed",
-        "offset":68,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"unsigned int",
-        "name":"_connectionSeed",
-        "offset":72,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int canAccessDisplay:1;\n        unsigned int canAccessDisplaySeedValid:1;\n        unsigned int screenUpdatesDisabled:1;\n    }",
-        "name":"_screenFlags",
-        "offset":76,
-        "size":2,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"char",
-        "name":"_wantsSoftwareDimming",
-        "offset":78,
-        "size":1,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"UISoftwareDimmingWindow *",
-        "name":"_softwareDimmingWindow",
-        "offset":80,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"int",
-        "name":"_lastNotifiedBacklightLevel",
-        "offset":84,
-        "size":4,
+        "ivarType":"struct UIEdgeInsets { \n        float top; \n        float left; \n        float bottom; \n        float right; \n    }",
+        "name":"_jailTouchInsets",
+        "offset":196,
         "type":"ivar"
       }
     ],
@@ -451,146 +413,201 @@
     "className":"UIScreen",
     "ivars":[
       {
-        "alignment":2,
         "ivarType":"id",
         "name":"_display",
         "offset":4,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"struct CGRect",
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
         "name":"_bounds",
         "offset":8,
-        "size":16,
         "type":"ivar"
       },
       {
-        "alignment":2,
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_referenceBounds",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_interfaceOrientedBounds",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_unjailedReferenceBounds",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_mainSceneReferenceBounds",
+        "offset":72,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_interfaceOrientation",
+        "offset":88,
+        "type":"ivar"
+      },
+      {
         "ivarType":"float",
         "name":"_scale",
-        "offset":24,
-        "size":4,
+        "offset":92,
         "type":"ivar"
       },
       {
-        "alignment":2,
+        "ivarType":"float",
+        "name":"_touchScaleFactor",
+        "offset":96,
+        "type":"ivar"
+      },
+      {
         "ivarType":"float",
         "name":"_horizontalScale",
-        "offset":28,
-        "size":4,
+        "offset":100,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_userInterfaceIdiom",
-        "offset":32,
-        "size":4,
+        "offset":104,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSDictionary *",
         "name":"_capabilities",
-        "offset":36,
-        "size":4,
+        "offset":108,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"int",
-        "name":"_workspaceCapableScreenType",
-        "offset":40,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
         "ivarType":"UIWindow *",
         "name":"_screenDisablingWindow",
-        "offset":44,
-        "size":4,
+        "offset":112,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_startedPausingWindows",
-        "offset":48,
-        "size":8,
+        "offset":116,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSMutableArray *",
         "name":"_pausedWindows",
-        "offset":56,
-        "size":4,
+        "offset":124,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"struct __CFDictionary *",
-        "name":"_touchMap",
-        "offset":60,
-        "size":4,
+        "ivarType":"_UIScreenTransparentHitTestWindow *",
+        "name":"_extendedJailHitTestWindow",
+        "offset":128,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSArray *",
         "name":"_availableDisplayModes",
-        "offset":64,
-        "size":4,
+        "offset":132,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"unsigned int",
-        "name":"_canAccessDisplaySeed",
-        "offset":68,
-        "size":4,
+        "ivarType":"float",
+        "name":"_pointsPerInch",
+        "offset":136,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"unsigned int",
-        "name":"_connectionSeed",
-        "offset":72,
-        "size":4,
+        "ivarType":"_UIScreenFixedCoordinateSpace *",
+        "name":"_fixedCoordinateSpace",
+        "offset":140,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int canAccessDisplay:1;\n        unsigned int canAccessDisplaySeedValid:1;\n        unsigned int screenUpdatesDisabled:1;\n    }",
+        "ivarType":"struct { \n        unsigned int bitsPerComponent : 4; \n        unsigned int initialized : 1; \n        unsigned int connected : 1; \n        unsigned int overscanCompensation : 2; \n        unsigned int screenUpdatesDisabled : 1; \n        unsigned int wantsWideContentMargins : 1; \n        unsigned int queriedDeviceContentMargins : 1; \n        unsigned int hasCalculatedPointsPerInch : 1; \n    }",
         "name":"_screenFlags",
-        "offset":76,
-        "size":4,
+        "offset":144,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_wantsSoftwareDimming",
-        "offset":80,
-        "size":1,
+        "offset":148,
         "type":"ivar"
       },
       {
-        "alignment":2,
+        "ivarType":"BOOL",
+        "name":"_jailUsesHitTestWindow",
+        "offset":149,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_defaultTraitCollection",
+        "offset":152,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_overrideTraitCollection",
+        "offset":156,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_lastNotifiedTraitCollection",
+        "offset":160,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"FBSDisplay *",
+        "name":"_fbsDisplay",
+        "offset":164,
+        "type":"ivar"
+      },
+      {
         "ivarType":"UISoftwareDimmingWindow *",
         "name":"_softwareDimmingWindow",
-        "offset":84,
-        "size":4,
+        "offset":168,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_lastNotifiedBacklightLevel",
-        "offset":88,
-        "size":4,
+        "offset":172,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_jailScale",
+        "offset":176,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_jailOrientation",
+        "offset":180,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "name":"_jailSize",
+        "offset":184,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGPoint { \n        float x; \n        float y; \n    }",
+        "name":"_jailOffset",
+        "offset":192,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct UIEdgeInsets { \n        float top; \n        float left; \n        float bottom; \n        float right; \n    }",
+        "name":"_jailTouchInsets",
+        "offset":200,
         "type":"ivar"
       }
     ],
@@ -601,146 +618,201 @@
     "className":"UIScreen",
     "ivars":[
       {
-        "alignment":3,
         "ivarType":"id",
         "name":"_display",
         "offset":8,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
-        "ivarType":"struct CGRect",
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
         "name":"_bounds",
         "offset":16,
-        "size":32,
         "type":"ivar"
       },
       {
-        "alignment":3,
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_referenceBounds",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_interfaceOrientedBounds",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_unjailedReferenceBounds",
+        "offset":112,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_mainSceneReferenceBounds",
+        "offset":144,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_interfaceOrientation",
+        "offset":176,
+        "type":"ivar"
+      },
+      {
         "ivarType":"double",
         "name":"_scale",
-        "offset":48,
-        "size":8,
+        "offset":184,
         "type":"ivar"
       },
       {
-        "alignment":3,
+        "ivarType":"double",
+        "name":"_touchScaleFactor",
+        "offset":192,
+        "type":"ivar"
+      },
+      {
         "ivarType":"double",
         "name":"_horizontalScale",
-        "offset":56,
-        "size":8,
+        "offset":200,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_userInterfaceIdiom",
-        "offset":64,
-        "size":8,
+        "offset":208,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSDictionary *",
         "name":"_capabilities",
-        "offset":72,
-        "size":8,
+        "offset":216,
         "type":"ivar"
       },
       {
-        "alignment":3,
-        "ivarType":"long long",
-        "name":"_workspaceCapableScreenType",
-        "offset":80,
-        "size":8,
-        "type":"ivar"
-      },
-      {
-        "alignment":3,
         "ivarType":"UIWindow *",
         "name":"_screenDisablingWindow",
-        "offset":88,
-        "size":8,
+        "offset":224,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_startedPausingWindows",
-        "offset":96,
-        "size":8,
+        "offset":232,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSMutableArray *",
         "name":"_pausedWindows",
-        "offset":104,
-        "size":8,
+        "offset":240,
         "type":"ivar"
       },
       {
-        "alignment":3,
-        "ivarType":"struct __CFDictionary *",
-        "name":"_touchMap",
-        "offset":112,
-        "size":8,
+        "ivarType":"_UIScreenTransparentHitTestWindow *",
+        "name":"_extendedJailHitTestWindow",
+        "offset":248,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSArray *",
         "name":"_availableDisplayModes",
-        "offset":120,
-        "size":8,
+        "offset":256,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"unsigned int",
-        "name":"_canAccessDisplaySeed",
-        "offset":128,
-        "size":4,
+        "ivarType":"double",
+        "name":"_pointsPerInch",
+        "offset":264,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"unsigned int",
-        "name":"_connectionSeed",
-        "offset":132,
-        "size":4,
+        "ivarType":"_UIScreenFixedCoordinateSpace *",
+        "name":"_fixedCoordinateSpace",
+        "offset":272,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int canAccessDisplay:1;\n        unsigned int canAccessDisplaySeedValid:1;\n        unsigned int screenUpdatesDisabled:1;\n    }",
+        "ivarType":"struct { \n        unsigned int bitsPerComponent : 4; \n        unsigned int initialized : 1; \n        unsigned int connected : 1; \n        unsigned int overscanCompensation : 2; \n        unsigned int screenUpdatesDisabled : 1; \n        unsigned int wantsWideContentMargins : 1; \n        unsigned int queriedDeviceContentMargins : 1; \n        unsigned int hasCalculatedPointsPerInch : 1; \n    }",
         "name":"_screenFlags",
-        "offset":136,
-        "size":4,
+        "offset":280,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_wantsSoftwareDimming",
-        "offset":140,
-        "size":1,
+        "offset":284,
         "type":"ivar"
       },
       {
-        "alignment":3,
+        "ivarType":"bool",
+        "name":"_jailUsesHitTestWindow",
+        "offset":285,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_defaultTraitCollection",
+        "offset":288,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_overrideTraitCollection",
+        "offset":296,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_lastNotifiedTraitCollection",
+        "offset":304,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"FBSDisplay *",
+        "name":"_fbsDisplay",
+        "offset":312,
+        "type":"ivar"
+      },
+      {
         "ivarType":"UISoftwareDimmingWindow *",
         "name":"_softwareDimmingWindow",
-        "offset":144,
-        "size":8,
+        "offset":320,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_lastNotifiedBacklightLevel",
-        "offset":152,
-        "size":8,
+        "offset":328,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_jailScale",
+        "offset":336,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_jailOrientation",
+        "offset":344,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "name":"_jailSize",
+        "offset":352,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGPoint { \n        double x; \n        double y; \n    }",
+        "name":"_jailOffset",
+        "offset":368,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct UIEdgeInsets { \n        double top; \n        double left; \n        double bottom; \n        double right; \n    }",
+        "name":"_jailTouchInsets",
+        "offset":384,
         "type":"ivar"
       }
     ],

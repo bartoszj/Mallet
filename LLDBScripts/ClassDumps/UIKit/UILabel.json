@@ -3,135 +3,119 @@
     "className":"UILabel",
     "ivars":[
       {
-        "alignment":3,
-        "ivarType":"struct CGSize",
+        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
         "name":"_size",
-        "offset":184,
-        "size":16,
+        "offset":280,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"UIColor *",
         "name":"_highlightedColor",
-        "offset":200,
-        "size":8,
+        "offset":296,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_numberOfLines",
-        "offset":208,
-        "size":8,
+        "offset":304,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_measuredNumberOfLines",
-        "offset":216,
-        "size":8,
+        "offset":312,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_lastLineBaseline",
-        "offset":224,
-        "size":8,
+        "offset":320,
         "type":"ivar"
       },
       {
-        "alignment":3,
+        "ivarType":"double",
+        "name":"_previousLastLineBaseline",
+        "offset":328,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_firstLineBaseline",
+        "offset":336,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_previousFirstLineBaseline",
+        "offset":344,
+        "type":"ivar"
+      },
+      {
         "ivarType":"double",
         "name":"_minimumScaleFactor",
-        "offset":232,
-        "size":8,
+        "offset":352,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"id",
         "name":"_content",
-        "offset":240,
-        "size":8,
+        "offset":360,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSAttributedString *",
         "name":"_synthesizedAttributedText",
-        "offset":248,
-        "size":8,
+        "offset":368,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSMutableDictionary *",
         "name":"_defaultAttributes",
-        "offset":256,
-        "size":8,
+        "offset":376,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_minimumFontSize",
-        "offset":264,
-        "size":8,
+        "offset":384,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_lineSpacing",
-        "offset":272,
-        "size":8,
+        "offset":392,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"id",
         "name":"_layout",
-        "offset":280,
-        "size":8,
+        "offset":400,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"_UILabelScaledMetrics *",
         "name":"_scaledMetrics",
-        "offset":288,
-        "size":8,
+        "offset":408,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"struct {\n        unsigned int unused1:3;\n        unsigned int highlighted:1;\n        unsigned int autosizeTextToFit:1;\n        unsigned int autotrackTextToFit:1;\n        unsigned int baselineAdjustment:2;\n        unsigned int unused2:2;\n        unsigned int enabled:1;\n        unsigned int wordRoundingEnabled:1;\n        unsigned int explicitAlignment:1;\n        unsigned int marqueeEnabled:1;\n        unsigned int marqueeRunable:1;\n        unsigned int marqueeRequired:1;\n        unsigned int drawsLetterpress:1;\n        unsigned int unused3:1;\n        unsigned int usesExplicitPreferredMaxLayoutWidth:1;\n        unsigned int determiningPreferredMaxLayoutWidth:1;\n        unsigned int inSecondConstraintsPass:1;\n        unsigned int drawsDebugBaselines:1;\n        unsigned int explicitBaselineOffset:1;\n        unsigned int usesSimpleTextEffects:1;\n        unsigned int isComplexString:1;\n    }",
+        "ivarType":"struct { \n        unsigned int unused1 : 3; \n        unsigned int highlighted : 1; \n        unsigned int autosizeTextToFit : 1; \n        unsigned int autotrackTextToFit : 1; \n        unsigned int baselineAdjustment : 2; \n        unsigned int unused2 : 2; \n        unsigned int enabled : 1; \n        unsigned int wordRoundingEnabled : 1; \n        unsigned int explicitAlignment : 1; \n        unsigned int marqueeEnabled : 1; \n        unsigned int marqueeRunable : 1; \n        unsigned int marqueeRequired : 1; \n        unsigned int drawsLetterpress : 1; \n        unsigned int unused3 : 1; \n        unsigned int usesExplicitPreferredMaxLayoutWidth : 1; \n        unsigned int determiningPreferredMaxLayoutWidth : 1; \n        unsigned int inSecondConstraintsPass : 1; \n        unsigned int drawsDebugBaselines : 1; \n        unsigned int explicitBaselineOffset : 1; \n        unsigned int usesSimpleTextEffects : 1; \n        unsigned int isComplexString : 1; \n        unsigned int wantsUnderlineForAccessibilityButtonShapesEnabled : 1; \n    }",
         "name":"_textLabelFlags",
-        "offset":296,
-        "size":4,
+        "offset":416,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
-        "name":"_wantsUnderlineForAccessibilityButtonShapesEnabled",
-        "offset":300,
-        "size":1,
+        "ivarType":"bool",
+        "name":"__textColorFollowsTintColor",
+        "offset":420,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_preferredMaxLayoutWidth",
-        "offset":304,
-        "size":8,
+        "offset":424,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "NSCoding"
     ],
     "superClassName":"UIView",
     "type":"class"
@@ -140,270 +124,119 @@
     "className":"UILabel",
     "ivars":[
       {
-        "alignment":2,
-        "ivarType":"struct CGSize",
+        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
         "name":"_size",
-        "offset":96,
-        "size":8,
+        "offset":144,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"UIColor *",
         "name":"_highlightedColor",
-        "offset":104,
-        "size":4,
+        "offset":152,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_numberOfLines",
-        "offset":108,
-        "size":4,
+        "offset":156,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_measuredNumberOfLines",
-        "offset":112,
-        "size":4,
+        "offset":160,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"float",
         "name":"_lastLineBaseline",
-        "offset":116,
-        "size":4,
+        "offset":164,
         "type":"ivar"
       },
       {
-        "alignment":2,
+        "ivarType":"float",
+        "name":"_previousLastLineBaseline",
+        "offset":168,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_firstLineBaseline",
+        "offset":172,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_previousFirstLineBaseline",
+        "offset":176,
+        "type":"ivar"
+      },
+      {
         "ivarType":"float",
         "name":"_minimumScaleFactor",
-        "offset":120,
-        "size":4,
+        "offset":180,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"id",
         "name":"_content",
-        "offset":124,
-        "size":4,
+        "offset":184,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSAttributedString *",
         "name":"_synthesizedAttributedText",
-        "offset":128,
-        "size":4,
+        "offset":188,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSMutableDictionary *",
         "name":"_defaultAttributes",
-        "offset":132,
-        "size":4,
+        "offset":192,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"float",
         "name":"_minimumFontSize",
-        "offset":136,
-        "size":4,
+        "offset":196,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_lineSpacing",
-        "offset":140,
-        "size":4,
+        "offset":200,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"id",
         "name":"_layout",
-        "offset":144,
-        "size":4,
+        "offset":204,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"_UILabelScaledMetrics *",
         "name":"_scaledMetrics",
-        "offset":148,
-        "size":4,
+        "offset":208,
         "type":"ivar"
       },
       {
-        "ivarType":"struct {\n        unsigned int unused1:3;\n        unsigned int highlighted:1;\n        unsigned int autosizeTextToFit:1;\n        unsigned int autotrackTextToFit:1;\n        unsigned int baselineAdjustment:2;\n        unsigned int unused2:2;\n        unsigned int enabled:1;\n        unsigned int wordRoundingEnabled:1;\n        unsigned int explicitAlignment:1;\n        unsigned int marqueeEnabled:1;\n        unsigned int marqueeRunable:1;\n        unsigned int marqueeRequired:1;\n        unsigned int drawsLetterpress:1;\n        unsigned int unused3:1;\n        unsigned int usesExplicitPreferredMaxLayoutWidth:1;\n        unsigned int determiningPreferredMaxLayoutWidth:1;\n        unsigned int inSecondConstraintsPass:1;\n        unsigned int drawsDebugBaselines:1;\n        unsigned int explicitBaselineOffset:1;\n        unsigned int usesSimpleTextEffects:1;\n        unsigned int isComplexString:1;\n    }",
+        "ivarType":"struct { \n        unsigned int unused1 : 3; \n        unsigned int highlighted : 1; \n        unsigned int autosizeTextToFit : 1; \n        unsigned int autotrackTextToFit : 1; \n        unsigned int baselineAdjustment : 2; \n        unsigned int unused2 : 2; \n        unsigned int enabled : 1; \n        unsigned int wordRoundingEnabled : 1; \n        unsigned int explicitAlignment : 1; \n        unsigned int marqueeEnabled : 1; \n        unsigned int marqueeRunable : 1; \n        unsigned int marqueeRequired : 1; \n        unsigned int drawsLetterpress : 1; \n        unsigned int unused3 : 1; \n        unsigned int usesExplicitPreferredMaxLayoutWidth : 1; \n        unsigned int determiningPreferredMaxLayoutWidth : 1; \n        unsigned int inSecondConstraintsPass : 1; \n        unsigned int drawsDebugBaselines : 1; \n        unsigned int explicitBaselineOffset : 1; \n        unsigned int usesSimpleTextEffects : 1; \n        unsigned int isComplexString : 1; \n        unsigned int wantsUnderlineForAccessibilityButtonShapesEnabled : 1; \n    }",
         "name":"_textLabelFlags",
-        "offset":152,
-        "size":4,
+        "offset":212,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
-        "name":"_wantsUnderlineForAccessibilityButtonShapesEnabled",
-        "offset":156,
-        "size":1,
+        "ivarType":"BOOL",
+        "name":"__textColorFollowsTintColor",
+        "offset":216,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"float",
         "name":"_preferredMaxLayoutWidth",
-        "offset":160,
-        "size":4,
+        "offset":220,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "NSCoding"
-    ],
-    "superClassName":"UIView",
-    "type":"class"
-  },
-  "armv7s":{
-    "className":"UILabel",
-    "ivars":[
-      {
-        "alignment":2,
-        "ivarType":"struct CGSize",
-        "name":"_size",
-        "offset":96,
-        "size":8,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"UIColor *",
-        "name":"_highlightedColor",
-        "offset":104,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"int",
-        "name":"_numberOfLines",
-        "offset":108,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"int",
-        "name":"_measuredNumberOfLines",
-        "offset":112,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"float",
-        "name":"_lastLineBaseline",
-        "offset":116,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"float",
-        "name":"_minimumScaleFactor",
-        "offset":120,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"id",
-        "name":"_content",
-        "offset":124,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSAttributedString *",
-        "name":"_synthesizedAttributedText",
-        "offset":128,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSMutableDictionary *",
-        "name":"_defaultAttributes",
-        "offset":132,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"float",
-        "name":"_minimumFontSize",
-        "offset":136,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"int",
-        "name":"_lineSpacing",
-        "offset":140,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"id",
-        "name":"_layout",
-        "offset":144,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"_UILabelScaledMetrics *",
-        "name":"_scaledMetrics",
-        "offset":148,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"struct {\n        unsigned int unused1:3;\n        unsigned int highlighted:1;\n        unsigned int autosizeTextToFit:1;\n        unsigned int autotrackTextToFit:1;\n        unsigned int baselineAdjustment:2;\n        unsigned int unused2:2;\n        unsigned int enabled:1;\n        unsigned int wordRoundingEnabled:1;\n        unsigned int explicitAlignment:1;\n        unsigned int marqueeEnabled:1;\n        unsigned int marqueeRunable:1;\n        unsigned int marqueeRequired:1;\n        unsigned int drawsLetterpress:1;\n        unsigned int unused3:1;\n        unsigned int usesExplicitPreferredMaxLayoutWidth:1;\n        unsigned int determiningPreferredMaxLayoutWidth:1;\n        unsigned int inSecondConstraintsPass:1;\n        unsigned int drawsDebugBaselines:1;\n        unsigned int explicitBaselineOffset:1;\n        unsigned int usesSimpleTextEffects:1;\n        unsigned int isComplexString:1;\n    }",
-        "name":"_textLabelFlags",
-        "offset":152,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"char",
-        "name":"_wantsUnderlineForAccessibilityButtonShapesEnabled",
-        "offset":156,
-        "size":1,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"float",
-        "name":"_preferredMaxLayoutWidth",
-        "offset":160,
-        "size":4,
-        "type":"ivar"
-      }
-    ],
-    "protocols":[
-      "NSCoding"
     ],
     "superClassName":"UIView",
     "type":"class"
@@ -412,135 +245,119 @@
     "className":"UILabel",
     "ivars":[
       {
-        "alignment":2,
-        "ivarType":"struct CGSize",
+        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
         "name":"_size",
-        "offset":96,
-        "size":8,
+        "offset":144,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"UIColor *",
         "name":"_highlightedColor",
-        "offset":104,
-        "size":4,
+        "offset":152,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_numberOfLines",
-        "offset":108,
-        "size":4,
+        "offset":156,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_measuredNumberOfLines",
-        "offset":112,
-        "size":4,
+        "offset":160,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"float",
         "name":"_lastLineBaseline",
-        "offset":116,
-        "size":4,
+        "offset":164,
         "type":"ivar"
       },
       {
-        "alignment":2,
+        "ivarType":"float",
+        "name":"_previousLastLineBaseline",
+        "offset":168,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_firstLineBaseline",
+        "offset":172,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_previousFirstLineBaseline",
+        "offset":176,
+        "type":"ivar"
+      },
+      {
         "ivarType":"float",
         "name":"_minimumScaleFactor",
-        "offset":120,
-        "size":4,
+        "offset":180,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"id",
         "name":"_content",
-        "offset":124,
-        "size":4,
+        "offset":184,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSAttributedString *",
         "name":"_synthesizedAttributedText",
-        "offset":128,
-        "size":4,
+        "offset":188,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSMutableDictionary *",
         "name":"_defaultAttributes",
-        "offset":132,
-        "size":4,
+        "offset":192,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"float",
         "name":"_minimumFontSize",
-        "offset":136,
-        "size":4,
+        "offset":196,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_lineSpacing",
-        "offset":140,
-        "size":4,
+        "offset":200,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"id",
         "name":"_layout",
-        "offset":144,
-        "size":4,
+        "offset":204,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"_UILabelScaledMetrics *",
         "name":"_scaledMetrics",
-        "offset":148,
-        "size":4,
+        "offset":208,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"struct {\n        unsigned int unused1:3;\n        unsigned int highlighted:1;\n        unsigned int autosizeTextToFit:1;\n        unsigned int autotrackTextToFit:1;\n        unsigned int baselineAdjustment:2;\n        unsigned int unused2:2;\n        unsigned int enabled:1;\n        unsigned int wordRoundingEnabled:1;\n        unsigned int explicitAlignment:1;\n        unsigned int marqueeEnabled:1;\n        unsigned int marqueeRunable:1;\n        unsigned int marqueeRequired:1;\n        unsigned int drawsLetterpress:1;\n        unsigned int unused3:1;\n        unsigned int usesExplicitPreferredMaxLayoutWidth:1;\n        unsigned int determiningPreferredMaxLayoutWidth:1;\n        unsigned int inSecondConstraintsPass:1;\n        unsigned int drawsDebugBaselines:1;\n        unsigned int explicitBaselineOffset:1;\n        unsigned int usesSimpleTextEffects:1;\n        unsigned int isComplexString:1;\n    }",
+        "ivarType":"struct { \n        unsigned int unused1 : 3; \n        unsigned int highlighted : 1; \n        unsigned int autosizeTextToFit : 1; \n        unsigned int autotrackTextToFit : 1; \n        unsigned int baselineAdjustment : 2; \n        unsigned int unused2 : 2; \n        unsigned int enabled : 1; \n        unsigned int wordRoundingEnabled : 1; \n        unsigned int explicitAlignment : 1; \n        unsigned int marqueeEnabled : 1; \n        unsigned int marqueeRunable : 1; \n        unsigned int marqueeRequired : 1; \n        unsigned int drawsLetterpress : 1; \n        unsigned int unused3 : 1; \n        unsigned int usesExplicitPreferredMaxLayoutWidth : 1; \n        unsigned int determiningPreferredMaxLayoutWidth : 1; \n        unsigned int inSecondConstraintsPass : 1; \n        unsigned int drawsDebugBaselines : 1; \n        unsigned int explicitBaselineOffset : 1; \n        unsigned int usesSimpleTextEffects : 1; \n        unsigned int isComplexString : 1; \n        unsigned int wantsUnderlineForAccessibilityButtonShapesEnabled : 1; \n    }",
         "name":"_textLabelFlags",
-        "offset":152,
-        "size":4,
+        "offset":212,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
-        "name":"_wantsUnderlineForAccessibilityButtonShapesEnabled",
-        "offset":156,
-        "size":1,
+        "ivarType":"BOOL",
+        "name":"__textColorFollowsTintColor",
+        "offset":216,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"float",
         "name":"_preferredMaxLayoutWidth",
-        "offset":160,
-        "size":4,
+        "offset":220,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "NSCoding"
     ],
     "superClassName":"UIView",
     "type":"class"
@@ -549,135 +366,119 @@
     "className":"UILabel",
     "ivars":[
       {
-        "alignment":3,
-        "ivarType":"struct CGSize",
+        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
         "name":"_size",
-        "offset":184,
-        "size":16,
+        "offset":280,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"UIColor *",
         "name":"_highlightedColor",
-        "offset":200,
-        "size":8,
+        "offset":296,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_numberOfLines",
-        "offset":208,
-        "size":8,
+        "offset":304,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_measuredNumberOfLines",
-        "offset":216,
-        "size":8,
+        "offset":312,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_lastLineBaseline",
-        "offset":224,
-        "size":8,
+        "offset":320,
         "type":"ivar"
       },
       {
-        "alignment":3,
+        "ivarType":"double",
+        "name":"_previousLastLineBaseline",
+        "offset":328,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_firstLineBaseline",
+        "offset":336,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_previousFirstLineBaseline",
+        "offset":344,
+        "type":"ivar"
+      },
+      {
         "ivarType":"double",
         "name":"_minimumScaleFactor",
-        "offset":232,
-        "size":8,
+        "offset":352,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"id",
         "name":"_content",
-        "offset":240,
-        "size":8,
+        "offset":360,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSAttributedString *",
         "name":"_synthesizedAttributedText",
-        "offset":248,
-        "size":8,
+        "offset":368,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSMutableDictionary *",
         "name":"_defaultAttributes",
-        "offset":256,
-        "size":8,
+        "offset":376,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_minimumFontSize",
-        "offset":264,
-        "size":8,
+        "offset":384,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_lineSpacing",
-        "offset":272,
-        "size":8,
+        "offset":392,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"id",
         "name":"_layout",
-        "offset":280,
-        "size":8,
+        "offset":400,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"_UILabelScaledMetrics *",
         "name":"_scaledMetrics",
-        "offset":288,
-        "size":8,
+        "offset":408,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"struct {\n        unsigned int unused1:3;\n        unsigned int highlighted:1;\n        unsigned int autosizeTextToFit:1;\n        unsigned int autotrackTextToFit:1;\n        unsigned int baselineAdjustment:2;\n        unsigned int unused2:2;\n        unsigned int enabled:1;\n        unsigned int wordRoundingEnabled:1;\n        unsigned int explicitAlignment:1;\n        unsigned int marqueeEnabled:1;\n        unsigned int marqueeRunable:1;\n        unsigned int marqueeRequired:1;\n        unsigned int drawsLetterpress:1;\n        unsigned int unused3:1;\n        unsigned int usesExplicitPreferredMaxLayoutWidth:1;\n        unsigned int determiningPreferredMaxLayoutWidth:1;\n        unsigned int inSecondConstraintsPass:1;\n        unsigned int drawsDebugBaselines:1;\n        unsigned int explicitBaselineOffset:1;\n        unsigned int usesSimpleTextEffects:1;\n        unsigned int isComplexString:1;\n    }",
+        "ivarType":"struct { \n        unsigned int unused1 : 3; \n        unsigned int highlighted : 1; \n        unsigned int autosizeTextToFit : 1; \n        unsigned int autotrackTextToFit : 1; \n        unsigned int baselineAdjustment : 2; \n        unsigned int unused2 : 2; \n        unsigned int enabled : 1; \n        unsigned int wordRoundingEnabled : 1; \n        unsigned int explicitAlignment : 1; \n        unsigned int marqueeEnabled : 1; \n        unsigned int marqueeRunable : 1; \n        unsigned int marqueeRequired : 1; \n        unsigned int drawsLetterpress : 1; \n        unsigned int unused3 : 1; \n        unsigned int usesExplicitPreferredMaxLayoutWidth : 1; \n        unsigned int determiningPreferredMaxLayoutWidth : 1; \n        unsigned int inSecondConstraintsPass : 1; \n        unsigned int drawsDebugBaselines : 1; \n        unsigned int explicitBaselineOffset : 1; \n        unsigned int usesSimpleTextEffects : 1; \n        unsigned int isComplexString : 1; \n        unsigned int wantsUnderlineForAccessibilityButtonShapesEnabled : 1; \n    }",
         "name":"_textLabelFlags",
-        "offset":296,
-        "size":4,
+        "offset":416,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
-        "name":"_wantsUnderlineForAccessibilityButtonShapesEnabled",
-        "offset":300,
-        "size":1,
+        "ivarType":"bool",
+        "name":"__textColorFollowsTintColor",
+        "offset":420,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_preferredMaxLayoutWidth",
-        "offset":304,
-        "size":8,
+        "offset":424,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "NSCoding"
     ],
     "superClassName":"UIView",
     "type":"class"

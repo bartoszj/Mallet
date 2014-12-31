@@ -1,157 +1,78 @@
 {
-  "i386" : {
-    "instanceMethods" : [
+  "arm64":{
+    "className":"SKProductsResponseInternal",
+    "ivars":[
       {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 41207
-      }
-    ],
-    "className" : "SKProductsResponseInternal",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "NSArray *",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_invalidIdentifiers"
+        "ivarType":"NSArray *",
+        "name":"_invalidIdentifiers",
+        "offset":8,
+        "type":"ivar"
       },
       {
-        "alignment" : 2,
-        "ivarType" : "NSArray *",
-        "size" : 4,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_products"
+        "ivarType":"NSArray *",
+        "name":"_products",
+        "offset":16,
+        "type":"ivar"
       }
     ],
-    "type" : "class",
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "x86_64" : {
-    "instanceMethods" : [
+  "armv7":{
+    "className":"SKProductsResponseInternal",
+    "ivars":[
       {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 36738
-      }
-    ],
-    "className" : "SKProductsResponseInternal",
-    "ivars" : [
-      {
-        "alignment" : 3,
-        "ivarType" : "NSArray *",
-        "size" : 8,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_invalidIdentifiers"
+        "ivarType":"NSArray *",
+        "name":"_invalidIdentifiers",
+        "offset":4,
+        "type":"ivar"
       },
       {
-        "alignment" : 3,
-        "ivarType" : "NSArray *",
-        "size" : 8,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_products"
+        "ivarType":"NSArray *",
+        "name":"_products",
+        "offset":8,
+        "type":"ivar"
       }
     ],
-    "type" : "class",
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "armv7" : {
-    "instanceMethods" : [
+  "i386":{
+    "className":"SKProductsResponseInternal",
+    "ivars":[
       {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 32913
-      }
-    ],
-    "className" : "SKProductsResponseInternal",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "NSArray *",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_invalidIdentifiers"
+        "ivarType":"NSArray *",
+        "name":"_invalidIdentifiers",
+        "offset":4,
+        "type":"ivar"
       },
       {
-        "alignment" : 2,
-        "ivarType" : "NSArray *",
-        "size" : 4,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_products"
+        "ivarType":"NSArray *",
+        "name":"_products",
+        "offset":8,
+        "type":"ivar"
       }
     ],
-    "type" : "class",
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "armv7s" : {
-    "instanceMethods" : [
+  "x86_64":{
+    "className":"SKProductsResponseInternal",
+    "ivars":[
       {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 32965
-      }
-    ],
-    "className" : "SKProductsResponseInternal",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "NSArray *",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_invalidIdentifiers"
+        "ivarType":"NSArray *",
+        "name":"_invalidIdentifiers",
+        "offset":8,
+        "type":"ivar"
       },
       {
-        "alignment" : 2,
-        "ivarType" : "NSArray *",
-        "size" : 4,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_products"
+        "ivarType":"NSArray *",
+        "name":"_products",
+        "offset":16,
+        "type":"ivar"
       }
     ],
-    "type" : "class",
-    "superClassName" : "NSObject"
-  },
-  "arm64" : {
-    "instanceMethods" : [
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 39380
-      }
-    ],
-    "className" : "SKProductsResponseInternal",
-    "ivars" : [
-      {
-        "alignment" : 3,
-        "ivarType" : "NSArray *",
-        "size" : 8,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_invalidIdentifiers"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSArray *",
-        "size" : 8,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_products"
-      }
-    ],
-    "type" : "class",
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   }
 }

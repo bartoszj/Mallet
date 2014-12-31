@@ -1,432 +1,198 @@
 {
-  "i386" : {
-    "protocols" : [
-      "NSCopying"
-    ],
-    "instanceMethods" : [
+  "arm64":{
+    "className":"SKPaymentInternal",
+    "ivars":[
       {
-        "declaration" : "(id)copyWithZone:(struct _NSZone *)arg1",
-        "type" : "method",
-        "name" : "copyWithZone:",
-        "address" : 13216
+        "ivarType":"NSString *",
+        "name":"_applicationUsername",
+        "offset":8,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 12958
+        "ivarType":"NSString *",
+        "name":"_partnerIdentifier",
+        "offset":16,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 12886
+        "ivarType":"NSString *",
+        "name":"_partnerTransactionIdentifier",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_productIdentifier",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_quantity",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSData *",
+        "name":"_requestData",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"_requestParameters",
+        "offset":56,
+        "type":"ivar"
       }
     ],
-    "className" : "SKPaymentInternal",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_applicationUsername"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_partnerIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 12,
-        "type" : "ivar",
-        "name" : "_partnerTransactionIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_productIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 20,
-        "type" : "ivar",
-        "name" : "_quantity"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSData *",
-        "size" : 4,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_requestData"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSDictionary *",
-        "size" : 4,
-        "offset" : 28,
-        "type" : "ivar",
-        "name" : "_requestParameters"
-      }
-    ],
-    "type" : "class",
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "x86_64" : {
-    "protocols" : [
-      "NSCopying"
-    ],
-    "instanceMethods" : [
+  "armv7":{
+    "className":"SKPaymentInternal",
+    "ivars":[
       {
-        "declaration" : "(id)copyWithZone:(struct _NSZone *)arg1",
-        "type" : "method",
-        "name" : "copyWithZone:",
-        "address" : 12448
+        "ivarType":"NSString *",
+        "name":"_applicationUsername",
+        "offset":4,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 12209
+        "ivarType":"NSString *",
+        "name":"_partnerIdentifier",
+        "offset":8,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 12144
+        "ivarType":"NSString *",
+        "name":"_partnerTransactionIdentifier",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_productIdentifier",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_quantity",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSData *",
+        "name":"_requestData",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"_requestParameters",
+        "offset":28,
+        "type":"ivar"
       }
     ],
-    "className" : "SKPaymentInternal",
-    "ivars" : [
-      {
-        "alignment" : 3,
-        "ivarType" : "NSString *",
-        "size" : 8,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_applicationUsername"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSString *",
-        "size" : 8,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_partnerIdentifier"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSString *",
-        "size" : 8,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_partnerTransactionIdentifier"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSString *",
-        "size" : 8,
-        "offset" : 32,
-        "type" : "ivar",
-        "name" : "_productIdentifier"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 40,
-        "type" : "ivar",
-        "name" : "_quantity"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSData *",
-        "size" : 8,
-        "offset" : 48,
-        "type" : "ivar",
-        "name" : "_requestData"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSDictionary *",
-        "size" : 8,
-        "offset" : 56,
-        "type" : "ivar",
-        "name" : "_requestParameters"
-      }
-    ],
-    "type" : "class",
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "armv7" : {
-    "protocols" : [
-      "NSCopying"
-    ],
-    "instanceMethods" : [
+  "i386":{
+    "className":"SKPaymentInternal",
+    "ivars":[
       {
-        "declaration" : "(id)copyWithZone:(struct _NSZone *)arg1",
-        "type" : "method",
-        "name" : "copyWithZone:",
-        "address" : 10649
+        "ivarType":"NSString *",
+        "name":"_applicationUsername",
+        "offset":4,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 10433
+        "ivarType":"NSString *",
+        "name":"_partnerIdentifier",
+        "offset":8,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 10369
+        "ivarType":"NSString *",
+        "name":"_partnerTransactionIdentifier",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_productIdentifier",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_quantity",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSData *",
+        "name":"_requestData",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"_requestParameters",
+        "offset":28,
+        "type":"ivar"
       }
     ],
-    "className" : "SKPaymentInternal",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_applicationUsername"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_partnerIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 12,
-        "type" : "ivar",
-        "name" : "_partnerTransactionIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_productIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 20,
-        "type" : "ivar",
-        "name" : "_quantity"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSData *",
-        "size" : 4,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_requestData"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSDictionary *",
-        "size" : 4,
-        "offset" : 28,
-        "type" : "ivar",
-        "name" : "_requestParameters"
-      }
-    ],
-    "type" : "class",
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "armv7s" : {
-    "protocols" : [
-      "NSCopying"
-    ],
-    "instanceMethods" : [
+  "x86_64":{
+    "className":"SKPaymentInternal",
+    "ivars":[
       {
-        "declaration" : "(id)copyWithZone:(struct _NSZone *)arg1",
-        "type" : "method",
-        "name" : "copyWithZone:",
-        "address" : 10865
+        "ivarType":"NSString *",
+        "name":"_applicationUsername",
+        "offset":8,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 10649
+        "ivarType":"NSString *",
+        "name":"_partnerIdentifier",
+        "offset":16,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 10585
+        "ivarType":"NSString *",
+        "name":"_partnerTransactionIdentifier",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_productIdentifier",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_quantity",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSData *",
+        "name":"_requestData",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"_requestParameters",
+        "offset":56,
+        "type":"ivar"
       }
     ],
-    "className" : "SKPaymentInternal",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_applicationUsername"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_partnerIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 12,
-        "type" : "ivar",
-        "name" : "_partnerTransactionIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_productIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 20,
-        "type" : "ivar",
-        "name" : "_quantity"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSData *",
-        "size" : 4,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_requestData"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSDictionary *",
-        "size" : 4,
-        "offset" : 28,
-        "type" : "ivar",
-        "name" : "_requestParameters"
-      }
-    ],
-    "type" : "class",
-    "superClassName" : "NSObject"
-  },
-  "arm64" : {
-    "protocols" : [
-      "NSCopying"
-    ],
-    "instanceMethods" : [
-      {
-        "declaration" : "(id)copyWithZone:(struct _NSZone *)arg1",
-        "type" : "method",
-        "name" : "copyWithZone:",
-        "address" : 12452
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 12192
-      },
-      {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 12108
-      }
-    ],
-    "className" : "SKPaymentInternal",
-    "ivars" : [
-      {
-        "alignment" : 3,
-        "ivarType" : "NSString *",
-        "size" : 8,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_applicationUsername"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSString *",
-        "size" : 8,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_partnerIdentifier"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSString *",
-        "size" : 8,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_partnerTransactionIdentifier"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSString *",
-        "size" : 8,
-        "offset" : 32,
-        "type" : "ivar",
-        "name" : "_productIdentifier"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 40,
-        "type" : "ivar",
-        "name" : "_quantity"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSData *",
-        "size" : 8,
-        "offset" : 48,
-        "type" : "ivar",
-        "name" : "_requestData"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSDictionary *",
-        "size" : 8,
-        "offset" : 56,
-        "type" : "ivar",
-        "name" : "_requestParameters"
-      }
-    ],
-    "type" : "class",
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   }
 }

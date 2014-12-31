@@ -1,277 +1,150 @@
 {
-  "i386" : {
-    "instanceMethods" : [
+  "arm64":{
+    "className":"SKRequestInternal",
+    "ivars":[
       {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 42990
+        "ivarType":"long long",
+        "name":"_backgroundTaskIdentifier",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"SKPaymentQueueClient *",
+        "name":"_client",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"SKXPCConnection *",
+        "name":"_connection",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"<SKRequestDelegate> *",
+        "name":"_delegate",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_state",
+        "offset":40,
+        "type":"ivar"
       }
     ],
-    "className" : "SKRequestInternal",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_backgroundTaskIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "SKPaymentQueueClient *",
-        "size" : 4,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_client"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "SKXPCConnection *",
-        "size" : 4,
-        "offset" : 12,
-        "type" : "ivar",
-        "name" : "_connection"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "id <SKRequestDelegate>",
-        "size" : 4,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_delegate"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 20,
-        "type" : "ivar",
-        "name" : "_state"
-      }
-    ],
-    "type" : "class",
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "x86_64" : {
-    "instanceMethods" : [
+  "armv7":{
+    "className":"SKRequestInternal",
+    "ivars":[
       {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 38291
+        "ivarType":"int",
+        "name":"_backgroundTaskIdentifier",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"SKPaymentQueueClient *",
+        "name":"_client",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"SKXPCConnection *",
+        "name":"_connection",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"<SKRequestDelegate> *",
+        "name":"_delegate",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_state",
+        "offset":20,
+        "type":"ivar"
       }
     ],
-    "className" : "SKRequestInternal",
-    "ivars" : [
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_backgroundTaskIdentifier"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "SKPaymentQueueClient *",
-        "size" : 8,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_client"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "SKXPCConnection *",
-        "size" : 8,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_connection"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "id <SKRequestDelegate>",
-        "size" : 8,
-        "offset" : 32,
-        "type" : "ivar",
-        "name" : "_delegate"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 40,
-        "type" : "ivar",
-        "name" : "_state"
-      }
-    ],
-    "type" : "class",
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "armv7" : {
-    "instanceMethods" : [
+  "i386":{
+    "className":"SKRequestInternal",
+    "ivars":[
       {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 34397
+        "ivarType":"int",
+        "name":"_backgroundTaskIdentifier",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"SKPaymentQueueClient *",
+        "name":"_client",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"SKXPCConnection *",
+        "name":"_connection",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"<SKRequestDelegate> *",
+        "name":"_delegate",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_state",
+        "offset":20,
+        "type":"ivar"
       }
     ],
-    "className" : "SKRequestInternal",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_backgroundTaskIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "SKPaymentQueueClient *",
-        "size" : 4,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_client"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "SKXPCConnection *",
-        "size" : 4,
-        "offset" : 12,
-        "type" : "ivar",
-        "name" : "_connection"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "id <SKRequestDelegate>",
-        "size" : 4,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_delegate"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 20,
-        "type" : "ivar",
-        "name" : "_state"
-      }
-    ],
-    "type" : "class",
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "armv7s" : {
-    "instanceMethods" : [
+  "x86_64":{
+    "className":"SKRequestInternal",
+    "ivars":[
       {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 34445
+        "ivarType":"long long",
+        "name":"_backgroundTaskIdentifier",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"SKPaymentQueueClient *",
+        "name":"_client",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"SKXPCConnection *",
+        "name":"_connection",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"<SKRequestDelegate> *",
+        "name":"_delegate",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_state",
+        "offset":40,
+        "type":"ivar"
       }
     ],
-    "className" : "SKRequestInternal",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_backgroundTaskIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "SKPaymentQueueClient *",
-        "size" : 4,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_client"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "SKXPCConnection *",
-        "size" : 4,
-        "offset" : 12,
-        "type" : "ivar",
-        "name" : "_connection"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "id <SKRequestDelegate>",
-        "size" : 4,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_delegate"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 20,
-        "type" : "ivar",
-        "name" : "_state"
-      }
-    ],
-    "type" : "class",
-    "superClassName" : "NSObject"
-  },
-  "arm64" : {
-    "instanceMethods" : [
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 41144
-      }
-    ],
-    "className" : "SKRequestInternal",
-    "ivars" : [
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_backgroundTaskIdentifier"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "SKPaymentQueueClient *",
-        "size" : 8,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_client"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "SKXPCConnection *",
-        "size" : 8,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_connection"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "id <SKRequestDelegate>",
-        "size" : 8,
-        "offset" : 32,
-        "type" : "ivar",
-        "name" : "_delegate"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 40,
-        "type" : "ivar",
-        "name" : "_state"
-      }
-    ],
-    "type" : "class",
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   }
 }

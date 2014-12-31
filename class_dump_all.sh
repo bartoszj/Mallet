@@ -1,8 +1,12 @@
 #! /bin/bash
 
-CLASSDUMP=`which class-dump`
-FRAMEWORKS_PATHS=("/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks" 
-    "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks")
+# CLASSDUMP=`which class-dump`
+CLASSDUMP="$HOME/Library/Developer/Xcode/DerivedData/class-dump-gywlitzvdxxnevhjqkhvwciuhkna/Build/Products/Debug/class-dump"
+FRAMEWORKS_PATHS=("/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks"
+                  "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/PrivateFrameworks"
+                  "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks"
+                  "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PrivateFrameworks"
+                  )
 
 for frameworks_path in ${FRAMEWORKS_PATHS[@]}; do
     # echo -e "${frameworks_path}"/*
@@ -21,15 +25,15 @@ for frameworks_path in ${FRAMEWORKS_PATHS[@]}; do
         fi
 
         # i386
-        "${CLASSDUMP}" -a -A --arch i386 -H -o "i386/${framework_dir_name}" "${bin_path}" 2>/dev/null
+        "${CLASSDUMP}" -a -A --arch i386 --sdk-ios-sim "" -H -o "dump_ios/i386/${framework_dir_name}" "${bin_path}" 2>/dev/null
         # x86_64
-        "${CLASSDUMP}" -a -A --arch x86_64 -H -o "x86_64/${framework_dir_name}" "${bin_path}" 2>/dev/null
+        "${CLASSDUMP}" -a -A --arch x86_64 --sdk-ios-sim "" -H -o "dump_ios/x86_64/${framework_dir_name}" "${bin_path}" 2>/dev/null
         # armv7
-        "${CLASSDUMP}" -a -A --arch armv7 -H -o "armv7/${framework_dir_name}" "${bin_path}" 2>/dev/null
+        # "${CLASSDUMP}" -a -A --arch armv7 --sdk-ios "" -H -o "dump_ios/armv7/${framework_dir_name}" "${bin_path}" 2>/dev/null
         # armv7s
-        "${CLASSDUMP}" -a -A --arch armv7s -H -o "armv7s/${framework_dir_name}" "${bin_path}" 2>/dev/null
+        # "${CLASSDUMP}" -a -A --arch armv7s --sdk-ios "" -H -o "dump_ios/armv7s/${framework_dir_name}" "${bin_path}" 2>/dev/null
         # arm64
-        "${CLASSDUMP}" -a -A --arch arm64 -H -o "arm64/${framework_dir_name}" "${bin_path}" 2>/dev/null
+        # "${CLASSDUMP}" -a -A --arch arm64 --sdk-ios "" -H -o "/dump_iosarm64/${framework_dir_name}" "${bin_path}" 2>/dev/null
 
         # List arch
         # class-dump --list-arch "${framework_path}"

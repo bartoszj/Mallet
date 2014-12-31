@@ -1,4446 +1,822 @@
 {
-  "i386" : {
-    "superClassName" : "NSObject",
-    "className" : "UIScreen",
-    "instanceMethods" : [
+  "arm64":{
+    "className":"UIScreen",
+    "ivars":[
       {
-        "declaration" : "(void)_setLastNotifiedBacklightLevel:(int)arg1",
-        "type" : "method",
-        "name" : "_setLastNotifiedBacklightLevel:",
-        "address" : 2580654
+        "ivarType":"id",
+        "name":"_display",
+        "offset":8,
+        "type":"ivar"
       },
       {
-        "declaration" : "(int)_lastNotifiedBacklightLevel",
-        "type" : "method",
-        "name" : "_lastNotifiedBacklightLevel",
-        "address" : 2580631
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_bounds",
+        "offset":16,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setSoftwareDimmingWindow:(id)arg1",
-        "type" : "method",
-        "name" : "_setSoftwareDimmingWindow:",
-        "address" : 2580579
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_referenceBounds",
+        "offset":48,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_softwareDimmingWindow",
-        "type" : "method",
-        "name" : "_softwareDimmingWindow",
-        "address" : 2580556
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_interfaceOrientedBounds",
+        "offset":80,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)setWantsSoftwareDimming:(BOOL)arg1",
-        "type" : "method",
-        "name" : "setWantsSoftwareDimming:",
-        "address" : 2580530
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_unjailedReferenceBounds",
+        "offset":112,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)wantsSoftwareDimming",
-        "type" : "method",
-        "name" : "wantsSoftwareDimming",
-        "address" : 2580506
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_mainSceneReferenceBounds",
+        "offset":144,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setWorkspaceCapableScreenType:(int)arg1",
-        "type" : "method",
-        "name" : "_setWorkspaceCapableScreenType:",
-        "address" : 2580480
+        "ivarType":"long long",
+        "name":"_interfaceOrientation",
+        "offset":176,
+        "type":"ivar"
       },
       {
-        "declaration" : "(int)_workspaceCapableScreenType",
-        "type" : "method",
-        "name" : "_workspaceCapableScreenType",
-        "address" : 2580457
+        "ivarType":"double",
+        "name":"_scale",
+        "offset":184,
+        "type":"ivar"
       },
       {
-        "declaration" : "(struct CGRect)bounds",
-        "type" : "method",
-        "name" : "bounds",
-        "address" : 2580412
+        "ivarType":"double",
+        "name":"_touchScaleFactor",
+        "offset":192,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_snapshotExcludingWindows:(id)arg1 withRect:(struct CGRect)arg2",
-        "type" : "method",
-        "name" : "_snapshotExcludingWindows:withRect:",
-        "address" : 2580209
+        "ivarType":"double",
+        "name":"_horizontalScale",
+        "offset":200,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)description",
-        "type" : "method",
-        "name" : "description",
-        "address" : 2578941
+        "ivarType":"long long",
+        "name":"_userInterfaceIdiom",
+        "offset":208,
+        "type":"ivar"
       },
       {
-        "declaration" : "(float)brightness",
-        "type" : "method",
-        "name" : "brightness",
-        "address" : 2578672
+        "ivarType":"NSDictionary *",
+        "name":"_capabilities",
+        "offset":216,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)setBrightness:(float)arg1",
-        "type" : "method",
-        "name" : "setBrightness:",
-        "address" : 2578102
+        "ivarType":"UIWindow *",
+        "name":"_screenDisablingWindow",
+        "offset":224,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_supportsBrightness",
-        "type" : "method",
-        "name" : "_supportsBrightness",
-        "address" : 2578028
+        "ivarType":"double",
+        "name":"_startedPausingWindows",
+        "offset":232,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_endObservingBacklightLevelNotifications",
-        "type" : "method",
-        "name" : "_endObservingBacklightLevelNotifications",
-        "address" : 2577886
+        "ivarType":"NSMutableArray *",
+        "name":"_pausedWindows",
+        "offset":240,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_beginObservingBacklightLevelNotifications",
-        "type" : "method",
-        "name" : "_beginObservingBacklightLevelNotifications",
-        "address" : 2577704
+        "ivarType":"_UIScreenTransparentHitTestWindow *",
+        "name":"_extendedJailHitTestWindow",
+        "offset":248,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_postBrightnessDidChangeNotificationIfAppropriate",
-        "type" : "method",
-        "name" : "_postBrightnessDidChangeNotificationIfAppropriate",
-        "address" : 2577331
+        "ivarType":"NSArray *",
+        "name":"_availableDisplayModes",
+        "offset":256,
+        "type":"ivar"
       },
       {
-        "declaration" : "(float)rawBrightnessForBacklightLevel:(float)arg1",
-        "type" : "method",
-        "name" : "rawBrightnessForBacklightLevel:",
-        "address" : 2577252
+        "ivarType":"double",
+        "name":"_pointsPerInch",
+        "offset":264,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_lazySoftwareDimmingWindow",
-        "type" : "method",
-        "name" : "_lazySoftwareDimmingWindow",
-        "address" : 2576997
+        "ivarType":"_UIScreenFixedCoordinateSpace *",
+        "name":"_fixedCoordinateSpace",
+        "offset":272,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_areMusicListsLimited",
-        "type" : "method",
-        "name" : "_areMusicListsLimited",
-        "address" : 2576944
+        "ivarType":"struct { \n        unsigned int bitsPerComponent : 4; \n        unsigned int initialized : 1; \n        unsigned int connected : 1; \n        unsigned int overscanCompensation : 2; \n        unsigned int screenUpdatesDisabled : 1; \n        unsigned int wantsWideContentMargins : 1; \n        unsigned int queriedDeviceContentMargins : 1; \n        unsigned int hasCalculatedPointsPerInch : 1; \n    }",
+        "name":"_screenFlags",
+        "offset":280,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_areListsLimited",
-        "type" : "method",
-        "name" : "_areListsLimited",
-        "address" : 2576891
+        "ivarType":"bool",
+        "name":"_wantsSoftwareDimming",
+        "offset":284,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_isUIElementLimited:(id)arg1",
-        "type" : "method",
-        "name" : "_isUIElementLimited:",
-        "address" : 2576770
+        "ivarType":"bool",
+        "name":"_jailUsesHitTestWindow",
+        "offset":285,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_canFocusViews",
-        "type" : "method",
-        "name" : "_canFocusViews",
-        "address" : 2576665
+        "ivarType":"UITraitCollection *",
+        "name":"_defaultTraitCollection",
+        "offset":288,
+        "type":"ivar"
       },
       {
-        "declaration" : "(struct __CFDictionary *)_touchMap",
-        "type" : "method",
-        "name" : "_touchMap",
-        "address" : 2576642
+        "ivarType":"UITraitCollection *",
+        "name":"_overrideTraitCollection",
+        "offset":296,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setTouchMap:(struct __CFDictionary *)arg1",
-        "type" : "method",
-        "name" : "_setTouchMap:",
-        "address" : 2576567
+        "ivarType":"UITraitCollection *",
+        "name":"_lastNotifiedTraitCollection",
+        "offset":304,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_updateWorkspaceCapableScreenType",
-        "type" : "method",
-        "name" : "_updateWorkspaceCapableScreenType",
-        "address" : 2576461
+        "ivarType":"FBSDisplay *",
+        "name":"_fbsDisplay",
+        "offset":312,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_isWorkspaceCapable",
-        "type" : "method",
-        "name" : "_isWorkspaceCapable",
-        "address" : 2576431
+        "ivarType":"UISoftwareDimmingWindow *",
+        "name":"_softwareDimmingWindow",
+        "offset":320,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_displayID",
-        "type" : "method",
-        "name" : "_displayID",
-        "address" : 2576384
+        "ivarType":"long long",
+        "name":"_lastNotifiedBacklightLevel",
+        "offset":328,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setCapability:(id)arg1 forKey:(id)arg2",
-        "type" : "method",
-        "name" : "_setCapability:forKey:",
-        "address" : 2576181
+        "ivarType":"double",
+        "name":"_jailScale",
+        "offset":336,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_capabilityForKey:(id)arg1",
-        "type" : "method",
-        "name" : "_capabilityForKey:",
-        "address" : 2576106
+        "ivarType":"long long",
+        "name":"_jailOrientation",
+        "offset":344,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_capabilities",
-        "type" : "method",
-        "name" : "_capabilities",
-        "address" : 2576039
+        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "name":"_jailSize",
+        "offset":352,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_updateCapabilities",
-        "type" : "method",
-        "name" : "_updateCapabilities",
-        "address" : 2575463
+        "ivarType":"struct CGPoint { \n        double x; \n        double y; \n    }",
+        "name":"_jailOffset",
+        "offset":368,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setUserInterfaceIdiom:(int)arg1",
-        "type" : "method",
-        "name" : "_setUserInterfaceIdiom:",
-        "address" : 2575229
-      },
-      {
-        "declaration" : "(int)_userInterfaceIdiom",
-        "type" : "method",
-        "name" : "_userInterfaceIdiom",
-        "address" : 2575206
-      },
-      {
-        "declaration" : "(void)_updateUserInterfaceIdiom",
-        "type" : "method",
-        "name" : "_updateUserInterfaceIdiom",
-        "address" : 2574872
-      },
-      {
-        "declaration" : "(void)_disconnectScreen",
-        "type" : "method",
-        "name" : "_disconnectScreen",
-        "address" : 2574743
-      },
-      {
-        "declaration" : "(void)_connectScreen",
-        "type" : "method",
-        "name" : "_connectScreen",
-        "address" : 2574617
-      },
-      {
-        "declaration" : "(float)_pointsPerInch",
-        "type" : "method",
-        "name" : "_pointsPerInch",
-        "address" : 2574394
-      },
-      {
-        "declaration" : "(void)_setScale:(float)arg1",
-        "type" : "method",
-        "name" : "_setScale:",
-        "address" : 2574364
-      },
-      {
-        "declaration" : "(float)_scale",
-        "type" : "method",
-        "name" : "_scale",
-        "address" : 2574341
-      },
-      {
-        "declaration" : "(float)scale",
-        "type" : "method",
-        "name" : "scale",
-        "address" : 2574183
-      },
-      {
-        "declaration" : "(id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2",
-        "type" : "method",
-        "name" : "displayLinkWithTarget:selector:",
-        "address" : 2574100
-      },
-      {
-        "declaration" : "(void)_prepareForWindow",
-        "type" : "method",
-        "name" : "_prepareForWindow",
-        "address" : 2573967
-      },
-      {
-        "declaration" : "(BOOL)_hasStatusBar",
-        "type" : "method",
-        "name" : "_hasStatusBar",
-        "address" : 2573893
-      },
-      {
-        "declaration" : "(BOOL)_isMainScreen",
-        "type" : "method",
-        "name" : "_isMainScreen",
-        "address" : 2573796
-      },
-      {
-        "declaration" : "(BOOL)_isExternal",
-        "type" : "method",
-        "name" : "_isExternal",
-        "address" : 2573740
-      },
-      {
-        "declaration" : "(id)_name",
-        "type" : "method",
-        "name" : "_name",
-        "address" : 2573681
-      },
-      {
-        "declaration" : "(unsigned int)_seed",
-        "type" : "method",
-        "name" : "_seed",
-        "address" : 2573634
-      },
-      {
-        "declaration" : "(unsigned int)_integerDisplayID",
-        "type" : "method",
-        "name" : "_integerDisplayID",
-        "address" : 2573587
-      },
-      {
-        "declaration" : "(void)setOverscanCompensation:(int)arg1",
-        "type" : "method",
-        "name" : "setOverscanCompensation:",
-        "address" : 2573500
-      },
-      {
-        "declaration" : "(int)overscanCompensation",
-        "type" : "method",
-        "name" : "overscanCompensation",
-        "address" : 2573470
-      },
-      {
-        "declaration" : "(id)availableModes",
-        "type" : "method",
-        "name" : "availableModes",
-        "address" : 2573344
-      },
-      {
-        "declaration" : "(int)screenType",
-        "type" : "method",
-        "name" : "screenType",
-        "address" : 2573292
-      },
-      {
-        "declaration" : "(void)setCurrentMode:(id)arg1",
-        "type" : "method",
-        "name" : "setCurrentMode:",
-        "address" : 2573201
-      },
-      {
-        "declaration" : "(id)currentMode",
-        "type" : "method",
-        "name" : "currentMode",
-        "address" : 2573079
-      },
-      {
-        "declaration" : "(void)setBitsPerComponent:(int)arg1",
-        "type" : "method",
-        "name" : "setBitsPerComponent:",
-        "address" : 2573034
-      },
-      {
-        "declaration" : "(int)bitsPerComponent",
-        "type" : "method",
-        "name" : "bitsPerComponent",
-        "address" : 2573007
-      },
-      {
-        "declaration" : "(id)preferredMode",
-        "type" : "method",
-        "name" : "preferredMode",
-        "address" : 2572885
-      },
-      {
-        "declaration" : "(id)mirroredScreen",
-        "type" : "method",
-        "name" : "mirroredScreen",
-        "address" : 2572780
-      },
-      {
-        "declaration" : "(double)_refreshRate",
-        "type" : "method",
-        "name" : "_refreshRate",
-        "address" : 2572733
-      },
-      {
-        "declaration" : "(int)_imageOrientation",
-        "type" : "method",
-        "name" : "_imageOrientation",
-        "address" : 2572493
-      },
-      {
-        "declaration" : "(float)_rotation",
-        "type" : "method",
-        "name" : "_rotation",
-        "address" : 2572412
-      },
-      {
-        "declaration" : "(struct CGRect)_boundsInPixels",
-        "type" : "method",
-        "name" : "_boundsInPixels",
-        "address" : 2572322
-      },
-      {
-        "declaration" : "(struct CGRect)_realDisplayBounds",
-        "type" : "method",
-        "name" : "_realDisplayBounds",
-        "address" : 2572217
-      },
-      {
-        "declaration" : "(float)_horizontalPixelScale",
-        "type" : "method",
-        "name" : "_horizontalPixelScale",
-        "address" : 2572194
-      },
-      {
-        "declaration" : "(struct CGRect)applicationFrame",
-        "type" : "method",
-        "name" : "applicationFrame",
-        "address" : 2572063
-      },
-      {
-        "declaration" : "(void)_computeMetrics",
-        "type" : "method",
-        "name" : "_computeMetrics",
-        "address" : 2571063
-      },
-      {
-        "declaration" : "(BOOL)_isRotatable",
-        "type" : "method",
-        "name" : "_isRotatable",
-        "address" : 2571022
-      },
-      {
-        "declaration" : "(BOOL)_areBoundsJailed",
-        "type" : "method",
-        "name" : "_areBoundsJailed",
-        "address" : 2570904
-      },
-      {
-        "declaration" : "(struct UIEdgeInsets)_jailedBoundsEdgeInsets",
-        "type" : "method",
-        "name" : "_jailedBoundsEdgeInsets",
-        "address" : 2570738
-      },
-      {
-        "declaration" : "(struct UIEdgeInsets)_rawJailedBoundsEdgeInsets",
-        "type" : "method",
-        "name" : "_rawJailedBoundsEdgeInsets",
-        "address" : 2570568
-      },
-      {
-        "declaration" : "(struct CGRect)_applicationFrameForInterfaceOrientation:(int)arg1",
-        "type" : "method",
-        "name" : "_applicationFrameForInterfaceOrientation:",
-        "address" : 2570468
-      },
-      {
-        "declaration" : "(struct CGRect)_applicationFrameForInterfaceOrientation:(int)arg1 usingStatusbarHeight:(float)arg2",
-        "type" : "method",
-        "name" : "_applicationFrameForInterfaceOrientation:usingStatusbarHeight:",
-        "address" : 2569699
-      },
-      {
-        "declaration" : "(void)_updateOverscanCompensationAllowingBackgroundUpdate:(BOOL)arg1",
-        "type" : "method",
-        "name" : "_updateOverscanCompensationAllowingBackgroundUpdate:",
-        "address" : 2569134
-      },
-      {
-        "declaration" : "(BOOL)_overscanAdjustmentNeedsUpdate",
-        "type" : "method",
-        "name" : "_overscanAdjustmentNeedsUpdate",
-        "address" : 2568939
-      },
-      {
-        "declaration" : "(BOOL)_isOverscanned",
-        "type" : "method",
-        "name" : "_isOverscanned",
-        "address" : 2568884
-      },
-      {
-        "declaration" : "(BOOL)_hasWindows",
-        "type" : "method",
-        "name" : "_hasWindows",
-        "address" : 2568593
-      },
-      {
-        "declaration" : "(void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4",
-        "type" : "method",
-        "name" : "observeValueForKeyPath:ofObject:change:context:",
-        "address" : 2567078
-      },
-      {
-        "declaration" : "(void)_updateAvailableDisplayModes",
-        "type" : "method",
-        "name" : "_updateAvailableDisplayModes",
-        "address" : 2566549
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 2566084
-      },
-      {
-        "declaration" : "(id)initWithDisplay:(id)arg1",
-        "type" : "method",
-        "name" : "initWithDisplay:",
-        "address" : 2565456
-      },
-      {
-        "declaration" : "(void)_ensureConnectedIfPossible",
-        "type" : "method",
-        "name" : "_ensureConnectedIfPossible",
-        "address" : 2564067
-      },
-      {
-        "declaration" : "(id)snapshot",
-        "type" : "method",
-        "name" : "snapshot",
-        "address" : 2583582
-      },
-      {
-        "declaration" : "(id)snapshotView",
-        "type" : "method",
-        "name" : "snapshotView",
-        "address" : 2583526
-      },
-      {
-        "declaration" : "(void)_enableScreenUpdates",
-        "type" : "method",
-        "name" : "_enableScreenUpdates",
-        "address" : 2583136
-      },
-      {
-        "declaration" : "(void)_disableScreenUpdates:(BOOL)arg1",
-        "type" : "method",
-        "name" : "_disableScreenUpdates:",
-        "address" : 2581510
-      },
-      {
-        "declaration" : "(void)_setSpeed:(float)arg1 forWindow:(id)arg2",
-        "type" : "method",
-        "name" : "_setSpeed:forWindow:",
-        "address" : 2581265
-      },
-      {
-        "declaration" : "(id)snapshotViewAfterScreenUpdates:(BOOL)arg1",
-        "type" : "method",
-        "name" : "snapshotViewAfterScreenUpdates:",
-        "address" : 2580680
+        "ivarType":"struct UIEdgeInsets { \n        double top; \n        double left; \n        double bottom; \n        double right; \n    }",
+        "name":"_jailTouchInsets",
+        "offset":384,
+        "type":"ivar"
       }
     ],
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "id",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_display"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "struct CGRect",
-        "size" : 16,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_bounds"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "float",
-        "size" : 4,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_scale"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "float",
-        "size" : 4,
-        "offset" : 28,
-        "type" : "ivar",
-        "name" : "_horizontalScale"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 32,
-        "type" : "ivar",
-        "name" : "_userInterfaceIdiom"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSDictionary *",
-        "size" : 4,
-        "offset" : 36,
-        "type" : "ivar",
-        "name" : "_capabilities"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 40,
-        "type" : "ivar",
-        "name" : "_workspaceCapableScreenType"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "UIWindow *",
-        "size" : 4,
-        "offset" : 44,
-        "type" : "ivar",
-        "name" : "_screenDisablingWindow"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "double",
-        "size" : 8,
-        "offset" : 48,
-        "type" : "ivar",
-        "name" : "_startedPausingWindows"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSMutableArray *",
-        "size" : 4,
-        "offset" : 56,
-        "type" : "ivar",
-        "name" : "_pausedWindows"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "struct __CFDictionary *",
-        "size" : 4,
-        "offset" : 60,
-        "type" : "ivar",
-        "name" : "_touchMap"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSArray *",
-        "size" : 4,
-        "offset" : 64,
-        "type" : "ivar",
-        "name" : "_availableDisplayModes"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "unsigned int",
-        "size" : 4,
-        "offset" : 68,
-        "type" : "ivar",
-        "name" : "_canAccessDisplaySeed"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "unsigned int",
-        "size" : 4,
-        "offset" : 72,
-        "type" : "ivar",
-        "name" : "_connectionSeed"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int canAccessDisplay:1;\n        unsigned int canAccessDisplaySeedValid:1;\n        unsigned int screenUpdatesDisabled:1;\n    }",
-        "size" : 4,
-        "offset" : 76,
-        "type" : "ivar",
-        "name" : "_screenFlags"
-      },
-      {
-        "alignment" : 0,
-        "ivarType" : "char",
-        "size" : 1,
-        "offset" : 80,
-        "type" : "ivar",
-        "name" : "_wantsSoftwareDimming"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "UISoftwareDimmingWindow *",
-        "size" : 4,
-        "offset" : 84,
-        "type" : "ivar",
-        "name" : "_softwareDimmingWindow"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 88,
-        "type" : "ivar",
-        "name" : "_lastNotifiedBacklightLevel"
-      }
-    ],
-    "properties" : [
-      {
-        "name" : "bounds",
-        "setter" : "setBounds:",
-        "getter" : "bounds",
-        "type" : "property",
-        "propertyType" : "struct CGRect"
-      },
-      {
-        "name" : "applicationFrame",
-        "setter" : "setApplicationFrame:",
-        "getter" : "applicationFrame",
-        "type" : "property",
-        "propertyType" : "struct CGRect"
-      },
-      {
-        "name" : "scale",
-        "setter" : "setScale:",
-        "getter" : "scale",
-        "type" : "property",
-        "propertyType" : "float"
-      },
-      {
-        "name" : "availableModes",
-        "setter" : "setAvailableModes:",
-        "getter" : "availableModes",
-        "type" : "property",
-        "propertyType" : "NSArray *"
-      },
-      {
-        "name" : "preferredMode",
-        "setter" : "setPreferredMode:",
-        "getter" : "preferredMode",
-        "type" : "property",
-        "propertyType" : "UIScreenMode *"
-      },
-      {
-        "name" : "currentMode",
-        "setter" : "setCurrentMode:",
-        "getter" : "currentMode",
-        "type" : "property",
-        "propertyType" : "UIScreenMode *"
-      },
-      {
-        "name" : "overscanCompensation",
-        "setter" : "setOverscanCompensation:",
-        "getter" : "overscanCompensation",
-        "type" : "property",
-        "propertyType" : "int"
-      },
-      {
-        "name" : "mirroredScreen",
-        "setter" : "setMirroredScreen:",
-        "getter" : "mirroredScreen",
-        "type" : "property",
-        "propertyType" : "UIScreen *"
-      },
-      {
-        "name" : "brightness",
-        "setter" : "setBrightness:",
-        "getter" : "brightness",
-        "type" : "property",
-        "propertyType" : "float"
-      },
-      {
-        "name" : "wantsSoftwareDimming",
-        "setter" : "setWantsSoftwareDimming:",
-        "getter" : "wantsSoftwareDimming",
-        "type" : "property",
-        "propertyType" : "char"
-      },
-      {
-        "name" : "_softwareDimmingWindow",
-        "setter" : "_setSoftwareDimmingWindow:",
-        "getter" : "_softwareDimmingWindow",
-        "type" : "property",
-        "propertyType" : "UISoftwareDimmingWindow *"
-      },
-      {
-        "name" : "_lastNotifiedBacklightLevel",
-        "setter" : "_setLastNotifiedBacklightLevel:",
-        "getter" : "_lastNotifiedBacklightLevel",
-        "type" : "property",
-        "propertyType" : "int"
-      },
-      {
-        "name" : "workspaceCapableScreenType",
-        "setter" : "_setWorkspaceCapableScreenType:",
-        "getter" : "_workspaceCapableScreenType",
-        "type" : "property",
-        "propertyType" : "int"
-      }
-    ],
-    "type" : "class",
-    "classMethods" : [
-      {
-        "declaration" : "(struct CGRect)convertRect:(struct CGRect)arg1 fromView:(id)arg2",
-        "type" : "method",
-        "name" : "convertRect:fromView:",
-        "address" : 2579940
-      },
-      {
-        "declaration" : "(struct CGRect)convertRect:(struct CGRect)arg1 toView:(id)arg2",
-        "type" : "method",
-        "name" : "convertRect:toView:",
-        "address" : 2579676
-      },
-      {
-        "declaration" : "(struct CGPoint)convertPoint:(struct CGPoint)arg1 fromView:(id)arg2",
-        "type" : "method",
-        "name" : "convertPoint:fromView:",
-        "address" : 2579494
-      },
-      {
-        "declaration" : "(struct CGPoint)convertPoint:(struct CGPoint)arg1 toView:(id)arg2",
-        "type" : "method",
-        "name" : "convertPoint:toView:",
-        "address" : 2579316
-      },
-      {
-        "declaration" : "(BOOL)_shouldDisableJail",
-        "type" : "method",
-        "name" : "_shouldDisableJail",
-        "address" : 2569522
-      },
-      {
-        "declaration" : "(void)_endDisableScreenUpdates",
-        "type" : "method",
-        "name" : "_endDisableScreenUpdates",
-        "address" : 2565158
-      },
-      {
-        "declaration" : "(void)_beginDisableScreenUpdatesForSnapshotUsingSnapshotCover:(BOOL)arg1",
-        "type" : "method",
-        "name" : "_beginDisableScreenUpdatesForSnapshotUsingSnapshotCover:",
-        "address" : 2564612
-      },
-      {
-        "declaration" : "(void)_beginDisableScreenUpdatesForSnapshot",
-        "type" : "method",
-        "name" : "_beginDisableScreenUpdatesForSnapshot",
-        "address" : 2564566
-      },
-      {
-        "declaration" : "(void)_prepareScreensForAppResume",
-        "type" : "method",
-        "name" : "_prepareScreensForAppResume",
-        "address" : 2564252
-      },
-      {
-        "declaration" : "(id)_screenWithIntegerDisplayID:(unsigned int)arg1",
-        "type" : "method",
-        "name" : "_screenWithIntegerDisplayID:",
-        "address" : 2563795
-      },
-      {
-        "declaration" : "(id)_screenWithDisplayID:(id)arg1",
-        "type" : "method",
-        "name" : "_screenWithDisplayID:",
-        "address" : 2563470
-      },
-      {
-        "declaration" : "(id)_screenWithDisplayName:(id)arg1",
-        "type" : "method",
-        "name" : "_screenWithDisplayName:",
-        "address" : 2563137
-      },
-      {
-        "declaration" : "(id)_workspaceCapableScreens",
-        "type" : "method",
-        "name" : "_workspaceCapableScreens",
-        "address" : 2562849
-      },
-      {
-        "declaration" : "(id)screens",
-        "type" : "method",
-        "name" : "screens",
-        "address" : 2562330
-      },
-      {
-        "declaration" : "(void)_enumerateScreensWithBlock:(CDUnknownBlockType)arg1",
-        "type" : "method",
-        "name" : "_enumerateScreensWithBlock:",
-        "address" : 2561972
-      },
-      {
-        "declaration" : "(struct CGAffineTransform)transformToRotateScreen:(float)arg1",
-        "type" : "method",
-        "name" : "transformToRotateScreen:",
-        "address" : 2561650
-      },
-      {
-        "declaration" : "(struct CGAffineTransform)transformForScreenOriginRotation:(float)arg1",
-        "type" : "method",
-        "name" : "transformForScreenOriginRotation:",
-        "address" : 2561372
-      },
-      {
-        "declaration" : "(id)mainScreen",
-        "type" : "method",
-        "name" : "mainScreen",
-        "address" : 2561323
-      },
-      {
-        "declaration" : "(void)_videoOutSettingsChanged",
-        "type" : "method",
-        "name" : "_videoOutSettingsChanged",
-        "address" : 2560009
-      },
-      {
-        "declaration" : "(void)initialize",
-        "type" : "method",
-        "name" : "initialize",
-        "address" : 2559187
-      }
-    ]
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "x86_64" : {
-    "superClassName" : "NSObject",
-    "className" : "UIScreen",
-    "instanceMethods" : [
+  "armv7":{
+    "className":"UIScreen",
+    "ivars":[
       {
-        "declaration" : "(void)_setLastNotifiedBacklightLevel:(long long)arg1",
-        "type" : "method",
-        "name" : "_setLastNotifiedBacklightLevel:",
-        "address" : 2237902
+        "ivarType":"id",
+        "name":"_display",
+        "offset":4,
+        "type":"ivar"
       },
       {
-        "declaration" : "(long long)_lastNotifiedBacklightLevel",
-        "type" : "method",
-        "name" : "_lastNotifiedBacklightLevel",
-        "address" : 2237885
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_bounds",
+        "offset":8,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setSoftwareDimmingWindow:(id)arg1",
-        "type" : "method",
-        "name" : "_setSoftwareDimmingWindow:",
-        "address" : 2237868
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_referenceBounds",
+        "offset":24,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_softwareDimmingWindow",
-        "type" : "method",
-        "name" : "_softwareDimmingWindow",
-        "address" : 2237851
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_interfaceOrientedBounds",
+        "offset":40,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)setWantsSoftwareDimming:(_Bool)arg1",
-        "type" : "method",
-        "name" : "setWantsSoftwareDimming:",
-        "address" : 2237835
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_unjailedReferenceBounds",
+        "offset":56,
+        "type":"ivar"
       },
       {
-        "declaration" : "(_Bool)wantsSoftwareDimming",
-        "type" : "method",
-        "name" : "wantsSoftwareDimming",
-        "address" : 2237819
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_mainSceneReferenceBounds",
+        "offset":72,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setWorkspaceCapableScreenType:(long long)arg1",
-        "type" : "method",
-        "name" : "_setWorkspaceCapableScreenType:",
-        "address" : 2237802
+        "ivarType":"int",
+        "name":"_interfaceOrientation",
+        "offset":88,
+        "type":"ivar"
       },
       {
-        "declaration" : "(long long)_workspaceCapableScreenType",
-        "type" : "method",
-        "name" : "_workspaceCapableScreenType",
-        "address" : 2237785
+        "ivarType":"float",
+        "name":"_scale",
+        "offset":92,
+        "type":"ivar"
       },
       {
-        "declaration" : "(struct CGRect)bounds",
-        "type" : "method",
-        "name" : "bounds",
-        "address" : 2237735
+        "ivarType":"float",
+        "name":"_touchScaleFactor",
+        "offset":96,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_snapshotExcludingWindows:(id)arg1 withRect:(struct CGRect)arg2",
-        "type" : "method",
-        "name" : "_snapshotExcludingWindows:withRect:",
-        "address" : 2237578
+        "ivarType":"float",
+        "name":"_horizontalScale",
+        "offset":100,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)description",
-        "type" : "method",
-        "name" : "description",
-        "address" : 2236414
+        "ivarType":"int",
+        "name":"_userInterfaceIdiom",
+        "offset":104,
+        "type":"ivar"
       },
       {
-        "declaration" : "(double)brightness",
-        "type" : "method",
-        "name" : "brightness",
-        "address" : 2236203
+        "ivarType":"NSDictionary *",
+        "name":"_capabilities",
+        "offset":108,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)setBrightness:(double)arg1",
-        "type" : "method",
-        "name" : "setBrightness:",
-        "address" : 2235713
+        "ivarType":"UIWindow *",
+        "name":"_screenDisablingWindow",
+        "offset":112,
+        "type":"ivar"
       },
       {
-        "declaration" : "(_Bool)_supportsBrightness",
-        "type" : "method",
-        "name" : "_supportsBrightness",
-        "address" : 2235658
+        "ivarType":"double",
+        "name":"_startedPausingWindows",
+        "offset":116,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_endObservingBacklightLevelNotifications",
-        "type" : "method",
-        "name" : "_endObservingBacklightLevelNotifications",
-        "address" : 2235543
+        "ivarType":"NSMutableArray *",
+        "name":"_pausedWindows",
+        "offset":124,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_beginObservingBacklightLevelNotifications",
-        "type" : "method",
-        "name" : "_beginObservingBacklightLevelNotifications",
-        "address" : 2235406
+        "ivarType":"_UIScreenTransparentHitTestWindow *",
+        "name":"_extendedJailHitTestWindow",
+        "offset":128,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_postBrightnessDidChangeNotificationIfAppropriate",
-        "type" : "method",
-        "name" : "_postBrightnessDidChangeNotificationIfAppropriate",
-        "address" : 2235089
+        "ivarType":"NSArray *",
+        "name":"_availableDisplayModes",
+        "offset":132,
+        "type":"ivar"
       },
       {
-        "declaration" : "(float)rawBrightnessForBacklightLevel:(float)arg1",
-        "type" : "method",
-        "name" : "rawBrightnessForBacklightLevel:",
-        "address" : 2235038
+        "ivarType":"float",
+        "name":"_pointsPerInch",
+        "offset":136,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_lazySoftwareDimmingWindow",
-        "type" : "method",
-        "name" : "_lazySoftwareDimmingWindow",
-        "address" : 2234803
+        "ivarType":"_UIScreenFixedCoordinateSpace *",
+        "name":"_fixedCoordinateSpace",
+        "offset":140,
+        "type":"ivar"
       },
       {
-        "declaration" : "(_Bool)_areMusicListsLimited",
-        "type" : "method",
-        "name" : "_areMusicListsLimited",
-        "address" : 2234760
+        "ivarType":"struct { \n        unsigned int bitsPerComponent : 4; \n        unsigned int initialized : 1; \n        unsigned int connected : 1; \n        unsigned int overscanCompensation : 2; \n        unsigned int screenUpdatesDisabled : 1; \n        unsigned int wantsWideContentMargins : 1; \n        unsigned int queriedDeviceContentMargins : 1; \n        unsigned int hasCalculatedPointsPerInch : 1; \n    }",
+        "name":"_screenFlags",
+        "offset":144,
+        "type":"ivar"
       },
       {
-        "declaration" : "(_Bool)_areListsLimited",
-        "type" : "method",
-        "name" : "_areListsLimited",
-        "address" : 2234717
+        "ivarType":"BOOL",
+        "name":"_wantsSoftwareDimming",
+        "offset":146,
+        "type":"ivar"
       },
       {
-        "declaration" : "(_Bool)_isUIElementLimited:(id)arg1",
-        "type" : "method",
-        "name" : "_isUIElementLimited:",
-        "address" : 2234625
+        "ivarType":"BOOL",
+        "name":"_jailUsesHitTestWindow",
+        "offset":147,
+        "type":"ivar"
       },
       {
-        "declaration" : "(_Bool)_canFocusViews",
-        "type" : "method",
-        "name" : "_canFocusViews",
-        "address" : 2234542
+        "ivarType":"UITraitCollection *",
+        "name":"_defaultTraitCollection",
+        "offset":148,
+        "type":"ivar"
       },
       {
-        "declaration" : "(struct __CFDictionary *)_touchMap",
-        "type" : "method",
-        "name" : "_touchMap",
-        "address" : 2234525
+        "ivarType":"UITraitCollection *",
+        "name":"_overrideTraitCollection",
+        "offset":152,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setTouchMap:(struct __CFDictionary *)arg1",
-        "type" : "method",
-        "name" : "_setTouchMap:",
-        "address" : 2234453
+        "ivarType":"UITraitCollection *",
+        "name":"_lastNotifiedTraitCollection",
+        "offset":156,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_updateWorkspaceCapableScreenType",
-        "type" : "method",
-        "name" : "_updateWorkspaceCapableScreenType",
-        "address" : 2234356
+        "ivarType":"FBSDisplay *",
+        "name":"_fbsDisplay",
+        "offset":160,
+        "type":"ivar"
       },
       {
-        "declaration" : "(_Bool)_isWorkspaceCapable",
-        "type" : "method",
-        "name" : "_isWorkspaceCapable",
-        "address" : 2234335
+        "ivarType":"UISoftwareDimmingWindow *",
+        "name":"_softwareDimmingWindow",
+        "offset":164,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_displayID",
-        "type" : "method",
-        "name" : "_displayID",
-        "address" : 2234306
+        "ivarType":"int",
+        "name":"_lastNotifiedBacklightLevel",
+        "offset":168,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setCapability:(id)arg1 forKey:(id)arg2",
-        "type" : "method",
-        "name" : "_setCapability:forKey:",
-        "address" : 2234097
+        "ivarType":"float",
+        "name":"_jailScale",
+        "offset":172,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_capabilityForKey:(id)arg1",
-        "type" : "method",
-        "name" : "_capabilityForKey:",
-        "address" : 2234034
+        "ivarType":"int",
+        "name":"_jailOrientation",
+        "offset":176,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_capabilities",
-        "type" : "method",
-        "name" : "_capabilities",
-        "address" : 2233977
+        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "name":"_jailSize",
+        "offset":180,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_updateCapabilities",
-        "type" : "method",
-        "name" : "_updateCapabilities",
-        "address" : 2233442
+        "ivarType":"struct CGPoint { \n        float x; \n        float y; \n    }",
+        "name":"_jailOffset",
+        "offset":188,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setUserInterfaceIdiom:(long long)arg1",
-        "type" : "method",
-        "name" : "_setUserInterfaceIdiom:",
-        "address" : 2233218
-      },
-      {
-        "declaration" : "(long long)_userInterfaceIdiom",
-        "type" : "method",
-        "name" : "_userInterfaceIdiom",
-        "address" : 2233201
-      },
-      {
-        "declaration" : "(void)_updateUserInterfaceIdiom",
-        "type" : "method",
-        "name" : "_updateUserInterfaceIdiom",
-        "address" : 2232924
-      },
-      {
-        "declaration" : "(void)_disconnectScreen",
-        "type" : "method",
-        "name" : "_disconnectScreen",
-        "address" : 2232818
-      },
-      {
-        "declaration" : "(void)_connectScreen",
-        "type" : "method",
-        "name" : "_connectScreen",
-        "address" : 2232722
-      },
-      {
-        "declaration" : "(double)_pointsPerInch",
-        "type" : "method",
-        "name" : "_pointsPerInch",
-        "address" : 2232536
-      },
-      {
-        "declaration" : "(void)_setScale:(double)arg1",
-        "type" : "method",
-        "name" : "_setScale:",
-        "address" : 2232518
-      },
-      {
-        "declaration" : "(double)_scale",
-        "type" : "method",
-        "name" : "_scale",
-        "address" : 2232500
-      },
-      {
-        "declaration" : "(double)scale",
-        "type" : "method",
-        "name" : "scale",
-        "address" : 2232377
-      },
-      {
-        "declaration" : "(id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2",
-        "type" : "method",
-        "name" : "displayLinkWithTarget:selector:",
-        "address" : 2232323
-      },
-      {
-        "declaration" : "(void)_prepareForWindow",
-        "type" : "method",
-        "name" : "_prepareForWindow",
-        "address" : 2232197
-      },
-      {
-        "declaration" : "(_Bool)_hasStatusBar",
-        "type" : "method",
-        "name" : "_hasStatusBar",
-        "address" : 2232142
-      },
-      {
-        "declaration" : "(_Bool)_isMainScreen",
-        "type" : "method",
-        "name" : "_isMainScreen",
-        "address" : 2232067
-      },
-      {
-        "declaration" : "(_Bool)_isExternal",
-        "type" : "method",
-        "name" : "_isExternal",
-        "address" : 2232030
-      },
-      {
-        "declaration" : "(id)_name",
-        "type" : "method",
-        "name" : "_name",
-        "address" : 2231987
-      },
-      {
-        "declaration" : "(unsigned int)_seed",
-        "type" : "method",
-        "name" : "_seed",
-        "address" : 2231958
-      },
-      {
-        "declaration" : "(unsigned int)_integerDisplayID",
-        "type" : "method",
-        "name" : "_integerDisplayID",
-        "address" : 2231929
-      },
-      {
-        "declaration" : "(void)setOverscanCompensation:(long long)arg1",
-        "type" : "method",
-        "name" : "setOverscanCompensation:",
-        "address" : 2231867
-      },
-      {
-        "declaration" : "(long long)overscanCompensation",
-        "type" : "method",
-        "name" : "overscanCompensation",
-        "address" : 2231844
-      },
-      {
-        "declaration" : "(id)availableModes",
-        "type" : "method",
-        "name" : "availableModes",
-        "address" : 2231712
-      },
-      {
-        "declaration" : "(int)screenType",
-        "type" : "method",
-        "name" : "screenType",
-        "address" : 2231670
-      },
-      {
-        "declaration" : "(void)setCurrentMode:(id)arg1",
-        "type" : "method",
-        "name" : "setCurrentMode:",
-        "address" : 2231586
-      },
-      {
-        "declaration" : "(id)currentMode",
-        "type" : "method",
-        "name" : "currentMode",
-        "address" : 2231472
-      },
-      {
-        "declaration" : "(void)setBitsPerComponent:(int)arg1",
-        "type" : "method",
-        "name" : "setBitsPerComponent:",
-        "address" : 2231440
-      },
-      {
-        "declaration" : "(int)bitsPerComponent",
-        "type" : "method",
-        "name" : "bitsPerComponent",
-        "address" : 2231420
-      },
-      {
-        "declaration" : "(id)preferredMode",
-        "type" : "method",
-        "name" : "preferredMode",
-        "address" : 2231306
-      },
-      {
-        "declaration" : "(id)mirroredScreen",
-        "type" : "method",
-        "name" : "mirroredScreen",
-        "address" : 2231212
-      },
-      {
-        "declaration" : "(double)_refreshRate",
-        "type" : "method",
-        "name" : "_refreshRate",
-        "address" : 2231183
-      },
-      {
-        "declaration" : "(long long)_imageOrientation",
-        "type" : "method",
-        "name" : "_imageOrientation",
-        "address" : 2230965
-      },
-      {
-        "declaration" : "(double)_rotation",
-        "type" : "method",
-        "name" : "_rotation",
-        "address" : 2230897
-      },
-      {
-        "declaration" : "(struct CGRect)_boundsInPixels",
-        "type" : "method",
-        "name" : "_boundsInPixels",
-        "address" : 2230815
-      },
-      {
-        "declaration" : "(struct CGRect)_realDisplayBounds",
-        "type" : "method",
-        "name" : "_realDisplayBounds",
-        "address" : 2230734
-      },
-      {
-        "declaration" : "(double)_horizontalPixelScale",
-        "type" : "method",
-        "name" : "_horizontalPixelScale",
-        "address" : 2230716
-      },
-      {
-        "declaration" : "(struct CGRect)applicationFrame",
-        "type" : "method",
-        "name" : "applicationFrame",
-        "address" : 2230590
-      },
-      {
-        "declaration" : "(void)_computeMetrics",
-        "type" : "method",
-        "name" : "_computeMetrics",
-        "address" : 2229557
-      },
-      {
-        "declaration" : "(_Bool)_isRotatable",
-        "type" : "method",
-        "name" : "_isRotatable",
-        "address" : 2229538
-      },
-      {
-        "declaration" : "(_Bool)_areBoundsJailed",
-        "type" : "method",
-        "name" : "_areBoundsJailed",
-        "address" : 2229420
-      },
-      {
-        "declaration" : "(struct UIEdgeInsets)_jailedBoundsEdgeInsets",
-        "type" : "method",
-        "name" : "_jailedBoundsEdgeInsets",
-        "address" : 2229258
-      },
-      {
-        "declaration" : "(struct UIEdgeInsets)_rawJailedBoundsEdgeInsets",
-        "type" : "method",
-        "name" : "_rawJailedBoundsEdgeInsets",
-        "address" : 2229091
-      },
-      {
-        "declaration" : "(struct CGRect)_applicationFrameForInterfaceOrientation:(long long)arg1",
-        "type" : "method",
-        "name" : "_applicationFrameForInterfaceOrientation:",
-        "address" : 2229016
-      },
-      {
-        "declaration" : "(struct CGRect)_applicationFrameForInterfaceOrientation:(long long)arg1 usingStatusbarHeight:(double)arg2",
-        "type" : "method",
-        "name" : "_applicationFrameForInterfaceOrientation:usingStatusbarHeight:",
-        "address" : 2228295
-      },
-      {
-        "declaration" : "(void)_updateOverscanCompensationAllowingBackgroundUpdate:(_Bool)arg1",
-        "type" : "method",
-        "name" : "_updateOverscanCompensationAllowingBackgroundUpdate:",
-        "address" : 2227812
-      },
-      {
-        "declaration" : "(_Bool)_overscanAdjustmentNeedsUpdate",
-        "type" : "method",
-        "name" : "_overscanAdjustmentNeedsUpdate",
-        "address" : 2227635
-      },
-      {
-        "declaration" : "(_Bool)_isOverscanned",
-        "type" : "method",
-        "name" : "_isOverscanned",
-        "address" : 2227605
-      },
-      {
-        "declaration" : "(_Bool)_hasWindows",
-        "type" : "method",
-        "name" : "_hasWindows",
-        "address" : 2227331
-      },
-      {
-        "declaration" : "(void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4",
-        "type" : "method",
-        "name" : "observeValueForKeyPath:ofObject:change:context:",
-        "address" : 2226086
-      },
-      {
-        "declaration" : "(void)_updateAvailableDisplayModes",
-        "type" : "method",
-        "name" : "_updateAvailableDisplayModes",
-        "address" : 2225639
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 2225251
-      },
-      {
-        "declaration" : "(id)initWithDisplay:(id)arg1",
-        "type" : "method",
-        "name" : "initWithDisplay:",
-        "address" : 2224756
-      },
-      {
-        "declaration" : "(void)_ensureConnectedIfPossible",
-        "type" : "method",
-        "name" : "_ensureConnectedIfPossible",
-        "address" : 2223487
-      },
-      {
-        "declaration" : "(id)snapshot",
-        "type" : "method",
-        "name" : "snapshot",
-        "address" : 2240424
-      },
-      {
-        "declaration" : "(id)snapshotView",
-        "type" : "method",
-        "name" : "snapshotView",
-        "address" : 2240391
-      },
-      {
-        "declaration" : "(void)_enableScreenUpdates",
-        "type" : "method",
-        "name" : "_enableScreenUpdates",
-        "address" : 2240038
-      },
-      {
-        "declaration" : "(void)_disableScreenUpdates:(_Bool)arg1",
-        "type" : "method",
-        "name" : "_disableScreenUpdates:",
-        "address" : 2238582
-      },
-      {
-        "declaration" : "(void)_setSpeed:(double)arg1 forWindow:(id)arg2",
-        "type" : "method",
-        "name" : "_setSpeed:forWindow:",
-        "address" : 2238403
-      },
-      {
-        "declaration" : "(id)snapshotViewAfterScreenUpdates:(_Bool)arg1",
-        "type" : "method",
-        "name" : "snapshotViewAfterScreenUpdates:",
-        "address" : 2237919
+        "ivarType":"struct UIEdgeInsets { \n        float top; \n        float left; \n        float bottom; \n        float right; \n    }",
+        "name":"_jailTouchInsets",
+        "offset":196,
+        "type":"ivar"
       }
     ],
-    "ivars" : [
-      {
-        "alignment" : 3,
-        "ivarType" : "id",
-        "size" : 8,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_display"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "struct CGRect",
-        "size" : 32,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_bounds"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "double",
-        "size" : 8,
-        "offset" : 48,
-        "type" : "ivar",
-        "name" : "_scale"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "double",
-        "size" : 8,
-        "offset" : 56,
-        "type" : "ivar",
-        "name" : "_horizontalScale"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 64,
-        "type" : "ivar",
-        "name" : "_userInterfaceIdiom"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSDictionary *",
-        "size" : 8,
-        "offset" : 72,
-        "type" : "ivar",
-        "name" : "_capabilities"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 80,
-        "type" : "ivar",
-        "name" : "_workspaceCapableScreenType"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "UIWindow *",
-        "size" : 8,
-        "offset" : 88,
-        "type" : "ivar",
-        "name" : "_screenDisablingWindow"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "double",
-        "size" : 8,
-        "offset" : 96,
-        "type" : "ivar",
-        "name" : "_startedPausingWindows"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSMutableArray *",
-        "size" : 8,
-        "offset" : 104,
-        "type" : "ivar",
-        "name" : "_pausedWindows"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "struct __CFDictionary *",
-        "size" : 8,
-        "offset" : 112,
-        "type" : "ivar",
-        "name" : "_touchMap"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSArray *",
-        "size" : 8,
-        "offset" : 120,
-        "type" : "ivar",
-        "name" : "_availableDisplayModes"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "unsigned int",
-        "size" : 4,
-        "offset" : 128,
-        "type" : "ivar",
-        "name" : "_canAccessDisplaySeed"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "unsigned int",
-        "size" : 4,
-        "offset" : 132,
-        "type" : "ivar",
-        "name" : "_connectionSeed"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int canAccessDisplay:1;\n        unsigned int canAccessDisplaySeedValid:1;\n        unsigned int screenUpdatesDisabled:1;\n    }",
-        "size" : 4,
-        "offset" : 136,
-        "type" : "ivar",
-        "name" : "_screenFlags"
-      },
-      {
-        "alignment" : 0,
-        "ivarType" : "_Bool",
-        "size" : 1,
-        "offset" : 140,
-        "type" : "ivar",
-        "name" : "_wantsSoftwareDimming"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "UISoftwareDimmingWindow *",
-        "size" : 8,
-        "offset" : 144,
-        "type" : "ivar",
-        "name" : "_softwareDimmingWindow"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 152,
-        "type" : "ivar",
-        "name" : "_lastNotifiedBacklightLevel"
-      }
-    ],
-    "properties" : [
-      {
-        "propertyType" : "struct CGRect",
-        "getter" : "bounds",
-        "type" : "property",
-        "name" : "bounds",
-        "setter" : "setBounds:"
-      },
-      {
-        "propertyType" : "struct CGRect",
-        "getter" : "applicationFrame",
-        "type" : "property",
-        "name" : "applicationFrame",
-        "setter" : "setApplicationFrame:"
-      },
-      {
-        "propertyType" : "double",
-        "getter" : "scale",
-        "type" : "property",
-        "name" : "scale",
-        "setter" : "setScale:"
-      },
-      {
-        "propertyType" : "NSArray *",
-        "getter" : "availableModes",
-        "type" : "property",
-        "name" : "availableModes",
-        "setter" : "setAvailableModes:"
-      },
-      {
-        "propertyType" : "UIScreenMode *",
-        "getter" : "preferredMode",
-        "type" : "property",
-        "name" : "preferredMode",
-        "setter" : "setPreferredMode:"
-      },
-      {
-        "propertyType" : "UIScreenMode *",
-        "getter" : "currentMode",
-        "type" : "property",
-        "name" : "currentMode",
-        "setter" : "setCurrentMode:"
-      },
-      {
-        "propertyType" : "long long",
-        "getter" : "overscanCompensation",
-        "type" : "property",
-        "name" : "overscanCompensation",
-        "setter" : "setOverscanCompensation:"
-      },
-      {
-        "propertyType" : "UIScreen *",
-        "getter" : "mirroredScreen",
-        "type" : "property",
-        "name" : "mirroredScreen",
-        "setter" : "setMirroredScreen:"
-      },
-      {
-        "propertyType" : "double",
-        "getter" : "brightness",
-        "type" : "property",
-        "name" : "brightness",
-        "setter" : "setBrightness:"
-      },
-      {
-        "propertyType" : "_Bool",
-        "getter" : "wantsSoftwareDimming",
-        "type" : "property",
-        "name" : "wantsSoftwareDimming",
-        "setter" : "setWantsSoftwareDimming:"
-      },
-      {
-        "propertyType" : "UISoftwareDimmingWindow *",
-        "getter" : "_softwareDimmingWindow",
-        "type" : "property",
-        "name" : "_softwareDimmingWindow",
-        "setter" : "_setSoftwareDimmingWindow:"
-      },
-      {
-        "propertyType" : "long long",
-        "getter" : "_lastNotifiedBacklightLevel",
-        "type" : "property",
-        "name" : "_lastNotifiedBacklightLevel",
-        "setter" : "_setLastNotifiedBacklightLevel:"
-      },
-      {
-        "propertyType" : "long long",
-        "getter" : "_workspaceCapableScreenType",
-        "type" : "property",
-        "name" : "workspaceCapableScreenType",
-        "setter" : "_setWorkspaceCapableScreenType:"
-      }
-    ],
-    "type" : "class",
-    "classMethods" : [
-      {
-        "declaration" : "(struct CGRect)convertRect:(struct CGRect)arg1 fromView:(id)arg2",
-        "type" : "method",
-        "name" : "convertRect:fromView:",
-        "address" : 2237299
-      },
-      {
-        "declaration" : "(struct CGRect)convertRect:(struct CGRect)arg1 toView:(id)arg2",
-        "type" : "method",
-        "name" : "convertRect:toView:",
-        "address" : 2237031
-      },
-      {
-        "declaration" : "(struct CGPoint)convertPoint:(struct CGPoint)arg1 fromView:(id)arg2",
-        "type" : "method",
-        "name" : "convertPoint:fromView:",
-        "address" : 2236883
-      },
-      {
-        "declaration" : "(struct CGPoint)convertPoint:(struct CGPoint)arg1 toView:(id)arg2",
-        "type" : "method",
-        "name" : "convertPoint:toView:",
-        "address" : 2236742
-      },
-      {
-        "declaration" : "(_Bool)_shouldDisableJail",
-        "type" : "method",
-        "name" : "_shouldDisableJail",
-        "address" : 2228167
-      },
-      {
-        "declaration" : "(void)_endDisableScreenUpdates",
-        "type" : "method",
-        "name" : "_endDisableScreenUpdates",
-        "address" : 2224464
-      },
-      {
-        "declaration" : "(void)_beginDisableScreenUpdatesForSnapshotUsingSnapshotCover:(_Bool)arg1",
-        "type" : "method",
-        "name" : "_beginDisableScreenUpdatesForSnapshotUsingSnapshotCover:",
-        "address" : 2223964
-      },
-      {
-        "declaration" : "(void)_beginDisableScreenUpdatesForSnapshot",
-        "type" : "method",
-        "name" : "_beginDisableScreenUpdatesForSnapshot",
-        "address" : 2223941
-      },
-      {
-        "declaration" : "(void)_prepareScreensForAppResume",
-        "type" : "method",
-        "name" : "_prepareScreensForAppResume",
-        "address" : 2223664
-      },
-      {
-        "declaration" : "(id)_screenWithIntegerDisplayID:(unsigned int)arg1",
-        "type" : "method",
-        "name" : "_screenWithIntegerDisplayID:",
-        "address" : 2223224
-      },
-      {
-        "declaration" : "(id)_screenWithDisplayID:(id)arg1",
-        "type" : "method",
-        "name" : "_screenWithDisplayID:",
-        "address" : 2222924
-      },
-      {
-        "declaration" : "(id)_screenWithDisplayName:(id)arg1",
-        "type" : "method",
-        "name" : "_screenWithDisplayName:",
-        "address" : 2222611
-      },
-      {
-        "declaration" : "(id)_workspaceCapableScreens",
-        "type" : "method",
-        "name" : "_workspaceCapableScreens",
-        "address" : 2222371
-      },
-      {
-        "declaration" : "(id)screens",
-        "type" : "method",
-        "name" : "screens",
-        "address" : 2221930
-      },
-      {
-        "declaration" : "(void)_enumerateScreensWithBlock:(CDUnknownBlockType)arg1",
-        "type" : "method",
-        "name" : "_enumerateScreensWithBlock:",
-        "address" : 2221587
-      },
-      {
-        "declaration" : "(struct CGAffineTransform)transformToRotateScreen:(double)arg1",
-        "type" : "method",
-        "name" : "transformToRotateScreen:",
-        "address" : 2221209
-      },
-      {
-        "declaration" : "(struct CGAffineTransform)transformForScreenOriginRotation:(double)arg1",
-        "type" : "method",
-        "name" : "transformForScreenOriginRotation:",
-        "address" : 2220917
-      },
-      {
-        "declaration" : "(id)mainScreen",
-        "type" : "method",
-        "name" : "mainScreen",
-        "address" : 2220890
-      },
-      {
-        "declaration" : "(void)_videoOutSettingsChanged",
-        "type" : "method",
-        "name" : "_videoOutSettingsChanged",
-        "address" : 2219767
-      },
-      {
-        "declaration" : "(void)initialize",
-        "type" : "method",
-        "name" : "initialize",
-        "address" : 2219128
-      }
-    ]
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "armv7" : {
-    "superClassName" : "NSObject",
-    "className" : "UIScreen",
-    "instanceMethods" : [
+  "i386":{
+    "className":"UIScreen",
+    "ivars":[
       {
-        "declaration" : "(void)_setLastNotifiedBacklightLevel:(int)arg1",
-        "type" : "method",
-        "name" : "_setLastNotifiedBacklightLevel:",
-        "address" : 3501605
+        "ivarType":"id",
+        "name":"_display",
+        "offset":4,
+        "type":"ivar"
       },
       {
-        "declaration" : "(int)_lastNotifiedBacklightLevel",
-        "type" : "method",
-        "name" : "_lastNotifiedBacklightLevel",
-        "address" : 3501589
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_bounds",
+        "offset":8,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setSoftwareDimmingWindow:(id)arg1",
-        "type" : "method",
-        "name" : "_setSoftwareDimmingWindow:",
-        "address" : 3501573
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_referenceBounds",
+        "offset":24,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_softwareDimmingWindow",
-        "type" : "method",
-        "name" : "_softwareDimmingWindow",
-        "address" : 3501557
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_interfaceOrientedBounds",
+        "offset":40,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)setWantsSoftwareDimming:(BOOL)arg1",
-        "type" : "method",
-        "name" : "setWantsSoftwareDimming:",
-        "address" : 3501541
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_unjailedReferenceBounds",
+        "offset":56,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)wantsSoftwareDimming",
-        "type" : "method",
-        "name" : "wantsSoftwareDimming",
-        "address" : 3501525
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "name":"_mainSceneReferenceBounds",
+        "offset":72,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setWorkspaceCapableScreenType:(int)arg1",
-        "type" : "method",
-        "name" : "_setWorkspaceCapableScreenType:",
-        "address" : 3501509
+        "ivarType":"int",
+        "name":"_interfaceOrientation",
+        "offset":88,
+        "type":"ivar"
       },
       {
-        "declaration" : "(int)_workspaceCapableScreenType",
-        "type" : "method",
-        "name" : "_workspaceCapableScreenType",
-        "address" : 1496837
+        "ivarType":"float",
+        "name":"_scale",
+        "offset":92,
+        "type":"ivar"
       },
       {
-        "declaration" : "(struct CGRect)bounds",
-        "type" : "method",
-        "name" : "bounds",
-        "address" : 70581
+        "ivarType":"float",
+        "name":"_touchScaleFactor",
+        "offset":96,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_snapshotExcludingWindows:(id)arg1 withRect:(struct CGRect)arg2",
-        "type" : "method",
-        "name" : "_snapshotExcludingWindows:withRect:",
-        "address" : 3501329
+        "ivarType":"float",
+        "name":"_horizontalScale",
+        "offset":100,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)description",
-        "type" : "method",
-        "name" : "description",
-        "address" : 3500645
+        "ivarType":"int",
+        "name":"_userInterfaceIdiom",
+        "offset":104,
+        "type":"ivar"
       },
       {
-        "declaration" : "(float)brightness",
-        "type" : "method",
-        "name" : "brightness",
-        "address" : 3500425
+        "ivarType":"NSDictionary *",
+        "name":"_capabilities",
+        "offset":108,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)setBrightness:(float)arg1",
-        "type" : "method",
-        "name" : "setBrightness:",
-        "address" : 3499925
+        "ivarType":"UIWindow *",
+        "name":"_screenDisablingWindow",
+        "offset":112,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_supportsBrightness",
-        "type" : "method",
-        "name" : "_supportsBrightness",
-        "address" : 3499861
+        "ivarType":"double",
+        "name":"_startedPausingWindows",
+        "offset":116,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_endObservingBacklightLevelNotifications",
-        "type" : "method",
-        "name" : "_endObservingBacklightLevelNotifications",
-        "address" : 3499745
+        "ivarType":"NSMutableArray *",
+        "name":"_pausedWindows",
+        "offset":124,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_beginObservingBacklightLevelNotifications",
-        "type" : "method",
-        "name" : "_beginObservingBacklightLevelNotifications",
-        "address" : 466517
+        "ivarType":"_UIScreenTransparentHitTestWindow *",
+        "name":"_extendedJailHitTestWindow",
+        "offset":128,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_postBrightnessDidChangeNotificationIfAppropriate",
-        "type" : "method",
-        "name" : "_postBrightnessDidChangeNotificationIfAppropriate",
-        "address" : 3499389
+        "ivarType":"NSArray *",
+        "name":"_availableDisplayModes",
+        "offset":132,
+        "type":"ivar"
       },
       {
-        "declaration" : "(float)rawBrightnessForBacklightLevel:(float)arg1",
-        "type" : "method",
-        "name" : "rawBrightnessForBacklightLevel:",
-        "address" : 3499333
+        "ivarType":"float",
+        "name":"_pointsPerInch",
+        "offset":136,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_lazySoftwareDimmingWindow",
-        "type" : "method",
-        "name" : "_lazySoftwareDimmingWindow",
-        "address" : 3499105
+        "ivarType":"_UIScreenFixedCoordinateSpace *",
+        "name":"_fixedCoordinateSpace",
+        "offset":140,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_areMusicListsLimited",
-        "type" : "method",
-        "name" : "_areMusicListsLimited",
-        "address" : 3499061
+        "ivarType":"struct { \n        unsigned int bitsPerComponent : 4; \n        unsigned int initialized : 1; \n        unsigned int connected : 1; \n        unsigned int overscanCompensation : 2; \n        unsigned int screenUpdatesDisabled : 1; \n        unsigned int wantsWideContentMargins : 1; \n        unsigned int queriedDeviceContentMargins : 1; \n        unsigned int hasCalculatedPointsPerInch : 1; \n    }",
+        "name":"_screenFlags",
+        "offset":144,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_areListsLimited",
-        "type" : "method",
-        "name" : "_areListsLimited",
-        "address" : 3499017
+        "ivarType":"BOOL",
+        "name":"_wantsSoftwareDimming",
+        "offset":148,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_isUIElementLimited:(id)arg1",
-        "type" : "method",
-        "name" : "_isUIElementLimited:",
-        "address" : 3498917
+        "ivarType":"BOOL",
+        "name":"_jailUsesHitTestWindow",
+        "offset":149,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_canFocusViews",
-        "type" : "method",
-        "name" : "_canFocusViews",
-        "address" : 3498833
+        "ivarType":"UITraitCollection *",
+        "name":"_defaultTraitCollection",
+        "offset":152,
+        "type":"ivar"
       },
       {
-        "declaration" : "(struct __CFDictionary *)_touchMap",
-        "type" : "method",
-        "name" : "_touchMap",
-        "address" : 3498817
+        "ivarType":"UITraitCollection *",
+        "name":"_overrideTraitCollection",
+        "offset":156,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setTouchMap:(struct __CFDictionary *)arg1",
-        "type" : "method",
-        "name" : "_setTouchMap:",
-        "address" : 3498761
+        "ivarType":"UITraitCollection *",
+        "name":"_lastNotifiedTraitCollection",
+        "offset":160,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_updateWorkspaceCapableScreenType",
-        "type" : "method",
-        "name" : "_updateWorkspaceCapableScreenType",
-        "address" : 465349
+        "ivarType":"FBSDisplay *",
+        "name":"_fbsDisplay",
+        "offset":164,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_isWorkspaceCapable",
-        "type" : "method",
-        "name" : "_isWorkspaceCapable",
-        "address" : 589141
+        "ivarType":"UISoftwareDimmingWindow *",
+        "name":"_softwareDimmingWindow",
+        "offset":168,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_displayID",
-        "type" : "method",
-        "name" : "_displayID",
-        "address" : 60925
+        "ivarType":"int",
+        "name":"_lastNotifiedBacklightLevel",
+        "offset":172,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setCapability:(id)arg1 forKey:(id)arg2",
-        "type" : "method",
-        "name" : "_setCapability:forKey:",
-        "address" : 3498569
+        "ivarType":"float",
+        "name":"_jailScale",
+        "offset":176,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_capabilityForKey:(id)arg1",
-        "type" : "method",
-        "name" : "_capabilityForKey:",
-        "address" : 179749
+        "ivarType":"int",
+        "name":"_jailOrientation",
+        "offset":180,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_capabilities",
-        "type" : "method",
-        "name" : "_capabilities",
-        "address" : 18453
+        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "name":"_jailSize",
+        "offset":184,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_updateCapabilities",
-        "type" : "method",
-        "name" : "_updateCapabilities",
-        "address" : 465985
+        "ivarType":"struct CGPoint { \n        float x; \n        float y; \n    }",
+        "name":"_jailOffset",
+        "offset":192,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setUserInterfaceIdiom:(int)arg1",
-        "type" : "method",
-        "name" : "_setUserInterfaceIdiom:",
-        "address" : 465753
-      },
-      {
-        "declaration" : "(int)_userInterfaceIdiom",
-        "type" : "method",
-        "name" : "_userInterfaceIdiom",
-        "address" : 75825
-      },
-      {
-        "declaration" : "(void)_updateUserInterfaceIdiom",
-        "type" : "method",
-        "name" : "_updateUserInterfaceIdiom",
-        "address" : 465553
-      },
-      {
-        "declaration" : "(void)_disconnectScreen",
-        "type" : "method",
-        "name" : "_disconnectScreen",
-        "address" : 3498453
-      },
-      {
-        "declaration" : "(void)_connectScreen",
-        "type" : "method",
-        "name" : "_connectScreen",
-        "address" : 465445
-      },
-      {
-        "declaration" : "(float)_pointsPerInch",
-        "type" : "method",
-        "name" : "_pointsPerInch",
-        "address" : 1123037
-      },
-      {
-        "declaration" : "(void)_setScale:(float)arg1",
-        "type" : "method",
-        "name" : "_setScale:",
-        "address" : 3498437
-      },
-      {
-        "declaration" : "(float)_scale",
-        "type" : "method",
-        "name" : "_scale",
-        "address" : 466661
-      },
-      {
-        "declaration" : "(float)scale",
-        "type" : "method",
-        "name" : "scale",
-        "address" : 59605
-      },
-      {
-        "declaration" : "(id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2",
-        "type" : "method",
-        "name" : "displayLinkWithTarget:selector:",
-        "address" : 1725473
-      },
-      {
-        "declaration" : "(void)_prepareForWindow",
-        "type" : "method",
-        "name" : "_prepareForWindow",
-        "address" : 3498309
-      },
-      {
-        "declaration" : "(BOOL)_hasStatusBar",
-        "type" : "method",
-        "name" : "_hasStatusBar",
-        "address" : 82973
-      },
-      {
-        "declaration" : "(BOOL)_isMainScreen",
-        "type" : "method",
-        "name" : "_isMainScreen",
-        "address" : 76061
-      },
-      {
-        "declaration" : "(BOOL)_isExternal",
-        "type" : "method",
-        "name" : "_isExternal",
-        "address" : 76145
-      },
-      {
-        "declaration" : "(id)_name",
-        "type" : "method",
-        "name" : "_name",
-        "address" : 3498257
-      },
-      {
-        "declaration" : "(unsigned int)_seed",
-        "type" : "method",
-        "name" : "_seed",
-        "address" : 3498225
-      },
-      {
-        "declaration" : "(unsigned int)_integerDisplayID",
-        "type" : "method",
-        "name" : "_integerDisplayID",
-        "address" : 482993
-      },
-      {
-        "declaration" : "(void)setOverscanCompensation:(int)arg1",
-        "type" : "method",
-        "name" : "setOverscanCompensation:",
-        "address" : 3498165
-      },
-      {
-        "declaration" : "(int)overscanCompensation",
-        "type" : "method",
-        "name" : "overscanCompensation",
-        "address" : 3498145
-      },
-      {
-        "declaration" : "(id)availableModes",
-        "type" : "method",
-        "name" : "availableModes",
-        "address" : 589009
-      },
-      {
-        "declaration" : "(int)screenType",
-        "type" : "method",
-        "name" : "screenType",
-        "address" : 3498101
-      },
-      {
-        "declaration" : "(void)setCurrentMode:(id)arg1",
-        "type" : "method",
-        "name" : "setCurrentMode:",
-        "address" : 3498013
-      },
-      {
-        "declaration" : "(id)currentMode",
-        "type" : "method",
-        "name" : "currentMode",
-        "address" : 463781
-      },
-      {
-        "declaration" : "(void)setBitsPerComponent:(int)arg1",
-        "type" : "method",
-        "name" : "setBitsPerComponent:",
-        "address" : 3497985
-      },
-      {
-        "declaration" : "(int)bitsPerComponent",
-        "type" : "method",
-        "name" : "bitsPerComponent",
-        "address" : 74253
-      },
-      {
-        "declaration" : "(id)preferredMode",
-        "type" : "method",
-        "name" : "preferredMode",
-        "address" : 3497877
-      },
-      {
-        "declaration" : "(id)mirroredScreen",
-        "type" : "method",
-        "name" : "mirroredScreen",
-        "address" : 602333
-      },
-      {
-        "declaration" : "(double)_refreshRate",
-        "type" : "method",
-        "name" : "_refreshRate",
-        "address" : 3497845
-      },
-      {
-        "declaration" : "(int)_imageOrientation",
-        "type" : "method",
-        "name" : "_imageOrientation",
-        "address" : 3497629
-      },
-      {
-        "declaration" : "(float)_rotation",
-        "type" : "method",
-        "name" : "_rotation",
-        "address" : 75993
-      },
-      {
-        "declaration" : "(struct CGRect)_boundsInPixels",
-        "type" : "method",
-        "name" : "_boundsInPixels",
-        "address" : 467481
-      },
-      {
-        "declaration" : "(struct CGRect)_realDisplayBounds",
-        "type" : "method",
-        "name" : "_realDisplayBounds",
-        "address" : 75841
-      },
-      {
-        "declaration" : "(float)_horizontalPixelScale",
-        "type" : "method",
-        "name" : "_horizontalPixelScale",
-        "address" : 76281
-      },
-      {
-        "declaration" : "(struct CGRect)applicationFrame",
-        "type" : "method",
-        "name" : "applicationFrame",
-        "address" : 82209
-      },
-      {
-        "declaration" : "(void)_computeMetrics",
-        "type" : "method",
-        "name" : "_computeMetrics",
-        "address" : 462829
-      },
-      {
-        "declaration" : "(BOOL)_isRotatable",
-        "type" : "method",
-        "name" : "_isRotatable",
-        "address" : 1004445
-      },
-      {
-        "declaration" : "(BOOL)_areBoundsJailed",
-        "type" : "method",
-        "name" : "_areBoundsJailed",
-        "address" : 75585
-      },
-      {
-        "declaration" : "(struct UIEdgeInsets)_jailedBoundsEdgeInsets",
-        "type" : "method",
-        "name" : "_jailedBoundsEdgeInsets",
-        "address" : 75701
-      },
-      {
-        "declaration" : "(struct UIEdgeInsets)_rawJailedBoundsEdgeInsets",
-        "type" : "method",
-        "name" : "_rawJailedBoundsEdgeInsets",
-        "address" : 3497489
-      },
-      {
-        "declaration" : "(struct CGRect)_applicationFrameForInterfaceOrientation:(int)arg1",
-        "type" : "method",
-        "name" : "_applicationFrameForInterfaceOrientation:",
-        "address" : 82297
-      },
-      {
-        "declaration" : "(struct CGRect)_applicationFrameForInterfaceOrientation:(int)arg1 usingStatusbarHeight:(float)arg2",
-        "type" : "method",
-        "name" : "_applicationFrameForInterfaceOrientation:usingStatusbarHeight:",
-        "address" : 82345
-      },
-      {
-        "declaration" : "(void)_updateOverscanCompensationAllowingBackgroundUpdate:(BOOL)arg1",
-        "type" : "method",
-        "name" : "_updateOverscanCompensationAllowingBackgroundUpdate:",
-        "address" : 464201
-      },
-      {
-        "declaration" : "(BOOL)_overscanAdjustmentNeedsUpdate",
-        "type" : "method",
-        "name" : "_overscanAdjustmentNeedsUpdate",
-        "address" : 465005
-      },
-      {
-        "declaration" : "(BOOL)_isOverscanned",
-        "type" : "method",
-        "name" : "_isOverscanned",
-        "address" : 465193
-      },
-      {
-        "declaration" : "(BOOL)_hasWindows",
-        "type" : "method",
-        "name" : "_hasWindows",
-        "address" : 3497093
-      },
-      {
-        "declaration" : "(void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4",
-        "type" : "method",
-        "name" : "observeValueForKeyPath:ofObject:change:context:",
-        "address" : 3495833
-      },
-      {
-        "declaration" : "(void)_updateAvailableDisplayModes",
-        "type" : "method",
-        "name" : "_updateAvailableDisplayModes",
-        "address" : 3495449
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 3495069
-      },
-      {
-        "declaration" : "(id)initWithDisplay:(id)arg1",
-        "type" : "method",
-        "name" : "initWithDisplay:",
-        "address" : 462309
-      },
-      {
-        "declaration" : "(void)_ensureConnectedIfPossible",
-        "type" : "method",
-        "name" : "_ensureConnectedIfPossible",
-        "address" : 3494233
-      },
-      {
-        "declaration" : "(id)snapshot",
-        "type" : "method",
-        "name" : "snapshot",
-        "address" : 3503865
-      },
-      {
-        "declaration" : "(id)snapshotView",
-        "type" : "method",
-        "name" : "snapshotView",
-        "address" : 3503833
-      },
-      {
-        "declaration" : "(void)_enableScreenUpdates",
-        "type" : "method",
-        "name" : "_enableScreenUpdates",
-        "address" : 3503525
-      },
-      {
-        "declaration" : "(void)_disableScreenUpdates:(BOOL)arg1",
-        "type" : "method",
-        "name" : "_disableScreenUpdates:",
-        "address" : 3502397
-      },
-      {
-        "declaration" : "(void)_setSpeed:(float)arg1 forWindow:(id)arg2",
-        "type" : "method",
-        "name" : "_setSpeed:forWindow:",
-        "address" : 3502193
-      },
-      {
-        "declaration" : "(id)snapshotViewAfterScreenUpdates:(BOOL)arg1",
-        "type" : "method",
-        "name" : "snapshotViewAfterScreenUpdates:",
-        "address" : 3501621
+        "ivarType":"struct UIEdgeInsets { \n        float top; \n        float left; \n        float bottom; \n        float right; \n    }",
+        "name":"_jailTouchInsets",
+        "offset":200,
+        "type":"ivar"
       }
     ],
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "id",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_display"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "struct CGRect",
-        "size" : 16,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_bounds"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "float",
-        "size" : 4,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_scale"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "float",
-        "size" : 4,
-        "offset" : 28,
-        "type" : "ivar",
-        "name" : "_horizontalScale"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 32,
-        "type" : "ivar",
-        "name" : "_userInterfaceIdiom"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSDictionary *",
-        "size" : 4,
-        "offset" : 36,
-        "type" : "ivar",
-        "name" : "_capabilities"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 40,
-        "type" : "ivar",
-        "name" : "_workspaceCapableScreenType"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "UIWindow *",
-        "size" : 4,
-        "offset" : 44,
-        "type" : "ivar",
-        "name" : "_screenDisablingWindow"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "double",
-        "size" : 8,
-        "offset" : 48,
-        "type" : "ivar",
-        "name" : "_startedPausingWindows"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSMutableArray *",
-        "size" : 4,
-        "offset" : 56,
-        "type" : "ivar",
-        "name" : "_pausedWindows"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "struct __CFDictionary *",
-        "size" : 4,
-        "offset" : 60,
-        "type" : "ivar",
-        "name" : "_touchMap"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSArray *",
-        "size" : 4,
-        "offset" : 64,
-        "type" : "ivar",
-        "name" : "_availableDisplayModes"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "unsigned int",
-        "size" : 4,
-        "offset" : 68,
-        "type" : "ivar",
-        "name" : "_canAccessDisplaySeed"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "unsigned int",
-        "size" : 4,
-        "offset" : 72,
-        "type" : "ivar",
-        "name" : "_connectionSeed"
-      },
-      {
-        "alignment" : 0,
-        "ivarType" : "struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int canAccessDisplay:1;\n        unsigned int canAccessDisplaySeedValid:1;\n        unsigned int screenUpdatesDisabled:1;\n    }",
-        "size" : 2,
-        "offset" : 76,
-        "type" : "ivar",
-        "name" : "_screenFlags"
-      },
-      {
-        "alignment" : 0,
-        "ivarType" : "char",
-        "size" : 1,
-        "offset" : 78,
-        "type" : "ivar",
-        "name" : "_wantsSoftwareDimming"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "UISoftwareDimmingWindow *",
-        "size" : 4,
-        "offset" : 80,
-        "type" : "ivar",
-        "name" : "_softwareDimmingWindow"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 84,
-        "type" : "ivar",
-        "name" : "_lastNotifiedBacklightLevel"
-      }
-    ],
-    "properties" : [
-      {
-        "name" : "bounds",
-        "propertyType" : "struct CGRect",
-        "getter" : "bounds",
-        "type" : "property",
-        "setter" : "setBounds:"
-      },
-      {
-        "name" : "applicationFrame",
-        "propertyType" : "struct CGRect",
-        "getter" : "applicationFrame",
-        "type" : "property",
-        "setter" : "setApplicationFrame:"
-      },
-      {
-        "name" : "scale",
-        "propertyType" : "float",
-        "getter" : "scale",
-        "type" : "property",
-        "setter" : "setScale:"
-      },
-      {
-        "name" : "availableModes",
-        "propertyType" : "NSArray *",
-        "getter" : "availableModes",
-        "type" : "property",
-        "setter" : "setAvailableModes:"
-      },
-      {
-        "name" : "preferredMode",
-        "propertyType" : "UIScreenMode *",
-        "getter" : "preferredMode",
-        "type" : "property",
-        "setter" : "setPreferredMode:"
-      },
-      {
-        "name" : "currentMode",
-        "propertyType" : "UIScreenMode *",
-        "getter" : "currentMode",
-        "type" : "property",
-        "setter" : "setCurrentMode:"
-      },
-      {
-        "name" : "overscanCompensation",
-        "propertyType" : "int",
-        "getter" : "overscanCompensation",
-        "type" : "property",
-        "setter" : "setOverscanCompensation:"
-      },
-      {
-        "name" : "mirroredScreen",
-        "propertyType" : "UIScreen *",
-        "getter" : "mirroredScreen",
-        "type" : "property",
-        "setter" : "setMirroredScreen:"
-      },
-      {
-        "name" : "brightness",
-        "propertyType" : "float",
-        "getter" : "brightness",
-        "type" : "property",
-        "setter" : "setBrightness:"
-      },
-      {
-        "name" : "wantsSoftwareDimming",
-        "propertyType" : "char",
-        "getter" : "wantsSoftwareDimming",
-        "type" : "property",
-        "setter" : "setWantsSoftwareDimming:"
-      },
-      {
-        "name" : "_softwareDimmingWindow",
-        "propertyType" : "UISoftwareDimmingWindow *",
-        "getter" : "_softwareDimmingWindow",
-        "type" : "property",
-        "setter" : "_setSoftwareDimmingWindow:"
-      },
-      {
-        "name" : "_lastNotifiedBacklightLevel",
-        "propertyType" : "int",
-        "getter" : "_lastNotifiedBacklightLevel",
-        "type" : "property",
-        "setter" : "_setLastNotifiedBacklightLevel:"
-      },
-      {
-        "name" : "workspaceCapableScreenType",
-        "propertyType" : "int",
-        "getter" : "_workspaceCapableScreenType",
-        "type" : "property",
-        "setter" : "_setWorkspaceCapableScreenType:"
-      }
-    ],
-    "type" : "class",
-    "classMethods" : [
-      {
-        "declaration" : "(struct CGRect)convertRect:(struct CGRect)arg1 fromView:(id)arg2",
-        "type" : "method",
-        "name" : "convertRect:fromView:",
-        "address" : 849569
-      },
-      {
-        "declaration" : "(struct CGRect)convertRect:(struct CGRect)arg1 toView:(id)arg2",
-        "type" : "method",
-        "name" : "convertRect:toView:",
-        "address" : 820369
-      },
-      {
-        "declaration" : "(struct CGPoint)convertPoint:(struct CGPoint)arg1 fromView:(id)arg2",
-        "type" : "method",
-        "name" : "convertPoint:fromView:",
-        "address" : 3501141
-      },
-      {
-        "declaration" : "(struct CGPoint)convertPoint:(struct CGPoint)arg1 toView:(id)arg2",
-        "type" : "method",
-        "name" : "convertPoint:toView:",
-        "address" : 3500953
-      },
-      {
-        "declaration" : "(BOOL)_shouldDisableJail",
-        "type" : "method",
-        "name" : "_shouldDisableJail",
-        "address" : 3497329
-      },
-      {
-        "declaration" : "(void)_endDisableScreenUpdates",
-        "type" : "method",
-        "name" : "_endDisableScreenUpdates",
-        "address" : 3494841
-      },
-      {
-        "declaration" : "(void)_beginDisableScreenUpdatesForSnapshotUsingSnapshotCover:(BOOL)arg1",
-        "type" : "method",
-        "name" : "_beginDisableScreenUpdatesForSnapshotUsingSnapshotCover:",
-        "address" : 3494433
-      },
-      {
-        "declaration" : "(void)_beginDisableScreenUpdatesForSnapshot",
-        "type" : "method",
-        "name" : "_beginDisableScreenUpdatesForSnapshot",
-        "address" : 3494413
-      },
-      {
-        "declaration" : "(void)_prepareScreensForAppResume",
-        "type" : "method",
-        "name" : "_prepareScreensForAppResume",
-        "address" : 2538281
-      },
-      {
-        "declaration" : "(id)_screenWithIntegerDisplayID:(unsigned int)arg1",
-        "type" : "method",
-        "name" : "_screenWithIntegerDisplayID:",
-        "address" : 3494025
-      },
-      {
-        "declaration" : "(id)_screenWithDisplayID:(id)arg1",
-        "type" : "method",
-        "name" : "_screenWithDisplayID:",
-        "address" : 60685
-      },
-      {
-        "declaration" : "(id)_screenWithDisplayName:(id)arg1",
-        "type" : "method",
-        "name" : "_screenWithDisplayName:",
-        "address" : 3493777
-      },
-      {
-        "declaration" : "(id)_workspaceCapableScreens",
-        "type" : "method",
-        "name" : "_workspaceCapableScreens",
-        "address" : 588565
-      },
-      {
-        "declaration" : "(id)screens",
-        "type" : "method",
-        "name" : "screens",
-        "address" : 588685
-      },
-      {
-        "declaration" : "(void)_enumerateScreensWithBlock:(CDUnknownBlockType)arg1",
-        "type" : "method",
-        "name" : "_enumerateScreensWithBlock:",
-        "address" : 3493321
-      },
-      {
-        "declaration" : "(struct CGAffineTransform)transformToRotateScreen:(float)arg1",
-        "type" : "method",
-        "name" : "transformToRotateScreen:",
-        "address" : 3493101
-      },
-      {
-        "declaration" : "(struct CGAffineTransform)transformForScreenOriginRotation:(float)arg1",
-        "type" : "method",
-        "name" : "transformForScreenOriginRotation:",
-        "address" : 3492885
-      },
-      {
-        "declaration" : "(id)mainScreen",
-        "type" : "method",
-        "name" : "mainScreen",
-        "address" : 18421
-      },
-      {
-        "declaration" : "(void)_videoOutSettingsChanged",
-        "type" : "method",
-        "name" : "_videoOutSettingsChanged",
-        "address" : 3492333
-      },
-      {
-        "declaration" : "(void)initialize",
-        "type" : "method",
-        "name" : "initialize",
-        "address" : 461709
-      }
-    ]
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "armv7s" : {
-    "superClassName" : "NSObject",
-    "className" : "UIScreen",
-    "instanceMethods" : [
+  "x86_64":{
+    "className":"UIScreen",
+    "ivars":[
       {
-        "declaration" : "(void)_setLastNotifiedBacklightLevel:(int)arg1",
-        "type" : "method",
-        "name" : "_setLastNotifiedBacklightLevel:",
-        "address" : 3503293
+        "ivarType":"id",
+        "name":"_display",
+        "offset":8,
+        "type":"ivar"
       },
       {
-        "declaration" : "(int)_lastNotifiedBacklightLevel",
-        "type" : "method",
-        "name" : "_lastNotifiedBacklightLevel",
-        "address" : 3503277
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_bounds",
+        "offset":16,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setSoftwareDimmingWindow:(id)arg1",
-        "type" : "method",
-        "name" : "_setSoftwareDimmingWindow:",
-        "address" : 3503261
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_referenceBounds",
+        "offset":48,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_softwareDimmingWindow",
-        "type" : "method",
-        "name" : "_softwareDimmingWindow",
-        "address" : 3503245
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_interfaceOrientedBounds",
+        "offset":80,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)setWantsSoftwareDimming:(BOOL)arg1",
-        "type" : "method",
-        "name" : "setWantsSoftwareDimming:",
-        "address" : 3503229
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_unjailedReferenceBounds",
+        "offset":112,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)wantsSoftwareDimming",
-        "type" : "method",
-        "name" : "wantsSoftwareDimming",
-        "address" : 3503213
+        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "name":"_mainSceneReferenceBounds",
+        "offset":144,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setWorkspaceCapableScreenType:(int)arg1",
-        "type" : "method",
-        "name" : "_setWorkspaceCapableScreenType:",
-        "address" : 3503197
+        "ivarType":"long long",
+        "name":"_interfaceOrientation",
+        "offset":176,
+        "type":"ivar"
       },
       {
-        "declaration" : "(int)_workspaceCapableScreenType",
-        "type" : "method",
-        "name" : "_workspaceCapableScreenType",
-        "address" : 1499205
+        "ivarType":"double",
+        "name":"_scale",
+        "offset":184,
+        "type":"ivar"
       },
       {
-        "declaration" : "(struct CGRect)bounds",
-        "type" : "method",
-        "name" : "bounds",
-        "address" : 71989
+        "ivarType":"double",
+        "name":"_touchScaleFactor",
+        "offset":192,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_snapshotExcludingWindows:(id)arg1 withRect:(struct CGRect)arg2",
-        "type" : "method",
-        "name" : "_snapshotExcludingWindows:withRect:",
-        "address" : 3503017
+        "ivarType":"double",
+        "name":"_horizontalScale",
+        "offset":200,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)description",
-        "type" : "method",
-        "name" : "description",
-        "address" : 3502333
+        "ivarType":"long long",
+        "name":"_userInterfaceIdiom",
+        "offset":208,
+        "type":"ivar"
       },
       {
-        "declaration" : "(float)brightness",
-        "type" : "method",
-        "name" : "brightness",
-        "address" : 3502113
+        "ivarType":"NSDictionary *",
+        "name":"_capabilities",
+        "offset":216,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)setBrightness:(float)arg1",
-        "type" : "method",
-        "name" : "setBrightness:",
-        "address" : 3501601
+        "ivarType":"UIWindow *",
+        "name":"_screenDisablingWindow",
+        "offset":224,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_supportsBrightness",
-        "type" : "method",
-        "name" : "_supportsBrightness",
-        "address" : 3501537
+        "ivarType":"double",
+        "name":"_startedPausingWindows",
+        "offset":232,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_endObservingBacklightLevelNotifications",
-        "type" : "method",
-        "name" : "_endObservingBacklightLevelNotifications",
-        "address" : 3501425
+        "ivarType":"NSMutableArray *",
+        "name":"_pausedWindows",
+        "offset":240,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_beginObservingBacklightLevelNotifications",
-        "type" : "method",
-        "name" : "_beginObservingBacklightLevelNotifications",
-        "address" : 468373
+        "ivarType":"_UIScreenTransparentHitTestWindow *",
+        "name":"_extendedJailHitTestWindow",
+        "offset":248,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_postBrightnessDidChangeNotificationIfAppropriate",
-        "type" : "method",
-        "name" : "_postBrightnessDidChangeNotificationIfAppropriate",
-        "address" : 3501069
+        "ivarType":"NSArray *",
+        "name":"_availableDisplayModes",
+        "offset":256,
+        "type":"ivar"
       },
       {
-        "declaration" : "(float)rawBrightnessForBacklightLevel:(float)arg1",
-        "type" : "method",
-        "name" : "rawBrightnessForBacklightLevel:",
-        "address" : 3501013
+        "ivarType":"double",
+        "name":"_pointsPerInch",
+        "offset":264,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_lazySoftwareDimmingWindow",
-        "type" : "method",
-        "name" : "_lazySoftwareDimmingWindow",
-        "address" : 3500785
+        "ivarType":"_UIScreenFixedCoordinateSpace *",
+        "name":"_fixedCoordinateSpace",
+        "offset":272,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_areMusicListsLimited",
-        "type" : "method",
-        "name" : "_areMusicListsLimited",
-        "address" : 3500741
+        "ivarType":"struct { \n        unsigned int bitsPerComponent : 4; \n        unsigned int initialized : 1; \n        unsigned int connected : 1; \n        unsigned int overscanCompensation : 2; \n        unsigned int screenUpdatesDisabled : 1; \n        unsigned int wantsWideContentMargins : 1; \n        unsigned int queriedDeviceContentMargins : 1; \n        unsigned int hasCalculatedPointsPerInch : 1; \n    }",
+        "name":"_screenFlags",
+        "offset":280,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_areListsLimited",
-        "type" : "method",
-        "name" : "_areListsLimited",
-        "address" : 3500697
+        "ivarType":"bool",
+        "name":"_wantsSoftwareDimming",
+        "offset":284,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_isUIElementLimited:(id)arg1",
-        "type" : "method",
-        "name" : "_isUIElementLimited:",
-        "address" : 3500601
+        "ivarType":"bool",
+        "name":"_jailUsesHitTestWindow",
+        "offset":285,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_canFocusViews",
-        "type" : "method",
-        "name" : "_canFocusViews",
-        "address" : 3500517
+        "ivarType":"UITraitCollection *",
+        "name":"_defaultTraitCollection",
+        "offset":288,
+        "type":"ivar"
       },
       {
-        "declaration" : "(struct __CFDictionary *)_touchMap",
-        "type" : "method",
-        "name" : "_touchMap",
-        "address" : 3500501
+        "ivarType":"UITraitCollection *",
+        "name":"_overrideTraitCollection",
+        "offset":296,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setTouchMap:(struct __CFDictionary *)arg1",
-        "type" : "method",
-        "name" : "_setTouchMap:",
-        "address" : 3500449
+        "ivarType":"UITraitCollection *",
+        "name":"_lastNotifiedTraitCollection",
+        "offset":304,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_updateWorkspaceCapableScreenType",
-        "type" : "method",
-        "name" : "_updateWorkspaceCapableScreenType",
-        "address" : 467205
+        "ivarType":"FBSDisplay *",
+        "name":"_fbsDisplay",
+        "offset":312,
+        "type":"ivar"
       },
       {
-        "declaration" : "(BOOL)_isWorkspaceCapable",
-        "type" : "method",
-        "name" : "_isWorkspaceCapable",
-        "address" : 591053
+        "ivarType":"UISoftwareDimmingWindow *",
+        "name":"_softwareDimmingWindow",
+        "offset":320,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_displayID",
-        "type" : "method",
-        "name" : "_displayID",
-        "address" : 62357
+        "ivarType":"long long",
+        "name":"_lastNotifiedBacklightLevel",
+        "offset":328,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setCapability:(id)arg1 forKey:(id)arg2",
-        "type" : "method",
-        "name" : "_setCapability:forKey:",
-        "address" : 3500257
+        "ivarType":"double",
+        "name":"_jailScale",
+        "offset":336,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_capabilityForKey:(id)arg1",
-        "type" : "method",
-        "name" : "_capabilityForKey:",
-        "address" : 181365
+        "ivarType":"long long",
+        "name":"_jailOrientation",
+        "offset":344,
+        "type":"ivar"
       },
       {
-        "declaration" : "(id)_capabilities",
-        "type" : "method",
-        "name" : "_capabilities",
-        "address" : 19965
+        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "name":"_jailSize",
+        "offset":352,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_updateCapabilities",
-        "type" : "method",
-        "name" : "_updateCapabilities",
-        "address" : 467841
+        "ivarType":"struct CGPoint { \n        double x; \n        double y; \n    }",
+        "name":"_jailOffset",
+        "offset":368,
+        "type":"ivar"
       },
       {
-        "declaration" : "(void)_setUserInterfaceIdiom:(int)arg1",
-        "type" : "method",
-        "name" : "_setUserInterfaceIdiom:",
-        "address" : 467609
-      },
-      {
-        "declaration" : "(int)_userInterfaceIdiom",
-        "type" : "method",
-        "name" : "_userInterfaceIdiom",
-        "address" : 77257
-      },
-      {
-        "declaration" : "(void)_updateUserInterfaceIdiom",
-        "type" : "method",
-        "name" : "_updateUserInterfaceIdiom",
-        "address" : 467409
-      },
-      {
-        "declaration" : "(void)_disconnectScreen",
-        "type" : "method",
-        "name" : "_disconnectScreen",
-        "address" : 3500141
-      },
-      {
-        "declaration" : "(void)_connectScreen",
-        "type" : "method",
-        "name" : "_connectScreen",
-        "address" : 467301
-      },
-      {
-        "declaration" : "(float)_pointsPerInch",
-        "type" : "method",
-        "name" : "_pointsPerInch",
-        "address" : 1125101
-      },
-      {
-        "declaration" : "(void)_setScale:(float)arg1",
-        "type" : "method",
-        "name" : "_setScale:",
-        "address" : 3500125
-      },
-      {
-        "declaration" : "(float)_scale",
-        "type" : "method",
-        "name" : "_scale",
-        "address" : 468517
-      },
-      {
-        "declaration" : "(float)scale",
-        "type" : "method",
-        "name" : "scale",
-        "address" : 61037
-      },
-      {
-        "declaration" : "(id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2",
-        "type" : "method",
-        "name" : "displayLinkWithTarget:selector:",
-        "address" : 1727761
-      },
-      {
-        "declaration" : "(void)_prepareForWindow",
-        "type" : "method",
-        "name" : "_prepareForWindow",
-        "address" : 3499997
-      },
-      {
-        "declaration" : "(BOOL)_hasStatusBar",
-        "type" : "method",
-        "name" : "_hasStatusBar",
-        "address" : 84405
-      },
-      {
-        "declaration" : "(BOOL)_isMainScreen",
-        "type" : "method",
-        "name" : "_isMainScreen",
-        "address" : 77493
-      },
-      {
-        "declaration" : "(BOOL)_isExternal",
-        "type" : "method",
-        "name" : "_isExternal",
-        "address" : 77577
-      },
-      {
-        "declaration" : "(id)_name",
-        "type" : "method",
-        "name" : "_name",
-        "address" : 3499945
-      },
-      {
-        "declaration" : "(unsigned int)_seed",
-        "type" : "method",
-        "name" : "_seed",
-        "address" : 3499913
-      },
-      {
-        "declaration" : "(unsigned int)_integerDisplayID",
-        "type" : "method",
-        "name" : "_integerDisplayID",
-        "address" : 484841
-      },
-      {
-        "declaration" : "(void)setOverscanCompensation:(int)arg1",
-        "type" : "method",
-        "name" : "setOverscanCompensation:",
-        "address" : 3499849
-      },
-      {
-        "declaration" : "(int)overscanCompensation",
-        "type" : "method",
-        "name" : "overscanCompensation",
-        "address" : 3499829
-      },
-      {
-        "declaration" : "(id)availableModes",
-        "type" : "method",
-        "name" : "availableModes",
-        "address" : 590925
-      },
-      {
-        "declaration" : "(int)screenType",
-        "type" : "method",
-        "name" : "screenType",
-        "address" : 3499789
-      },
-      {
-        "declaration" : "(void)setCurrentMode:(id)arg1",
-        "type" : "method",
-        "name" : "setCurrentMode:",
-        "address" : 3499701
-      },
-      {
-        "declaration" : "(id)currentMode",
-        "type" : "method",
-        "name" : "currentMode",
-        "address" : 465637
-      },
-      {
-        "declaration" : "(void)setBitsPerComponent:(int)arg1",
-        "type" : "method",
-        "name" : "setBitsPerComponent:",
-        "address" : 3499673
-      },
-      {
-        "declaration" : "(int)bitsPerComponent",
-        "type" : "method",
-        "name" : "bitsPerComponent",
-        "address" : 75669
-      },
-      {
-        "declaration" : "(id)preferredMode",
-        "type" : "method",
-        "name" : "preferredMode",
-        "address" : 3499565
-      },
-      {
-        "declaration" : "(id)mirroredScreen",
-        "type" : "method",
-        "name" : "mirroredScreen",
-        "address" : 604181
-      },
-      {
-        "declaration" : "(double)_refreshRate",
-        "type" : "method",
-        "name" : "_refreshRate",
-        "address" : 3499533
-      },
-      {
-        "declaration" : "(int)_imageOrientation",
-        "type" : "method",
-        "name" : "_imageOrientation",
-        "address" : 3499309
-      },
-      {
-        "declaration" : "(float)_rotation",
-        "type" : "method",
-        "name" : "_rotation",
-        "address" : 77425
-      },
-      {
-        "declaration" : "(struct CGRect)_boundsInPixels",
-        "type" : "method",
-        "name" : "_boundsInPixels",
-        "address" : 469325
-      },
-      {
-        "declaration" : "(struct CGRect)_realDisplayBounds",
-        "type" : "method",
-        "name" : "_realDisplayBounds",
-        "address" : 77273
-      },
-      {
-        "declaration" : "(float)_horizontalPixelScale",
-        "type" : "method",
-        "name" : "_horizontalPixelScale",
-        "address" : 77713
-      },
-      {
-        "declaration" : "(struct CGRect)applicationFrame",
-        "type" : "method",
-        "name" : "applicationFrame",
-        "address" : 83641
-      },
-      {
-        "declaration" : "(void)_computeMetrics",
-        "type" : "method",
-        "name" : "_computeMetrics",
-        "address" : 464681
-      },
-      {
-        "declaration" : "(BOOL)_isRotatable",
-        "type" : "method",
-        "name" : "_isRotatable",
-        "address" : 1006393
-      },
-      {
-        "declaration" : "(BOOL)_areBoundsJailed",
-        "type" : "method",
-        "name" : "_areBoundsJailed",
-        "address" : 77005
-      },
-      {
-        "declaration" : "(struct UIEdgeInsets)_jailedBoundsEdgeInsets",
-        "type" : "method",
-        "name" : "_jailedBoundsEdgeInsets",
-        "address" : 77129
-      },
-      {
-        "declaration" : "(struct UIEdgeInsets)_rawJailedBoundsEdgeInsets",
-        "type" : "method",
-        "name" : "_rawJailedBoundsEdgeInsets",
-        "address" : 3499169
-      },
-      {
-        "declaration" : "(struct CGRect)_applicationFrameForInterfaceOrientation:(int)arg1",
-        "type" : "method",
-        "name" : "_applicationFrameForInterfaceOrientation:",
-        "address" : 83729
-      },
-      {
-        "declaration" : "(struct CGRect)_applicationFrameForInterfaceOrientation:(int)arg1 usingStatusbarHeight:(float)arg2",
-        "type" : "method",
-        "name" : "_applicationFrameForInterfaceOrientation:usingStatusbarHeight:",
-        "address" : 83777
-      },
-      {
-        "declaration" : "(void)_updateOverscanCompensationAllowingBackgroundUpdate:(BOOL)arg1",
-        "type" : "method",
-        "name" : "_updateOverscanCompensationAllowingBackgroundUpdate:",
-        "address" : 466057
-      },
-      {
-        "declaration" : "(BOOL)_overscanAdjustmentNeedsUpdate",
-        "type" : "method",
-        "name" : "_overscanAdjustmentNeedsUpdate",
-        "address" : 466861
-      },
-      {
-        "declaration" : "(BOOL)_isOverscanned",
-        "type" : "method",
-        "name" : "_isOverscanned",
-        "address" : 467049
-      },
-      {
-        "declaration" : "(BOOL)_hasWindows",
-        "type" : "method",
-        "name" : "_hasWindows",
-        "address" : 3498773
-      },
-      {
-        "declaration" : "(void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4",
-        "type" : "method",
-        "name" : "observeValueForKeyPath:ofObject:change:context:",
-        "address" : 3497513
-      },
-      {
-        "declaration" : "(void)_updateAvailableDisplayModes",
-        "type" : "method",
-        "name" : "_updateAvailableDisplayModes",
-        "address" : 3497129
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 3496749
-      },
-      {
-        "declaration" : "(id)initWithDisplay:(id)arg1",
-        "type" : "method",
-        "name" : "initWithDisplay:",
-        "address" : 464157
-      },
-      {
-        "declaration" : "(void)_ensureConnectedIfPossible",
-        "type" : "method",
-        "name" : "_ensureConnectedIfPossible",
-        "address" : 3495913
-      },
-      {
-        "declaration" : "(id)snapshot",
-        "type" : "method",
-        "name" : "snapshot",
-        "address" : 3505557
-      },
-      {
-        "declaration" : "(id)snapshotView",
-        "type" : "method",
-        "name" : "snapshotView",
-        "address" : 3505525
-      },
-      {
-        "declaration" : "(void)_enableScreenUpdates",
-        "type" : "method",
-        "name" : "_enableScreenUpdates",
-        "address" : 3505217
-      },
-      {
-        "declaration" : "(void)_disableScreenUpdates:(BOOL)arg1",
-        "type" : "method",
-        "name" : "_disableScreenUpdates:",
-        "address" : 3504085
-      },
-      {
-        "declaration" : "(void)_setSpeed:(float)arg1 forWindow:(id)arg2",
-        "type" : "method",
-        "name" : "_setSpeed:forWindow:",
-        "address" : 3503881
-      },
-      {
-        "declaration" : "(id)snapshotViewAfterScreenUpdates:(BOOL)arg1",
-        "type" : "method",
-        "name" : "snapshotViewAfterScreenUpdates:",
-        "address" : 3503309
+        "ivarType":"struct UIEdgeInsets { \n        double top; \n        double left; \n        double bottom; \n        double right; \n    }",
+        "name":"_jailTouchInsets",
+        "offset":384,
+        "type":"ivar"
       }
     ],
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "id",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_display"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "struct CGRect",
-        "size" : 16,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_bounds"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "float",
-        "size" : 4,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_scale"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "float",
-        "size" : 4,
-        "offset" : 28,
-        "type" : "ivar",
-        "name" : "_horizontalScale"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 32,
-        "type" : "ivar",
-        "name" : "_userInterfaceIdiom"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSDictionary *",
-        "size" : 4,
-        "offset" : 36,
-        "type" : "ivar",
-        "name" : "_capabilities"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 40,
-        "type" : "ivar",
-        "name" : "_workspaceCapableScreenType"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "UIWindow *",
-        "size" : 4,
-        "offset" : 44,
-        "type" : "ivar",
-        "name" : "_screenDisablingWindow"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "double",
-        "size" : 8,
-        "offset" : 48,
-        "type" : "ivar",
-        "name" : "_startedPausingWindows"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSMutableArray *",
-        "size" : 4,
-        "offset" : 56,
-        "type" : "ivar",
-        "name" : "_pausedWindows"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "struct __CFDictionary *",
-        "size" : 4,
-        "offset" : 60,
-        "type" : "ivar",
-        "name" : "_touchMap"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSArray *",
-        "size" : 4,
-        "offset" : 64,
-        "type" : "ivar",
-        "name" : "_availableDisplayModes"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "unsigned int",
-        "size" : 4,
-        "offset" : 68,
-        "type" : "ivar",
-        "name" : "_canAccessDisplaySeed"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "unsigned int",
-        "size" : 4,
-        "offset" : 72,
-        "type" : "ivar",
-        "name" : "_connectionSeed"
-      },
-      {
-        "alignment" : 0,
-        "ivarType" : "struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int canAccessDisplay:1;\n        unsigned int canAccessDisplaySeedValid:1;\n        unsigned int screenUpdatesDisabled:1;\n    }",
-        "size" : 2,
-        "offset" : 76,
-        "type" : "ivar",
-        "name" : "_screenFlags"
-      },
-      {
-        "alignment" : 0,
-        "ivarType" : "char",
-        "size" : 1,
-        "offset" : 78,
-        "type" : "ivar",
-        "name" : "_wantsSoftwareDimming"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "UISoftwareDimmingWindow *",
-        "size" : 4,
-        "offset" : 80,
-        "type" : "ivar",
-        "name" : "_softwareDimmingWindow"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 84,
-        "type" : "ivar",
-        "name" : "_lastNotifiedBacklightLevel"
-      }
-    ],
-    "properties" : [
-      {
-        "getter" : "bounds",
-        "setter" : "setBounds:",
-        "type" : "property",
-        "name" : "bounds",
-        "propertyType" : "struct CGRect"
-      },
-      {
-        "getter" : "applicationFrame",
-        "setter" : "setApplicationFrame:",
-        "type" : "property",
-        "name" : "applicationFrame",
-        "propertyType" : "struct CGRect"
-      },
-      {
-        "getter" : "scale",
-        "setter" : "setScale:",
-        "type" : "property",
-        "name" : "scale",
-        "propertyType" : "float"
-      },
-      {
-        "getter" : "availableModes",
-        "setter" : "setAvailableModes:",
-        "type" : "property",
-        "name" : "availableModes",
-        "propertyType" : "NSArray *"
-      },
-      {
-        "getter" : "preferredMode",
-        "setter" : "setPreferredMode:",
-        "type" : "property",
-        "name" : "preferredMode",
-        "propertyType" : "UIScreenMode *"
-      },
-      {
-        "getter" : "currentMode",
-        "setter" : "setCurrentMode:",
-        "type" : "property",
-        "name" : "currentMode",
-        "propertyType" : "UIScreenMode *"
-      },
-      {
-        "getter" : "overscanCompensation",
-        "setter" : "setOverscanCompensation:",
-        "type" : "property",
-        "name" : "overscanCompensation",
-        "propertyType" : "int"
-      },
-      {
-        "getter" : "mirroredScreen",
-        "setter" : "setMirroredScreen:",
-        "type" : "property",
-        "name" : "mirroredScreen",
-        "propertyType" : "UIScreen *"
-      },
-      {
-        "getter" : "brightness",
-        "setter" : "setBrightness:",
-        "type" : "property",
-        "name" : "brightness",
-        "propertyType" : "float"
-      },
-      {
-        "getter" : "wantsSoftwareDimming",
-        "setter" : "setWantsSoftwareDimming:",
-        "type" : "property",
-        "name" : "wantsSoftwareDimming",
-        "propertyType" : "char"
-      },
-      {
-        "getter" : "_softwareDimmingWindow",
-        "setter" : "_setSoftwareDimmingWindow:",
-        "type" : "property",
-        "name" : "_softwareDimmingWindow",
-        "propertyType" : "UISoftwareDimmingWindow *"
-      },
-      {
-        "getter" : "_lastNotifiedBacklightLevel",
-        "setter" : "_setLastNotifiedBacklightLevel:",
-        "type" : "property",
-        "name" : "_lastNotifiedBacklightLevel",
-        "propertyType" : "int"
-      },
-      {
-        "getter" : "_workspaceCapableScreenType",
-        "setter" : "_setWorkspaceCapableScreenType:",
-        "type" : "property",
-        "name" : "workspaceCapableScreenType",
-        "propertyType" : "int"
-      }
-    ],
-    "type" : "class",
-    "classMethods" : [
-      {
-        "declaration" : "(struct CGRect)convertRect:(struct CGRect)arg1 fromView:(id)arg2",
-        "type" : "method",
-        "name" : "convertRect:fromView:",
-        "address" : 851321
-      },
-      {
-        "declaration" : "(struct CGRect)convertRect:(struct CGRect)arg1 toView:(id)arg2",
-        "type" : "method",
-        "name" : "convertRect:toView:",
-        "address" : 822209
-      },
-      {
-        "declaration" : "(struct CGPoint)convertPoint:(struct CGPoint)arg1 fromView:(id)arg2",
-        "type" : "method",
-        "name" : "convertPoint:fromView:",
-        "address" : 3502829
-      },
-      {
-        "declaration" : "(struct CGPoint)convertPoint:(struct CGPoint)arg1 toView:(id)arg2",
-        "type" : "method",
-        "name" : "convertPoint:toView:",
-        "address" : 3502641
-      },
-      {
-        "declaration" : "(BOOL)_shouldDisableJail",
-        "type" : "method",
-        "name" : "_shouldDisableJail",
-        "address" : 3499009
-      },
-      {
-        "declaration" : "(void)_endDisableScreenUpdates",
-        "type" : "method",
-        "name" : "_endDisableScreenUpdates",
-        "address" : 3496521
-      },
-      {
-        "declaration" : "(void)_beginDisableScreenUpdatesForSnapshotUsingSnapshotCover:(BOOL)arg1",
-        "type" : "method",
-        "name" : "_beginDisableScreenUpdatesForSnapshotUsingSnapshotCover:",
-        "address" : 3496113
-      },
-      {
-        "declaration" : "(void)_beginDisableScreenUpdatesForSnapshot",
-        "type" : "method",
-        "name" : "_beginDisableScreenUpdatesForSnapshot",
-        "address" : 3496093
-      },
-      {
-        "declaration" : "(void)_prepareScreensForAppResume",
-        "type" : "method",
-        "name" : "_prepareScreensForAppResume",
-        "address" : 2540273
-      },
-      {
-        "declaration" : "(id)_screenWithIntegerDisplayID:(unsigned int)arg1",
-        "type" : "method",
-        "name" : "_screenWithIntegerDisplayID:",
-        "address" : 3495705
-      },
-      {
-        "declaration" : "(id)_screenWithDisplayID:(id)arg1",
-        "type" : "method",
-        "name" : "_screenWithDisplayID:",
-        "address" : 62117
-      },
-      {
-        "declaration" : "(id)_screenWithDisplayName:(id)arg1",
-        "type" : "method",
-        "name" : "_screenWithDisplayName:",
-        "address" : 3495457
-      },
-      {
-        "declaration" : "(id)_workspaceCapableScreens",
-        "type" : "method",
-        "name" : "_workspaceCapableScreens",
-        "address" : 590485
-      },
-      {
-        "declaration" : "(id)screens",
-        "type" : "method",
-        "name" : "screens",
-        "address" : 590605
-      },
-      {
-        "declaration" : "(void)_enumerateScreensWithBlock:(CDUnknownBlockType)arg1",
-        "type" : "method",
-        "name" : "_enumerateScreensWithBlock:",
-        "address" : 3495001
-      },
-      {
-        "declaration" : "(struct CGAffineTransform)transformToRotateScreen:(float)arg1",
-        "type" : "method",
-        "name" : "transformToRotateScreen:",
-        "address" : 3494781
-      },
-      {
-        "declaration" : "(struct CGAffineTransform)transformForScreenOriginRotation:(float)arg1",
-        "type" : "method",
-        "name" : "transformForScreenOriginRotation:",
-        "address" : 3494573
-      },
-      {
-        "declaration" : "(id)mainScreen",
-        "type" : "method",
-        "name" : "mainScreen",
-        "address" : 19933
-      },
-      {
-        "declaration" : "(void)_videoOutSettingsChanged",
-        "type" : "method",
-        "name" : "_videoOutSettingsChanged",
-        "address" : 3494017
-      },
-      {
-        "declaration" : "(void)initialize",
-        "type" : "method",
-        "name" : "initialize",
-        "address" : 463553
-      }
-    ]
-  },
-  "arm64" : {
-    "superClassName" : "NSObject",
-    "className" : "UIScreen",
-    "instanceMethods" : [
-      {
-        "declaration" : "(void)_setLastNotifiedBacklightLevel:(long long)arg1",
-        "type" : "method",
-        "name" : "_setLastNotifiedBacklightLevel:",
-        "address" : 3839000
-      },
-      {
-        "declaration" : "(long long)_lastNotifiedBacklightLevel",
-        "type" : "method",
-        "name" : "_lastNotifiedBacklightLevel",
-        "address" : 3838984
-      },
-      {
-        "declaration" : "(void)_setSoftwareDimmingWindow:(id)arg1",
-        "type" : "method",
-        "name" : "_setSoftwareDimmingWindow:",
-        "address" : 3838972
-      },
-      {
-        "declaration" : "(id)_softwareDimmingWindow",
-        "type" : "method",
-        "name" : "_softwareDimmingWindow",
-        "address" : 3838956
-      },
-      {
-        "declaration" : "(void)setWantsSoftwareDimming:(_Bool)arg1",
-        "type" : "method",
-        "name" : "setWantsSoftwareDimming:",
-        "address" : 3838940
-      },
-      {
-        "declaration" : "(_Bool)wantsSoftwareDimming",
-        "type" : "method",
-        "name" : "wantsSoftwareDimming",
-        "address" : 3838924
-      },
-      {
-        "declaration" : "(void)_setWorkspaceCapableScreenType:(long long)arg1",
-        "type" : "method",
-        "name" : "_setWorkspaceCapableScreenType:",
-        "address" : 3838908
-      },
-      {
-        "declaration" : "(long long)_workspaceCapableScreenType",
-        "type" : "method",
-        "name" : "_workspaceCapableScreenType",
-        "address" : 1638740
-      },
-      {
-        "declaration" : "(struct CGRect)bounds",
-        "type" : "method",
-        "name" : "bounds",
-        "address" : 92012
-      },
-      {
-        "declaration" : "(id)_snapshotExcludingWindows:(id)arg1 withRect:(struct CGRect)arg2",
-        "type" : "method",
-        "name" : "_snapshotExcludingWindows:withRect:",
-        "address" : 3838680
-      },
-      {
-        "declaration" : "(id)description",
-        "type" : "method",
-        "name" : "description",
-        "address" : 3837992
-      },
-      {
-        "declaration" : "(double)brightness",
-        "type" : "method",
-        "name" : "brightness",
-        "address" : 3837764
-      },
-      {
-        "declaration" : "(void)setBrightness:(double)arg1",
-        "type" : "method",
-        "name" : "setBrightness:",
-        "address" : 3837216
-      },
-      {
-        "declaration" : "(_Bool)_supportsBrightness",
-        "type" : "method",
-        "name" : "_supportsBrightness",
-        "address" : 3837136
-      },
-      {
-        "declaration" : "(void)_endObservingBacklightLevelNotifications",
-        "type" : "method",
-        "name" : "_endObservingBacklightLevelNotifications",
-        "address" : 3837000
-      },
-      {
-        "declaration" : "(void)_beginObservingBacklightLevelNotifications",
-        "type" : "method",
-        "name" : "_beginObservingBacklightLevelNotifications",
-        "address" : 520240
-      },
-      {
-        "declaration" : "(void)_postBrightnessDidChangeNotificationIfAppropriate",
-        "type" : "method",
-        "name" : "_postBrightnessDidChangeNotificationIfAppropriate",
-        "address" : 3836644
-      },
-      {
-        "declaration" : "(float)rawBrightnessForBacklightLevel:(float)arg1",
-        "type" : "method",
-        "name" : "rawBrightnessForBacklightLevel:",
-        "address" : 3836580
-      },
-      {
-        "declaration" : "(id)_lazySoftwareDimmingWindow",
-        "type" : "method",
-        "name" : "_lazySoftwareDimmingWindow",
-        "address" : 3836364
-      },
-      {
-        "declaration" : "(_Bool)_areMusicListsLimited",
-        "type" : "method",
-        "name" : "_areMusicListsLimited",
-        "address" : 3836296
-      },
-      {
-        "declaration" : "(_Bool)_areListsLimited",
-        "type" : "method",
-        "name" : "_areListsLimited",
-        "address" : 3836228
-      },
-      {
-        "declaration" : "(_Bool)_isUIElementLimited:(id)arg1",
-        "type" : "method",
-        "name" : "_isUIElementLimited:",
-        "address" : 3836100
-      },
-      {
-        "declaration" : "(_Bool)_canFocusViews",
-        "type" : "method",
-        "name" : "_canFocusViews",
-        "address" : 3835992
-      },
-      {
-        "declaration" : "(struct __CFDictionary *)_touchMap",
-        "type" : "method",
-        "name" : "_touchMap",
-        "address" : 3835976
-      },
-      {
-        "declaration" : "(void)_setTouchMap:(struct __CFDictionary *)arg1",
-        "type" : "method",
-        "name" : "_setTouchMap:",
-        "address" : 3835876
-      },
-      {
-        "declaration" : "(void)_updateWorkspaceCapableScreenType",
-        "type" : "method",
-        "name" : "_updateWorkspaceCapableScreenType",
-        "address" : 518856
-      },
-      {
-        "declaration" : "(_Bool)_isWorkspaceCapable",
-        "type" : "method",
-        "name" : "_isWorkspaceCapable",
-        "address" : 655780
-      },
-      {
-        "declaration" : "(id)_displayID",
-        "type" : "method",
-        "name" : "_displayID",
-        "address" : 81552
-      },
-      {
-        "declaration" : "(void)_setCapability:(id)arg1 forKey:(id)arg2",
-        "type" : "method",
-        "name" : "_setCapability:forKey:",
-        "address" : 3835652
-      },
-      {
-        "declaration" : "(id)_capabilityForKey:(id)arg1",
-        "type" : "method",
-        "name" : "_capabilityForKey:",
-        "address" : 208216
-      },
-      {
-        "declaration" : "(id)_capabilities",
-        "type" : "method",
-        "name" : "_capabilities",
-        "address" : 31524
-      },
-      {
-        "declaration" : "(void)_updateCapabilities",
-        "type" : "method",
-        "name" : "_updateCapabilities",
-        "address" : 519596
-      },
-      {
-        "declaration" : "(void)_setUserInterfaceIdiom:(long long)arg1",
-        "type" : "method",
-        "name" : "_setUserInterfaceIdiom:",
-        "address" : 519340
-      },
-      {
-        "declaration" : "(long long)_userInterfaceIdiom",
-        "type" : "method",
-        "name" : "_userInterfaceIdiom",
-        "address" : 97284
-      },
-      {
-        "declaration" : "(void)_updateUserInterfaceIdiom",
-        "type" : "method",
-        "name" : "_updateUserInterfaceIdiom",
-        "address" : 519112
-      },
-      {
-        "declaration" : "(void)_disconnectScreen",
-        "type" : "method",
-        "name" : "_disconnectScreen",
-        "address" : 3835516
-      },
-      {
-        "declaration" : "(void)_connectScreen",
-        "type" : "method",
-        "name" : "_connectScreen",
-        "address" : 518976
-      },
-      {
-        "declaration" : "(double)_pointsPerInch",
-        "type" : "method",
-        "name" : "_pointsPerInch",
-        "address" : 1229660
-      },
-      {
-        "declaration" : "(void)_setScale:(double)arg1",
-        "type" : "method",
-        "name" : "_setScale:",
-        "address" : 3835500
-      },
-      {
-        "declaration" : "(double)_scale",
-        "type" : "method",
-        "name" : "_scale",
-        "address" : 520400
-      },
-      {
-        "declaration" : "(double)scale",
-        "type" : "method",
-        "name" : "scale",
-        "address" : 79888
-      },
-      {
-        "declaration" : "(id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2",
-        "type" : "method",
-        "name" : "displayLinkWithTarget:selector:",
-        "address" : 1882436
-      },
-      {
-        "declaration" : "(void)_prepareForWindow",
-        "type" : "method",
-        "name" : "_prepareForWindow",
-        "address" : 3835328
-      },
-      {
-        "declaration" : "(_Bool)_hasStatusBar",
-        "type" : "method",
-        "name" : "_hasStatusBar",
-        "address" : 105120
-      },
-      {
-        "declaration" : "(_Bool)_isMainScreen",
-        "type" : "method",
-        "name" : "_isMainScreen",
-        "address" : 97492
-      },
-      {
-        "declaration" : "(_Bool)_isExternal",
-        "type" : "method",
-        "name" : "_isExternal",
-        "address" : 97592
-      },
-      {
-        "declaration" : "(id)_name",
-        "type" : "method",
-        "name" : "_name",
-        "address" : 3835284
-      },
-      {
-        "declaration" : "(unsigned int)_seed",
-        "type" : "method",
-        "name" : "_seed",
-        "address" : 3835256
-      },
-      {
-        "declaration" : "(unsigned int)_integerDisplayID",
-        "type" : "method",
-        "name" : "_integerDisplayID",
-        "address" : 538308
-      },
-      {
-        "declaration" : "(void)setOverscanCompensation:(long long)arg1",
-        "type" : "method",
-        "name" : "setOverscanCompensation:",
-        "address" : 3835188
-      },
-      {
-        "declaration" : "(long long)overscanCompensation",
-        "type" : "method",
-        "name" : "overscanCompensation",
-        "address" : 3835168
-      },
-      {
-        "declaration" : "(id)availableModes",
-        "type" : "method",
-        "name" : "availableModes",
-        "address" : 655644
-      },
-      {
-        "declaration" : "(int)screenType",
-        "type" : "method",
-        "name" : "screenType",
-        "address" : 3835112
-      },
-      {
-        "declaration" : "(void)setCurrentMode:(id)arg1",
-        "type" : "method",
-        "name" : "setCurrentMode:",
-        "address" : 3835000
-      },
-      {
-        "declaration" : "(id)currentMode",
-        "type" : "method",
-        "name" : "currentMode",
-        "address" : 517160
-      },
-      {
-        "declaration" : "(void)setBitsPerComponent:(int)arg1",
-        "type" : "method",
-        "name" : "setBitsPerComponent:",
-        "address" : 3834972
-      },
-      {
-        "declaration" : "(int)bitsPerComponent",
-        "type" : "method",
-        "name" : "bitsPerComponent",
-        "address" : 95740
-      },
-      {
-        "declaration" : "(id)preferredMode",
-        "type" : "method",
-        "name" : "preferredMode",
-        "address" : 3834828
-      },
-      {
-        "declaration" : "(id)mirroredScreen",
-        "type" : "method",
-        "name" : "mirroredScreen",
-        "address" : 669388
-      },
-      {
-        "declaration" : "(double)_refreshRate",
-        "type" : "method",
-        "name" : "_refreshRate",
-        "address" : 3834800
-      },
-      {
-        "declaration" : "(long long)_imageOrientation",
-        "type" : "method",
-        "name" : "_imageOrientation",
-        "address" : 3834556
-      },
-      {
-        "declaration" : "(double)_rotation",
-        "type" : "method",
-        "name" : "_rotation",
-        "address" : 97396
-      },
-      {
-        "declaration" : "(struct CGRect)_boundsInPixels",
-        "type" : "method",
-        "name" : "_boundsInPixels",
-        "address" : 521220
-      },
-      {
-        "declaration" : "(struct CGRect)_realDisplayBounds",
-        "type" : "method",
-        "name" : "_realDisplayBounds",
-        "address" : 97300
-      },
-      {
-        "declaration" : "(double)_horizontalPixelScale",
-        "type" : "method",
-        "name" : "_horizontalPixelScale",
-        "address" : 97776
-      },
-      {
-        "declaration" : "(struct CGRect)applicationFrame",
-        "type" : "method",
-        "name" : "applicationFrame",
-        "address" : 104372
-      },
-      {
-        "declaration" : "(void)_computeMetrics",
-        "type" : "method",
-        "name" : "_computeMetrics",
-        "address" : 516288
-      },
-      {
-        "declaration" : "(_Bool)_isRotatable",
-        "type" : "method",
-        "name" : "_isRotatable",
-        "address" : 1098284
-      },
-      {
-        "declaration" : "(_Bool)_areBoundsJailed",
-        "type" : "method",
-        "name" : "_areBoundsJailed",
-        "address" : 97092
-      },
-      {
-        "declaration" : "(struct UIEdgeInsets)_jailedBoundsEdgeInsets",
-        "type" : "method",
-        "name" : "_jailedBoundsEdgeInsets",
-        "address" : 97164
-      },
-      {
-        "declaration" : "(struct UIEdgeInsets)_rawJailedBoundsEdgeInsets",
-        "type" : "method",
-        "name" : "_rawJailedBoundsEdgeInsets",
-        "address" : 3834420
-      },
-      {
-        "declaration" : "(struct CGRect)_applicationFrameForInterfaceOrientation:(long long)arg1",
-        "type" : "method",
-        "name" : "_applicationFrameForInterfaceOrientation:",
-        "address" : 104464
-      },
-      {
-        "declaration" : "(struct CGRect)_applicationFrameForInterfaceOrientation:(long long)arg1 usingStatusbarHeight:(double)arg2",
-        "type" : "method",
-        "name" : "_applicationFrameForInterfaceOrientation:usingStatusbarHeight:",
-        "address" : 104500
-      },
-      {
-        "declaration" : "(void)_updateOverscanCompensationAllowingBackgroundUpdate:(_Bool)arg1",
-        "type" : "method",
-        "name" : "_updateOverscanCompensationAllowingBackgroundUpdate:",
-        "address" : 517676
-      },
-      {
-        "declaration" : "(_Bool)_overscanAdjustmentNeedsUpdate",
-        "type" : "method",
-        "name" : "_overscanAdjustmentNeedsUpdate",
-        "address" : 518532
-      },
-      {
-        "declaration" : "(_Bool)_isOverscanned",
-        "type" : "method",
-        "name" : "_isOverscanned",
-        "address" : 518716
-      },
-      {
-        "declaration" : "(_Bool)_hasWindows",
-        "type" : "method",
-        "name" : "_hasWindows",
-        "address" : 3833912
-      },
-      {
-        "declaration" : "(void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4",
-        "type" : "method",
-        "name" : "observeValueForKeyPath:ofObject:change:context:",
-        "address" : 3832588
-      },
-      {
-        "declaration" : "(void)_updateAvailableDisplayModes",
-        "type" : "method",
-        "name" : "_updateAvailableDisplayModes",
-        "address" : 3832088
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 3831640
-      },
-      {
-        "declaration" : "(id)initWithDisplay:(id)arg1",
-        "type" : "method",
-        "name" : "initWithDisplay:",
-        "address" : 515704
-      },
-      {
-        "declaration" : "(void)_ensureConnectedIfPossible",
-        "type" : "method",
-        "name" : "_ensureConnectedIfPossible",
-        "address" : 3830644
-      }
-    ],
-    "ivars" : [
-      {
-        "alignment" : 3,
-        "ivarType" : "id",
-        "size" : 8,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_display"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "struct CGRect",
-        "size" : 32,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_bounds"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "double",
-        "size" : 8,
-        "offset" : 48,
-        "type" : "ivar",
-        "name" : "_scale"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "double",
-        "size" : 8,
-        "offset" : 56,
-        "type" : "ivar",
-        "name" : "_horizontalScale"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 64,
-        "type" : "ivar",
-        "name" : "_userInterfaceIdiom"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSDictionary *",
-        "size" : 8,
-        "offset" : 72,
-        "type" : "ivar",
-        "name" : "_capabilities"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 80,
-        "type" : "ivar",
-        "name" : "_workspaceCapableScreenType"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "UIWindow *",
-        "size" : 8,
-        "offset" : 88,
-        "type" : "ivar",
-        "name" : "_screenDisablingWindow"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "double",
-        "size" : 8,
-        "offset" : 96,
-        "type" : "ivar",
-        "name" : "_startedPausingWindows"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSMutableArray *",
-        "size" : 8,
-        "offset" : 104,
-        "type" : "ivar",
-        "name" : "_pausedWindows"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "struct __CFDictionary *",
-        "size" : 8,
-        "offset" : 112,
-        "type" : "ivar",
-        "name" : "_touchMap"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSArray *",
-        "size" : 8,
-        "offset" : 120,
-        "type" : "ivar",
-        "name" : "_availableDisplayModes"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "unsigned int",
-        "size" : 4,
-        "offset" : 128,
-        "type" : "ivar",
-        "name" : "_canAccessDisplaySeed"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "unsigned int",
-        "size" : 4,
-        "offset" : 132,
-        "type" : "ivar",
-        "name" : "_connectionSeed"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int canAccessDisplay:1;\n        unsigned int canAccessDisplaySeedValid:1;\n        unsigned int screenUpdatesDisabled:1;\n    }",
-        "size" : 4,
-        "offset" : 136,
-        "type" : "ivar",
-        "name" : "_screenFlags"
-      },
-      {
-        "alignment" : 0,
-        "ivarType" : "_Bool",
-        "size" : 1,
-        "offset" : 140,
-        "type" : "ivar",
-        "name" : "_wantsSoftwareDimming"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "UISoftwareDimmingWindow *",
-        "size" : 8,
-        "offset" : 144,
-        "type" : "ivar",
-        "name" : "_softwareDimmingWindow"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 152,
-        "type" : "ivar",
-        "name" : "_lastNotifiedBacklightLevel"
-      }
-    ],
-    "properties" : [
-      {
-        "type" : "property",
-        "propertyType" : "struct CGRect",
-        "name" : "bounds",
-        "getter" : "bounds",
-        "setter" : "setBounds:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "struct CGRect",
-        "name" : "applicationFrame",
-        "getter" : "applicationFrame",
-        "setter" : "setApplicationFrame:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "double",
-        "name" : "scale",
-        "getter" : "scale",
-        "setter" : "setScale:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "NSArray *",
-        "name" : "availableModes",
-        "getter" : "availableModes",
-        "setter" : "setAvailableModes:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "UIScreenMode *",
-        "name" : "preferredMode",
-        "getter" : "preferredMode",
-        "setter" : "setPreferredMode:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "UIScreenMode *",
-        "name" : "currentMode",
-        "getter" : "currentMode",
-        "setter" : "setCurrentMode:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "long long",
-        "name" : "overscanCompensation",
-        "getter" : "overscanCompensation",
-        "setter" : "setOverscanCompensation:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "UIScreen *",
-        "name" : "mirroredScreen",
-        "getter" : "mirroredScreen",
-        "setter" : "setMirroredScreen:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "double",
-        "name" : "brightness",
-        "getter" : "brightness",
-        "setter" : "setBrightness:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "_Bool",
-        "name" : "wantsSoftwareDimming",
-        "getter" : "wantsSoftwareDimming",
-        "setter" : "setWantsSoftwareDimming:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "UISoftwareDimmingWindow *",
-        "name" : "_softwareDimmingWindow",
-        "getter" : "_softwareDimmingWindow",
-        "setter" : "_setSoftwareDimmingWindow:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "long long",
-        "name" : "_lastNotifiedBacklightLevel",
-        "getter" : "_lastNotifiedBacklightLevel",
-        "setter" : "_setLastNotifiedBacklightLevel:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "long long",
-        "name" : "workspaceCapableScreenType",
-        "getter" : "_workspaceCapableScreenType",
-        "setter" : "_setWorkspaceCapableScreenType:"
-      }
-    ],
-    "type" : "class",
-    "classMethods" : [
-      {
-        "declaration" : "(struct CGRect)convertRect:(struct CGRect)arg1 fromView:(id)arg2",
-        "type" : "method",
-        "name" : "convertRect:fromView:",
-        "address" : 933468
-      },
-      {
-        "declaration" : "(struct CGRect)convertRect:(struct CGRect)arg1 toView:(id)arg2",
-        "type" : "method",
-        "name" : "convertRect:toView:",
-        "address" : 902524
-      },
-      {
-        "declaration" : "(struct CGPoint)convertPoint:(struct CGPoint)arg1 fromView:(id)arg2",
-        "type" : "method",
-        "name" : "convertPoint:fromView:",
-        "address" : 3838500
-      },
-      {
-        "declaration" : "(struct CGPoint)convertPoint:(struct CGPoint)arg1 toView:(id)arg2",
-        "type" : "method",
-        "name" : "convertPoint:toView:",
-        "address" : 3838328
-      },
-      {
-        "declaration" : "(_Bool)_shouldDisableJail",
-        "type" : "method",
-        "name" : "_shouldDisableJail",
-        "address" : 3834244
-      },
-      {
-        "declaration" : "(void)_endDisableScreenUpdates",
-        "type" : "method",
-        "name" : "_endDisableScreenUpdates",
-        "address" : 3831320
-      },
-      {
-        "declaration" : "(void)_beginDisableScreenUpdatesForSnapshotUsingSnapshotCover:(_Bool)arg1",
-        "type" : "method",
-        "name" : "_beginDisableScreenUpdatesForSnapshotUsingSnapshotCover:",
-        "address" : 3830860
-      },
-      {
-        "declaration" : "(void)_beginDisableScreenUpdatesForSnapshot",
-        "type" : "method",
-        "name" : "_beginDisableScreenUpdatesForSnapshot",
-        "address" : 3830840
-      },
-      {
-        "declaration" : "(void)_prepareScreensForAppResume",
-        "type" : "method",
-        "name" : "_prepareScreensForAppResume",
-        "address" : 2766656
-      },
-      {
-        "declaration" : "(id)_screenWithIntegerDisplayID:(unsigned int)arg1",
-        "type" : "method",
-        "name" : "_screenWithIntegerDisplayID:",
-        "address" : 3830336
-      },
-      {
-        "declaration" : "(id)_screenWithDisplayID:(id)arg1",
-        "type" : "method",
-        "name" : "_screenWithDisplayID:",
-        "address" : 81216
-      },
-      {
-        "declaration" : "(id)_screenWithDisplayName:(id)arg1",
-        "type" : "method",
-        "name" : "_screenWithDisplayName:",
-        "address" : 3829992
-      },
-      {
-        "declaration" : "(id)_workspaceCapableScreens",
-        "type" : "method",
-        "name" : "_workspaceCapableScreens",
-        "address" : 655276
-      },
-      {
-        "declaration" : "(id)screens",
-        "type" : "method",
-        "name" : "screens",
-        "address" : 655416
-      },
-      {
-        "declaration" : "(void)_enumerateScreensWithBlock:(CDUnknownBlockType)arg1",
-        "type" : "method",
-        "name" : "_enumerateScreensWithBlock:",
-        "address" : 3829336
-      },
-      {
-        "declaration" : "(struct CGAffineTransform)transformToRotateScreen:(double)arg1",
-        "type" : "method",
-        "name" : "transformToRotateScreen:",
-        "address" : 3829156
-      },
-      {
-        "declaration" : "(struct CGAffineTransform)transformForScreenOriginRotation:(double)arg1",
-        "type" : "method",
-        "name" : "transformForScreenOriginRotation:",
-        "address" : 3828952
-      },
-      {
-        "declaration" : "(id)mainScreen",
-        "type" : "method",
-        "name" : "mainScreen",
-        "address" : 31492
-      },
-      {
-        "declaration" : "(void)_videoOutSettingsChanged",
-        "type" : "method",
-        "name" : "_videoOutSettingsChanged",
-        "address" : 3828260
-      },
-      {
-        "declaration" : "(void)initialize",
-        "type" : "method",
-        "name" : "initialize",
-        "address" : 515000
-      }
-    ]
+    "superClassName":"NSObject",
+    "type":"class"
   }
 }

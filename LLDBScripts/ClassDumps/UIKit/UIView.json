@@ -3,178 +3,143 @@
     "className":"UIView",
     "ivars":[
       {
-        "alignment":3,
         "ivarType":"CALayer *",
         "name":"_layer",
         "offset":88,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"id",
         "name":"_gestureInfo",
         "offset":96,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSMutableArray *",
         "name":"_gestureRecognizers",
         "offset":104,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSArray *",
         "name":"_subviewCache",
         "offset":112,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"float",
         "name":"_charge",
         "offset":120,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_tag",
         "offset":128,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"UIViewController *",
         "name":"_viewDelegate",
         "offset":136,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSString *",
         "name":"_backgroundColorSystemColorName",
         "offset":144,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"unsigned long long",
         "name":"_countOfMotionEffectsInSubtree",
         "offset":152,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"struct {\n        unsigned int userInteractionDisabled:1;\n        unsigned int implementsDrawRect:1;\n        unsigned int implementsDidScroll:1;\n        unsigned int implementsMouseTracking:1;\n        unsigned int hasBackgroundColor:1;\n        unsigned int isOpaque:1;\n        unsigned int becomeFirstResponderWhenCapable:1;\n        unsigned int interceptMouseEvent:1;\n        unsigned int deallocating:1;\n        unsigned int debugFlash:1;\n        unsigned int debugSkippedSetNeedsDisplay:1;\n        unsigned int debugScheduledDisplayIsRequired:1;\n        unsigned int isInAWindow:1;\n        unsigned int isAncestorOfFirstResponder:1;\n        unsigned int dontAutoresizeSubviews:1;\n        unsigned int autoresizeMask:6;\n        unsigned int patternBackground:1;\n        unsigned int fixedBackgroundPattern:1;\n        unsigned int dontAnimate:1;\n        unsigned int superLayerIsView:1;\n        unsigned int layerKitPatternDrawing:1;\n        unsigned int multipleTouchEnabled:1;\n        unsigned int exclusiveTouch:1;\n        unsigned int hasViewController:1;\n        unsigned int needsDidAppearOrDisappear:1;\n        unsigned int gesturesEnabled:1;\n        unsigned int deliversTouchesForGesturesToSuperview:1;\n        unsigned int chargeEnabled:1;\n        unsigned int skipsSubviewEnumeration:1;\n        unsigned int needsDisplayOnBoundsChange:1;\n        unsigned int hasTiledLayer:1;\n        unsigned int hasLargeContent:1;\n        unsigned int unused:1;\n        unsigned int traversalMark:1;\n        unsigned int appearanceIsInvalid:1;\n        unsigned int monitorsSubtree:1;\n        unsigned int hostsAutolayoutEngine:1;\n        unsigned int constraintsAreClean:1;\n        unsigned int subviewLayoutConstraintsAreClean:1;\n        unsigned int intrinsicContentSizeConstraintsAreClean:1;\n        unsigned int potentiallyHasDanglyConstraints:1;\n        unsigned int doesNotTranslateAutoresizingMaskIntoConstraints:1;\n        unsigned int autolayoutIsClean:1;\n        unsigned int subviewsAutolayoutIsClean:1;\n        unsigned int layoutFlushingDisabled:1;\n        unsigned int layingOutFromConstraints:1;\n        unsigned int wantsAutolayout:1;\n        unsigned int subviewWantsAutolayout:1;\n        unsigned int isApplyingValuesFromEngine:1;\n        unsigned int isInAutolayout:1;\n        unsigned int isUpdatingAutoresizingConstraints:1;\n        unsigned int isUpdatingConstraints:1;\n        unsigned int stayHiddenAwaitingReuse:1;\n        unsigned int stayHiddenAfterReuse:1;\n        unsigned int skippedLayoutWhileHiddenForReuse:1;\n        unsigned int hasMaskView:1;\n        unsigned int hasVisualAltitude:1;\n        unsigned int hasBackdropMaskViews:1;\n        unsigned int backdropMaskViewFlags:3;\n        unsigned int delaysTouchesForSystemGestures:1;\n        unsigned int subclassShouldDelayTouchForSystemGestures:1;\n        unsigned int hasMotionEffects:1;\n        unsigned int backdropOverlayMode:2;\n        unsigned int tintAdjustmentMode:2;\n        unsigned int isReferenceView:1;\n        unsigned int focusState:2;\n        unsigned int hasUserInterfaceIdiom:1;\n        unsigned int userInterfaceIdiom:3;\n        unsigned int ancestorDefinesTintColor:1;\n        unsigned int ancestorDefinesTintAdjustmentMode:1;\n    }",
+        "ivarType":"struct { \n        unsigned int userInteractionDisabled : 1; \n        unsigned int implementsDrawRect : 1; \n        unsigned int implementsDidScroll : 1; \n        unsigned int implementsMouseTracking : 1; \n        unsigned int implementsIntrinsicContentSize : 1; \n        unsigned int hasBackgroundColor : 1; \n        unsigned int isOpaque : 1; \n        unsigned int becomeFirstResponderWhenCapable : 1; \n        unsigned int interceptMouseEvent : 1; \n        unsigned int deallocating : 1; \n        unsigned int debugFlash : 1; \n        unsigned int debugSkippedSetNeedsDisplay : 1; \n        unsigned int debugScheduledDisplayIsRequired : 1; \n        unsigned int isInAWindow : 1; \n        unsigned int isAncestorOfFirstResponder : 1; \n        unsigned int dontAutoresizeSubviews : 1; \n        unsigned int autoresizeMask : 6; \n        unsigned int patternBackground : 1; \n        unsigned int fixedBackgroundPattern : 1; \n        unsigned int dontAnimate : 1; \n        unsigned int superLayerIsView : 1; \n        unsigned int layerKitPatternDrawing : 1; \n        unsigned int multipleTouchEnabled : 1; \n        unsigned int exclusiveTouch : 1; \n        unsigned int hasViewController : 1; \n        unsigned int needsDidAppearOrDisappear : 1; \n        unsigned int gesturesEnabled : 1; \n        unsigned int deliversTouchesForGesturesToSuperview : 1; \n        unsigned int chargeEnabled : 1; \n        unsigned int skipsSubviewEnumeration : 1; \n        unsigned int needsDisplayOnBoundsChange : 1; \n        unsigned int hasTiledLayer : 1; \n        unsigned int hasLargeContent : 1; \n        unsigned int unused : 1; \n        unsigned int traversalMark : 1; \n        unsigned int appearanceIsInvalid : 1; \n        unsigned int monitorsSubtree : 1; \n        unsigned int hostsAutolayoutEngine : 1; \n        unsigned int constraintsAreClean : 1; \n        unsigned int subviewLayoutConstraintsAreClean : 1; \n        unsigned int intrinsicContentSizeConstraintsAreClean : 1; \n        unsigned int potentiallyHasDanglyConstraints : 1; \n        unsigned int doesNotTranslateAutoresizingMaskIntoConstraints : 1; \n        unsigned int autolayoutIsClean : 1; \n        unsigned int layoutFlushingDisabled : 1; \n        unsigned int layingOutFromConstraints : 1; \n        unsigned int wantsAutolayout : 1; \n        unsigned int subviewWantsAutolayout : 1; \n        unsigned int isApplyingValuesFromEngine : 1; \n        unsigned int isInAutolayout : 1; \n        unsigned int isSubviewUpdatingAutoresizingConstraints : 1; \n        unsigned int isUpdatingConstraints : 1; \n        unsigned int isHostingUpdateConstraintsPassDuringLayout : 1; \n        unsigned int isRunningEngineLevelConstraintsPass : 1; \n        unsigned int isUnsatisfiableConstraintsLoggingSuspended : 1; \n        unsigned int systemLayoutFittingSizeNeedsUpdate : 1; \n        unsigned int systemLayoutFittingSizeNeedsUpdateInWholeSubtree : 1; \n        unsigned int isCalculatingSystemLayoutFittingSize : 1; \n        unsigned int stayHiddenAwaitingReuse : 1; \n        unsigned int stayHiddenAfterReuse : 1; \n        unsigned int skippedLayoutWhileHiddenForReuse : 1; \n        unsigned int hasMaskView : 1; \n        unsigned int hasVisualAltitude : 1; \n        unsigned int hasBackdropMaskViews : 1; \n        unsigned int backdropMaskViewFlags : 5; \n        unsigned int delaysTouchesForSystemGestures : 1; \n        unsigned int subclassShouldDelayTouchForSystemGestures : 1; \n        unsigned int hasMotionEffects : 1; \n        unsigned int backdropOverlayMode : 2; \n        unsigned int tintAdjustmentMode : 2; \n        unsigned int isReferenceView : 1; \n        unsigned int focusState : 2; \n        unsigned int hasUserInterfaceIdiom : 1; \n        unsigned int userInterfaceIdiom : 3; \n        unsigned int ancestorDefinesTintColor : 1; \n        unsigned int ancestorDefinesTintAdjustmentMode : 1; \n        unsigned int needsTraitCollectionDidChange : 1; \n        unsigned int coloredViewBounds : 1; \n        unsigned int coloredAlignmentRects : 1; \n        unsigned int preservesSuperviewMargins : 1; \n        unsigned int hasGeometryObservers : 1; \n        unsigned int wantsGeometryChanges : 1; \n    }",
         "name":"_viewFlags",
         "offset":160,
-        "size":12,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_retainCount",
         "offset":176,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_tintAdjustmentDimmingCount",
         "offset":184,
-        "size":8,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_shouldArchiveUIAppearanceTags",
         "offset":192,
-        "size":1,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"UIColor *",
         "name":"_interactionTintColor",
         "offset":200,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
-        "ivarType":"NSISEngine *",
-        "name":"_layoutEngine",
-        "offset":208,
-        "size":8,
-        "type":"ivar"
-      },
-      {
-        "alignment":3,
-        "ivarType":"NSISVariable *",
-        "name":"_boundsWidthVariable",
-        "offset":216,
-        "size":8,
-        "type":"ivar"
-      },
-      {
-        "alignment":3,
-        "ivarType":"NSISVariable *",
-        "name":"_boundsHeightVariable",
-        "offset":224,
-        "size":8,
-        "type":"ivar"
-      },
-      {
-        "alignment":3,
         "ivarType":"NSISVariable *",
         "name":"_minXVariable",
-        "offset":232,
-        "size":8,
+        "offset":208,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSISVariable *",
         "name":"_minYVariable",
-        "offset":240,
-        "size":8,
+        "offset":216,
         "type":"ivar"
       },
       {
-        "alignment":3,
+        "ivarType":"NSISVariable *",
+        "name":"_boundsWidthVariable",
+        "offset":224,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSISVariable *",
+        "name":"_boundsHeightVariable",
+        "offset":232,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSISEngine *",
+        "name":"_layoutEngine",
+        "offset":240,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_layoutDebuggingIdentifier",
+        "offset":248,
+        "type":"ivar"
+      },
+      {
         "ivarType":"NSMutableArray *",
         "name":"_internalConstraints",
-        "offset":248,
-        "size":8,
+        "offset":256,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSArray *",
         "name":"_constraintsExceptingSubviewAutoresizingConstraints",
-        "offset":256,
-        "size":8,
+        "offset":264,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIPresentationController *",
+        "name":"__presentationControllerToNotifyOnLayoutSubviews",
+        "offset":272,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "NSCoding",
-      "UIAppearance",
-      "UIAppearanceContainer",
-      "UIDynamicItem"
     ],
     "superClassName":"UIResponder",
     "type":"class"
@@ -183,366 +148,143 @@
     "className":"UIView",
     "ivars":[
       {
-        "alignment":2,
         "ivarType":"CALayer *",
         "name":"_layer",
         "offset":44,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"id",
         "name":"_gestureInfo",
         "offset":48,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSMutableArray *",
         "name":"_gestureRecognizers",
         "offset":52,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSArray *",
         "name":"_subviewCache",
         "offset":56,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"float",
         "name":"_charge",
         "offset":60,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_tag",
         "offset":64,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"UIViewController *",
         "name":"_viewDelegate",
         "offset":68,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSString *",
         "name":"_backgroundColorSystemColorName",
         "offset":72,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"unsigned int",
         "name":"_countOfMotionEffectsInSubtree",
         "offset":76,
-        "size":4,
         "type":"ivar"
       },
       {
-        "ivarType":"struct {\n        unsigned int userInteractionDisabled:1;\n        unsigned int implementsDrawRect:1;\n        unsigned int implementsDidScroll:1;\n        unsigned int implementsMouseTracking:1;\n        unsigned int hasBackgroundColor:1;\n        unsigned int isOpaque:1;\n        unsigned int becomeFirstResponderWhenCapable:1;\n        unsigned int interceptMouseEvent:1;\n        unsigned int deallocating:1;\n        unsigned int debugFlash:1;\n        unsigned int debugSkippedSetNeedsDisplay:1;\n        unsigned int debugScheduledDisplayIsRequired:1;\n        unsigned int isInAWindow:1;\n        unsigned int isAncestorOfFirstResponder:1;\n        unsigned int dontAutoresizeSubviews:1;\n        unsigned int autoresizeMask:6;\n        unsigned int patternBackground:1;\n        unsigned int fixedBackgroundPattern:1;\n        unsigned int dontAnimate:1;\n        unsigned int superLayerIsView:1;\n        unsigned int layerKitPatternDrawing:1;\n        unsigned int multipleTouchEnabled:1;\n        unsigned int exclusiveTouch:1;\n        unsigned int hasViewController:1;\n        unsigned int needsDidAppearOrDisappear:1;\n        unsigned int gesturesEnabled:1;\n        unsigned int deliversTouchesForGesturesToSuperview:1;\n        unsigned int chargeEnabled:1;\n        unsigned int skipsSubviewEnumeration:1;\n        unsigned int needsDisplayOnBoundsChange:1;\n        unsigned int hasTiledLayer:1;\n        unsigned int hasLargeContent:1;\n        unsigned int unused:1;\n        unsigned int traversalMark:1;\n        unsigned int appearanceIsInvalid:1;\n        unsigned int monitorsSubtree:1;\n        unsigned int hostsAutolayoutEngine:1;\n        unsigned int constraintsAreClean:1;\n        unsigned int subviewLayoutConstraintsAreClean:1;\n        unsigned int intrinsicContentSizeConstraintsAreClean:1;\n        unsigned int potentiallyHasDanglyConstraints:1;\n        unsigned int doesNotTranslateAutoresizingMaskIntoConstraints:1;\n        unsigned int autolayoutIsClean:1;\n        unsigned int subviewsAutolayoutIsClean:1;\n        unsigned int layoutFlushingDisabled:1;\n        unsigned int layingOutFromConstraints:1;\n        unsigned int wantsAutolayout:1;\n        unsigned int subviewWantsAutolayout:1;\n        unsigned int isApplyingValuesFromEngine:1;\n        unsigned int isInAutolayout:1;\n        unsigned int isUpdatingAutoresizingConstraints:1;\n        unsigned int isUpdatingConstraints:1;\n        unsigned int stayHiddenAwaitingReuse:1;\n        unsigned int stayHiddenAfterReuse:1;\n        unsigned int skippedLayoutWhileHiddenForReuse:1;\n        unsigned int hasMaskView:1;\n        unsigned int hasVisualAltitude:1;\n        unsigned int hasBackdropMaskViews:1;\n        unsigned int backdropMaskViewFlags:3;\n        unsigned int delaysTouchesForSystemGestures:1;\n        unsigned int subclassShouldDelayTouchForSystemGestures:1;\n        unsigned int hasMotionEffects:1;\n        unsigned int backdropOverlayMode:2;\n        unsigned int tintAdjustmentMode:2;\n        unsigned int isReferenceView:1;\n        unsigned int focusState:2;\n        unsigned int hasUserInterfaceIdiom:1;\n        unsigned int userInterfaceIdiom:3;\n        unsigned int ancestorDefinesTintColor:1;\n        unsigned int ancestorDefinesTintAdjustmentMode:1;\n    }",
+        "ivarType":"struct { \n        unsigned int userInteractionDisabled : 1; \n        unsigned int implementsDrawRect : 1; \n        unsigned int implementsDidScroll : 1; \n        unsigned int implementsMouseTracking : 1; \n        unsigned int implementsIntrinsicContentSize : 1; \n        unsigned int hasBackgroundColor : 1; \n        unsigned int isOpaque : 1; \n        unsigned int becomeFirstResponderWhenCapable : 1; \n        unsigned int interceptMouseEvent : 1; \n        unsigned int deallocating : 1; \n        unsigned int debugFlash : 1; \n        unsigned int debugSkippedSetNeedsDisplay : 1; \n        unsigned int debugScheduledDisplayIsRequired : 1; \n        unsigned int isInAWindow : 1; \n        unsigned int isAncestorOfFirstResponder : 1; \n        unsigned int dontAutoresizeSubviews : 1; \n        unsigned int autoresizeMask : 6; \n        unsigned int patternBackground : 1; \n        unsigned int fixedBackgroundPattern : 1; \n        unsigned int dontAnimate : 1; \n        unsigned int superLayerIsView : 1; \n        unsigned int layerKitPatternDrawing : 1; \n        unsigned int multipleTouchEnabled : 1; \n        unsigned int exclusiveTouch : 1; \n        unsigned int hasViewController : 1; \n        unsigned int needsDidAppearOrDisappear : 1; \n        unsigned int gesturesEnabled : 1; \n        unsigned int deliversTouchesForGesturesToSuperview : 1; \n        unsigned int chargeEnabled : 1; \n        unsigned int skipsSubviewEnumeration : 1; \n        unsigned int needsDisplayOnBoundsChange : 1; \n        unsigned int hasTiledLayer : 1; \n        unsigned int hasLargeContent : 1; \n        unsigned int unused : 1; \n        unsigned int traversalMark : 1; \n        unsigned int appearanceIsInvalid : 1; \n        unsigned int monitorsSubtree : 1; \n        unsigned int hostsAutolayoutEngine : 1; \n        unsigned int constraintsAreClean : 1; \n        unsigned int subviewLayoutConstraintsAreClean : 1; \n        unsigned int intrinsicContentSizeConstraintsAreClean : 1; \n        unsigned int potentiallyHasDanglyConstraints : 1; \n        unsigned int doesNotTranslateAutoresizingMaskIntoConstraints : 1; \n        unsigned int autolayoutIsClean : 1; \n        unsigned int layoutFlushingDisabled : 1; \n        unsigned int layingOutFromConstraints : 1; \n        unsigned int wantsAutolayout : 1; \n        unsigned int subviewWantsAutolayout : 1; \n        unsigned int isApplyingValuesFromEngine : 1; \n        unsigned int isInAutolayout : 1; \n        unsigned int isSubviewUpdatingAutoresizingConstraints : 1; \n        unsigned int isUpdatingConstraints : 1; \n        unsigned int isHostingUpdateConstraintsPassDuringLayout : 1; \n        unsigned int isRunningEngineLevelConstraintsPass : 1; \n        unsigned int isUnsatisfiableConstraintsLoggingSuspended : 1; \n        unsigned int systemLayoutFittingSizeNeedsUpdate : 1; \n        unsigned int systemLayoutFittingSizeNeedsUpdateInWholeSubtree : 1; \n        unsigned int isCalculatingSystemLayoutFittingSize : 1; \n        unsigned int stayHiddenAwaitingReuse : 1; \n        unsigned int stayHiddenAfterReuse : 1; \n        unsigned int skippedLayoutWhileHiddenForReuse : 1; \n        unsigned int hasMaskView : 1; \n        unsigned int hasVisualAltitude : 1; \n        unsigned int hasBackdropMaskViews : 1; \n        unsigned int backdropMaskViewFlags : 5; \n        unsigned int delaysTouchesForSystemGestures : 1; \n        unsigned int subclassShouldDelayTouchForSystemGestures : 1; \n        unsigned int hasMotionEffects : 1; \n        unsigned int backdropOverlayMode : 2; \n        unsigned int tintAdjustmentMode : 2; \n        unsigned int isReferenceView : 1; \n        unsigned int focusState : 2; \n        unsigned int hasUserInterfaceIdiom : 1; \n        unsigned int userInterfaceIdiom : 3; \n        unsigned int ancestorDefinesTintColor : 1; \n        unsigned int ancestorDefinesTintAdjustmentMode : 1; \n        unsigned int needsTraitCollectionDidChange : 1; \n        unsigned int coloredViewBounds : 1; \n        unsigned int coloredAlignmentRects : 1; \n        unsigned int preservesSuperviewMargins : 1; \n        unsigned int hasGeometryObservers : 1; \n        unsigned int wantsGeometryChanges : 1; \n    }",
         "name":"_viewFlags",
         "offset":80,
-        "size":11,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_retainCount",
         "offset":92,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_tintAdjustmentDimmingCount",
         "offset":96,
-        "size":4,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_shouldArchiveUIAppearanceTags",
         "offset":100,
-        "size":1,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"UIColor *",
         "name":"_interactionTintColor",
         "offset":104,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"NSISEngine *",
-        "name":"_layoutEngine",
-        "offset":108,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSISVariable *",
-        "name":"_boundsWidthVariable",
-        "offset":112,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSISVariable *",
-        "name":"_boundsHeightVariable",
-        "offset":116,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
         "ivarType":"NSISVariable *",
         "name":"_minXVariable",
-        "offset":120,
-        "size":4,
+        "offset":108,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSISVariable *",
         "name":"_minYVariable",
+        "offset":112,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSISVariable *",
+        "name":"_boundsWidthVariable",
+        "offset":116,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSISVariable *",
+        "name":"_boundsHeightVariable",
+        "offset":120,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSISEngine *",
+        "name":"_layoutEngine",
         "offset":124,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"NSMutableArray *",
-        "name":"_internalConstraints",
-        "offset":128,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSArray *",
-        "name":"_constraintsExceptingSubviewAutoresizingConstraints",
-        "offset":132,
-        "size":4,
-        "type":"ivar"
-      }
-    ],
-    "protocols":[
-      "_UIScrollNotification",
-      "UITextEffectsOrdering",
-      "NSISVariableDelegate",
-      "NSLayoutItem",
-      "NSISEngineDelegate",
-      "NSCoding",
-      "UIAppearance",
-      "UIAppearanceContainer",
-      "UIDynamicItem"
-    ],
-    "superClassName":"UIResponder",
-    "type":"class"
-  },
-  "armv7s":{
-    "className":"UIView",
-    "ivars":[
-      {
-        "alignment":2,
-        "ivarType":"CALayer *",
-        "name":"_layer",
-        "offset":44,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"id",
-        "name":"_gestureInfo",
-        "offset":48,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSMutableArray *",
-        "name":"_gestureRecognizers",
-        "offset":52,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSArray *",
-        "name":"_subviewCache",
-        "offset":56,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"float",
-        "name":"_charge",
-        "offset":60,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"int",
-        "name":"_tag",
-        "offset":64,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"UIViewController *",
-        "name":"_viewDelegate",
-        "offset":68,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
         "ivarType":"NSString *",
-        "name":"_backgroundColorSystemColorName",
-        "offset":72,
-        "size":4,
+        "name":"_layoutDebuggingIdentifier",
+        "offset":128,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"unsigned int",
-        "name":"_countOfMotionEffectsInSubtree",
-        "offset":76,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"struct {\n        unsigned int userInteractionDisabled:1;\n        unsigned int implementsDrawRect:1;\n        unsigned int implementsDidScroll:1;\n        unsigned int implementsMouseTracking:1;\n        unsigned int hasBackgroundColor:1;\n        unsigned int isOpaque:1;\n        unsigned int becomeFirstResponderWhenCapable:1;\n        unsigned int interceptMouseEvent:1;\n        unsigned int deallocating:1;\n        unsigned int debugFlash:1;\n        unsigned int debugSkippedSetNeedsDisplay:1;\n        unsigned int debugScheduledDisplayIsRequired:1;\n        unsigned int isInAWindow:1;\n        unsigned int isAncestorOfFirstResponder:1;\n        unsigned int dontAutoresizeSubviews:1;\n        unsigned int autoresizeMask:6;\n        unsigned int patternBackground:1;\n        unsigned int fixedBackgroundPattern:1;\n        unsigned int dontAnimate:1;\n        unsigned int superLayerIsView:1;\n        unsigned int layerKitPatternDrawing:1;\n        unsigned int multipleTouchEnabled:1;\n        unsigned int exclusiveTouch:1;\n        unsigned int hasViewController:1;\n        unsigned int needsDidAppearOrDisappear:1;\n        unsigned int gesturesEnabled:1;\n        unsigned int deliversTouchesForGesturesToSuperview:1;\n        unsigned int chargeEnabled:1;\n        unsigned int skipsSubviewEnumeration:1;\n        unsigned int needsDisplayOnBoundsChange:1;\n        unsigned int hasTiledLayer:1;\n        unsigned int hasLargeContent:1;\n        unsigned int unused:1;\n        unsigned int traversalMark:1;\n        unsigned int appearanceIsInvalid:1;\n        unsigned int monitorsSubtree:1;\n        unsigned int hostsAutolayoutEngine:1;\n        unsigned int constraintsAreClean:1;\n        unsigned int subviewLayoutConstraintsAreClean:1;\n        unsigned int intrinsicContentSizeConstraintsAreClean:1;\n        unsigned int potentiallyHasDanglyConstraints:1;\n        unsigned int doesNotTranslateAutoresizingMaskIntoConstraints:1;\n        unsigned int autolayoutIsClean:1;\n        unsigned int subviewsAutolayoutIsClean:1;\n        unsigned int layoutFlushingDisabled:1;\n        unsigned int layingOutFromConstraints:1;\n        unsigned int wantsAutolayout:1;\n        unsigned int subviewWantsAutolayout:1;\n        unsigned int isApplyingValuesFromEngine:1;\n        unsigned int isInAutolayout:1;\n        unsigned int isUpdatingAutoresizingConstraints:1;\n        unsigned int isUpdatingConstraints:1;\n        unsigned int stayHiddenAwaitingReuse:1;\n        unsigned int stayHiddenAfterReuse:1;\n        unsigned int skippedLayoutWhileHiddenForReuse:1;\n        unsigned int hasMaskView:1;\n        unsigned int hasVisualAltitude:1;\n        unsigned int hasBackdropMaskViews:1;\n        unsigned int backdropMaskViewFlags:3;\n        unsigned int delaysTouchesForSystemGestures:1;\n        unsigned int subclassShouldDelayTouchForSystemGestures:1;\n        unsigned int hasMotionEffects:1;\n        unsigned int backdropOverlayMode:2;\n        unsigned int tintAdjustmentMode:2;\n        unsigned int isReferenceView:1;\n        unsigned int focusState:2;\n        unsigned int hasUserInterfaceIdiom:1;\n        unsigned int userInterfaceIdiom:3;\n        unsigned int ancestorDefinesTintColor:1;\n        unsigned int ancestorDefinesTintAdjustmentMode:1;\n    }",
-        "name":"_viewFlags",
-        "offset":80,
-        "size":11,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"int",
-        "name":"_retainCount",
-        "offset":92,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"int",
-        "name":"_tintAdjustmentDimmingCount",
-        "offset":96,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"char",
-        "name":"_shouldArchiveUIAppearanceTags",
-        "offset":100,
-        "size":1,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"UIColor *",
-        "name":"_interactionTintColor",
-        "offset":104,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSISEngine *",
-        "name":"_layoutEngine",
-        "offset":108,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSISVariable *",
-        "name":"_boundsWidthVariable",
-        "offset":112,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSISVariable *",
-        "name":"_boundsHeightVariable",
-        "offset":116,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSISVariable *",
-        "name":"_minXVariable",
-        "offset":120,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSISVariable *",
-        "name":"_minYVariable",
-        "offset":124,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
         "ivarType":"NSMutableArray *",
         "name":"_internalConstraints",
-        "offset":128,
-        "size":4,
+        "offset":132,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSArray *",
         "name":"_constraintsExceptingSubviewAutoresizingConstraints",
-        "offset":132,
-        "size":4,
+        "offset":136,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIPresentationController *",
+        "name":"__presentationControllerToNotifyOnLayoutSubviews",
+        "offset":140,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "_UIScrollNotification",
-      "UITextEffectsOrdering",
-      "NSISVariableDelegate",
-      "NSLayoutItem",
-      "NSISEngineDelegate",
-      "NSCoding",
-      "UIAppearance",
-      "UIAppearanceContainer",
-      "UIDynamicItem"
     ],
     "superClassName":"UIResponder",
     "type":"class"
@@ -551,183 +293,143 @@
     "className":"UIView",
     "ivars":[
       {
-        "alignment":2,
         "ivarType":"CALayer *",
         "name":"_layer",
         "offset":44,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"id",
         "name":"_gestureInfo",
         "offset":48,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSMutableArray *",
         "name":"_gestureRecognizers",
         "offset":52,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSArray *",
         "name":"_subviewCache",
         "offset":56,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"float",
         "name":"_charge",
         "offset":60,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_tag",
         "offset":64,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"UIViewController *",
         "name":"_viewDelegate",
         "offset":68,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSString *",
         "name":"_backgroundColorSystemColorName",
         "offset":72,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"unsigned int",
         "name":"_countOfMotionEffectsInSubtree",
         "offset":76,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"struct {\n        unsigned int userInteractionDisabled:1;\n        unsigned int implementsDrawRect:1;\n        unsigned int implementsDidScroll:1;\n        unsigned int implementsMouseTracking:1;\n        unsigned int hasBackgroundColor:1;\n        unsigned int isOpaque:1;\n        unsigned int becomeFirstResponderWhenCapable:1;\n        unsigned int interceptMouseEvent:1;\n        unsigned int deallocating:1;\n        unsigned int debugFlash:1;\n        unsigned int debugSkippedSetNeedsDisplay:1;\n        unsigned int debugScheduledDisplayIsRequired:1;\n        unsigned int isInAWindow:1;\n        unsigned int isAncestorOfFirstResponder:1;\n        unsigned int dontAutoresizeSubviews:1;\n        unsigned int autoresizeMask:6;\n        unsigned int patternBackground:1;\n        unsigned int fixedBackgroundPattern:1;\n        unsigned int dontAnimate:1;\n        unsigned int superLayerIsView:1;\n        unsigned int layerKitPatternDrawing:1;\n        unsigned int multipleTouchEnabled:1;\n        unsigned int exclusiveTouch:1;\n        unsigned int hasViewController:1;\n        unsigned int needsDidAppearOrDisappear:1;\n        unsigned int gesturesEnabled:1;\n        unsigned int deliversTouchesForGesturesToSuperview:1;\n        unsigned int chargeEnabled:1;\n        unsigned int skipsSubviewEnumeration:1;\n        unsigned int needsDisplayOnBoundsChange:1;\n        unsigned int hasTiledLayer:1;\n        unsigned int hasLargeContent:1;\n        unsigned int unused:1;\n        unsigned int traversalMark:1;\n        unsigned int appearanceIsInvalid:1;\n        unsigned int monitorsSubtree:1;\n        unsigned int hostsAutolayoutEngine:1;\n        unsigned int constraintsAreClean:1;\n        unsigned int subviewLayoutConstraintsAreClean:1;\n        unsigned int intrinsicContentSizeConstraintsAreClean:1;\n        unsigned int potentiallyHasDanglyConstraints:1;\n        unsigned int doesNotTranslateAutoresizingMaskIntoConstraints:1;\n        unsigned int autolayoutIsClean:1;\n        unsigned int subviewsAutolayoutIsClean:1;\n        unsigned int layoutFlushingDisabled:1;\n        unsigned int layingOutFromConstraints:1;\n        unsigned int wantsAutolayout:1;\n        unsigned int subviewWantsAutolayout:1;\n        unsigned int isApplyingValuesFromEngine:1;\n        unsigned int isInAutolayout:1;\n        unsigned int isUpdatingAutoresizingConstraints:1;\n        unsigned int isUpdatingConstraints:1;\n        unsigned int stayHiddenAwaitingReuse:1;\n        unsigned int stayHiddenAfterReuse:1;\n        unsigned int skippedLayoutWhileHiddenForReuse:1;\n        unsigned int hasMaskView:1;\n        unsigned int hasVisualAltitude:1;\n        unsigned int hasBackdropMaskViews:1;\n        unsigned int backdropMaskViewFlags:3;\n        unsigned int delaysTouchesForSystemGestures:1;\n        unsigned int subclassShouldDelayTouchForSystemGestures:1;\n        unsigned int hasMotionEffects:1;\n        unsigned int backdropOverlayMode:2;\n        unsigned int tintAdjustmentMode:2;\n        unsigned int isReferenceView:1;\n        unsigned int focusState:2;\n        unsigned int hasUserInterfaceIdiom:1;\n        unsigned int userInterfaceIdiom:3;\n        unsigned int ancestorDefinesTintColor:1;\n        unsigned int ancestorDefinesTintAdjustmentMode:1;\n    }",
+        "ivarType":"struct { \n        unsigned int userInteractionDisabled : 1; \n        unsigned int implementsDrawRect : 1; \n        unsigned int implementsDidScroll : 1; \n        unsigned int implementsMouseTracking : 1; \n        unsigned int implementsIntrinsicContentSize : 1; \n        unsigned int hasBackgroundColor : 1; \n        unsigned int isOpaque : 1; \n        unsigned int becomeFirstResponderWhenCapable : 1; \n        unsigned int interceptMouseEvent : 1; \n        unsigned int deallocating : 1; \n        unsigned int debugFlash : 1; \n        unsigned int debugSkippedSetNeedsDisplay : 1; \n        unsigned int debugScheduledDisplayIsRequired : 1; \n        unsigned int isInAWindow : 1; \n        unsigned int isAncestorOfFirstResponder : 1; \n        unsigned int dontAutoresizeSubviews : 1; \n        unsigned int autoresizeMask : 6; \n        unsigned int patternBackground : 1; \n        unsigned int fixedBackgroundPattern : 1; \n        unsigned int dontAnimate : 1; \n        unsigned int superLayerIsView : 1; \n        unsigned int layerKitPatternDrawing : 1; \n        unsigned int multipleTouchEnabled : 1; \n        unsigned int exclusiveTouch : 1; \n        unsigned int hasViewController : 1; \n        unsigned int needsDidAppearOrDisappear : 1; \n        unsigned int gesturesEnabled : 1; \n        unsigned int deliversTouchesForGesturesToSuperview : 1; \n        unsigned int chargeEnabled : 1; \n        unsigned int skipsSubviewEnumeration : 1; \n        unsigned int needsDisplayOnBoundsChange : 1; \n        unsigned int hasTiledLayer : 1; \n        unsigned int hasLargeContent : 1; \n        unsigned int unused : 1; \n        unsigned int traversalMark : 1; \n        unsigned int appearanceIsInvalid : 1; \n        unsigned int monitorsSubtree : 1; \n        unsigned int hostsAutolayoutEngine : 1; \n        unsigned int constraintsAreClean : 1; \n        unsigned int subviewLayoutConstraintsAreClean : 1; \n        unsigned int intrinsicContentSizeConstraintsAreClean : 1; \n        unsigned int potentiallyHasDanglyConstraints : 1; \n        unsigned int doesNotTranslateAutoresizingMaskIntoConstraints : 1; \n        unsigned int autolayoutIsClean : 1; \n        unsigned int layoutFlushingDisabled : 1; \n        unsigned int layingOutFromConstraints : 1; \n        unsigned int wantsAutolayout : 1; \n        unsigned int subviewWantsAutolayout : 1; \n        unsigned int isApplyingValuesFromEngine : 1; \n        unsigned int isInAutolayout : 1; \n        unsigned int isSubviewUpdatingAutoresizingConstraints : 1; \n        unsigned int isUpdatingConstraints : 1; \n        unsigned int isHostingUpdateConstraintsPassDuringLayout : 1; \n        unsigned int isRunningEngineLevelConstraintsPass : 1; \n        unsigned int isUnsatisfiableConstraintsLoggingSuspended : 1; \n        unsigned int systemLayoutFittingSizeNeedsUpdate : 1; \n        unsigned int systemLayoutFittingSizeNeedsUpdateInWholeSubtree : 1; \n        unsigned int isCalculatingSystemLayoutFittingSize : 1; \n        unsigned int stayHiddenAwaitingReuse : 1; \n        unsigned int stayHiddenAfterReuse : 1; \n        unsigned int skippedLayoutWhileHiddenForReuse : 1; \n        unsigned int hasMaskView : 1; \n        unsigned int hasVisualAltitude : 1; \n        unsigned int hasBackdropMaskViews : 1; \n        unsigned int backdropMaskViewFlags : 5; \n        unsigned int delaysTouchesForSystemGestures : 1; \n        unsigned int subclassShouldDelayTouchForSystemGestures : 1; \n        unsigned int hasMotionEffects : 1; \n        unsigned int backdropOverlayMode : 2; \n        unsigned int tintAdjustmentMode : 2; \n        unsigned int isReferenceView : 1; \n        unsigned int focusState : 2; \n        unsigned int hasUserInterfaceIdiom : 1; \n        unsigned int userInterfaceIdiom : 3; \n        unsigned int ancestorDefinesTintColor : 1; \n        unsigned int ancestorDefinesTintAdjustmentMode : 1; \n        unsigned int needsTraitCollectionDidChange : 1; \n        unsigned int coloredViewBounds : 1; \n        unsigned int coloredAlignmentRects : 1; \n        unsigned int preservesSuperviewMargins : 1; \n        unsigned int hasGeometryObservers : 1; \n        unsigned int wantsGeometryChanges : 1; \n    }",
         "name":"_viewFlags",
         "offset":80,
-        "size":12,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_retainCount",
         "offset":92,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_tintAdjustmentDimmingCount",
         "offset":96,
-        "size":4,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_shouldArchiveUIAppearanceTags",
         "offset":100,
-        "size":1,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"UIColor *",
         "name":"_interactionTintColor",
         "offset":104,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"NSISEngine *",
-        "name":"_layoutEngine",
-        "offset":108,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSISVariable *",
-        "name":"_boundsWidthVariable",
-        "offset":112,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSISVariable *",
-        "name":"_boundsHeightVariable",
-        "offset":116,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
         "ivarType":"NSISVariable *",
         "name":"_minXVariable",
-        "offset":120,
-        "size":4,
+        "offset":108,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSISVariable *",
         "name":"_minYVariable",
-        "offset":124,
-        "size":4,
+        "offset":112,
         "type":"ivar"
       },
       {
-        "alignment":2,
+        "ivarType":"NSISVariable *",
+        "name":"_boundsWidthVariable",
+        "offset":116,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSISVariable *",
+        "name":"_boundsHeightVariable",
+        "offset":120,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSISEngine *",
+        "name":"_layoutEngine",
+        "offset":124,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_layoutDebuggingIdentifier",
+        "offset":128,
+        "type":"ivar"
+      },
+      {
         "ivarType":"NSMutableArray *",
         "name":"_internalConstraints",
-        "offset":128,
-        "size":4,
+        "offset":132,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSArray *",
         "name":"_constraintsExceptingSubviewAutoresizingConstraints",
-        "offset":132,
-        "size":4,
+        "offset":136,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIPresentationController *",
+        "name":"__presentationControllerToNotifyOnLayoutSubviews",
+        "offset":140,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "_UIScrollNotification",
-      "UITextEffectsOrdering",
-      "NSISVariableDelegate",
-      "NSLayoutItem",
-      "NSISEngineDelegate",
-      "NSCoding",
-      "UIAppearance",
-      "UIAppearanceContainer",
-      "UIDynamicItem"
     ],
     "superClassName":"UIResponder",
     "type":"class"
@@ -736,183 +438,143 @@
     "className":"UIView",
     "ivars":[
       {
-        "alignment":3,
         "ivarType":"CALayer *",
         "name":"_layer",
         "offset":88,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"id",
         "name":"_gestureInfo",
         "offset":96,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSMutableArray *",
         "name":"_gestureRecognizers",
         "offset":104,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSArray *",
         "name":"_subviewCache",
         "offset":112,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"float",
         "name":"_charge",
         "offset":120,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_tag",
         "offset":128,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"UIViewController *",
         "name":"_viewDelegate",
         "offset":136,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSString *",
         "name":"_backgroundColorSystemColorName",
         "offset":144,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"unsigned long long",
         "name":"_countOfMotionEffectsInSubtree",
         "offset":152,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"struct {\n        unsigned int userInteractionDisabled:1;\n        unsigned int implementsDrawRect:1;\n        unsigned int implementsDidScroll:1;\n        unsigned int implementsMouseTracking:1;\n        unsigned int hasBackgroundColor:1;\n        unsigned int isOpaque:1;\n        unsigned int becomeFirstResponderWhenCapable:1;\n        unsigned int interceptMouseEvent:1;\n        unsigned int deallocating:1;\n        unsigned int debugFlash:1;\n        unsigned int debugSkippedSetNeedsDisplay:1;\n        unsigned int debugScheduledDisplayIsRequired:1;\n        unsigned int isInAWindow:1;\n        unsigned int isAncestorOfFirstResponder:1;\n        unsigned int dontAutoresizeSubviews:1;\n        unsigned int autoresizeMask:6;\n        unsigned int patternBackground:1;\n        unsigned int fixedBackgroundPattern:1;\n        unsigned int dontAnimate:1;\n        unsigned int superLayerIsView:1;\n        unsigned int layerKitPatternDrawing:1;\n        unsigned int multipleTouchEnabled:1;\n        unsigned int exclusiveTouch:1;\n        unsigned int hasViewController:1;\n        unsigned int needsDidAppearOrDisappear:1;\n        unsigned int gesturesEnabled:1;\n        unsigned int deliversTouchesForGesturesToSuperview:1;\n        unsigned int chargeEnabled:1;\n        unsigned int skipsSubviewEnumeration:1;\n        unsigned int needsDisplayOnBoundsChange:1;\n        unsigned int hasTiledLayer:1;\n        unsigned int hasLargeContent:1;\n        unsigned int unused:1;\n        unsigned int traversalMark:1;\n        unsigned int appearanceIsInvalid:1;\n        unsigned int monitorsSubtree:1;\n        unsigned int hostsAutolayoutEngine:1;\n        unsigned int constraintsAreClean:1;\n        unsigned int subviewLayoutConstraintsAreClean:1;\n        unsigned int intrinsicContentSizeConstraintsAreClean:1;\n        unsigned int potentiallyHasDanglyConstraints:1;\n        unsigned int doesNotTranslateAutoresizingMaskIntoConstraints:1;\n        unsigned int autolayoutIsClean:1;\n        unsigned int subviewsAutolayoutIsClean:1;\n        unsigned int layoutFlushingDisabled:1;\n        unsigned int layingOutFromConstraints:1;\n        unsigned int wantsAutolayout:1;\n        unsigned int subviewWantsAutolayout:1;\n        unsigned int isApplyingValuesFromEngine:1;\n        unsigned int isInAutolayout:1;\n        unsigned int isUpdatingAutoresizingConstraints:1;\n        unsigned int isUpdatingConstraints:1;\n        unsigned int stayHiddenAwaitingReuse:1;\n        unsigned int stayHiddenAfterReuse:1;\n        unsigned int skippedLayoutWhileHiddenForReuse:1;\n        unsigned int hasMaskView:1;\n        unsigned int hasVisualAltitude:1;\n        unsigned int hasBackdropMaskViews:1;\n        unsigned int backdropMaskViewFlags:3;\n        unsigned int delaysTouchesForSystemGestures:1;\n        unsigned int subclassShouldDelayTouchForSystemGestures:1;\n        unsigned int hasMotionEffects:1;\n        unsigned int backdropOverlayMode:2;\n        unsigned int tintAdjustmentMode:2;\n        unsigned int isReferenceView:1;\n        unsigned int focusState:2;\n        unsigned int hasUserInterfaceIdiom:1;\n        unsigned int userInterfaceIdiom:3;\n        unsigned int ancestorDefinesTintColor:1;\n        unsigned int ancestorDefinesTintAdjustmentMode:1;\n    }",
+        "ivarType":"struct { \n        unsigned int userInteractionDisabled : 1; \n        unsigned int implementsDrawRect : 1; \n        unsigned int implementsDidScroll : 1; \n        unsigned int implementsMouseTracking : 1; \n        unsigned int implementsIntrinsicContentSize : 1; \n        unsigned int hasBackgroundColor : 1; \n        unsigned int isOpaque : 1; \n        unsigned int becomeFirstResponderWhenCapable : 1; \n        unsigned int interceptMouseEvent : 1; \n        unsigned int deallocating : 1; \n        unsigned int debugFlash : 1; \n        unsigned int debugSkippedSetNeedsDisplay : 1; \n        unsigned int debugScheduledDisplayIsRequired : 1; \n        unsigned int isInAWindow : 1; \n        unsigned int isAncestorOfFirstResponder : 1; \n        unsigned int dontAutoresizeSubviews : 1; \n        unsigned int autoresizeMask : 6; \n        unsigned int patternBackground : 1; \n        unsigned int fixedBackgroundPattern : 1; \n        unsigned int dontAnimate : 1; \n        unsigned int superLayerIsView : 1; \n        unsigned int layerKitPatternDrawing : 1; \n        unsigned int multipleTouchEnabled : 1; \n        unsigned int exclusiveTouch : 1; \n        unsigned int hasViewController : 1; \n        unsigned int needsDidAppearOrDisappear : 1; \n        unsigned int gesturesEnabled : 1; \n        unsigned int deliversTouchesForGesturesToSuperview : 1; \n        unsigned int chargeEnabled : 1; \n        unsigned int skipsSubviewEnumeration : 1; \n        unsigned int needsDisplayOnBoundsChange : 1; \n        unsigned int hasTiledLayer : 1; \n        unsigned int hasLargeContent : 1; \n        unsigned int unused : 1; \n        unsigned int traversalMark : 1; \n        unsigned int appearanceIsInvalid : 1; \n        unsigned int monitorsSubtree : 1; \n        unsigned int hostsAutolayoutEngine : 1; \n        unsigned int constraintsAreClean : 1; \n        unsigned int subviewLayoutConstraintsAreClean : 1; \n        unsigned int intrinsicContentSizeConstraintsAreClean : 1; \n        unsigned int potentiallyHasDanglyConstraints : 1; \n        unsigned int doesNotTranslateAutoresizingMaskIntoConstraints : 1; \n        unsigned int autolayoutIsClean : 1; \n        unsigned int layoutFlushingDisabled : 1; \n        unsigned int layingOutFromConstraints : 1; \n        unsigned int wantsAutolayout : 1; \n        unsigned int subviewWantsAutolayout : 1; \n        unsigned int isApplyingValuesFromEngine : 1; \n        unsigned int isInAutolayout : 1; \n        unsigned int isSubviewUpdatingAutoresizingConstraints : 1; \n        unsigned int isUpdatingConstraints : 1; \n        unsigned int isHostingUpdateConstraintsPassDuringLayout : 1; \n        unsigned int isRunningEngineLevelConstraintsPass : 1; \n        unsigned int isUnsatisfiableConstraintsLoggingSuspended : 1; \n        unsigned int systemLayoutFittingSizeNeedsUpdate : 1; \n        unsigned int systemLayoutFittingSizeNeedsUpdateInWholeSubtree : 1; \n        unsigned int isCalculatingSystemLayoutFittingSize : 1; \n        unsigned int stayHiddenAwaitingReuse : 1; \n        unsigned int stayHiddenAfterReuse : 1; \n        unsigned int skippedLayoutWhileHiddenForReuse : 1; \n        unsigned int hasMaskView : 1; \n        unsigned int hasVisualAltitude : 1; \n        unsigned int hasBackdropMaskViews : 1; \n        unsigned int backdropMaskViewFlags : 5; \n        unsigned int delaysTouchesForSystemGestures : 1; \n        unsigned int subclassShouldDelayTouchForSystemGestures : 1; \n        unsigned int hasMotionEffects : 1; \n        unsigned int backdropOverlayMode : 2; \n        unsigned int tintAdjustmentMode : 2; \n        unsigned int isReferenceView : 1; \n        unsigned int focusState : 2; \n        unsigned int hasUserInterfaceIdiom : 1; \n        unsigned int userInterfaceIdiom : 3; \n        unsigned int ancestorDefinesTintColor : 1; \n        unsigned int ancestorDefinesTintAdjustmentMode : 1; \n        unsigned int needsTraitCollectionDidChange : 1; \n        unsigned int coloredViewBounds : 1; \n        unsigned int coloredAlignmentRects : 1; \n        unsigned int preservesSuperviewMargins : 1; \n        unsigned int hasGeometryObservers : 1; \n        unsigned int wantsGeometryChanges : 1; \n    }",
         "name":"_viewFlags",
         "offset":160,
-        "size":12,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_retainCount",
         "offset":176,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_tintAdjustmentDimmingCount",
         "offset":184,
-        "size":8,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_shouldArchiveUIAppearanceTags",
         "offset":192,
-        "size":1,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"UIColor *",
         "name":"_interactionTintColor",
         "offset":200,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
-        "ivarType":"NSISEngine *",
-        "name":"_layoutEngine",
-        "offset":208,
-        "size":8,
-        "type":"ivar"
-      },
-      {
-        "alignment":3,
-        "ivarType":"NSISVariable *",
-        "name":"_boundsWidthVariable",
-        "offset":216,
-        "size":8,
-        "type":"ivar"
-      },
-      {
-        "alignment":3,
-        "ivarType":"NSISVariable *",
-        "name":"_boundsHeightVariable",
-        "offset":224,
-        "size":8,
-        "type":"ivar"
-      },
-      {
-        "alignment":3,
         "ivarType":"NSISVariable *",
         "name":"_minXVariable",
-        "offset":232,
-        "size":8,
+        "offset":208,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSISVariable *",
         "name":"_minYVariable",
-        "offset":240,
-        "size":8,
+        "offset":216,
         "type":"ivar"
       },
       {
-        "alignment":3,
+        "ivarType":"NSISVariable *",
+        "name":"_boundsWidthVariable",
+        "offset":224,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSISVariable *",
+        "name":"_boundsHeightVariable",
+        "offset":232,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSISEngine *",
+        "name":"_layoutEngine",
+        "offset":240,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_layoutDebuggingIdentifier",
+        "offset":248,
+        "type":"ivar"
+      },
+      {
         "ivarType":"NSMutableArray *",
         "name":"_internalConstraints",
-        "offset":248,
-        "size":8,
+        "offset":256,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSArray *",
         "name":"_constraintsExceptingSubviewAutoresizingConstraints",
-        "offset":256,
-        "size":8,
+        "offset":264,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIPresentationController *",
+        "name":"__presentationControllerToNotifyOnLayoutSubviews",
+        "offset":272,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "_UIScrollNotification",
-      "UITextEffectsOrdering",
-      "NSISVariableDelegate",
-      "NSLayoutItem",
-      "NSISEngineDelegate",
-      "NSCoding",
-      "UIAppearance",
-      "UIAppearanceContainer",
-      "UIDynamicItem"
     ],
     "superClassName":"UIResponder",
     "type":"class"

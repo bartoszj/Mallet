@@ -3,79 +3,63 @@
     "className":"SKPaymentQueueInternal",
     "ivars":[
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_checkedIn",
         "offset":8,
-        "size":1,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"SKPaymentQueueClient *",
         "name":"_client",
         "offset":16,
-        "size":8,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_isRefreshing",
         "offset":24,
-        "size":1,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSMutableArray *",
         "name":"_localTransactions",
         "offset":32,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
-        "ivarType":"struct __CFArray *",
+        "ivarType":"struct __CFArray { } *",
         "name":"_observers",
         "offset":40,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"SKXPCConnection *",
         "name":"_requestConnection",
         "offset":48,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"SKXPCConnection *",
         "name":"_responseConnection",
         "offset":56,
-        "size":8,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_restoreFinishedDuringRefresh",
         "offset":64,
-        "size":1,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_restoringCompletedTransactions",
         "offset":65,
-        "size":1,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSMutableArray *",
         "name":"_transactions",
         "offset":72,
-        "size":8,
         "type":"ivar"
       }
     ],
@@ -86,162 +70,63 @@
     "className":"SKPaymentQueueInternal",
     "ivars":[
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_checkedIn",
         "offset":4,
-        "size":1,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"SKPaymentQueueClient *",
         "name":"_client",
         "offset":8,
-        "size":4,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_isRefreshing",
         "offset":12,
-        "size":1,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSMutableArray *",
         "name":"_localTransactions",
         "offset":16,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"struct __CFArray *",
+        "ivarType":"struct __CFArray { } *",
         "name":"_observers",
         "offset":20,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"SKXPCConnection *",
         "name":"_requestConnection",
         "offset":24,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"SKXPCConnection *",
         "name":"_responseConnection",
         "offset":28,
-        "size":4,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_restoreFinishedDuringRefresh",
         "offset":32,
-        "size":1,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_restoringCompletedTransactions",
         "offset":33,
-        "size":1,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSMutableArray *",
         "name":"_transactions",
         "offset":36,
-        "size":4,
-        "type":"ivar"
-      }
-    ],
-    "superClassName":"NSObject",
-    "type":"class"
-  },
-  "armv7s":{
-    "className":"SKPaymentQueueInternal",
-    "ivars":[
-      {
-        "ivarType":"char",
-        "name":"_checkedIn",
-        "offset":4,
-        "size":1,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"SKPaymentQueueClient *",
-        "name":"_client",
-        "offset":8,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"char",
-        "name":"_isRefreshing",
-        "offset":12,
-        "size":1,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSMutableArray *",
-        "name":"_localTransactions",
-        "offset":16,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"struct __CFArray *",
-        "name":"_observers",
-        "offset":20,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"SKXPCConnection *",
-        "name":"_requestConnection",
-        "offset":24,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"SKXPCConnection *",
-        "name":"_responseConnection",
-        "offset":28,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"char",
-        "name":"_restoreFinishedDuringRefresh",
-        "offset":32,
-        "size":1,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"char",
-        "name":"_restoringCompletedTransactions",
-        "offset":33,
-        "size":1,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSMutableArray *",
-        "name":"_transactions",
-        "offset":36,
-        "size":4,
         "type":"ivar"
       }
     ],
@@ -252,79 +137,63 @@
     "className":"SKPaymentQueueInternal",
     "ivars":[
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_checkedIn",
         "offset":4,
-        "size":1,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"SKPaymentQueueClient *",
         "name":"_client",
         "offset":8,
-        "size":4,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_isRefreshing",
         "offset":12,
-        "size":1,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSMutableArray *",
         "name":"_localTransactions",
         "offset":16,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
-        "ivarType":"struct __CFArray *",
+        "ivarType":"struct __CFArray { } *",
         "name":"_observers",
         "offset":20,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"SKXPCConnection *",
         "name":"_requestConnection",
         "offset":24,
-        "size":4,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"SKXPCConnection *",
         "name":"_responseConnection",
         "offset":28,
-        "size":4,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_restoreFinishedDuringRefresh",
         "offset":32,
-        "size":1,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_restoringCompletedTransactions",
         "offset":33,
-        "size":1,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSMutableArray *",
         "name":"_transactions",
         "offset":36,
-        "size":4,
         "type":"ivar"
       }
     ],
@@ -335,79 +204,63 @@
     "className":"SKPaymentQueueInternal",
     "ivars":[
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_checkedIn",
         "offset":8,
-        "size":1,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"SKPaymentQueueClient *",
         "name":"_client",
         "offset":16,
-        "size":8,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_isRefreshing",
         "offset":24,
-        "size":1,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSMutableArray *",
         "name":"_localTransactions",
         "offset":32,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
-        "ivarType":"struct __CFArray *",
+        "ivarType":"struct __CFArray { } *",
         "name":"_observers",
         "offset":40,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"SKXPCConnection *",
         "name":"_requestConnection",
         "offset":48,
-        "size":8,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"SKXPCConnection *",
         "name":"_responseConnection",
         "offset":56,
-        "size":8,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_restoreFinishedDuringRefresh",
         "offset":64,
-        "size":1,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_restoringCompletedTransactions",
         "offset":65,
-        "size":1,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSMutableArray *",
         "name":"_transactions",
         "offset":72,
-        "size":8,
         "type":"ivar"
       }
     ],

@@ -1,9 +1,9 @@
 {
   "arm64":{
-    "className":"SKProduct",
+    "className":"NSURLRequest",
     "ivars":[
       {
-        "ivarType":"id",
+        "ivarType":"NSURLRequestInternal *",
         "name":"_internal",
         "offset":8,
         "type":"ivar"
@@ -13,10 +13,10 @@
     "type":"class"
   },
   "armv7":{
-    "className":"SKProduct",
+    "className":"NSURLRequest",
     "ivars":[
       {
-        "ivarType":"id",
+        "ivarType":"NSURLRequestInternal *",
         "name":"_internal",
         "offset":4,
         "type":"ivar"
@@ -26,10 +26,10 @@
     "type":"class"
   },
   "i386":{
-    "className":"SKProduct",
+    "className":"NSURLRequest",
     "ivars":[
       {
-        "ivarType":"id",
+        "ivarType":"NSURLRequestInternal *",
         "name":"_internal",
         "offset":4,
         "type":"ivar"
@@ -39,10 +39,10 @@
     "type":"class"
   },
   "x86_64":{
-    "className":"SKProduct",
+    "className":"NSURLRequest",
     "ivars":[
       {
-        "ivarType":"id",
+        "ivarType":"NSURLRequestInternal *",
         "name":"_internal",
         "offset":8,
         "type":"ivar"

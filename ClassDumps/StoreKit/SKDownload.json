@@ -1,1557 +1,270 @@
 {
-  "i386" : {
-    "properties" : [
+  "arm64":{
+    "className":"SKDownload",
+    "ivars":[
       {
-        "name" : "downloadState",
-        "setter" : "setDownloadState:",
-        "getter" : "downloadState",
-        "type" : "property",
-        "propertyType" : "int"
+        "ivarType":"NSString *",
+        "name":"_contentIdentifier",
+        "offset":8,
+        "type":"ivar"
       },
       {
-        "name" : "contentLength",
-        "setter" : "setContentLength:",
-        "getter" : "contentLength",
-        "type" : "property",
-        "propertyType" : "long long"
+        "ivarType":"long long",
+        "name":"_contentLength",
+        "offset":16,
+        "type":"ivar"
       },
       {
-        "name" : "contentIdentifier",
-        "setter" : "setContentIdentifier:",
-        "getter" : "contentIdentifier",
-        "type" : "property",
-        "propertyType" : "NSString *"
+        "ivarType":"NSURL *",
+        "name":"_contentURL",
+        "offset":24,
+        "type":"ivar"
       },
       {
-        "name" : "contentURL",
-        "setter" : "setContentURL:",
-        "getter" : "contentURL",
-        "type" : "property",
-        "propertyType" : "NSURL *"
+        "ivarType":"NSNumber *",
+        "name":"_downloadID",
+        "offset":32,
+        "type":"ivar"
       },
       {
-        "name" : "contentVersion",
-        "setter" : "setContentVersion:",
-        "getter" : "contentVersion",
-        "type" : "property",
-        "propertyType" : "NSString *"
+        "ivarType":"long long",
+        "name":"_downloadState",
+        "offset":40,
+        "type":"ivar"
       },
       {
-        "name" : "error",
-        "setter" : "setError:",
-        "getter" : "error",
-        "type" : "property",
-        "propertyType" : "NSError *"
+        "ivarType":"NSError *",
+        "name":"_error",
+        "offset":48,
+        "type":"ivar"
       },
       {
-        "name" : "progress",
-        "setter" : "setProgress:",
-        "getter" : "progress",
-        "type" : "property",
-        "propertyType" : "float"
+        "ivarType":"float",
+        "name":"_progress",
+        "offset":56,
+        "type":"ivar"
       },
       {
-        "name" : "timeRemaining",
-        "setter" : "setTimeRemaining:",
-        "getter" : "timeRemaining",
-        "type" : "property",
-        "propertyType" : "double"
+        "ivarType":"double",
+        "name":"_timeRemaining",
+        "offset":64,
+        "type":"ivar"
       },
       {
-        "name" : "transaction",
-        "setter" : "setTransaction:",
-        "getter" : "transaction",
-        "type" : "property",
-        "propertyType" : "SKPaymentTransaction *"
+        "ivarType":"SKPaymentTransaction *",
+        "name":"_transaction",
+        "offset":72,
+        "type":"ivar"
       },
       {
-        "name" : "_downloadID",
-        "setter" : "_setDownloadID:",
-        "getter" : "_downloadID",
-        "type" : "property",
-        "propertyType" : "NSNumber *"
+        "ivarType":"NSString *",
+        "name":"_version",
+        "offset":80,
+        "type":"ivar"
       }
     ],
-    "className" : "SKDownload",
-    "instanceMethods" : [
-      {
-        "declaration" : "(id)transaction",
-        "type" : "method",
-        "name" : "transaction",
-        "address" : 8306
-      },
-      {
-        "declaration" : "(double)timeRemaining",
-        "type" : "method",
-        "name" : "timeRemaining",
-        "address" : 8283
-      },
-      {
-        "declaration" : "(float)progress",
-        "type" : "method",
-        "name" : "progress",
-        "address" : 8260
-      },
-      {
-        "declaration" : "(id)error",
-        "type" : "method",
-        "name" : "error",
-        "address" : 8237
-      },
-      {
-        "declaration" : "(int)downloadState",
-        "type" : "method",
-        "name" : "downloadState",
-        "address" : 8214
-      },
-      {
-        "declaration" : "(void)_setDownloadID:(id)arg1",
-        "type" : "method",
-        "name" : "_setDownloadID:",
-        "address" : 8162
-      },
-      {
-        "declaration" : "(id)_downloadID",
-        "type" : "method",
-        "name" : "_downloadID",
-        "address" : 8109
-      },
-      {
-        "declaration" : "(id)contentVersion",
-        "type" : "method",
-        "name" : "contentVersion",
-        "address" : 8086
-      },
-      {
-        "declaration" : "(id)contentURL",
-        "type" : "method",
-        "name" : "contentURL",
-        "address" : 8063
-      },
-      {
-        "declaration" : "(long long)contentLength",
-        "type" : "method",
-        "name" : "contentLength",
-        "address" : 8036
-      },
-      {
-        "declaration" : "(id)contentIdentifier",
-        "type" : "method",
-        "name" : "contentIdentifier",
-        "address" : 8013
-      },
-      {
-        "declaration" : "(id)copyXPCEncoding",
-        "type" : "method",
-        "name" : "copyXPCEncoding",
-        "address" : 7656
-      },
-      {
-        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
-        "type" : "method",
-        "name" : "initWithXPCEncoding:",
-        "address" : 6973
-      },
-      {
-        "declaration" : "(void)_setVersion:(id)arg1",
-        "type" : "method",
-        "name" : "_setVersion:",
-        "address" : 6889
-      },
-      {
-        "declaration" : "(void)_setTransaction:(id)arg1",
-        "type" : "method",
-        "name" : "_setTransaction:",
-        "address" : 6795
-      },
-      {
-        "declaration" : "(void)_setTimeRemaining:(double)arg1",
-        "type" : "method",
-        "name" : "_setTimeRemaining:",
-        "address" : 6765
-      },
-      {
-        "declaration" : "(void)_setProgress:(float)arg1",
-        "type" : "method",
-        "name" : "_setProgress:",
-        "address" : 6735
-      },
-      {
-        "declaration" : "(void)_setError:(id)arg1",
-        "type" : "method",
-        "name" : "_setError:",
-        "address" : 6651
-      },
-      {
-        "declaration" : "(void)_setDownloadState:(int)arg1",
-        "type" : "method",
-        "name" : "_setDownloadState:",
-        "address" : 6625
-      },
-      {
-        "declaration" : "(void)_setContentURL:(id)arg1",
-        "type" : "method",
-        "name" : "_setContentURL:",
-        "address" : 6541
-      },
-      {
-        "declaration" : "(void)_setContentLength:(long long)arg1",
-        "type" : "method",
-        "name" : "_setContentLength:",
-        "address" : 6506
-      },
-      {
-        "declaration" : "(void)_setContentIdentifier:(id)arg1",
-        "type" : "method",
-        "name" : "_setContentIdentifier:",
-        "address" : 6422
-      },
-      {
-        "declaration" : "(void)_applyChangeset:(id)arg1",
-        "type" : "method",
-        "name" : "_applyChangeset:",
-        "address" : 6053
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 5904
-      },
-      {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 5826
-      }
-    ],
-    "type" : "class",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_contentIdentifier"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_contentLength"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSURL *",
-        "size" : 4,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_contentURL"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSNumber *",
-        "size" : 4,
-        "offset" : 20,
-        "type" : "ivar",
-        "name" : "_downloadID"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_downloadState"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSError *",
-        "size" : 4,
-        "offset" : 28,
-        "type" : "ivar",
-        "name" : "_error"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "float",
-        "size" : 4,
-        "offset" : 32,
-        "type" : "ivar",
-        "name" : "_progress"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "double",
-        "size" : 8,
-        "offset" : 36,
-        "type" : "ivar",
-        "name" : "_timeRemaining"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "SKPaymentTransaction *",
-        "size" : 4,
-        "offset" : 44,
-        "type" : "ivar",
-        "name" : "_transaction"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 48,
-        "type" : "ivar",
-        "name" : "_version"
-      }
-    ],
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "x86_64" : {
-    "properties" : [
+  "armv7":{
+    "className":"SKDownload",
+    "ivars":[
       {
-        "propertyType" : "long long",
-        "getter" : "downloadState",
-        "type" : "property",
-        "name" : "downloadState",
-        "setter" : "setDownloadState:"
+        "ivarType":"NSString *",
+        "name":"_contentIdentifier",
+        "offset":4,
+        "type":"ivar"
       },
       {
-        "propertyType" : "long long",
-        "getter" : "contentLength",
-        "type" : "property",
-        "name" : "contentLength",
-        "setter" : "setContentLength:"
+        "ivarType":"long long",
+        "name":"_contentLength",
+        "offset":8,
+        "type":"ivar"
       },
       {
-        "propertyType" : "NSString *",
-        "getter" : "contentIdentifier",
-        "type" : "property",
-        "name" : "contentIdentifier",
-        "setter" : "setContentIdentifier:"
+        "ivarType":"NSURL *",
+        "name":"_contentURL",
+        "offset":16,
+        "type":"ivar"
       },
       {
-        "propertyType" : "NSURL *",
-        "getter" : "contentURL",
-        "type" : "property",
-        "name" : "contentURL",
-        "setter" : "setContentURL:"
+        "ivarType":"NSNumber *",
+        "name":"_downloadID",
+        "offset":20,
+        "type":"ivar"
       },
       {
-        "propertyType" : "NSString *",
-        "getter" : "contentVersion",
-        "type" : "property",
-        "name" : "contentVersion",
-        "setter" : "setContentVersion:"
+        "ivarType":"int",
+        "name":"_downloadState",
+        "offset":24,
+        "type":"ivar"
       },
       {
-        "propertyType" : "NSError *",
-        "getter" : "error",
-        "type" : "property",
-        "name" : "error",
-        "setter" : "setError:"
+        "ivarType":"NSError *",
+        "name":"_error",
+        "offset":28,
+        "type":"ivar"
       },
       {
-        "propertyType" : "float",
-        "getter" : "progress",
-        "type" : "property",
-        "name" : "progress",
-        "setter" : "setProgress:"
+        "ivarType":"float",
+        "name":"_progress",
+        "offset":32,
+        "type":"ivar"
       },
       {
-        "propertyType" : "double",
-        "getter" : "timeRemaining",
-        "type" : "property",
-        "name" : "timeRemaining",
-        "setter" : "setTimeRemaining:"
+        "ivarType":"double",
+        "name":"_timeRemaining",
+        "offset":36,
+        "type":"ivar"
       },
       {
-        "propertyType" : "SKPaymentTransaction *",
-        "getter" : "transaction",
-        "type" : "property",
-        "name" : "transaction",
-        "setter" : "setTransaction:"
+        "ivarType":"SKPaymentTransaction *",
+        "name":"_transaction",
+        "offset":44,
+        "type":"ivar"
       },
       {
-        "propertyType" : "NSNumber *",
-        "getter" : "_downloadID",
-        "type" : "property",
-        "name" : "_downloadID",
-        "setter" : "_setDownloadID:"
+        "ivarType":"NSString *",
+        "name":"_version",
+        "offset":48,
+        "type":"ivar"
       }
     ],
-    "className" : "SKDownload",
-    "instanceMethods" : [
-      {
-        "declaration" : "(id)transaction",
-        "type" : "method",
-        "name" : "transaction",
-        "address" : 8507
-      },
-      {
-        "declaration" : "(double)timeRemaining",
-        "type" : "method",
-        "name" : "timeRemaining",
-        "address" : 8489
-      },
-      {
-        "declaration" : "(float)progress",
-        "type" : "method",
-        "name" : "progress",
-        "address" : 8471
-      },
-      {
-        "declaration" : "(id)error",
-        "type" : "method",
-        "name" : "error",
-        "address" : 8454
-      },
-      {
-        "declaration" : "(long long)downloadState",
-        "type" : "method",
-        "name" : "downloadState",
-        "address" : 8437
-      },
-      {
-        "declaration" : "(void)_setDownloadID:(id)arg1",
-        "type" : "method",
-        "name" : "_setDownloadID:",
-        "address" : 8420
-      },
-      {
-        "declaration" : "(id)_downloadID",
-        "type" : "method",
-        "name" : "_downloadID",
-        "address" : 8401
-      },
-      {
-        "declaration" : "(id)contentVersion",
-        "type" : "method",
-        "name" : "contentVersion",
-        "address" : 8384
-      },
-      {
-        "declaration" : "(id)contentURL",
-        "type" : "method",
-        "name" : "contentURL",
-        "address" : 8367
-      },
-      {
-        "declaration" : "(long long)contentLength",
-        "type" : "method",
-        "name" : "contentLength",
-        "address" : 8350
-      },
-      {
-        "declaration" : "(id)contentIdentifier",
-        "type" : "method",
-        "name" : "contentIdentifier",
-        "address" : 8333
-      },
-      {
-        "declaration" : "(id)copyXPCEncoding",
-        "type" : "method",
-        "name" : "copyXPCEncoding",
-        "address" : 8065
-      },
-      {
-        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
-        "type" : "method",
-        "name" : "initWithXPCEncoding:",
-        "address" : 7454
-      },
-      {
-        "declaration" : "(void)_setVersion:(id)arg1",
-        "type" : "method",
-        "name" : "_setVersion:",
-        "address" : 7378
-      },
-      {
-        "declaration" : "(void)_setTransaction:(id)arg1",
-        "type" : "method",
-        "name" : "_setTransaction:",
-        "address" : 7298
-      },
-      {
-        "declaration" : "(void)_setTimeRemaining:(double)arg1",
-        "type" : "method",
-        "name" : "_setTimeRemaining:",
-        "address" : 7280
-      },
-      {
-        "declaration" : "(void)_setProgress:(float)arg1",
-        "type" : "method",
-        "name" : "_setProgress:",
-        "address" : 7262
-      },
-      {
-        "declaration" : "(void)_setError:(id)arg1",
-        "type" : "method",
-        "name" : "_setError:",
-        "address" : 7186
-      },
-      {
-        "declaration" : "(void)_setDownloadState:(long long)arg1",
-        "type" : "method",
-        "name" : "_setDownloadState:",
-        "address" : 7169
-      },
-      {
-        "declaration" : "(void)_setContentURL:(id)arg1",
-        "type" : "method",
-        "name" : "_setContentURL:",
-        "address" : 7093
-      },
-      {
-        "declaration" : "(void)_setContentLength:(long long)arg1",
-        "type" : "method",
-        "name" : "_setContentLength:",
-        "address" : 7076
-      },
-      {
-        "declaration" : "(void)_setContentIdentifier:(id)arg1",
-        "type" : "method",
-        "name" : "_setContentIdentifier:",
-        "address" : 7000
-      },
-      {
-        "declaration" : "(void)_applyChangeset:(id)arg1",
-        "type" : "method",
-        "name" : "_applyChangeset:",
-        "address" : 6657
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 6512
-      },
-      {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 6442
-      }
-    ],
-    "type" : "class",
-    "ivars" : [
-      {
-        "alignment" : 3,
-        "ivarType" : "NSString *",
-        "size" : 8,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_contentIdentifier"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_contentLength"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSURL *",
-        "size" : 8,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_contentURL"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSNumber *",
-        "size" : 8,
-        "offset" : 32,
-        "type" : "ivar",
-        "name" : "_downloadID"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 40,
-        "type" : "ivar",
-        "name" : "_downloadState"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSError *",
-        "size" : 8,
-        "offset" : 48,
-        "type" : "ivar",
-        "name" : "_error"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "float",
-        "size" : 4,
-        "offset" : 56,
-        "type" : "ivar",
-        "name" : "_progress"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "double",
-        "size" : 8,
-        "offset" : 64,
-        "type" : "ivar",
-        "name" : "_timeRemaining"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "SKPaymentTransaction *",
-        "size" : 8,
-        "offset" : 72,
-        "type" : "ivar",
-        "name" : "_transaction"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSString *",
-        "size" : 8,
-        "offset" : 80,
-        "type" : "ivar",
-        "name" : "_version"
-      }
-    ],
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "armv7" : {
-    "properties" : [
+  "i386":{
+    "className":"SKDownload",
+    "ivars":[
       {
-        "name" : "downloadState",
-        "propertyType" : "int",
-        "getter" : "downloadState",
-        "type" : "property",
-        "setter" : "setDownloadState:"
+        "ivarType":"NSString *",
+        "name":"_contentIdentifier",
+        "offset":4,
+        "type":"ivar"
       },
       {
-        "name" : "contentLength",
-        "propertyType" : "long long",
-        "getter" : "contentLength",
-        "type" : "property",
-        "setter" : "setContentLength:"
+        "ivarType":"long long",
+        "name":"_contentLength",
+        "offset":8,
+        "type":"ivar"
       },
       {
-        "name" : "contentIdentifier",
-        "propertyType" : "NSString *",
-        "getter" : "contentIdentifier",
-        "type" : "property",
-        "setter" : "setContentIdentifier:"
+        "ivarType":"NSURL *",
+        "name":"_contentURL",
+        "offset":16,
+        "type":"ivar"
       },
       {
-        "name" : "contentURL",
-        "propertyType" : "NSURL *",
-        "getter" : "contentURL",
-        "type" : "property",
-        "setter" : "setContentURL:"
+        "ivarType":"NSNumber *",
+        "name":"_downloadID",
+        "offset":20,
+        "type":"ivar"
       },
       {
-        "name" : "contentVersion",
-        "propertyType" : "NSString *",
-        "getter" : "contentVersion",
-        "type" : "property",
-        "setter" : "setContentVersion:"
+        "ivarType":"int",
+        "name":"_downloadState",
+        "offset":24,
+        "type":"ivar"
       },
       {
-        "name" : "error",
-        "propertyType" : "NSError *",
-        "getter" : "error",
-        "type" : "property",
-        "setter" : "setError:"
+        "ivarType":"NSError *",
+        "name":"_error",
+        "offset":28,
+        "type":"ivar"
       },
       {
-        "name" : "progress",
-        "propertyType" : "float",
-        "getter" : "progress",
-        "type" : "property",
-        "setter" : "setProgress:"
+        "ivarType":"float",
+        "name":"_progress",
+        "offset":32,
+        "type":"ivar"
       },
       {
-        "name" : "timeRemaining",
-        "propertyType" : "double",
-        "getter" : "timeRemaining",
-        "type" : "property",
-        "setter" : "setTimeRemaining:"
+        "ivarType":"double",
+        "name":"_timeRemaining",
+        "offset":36,
+        "type":"ivar"
       },
       {
-        "name" : "transaction",
-        "propertyType" : "SKPaymentTransaction *",
-        "getter" : "transaction",
-        "type" : "property",
-        "setter" : "setTransaction:"
+        "ivarType":"SKPaymentTransaction *",
+        "name":"_transaction",
+        "offset":44,
+        "type":"ivar"
       },
       {
-        "name" : "_downloadID",
-        "propertyType" : "NSNumber *",
-        "getter" : "_downloadID",
-        "type" : "property",
-        "setter" : "_setDownloadID:"
+        "ivarType":"NSString *",
+        "name":"_version",
+        "offset":48,
+        "type":"ivar"
       }
     ],
-    "className" : "SKDownload",
-    "instanceMethods" : [
-      {
-        "declaration" : "(id)transaction",
-        "type" : "method",
-        "name" : "transaction",
-        "address" : 6721
-      },
-      {
-        "declaration" : "(double)timeRemaining",
-        "type" : "method",
-        "name" : "timeRemaining",
-        "address" : 6697
-      },
-      {
-        "declaration" : "(float)progress",
-        "type" : "method",
-        "name" : "progress",
-        "address" : 6681
-      },
-      {
-        "declaration" : "(id)error",
-        "type" : "method",
-        "name" : "error",
-        "address" : 6665
-      },
-      {
-        "declaration" : "(int)downloadState",
-        "type" : "method",
-        "name" : "downloadState",
-        "address" : 6649
-      },
-      {
-        "declaration" : "(void)_setDownloadID:(id)arg1",
-        "type" : "method",
-        "name" : "_setDownloadID:",
-        "address" : 6633
-      },
-      {
-        "declaration" : "(id)_downloadID",
-        "type" : "method",
-        "name" : "_downloadID",
-        "address" : 6613
-      },
-      {
-        "declaration" : "(id)contentVersion",
-        "type" : "method",
-        "name" : "contentVersion",
-        "address" : 6597
-      },
-      {
-        "declaration" : "(id)contentURL",
-        "type" : "method",
-        "name" : "contentURL",
-        "address" : 6581
-      },
-      {
-        "declaration" : "(long long)contentLength",
-        "type" : "method",
-        "name" : "contentLength",
-        "address" : 6557
-      },
-      {
-        "declaration" : "(id)contentIdentifier",
-        "type" : "method",
-        "name" : "contentIdentifier",
-        "address" : 6541
-      },
-      {
-        "declaration" : "(id)copyXPCEncoding",
-        "type" : "method",
-        "name" : "copyXPCEncoding",
-        "address" : 6229
-      },
-      {
-        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
-        "type" : "method",
-        "name" : "initWithXPCEncoding:",
-        "address" : 5553
-      },
-      {
-        "declaration" : "(void)_setVersion:(id)arg1",
-        "type" : "method",
-        "name" : "_setVersion:",
-        "address" : 5485
-      },
-      {
-        "declaration" : "(void)_setTransaction:(id)arg1",
-        "type" : "method",
-        "name" : "_setTransaction:",
-        "address" : 5405
-      },
-      {
-        "declaration" : "(void)_setTimeRemaining:(double)arg1",
-        "type" : "method",
-        "name" : "_setTimeRemaining:",
-        "address" : 5385
-      },
-      {
-        "declaration" : "(void)_setProgress:(float)arg1",
-        "type" : "method",
-        "name" : "_setProgress:",
-        "address" : 5369
-      },
-      {
-        "declaration" : "(void)_setError:(id)arg1",
-        "type" : "method",
-        "name" : "_setError:",
-        "address" : 5301
-      },
-      {
-        "declaration" : "(void)_setDownloadState:(int)arg1",
-        "type" : "method",
-        "name" : "_setDownloadState:",
-        "address" : 5285
-      },
-      {
-        "declaration" : "(void)_setContentURL:(id)arg1",
-        "type" : "method",
-        "name" : "_setContentURL:",
-        "address" : 5217
-      },
-      {
-        "declaration" : "(void)_setContentLength:(long long)arg1",
-        "type" : "method",
-        "name" : "_setContentLength:",
-        "address" : 5197
-      },
-      {
-        "declaration" : "(void)_setContentIdentifier:(id)arg1",
-        "type" : "method",
-        "name" : "_setContentIdentifier:",
-        "address" : 5129
-      },
-      {
-        "declaration" : "(void)_applyChangeset:(id)arg1",
-        "type" : "method",
-        "name" : "_applyChangeset:",
-        "address" : 4805
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 4665
-      },
-      {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 4585
-      }
-    ],
-    "type" : "class",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_contentIdentifier"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_contentLength"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSURL *",
-        "size" : 4,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_contentURL"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSNumber *",
-        "size" : 4,
-        "offset" : 20,
-        "type" : "ivar",
-        "name" : "_downloadID"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_downloadState"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSError *",
-        "size" : 4,
-        "offset" : 28,
-        "type" : "ivar",
-        "name" : "_error"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "float",
-        "size" : 4,
-        "offset" : 32,
-        "type" : "ivar",
-        "name" : "_progress"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "double",
-        "size" : 8,
-        "offset" : 36,
-        "type" : "ivar",
-        "name" : "_timeRemaining"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "SKPaymentTransaction *",
-        "size" : 4,
-        "offset" : 44,
-        "type" : "ivar",
-        "name" : "_transaction"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 48,
-        "type" : "ivar",
-        "name" : "_version"
-      }
-    ],
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "armv7s" : {
-    "properties" : [
+  "x86_64":{
+    "className":"SKDownload",
+    "ivars":[
       {
-        "getter" : "downloadState",
-        "setter" : "setDownloadState:",
-        "type" : "property",
-        "name" : "downloadState",
-        "propertyType" : "int"
+        "ivarType":"NSString *",
+        "name":"_contentIdentifier",
+        "offset":8,
+        "type":"ivar"
       },
       {
-        "getter" : "contentLength",
-        "setter" : "setContentLength:",
-        "type" : "property",
-        "name" : "contentLength",
-        "propertyType" : "long long"
+        "ivarType":"long long",
+        "name":"_contentLength",
+        "offset":16,
+        "type":"ivar"
       },
       {
-        "getter" : "contentIdentifier",
-        "setter" : "setContentIdentifier:",
-        "type" : "property",
-        "name" : "contentIdentifier",
-        "propertyType" : "NSString *"
+        "ivarType":"NSURL *",
+        "name":"_contentURL",
+        "offset":24,
+        "type":"ivar"
       },
       {
-        "getter" : "contentURL",
-        "setter" : "setContentURL:",
-        "type" : "property",
-        "name" : "contentURL",
-        "propertyType" : "NSURL *"
+        "ivarType":"NSNumber *",
+        "name":"_downloadID",
+        "offset":32,
+        "type":"ivar"
       },
       {
-        "getter" : "contentVersion",
-        "setter" : "setContentVersion:",
-        "type" : "property",
-        "name" : "contentVersion",
-        "propertyType" : "NSString *"
+        "ivarType":"long long",
+        "name":"_downloadState",
+        "offset":40,
+        "type":"ivar"
       },
       {
-        "getter" : "error",
-        "setter" : "setError:",
-        "type" : "property",
-        "name" : "error",
-        "propertyType" : "NSError *"
+        "ivarType":"NSError *",
+        "name":"_error",
+        "offset":48,
+        "type":"ivar"
       },
       {
-        "getter" : "progress",
-        "setter" : "setProgress:",
-        "type" : "property",
-        "name" : "progress",
-        "propertyType" : "float"
+        "ivarType":"float",
+        "name":"_progress",
+        "offset":56,
+        "type":"ivar"
       },
       {
-        "getter" : "timeRemaining",
-        "setter" : "setTimeRemaining:",
-        "type" : "property",
-        "name" : "timeRemaining",
-        "propertyType" : "double"
+        "ivarType":"double",
+        "name":"_timeRemaining",
+        "offset":64,
+        "type":"ivar"
       },
       {
-        "getter" : "transaction",
-        "setter" : "setTransaction:",
-        "type" : "property",
-        "name" : "transaction",
-        "propertyType" : "SKPaymentTransaction *"
+        "ivarType":"SKPaymentTransaction *",
+        "name":"_transaction",
+        "offset":72,
+        "type":"ivar"
       },
       {
-        "getter" : "_downloadID",
-        "setter" : "_setDownloadID:",
-        "type" : "property",
-        "name" : "_downloadID",
-        "propertyType" : "NSNumber *"
+        "ivarType":"NSString *",
+        "name":"_version",
+        "offset":80,
+        "type":"ivar"
       }
     ],
-    "className" : "SKDownload",
-    "instanceMethods" : [
-      {
-        "declaration" : "(id)transaction",
-        "type" : "method",
-        "name" : "transaction",
-        "address" : 6985
-      },
-      {
-        "declaration" : "(double)timeRemaining",
-        "type" : "method",
-        "name" : "timeRemaining",
-        "address" : 6961
-      },
-      {
-        "declaration" : "(float)progress",
-        "type" : "method",
-        "name" : "progress",
-        "address" : 6945
-      },
-      {
-        "declaration" : "(id)error",
-        "type" : "method",
-        "name" : "error",
-        "address" : 6929
-      },
-      {
-        "declaration" : "(int)downloadState",
-        "type" : "method",
-        "name" : "downloadState",
-        "address" : 6913
-      },
-      {
-        "declaration" : "(void)_setDownloadID:(id)arg1",
-        "type" : "method",
-        "name" : "_setDownloadID:",
-        "address" : 6897
-      },
-      {
-        "declaration" : "(id)_downloadID",
-        "type" : "method",
-        "name" : "_downloadID",
-        "address" : 6877
-      },
-      {
-        "declaration" : "(id)contentVersion",
-        "type" : "method",
-        "name" : "contentVersion",
-        "address" : 6861
-      },
-      {
-        "declaration" : "(id)contentURL",
-        "type" : "method",
-        "name" : "contentURL",
-        "address" : 6845
-      },
-      {
-        "declaration" : "(long long)contentLength",
-        "type" : "method",
-        "name" : "contentLength",
-        "address" : 6821
-      },
-      {
-        "declaration" : "(id)contentIdentifier",
-        "type" : "method",
-        "name" : "contentIdentifier",
-        "address" : 6805
-      },
-      {
-        "declaration" : "(id)copyXPCEncoding",
-        "type" : "method",
-        "name" : "copyXPCEncoding",
-        "address" : 6493
-      },
-      {
-        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
-        "type" : "method",
-        "name" : "initWithXPCEncoding:",
-        "address" : 5817
-      },
-      {
-        "declaration" : "(void)_setVersion:(id)arg1",
-        "type" : "method",
-        "name" : "_setVersion:",
-        "address" : 5753
-      },
-      {
-        "declaration" : "(void)_setTransaction:(id)arg1",
-        "type" : "method",
-        "name" : "_setTransaction:",
-        "address" : 5673
-      },
-      {
-        "declaration" : "(void)_setTimeRemaining:(double)arg1",
-        "type" : "method",
-        "name" : "_setTimeRemaining:",
-        "address" : 5653
-      },
-      {
-        "declaration" : "(void)_setProgress:(float)arg1",
-        "type" : "method",
-        "name" : "_setProgress:",
-        "address" : 5637
-      },
-      {
-        "declaration" : "(void)_setError:(id)arg1",
-        "type" : "method",
-        "name" : "_setError:",
-        "address" : 5573
-      },
-      {
-        "declaration" : "(void)_setDownloadState:(int)arg1",
-        "type" : "method",
-        "name" : "_setDownloadState:",
-        "address" : 5557
-      },
-      {
-        "declaration" : "(void)_setContentURL:(id)arg1",
-        "type" : "method",
-        "name" : "_setContentURL:",
-        "address" : 5493
-      },
-      {
-        "declaration" : "(void)_setContentLength:(long long)arg1",
-        "type" : "method",
-        "name" : "_setContentLength:",
-        "address" : 5473
-      },
-      {
-        "declaration" : "(void)_setContentIdentifier:(id)arg1",
-        "type" : "method",
-        "name" : "_setContentIdentifier:",
-        "address" : 5409
-      },
-      {
-        "declaration" : "(void)_applyChangeset:(id)arg1",
-        "type" : "method",
-        "name" : "_applyChangeset:",
-        "address" : 5085
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 4945
-      },
-      {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 4865
-      }
-    ],
-    "type" : "class",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_contentIdentifier"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_contentLength"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSURL *",
-        "size" : 4,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_contentURL"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSNumber *",
-        "size" : 4,
-        "offset" : 20,
-        "type" : "ivar",
-        "name" : "_downloadID"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_downloadState"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSError *",
-        "size" : 4,
-        "offset" : 28,
-        "type" : "ivar",
-        "name" : "_error"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "float",
-        "size" : 4,
-        "offset" : 32,
-        "type" : "ivar",
-        "name" : "_progress"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "double",
-        "size" : 8,
-        "offset" : 36,
-        "type" : "ivar",
-        "name" : "_timeRemaining"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "SKPaymentTransaction *",
-        "size" : 4,
-        "offset" : 44,
-        "type" : "ivar",
-        "name" : "_transaction"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 48,
-        "type" : "ivar",
-        "name" : "_version"
-      }
-    ],
-    "superClassName" : "NSObject"
-  },
-  "arm64" : {
-    "properties" : [
-      {
-        "type" : "property",
-        "propertyType" : "long long",
-        "name" : "downloadState",
-        "getter" : "downloadState",
-        "setter" : "setDownloadState:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "long long",
-        "name" : "contentLength",
-        "getter" : "contentLength",
-        "setter" : "setContentLength:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "NSString *",
-        "name" : "contentIdentifier",
-        "getter" : "contentIdentifier",
-        "setter" : "setContentIdentifier:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "NSURL *",
-        "name" : "contentURL",
-        "getter" : "contentURL",
-        "setter" : "setContentURL:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "NSString *",
-        "name" : "contentVersion",
-        "getter" : "contentVersion",
-        "setter" : "setContentVersion:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "NSError *",
-        "name" : "error",
-        "getter" : "error",
-        "setter" : "setError:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "float",
-        "name" : "progress",
-        "getter" : "progress",
-        "setter" : "setProgress:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "double",
-        "name" : "timeRemaining",
-        "getter" : "timeRemaining",
-        "setter" : "setTimeRemaining:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "SKPaymentTransaction *",
-        "name" : "transaction",
-        "getter" : "transaction",
-        "setter" : "setTransaction:"
-      },
-      {
-        "type" : "property",
-        "propertyType" : "NSNumber *",
-        "name" : "_downloadID",
-        "getter" : "_downloadID",
-        "setter" : "_setDownloadID:"
-      }
-    ],
-    "className" : "SKDownload",
-    "instanceMethods" : [
-      {
-        "declaration" : "(id)transaction",
-        "type" : "method",
-        "name" : "transaction",
-        "address" : 7924
-      },
-      {
-        "declaration" : "(double)timeRemaining",
-        "type" : "method",
-        "name" : "timeRemaining",
-        "address" : 7908
-      },
-      {
-        "declaration" : "(float)progress",
-        "type" : "method",
-        "name" : "progress",
-        "address" : 7892
-      },
-      {
-        "declaration" : "(id)error",
-        "type" : "method",
-        "name" : "error",
-        "address" : 7876
-      },
-      {
-        "declaration" : "(long long)downloadState",
-        "type" : "method",
-        "name" : "downloadState",
-        "address" : 7860
-      },
-      {
-        "declaration" : "(void)_setDownloadID:(id)arg1",
-        "type" : "method",
-        "name" : "_setDownloadID:",
-        "address" : 7848
-      },
-      {
-        "declaration" : "(id)_downloadID",
-        "type" : "method",
-        "name" : "_downloadID",
-        "address" : 7832
-      },
-      {
-        "declaration" : "(id)contentVersion",
-        "type" : "method",
-        "name" : "contentVersion",
-        "address" : 7816
-      },
-      {
-        "declaration" : "(id)contentURL",
-        "type" : "method",
-        "name" : "contentURL",
-        "address" : 7800
-      },
-      {
-        "declaration" : "(long long)contentLength",
-        "type" : "method",
-        "name" : "contentLength",
-        "address" : 7784
-      },
-      {
-        "declaration" : "(id)contentIdentifier",
-        "type" : "method",
-        "name" : "contentIdentifier",
-        "address" : 7768
-      },
-      {
-        "declaration" : "(id)copyXPCEncoding",
-        "type" : "method",
-        "name" : "copyXPCEncoding",
-        "address" : 7464
-      },
-      {
-        "declaration" : "(id)initWithXPCEncoding:(id)arg1",
-        "type" : "method",
-        "name" : "initWithXPCEncoding:",
-        "address" : 6772
-      },
-      {
-        "declaration" : "(void)_setVersion:(id)arg1",
-        "type" : "method",
-        "name" : "_setVersion:",
-        "address" : 6668
-      },
-      {
-        "declaration" : "(void)_setTransaction:(id)arg1",
-        "type" : "method",
-        "name" : "_setTransaction:",
-        "address" : 6572
-      },
-      {
-        "declaration" : "(void)_setTimeRemaining:(double)arg1",
-        "type" : "method",
-        "name" : "_setTimeRemaining:",
-        "address" : 6556
-      },
-      {
-        "declaration" : "(void)_setProgress:(float)arg1",
-        "type" : "method",
-        "name" : "_setProgress:",
-        "address" : 6540
-      },
-      {
-        "declaration" : "(void)_setError:(id)arg1",
-        "type" : "method",
-        "name" : "_setError:",
-        "address" : 6436
-      },
-      {
-        "declaration" : "(void)_setDownloadState:(long long)arg1",
-        "type" : "method",
-        "name" : "_setDownloadState:",
-        "address" : 6420
-      },
-      {
-        "declaration" : "(void)_setContentURL:(id)arg1",
-        "type" : "method",
-        "name" : "_setContentURL:",
-        "address" : 6316
-      },
-      {
-        "declaration" : "(void)_setContentLength:(long long)arg1",
-        "type" : "method",
-        "name" : "_setContentLength:",
-        "address" : 6300
-      },
-      {
-        "declaration" : "(void)_setContentIdentifier:(id)arg1",
-        "type" : "method",
-        "name" : "_setContentIdentifier:",
-        "address" : 6196
-      },
-      {
-        "declaration" : "(void)_applyChangeset:(id)arg1",
-        "type" : "method",
-        "name" : "_applyChangeset:",
-        "address" : 5804
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 5640
-      },
-      {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 5552
-      }
-    ],
-    "type" : "class",
-    "ivars" : [
-      {
-        "alignment" : 3,
-        "ivarType" : "NSString *",
-        "size" : 8,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_contentIdentifier"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_contentLength"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSURL *",
-        "size" : 8,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_contentURL"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSNumber *",
-        "size" : 8,
-        "offset" : 32,
-        "type" : "ivar",
-        "name" : "_downloadID"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 40,
-        "type" : "ivar",
-        "name" : "_downloadState"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSError *",
-        "size" : 8,
-        "offset" : 48,
-        "type" : "ivar",
-        "name" : "_error"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "float",
-        "size" : 4,
-        "offset" : 56,
-        "type" : "ivar",
-        "name" : "_progress"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "double",
-        "size" : 8,
-        "offset" : 64,
-        "type" : "ivar",
-        "name" : "_timeRemaining"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "SKPaymentTransaction *",
-        "size" : 8,
-        "offset" : 72,
-        "type" : "ivar",
-        "name" : "_transaction"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSString *",
-        "size" : 8,
-        "offset" : 80,
-        "type" : "ivar",
-        "name" : "_version"
-      }
-    ],
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   }
 }

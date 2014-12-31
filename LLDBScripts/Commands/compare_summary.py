@@ -72,10 +72,10 @@ def compare_summary(debugger, command, result, internal_dict):
     options = lldb.SBExpressionOptions()
     options.SetIgnoreBreakpoints()
     if summary == compare_description:
-        frame.EvaluateExpression("{} = @YES".format(result_name), options)
+        frame.EvaluateExpression("{} = @1".format(result_name), options)
     else:
         print >> result, "object: {}\nshould be: {}".format(summary, compare_description)
-        frame.EvaluateExpression("{} = @NO".format(result_name), options)
+        frame.EvaluateExpression("{} = @0".format(result_name), options)
 
 
 def __lldb_init_module(debugger, internal_dict):

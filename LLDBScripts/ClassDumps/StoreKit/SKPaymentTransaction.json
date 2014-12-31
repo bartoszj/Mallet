@@ -3,11 +3,9 @@
     "className":"SKPaymentTransaction",
     "ivars":[
       {
-        "alignment":3,
         "ivarType":"id",
         "name":"_internal",
         "offset":8,
-        "size":8,
         "type":"ivar"
       }
     ],
@@ -18,26 +16,9 @@
     "className":"SKPaymentTransaction",
     "ivars":[
       {
-        "alignment":2,
         "ivarType":"id",
         "name":"_internal",
         "offset":4,
-        "size":4,
-        "type":"ivar"
-      }
-    ],
-    "superClassName":"NSObject",
-    "type":"class"
-  },
-  "armv7s":{
-    "className":"SKPaymentTransaction",
-    "ivars":[
-      {
-        "alignment":2,
-        "ivarType":"id",
-        "name":"_internal",
-        "offset":4,
-        "size":4,
         "type":"ivar"
       }
     ],
@@ -48,11 +29,9 @@
     "className":"SKPaymentTransaction",
     "ivars":[
       {
-        "alignment":2,
         "ivarType":"id",
         "name":"_internal",
         "offset":4,
-        "size":4,
         "type":"ivar"
       }
     ],
@@ -63,11 +42,9 @@
     "className":"SKPaymentTransaction",
     "ivars":[
       {
-        "alignment":3,
         "ivarType":"id",
         "name":"_internal",
         "offset":8,
-        "size":8,
         "type":"ivar"
       }
     ],

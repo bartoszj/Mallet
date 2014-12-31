@@ -3,17 +3,11 @@
     "className":"CALayer",
     "ivars":[
       {
-        "alignment":3,
-        "ivarType":"struct _CALayerIvars",
+        "ivarType":"struct _CALayerIvars { \n        int refcount; \n        unsigned int magic; \n        void *layer; \n    }",
         "name":"_attr",
         "offset":8,
-        "size":16,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "NSCoding",
-      "CAMediaTiming"
     ],
     "superClassName":"NSObject",
     "type":"class"
@@ -22,38 +16,11 @@
     "className":"CALayer",
     "ivars":[
       {
-        "alignment":2,
-        "ivarType":"struct _CALayerIvars",
+        "ivarType":"struct _CALayerIvars { \n        int refcount; \n        unsigned int magic; \n        void *layer; \n        void *unused1[8]; \n    }",
         "name":"_attr",
         "offset":4,
-        "size":44,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "CAPropertyInfo",
-      "NSCoding",
-      "CAMediaTiming"
-    ],
-    "superClassName":"NSObject",
-    "type":"class"
-  },
-  "armv7s":{
-    "className":"CALayer",
-    "ivars":[
-      {
-        "alignment":2,
-        "ivarType":"struct _CALayerIvars",
-        "name":"_attr",
-        "offset":4,
-        "size":44,
-        "type":"ivar"
-      }
-    ],
-    "protocols":[
-      "CAPropertyInfo",
-      "NSCoding",
-      "CAMediaTiming"
     ],
     "superClassName":"NSObject",
     "type":"class"
@@ -62,18 +29,11 @@
     "className":"CALayer",
     "ivars":[
       {
-        "alignment":2,
-        "ivarType":"struct _CALayerIvars",
+        "ivarType":"struct _CALayerIvars { \n        int refcount; \n        unsigned int magic; \n        void *layer; \n        void *unused1[8]; \n    }",
         "name":"_attr",
         "offset":4,
-        "size":44,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "CAPropertyInfo",
-      "NSCoding",
-      "CAMediaTiming"
     ],
     "superClassName":"NSObject",
     "type":"class"
@@ -82,18 +42,11 @@
     "className":"CALayer",
     "ivars":[
       {
-        "alignment":3,
-        "ivarType":"struct _CALayerIvars",
+        "ivarType":"struct _CALayerIvars { \n        int refcount; \n        unsigned int magic; \n        void *layer; \n    }",
         "name":"_attr",
         "offset":8,
-        "size":16,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "CAPropertyInfo",
-      "NSCoding",
-      "CAMediaTiming"
     ],
     "superClassName":"NSObject",
     "type":"class"

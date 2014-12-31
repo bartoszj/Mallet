@@ -1,282 +1,54 @@
 {
-  "i386" : {
-    "properties" : [
+  "arm64":{
+    "className":"SKProductsRequest",
+    "ivars":[
       {
-        "name" : "delegate",
-        "setter" : "setDelegate:",
-        "getter" : "delegate",
-        "type" : "property",
-        "propertyType" : "id <SKProductsRequestDelegate>"
+        "ivarType":"id",
+        "name":"_productsRequestInternal",
+        "offset":16,
+        "type":"ivar"
       }
     ],
-    "className" : "SKProductsRequest",
-    "instanceMethods" : [
-      {
-        "declaration" : "(void)_sendXPCMessage",
-        "type" : "method",
-        "name" : "_sendXPCMessage",
-        "address" : 38726
-      },
-      {
-        "declaration" : "(void)_handleReply:(id)arg1",
-        "type" : "method",
-        "name" : "_handleReply:",
-        "address" : 37878
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 37785
-      },
-      {
-        "declaration" : "(id)initWithProductIdentifiers:(id)arg1",
-        "type" : "method",
-        "name" : "initWithProductIdentifiers:",
-        "address" : 37696
-      },
-      {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 37584
-      }
-    ],
-    "type" : "class",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "id",
-        "size" : 4,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_productsRequestInternal"
-      }
-    ],
-    "superClassName" : "SKRequest"
+    "superClassName":"SKRequest",
+    "type":"class"
   },
-  "x86_64" : {
-    "properties" : [
+  "armv7":{
+    "className":"SKProductsRequest",
+    "ivars":[
       {
-        "propertyType" : "id <SKProductsRequestDelegate>",
-        "getter" : "delegate",
-        "type" : "property",
-        "name" : "delegate",
-        "setter" : "setDelegate:"
+        "ivarType":"id",
+        "name":"_productsRequestInternal",
+        "offset":8,
+        "type":"ivar"
       }
     ],
-    "className" : "SKProductsRequest",
-    "instanceMethods" : [
-      {
-        "declaration" : "(void)_sendXPCMessage",
-        "type" : "method",
-        "name" : "_sendXPCMessage",
-        "address" : 34571
-      },
-      {
-        "declaration" : "(void)_handleReply:(id)arg1",
-        "type" : "method",
-        "name" : "_handleReply:",
-        "address" : 33857
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 33771
-      },
-      {
-        "declaration" : "(id)initWithProductIdentifiers:(id)arg1",
-        "type" : "method",
-        "name" : "initWithProductIdentifiers:",
-        "address" : 33694
-      },
-      {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 33584
-      }
-    ],
-    "type" : "class",
-    "ivars" : [
-      {
-        "alignment" : 3,
-        "ivarType" : "id",
-        "size" : 8,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_productsRequestInternal"
-      }
-    ],
-    "superClassName" : "SKRequest"
+    "superClassName":"SKRequest",
+    "type":"class"
   },
-  "armv7" : {
-    "properties" : [
+  "i386":{
+    "className":"SKProductsRequest",
+    "ivars":[
       {
-        "name" : "delegate",
-        "propertyType" : "id <SKProductsRequestDelegate>",
-        "getter" : "delegate",
-        "type" : "property",
-        "setter" : "setDelegate:"
+        "ivarType":"id",
+        "name":"_productsRequestInternal",
+        "offset":8,
+        "type":"ivar"
       }
     ],
-    "className" : "SKProductsRequest",
-    "instanceMethods" : [
-      {
-        "declaration" : "(void)_sendXPCMessage",
-        "type" : "method",
-        "name" : "_sendXPCMessage",
-        "address" : 30929
-      },
-      {
-        "declaration" : "(void)_handleReply:(id)arg1",
-        "type" : "method",
-        "name" : "_handleReply:",
-        "address" : 30261
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 30181
-      },
-      {
-        "declaration" : "(id)initWithProductIdentifiers:(id)arg1",
-        "type" : "method",
-        "name" : "initWithProductIdentifiers:",
-        "address" : 30105
-      },
-      {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 30005
-      }
-    ],
-    "type" : "class",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "id",
-        "size" : 4,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_productsRequestInternal"
-      }
-    ],
-    "superClassName" : "SKRequest"
+    "superClassName":"SKRequest",
+    "type":"class"
   },
-  "armv7s" : {
-    "properties" : [
+  "x86_64":{
+    "className":"SKProductsRequest",
+    "ivars":[
       {
-        "getter" : "delegate",
-        "setter" : "setDelegate:",
-        "type" : "property",
-        "name" : "delegate",
-        "propertyType" : "id <SKProductsRequestDelegate>"
+        "ivarType":"id",
+        "name":"_productsRequestInternal",
+        "offset":16,
+        "type":"ivar"
       }
     ],
-    "className" : "SKProductsRequest",
-    "instanceMethods" : [
-      {
-        "declaration" : "(void)_sendXPCMessage",
-        "type" : "method",
-        "name" : "_sendXPCMessage",
-        "address" : 30997
-      },
-      {
-        "declaration" : "(void)_handleReply:(id)arg1",
-        "type" : "method",
-        "name" : "_handleReply:",
-        "address" : 30329
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 30249
-      },
-      {
-        "declaration" : "(id)initWithProductIdentifiers:(id)arg1",
-        "type" : "method",
-        "name" : "initWithProductIdentifiers:",
-        "address" : 30173
-      },
-      {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 30073
-      }
-    ],
-    "type" : "class",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "id",
-        "size" : 4,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_productsRequestInternal"
-      }
-    ],
-    "superClassName" : "SKRequest"
-  },
-  "arm64" : {
-    "properties" : [
-      {
-        "type" : "property",
-        "propertyType" : "id <SKProductsRequestDelegate>",
-        "name" : "delegate",
-        "getter" : "delegate",
-        "setter" : "setDelegate:"
-      }
-    ],
-    "className" : "SKProductsRequest",
-    "instanceMethods" : [
-      {
-        "declaration" : "(void)_sendXPCMessage",
-        "type" : "method",
-        "name" : "_sendXPCMessage",
-        "address" : 36944
-      },
-      {
-        "declaration" : "(void)_handleReply:(id)arg1",
-        "type" : "method",
-        "name" : "_handleReply:",
-        "address" : 36156
-      },
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 36048
-      },
-      {
-        "declaration" : "(id)initWithProductIdentifiers:(id)arg1",
-        "type" : "method",
-        "name" : "initWithProductIdentifiers:",
-        "address" : 35948
-      },
-      {
-        "declaration" : "(id)init",
-        "type" : "method",
-        "name" : "init",
-        "address" : 35816
-      }
-    ],
-    "type" : "class",
-    "ivars" : [
-      {
-        "alignment" : 3,
-        "ivarType" : "id",
-        "size" : 8,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_productsRequestInternal"
-      }
-    ],
-    "superClassName" : "SKRequest"
+    "superClassName":"SKRequest",
+    "type":"class"
   }
 }

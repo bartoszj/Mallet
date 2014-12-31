@@ -3,24 +3,17 @@
     "className":"UIDatePicker",
     "ivars":[
       {
-        "alignment":3,
         "ivarType":"_UIDatePickerView *",
         "name":"_pickerView",
-        "offset":224,
-        "size":8,
+        "offset":320,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_useCurrentDateDuringDecoding",
-        "offset":232,
-        "size":1,
+        "offset":328,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "UIPickerViewScrollTesting",
-      "NSCoding"
     ],
     "superClassName":"UIControl",
     "type":"class"
@@ -29,50 +22,17 @@
     "className":"UIDatePicker",
     "ivars":[
       {
-        "alignment":2,
         "ivarType":"_UIDatePickerView *",
         "name":"_pickerView",
-        "offset":120,
-        "size":4,
+        "offset":168,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_useCurrentDateDuringDecoding",
-        "offset":124,
-        "size":1,
+        "offset":172,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "UIPickerViewScrollTesting",
-      "NSCoding"
-    ],
-    "superClassName":"UIControl",
-    "type":"class"
-  },
-  "armv7s":{
-    "className":"UIDatePicker",
-    "ivars":[
-      {
-        "alignment":2,
-        "ivarType":"_UIDatePickerView *",
-        "name":"_pickerView",
-        "offset":120,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"char",
-        "name":"_useCurrentDateDuringDecoding",
-        "offset":124,
-        "size":1,
-        "type":"ivar"
-      }
-    ],
-    "protocols":[
-      "UIPickerViewScrollTesting",
-      "NSCoding"
     ],
     "superClassName":"UIControl",
     "type":"class"
@@ -81,24 +41,17 @@
     "className":"UIDatePicker",
     "ivars":[
       {
-        "alignment":2,
         "ivarType":"_UIDatePickerView *",
         "name":"_pickerView",
-        "offset":120,
-        "size":4,
+        "offset":168,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_useCurrentDateDuringDecoding",
-        "offset":124,
-        "size":1,
+        "offset":172,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "UIPickerViewScrollTesting",
-      "NSCoding"
     ],
     "superClassName":"UIControl",
     "type":"class"
@@ -107,24 +60,17 @@
     "className":"UIDatePicker",
     "ivars":[
       {
-        "alignment":3,
         "ivarType":"_UIDatePickerView *",
         "name":"_pickerView",
-        "offset":224,
-        "size":8,
+        "offset":320,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_useCurrentDateDuringDecoding",
-        "offset":232,
-        "size":1,
+        "offset":328,
         "type":"ivar"
       }
-    ],
-    "protocols":[
-      "UIPickerViewScrollTesting",
-      "NSCoding"
     ],
     "superClassName":"UIControl",
     "type":"class"

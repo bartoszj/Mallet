@@ -3,111 +3,87 @@
     "className":"UIStepper",
     "ivars":[
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_isRtoL",
-        "offset":212,
-        "size":1,
+        "offset":316,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"UIImageView *",
         "name":"_middleView",
-        "offset":216,
-        "size":8,
+        "offset":320,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"UIButton *",
         "name":"_plusButton",
-        "offset":224,
-        "size":8,
+        "offset":328,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"UIButton *",
         "name":"_minusButton",
-        "offset":232,
-        "size":8,
+        "offset":336,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSTimer *",
         "name":"_repeatTimer",
-        "offset":240,
-        "size":8,
+        "offset":344,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_repeatCount",
-        "offset":248,
-        "size":8,
+        "offset":352,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSMutableDictionary *",
         "name":"_dividerImages",
-        "offset":256,
-        "size":8,
+        "offset":360,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_continuous",
-        "offset":264,
-        "size":1,
+        "offset":368,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_autorepeat",
-        "offset":265,
-        "size":1,
+        "offset":369,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_wraps",
-        "offset":266,
-        "size":1,
+        "offset":370,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_value",
-        "offset":272,
-        "size":8,
+        "offset":376,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_minimumValue",
-        "offset":280,
-        "size":8,
+        "offset":384,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_maximumValue",
-        "offset":288,
-        "size":8,
+        "offset":392,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_stepValue",
-        "offset":296,
-        "size":8,
+        "offset":400,
         "type":"ivar"
       }
     ],
@@ -118,226 +94,87 @@
     "className":"UIStepper",
     "ivars":[
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_isRtoL",
-        "offset":131,
-        "size":1,
+        "offset":187,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"UIImageView *",
         "name":"_middleView",
-        "offset":132,
-        "size":4,
+        "offset":188,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"UIButton *",
         "name":"_plusButton",
-        "offset":136,
-        "size":4,
+        "offset":192,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"UIButton *",
         "name":"_minusButton",
-        "offset":140,
-        "size":4,
+        "offset":196,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSTimer *",
         "name":"_repeatTimer",
-        "offset":144,
-        "size":4,
+        "offset":200,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_repeatCount",
-        "offset":148,
-        "size":4,
+        "offset":204,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSMutableDictionary *",
         "name":"_dividerImages",
-        "offset":152,
-        "size":4,
+        "offset":208,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_continuous",
-        "offset":156,
-        "size":1,
+        "offset":212,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_autorepeat",
-        "offset":157,
-        "size":1,
+        "offset":213,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_wraps",
-        "offset":158,
-        "size":1,
+        "offset":214,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_value",
-        "offset":160,
-        "size":8,
+        "offset":216,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_minimumValue",
-        "offset":168,
-        "size":8,
+        "offset":224,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_maximumValue",
-        "offset":176,
-        "size":8,
+        "offset":232,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_stepValue",
-        "offset":184,
-        "size":8,
-        "type":"ivar"
-      }
-    ],
-    "superClassName":"UIControl",
-    "type":"class"
-  },
-  "armv7s":{
-    "className":"UIStepper",
-    "ivars":[
-      {
-        "ivarType":"char",
-        "name":"_isRtoL",
-        "offset":131,
-        "size":1,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"UIImageView *",
-        "name":"_middleView",
-        "offset":132,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"UIButton *",
-        "name":"_plusButton",
-        "offset":136,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"UIButton *",
-        "name":"_minusButton",
-        "offset":140,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSTimer *",
-        "name":"_repeatTimer",
-        "offset":144,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"int",
-        "name":"_repeatCount",
-        "offset":148,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "alignment":2,
-        "ivarType":"NSMutableDictionary *",
-        "name":"_dividerImages",
-        "offset":152,
-        "size":4,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"char",
-        "name":"_continuous",
-        "offset":156,
-        "size":1,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"char",
-        "name":"_autorepeat",
-        "offset":157,
-        "size":1,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"char",
-        "name":"_wraps",
-        "offset":158,
-        "size":1,
-        "type":"ivar"
-      },
-      {
-        "alignment":3,
-        "ivarType":"double",
-        "name":"_value",
-        "offset":160,
-        "size":8,
-        "type":"ivar"
-      },
-      {
-        "alignment":3,
-        "ivarType":"double",
-        "name":"_minimumValue",
-        "offset":168,
-        "size":8,
-        "type":"ivar"
-      },
-      {
-        "alignment":3,
-        "ivarType":"double",
-        "name":"_maximumValue",
-        "offset":176,
-        "size":8,
-        "type":"ivar"
-      },
-      {
-        "alignment":3,
-        "ivarType":"double",
-        "name":"_stepValue",
-        "offset":184,
-        "size":8,
+        "offset":240,
         "type":"ivar"
       }
     ],
@@ -348,111 +185,87 @@
     "className":"UIStepper",
     "ivars":[
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_isRtoL",
-        "offset":124,
-        "size":1,
+        "offset":180,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"UIImageView *",
         "name":"_middleView",
-        "offset":128,
-        "size":4,
+        "offset":184,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"UIButton *",
         "name":"_plusButton",
-        "offset":132,
-        "size":4,
+        "offset":188,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"UIButton *",
         "name":"_minusButton",
-        "offset":136,
-        "size":4,
+        "offset":192,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSTimer *",
         "name":"_repeatTimer",
-        "offset":140,
-        "size":4,
+        "offset":196,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"int",
         "name":"_repeatCount",
-        "offset":144,
-        "size":4,
+        "offset":200,
         "type":"ivar"
       },
       {
-        "alignment":2,
         "ivarType":"NSMutableDictionary *",
         "name":"_dividerImages",
-        "offset":148,
-        "size":4,
+        "offset":204,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_continuous",
-        "offset":152,
-        "size":1,
+        "offset":208,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_autorepeat",
-        "offset":153,
-        "size":1,
+        "offset":209,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
+        "ivarType":"BOOL",
         "name":"_wraps",
-        "offset":154,
-        "size":1,
+        "offset":210,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_value",
-        "offset":156,
-        "size":8,
+        "offset":212,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_minimumValue",
-        "offset":164,
-        "size":8,
+        "offset":220,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_maximumValue",
-        "offset":172,
-        "size":8,
+        "offset":228,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_stepValue",
-        "offset":180,
-        "size":8,
+        "offset":236,
         "type":"ivar"
       }
     ],
@@ -463,111 +276,87 @@
     "className":"UIStepper",
     "ivars":[
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_isRtoL",
-        "offset":220,
-        "size":1,
+        "offset":324,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"UIImageView *",
         "name":"_middleView",
-        "offset":224,
-        "size":8,
+        "offset":328,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"UIButton *",
         "name":"_plusButton",
-        "offset":232,
-        "size":8,
+        "offset":336,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"UIButton *",
         "name":"_minusButton",
-        "offset":240,
-        "size":8,
+        "offset":344,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSTimer *",
         "name":"_repeatTimer",
-        "offset":248,
-        "size":8,
+        "offset":352,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"long long",
         "name":"_repeatCount",
-        "offset":256,
-        "size":8,
+        "offset":360,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"NSMutableDictionary *",
         "name":"_dividerImages",
-        "offset":264,
-        "size":8,
+        "offset":368,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_continuous",
-        "offset":272,
-        "size":1,
+        "offset":376,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_autorepeat",
-        "offset":273,
-        "size":1,
+        "offset":377,
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
+        "ivarType":"bool",
         "name":"_wraps",
-        "offset":274,
-        "size":1,
+        "offset":378,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_value",
-        "offset":280,
-        "size":8,
+        "offset":384,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_minimumValue",
-        "offset":288,
-        "size":8,
+        "offset":392,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_maximumValue",
-        "offset":296,
-        "size":8,
+        "offset":400,
         "type":"ivar"
       },
       {
-        "alignment":3,
         "ivarType":"double",
         "name":"_stepValue",
-        "offset":304,
-        "size":8,
+        "offset":408,
         "type":"ivar"
       }
     ],

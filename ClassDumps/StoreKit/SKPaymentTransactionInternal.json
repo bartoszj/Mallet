@@ -1,437 +1,246 @@
 {
-  "i386" : {
-    "instanceMethods" : [
+  "arm64":{
+    "className":"SKPaymentTransactionInternal",
+    "ivars":[
       {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 34226
+        "ivarType":"NSArray *",
+        "name":"_downloads",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSError *",
+        "name":"_error",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"SKPaymentTransaction *",
+        "name":"_originalTransaction",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"SKPayment *",
+        "name":"_payment",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_temporaryIdentifier",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDate *",
+        "name":"_transactionDate",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_transactionIdentifier",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSData *",
+        "name":"_transactionReceipt",
+        "offset":64,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_transactionState",
+        "offset":72,
+        "type":"ivar"
       }
     ],
-    "className" : "SKPaymentTransactionInternal",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "NSArray *",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_downloads"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSError *",
-        "size" : 4,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_error"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "SKPaymentTransaction *",
-        "size" : 4,
-        "offset" : 12,
-        "type" : "ivar",
-        "name" : "_originalTransaction"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "SKPayment *",
-        "size" : 4,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_payment"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 20,
-        "type" : "ivar",
-        "name" : "_temporaryIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSDate *",
-        "size" : 4,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_transactionDate"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 28,
-        "type" : "ivar",
-        "name" : "_transactionIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSData *",
-        "size" : 4,
-        "offset" : 32,
-        "type" : "ivar",
-        "name" : "_transactionReceipt"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 36,
-        "type" : "ivar",
-        "name" : "_transactionState"
-      }
-    ],
-    "type" : "class",
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "x86_64" : {
-    "instanceMethods" : [
+  "armv7":{
+    "className":"SKPaymentTransactionInternal",
+    "ivars":[
       {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 30594
+        "ivarType":"NSArray *",
+        "name":"_downloads",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSError *",
+        "name":"_error",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"SKPaymentTransaction *",
+        "name":"_originalTransaction",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"SKPayment *",
+        "name":"_payment",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_temporaryIdentifier",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDate *",
+        "name":"_transactionDate",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_transactionIdentifier",
+        "offset":28,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSData *",
+        "name":"_transactionReceipt",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_transactionState",
+        "offset":36,
+        "type":"ivar"
       }
     ],
-    "className" : "SKPaymentTransactionInternal",
-    "ivars" : [
-      {
-        "alignment" : 3,
-        "ivarType" : "NSArray *",
-        "size" : 8,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_downloads"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSError *",
-        "size" : 8,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_error"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "SKPaymentTransaction *",
-        "size" : 8,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_originalTransaction"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "SKPayment *",
-        "size" : 8,
-        "offset" : 32,
-        "type" : "ivar",
-        "name" : "_payment"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSString *",
-        "size" : 8,
-        "offset" : 40,
-        "type" : "ivar",
-        "name" : "_temporaryIdentifier"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSDate *",
-        "size" : 8,
-        "offset" : 48,
-        "type" : "ivar",
-        "name" : "_transactionDate"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSString *",
-        "size" : 8,
-        "offset" : 56,
-        "type" : "ivar",
-        "name" : "_transactionIdentifier"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSData *",
-        "size" : 8,
-        "offset" : 64,
-        "type" : "ivar",
-        "name" : "_transactionReceipt"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 72,
-        "type" : "ivar",
-        "name" : "_transactionState"
-      }
-    ],
-    "type" : "class",
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "armv7" : {
-    "instanceMethods" : [
+  "i386":{
+    "className":"SKPaymentTransactionInternal",
+    "ivars":[
       {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 27025
+        "ivarType":"NSArray *",
+        "name":"_downloads",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSError *",
+        "name":"_error",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"SKPaymentTransaction *",
+        "name":"_originalTransaction",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"SKPayment *",
+        "name":"_payment",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_temporaryIdentifier",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDate *",
+        "name":"_transactionDate",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_transactionIdentifier",
+        "offset":28,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSData *",
+        "name":"_transactionReceipt",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_transactionState",
+        "offset":36,
+        "type":"ivar"
       }
     ],
-    "className" : "SKPaymentTransactionInternal",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "NSArray *",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_downloads"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSError *",
-        "size" : 4,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_error"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "SKPaymentTransaction *",
-        "size" : 4,
-        "offset" : 12,
-        "type" : "ivar",
-        "name" : "_originalTransaction"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "SKPayment *",
-        "size" : 4,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_payment"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 20,
-        "type" : "ivar",
-        "name" : "_temporaryIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSDate *",
-        "size" : 4,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_transactionDate"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 28,
-        "type" : "ivar",
-        "name" : "_transactionIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSData *",
-        "size" : 4,
-        "offset" : 32,
-        "type" : "ivar",
-        "name" : "_transactionReceipt"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 36,
-        "type" : "ivar",
-        "name" : "_transactionState"
-      }
-    ],
-    "type" : "class",
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   },
-  "armv7s" : {
-    "instanceMethods" : [
+  "x86_64":{
+    "className":"SKPaymentTransactionInternal",
+    "ivars":[
       {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 27157
+        "ivarType":"NSArray *",
+        "name":"_downloads",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSError *",
+        "name":"_error",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"SKPaymentTransaction *",
+        "name":"_originalTransaction",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"SKPayment *",
+        "name":"_payment",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_temporaryIdentifier",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDate *",
+        "name":"_transactionDate",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_transactionIdentifier",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSData *",
+        "name":"_transactionReceipt",
+        "offset":64,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_transactionState",
+        "offset":72,
+        "type":"ivar"
       }
     ],
-    "className" : "SKPaymentTransactionInternal",
-    "ivars" : [
-      {
-        "alignment" : 2,
-        "ivarType" : "NSArray *",
-        "size" : 4,
-        "offset" : 4,
-        "type" : "ivar",
-        "name" : "_downloads"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSError *",
-        "size" : 4,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_error"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "SKPaymentTransaction *",
-        "size" : 4,
-        "offset" : 12,
-        "type" : "ivar",
-        "name" : "_originalTransaction"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "SKPayment *",
-        "size" : 4,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_payment"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 20,
-        "type" : "ivar",
-        "name" : "_temporaryIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSDate *",
-        "size" : 4,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_transactionDate"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSString *",
-        "size" : 4,
-        "offset" : 28,
-        "type" : "ivar",
-        "name" : "_transactionIdentifier"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "NSData *",
-        "size" : 4,
-        "offset" : 32,
-        "type" : "ivar",
-        "name" : "_transactionReceipt"
-      },
-      {
-        "alignment" : 2,
-        "ivarType" : "int",
-        "size" : 4,
-        "offset" : 36,
-        "type" : "ivar",
-        "name" : "_transactionState"
-      }
-    ],
-    "type" : "class",
-    "superClassName" : "NSObject"
-  },
-  "arm64" : {
-    "instanceMethods" : [
-      {
-        "declaration" : "(void)dealloc",
-        "type" : "method",
-        "name" : "dealloc",
-        "address" : 32416
-      }
-    ],
-    "className" : "SKPaymentTransactionInternal",
-    "ivars" : [
-      {
-        "alignment" : 3,
-        "ivarType" : "NSArray *",
-        "size" : 8,
-        "offset" : 8,
-        "type" : "ivar",
-        "name" : "_downloads"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSError *",
-        "size" : 8,
-        "offset" : 16,
-        "type" : "ivar",
-        "name" : "_error"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "SKPaymentTransaction *",
-        "size" : 8,
-        "offset" : 24,
-        "type" : "ivar",
-        "name" : "_originalTransaction"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "SKPayment *",
-        "size" : 8,
-        "offset" : 32,
-        "type" : "ivar",
-        "name" : "_payment"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSString *",
-        "size" : 8,
-        "offset" : 40,
-        "type" : "ivar",
-        "name" : "_temporaryIdentifier"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSDate *",
-        "size" : 8,
-        "offset" : 48,
-        "type" : "ivar",
-        "name" : "_transactionDate"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSString *",
-        "size" : 8,
-        "offset" : 56,
-        "type" : "ivar",
-        "name" : "_transactionIdentifier"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "NSData *",
-        "size" : 8,
-        "offset" : 64,
-        "type" : "ivar",
-        "name" : "_transactionReceipt"
-      },
-      {
-        "alignment" : 3,
-        "ivarType" : "long long",
-        "size" : 8,
-        "offset" : 72,
-        "type" : "ivar",
-        "name" : "_transactionState"
-      }
-    ],
-    "type" : "class",
-    "superClassName" : "NSObject"
+    "superClassName":"NSObject",
+    "type":"class"
   }
 }

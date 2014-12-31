@@ -45,6 +45,8 @@ def normalize_type(type_32bit, type_64bit):
         elif type_32bit == u"struct _NSRange":
             return u"NSRange"
         return type_32bit
+    elif type_32bit == u"BOOL" and type_64bit == u"bool":
+        return u"BOOL"
     elif type_32bit == u"char" and type_64bit == u"_Bool":
         return u"BOOL"
     elif type_32bit == u"int" and type_64bit == u"long long":
@@ -67,8 +69,6 @@ def dump_class(class_name):
     current_dir, _ = os.path.split(current_dir)
     input_dir = os.path.join(current_dir, "LLDBScripts/ClassDumps")
 
-    architecture_names = ["armv7", "i386", "arm64", "x86_64"]
-
     al = ClassDump.ArchitecturesList()
     al.read_directory_path(input_dir)
 
@@ -84,7 +84,7 @@ def dump_class(class_name):
         cl_arm64 = architecture_arm64.get_class(class_name)
         cl_i386 = architecture_i386.get_class(class_name)
         cl_x86_64 = architecture_x86_64.get_class(class_name)
-        cl = cl_armv7
+        cl = cl_arm64
 
         output = u""
         # Class name.
@@ -151,11 +151,11 @@ def dump_class(class_name):
                 ivar_arm64_padding = 0
                 ivar_i386_padding = 0
                 ivar_x86_64_padding = 0
-                if next_ivar:
-                    ivar_armv7_padding = next_ivar_armv7.offset - ivar_armv7.offset - ivar_armv7.size
-                    ivar_arm64_padding = next_ivar_arm64.offset - ivar_arm64.offset - ivar_arm64.size
-                    ivar_i386_padding = next_ivar_i386.offset - ivar_i386.offset - ivar_i386.size
-                    ivar_x86_64_padding = next_ivar_x86_64.offset - ivar_x86_64.offset - ivar_x86_64.size
+                # if next_ivar:
+                #     ivar_armv7_padding = next_ivar_armv7.offset - ivar_armv7.offset - ivar_armv7.size
+                #     ivar_arm64_padding = next_ivar_arm64.offset - ivar_arm64.offset - ivar_arm64.size
+                #     ivar_i386_padding = next_ivar_i386.offset - ivar_i386.offset - ivar_i386.size
+                #     ivar_x86_64_padding = next_ivar_x86_64.offset - ivar_x86_64.offset - ivar_x86_64.size
 
                 # Normalized type name.
                 type_name = normalize_type(ivar_armv7.ivarType, ivar_arm64.ivarType)
