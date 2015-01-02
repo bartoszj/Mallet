@@ -24,7 +24,7 @@
 
 import Helpers
 import lldb
-import LLDBLogger
+import logging
 
 
 class TypeCache(object):
@@ -64,10 +64,11 @@ class TypeCache(object):
             return self.types[type_name]
 
         # Get type from name.
-        LLDBLogger.get_logger().info("TypeCache: Adding type \"{}\" to cache.".format(type_name))
+        logger = logging.getLogger(__name__)
+        logger.info("Adding type \"{}\" to cache.".format(type_name))
         t = self._get_type_from_name(type_name, target)
         if not t:
-            LLDBLogger.get_logger().warning("TypeCache: Type \"{}\" doesn't exists.".format(type_name))
+            logger.warning("Type \"{}\" doesn't exists.".format(type_name))
         self.types[type_name] = t
         return t
 
@@ -81,7 +82,8 @@ class TypeCache(object):
 
         self._populated = True
         is64bit = Helpers.is_64bit_architecture_from_target(target)
-        LLDBLogger.get_logger().debug("TypeCache: Populating type cache.")
+        logger = logging.getLogger(__name__)
+        logger.debug("Populating type cache.")
 
         # char, unsigned char
         self.types["char"] = target.GetBasicType(lldb.eBasicTypeChar)
@@ -141,6 +143,7 @@ def get_type_cache():
     Get shared TypeCache.
     """
     if not hasattr(get_type_cache, "type_cache"):
-        LLDBLogger.get_logger().debug("TypeCache: Creating shared TypeCache.")
+        logger = logging.getLogger(__name__)
+        logger.debug("Creating shared TypeCache.")
         get_type_cache.type_cache = TypeCache()
     return get_type_cache.type_cache

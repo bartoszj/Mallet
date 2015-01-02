@@ -26,18 +26,29 @@ import logging
 import os
 
 
-def get_logger():
+def configure_loggers():
     """
-    Creates shared LLDB logger.
+    Configure all well known loggers.
     """
-    # Logger.
-    logger = logging.getLogger("LLDBLogger")
-    if not hasattr(logger, "configured"):
+
+    logger_names = ["LLDBLogger", "LoadScripts", "Helpers", "TypeCache", "ClassDump", "SummaryBase"]
+    for logger_name in logger_names:
+        logger = logging.getLogger(logger_name)
+        configure_logger(logger)
+
+
+def configure_logger(logger):
+    """
+    Configure given logger.
+    :param logging.Logger logger: Logger object to configure.
+    """
+
+    if not hasattr(logger, "LLDB_summaries_configured"):
+        logger.LLDB_summaries_configured = True
         logger.setLevel(logging.DEBUG)
-        logger.configured = True
 
         # Formatter.
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)-8s - %(message)s')
+        formatter = logging.Formatter('%(asctime)s - %(levelname)-8s - %(name)s - %(message)s')
 
         # File handler.
         file_path = os.path.expanduser("~/Library/Logs/LLDBSummaries.log")
@@ -49,6 +60,8 @@ def get_logger():
 
         logger.addHandler(file_handler)
         # logger.addHandler(null_handler)
-        logger.debug("LLDBLogger: logger created.")
+        logger.debug("Logger \"{}\" configured.".format(logger.name))
 
-    return logger
+
+# Configure loggers.
+configure_loggers()

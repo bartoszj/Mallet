@@ -24,6 +24,8 @@
 
 import lldb
 import os
+import logging
+import LLDBLogger
 
 lldb_scripts_dir = "~/Library/LLDBScripts/"
 lldb_class_dump_dir = "ClassDumps"
@@ -137,5 +139,5 @@ def load_lldb_scripts(debugger):
         scripts.extend(scripts_in_directory(full_path))
     load_scripts(scripts, debugger, lldb_summaries_load_order)
 
-    import LLDBLogger
-    LLDBLogger.get_logger().debug("Scripts loaded.")
+    logger = logging.getLogger(__name__)
+    logger.debug("Scripts loaded.")

@@ -24,14 +24,14 @@
 
 import json
 import os
+import logging
 import imp
-
 
 try:
     import LLDBLogger
 except ImportError:
-    pass
-
+    imp.load_source("LLDBLogger", "LLDBScripts/Scripts/ClassDump.py")
+    import LLDBLogger
 
 class_map_file_name = "class.map"
 
@@ -42,7 +42,8 @@ class LazyArchitecturesList(object):
     """
     def __init__(self, dir_path):
         super(LazyArchitecturesList, self).__init__()
-        LLDBLogger.get_logger().debug("LazyArchitecturesList: created.")
+        logger = logging.getLogger(__name__)
+        logger.debug("LazyArchitecturesList: created.")
         self.dir_path = dir_path        # Path from where classes are read.
         self.architectures = list()     # List of architectures.
         self.class_map = None           # Maps class name to path to file.
@@ -52,10 +53,11 @@ class LazyArchitecturesList(object):
         """
         Reads class.map file into memory (self.class_map).
         """
-        LLDBLogger.get_logger().debug("LazyArchitecturesList: reading class_map.")
+        logger = logging.getLogger(__name__)
+        logger.debug("LazyArchitecturesList: reading class_map.")
         class_map_file_path = os.path.join(self.dir_path, class_map_file_name)
         if not os.path.exists(class_map_file_path):
-            LLDBLogger.get_logger().error("LazyArchitecturesList: Cannot find class.map file.")
+            logger.error("LazyArchitecturesList: Cannot find class.map file.")
             raise StandardError()
 
         with open(class_map_file_path, "r") as class_map_file:
@@ -101,14 +103,15 @@ class LazyArchitecturesList(object):
 
         Supported architectures: armv7, armv7s, arm64, i386, x86_64.
         """
+        logger = logging.getLogger(__name__)
         # Checks parameters.
         if architecture_name is None or class_name is None or ivar_name is None:
-            LLDBLogger.get_logger().error("LazyArchitecturesList: get_ivar: invalid parameters.")
+            logger.error("LazyArchitecturesList: get_ivar: invalid parameters.")
             return None
 
         # Check if class exists in class.map.
         if class_name not in self.class_map:
-            LLDBLogger.get_logger().error("LazyArchitecturesList: get_ivar: no class \"{}\" in class_map.".format(class_name))
+            logger.error("LazyArchitecturesList: get_ivar: no class \"{}\" in class_map.".format(class_name))
             return None
 
         # Get architecture.
@@ -122,16 +125,16 @@ class LazyArchitecturesList(object):
         cl = architecture.get_class(class_name)
         if cl is None:
             # Reads JSON from file.
-            LLDBLogger.get_logger().info("LazyArchitecturesList: get_ivar: reading \"{}\".".format(self.class_map[class_name]))
+            logger.info("LazyArchitecturesList: get_ivar: reading \"{}\".".format(self.class_map[class_name]))
             file_path = os.path.join(self.dir_path, self.class_map[class_name])
             if not os.path.exists(file_path):
-                LLDBLogger.get_logger().error("LazyArchitecturesList: get_ivar: missing \"{}\".".format(self.class_map[class_name]))
+                logger.error("LazyArchitecturesList: get_ivar: missing \"{}\".".format(self.class_map[class_name]))
                 return None
             j = self.read_file_path(file_path)
 
             # Empty json data or missing architecture in JSON.
             if j is None or architecture_name not in j:
-                LLDBLogger.get_logger().error("LazyArchitecturesList: get_ivar: missing data in \"{}\".".format(self.class_map[class_name]))
+                logger.error("LazyArchitecturesList: get_ivar: missing data in \"{}\".".format(self.class_map[class_name]))
                 return None
 
             # Get class json for given architecture.
@@ -147,7 +150,7 @@ class LazyArchitecturesList(object):
             return self.get_ivar(architecture_name, cl.super_class_name, ivar_name)
 
         if ivar is None:
-            LLDBLogger.get_logger().error("LazyArchitecturesList: get_ivar: no ivar \"{}\" for class \"{}\".".format(ivar_name, class_name))
+            logger.error("LazyArchitecturesList: get_ivar: no ivar \"{}\" for class \"{}\".".format(ivar_name, class_name))
         return ivar
 
 

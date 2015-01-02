@@ -26,6 +26,7 @@ import functools
 import lldb
 import lldb.formatters
 import objc_runtime
+import logging
 import LLDBLogger
 
 Architecture_unknown = 0
@@ -37,7 +38,15 @@ Architecture_x86_64 = 4
 
 
 def architecture_name_from_target(target):
+    """
+    Return architecture name from given LLDB target.
+
+    :param lldb.SBTarget target: LLDB target object.
+    :return: Architecture name or None if cannot find architecture.
+    :rtype: str | None
+    """
     triple = target.GetTriple()
+    """:type : str"""
 
     if triple.startswith("i386"):
         return "i386"
@@ -109,33 +118,34 @@ def get_class_data(value_obj):
 
 def generic_summary_provider(value_obj, internal_dict, class_synthetic_provider, supported_classes=[]):
     # Class data.
+    logger = logging.getLogger(__name__)
     type_name = value_obj.GetTypeName() if value_obj.GetTypeName() else "Unknown type name"
     class_data, wrapper = get_class_data(value_obj)
 
     # Class data invalid.
     # if not class_data.is_valid():
-    #     LLDBLogger.get_logger().debug("generic_summary_provider: class_data invalid for \"{}\".".format(type_name))
+    #     logger.debug("generic_summary_provider: class_data invalid for \"{}\".".format(type_name))
     #     return ""
 
     # Not supported class.
     if len(supported_classes) > 0 and class_data.class_name() not in supported_classes:
-        LLDBLogger.get_logger().debug("generic_summary_provider: not supported class \"{}\" in {}.".format(type_name, supported_classes))
+        logger.debug("generic_summary_provider: not supported class \"{}\" in {}.".format(type_name, supported_classes))
         return ""
 
     # Using wrapper if available.
     # if wrapper is not None:
-    #     LLDBLogger.get_logger().debug("generic_summary_provider: using wrapper for \"{}\".".format(type_name))
+    #     logger.debug("generic_summary_provider: using wrapper for \"{}\".".format(type_name))
     #     return wrapper.message()
 
     # Using Class Summary Provider.
     wrapper = class_synthetic_provider(value_obj, internal_dict)
     if wrapper is not None:
-        # LLDBLogger.get_logger().debug("generic_summary_provider: using summary provider {} for \"{}\"."
+        # logger.debug("generic_summary_provider: using summary provider {} for \"{}\"."
         #                               .format(class_synthetic_provider, type_name))
         return wrapper.summary()
 
     # Summary not available.
-    # LLDBLogger.get_logger().debug("generic_summary_provider: summary unavailable")
+    # logger.debug("generic_summary_provider: summary unavailable")
     return "Summary Unavailable"
 
 
@@ -161,17 +171,18 @@ class save_parameter(object):
             Checks if method has attribute with given name. If not raise AttributeError exception.
             If parameter has value returns it, if not execute method and save value to parameter.
             """
+            logger = logging.getLogger(__name__)
             if not hasattr(s, self._param_name):
-                # LLDBLogger.get_logger().error("SaveParam.save_parameter.wrapper: no attribute with name: \"{}\"".
+                # logger.error("SaveParam.save_parameter.wrapper: no attribute with name: \"{}\"".
                 #                               format(self._param_name if self._param_name else "No parameter name"))
                 raise AttributeError
             value = getattr(s, self._param_name)
             if value is None:
-                # LLDBLogger.get_logger().debug("SaveParam.save_parameter.wrapper: na value for: \"{}\"".format(self._param_name))
+                # logger.debug("SaveParam.save_parameter.wrapper: na value for: \"{}\"".format(self._param_name))
                 value = func(s, *args, **kwargs)
                 setattr(s, self._param_name, value)
             # else:
-            #     LLDBLogger.get_logger().debug("SaveParam.save_parameter.wrapper: using value: \"{}\" for param: \"{}\"".
+            #     logger.debug("SaveParam.save_parameter.wrapper: using value: \"{}\" for param: \"{}\"".
             #                                   format(value, self._param_name))
             return value
         return decorator

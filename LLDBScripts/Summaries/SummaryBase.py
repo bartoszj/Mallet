@@ -24,6 +24,7 @@
 
 import os
 import lldb
+import logging
 import ClassDump
 import LoadScripts
 import Helpers
@@ -62,7 +63,8 @@ class SummaryBase_SynthProvider(object):
         Returns Ivar object with given name.
         """
         if self.type_name is None:
-            LLDBLogger.get_logger().error("SummaryBase: get_ivar: empty type_name.")
+            logger = logging.getLogger(__name__)
+            logger.error("get_ivar: empty type_name.")
             return None
         return get_architecture_list().get_ivar(self.architecture_name, self.type_name, ivar_name)
 
@@ -70,11 +72,12 @@ class SummaryBase_SynthProvider(object):
         """
         Returns child value (SBValue) with given name (or offset). If variable cannot be find by name then uses ivar offset.
         """
+        logger = logging.getLogger(__name__)
         # Using offset if provided.
         if offset is not None:
             if not type_name:
-                LLDBLogger.get_logger().error("SummaryBase: get_child_value: using offset {} without type name."
-                                              .format(offset))
+                logger.error("get_child_value: using offset {} without type name."
+                             .format(offset))
                 return None
             value = self.dynamic_value_obj.CreateChildAtOffset(value_name, offset, self.get_type(type_name))
         # Using name od offset from ivar.
@@ -89,8 +92,8 @@ class SummaryBase_SynthProvider(object):
             # Find ivar and its offset.
             ivar = self.get_ivar(value_name)
             if ivar is None:
-                LLDBLogger.get_logger().error("SummaryBase: get_child_value: no ivar {} for type {}."
-                                              .format(value_name, self.type_name))
+                logger.error("get_child_value: no ivar {} for type {}."
+                             .format(value_name, self.type_name))
                 return None
 
             # Get value from offset.
@@ -140,7 +143,8 @@ def get_architecture_list():
     Get shared architecture list.
     """
     if not hasattr(get_architecture_list, "architectures_list"):
-        LLDBLogger.get_logger().debug("SummaryBase: Creating shared TypeCache.")
+        logger = logging.getLogger(__name__)
+        logger.debug("Creating shared architecture list.")
         class_dump_dir = os.path.expanduser(os.path.join(LoadScripts.lldb_scripts_dir, LoadScripts.lldb_class_dump_dir))
         get_architecture_list.architectures_list = ClassDump.LazyArchitecturesList(class_dump_dir)
     return get_architecture_list.architectures_list

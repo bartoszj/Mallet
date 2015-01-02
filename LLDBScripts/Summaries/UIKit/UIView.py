@@ -22,6 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+import logging
 import Helpers
 import UIResponder
 import CALayer
@@ -91,7 +92,8 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
         layer = self.get_layer()
         class_data, wrapper = Helpers.get_class_data(layer)
         if class_data.is_valid() is None:
-            LLDBLogger.get_logger().info("UIView: has_valid_layer: not valid class_data.")
+            logger = logging.getLogger(__name__)
+            logger.info("has_valid_layer: not valid class_data.")
             return False
         return True
 
