@@ -28,6 +28,12 @@ import logging
 
 
 class TypeCache(object):
+    """
+    Stores cached types.
+
+    :param dict[str, lldb.SBType] types: Stores cached types.
+    :param bool _populated: Mark if types were populated with default types.
+    """
     def __init__(self):
         super(TypeCache, self).__init__()
         self.types = dict()
@@ -36,13 +42,19 @@ class TypeCache(object):
     @staticmethod
     def _get_type_from_name(type_name, target):
         """
-        Returns type (SBType) from target (SBTarget) based on type name.
+        Returns type for given name from target (not from cache).
+
+        :param str type_name: Type name.
+        :param lldb.SBTarget target: LLDB target.
+        :return: Returns SBType for given name.
+        :rtype: lldb.SBType | None
         """
         if isinstance(type_name, unicode):
             type_name = type_name.encode('utf-8')
         is_pointer = type_name.endswith("*")
         only_type_name = type_name.rstrip("*").strip()
         t = target.FindFirstType(only_type_name)
+        """:type : lldb.SBType"""
         if is_pointer:
             t = t.GetPointerType()
 
@@ -51,6 +63,11 @@ class TypeCache(object):
     def get_type(self, type_name, target):
         """
         Try to find type in cache or ask LLDB to return one.
+
+        :param str type_name: Type name.
+        :param lldb.SBTarget target: LLDB target.
+        :return: Returns SBType for given name.
+        :rtype: lldb.SBType | None
         """
         # Validate data.
         if type_name is None or target is None:
@@ -75,6 +92,8 @@ class TypeCache(object):
     def _populate_standard_types(self, target):
         """
         Populates TypeCache with common LLDB types.
+
+        :param lldb.SBTarget target: LLDB target.
         """
         # Do not populate if already data was populated.
         if self._populated:
@@ -141,6 +160,9 @@ class TypeCache(object):
 def get_type_cache():
     """
     Get shared TypeCache.
+
+    :return: TypeCache singleton.
+    :rtype: TypeCache
     """
     if not hasattr(get_type_cache, "type_cache"):
         logger = logging.getLogger(__name__)

@@ -41,7 +41,7 @@ def architecture_name_from_target(target):
     """
     Return architecture name from given LLDB target.
 
-    :param lldb.SBTarget target: LLDB target object.
+    :param lldb.SBTarget target: LLDB target.
     :return: Architecture name or None if cannot find architecture.
     :rtype: str | None
     """
@@ -63,6 +63,13 @@ def architecture_name_from_target(target):
 
 
 def architecture_type_from_name(architecture_name):
+    """
+    Returns architecture type from name.
+
+    :param str architecture_name: Architecture name
+    :return: Architecture type.
+    :rtype: int
+    """
     architecture = Architecture_unknown
 
     if architecture_name == "i386":
@@ -80,11 +87,25 @@ def architecture_type_from_name(architecture_name):
 
 
 def architecture_type_from_target(target):
+    """
+    Returns architecture name from target.
+
+    :param lldb.SBTarget target: LLDB target
+    :return: Architecture name.
+    :rtype: str
+    """
     architecture_name = architecture_name_from_target(target)
     return architecture_type_from_name(architecture_name)
 
 
 def is_64bit_architecture(architecture):
+    """
+    Returns True if target architecture is 64 bit.
+
+    :param int architecture: Architecture type.
+    :return: True if architecture is 64 bit.
+    :rtype: bool
+    """
     if architecture == Architecture_unknown:
         return False
     if architecture == Architecture_x86_64 or architecture == Architecture_arm64:
@@ -93,11 +114,25 @@ def is_64bit_architecture(architecture):
 
 
 def is_64bit_architecture_from_name(architecture_name):
+    """
+    Returns True if target architecture is 64 bit.
+
+    :param str architecture_name: Architecture name.
+    :return: True if architecture is 64 bit.
+    :rtype: bool
+    """
     architecture = architecture_type_from_name(architecture_name)
     return is_64bit_architecture(architecture)
 
 
 def is_64bit_architecture_from_target(target):
+    """
+    Returns True if target architecture is 64 bit.
+
+    :param lldb.SBTarget target: Architecture name.
+    :return: True if architecture is 64 bit.
+    :rtype: bool
+    """
     architecture = architecture_type_from_target(target)
     return is_64bit_architecture(architecture)
 
@@ -111,12 +146,28 @@ statistics.add_metric("code_notrun")
 
 
 def get_class_data(value_obj):
+    """
+    Get class_data and wrapper.
+
+    :param lldb.SBValue value_obj:
+    :return: Wrapper and class data.
+    """
     global statistics
     class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
     return class_data, wrapper
 
 
 def generic_summary_provider(value_obj, internal_dict, class_synthetic_provider, supported_classes=[]):
+    """
+    Checks value type and returns summary.
+
+    :param lldb.SBValue value_obj:
+    :param dict internal_dict:
+    :param class class_synthetic_provider:
+    :param dict[str] supported_classes:
+    :return: Value summary.
+    :rtype: str
+    """
     # Class data.
     logger = logging.getLogger(__name__)
     type_name = value_obj.GetTypeName() if value_obj.GetTypeName() else "Unknown type name"
@@ -151,13 +202,13 @@ def generic_summary_provider(value_obj, internal_dict, class_synthetic_provider,
 
 class save_parameter(object):
     """
-    save_parameter(function) -> method
-
     Decorator. Saves method return value to object parameter.
+
+    :param str _param_name: Name of parameter.
     """
     def __init__(self, param_name):
         """
-        "param_name" store name of object parameter.
+        :param str param_name: Name of parameter.
         """
         super(save_parameter, self).__init__()
         self._param_name = param_name
@@ -165,18 +216,30 @@ class save_parameter(object):
     def __call__(self, func):
         """
         Returns method wrapper for method "func".
+
+        :param function func: Wrapped function.
+        :return: Method wrapper.
         """
         def decorator(s, *args, **kwargs):
             """
             Checks if method has attribute with given name. If not raise AttributeError exception.
             If parameter has value returns it, if not execute method and save value to parameter.
+
+            :param object s: Object / self.
+            :param args: Arguments.
+            :param kwargs: Arguments.
+            :return: Value.
+            :raise AttributeError: If object doesn't have given attribute.
             """
             logger = logging.getLogger(__name__)
+            # Check if "cache" parameter exists.
             if not hasattr(s, self._param_name):
                 # logger.error("SaveParam.save_parameter.wrapper: no attribute with name: \"{}\"".
                 #                               format(self._param_name if self._param_name else "No parameter name"))
                 raise AttributeError
+            # Get cached value.
             value = getattr(s, self._param_name)
+            # Execute method to cache value.
             if value is None:
                 # logger.debug("SaveParam.save_parameter.wrapper: na value for: \"{}\"".format(self._param_name))
                 value = func(s, *args, **kwargs)

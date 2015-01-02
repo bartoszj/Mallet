@@ -68,6 +68,10 @@ lldb_summaries_load_order = ["SummaryBase",
 def scripts_in_directory(path):
     """
     Finds all Python scripts in given directory.
+
+    :param str path: Path to directory with scripts.
+    :return: List of founded scripts.
+    :rtype: list[(str, str)]
     """
     extensions = tuple(lldb_script_extensions)
     scripts = []
@@ -89,7 +93,11 @@ def scripts_in_directory(path):
 
 def load_scripts(scripts, debugger, order_list=[]):
     """
-    Loads ass scripts from scripts to the debugger. It uses order_list to load scripts in correct order if needed.
+    Loads scripts to the debugger. It uses order_list to load scripts in correct order if needed.
+
+    :param list[(str, str)] scripts: List of scripts to load.
+    :param lldb.SBDebugger debugger: LLDB debugger.
+    :param list[str] order_list: List of ordered scripts that have to be loaded in order.
     """
     scripts.sort()
 
@@ -110,6 +118,9 @@ def load_scripts(scripts, debugger, order_list=[]):
 def load_script(script_path, debugger):
     """
     Loads script at script_path to debugger.
+
+    :param str script_path: Path to script.
+    :param lldb.SBDebugger debugger: LLDB debugger.
     """
     command = "command script import \"{}\"".format(script_path)
     debugger.HandleCommand(command)
@@ -120,19 +131,24 @@ def load_script(script_path, debugger):
 def load_lldb_scripts(debugger):
     """
     Loads all scripts from Commands, Scripts and Summaries directories.
+
+    :param lldb.SBDebugger debugger: LLDB debugger.
     """
+    # Load commands.
     scripts = []
     for directory in lldb_commands_paths:
         full_path = os.path.join(lldb_scripts_dir, directory)
         scripts.extend(scripts_in_directory(full_path))
     load_scripts(scripts, debugger)
 
+    # Load scripts.
     scripts = []
     for directory in lldb_scripts_paths:
         full_path = os.path.join(lldb_scripts_dir, directory)
         scripts.extend(scripts_in_directory(full_path))
     load_scripts(scripts, debugger, lldb_scripts_load_order)
 
+    # Load summaries.
     scripts = []
     for directory in lldb_summaries_paths:
         full_path = os.path.join(lldb_scripts_dir, directory)
