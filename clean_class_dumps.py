@@ -28,6 +28,32 @@ import imp
 imp.load_source("ClassDump", "LLDBScripts/Scripts/ClassDump.py")
 import ClassDump
 
+# Example offsets.json file:
+# {
+#   "arm64": [
+#     {
+#       "super_class": "UIView",
+#       "offset": 80
+#     },
+#     {
+#       "class": "_UIDatePickerView",
+#       "offset": 112
+#     }
+#   ],
+#   "armv7": [
+#     ...
+#   ],
+#   "armv7s": [
+#     ...
+#   ],
+#   "i386": [
+#     ...
+#   ],
+#   "x86_64": [
+#     ...
+#   ]
+# }
+
 
 def clean_class_dumps():
     # Current directory path.

@@ -27,23 +27,6 @@ import UIControl
 
 
 class UIPageControl_SynthProvider(UIControl.UIControl_SynthProvider):
-    # Class: UIPageControl
-    # Super class: UIControl
-    # Name:                                                armv7                 i386                  arm64                 x86_64
-    # NSMutableArray * _indicators                     120 (0x078) / 4       120 (0x078) / 4       224 (0x0E0) / 8       224 (0x0E0) / 8
-    # NSInteger _currentPage                           124 (0x07C) / 4       124 (0x07C) / 4       232 (0x0E8) / 8       232 (0x0E8) / 8
-    # NSInteger _displayedPage                         128 (0x080) / 4       128 (0x080) / 4       240 (0x0F0) / 8       240 (0x0F0) / 8
-    # struct {
-    #         unsigned int hideForSinglePage:1;
-    #         unsigned int defersCurrentPageDisplay:1;
-    #     } _pageControlFlags                          132 (0x084) / 1  + 3  132 (0x084) / 4       248 (0x0F8) / 4  + 4  248 (0x0F8) / 4  + 4
-    # UIImage * _currentPageImage                      136 (0x088) / 4       136 (0x088) / 4       256 (0x100) / 8       256 (0x100) / 8
-    # UIImage * _pageImage                             140 (0x08C) / 4       140 (0x08C) / 4       264 (0x108) / 8       264 (0x108) / 8
-    # NSInteger _lastUserInterfaceIdiom                144 (0x090) / 4       144 (0x090) / 4       272 (0x110) / 8       272 (0x110) / 8
-    # UIColor * _currentPageIndicatorTintColor         148 (0x094) / 4       148 (0x094) / 4       280 (0x118) / 8       280 (0x118) / 8
-    # UIColor * _pageIndicatorTintColor                152 (0x098) / 4       152 (0x098) / 4       288 (0x120) / 8       288 (0x120) / 8
-    # _UILegibilitySettings * _legibilitySettings      156 (0x09C) / 4       156 (0x09C) / 4       296 (0x128) / 8       296 (0x128) / 8
-
     def __init__(self, value_obj,internal_dict):
         super(UIPageControl_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIPageControl"

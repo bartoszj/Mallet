@@ -3,7 +3,7 @@
     "className":"CALayer",
     "ivars":[
       {
-        "ivarType":"struct _CALayerIvars { \n        int refcount; \n        unsigned int magic; \n        void *layer; \n    }",
+        "ivarType":"struct _CALayerIvars",
         "name":"_attr",
         "offset":8,
         "type":"ivar"
@@ -16,7 +16,7 @@
     "className":"CALayer",
     "ivars":[
       {
-        "ivarType":"struct _CALayerIvars { \n        int refcount; \n        unsigned int magic; \n        void *layer; \n        void *unused1[8]; \n    }",
+        "ivarType":"struct _CALayerIvars",
         "name":"_attr",
         "offset":4,
         "type":"ivar"
@@ -29,7 +29,7 @@
     "className":"CALayer",
     "ivars":[
       {
-        "ivarType":"struct _CALayerIvars { \n        int refcount; \n        unsigned int magic; \n        void *layer; \n        void *unused1[8]; \n    }",
+        "ivarType":"struct _CALayerIvars",
         "name":"_attr",
         "offset":4,
         "type":"ivar"
@@ -42,7 +42,7 @@
     "className":"CALayer",
     "ivars":[
       {
-        "ivarType":"struct _CALayerIvars { \n        int refcount; \n        unsigned int magic; \n        void *layer; \n    }",
+        "ivarType":"struct _CALayerIvars",
         "name":"_attr",
         "offset":8,
         "type":"ivar"

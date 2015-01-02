@@ -3,57 +3,75 @@
     "className":"SKProductInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_contentVersion",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_downloadable",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_downloadContentLengths",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_localeIdentifier",
         "offset":32,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_localizedDescription",
         "offset":40,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_localizedTitle",
         "offset":48,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSDecimalNumber *",
         "name":"_price",
         "offset":56,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLocale *",
         "name":"_priceLocale",
         "offset":64,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_productIdentifier",
         "offset":72,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -64,57 +82,75 @@
     "className":"SKProductInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_contentVersion",
         "offset":4,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_downloadable",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_downloadContentLengths",
         "offset":12,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_localeIdentifier",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_localizedDescription",
         "offset":20,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_localizedTitle",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSDecimalNumber *",
         "name":"_price",
         "offset":28,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLocale *",
         "name":"_priceLocale",
         "offset":32,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_productIdentifier",
         "offset":36,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -125,57 +161,75 @@
     "className":"SKProductInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_contentVersion",
         "offset":4,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_downloadable",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_downloadContentLengths",
         "offset":12,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_localeIdentifier",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_localizedDescription",
         "offset":20,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_localizedTitle",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSDecimalNumber *",
         "name":"_price",
         "offset":28,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLocale *",
         "name":"_priceLocale",
         "offset":32,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_productIdentifier",
         "offset":36,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -186,57 +240,75 @@
     "className":"SKProductInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_contentVersion",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_downloadable",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_downloadContentLengths",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_localeIdentifier",
         "offset":32,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_localizedDescription",
         "offset":40,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_localizedTitle",
         "offset":48,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSDecimalNumber *",
         "name":"_price",
         "offset":56,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLocale *",
         "name":"_priceLocale",
         "offset":64,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_productIdentifier",
         "offset":72,
+        "size":0,
         "type":"ivar"
       }
     ],

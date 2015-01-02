@@ -28,12 +28,6 @@ import NSURLRequestInternal
 
 
 class NSURLRequest_SynthProvider(NSObject.NSObject_SynthProvider):
-    # Class: NSURLRequest
-    # Super class: NSObject
-    # Protocols: NSSecureCoding, NSCopying, NSMutableCopying
-    # Name:                                armv7                 i386                  arm64                 x86_64
-    # NSURLRequestInternal * _internal   4 (0x004) / 4         4 (0x004) / 4         8 (0x008) / 8         8 (0x008) / 8
-
     def __init__(self, value_obj, internal_dict):
         super(NSURLRequest_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "NSURLRequest"

@@ -5,13 +5,13 @@
       {
         "ivarType":"_UIDatePickerView *",
         "name":"_pickerView",
-        "offset":320,
+        "offset":240,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_useCurrentDateDuringDecoding",
-        "offset":328,
+        "offset":248,
         "type":"ivar"
       }
     ],
@@ -24,13 +24,13 @@
       {
         "ivarType":"_UIDatePickerView *",
         "name":"_pickerView",
-        "offset":168,
+        "offset":128,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_useCurrentDateDuringDecoding",
-        "offset":172,
+        "offset":132,
         "type":"ivar"
       }
     ],
@@ -43,13 +43,13 @@
       {
         "ivarType":"_UIDatePickerView *",
         "name":"_pickerView",
-        "offset":168,
+        "offset":128,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_useCurrentDateDuringDecoding",
-        "offset":172,
+        "offset":132,
         "type":"ivar"
       }
     ],
@@ -62,13 +62,13 @@
       {
         "ivarType":"_UIDatePickerView *",
         "name":"_pickerView",
-        "offset":320,
+        "offset":240,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_useCurrentDateDuringDecoding",
-        "offset":328,
+        "offset":248,
         "type":"ivar"
       }
     ],

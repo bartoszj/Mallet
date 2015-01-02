@@ -27,18 +27,6 @@ import UIControl
 
 
 class UISwitch_SynthProvider(UIControl.UIControl_SynthProvider):
-    # Class: UISwitch
-    # Super class: UIControl
-    # Protocols: UIGestureRecognizerDelegate, NSCoding
-    # Name:                                                armv7                 i386                  arm64                 x86_64
-    # UILongPressGestureRecognizer * _pressGesture     120 (0x078) / 4       120 (0x078) / 4       224 (0x0E0) / 8       224 (0x0E0) / 8
-    # UIPanGestureRecognizer * _panGesture             124 (0x07C) / 4       124 (0x07C) / 4       232 (0x0E8) / 8       232 (0x0E8) / 8
-    # UIView<_UISwitchInternalViewProtocol> * _control 128 (0x080) / 4       128 (0x080) / 4       240 (0x0F0) / 8       240 (0x0F0) / 8
-    # BOOL _onStateChangedByLongPressGestureRecognizer 132 (0x084) / 1       132 (0x084) / 1       248 (0x0F8) / 1       248 (0x0F8) / 1
-    # BOOL _onStateChangedByPanGestureRecognizer       133 (0x085) / 1       133 (0x085) / 1       249 (0x0F9) / 1       249 (0x0F9) / 1
-    # BOOL _on                                         134 (0x086) / 1  + 1  134 (0x086) / 1  + 1  250 (0x0FA) / 1  + 5  250 (0x0FA) / 1  + 5
-    # CGFloat _enabledAlpha                            136 (0x088) / 4       136 (0x088) / 4       256 (0x100) / 8       256 (0x100) / 8
-
     def __init__(self, value_obj, internal_dict):
         super(UISwitch_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UISwitch"

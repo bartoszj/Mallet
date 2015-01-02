@@ -15,6 +15,7 @@ fi
 # Files to copy
 CPY=(
     "CFNetwork.framework/NSURLRequest.json"
+    "CFNetwork.framework/NSURLRequestInternal.json"
 
     "QuartzCore.framework/CALayer.json"
 

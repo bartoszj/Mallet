@@ -12,7 +12,7 @@ SKProductsResponse:StoreKit/SKProductsResponse.json
 UIView:UIKit/UIView.json
 SKRequest:StoreKit/SKRequest.json
 UIScreen:UIKit/UIScreen.json
-UIStepper:UIKit/UIStepper.json
+NSURLRequestInternal:CFNetwork/NSURLRequestInternal.json
 SKProductsRequestInternal:StoreKit/SKProductsRequestInternal.json
 UIDatePicker:UIKit/UIDatePicker.json
 SKProductInternal:StoreKit/SKProductInternal.json
@@ -24,6 +24,7 @@ UIButton:UIKit/UIButton.json
 UIResponder:UIKit/UIResponder.json
 UILabel:UIKit/UILabel.json
 UISwitch:UIKit/UISwitch.json
+UIStepper:UIKit/UIStepper.json
 UIPageControl:UIKit/UIPageControl.json
 UIAlertView:UIKit/UIAlertView.json
 SKReceiptRefreshRequest:StoreKit/SKReceiptRefreshRequest.json

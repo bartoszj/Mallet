@@ -5,73 +5,73 @@
       {
         "ivarType":"long long",
         "name":"_progressViewStyle",
-        "offset":280,
+        "offset":200,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_progress",
-        "offset":288,
+        "offset":208,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_barStyle",
-        "offset":296,
+        "offset":216,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_progressTintColor",
-        "offset":304,
+        "offset":224,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_trackTintColor",
-        "offset":312,
+        "offset":232,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_trackView",
-        "offset":320,
+        "offset":240,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_progressView",
-        "offset":328,
+        "offset":248,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_isAnimating",
-        "offset":336,
+        "offset":256,
         "type":"ivar"
       },
       {
         "ivarType":"NSArray *",
         "name":"_trackColors",
-        "offset":344,
+        "offset":264,
         "type":"ivar"
       },
       {
         "ivarType":"NSArray *",
         "name":"_progressColors",
-        "offset":352,
+        "offset":272,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_trackImage",
-        "offset":360,
+        "offset":280,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_progressImage",
-        "offset":368,
+        "offset":288,
         "type":"ivar"
       }
     ],
@@ -84,73 +84,73 @@
       {
         "ivarType":"int",
         "name":"_progressViewStyle",
-        "offset":144,
+        "offset":104,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_progress",
-        "offset":148,
+        "offset":108,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_barStyle",
-        "offset":152,
+        "offset":112,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_progressTintColor",
-        "offset":156,
+        "offset":116,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_trackTintColor",
-        "offset":160,
+        "offset":120,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_trackView",
-        "offset":164,
+        "offset":124,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_progressView",
-        "offset":168,
+        "offset":128,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_isAnimating",
-        "offset":172,
+        "offset":132,
         "type":"ivar"
       },
       {
         "ivarType":"NSArray *",
         "name":"_trackColors",
-        "offset":176,
+        "offset":136,
         "type":"ivar"
       },
       {
         "ivarType":"NSArray *",
         "name":"_progressColors",
-        "offset":180,
+        "offset":140,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_trackImage",
-        "offset":184,
+        "offset":144,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_progressImage",
-        "offset":188,
+        "offset":148,
         "type":"ivar"
       }
     ],
@@ -163,73 +163,73 @@
       {
         "ivarType":"int",
         "name":"_progressViewStyle",
-        "offset":144,
+        "offset":104,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_progress",
-        "offset":148,
+        "offset":108,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_barStyle",
-        "offset":152,
+        "offset":112,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_progressTintColor",
-        "offset":156,
+        "offset":116,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_trackTintColor",
-        "offset":160,
+        "offset":120,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_trackView",
-        "offset":164,
+        "offset":124,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_progressView",
-        "offset":168,
+        "offset":128,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_isAnimating",
-        "offset":172,
+        "offset":132,
         "type":"ivar"
       },
       {
         "ivarType":"NSArray *",
         "name":"_trackColors",
-        "offset":176,
+        "offset":136,
         "type":"ivar"
       },
       {
         "ivarType":"NSArray *",
         "name":"_progressColors",
-        "offset":180,
+        "offset":140,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_trackImage",
-        "offset":184,
+        "offset":144,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_progressImage",
-        "offset":188,
+        "offset":148,
         "type":"ivar"
       }
     ],
@@ -242,73 +242,73 @@
       {
         "ivarType":"long long",
         "name":"_progressViewStyle",
-        "offset":280,
+        "offset":200,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_progress",
-        "offset":288,
+        "offset":208,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_barStyle",
-        "offset":296,
+        "offset":216,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_progressTintColor",
-        "offset":304,
+        "offset":224,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_trackTintColor",
-        "offset":312,
+        "offset":232,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_trackView",
-        "offset":320,
+        "offset":240,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_progressView",
-        "offset":328,
+        "offset":248,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_isAnimating",
-        "offset":336,
+        "offset":256,
         "type":"ivar"
       },
       {
         "ivarType":"NSArray *",
         "name":"_trackColors",
-        "offset":344,
+        "offset":264,
         "type":"ivar"
       },
       {
         "ivarType":"NSArray *",
         "name":"_progressColors",
-        "offset":352,
+        "offset":272,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_trackImage",
-        "offset":360,
+        "offset":280,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_progressImage",
-        "offset":368,
+        "offset":288,
         "type":"ivar"
       }
     ],

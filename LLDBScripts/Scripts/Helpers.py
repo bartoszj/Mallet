@@ -113,9 +113,9 @@ def generic_summary_provider(value_obj, internal_dict, class_synthetic_provider,
     class_data, wrapper = get_class_data(value_obj)
 
     # Class data invalid.
-    if not class_data.is_valid():
-        LLDBLogger.get_logger().debug("generic_summary_provider: class_data invalid for \"{}\".".format(type_name))
-        return ""
+    # if not class_data.is_valid():
+    #     LLDBLogger.get_logger().debug("generic_summary_provider: class_data invalid for \"{}\".".format(type_name))
+    #     return ""
 
     # Not supported class.
     if len(supported_classes) > 0 and class_data.class_name() not in supported_classes:
@@ -123,9 +123,9 @@ def generic_summary_provider(value_obj, internal_dict, class_synthetic_provider,
         return ""
 
     # Using wrapper if available.
-    if wrapper is not None:
-        LLDBLogger.get_logger().debug("generic_summary_provider: using wrapper for \"{}\".".format(type_name))
-        return wrapper.message()
+    # if wrapper is not None:
+    #     LLDBLogger.get_logger().debug("generic_summary_provider: using wrapper for \"{}\".".format(type_name))
+    #     return wrapper.message()
 
     # Using Class Summary Provider.
     wrapper = class_synthetic_provider(value_obj, internal_dict)

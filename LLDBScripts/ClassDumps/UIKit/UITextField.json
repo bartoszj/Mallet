@@ -5,259 +5,259 @@
       {
         "ivarType":"_UICascadingTextStorage *",
         "name":"_textStorage",
-        "offset":320,
+        "offset":240,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_borderStyle",
-        "offset":328,
+        "offset":248,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_minimumFontSize",
-        "offset":336,
+        "offset":256,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_delegate",
-        "offset":344,
+        "offset":264,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_background",
-        "offset":352,
+        "offset":272,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_disabledBackground",
-        "offset":360,
+        "offset":280,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_clearButtonMode",
-        "offset":368,
+        "offset":288,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_leftView",
-        "offset":376,
+        "offset":296,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_leftViewMode",
-        "offset":384,
+        "offset":304,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_rightView",
-        "offset":392,
+        "offset":312,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_rightViewMode",
-        "offset":400,
+        "offset":320,
         "type":"ivar"
       },
       {
         "ivarType":"UITextInputTraits *",
         "name":"_traits",
-        "offset":408,
+        "offset":328,
         "type":"ivar"
       },
       {
         "ivarType":"UITextInputTraits *",
         "name":"_nonAtomTraits",
-        "offset":416,
+        "offset":336,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_fullFontSize",
-        "offset":424,
+        "offset":344,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        double top; \n        double left; \n        double bottom; \n        double right; \n    }",
+        "ivarType":"struct UIEdgeInsets",
         "name":"_padding",
-        "offset":432,
+        "offset":352,
         "type":"ivar"
       },
       {
-        "ivarType":"struct _NSRange { \n        unsigned long long location; \n        unsigned long long length; \n    }",
+        "ivarType":"struct _NSRange",
         "name":"_selectionRangeWhenNotEditing",
-        "offset":464,
+        "offset":384,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_scrollXOffset",
-        "offset":480,
+        "offset":400,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_scrollYOffset",
-        "offset":484,
+        "offset":404,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_progress",
-        "offset":488,
+        "offset":408,
         "type":"ivar"
       },
       {
         "ivarType":"UIButton *",
         "name":"_clearButton",
-        "offset":496,
+        "offset":416,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_clearButtonOffset",
-        "offset":504,
+        "offset":424,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_leftViewOffset",
-        "offset":520,
+        "offset":440,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_rightViewOffset",
-        "offset":536,
+        "offset":456,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldBorderView *",
         "name":"_backgroundView",
-        "offset":552,
+        "offset":472,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldBorderView *",
         "name":"_disabledBackgroundView",
-        "offset":560,
+        "offset":480,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldBackgroundView *",
         "name":"_systemBackgroundView",
-        "offset":568,
+        "offset":488,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldLabel *",
         "name":"_displayLabel",
-        "offset":576,
+        "offset":496,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldLabel *",
         "name":"_placeholderLabel",
-        "offset":584,
+        "offset":504,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldLabel *",
         "name":"_suffixLabel",
-        "offset":592,
+        "offset":512,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldLabel *",
         "name":"_prefixLabel",
-        "offset":600,
+        "offset":520,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_iconView",
-        "offset":608,
+        "offset":528,
         "type":"ivar"
       },
       {
         "ivarType":"UILabel *",
         "name":"_label",
-        "offset":616,
+        "offset":536,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_labelOffset",
-        "offset":624,
+        "offset":544,
         "type":"ivar"
       },
       {
         "ivarType":"UITextInteractionAssistant *",
         "name":"_interactionAssistant",
-        "offset":632,
+        "offset":552,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_inputView",
-        "offset":640,
+        "offset":560,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_inputAccessoryView",
-        "offset":648,
+        "offset":568,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldAtomBackgroundView *",
         "name":"_atomBackgroundView",
-        "offset":656,
+        "offset":576,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int verticallyCenterText : 1; \n        unsigned int isAnimating : 4; \n        unsigned int inactiveHasDimAppearance : 1; \n        unsigned int becomesFirstResponderOnClearButtonTap : 1; \n        unsigned int clearsPlaceholderOnBeginEditing : 1; \n        unsigned int adjustsFontSizeToFitWidth : 1; \n        unsigned int fieldEditorAttached : 1; \n        unsigned int canBecomeFirstResponder : 1; \n        unsigned int shouldSuppressShouldBeginEditing : 1; \n        unsigned int inResignFirstResponder : 1; \n        unsigned int undoDisabled : 1; \n        unsigned int explicitAlignment : 1; \n        unsigned int implementsCustomDrawing : 1; \n        unsigned int needsClearing : 1; \n        unsigned int suppressContentChangedNotification : 1; \n        unsigned int allowsEditingTextAttributes : 1; \n        unsigned int usesAttributedText : 1; \n        unsigned int backgroundViewState : 2; \n        unsigned int clearingBehavior : 2; \n    }",
+        "ivarType":"struct {\n        unsigned int verticallyCenterText:1;\n        unsigned int isAnimating:4;\n        unsigned int inactiveHasDimAppearance:1;\n        unsigned int becomesFirstResponderOnClearButtonTap:1;\n        unsigned int clearsPlaceholderOnBeginEditing:1;\n        unsigned int adjustsFontSizeToFitWidth:1;\n        unsigned int fieldEditorAttached:1;\n        unsigned int canBecomeFirstResponder:1;\n        unsigned int shouldSuppressShouldBeginEditing:1;\n        unsigned int inResignFirstResponder:1;\n        unsigned int undoDisabled:1;\n        unsigned int explicitAlignment:1;\n        unsigned int implementsCustomDrawing:1;\n        unsigned int needsClearing:1;\n        unsigned int suppressContentChangedNotification:1;\n        unsigned int allowsEditingTextAttributes:1;\n        unsigned int usesAttributedText:1;\n        unsigned int backgroundViewState:2;\n        unsigned int clearingBehavior:2;\n    }",
         "name":"_textFieldFlags",
-        "offset":664,
+        "offset":584,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_deferringBecomeFirstResponder",
-        "offset":668,
+        "offset":588,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_avoidBecomeFirstResponder",
-        "offset":669,
+        "offset":589,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_setSelectionRangeAfterFieldEditorIsAttached",
-        "offset":670,
+        "offset":590,
         "type":"ivar"
       },
       {
         "ivarType":"NSLayoutConstraint *",
         "name":"_baselineLayoutConstraint",
-        "offset":672,
+        "offset":592,
         "type":"ivar"
       },
       {
         "ivarType":"_UIBaselineLayoutStrut *",
         "name":"_baselineLayoutLabel",
-        "offset":680,
+        "offset":600,
         "type":"ivar"
       }
     ],
@@ -270,259 +270,259 @@
       {
         "ivarType":"_UICascadingTextStorage *",
         "name":"_textStorage",
-        "offset":168,
+        "offset":128,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_borderStyle",
-        "offset":172,
+        "offset":132,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_minimumFontSize",
-        "offset":176,
+        "offset":136,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_delegate",
-        "offset":180,
+        "offset":140,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_background",
-        "offset":184,
+        "offset":144,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_disabledBackground",
-        "offset":188,
+        "offset":148,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_clearButtonMode",
-        "offset":192,
+        "offset":152,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_leftView",
-        "offset":196,
+        "offset":156,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_leftViewMode",
-        "offset":200,
+        "offset":160,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_rightView",
-        "offset":204,
+        "offset":164,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_rightViewMode",
-        "offset":208,
+        "offset":168,
         "type":"ivar"
       },
       {
         "ivarType":"UITextInputTraits *",
         "name":"_traits",
-        "offset":212,
+        "offset":172,
         "type":"ivar"
       },
       {
         "ivarType":"UITextInputTraits *",
         "name":"_nonAtomTraits",
-        "offset":216,
+        "offset":176,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_fullFontSize",
-        "offset":220,
+        "offset":180,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        float top; \n        float left; \n        float bottom; \n        float right; \n    }",
+        "ivarType":"struct UIEdgeInsets",
         "name":"_padding",
-        "offset":224,
+        "offset":184,
         "type":"ivar"
       },
       {
-        "ivarType":"struct _NSRange { \n        unsigned int location; \n        unsigned int length; \n    }",
+        "ivarType":"struct _NSRange",
         "name":"_selectionRangeWhenNotEditing",
-        "offset":240,
+        "offset":200,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_scrollXOffset",
-        "offset":248,
+        "offset":208,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_scrollYOffset",
-        "offset":252,
+        "offset":212,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_progress",
-        "offset":256,
+        "offset":216,
         "type":"ivar"
       },
       {
         "ivarType":"UIButton *",
         "name":"_clearButton",
-        "offset":260,
+        "offset":220,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_clearButtonOffset",
-        "offset":264,
+        "offset":224,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_leftViewOffset",
-        "offset":272,
+        "offset":232,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_rightViewOffset",
-        "offset":280,
+        "offset":240,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldBorderView *",
         "name":"_backgroundView",
-        "offset":288,
+        "offset":248,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldBorderView *",
         "name":"_disabledBackgroundView",
-        "offset":292,
+        "offset":252,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldBackgroundView *",
         "name":"_systemBackgroundView",
-        "offset":296,
+        "offset":256,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldLabel *",
         "name":"_displayLabel",
-        "offset":300,
+        "offset":260,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldLabel *",
         "name":"_placeholderLabel",
-        "offset":304,
+        "offset":264,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldLabel *",
         "name":"_suffixLabel",
-        "offset":308,
+        "offset":268,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldLabel *",
         "name":"_prefixLabel",
-        "offset":312,
+        "offset":272,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_iconView",
-        "offset":316,
+        "offset":276,
         "type":"ivar"
       },
       {
         "ivarType":"UILabel *",
         "name":"_label",
-        "offset":320,
+        "offset":280,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_labelOffset",
-        "offset":324,
+        "offset":284,
         "type":"ivar"
       },
       {
         "ivarType":"UITextInteractionAssistant *",
         "name":"_interactionAssistant",
-        "offset":328,
+        "offset":288,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_inputView",
-        "offset":332,
+        "offset":292,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_inputAccessoryView",
-        "offset":336,
+        "offset":296,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldAtomBackgroundView *",
         "name":"_atomBackgroundView",
-        "offset":340,
+        "offset":300,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int verticallyCenterText : 1; \n        unsigned int isAnimating : 4; \n        unsigned int inactiveHasDimAppearance : 1; \n        unsigned int becomesFirstResponderOnClearButtonTap : 1; \n        unsigned int clearsPlaceholderOnBeginEditing : 1; \n        unsigned int adjustsFontSizeToFitWidth : 1; \n        unsigned int fieldEditorAttached : 1; \n        unsigned int canBecomeFirstResponder : 1; \n        unsigned int shouldSuppressShouldBeginEditing : 1; \n        unsigned int inResignFirstResponder : 1; \n        unsigned int undoDisabled : 1; \n        unsigned int explicitAlignment : 1; \n        unsigned int implementsCustomDrawing : 1; \n        unsigned int needsClearing : 1; \n        unsigned int suppressContentChangedNotification : 1; \n        unsigned int allowsEditingTextAttributes : 1; \n        unsigned int usesAttributedText : 1; \n        unsigned int backgroundViewState : 2; \n        unsigned int clearingBehavior : 2; \n    }",
+        "ivarType":"struct {\n        unsigned int verticallyCenterText:1;\n        unsigned int isAnimating:4;\n        unsigned int inactiveHasDimAppearance:1;\n        unsigned int becomesFirstResponderOnClearButtonTap:1;\n        unsigned int clearsPlaceholderOnBeginEditing:1;\n        unsigned int adjustsFontSizeToFitWidth:1;\n        unsigned int fieldEditorAttached:1;\n        unsigned int canBecomeFirstResponder:1;\n        unsigned int shouldSuppressShouldBeginEditing:1;\n        unsigned int inResignFirstResponder:1;\n        unsigned int undoDisabled:1;\n        unsigned int explicitAlignment:1;\n        unsigned int implementsCustomDrawing:1;\n        unsigned int needsClearing:1;\n        unsigned int suppressContentChangedNotification:1;\n        unsigned int allowsEditingTextAttributes:1;\n        unsigned int usesAttributedText:1;\n        unsigned int backgroundViewState:2;\n        unsigned int clearingBehavior:2;\n    }",
         "name":"_textFieldFlags",
-        "offset":344,
+        "offset":304,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_deferringBecomeFirstResponder",
-        "offset":347,
+        "offset":307,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_avoidBecomeFirstResponder",
-        "offset":348,
+        "offset":308,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_setSelectionRangeAfterFieldEditorIsAttached",
-        "offset":349,
+        "offset":309,
         "type":"ivar"
       },
       {
         "ivarType":"NSLayoutConstraint *",
         "name":"_baselineLayoutConstraint",
-        "offset":352,
+        "offset":312,
         "type":"ivar"
       },
       {
         "ivarType":"_UIBaselineLayoutStrut *",
         "name":"_baselineLayoutLabel",
-        "offset":356,
+        "offset":316,
         "type":"ivar"
       }
     ],
@@ -535,259 +535,259 @@
       {
         "ivarType":"_UICascadingTextStorage *",
         "name":"_textStorage",
-        "offset":168,
+        "offset":128,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_borderStyle",
-        "offset":172,
+        "offset":132,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_minimumFontSize",
-        "offset":176,
+        "offset":136,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_delegate",
-        "offset":180,
+        "offset":140,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_background",
-        "offset":184,
+        "offset":144,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_disabledBackground",
-        "offset":188,
+        "offset":148,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_clearButtonMode",
-        "offset":192,
+        "offset":152,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_leftView",
-        "offset":196,
+        "offset":156,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_leftViewMode",
-        "offset":200,
+        "offset":160,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_rightView",
-        "offset":204,
+        "offset":164,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_rightViewMode",
-        "offset":208,
+        "offset":168,
         "type":"ivar"
       },
       {
         "ivarType":"UITextInputTraits *",
         "name":"_traits",
-        "offset":212,
+        "offset":172,
         "type":"ivar"
       },
       {
         "ivarType":"UITextInputTraits *",
         "name":"_nonAtomTraits",
-        "offset":216,
+        "offset":176,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_fullFontSize",
-        "offset":220,
+        "offset":180,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        float top; \n        float left; \n        float bottom; \n        float right; \n    }",
+        "ivarType":"struct UIEdgeInsets",
         "name":"_padding",
-        "offset":224,
+        "offset":184,
         "type":"ivar"
       },
       {
-        "ivarType":"struct _NSRange { \n        unsigned int location; \n        unsigned int length; \n    }",
+        "ivarType":"struct _NSRange",
         "name":"_selectionRangeWhenNotEditing",
-        "offset":240,
+        "offset":200,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_scrollXOffset",
-        "offset":248,
+        "offset":208,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_scrollYOffset",
-        "offset":252,
+        "offset":212,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_progress",
-        "offset":256,
+        "offset":216,
         "type":"ivar"
       },
       {
         "ivarType":"UIButton *",
         "name":"_clearButton",
-        "offset":260,
+        "offset":220,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_clearButtonOffset",
-        "offset":264,
+        "offset":224,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_leftViewOffset",
-        "offset":272,
+        "offset":232,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_rightViewOffset",
-        "offset":280,
+        "offset":240,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldBorderView *",
         "name":"_backgroundView",
-        "offset":288,
+        "offset":248,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldBorderView *",
         "name":"_disabledBackgroundView",
-        "offset":292,
+        "offset":252,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldBackgroundView *",
         "name":"_systemBackgroundView",
-        "offset":296,
+        "offset":256,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldLabel *",
         "name":"_displayLabel",
-        "offset":300,
+        "offset":260,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldLabel *",
         "name":"_placeholderLabel",
-        "offset":304,
+        "offset":264,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldLabel *",
         "name":"_suffixLabel",
-        "offset":308,
+        "offset":268,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldLabel *",
         "name":"_prefixLabel",
-        "offset":312,
+        "offset":272,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_iconView",
-        "offset":316,
+        "offset":276,
         "type":"ivar"
       },
       {
         "ivarType":"UILabel *",
         "name":"_label",
-        "offset":320,
+        "offset":280,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_labelOffset",
-        "offset":324,
+        "offset":284,
         "type":"ivar"
       },
       {
         "ivarType":"UITextInteractionAssistant *",
         "name":"_interactionAssistant",
-        "offset":328,
+        "offset":288,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_inputView",
-        "offset":332,
+        "offset":292,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_inputAccessoryView",
-        "offset":336,
+        "offset":296,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldAtomBackgroundView *",
         "name":"_atomBackgroundView",
-        "offset":340,
+        "offset":300,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int verticallyCenterText : 1; \n        unsigned int isAnimating : 4; \n        unsigned int inactiveHasDimAppearance : 1; \n        unsigned int becomesFirstResponderOnClearButtonTap : 1; \n        unsigned int clearsPlaceholderOnBeginEditing : 1; \n        unsigned int adjustsFontSizeToFitWidth : 1; \n        unsigned int fieldEditorAttached : 1; \n        unsigned int canBecomeFirstResponder : 1; \n        unsigned int shouldSuppressShouldBeginEditing : 1; \n        unsigned int inResignFirstResponder : 1; \n        unsigned int undoDisabled : 1; \n        unsigned int explicitAlignment : 1; \n        unsigned int implementsCustomDrawing : 1; \n        unsigned int needsClearing : 1; \n        unsigned int suppressContentChangedNotification : 1; \n        unsigned int allowsEditingTextAttributes : 1; \n        unsigned int usesAttributedText : 1; \n        unsigned int backgroundViewState : 2; \n        unsigned int clearingBehavior : 2; \n    }",
+        "ivarType":"struct {\n        unsigned int verticallyCenterText:1;\n        unsigned int isAnimating:4;\n        unsigned int inactiveHasDimAppearance:1;\n        unsigned int becomesFirstResponderOnClearButtonTap:1;\n        unsigned int clearsPlaceholderOnBeginEditing:1;\n        unsigned int adjustsFontSizeToFitWidth:1;\n        unsigned int fieldEditorAttached:1;\n        unsigned int canBecomeFirstResponder:1;\n        unsigned int shouldSuppressShouldBeginEditing:1;\n        unsigned int inResignFirstResponder:1;\n        unsigned int undoDisabled:1;\n        unsigned int explicitAlignment:1;\n        unsigned int implementsCustomDrawing:1;\n        unsigned int needsClearing:1;\n        unsigned int suppressContentChangedNotification:1;\n        unsigned int allowsEditingTextAttributes:1;\n        unsigned int usesAttributedText:1;\n        unsigned int backgroundViewState:2;\n        unsigned int clearingBehavior:2;\n    }",
         "name":"_textFieldFlags",
-        "offset":344,
+        "offset":304,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_deferringBecomeFirstResponder",
-        "offset":348,
+        "offset":308,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_avoidBecomeFirstResponder",
-        "offset":349,
+        "offset":309,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_setSelectionRangeAfterFieldEditorIsAttached",
-        "offset":350,
+        "offset":310,
         "type":"ivar"
       },
       {
         "ivarType":"NSLayoutConstraint *",
         "name":"_baselineLayoutConstraint",
-        "offset":352,
+        "offset":312,
         "type":"ivar"
       },
       {
         "ivarType":"_UIBaselineLayoutStrut *",
         "name":"_baselineLayoutLabel",
-        "offset":356,
+        "offset":316,
         "type":"ivar"
       }
     ],
@@ -800,259 +800,259 @@
       {
         "ivarType":"_UICascadingTextStorage *",
         "name":"_textStorage",
-        "offset":320,
+        "offset":240,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_borderStyle",
-        "offset":328,
+        "offset":248,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_minimumFontSize",
-        "offset":336,
+        "offset":256,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_delegate",
-        "offset":344,
+        "offset":264,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_background",
-        "offset":352,
+        "offset":272,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_disabledBackground",
-        "offset":360,
+        "offset":280,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_clearButtonMode",
-        "offset":368,
+        "offset":288,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_leftView",
-        "offset":376,
+        "offset":296,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_leftViewMode",
-        "offset":384,
+        "offset":304,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_rightView",
-        "offset":392,
+        "offset":312,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_rightViewMode",
-        "offset":400,
+        "offset":320,
         "type":"ivar"
       },
       {
         "ivarType":"UITextInputTraits *",
         "name":"_traits",
-        "offset":408,
+        "offset":328,
         "type":"ivar"
       },
       {
         "ivarType":"UITextInputTraits *",
         "name":"_nonAtomTraits",
-        "offset":416,
+        "offset":336,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_fullFontSize",
-        "offset":424,
+        "offset":344,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        double top; \n        double left; \n        double bottom; \n        double right; \n    }",
+        "ivarType":"struct UIEdgeInsets",
         "name":"_padding",
-        "offset":432,
+        "offset":352,
         "type":"ivar"
       },
       {
-        "ivarType":"struct _NSRange { \n        unsigned long long location; \n        unsigned long long length; \n    }",
+        "ivarType":"struct _NSRange",
         "name":"_selectionRangeWhenNotEditing",
-        "offset":464,
+        "offset":384,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_scrollXOffset",
-        "offset":480,
+        "offset":400,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_scrollYOffset",
-        "offset":484,
+        "offset":404,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_progress",
-        "offset":488,
+        "offset":408,
         "type":"ivar"
       },
       {
         "ivarType":"UIButton *",
         "name":"_clearButton",
-        "offset":496,
+        "offset":416,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_clearButtonOffset",
-        "offset":504,
+        "offset":424,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_leftViewOffset",
-        "offset":520,
+        "offset":440,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_rightViewOffset",
-        "offset":536,
+        "offset":456,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldBorderView *",
         "name":"_backgroundView",
-        "offset":552,
+        "offset":472,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldBorderView *",
         "name":"_disabledBackgroundView",
-        "offset":560,
+        "offset":480,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldBackgroundView *",
         "name":"_systemBackgroundView",
-        "offset":568,
+        "offset":488,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldLabel *",
         "name":"_displayLabel",
-        "offset":576,
+        "offset":496,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldLabel *",
         "name":"_placeholderLabel",
-        "offset":584,
+        "offset":504,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldLabel *",
         "name":"_suffixLabel",
-        "offset":592,
+        "offset":512,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldLabel *",
         "name":"_prefixLabel",
-        "offset":600,
+        "offset":520,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_iconView",
-        "offset":608,
+        "offset":528,
         "type":"ivar"
       },
       {
         "ivarType":"UILabel *",
         "name":"_label",
-        "offset":616,
+        "offset":536,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_labelOffset",
-        "offset":624,
+        "offset":544,
         "type":"ivar"
       },
       {
         "ivarType":"UITextInteractionAssistant *",
         "name":"_interactionAssistant",
-        "offset":632,
+        "offset":552,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_inputView",
-        "offset":640,
+        "offset":560,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_inputAccessoryView",
-        "offset":648,
+        "offset":568,
         "type":"ivar"
       },
       {
         "ivarType":"UITextFieldAtomBackgroundView *",
         "name":"_atomBackgroundView",
-        "offset":656,
+        "offset":576,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int verticallyCenterText : 1; \n        unsigned int isAnimating : 4; \n        unsigned int inactiveHasDimAppearance : 1; \n        unsigned int becomesFirstResponderOnClearButtonTap : 1; \n        unsigned int clearsPlaceholderOnBeginEditing : 1; \n        unsigned int adjustsFontSizeToFitWidth : 1; \n        unsigned int fieldEditorAttached : 1; \n        unsigned int canBecomeFirstResponder : 1; \n        unsigned int shouldSuppressShouldBeginEditing : 1; \n        unsigned int inResignFirstResponder : 1; \n        unsigned int undoDisabled : 1; \n        unsigned int explicitAlignment : 1; \n        unsigned int implementsCustomDrawing : 1; \n        unsigned int needsClearing : 1; \n        unsigned int suppressContentChangedNotification : 1; \n        unsigned int allowsEditingTextAttributes : 1; \n        unsigned int usesAttributedText : 1; \n        unsigned int backgroundViewState : 2; \n        unsigned int clearingBehavior : 2; \n    }",
+        "ivarType":"struct {\n        unsigned int verticallyCenterText:1;\n        unsigned int isAnimating:4;\n        unsigned int inactiveHasDimAppearance:1;\n        unsigned int becomesFirstResponderOnClearButtonTap:1;\n        unsigned int clearsPlaceholderOnBeginEditing:1;\n        unsigned int adjustsFontSizeToFitWidth:1;\n        unsigned int fieldEditorAttached:1;\n        unsigned int canBecomeFirstResponder:1;\n        unsigned int shouldSuppressShouldBeginEditing:1;\n        unsigned int inResignFirstResponder:1;\n        unsigned int undoDisabled:1;\n        unsigned int explicitAlignment:1;\n        unsigned int implementsCustomDrawing:1;\n        unsigned int needsClearing:1;\n        unsigned int suppressContentChangedNotification:1;\n        unsigned int allowsEditingTextAttributes:1;\n        unsigned int usesAttributedText:1;\n        unsigned int backgroundViewState:2;\n        unsigned int clearingBehavior:2;\n    }",
         "name":"_textFieldFlags",
-        "offset":664,
+        "offset":584,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_deferringBecomeFirstResponder",
-        "offset":668,
+        "offset":588,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_avoidBecomeFirstResponder",
-        "offset":669,
+        "offset":589,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_setSelectionRangeAfterFieldEditorIsAttached",
-        "offset":670,
+        "offset":590,
         "type":"ivar"
       },
       {
         "ivarType":"NSLayoutConstraint *",
         "name":"_baselineLayoutConstraint",
-        "offset":672,
+        "offset":592,
         "type":"ivar"
       },
       {
         "ivarType":"_UIBaselineLayoutStrut *",
         "name":"_baselineLayoutLabel",
-        "offset":680,
+        "offset":600,
         "type":"ivar"
       }
     ],

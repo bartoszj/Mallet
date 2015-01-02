@@ -9,31 +9,31 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_bounds",
         "offset":16,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_referenceBounds",
         "offset":48,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_interfaceOrientedBounds",
         "offset":80,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_unjailedReferenceBounds",
         "offset":112,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_mainSceneReferenceBounds",
         "offset":144,
         "type":"ivar"
@@ -117,19 +117,19 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int bitsPerComponent : 4; \n        unsigned int initialized : 1; \n        unsigned int connected : 1; \n        unsigned int overscanCompensation : 2; \n        unsigned int screenUpdatesDisabled : 1; \n        unsigned int wantsWideContentMargins : 1; \n        unsigned int queriedDeviceContentMargins : 1; \n        unsigned int hasCalculatedPointsPerInch : 1; \n    }",
+        "ivarType":"struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int screenUpdatesDisabled:1;\n        unsigned int wantsWideContentMargins:1;\n        unsigned int queriedDeviceContentMargins:1;\n        unsigned int hasCalculatedPointsPerInch:1;\n    }",
         "name":"_screenFlags",
         "offset":280,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_wantsSoftwareDimming",
         "offset":284,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_jailUsesHitTestWindow",
         "offset":285,
         "type":"ivar"
@@ -183,19 +183,19 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_jailSize",
         "offset":352,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGPoint { \n        double x; \n        double y; \n    }",
+        "ivarType":"struct CGPoint",
         "name":"_jailOffset",
         "offset":368,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        double top; \n        double left; \n        double bottom; \n        double right; \n    }",
+        "ivarType":"struct UIEdgeInsets",
         "name":"_jailTouchInsets",
         "offset":384,
         "type":"ivar"
@@ -214,31 +214,31 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_bounds",
         "offset":8,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_referenceBounds",
         "offset":24,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_interfaceOrientedBounds",
         "offset":40,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_unjailedReferenceBounds",
         "offset":56,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_mainSceneReferenceBounds",
         "offset":72,
         "type":"ivar"
@@ -322,19 +322,19 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int bitsPerComponent : 4; \n        unsigned int initialized : 1; \n        unsigned int connected : 1; \n        unsigned int overscanCompensation : 2; \n        unsigned int screenUpdatesDisabled : 1; \n        unsigned int wantsWideContentMargins : 1; \n        unsigned int queriedDeviceContentMargins : 1; \n        unsigned int hasCalculatedPointsPerInch : 1; \n    }",
+        "ivarType":"struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int screenUpdatesDisabled:1;\n        unsigned int wantsWideContentMargins:1;\n        unsigned int queriedDeviceContentMargins:1;\n        unsigned int hasCalculatedPointsPerInch:1;\n    }",
         "name":"_screenFlags",
         "offset":144,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_wantsSoftwareDimming",
         "offset":146,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_jailUsesHitTestWindow",
         "offset":147,
         "type":"ivar"
@@ -388,19 +388,19 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_jailSize",
         "offset":180,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGPoint { \n        float x; \n        float y; \n    }",
+        "ivarType":"struct CGPoint",
         "name":"_jailOffset",
         "offset":188,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        float top; \n        float left; \n        float bottom; \n        float right; \n    }",
+        "ivarType":"struct UIEdgeInsets",
         "name":"_jailTouchInsets",
         "offset":196,
         "type":"ivar"
@@ -419,31 +419,31 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_bounds",
         "offset":8,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_referenceBounds",
         "offset":24,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_interfaceOrientedBounds",
         "offset":40,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_unjailedReferenceBounds",
         "offset":56,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_mainSceneReferenceBounds",
         "offset":72,
         "type":"ivar"
@@ -527,19 +527,19 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int bitsPerComponent : 4; \n        unsigned int initialized : 1; \n        unsigned int connected : 1; \n        unsigned int overscanCompensation : 2; \n        unsigned int screenUpdatesDisabled : 1; \n        unsigned int wantsWideContentMargins : 1; \n        unsigned int queriedDeviceContentMargins : 1; \n        unsigned int hasCalculatedPointsPerInch : 1; \n    }",
+        "ivarType":"struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int screenUpdatesDisabled:1;\n        unsigned int wantsWideContentMargins:1;\n        unsigned int queriedDeviceContentMargins:1;\n        unsigned int hasCalculatedPointsPerInch:1;\n    }",
         "name":"_screenFlags",
         "offset":144,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_wantsSoftwareDimming",
         "offset":148,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_jailUsesHitTestWindow",
         "offset":149,
         "type":"ivar"
@@ -593,19 +593,19 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_jailSize",
         "offset":184,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGPoint { \n        float x; \n        float y; \n    }",
+        "ivarType":"struct CGPoint",
         "name":"_jailOffset",
         "offset":192,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        float top; \n        float left; \n        float bottom; \n        float right; \n    }",
+        "ivarType":"struct UIEdgeInsets",
         "name":"_jailTouchInsets",
         "offset":200,
         "type":"ivar"
@@ -624,31 +624,31 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_bounds",
         "offset":16,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_referenceBounds",
         "offset":48,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_interfaceOrientedBounds",
         "offset":80,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_unjailedReferenceBounds",
         "offset":112,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"_mainSceneReferenceBounds",
         "offset":144,
         "type":"ivar"
@@ -732,19 +732,19 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int bitsPerComponent : 4; \n        unsigned int initialized : 1; \n        unsigned int connected : 1; \n        unsigned int overscanCompensation : 2; \n        unsigned int screenUpdatesDisabled : 1; \n        unsigned int wantsWideContentMargins : 1; \n        unsigned int queriedDeviceContentMargins : 1; \n        unsigned int hasCalculatedPointsPerInch : 1; \n    }",
+        "ivarType":"struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int screenUpdatesDisabled:1;\n        unsigned int wantsWideContentMargins:1;\n        unsigned int queriedDeviceContentMargins:1;\n        unsigned int hasCalculatedPointsPerInch:1;\n    }",
         "name":"_screenFlags",
         "offset":280,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_wantsSoftwareDimming",
         "offset":284,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_jailUsesHitTestWindow",
         "offset":285,
         "type":"ivar"
@@ -798,19 +798,19 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_jailSize",
         "offset":352,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGPoint { \n        double x; \n        double y; \n    }",
+        "ivarType":"struct CGPoint",
         "name":"_jailOffset",
         "offset":368,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        double top; \n        double left; \n        double bottom; \n        double right; \n    }",
+        "ivarType":"struct UIEdgeInsets",
         "name":"_jailTouchInsets",
         "offset":384,
         "type":"ivar"

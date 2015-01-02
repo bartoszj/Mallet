@@ -28,7 +28,7 @@ import Helpers
 
 
 class CALayerIvars_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
-    # armv7, armv7, i386:
+    # armv7s, armv7, i386:
     # struct _CALayerIvars {
     #     int refcount;
     #     unsigned int magic;

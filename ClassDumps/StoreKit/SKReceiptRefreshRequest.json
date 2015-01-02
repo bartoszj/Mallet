@@ -3,9 +3,11 @@
     "className":"SKReceiptRefreshRequest",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSDictionary *",
         "name":"_properties",
         "offset":16,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -16,9 +18,11 @@
     "className":"SKReceiptRefreshRequest",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSDictionary *",
         "name":"_properties",
         "offset":8,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -29,9 +33,11 @@
     "className":"SKReceiptRefreshRequest",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSDictionary *",
         "name":"_properties",
         "offset":8,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -42,9 +48,11 @@
     "className":"SKReceiptRefreshRequest",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSDictionary *",
         "name":"_properties",
         "offset":16,
+        "size":0,
         "type":"ivar"
       }
     ],

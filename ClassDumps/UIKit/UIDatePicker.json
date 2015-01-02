@@ -3,15 +3,19 @@
     "className":"UIDatePicker",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"_UIDatePickerView *",
         "name":"_pickerView",
         "offset":240,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_useCurrentDateDuringDecoding",
         "offset":248,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -22,15 +26,19 @@
     "className":"UIDatePicker",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"_UIDatePickerView *",
         "name":"_pickerView",
         "offset":128,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_useCurrentDateDuringDecoding",
         "offset":132,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -41,15 +49,19 @@
     "className":"UIDatePicker",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"_UIDatePickerView *",
         "name":"_pickerView",
         "offset":128,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_useCurrentDateDuringDecoding",
         "offset":132,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -60,15 +72,19 @@
     "className":"UIDatePicker",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"_UIDatePickerView *",
         "name":"_pickerView",
         "offset":240,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_useCurrentDateDuringDecoding",
         "offset":248,
+        "size":0,
         "type":"ivar"
       }
     ],

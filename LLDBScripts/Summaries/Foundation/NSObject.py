@@ -26,11 +26,6 @@ import SummaryBase
 
 
 class NSObject_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
-    # NSObject:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
-    #
-    # Class isa                                                               0 = 0x00 / 4            0 = 0x00 / 8
-
     def __init__(self, value_obj, internal_dict):
         super(NSObject_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "NSObject"

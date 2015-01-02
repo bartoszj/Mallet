@@ -1,68 +1,7 @@
 {
-  "arm64": [
-    {
-      "super_class": "UIView",
-      "offset": 80
-    },
-    {
-      "class": "_UIDatePickerView",
-      "offset": 112
-    }
-  ],
-  "armv7": [
-    {
-      "super_class": "UIView",
-      "offset": 40
-    },
-    {
-      "class": "_UIDatePickerView",
-      "offset": 64
-    },
-    {
-      "class": "UIStepper",
-      "offset": 56
-    }
-  ],
-  "armv7s": [
-    {
-      "super_class": "UIView",
-      "offset": 40
-    },
-    {
-      "class": "_UIDatePickerView",
-      "offset": 64
-    },
-    {
-      "class": "UIStepper",
-      "offset": 56
-    }
-  ],
-  "i386": [
-    {
-      "super_class": "UIView",
-      "offset": 40
-    },
-    {
-      "class": "_UIDatePickerView",
-      "offset": 64
-    },
-    {
-      "class": "UIStepper",
-      "offset": 48
-    }
-  ],
-  "x86_64": [
-    {
-      "super_class": "UIView",
-      "offset": 80
-    },
-    {
-      "class": "_UIDatePickerView",
-      "offset": 112
-    },
-    {
-      "class": "UIStepper",
-      "offset": 88
-    }
-  ]
+  "arm64": [],
+  "armv7": [],
+  "armv7s": [],
+  "i386": [],
+  "x86_64": []
 }

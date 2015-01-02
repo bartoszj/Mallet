@@ -21,7 +21,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"<SKRequestDelegate> *",
+        "ivarType":"id <SKRequestDelegate>",
         "name":"_delegate",
         "offset":32,
         "type":"ivar"
@@ -58,7 +58,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"<SKRequestDelegate> *",
+        "ivarType":"id <SKRequestDelegate>",
         "name":"_delegate",
         "offset":16,
         "type":"ivar"
@@ -95,7 +95,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"<SKRequestDelegate> *",
+        "ivarType":"id <SKRequestDelegate>",
         "name":"_delegate",
         "offset":16,
         "type":"ivar"
@@ -132,7 +132,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"<SKRequestDelegate> *",
+        "ivarType":"id <SKRequestDelegate>",
         "name":"_delegate",
         "offset":32,
         "type":"ivar"

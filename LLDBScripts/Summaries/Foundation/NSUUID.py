@@ -28,11 +28,6 @@ import NSObject
 
 
 class NSUUID_SynthProvider(NSObject.NSObject_SynthProvider):
-    # NSUUID:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
-    #
-    # uuid_t/unsigned char[16]                                                4 = 0x04 / 16           8 = 0x08 / 16
-
     def __init__(self, value_obj, internal_dict):
         super(NSUUID_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "NSUUID"

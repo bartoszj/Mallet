@@ -27,35 +27,6 @@ import UIControl
 
 
 class UISegmentedControl_SynthProvider(UIControl.UIControl_SynthProvider):
-    # Class: UISegmentedControl
-    # Super class: UIControl
-    # Protocols: _UIBasicAnimationFactory, NSCoding
-    # Name:                                                                     armv7                 i386                  arm64                 x86_64
-    # NSMutableArray * _segments                                            120 (0x078) / 4       120 (0x078) / 4       224 (0x0E0) / 8       224 (0x0E0) / 8
-    # NSInteger _selectedSegment                                            124 (0x07C) / 4       124 (0x07C) / 4       232 (0x0E8) / 8       232 (0x0E8) / 8
-    # NSInteger _highlightedSegment                                         128 (0x080) / 4       128 (0x080) / 4       240 (0x0F0) / 8       240 (0x0F0) / 8
-    # UIView * _removedSegment                                              132 (0x084) / 4       132 (0x084) / 4       248 (0x0F8) / 8       248 (0x0F8) / 8
-    # NSInteger _barStyle                                                   136 (0x088) / 4       136 (0x088) / 4       256 (0x100) / 8       256 (0x100) / 8
-    # id _appearanceStorage                                                 140 (0x08C) / 4       140 (0x08C) / 4       264 (0x108) / 8       264 (0x108) / 8
-    # UIView * _backgroundBarView                                           144 (0x090) / 4       144 (0x090) / 4       272 (0x110) / 8       272 (0x110) / 8
-    # CGFloat _enabledAlpha                                                 148 (0x094) / 4       148 (0x094) / 4       280 (0x118) / 8       280 (0x118) / 8
-    # struct {
-    #         unsigned int style:3;
-    #         unsigned int size:2;
-    #         unsigned int delegateAlwaysNotifiesDelegateOfSegmentClicks:1;
-    #         unsigned int momentaryClick:1;
-    #         unsigned int tracking:1;
-    #         unsigned int autosizeToFitSegments:1;
-    #         unsigned int isSizingToFit:1;
-    #         unsigned int autosizeText:1;
-    #         unsigned int transparentBackground:1;
-    #         unsigned int useProportionalWidthSegments:1;
-    #         unsigned int translucentBackground:1;
-    #         unsigned int appearanceNeedsUpdate:1;
-    #         unsigned int contentTextPaddingEnabled:1;
-    #     } _segmentedControlFlags                                          152 (0x098) / 2       152 (0x098) / 4       288 (0x120) / 4       288 (0x120) / 4
-    # BOOL __hasTranslucentOptionsBackground                                154 (0x09A) / 1       156 (0x09C) / 1       292 (0x124) / 1       292 (0x124) / 1
-
     def __init__(self, value_obj, internal_dict):
         super(UISegmentedControl_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UISegmentedControl"

@@ -3,57 +3,75 @@
     "className":"SKPaymentTransactionInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_downloads",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSError *",
         "name":"_error",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"SKPaymentTransaction *",
         "name":"_originalTransaction",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"SKPayment *",
         "name":"_payment",
         "offset":32,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_temporaryIdentifier",
         "offset":40,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSDate *",
         "name":"_transactionDate",
         "offset":48,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_transactionIdentifier",
         "offset":56,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSData *",
         "name":"_transactionReceipt",
         "offset":64,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_transactionState",
         "offset":72,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -64,57 +82,75 @@
     "className":"SKPaymentTransactionInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_downloads",
         "offset":4,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSError *",
         "name":"_error",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"SKPaymentTransaction *",
         "name":"_originalTransaction",
         "offset":12,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"SKPayment *",
         "name":"_payment",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_temporaryIdentifier",
         "offset":20,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSDate *",
         "name":"_transactionDate",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_transactionIdentifier",
         "offset":28,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSData *",
         "name":"_transactionReceipt",
         "offset":32,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_transactionState",
         "offset":36,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -125,57 +161,75 @@
     "className":"SKPaymentTransactionInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_downloads",
         "offset":4,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSError *",
         "name":"_error",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"SKPaymentTransaction *",
         "name":"_originalTransaction",
         "offset":12,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"SKPayment *",
         "name":"_payment",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_temporaryIdentifier",
         "offset":20,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSDate *",
         "name":"_transactionDate",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_transactionIdentifier",
         "offset":28,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSData *",
         "name":"_transactionReceipt",
         "offset":32,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_transactionState",
         "offset":36,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -186,57 +240,75 @@
     "className":"SKPaymentTransactionInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_downloads",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSError *",
         "name":"_error",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"SKPaymentTransaction *",
         "name":"_originalTransaction",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"SKPayment *",
         "name":"_payment",
         "offset":32,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_temporaryIdentifier",
         "offset":40,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSDate *",
         "name":"_transactionDate",
         "offset":48,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_transactionIdentifier",
         "offset":56,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSData *",
         "name":"_transactionReceipt",
         "offset":64,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_transactionState",
         "offset":72,
+        "size":0,
         "type":"ivar"
       }
     ],

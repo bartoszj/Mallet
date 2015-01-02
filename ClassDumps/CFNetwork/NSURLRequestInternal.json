@@ -1,11 +1,11 @@
 {
   "arm64":{
-    "className":"SKRequest",
+    "className":"NSURLRequestInternal",
     "ivars":[
       {
         "alignment":0,
-        "ivarType":"id",
-        "name":"_requestInternal",
+        "ivarType":"struct _CFURLRequest *",
+        "name":"request",
         "offset":8,
         "size":0,
         "type":"ivar"
@@ -15,12 +15,12 @@
     "type":"class"
   },
   "armv7":{
-    "className":"SKRequest",
+    "className":"NSURLRequestInternal",
     "ivars":[
       {
         "alignment":0,
-        "ivarType":"id",
-        "name":"_requestInternal",
+        "ivarType":"struct _CFURLRequest *",
+        "name":"request",
         "offset":4,
         "size":0,
         "type":"ivar"
@@ -30,12 +30,12 @@
     "type":"class"
   },
   "i386":{
-    "className":"SKRequest",
+    "className":"NSURLRequestInternal",
     "ivars":[
       {
         "alignment":0,
-        "ivarType":"id",
-        "name":"_requestInternal",
+        "ivarType":"struct _CFURLRequest *",
+        "name":"request",
         "offset":4,
         "size":0,
         "type":"ivar"
@@ -45,12 +45,12 @@
     "type":"class"
   },
   "x86_64":{
-    "className":"SKRequest",
+    "className":"NSURLRequestInternal",
     "ivars":[
       {
         "alignment":0,
-        "ivarType":"id",
-        "name":"_requestInternal",
+        "ivarType":"struct _CFURLRequest *",
+        "name":"request",
         "offset":8,
         "size":0,
         "type":"ivar"

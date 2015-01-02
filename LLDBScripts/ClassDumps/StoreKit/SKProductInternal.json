@@ -9,7 +9,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_downloadable",
         "offset":16,
         "type":"ivar"
@@ -70,7 +70,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_downloadable",
         "offset":8,
         "type":"ivar"
@@ -131,7 +131,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_downloadable",
         "offset":8,
         "type":"ivar"
@@ -192,7 +192,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_downloadable",
         "offset":16,
         "type":"ivar"

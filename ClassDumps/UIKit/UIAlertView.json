@@ -3,117 +3,155 @@
     "className":"UIAlertView",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"UIAlertController *",
         "name":"_alertController",
         "offset":200,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UIAlertControllerShimPresenter *",
         "name":"_presenter",
         "offset":208,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSMutableArray *",
         "name":"_actions",
         "offset":216,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_cancelIndex",
         "offset":224,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_defaultButtonIndex",
         "offset":232,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_firstOtherButtonIndex",
         "offset":240,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_message",
         "offset":248,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_subtitle",
         "offset":256,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_alertViewStyle",
         "offset":264,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_runsModal",
         "offset":272,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"id",
         "name":"_context",
         "offset":280,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_hasPreparedAlertActions",
         "offset":288,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_isPresented",
         "offset":289,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_alertControllerShouldDismiss",
         "offset":290,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_handlingAlertActionShouldDismiss",
         "offset":291,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_dismissingAlertController",
         "offset":292,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"__currentlyRunningModal",
         "offset":293,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"externalViewControllerForPresentation",
         "offset":296,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UIWeakRef *",
         "name":"_weakDelegate",
         "offset":304,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -124,117 +162,155 @@
     "className":"UIAlertView",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"UIAlertController *",
         "name":"_alertController",
         "offset":104,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UIAlertControllerShimPresenter *",
         "name":"_presenter",
         "offset":108,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSMutableArray *",
         "name":"_actions",
         "offset":112,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_cancelIndex",
         "offset":116,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_defaultButtonIndex",
         "offset":120,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_firstOtherButtonIndex",
         "offset":124,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_message",
         "offset":128,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_subtitle",
         "offset":132,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_alertViewStyle",
         "offset":136,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_runsModal",
         "offset":140,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"id",
         "name":"_context",
         "offset":144,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_hasPreparedAlertActions",
         "offset":148,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_isPresented",
         "offset":149,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_alertControllerShouldDismiss",
         "offset":150,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_handlingAlertActionShouldDismiss",
         "offset":151,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_dismissingAlertController",
         "offset":152,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"__currentlyRunningModal",
         "offset":153,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"externalViewControllerForPresentation",
         "offset":156,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UIWeakRef *",
         "name":"_weakDelegate",
         "offset":160,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -245,117 +321,155 @@
     "className":"UIAlertView",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"UIAlertController *",
         "name":"_alertController",
         "offset":104,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UIAlertControllerShimPresenter *",
         "name":"_presenter",
         "offset":108,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSMutableArray *",
         "name":"_actions",
         "offset":112,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_cancelIndex",
         "offset":116,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_defaultButtonIndex",
         "offset":120,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_firstOtherButtonIndex",
         "offset":124,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_message",
         "offset":128,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_subtitle",
         "offset":132,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_alertViewStyle",
         "offset":136,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_runsModal",
         "offset":140,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"id",
         "name":"_context",
         "offset":144,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_hasPreparedAlertActions",
         "offset":148,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_isPresented",
         "offset":149,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_alertControllerShouldDismiss",
         "offset":150,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_handlingAlertActionShouldDismiss",
         "offset":151,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_dismissingAlertController",
         "offset":152,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"__currentlyRunningModal",
         "offset":153,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"externalViewControllerForPresentation",
         "offset":156,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UIWeakRef *",
         "name":"_weakDelegate",
         "offset":160,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -366,117 +480,155 @@
     "className":"UIAlertView",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"UIAlertController *",
         "name":"_alertController",
         "offset":200,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UIAlertControllerShimPresenter *",
         "name":"_presenter",
         "offset":208,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSMutableArray *",
         "name":"_actions",
         "offset":216,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_cancelIndex",
         "offset":224,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_defaultButtonIndex",
         "offset":232,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_firstOtherButtonIndex",
         "offset":240,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_message",
         "offset":248,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_subtitle",
         "offset":256,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_alertViewStyle",
         "offset":264,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_runsModal",
         "offset":272,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"id",
         "name":"_context",
         "offset":280,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_hasPreparedAlertActions",
         "offset":288,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_isPresented",
         "offset":289,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_alertControllerShouldDismiss",
         "offset":290,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_handlingAlertActionShouldDismiss",
         "offset":291,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_dismissingAlertController",
         "offset":292,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"__currentlyRunningModal",
         "offset":293,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"externalViewControllerForPresentation",
         "offset":296,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UIWeakRef *",
         "name":"_weakDelegate",
         "offset":304,
+        "size":0,
         "type":"ivar"
       }
     ],

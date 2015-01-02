@@ -5,127 +5,127 @@
       {
         "ivarType":"NSMutableArray *",
         "name":"_tables",
-        "offset":280,
+        "offset":200,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_topFrame",
-        "offset":288,
+        "offset":208,
         "type":"ivar"
       },
       {
         "ivarType":"NSMutableArray *",
         "name":"_dividers",
-        "offset":296,
+        "offset":216,
         "type":"ivar"
       },
       {
         "ivarType":"NSMutableArray *",
         "name":"_selectionBars",
-        "offset":304,
+        "offset":224,
         "type":"ivar"
       },
       {
-        "ivarType":"<UIPickerViewDataSource> *",
+        "ivarType":"id <UIPickerViewDataSource>",
         "name":"_dataSource",
-        "offset":312,
+        "offset":232,
         "type":"ivar"
       },
       {
-        "ivarType":"<UIPickerViewDelegate> *",
+        "ivarType":"id <UIPickerViewDelegate>",
         "name":"_delegate",
-        "offset":320,
+        "offset":240,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_backgroundView",
-        "offset":328,
+        "offset":248,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_numberOfComponents",
-        "offset":336,
+        "offset":256,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_topGradient",
-        "offset":344,
+        "offset":264,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_bottomGradient",
-        "offset":352,
+        "offset":272,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_foregroundView",
-        "offset":360,
+        "offset":280,
         "type":"ivar"
       },
       {
         "ivarType":"CALayer *",
         "name":"_maskGradientLayer",
-        "offset":368,
+        "offset":288,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_topLineView",
-        "offset":376,
+        "offset":296,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_bottomLineView",
-        "offset":384,
+        "offset":304,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int needsLayout : 1; \n        unsigned int delegateRespondsToNumberOfComponentsInPickerView : 1; \n        unsigned int delegateRespondsToNumberOfRowsInComponent : 1; \n        unsigned int delegateRespondsToDidSelectRow : 1; \n        unsigned int delegateRespondsToViewForRow : 1; \n        unsigned int delegateRespondsToTitleForRow : 1; \n        unsigned int delegateRespondsToAttributedTitleForRow : 1; \n        unsigned int delegateRespondsToWidthForComponent : 1; \n        unsigned int delegateRespondsToRowHeightForComponent : 1; \n        unsigned int showsSelectionBar : 1; \n        unsigned int allowsMultipleSelection : 1; \n        unsigned int allowSelectingCells : 1; \n        unsigned int soundsDisabled : 1; \n        unsigned int usesCheckedSelection : 1; \n        unsigned int skipsBackground : 1; \n    }",
+        "ivarType":"struct {\n        unsigned int needsLayout:1;\n        unsigned int delegateRespondsToNumberOfComponentsInPickerView:1;\n        unsigned int delegateRespondsToNumberOfRowsInComponent:1;\n        unsigned int delegateRespondsToDidSelectRow:1;\n        unsigned int delegateRespondsToViewForRow:1;\n        unsigned int delegateRespondsToTitleForRow:1;\n        unsigned int delegateRespondsToAttributedTitleForRow:1;\n        unsigned int delegateRespondsToWidthForComponent:1;\n        unsigned int delegateRespondsToRowHeightForComponent:1;\n        unsigned int showsSelectionBar:1;\n        unsigned int allowsMultipleSelection:1;\n        unsigned int allowSelectingCells:1;\n        unsigned int soundsDisabled:1;\n        unsigned int usesCheckedSelection:1;\n        unsigned int skipsBackground:1;\n    }",
         "name":"_pickerViewFlags",
-        "offset":392,
+        "offset":312,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_usesModernStyle",
-        "offset":396,
+        "offset":316,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_textColor",
-        "offset":400,
+        "offset":320,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_textShadowColor",
-        "offset":408,
+        "offset":328,
         "type":"ivar"
       },
       {
         "ivarType":"_UIPickerViewTestParameters *",
         "name":"_currentTestParameters",
-        "offset":416,
+        "offset":336,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_isInLayoutSubviews",
-        "offset":424,
+        "offset":344,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_magnifierEnabled",
-        "offset":425,
+        "offset":345,
         "type":"ivar"
       }
     ],
@@ -138,127 +138,127 @@
       {
         "ivarType":"NSMutableArray *",
         "name":"_tables",
-        "offset":144,
+        "offset":104,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_topFrame",
-        "offset":148,
+        "offset":108,
         "type":"ivar"
       },
       {
         "ivarType":"NSMutableArray *",
         "name":"_dividers",
-        "offset":152,
+        "offset":112,
         "type":"ivar"
       },
       {
         "ivarType":"NSMutableArray *",
         "name":"_selectionBars",
-        "offset":156,
+        "offset":116,
         "type":"ivar"
       },
       {
-        "ivarType":"<UIPickerViewDataSource> *",
+        "ivarType":"id <UIPickerViewDataSource>",
         "name":"_dataSource",
-        "offset":160,
+        "offset":120,
         "type":"ivar"
       },
       {
-        "ivarType":"<UIPickerViewDelegate> *",
+        "ivarType":"id <UIPickerViewDelegate>",
         "name":"_delegate",
-        "offset":164,
+        "offset":124,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_backgroundView",
-        "offset":168,
+        "offset":128,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_numberOfComponents",
-        "offset":172,
+        "offset":132,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_topGradient",
-        "offset":176,
+        "offset":136,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_bottomGradient",
-        "offset":180,
+        "offset":140,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_foregroundView",
-        "offset":184,
+        "offset":144,
         "type":"ivar"
       },
       {
         "ivarType":"CALayer *",
         "name":"_maskGradientLayer",
-        "offset":188,
+        "offset":148,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_topLineView",
-        "offset":192,
+        "offset":152,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_bottomLineView",
-        "offset":196,
+        "offset":156,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int needsLayout : 1; \n        unsigned int delegateRespondsToNumberOfComponentsInPickerView : 1; \n        unsigned int delegateRespondsToNumberOfRowsInComponent : 1; \n        unsigned int delegateRespondsToDidSelectRow : 1; \n        unsigned int delegateRespondsToViewForRow : 1; \n        unsigned int delegateRespondsToTitleForRow : 1; \n        unsigned int delegateRespondsToAttributedTitleForRow : 1; \n        unsigned int delegateRespondsToWidthForComponent : 1; \n        unsigned int delegateRespondsToRowHeightForComponent : 1; \n        unsigned int showsSelectionBar : 1; \n        unsigned int allowsMultipleSelection : 1; \n        unsigned int allowSelectingCells : 1; \n        unsigned int soundsDisabled : 1; \n        unsigned int usesCheckedSelection : 1; \n        unsigned int skipsBackground : 1; \n    }",
+        "ivarType":"struct {\n        unsigned int needsLayout:1;\n        unsigned int delegateRespondsToNumberOfComponentsInPickerView:1;\n        unsigned int delegateRespondsToNumberOfRowsInComponent:1;\n        unsigned int delegateRespondsToDidSelectRow:1;\n        unsigned int delegateRespondsToViewForRow:1;\n        unsigned int delegateRespondsToTitleForRow:1;\n        unsigned int delegateRespondsToAttributedTitleForRow:1;\n        unsigned int delegateRespondsToWidthForComponent:1;\n        unsigned int delegateRespondsToRowHeightForComponent:1;\n        unsigned int showsSelectionBar:1;\n        unsigned int allowsMultipleSelection:1;\n        unsigned int allowSelectingCells:1;\n        unsigned int soundsDisabled:1;\n        unsigned int usesCheckedSelection:1;\n        unsigned int skipsBackground:1;\n    }",
         "name":"_pickerViewFlags",
-        "offset":200,
+        "offset":160,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_usesModernStyle",
-        "offset":202,
+        "offset":162,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_textColor",
-        "offset":204,
+        "offset":164,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_textShadowColor",
-        "offset":208,
+        "offset":168,
         "type":"ivar"
       },
       {
         "ivarType":"_UIPickerViewTestParameters *",
         "name":"_currentTestParameters",
-        "offset":212,
+        "offset":172,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_isInLayoutSubviews",
-        "offset":216,
+        "offset":176,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_magnifierEnabled",
-        "offset":217,
+        "offset":177,
         "type":"ivar"
       }
     ],
@@ -271,127 +271,127 @@
       {
         "ivarType":"NSMutableArray *",
         "name":"_tables",
-        "offset":144,
+        "offset":104,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_topFrame",
-        "offset":148,
+        "offset":108,
         "type":"ivar"
       },
       {
         "ivarType":"NSMutableArray *",
         "name":"_dividers",
-        "offset":152,
+        "offset":112,
         "type":"ivar"
       },
       {
         "ivarType":"NSMutableArray *",
         "name":"_selectionBars",
-        "offset":156,
+        "offset":116,
         "type":"ivar"
       },
       {
-        "ivarType":"<UIPickerViewDataSource> *",
+        "ivarType":"id <UIPickerViewDataSource>",
         "name":"_dataSource",
-        "offset":160,
+        "offset":120,
         "type":"ivar"
       },
       {
-        "ivarType":"<UIPickerViewDelegate> *",
+        "ivarType":"id <UIPickerViewDelegate>",
         "name":"_delegate",
-        "offset":164,
+        "offset":124,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_backgroundView",
-        "offset":168,
+        "offset":128,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_numberOfComponents",
-        "offset":172,
+        "offset":132,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_topGradient",
-        "offset":176,
+        "offset":136,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_bottomGradient",
-        "offset":180,
+        "offset":140,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_foregroundView",
-        "offset":184,
+        "offset":144,
         "type":"ivar"
       },
       {
         "ivarType":"CALayer *",
         "name":"_maskGradientLayer",
-        "offset":188,
+        "offset":148,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_topLineView",
-        "offset":192,
+        "offset":152,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_bottomLineView",
-        "offset":196,
+        "offset":156,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int needsLayout : 1; \n        unsigned int delegateRespondsToNumberOfComponentsInPickerView : 1; \n        unsigned int delegateRespondsToNumberOfRowsInComponent : 1; \n        unsigned int delegateRespondsToDidSelectRow : 1; \n        unsigned int delegateRespondsToViewForRow : 1; \n        unsigned int delegateRespondsToTitleForRow : 1; \n        unsigned int delegateRespondsToAttributedTitleForRow : 1; \n        unsigned int delegateRespondsToWidthForComponent : 1; \n        unsigned int delegateRespondsToRowHeightForComponent : 1; \n        unsigned int showsSelectionBar : 1; \n        unsigned int allowsMultipleSelection : 1; \n        unsigned int allowSelectingCells : 1; \n        unsigned int soundsDisabled : 1; \n        unsigned int usesCheckedSelection : 1; \n        unsigned int skipsBackground : 1; \n    }",
+        "ivarType":"struct {\n        unsigned int needsLayout:1;\n        unsigned int delegateRespondsToNumberOfComponentsInPickerView:1;\n        unsigned int delegateRespondsToNumberOfRowsInComponent:1;\n        unsigned int delegateRespondsToDidSelectRow:1;\n        unsigned int delegateRespondsToViewForRow:1;\n        unsigned int delegateRespondsToTitleForRow:1;\n        unsigned int delegateRespondsToAttributedTitleForRow:1;\n        unsigned int delegateRespondsToWidthForComponent:1;\n        unsigned int delegateRespondsToRowHeightForComponent:1;\n        unsigned int showsSelectionBar:1;\n        unsigned int allowsMultipleSelection:1;\n        unsigned int allowSelectingCells:1;\n        unsigned int soundsDisabled:1;\n        unsigned int usesCheckedSelection:1;\n        unsigned int skipsBackground:1;\n    }",
         "name":"_pickerViewFlags",
-        "offset":200,
+        "offset":160,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_usesModernStyle",
-        "offset":204,
+        "offset":164,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_textColor",
-        "offset":208,
+        "offset":168,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_textShadowColor",
-        "offset":212,
+        "offset":172,
         "type":"ivar"
       },
       {
         "ivarType":"_UIPickerViewTestParameters *",
         "name":"_currentTestParameters",
-        "offset":216,
+        "offset":176,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_isInLayoutSubviews",
-        "offset":220,
+        "offset":180,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_magnifierEnabled",
-        "offset":221,
+        "offset":181,
         "type":"ivar"
       }
     ],
@@ -404,127 +404,127 @@
       {
         "ivarType":"NSMutableArray *",
         "name":"_tables",
-        "offset":280,
+        "offset":200,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_topFrame",
-        "offset":288,
+        "offset":208,
         "type":"ivar"
       },
       {
         "ivarType":"NSMutableArray *",
         "name":"_dividers",
-        "offset":296,
+        "offset":216,
         "type":"ivar"
       },
       {
         "ivarType":"NSMutableArray *",
         "name":"_selectionBars",
-        "offset":304,
+        "offset":224,
         "type":"ivar"
       },
       {
-        "ivarType":"<UIPickerViewDataSource> *",
+        "ivarType":"id <UIPickerViewDataSource>",
         "name":"_dataSource",
-        "offset":312,
+        "offset":232,
         "type":"ivar"
       },
       {
-        "ivarType":"<UIPickerViewDelegate> *",
+        "ivarType":"id <UIPickerViewDelegate>",
         "name":"_delegate",
-        "offset":320,
+        "offset":240,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_backgroundView",
-        "offset":328,
+        "offset":248,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_numberOfComponents",
-        "offset":336,
+        "offset":256,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_topGradient",
-        "offset":344,
+        "offset":264,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_bottomGradient",
-        "offset":352,
+        "offset":272,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_foregroundView",
-        "offset":360,
+        "offset":280,
         "type":"ivar"
       },
       {
         "ivarType":"CALayer *",
         "name":"_maskGradientLayer",
-        "offset":368,
+        "offset":288,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_topLineView",
-        "offset":376,
+        "offset":296,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_bottomLineView",
-        "offset":384,
+        "offset":304,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int needsLayout : 1; \n        unsigned int delegateRespondsToNumberOfComponentsInPickerView : 1; \n        unsigned int delegateRespondsToNumberOfRowsInComponent : 1; \n        unsigned int delegateRespondsToDidSelectRow : 1; \n        unsigned int delegateRespondsToViewForRow : 1; \n        unsigned int delegateRespondsToTitleForRow : 1; \n        unsigned int delegateRespondsToAttributedTitleForRow : 1; \n        unsigned int delegateRespondsToWidthForComponent : 1; \n        unsigned int delegateRespondsToRowHeightForComponent : 1; \n        unsigned int showsSelectionBar : 1; \n        unsigned int allowsMultipleSelection : 1; \n        unsigned int allowSelectingCells : 1; \n        unsigned int soundsDisabled : 1; \n        unsigned int usesCheckedSelection : 1; \n        unsigned int skipsBackground : 1; \n    }",
+        "ivarType":"struct {\n        unsigned int needsLayout:1;\n        unsigned int delegateRespondsToNumberOfComponentsInPickerView:1;\n        unsigned int delegateRespondsToNumberOfRowsInComponent:1;\n        unsigned int delegateRespondsToDidSelectRow:1;\n        unsigned int delegateRespondsToViewForRow:1;\n        unsigned int delegateRespondsToTitleForRow:1;\n        unsigned int delegateRespondsToAttributedTitleForRow:1;\n        unsigned int delegateRespondsToWidthForComponent:1;\n        unsigned int delegateRespondsToRowHeightForComponent:1;\n        unsigned int showsSelectionBar:1;\n        unsigned int allowsMultipleSelection:1;\n        unsigned int allowSelectingCells:1;\n        unsigned int soundsDisabled:1;\n        unsigned int usesCheckedSelection:1;\n        unsigned int skipsBackground:1;\n    }",
         "name":"_pickerViewFlags",
-        "offset":392,
+        "offset":312,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_usesModernStyle",
-        "offset":396,
+        "offset":316,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_textColor",
-        "offset":400,
+        "offset":320,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_textShadowColor",
-        "offset":408,
+        "offset":328,
         "type":"ivar"
       },
       {
         "ivarType":"_UIPickerViewTestParameters *",
         "name":"_currentTestParameters",
-        "offset":416,
+        "offset":336,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_isInLayoutSubviews",
-        "offset":424,
+        "offset":344,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_magnifierEnabled",
-        "offset":425,
+        "offset":345,
         "type":"ivar"
       }
     ],

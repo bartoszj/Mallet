@@ -5,61 +5,61 @@
       {
         "ivarType":"NSMutableArray *",
         "name":"_segments",
-        "offset":320,
+        "offset":240,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_selectedSegment",
-        "offset":328,
+        "offset":248,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_highlightedSegment",
-        "offset":336,
+        "offset":256,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_removedSegment",
-        "offset":344,
+        "offset":264,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_barStyle",
-        "offset":352,
+        "offset":272,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_appearanceStorage",
-        "offset":360,
+        "offset":280,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_backgroundBarView",
-        "offset":368,
+        "offset":288,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_enabledAlpha",
-        "offset":376,
+        "offset":296,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int style : 3; \n        unsigned int size : 2; \n        unsigned int delegateAlwaysNotifiesDelegateOfSegmentClicks : 1; \n        unsigned int momentaryClick : 1; \n        unsigned int tracking : 1; \n        unsigned int autosizeToFitSegments : 1; \n        unsigned int isSizingToFit : 1; \n        unsigned int autosizeText : 1; \n        unsigned int transparentBackground : 1; \n        unsigned int useProportionalWidthSegments : 1; \n        unsigned int translucentBackground : 1; \n        unsigned int appearanceNeedsUpdate : 1; \n    }",
+        "ivarType":"struct {\n        unsigned int style:3;\n        unsigned int size:2;\n        unsigned int delegateAlwaysNotifiesDelegateOfSegmentClicks:1;\n        unsigned int momentaryClick:1;\n        unsigned int tracking:1;\n        unsigned int autosizeToFitSegments:1;\n        unsigned int isSizingToFit:1;\n        unsigned int autosizeText:1;\n        unsigned int transparentBackground:1;\n        unsigned int useProportionalWidthSegments:1;\n        unsigned int translucentBackground:1;\n        unsigned int appearanceNeedsUpdate:1;\n    }",
         "name":"_segmentedControlFlags",
-        "offset":384,
+        "offset":304,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"__hasTranslucentOptionsBackground",
-        "offset":388,
+        "offset":308,
         "type":"ivar"
       }
     ],
@@ -72,61 +72,61 @@
       {
         "ivarType":"NSMutableArray *",
         "name":"_segments",
-        "offset":168,
+        "offset":128,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_selectedSegment",
-        "offset":172,
+        "offset":132,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_highlightedSegment",
-        "offset":176,
+        "offset":136,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_removedSegment",
-        "offset":180,
+        "offset":140,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_barStyle",
-        "offset":184,
+        "offset":144,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_appearanceStorage",
-        "offset":188,
+        "offset":148,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_backgroundBarView",
-        "offset":192,
+        "offset":152,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_enabledAlpha",
-        "offset":196,
+        "offset":156,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int style : 3; \n        unsigned int size : 2; \n        unsigned int delegateAlwaysNotifiesDelegateOfSegmentClicks : 1; \n        unsigned int momentaryClick : 1; \n        unsigned int tracking : 1; \n        unsigned int autosizeToFitSegments : 1; \n        unsigned int isSizingToFit : 1; \n        unsigned int autosizeText : 1; \n        unsigned int transparentBackground : 1; \n        unsigned int useProportionalWidthSegments : 1; \n        unsigned int translucentBackground : 1; \n        unsigned int appearanceNeedsUpdate : 1; \n    }",
+        "ivarType":"struct {\n        unsigned int style:3;\n        unsigned int size:2;\n        unsigned int delegateAlwaysNotifiesDelegateOfSegmentClicks:1;\n        unsigned int momentaryClick:1;\n        unsigned int tracking:1;\n        unsigned int autosizeToFitSegments:1;\n        unsigned int isSizingToFit:1;\n        unsigned int autosizeText:1;\n        unsigned int transparentBackground:1;\n        unsigned int useProportionalWidthSegments:1;\n        unsigned int translucentBackground:1;\n        unsigned int appearanceNeedsUpdate:1;\n    }",
         "name":"_segmentedControlFlags",
-        "offset":200,
+        "offset":160,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"__hasTranslucentOptionsBackground",
-        "offset":202,
+        "offset":162,
         "type":"ivar"
       }
     ],
@@ -139,61 +139,61 @@
       {
         "ivarType":"NSMutableArray *",
         "name":"_segments",
-        "offset":168,
+        "offset":128,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_selectedSegment",
-        "offset":172,
+        "offset":132,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_highlightedSegment",
-        "offset":176,
+        "offset":136,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_removedSegment",
-        "offset":180,
+        "offset":140,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_barStyle",
-        "offset":184,
+        "offset":144,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_appearanceStorage",
-        "offset":188,
+        "offset":148,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_backgroundBarView",
-        "offset":192,
+        "offset":152,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_enabledAlpha",
-        "offset":196,
+        "offset":156,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int style : 3; \n        unsigned int size : 2; \n        unsigned int delegateAlwaysNotifiesDelegateOfSegmentClicks : 1; \n        unsigned int momentaryClick : 1; \n        unsigned int tracking : 1; \n        unsigned int autosizeToFitSegments : 1; \n        unsigned int isSizingToFit : 1; \n        unsigned int autosizeText : 1; \n        unsigned int transparentBackground : 1; \n        unsigned int useProportionalWidthSegments : 1; \n        unsigned int translucentBackground : 1; \n        unsigned int appearanceNeedsUpdate : 1; \n    }",
+        "ivarType":"struct {\n        unsigned int style:3;\n        unsigned int size:2;\n        unsigned int delegateAlwaysNotifiesDelegateOfSegmentClicks:1;\n        unsigned int momentaryClick:1;\n        unsigned int tracking:1;\n        unsigned int autosizeToFitSegments:1;\n        unsigned int isSizingToFit:1;\n        unsigned int autosizeText:1;\n        unsigned int transparentBackground:1;\n        unsigned int useProportionalWidthSegments:1;\n        unsigned int translucentBackground:1;\n        unsigned int appearanceNeedsUpdate:1;\n    }",
         "name":"_segmentedControlFlags",
-        "offset":200,
+        "offset":160,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"__hasTranslucentOptionsBackground",
-        "offset":204,
+        "offset":164,
         "type":"ivar"
       }
     ],
@@ -206,61 +206,61 @@
       {
         "ivarType":"NSMutableArray *",
         "name":"_segments",
-        "offset":320,
+        "offset":240,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_selectedSegment",
-        "offset":328,
+        "offset":248,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_highlightedSegment",
-        "offset":336,
+        "offset":256,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_removedSegment",
-        "offset":344,
+        "offset":264,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_barStyle",
-        "offset":352,
+        "offset":272,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_appearanceStorage",
-        "offset":360,
+        "offset":280,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_backgroundBarView",
-        "offset":368,
+        "offset":288,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_enabledAlpha",
-        "offset":376,
+        "offset":296,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int style : 3; \n        unsigned int size : 2; \n        unsigned int delegateAlwaysNotifiesDelegateOfSegmentClicks : 1; \n        unsigned int momentaryClick : 1; \n        unsigned int tracking : 1; \n        unsigned int autosizeToFitSegments : 1; \n        unsigned int isSizingToFit : 1; \n        unsigned int autosizeText : 1; \n        unsigned int transparentBackground : 1; \n        unsigned int useProportionalWidthSegments : 1; \n        unsigned int translucentBackground : 1; \n        unsigned int appearanceNeedsUpdate : 1; \n    }",
+        "ivarType":"struct {\n        unsigned int style:3;\n        unsigned int size:2;\n        unsigned int delegateAlwaysNotifiesDelegateOfSegmentClicks:1;\n        unsigned int momentaryClick:1;\n        unsigned int tracking:1;\n        unsigned int autosizeToFitSegments:1;\n        unsigned int isSizingToFit:1;\n        unsigned int autosizeText:1;\n        unsigned int transparentBackground:1;\n        unsigned int useProportionalWidthSegments:1;\n        unsigned int translucentBackground:1;\n        unsigned int appearanceNeedsUpdate:1;\n    }",
         "name":"_segmentedControlFlags",
-        "offset":384,
+        "offset":304,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"__hasTranslucentOptionsBackground",
-        "offset":388,
+        "offset":308,
         "type":"ivar"
       }
     ],

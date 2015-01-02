@@ -27,13 +27,6 @@ import UIControl
 
 
 class UIDatePicker_SynthProvider(UIControl.UIControl_SynthProvider):
-    # Class: UIDatePicker
-    # Super class: UIControl
-    # Protocols: UIPickerViewScrollTesting, NSCoding
-    # Name:                                  armv7                 i386                  arm64                 x86_64
-    # _UIDatePickerView * _pickerView    120 (0x078) / 4       120 (0x078) / 4       224 (0x0E0) / 8       224 (0x0E0) / 8
-    # BOOL _useCurrentDateDuringDecoding 124 (0x07C) / 1       124 (0x07C) / 1       232 (0x0E8) / 1       232 (0x0E8) / 1
-
     def __init__(self, value_obj, internal_dict):
         super(UIDatePicker_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIDatePicker"

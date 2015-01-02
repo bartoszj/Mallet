@@ -3,15 +3,19 @@
     "className":"SKProductsResponseInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_invalidIdentifiers",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_products",
         "offset":16,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -22,15 +26,19 @@
     "className":"SKProductsResponseInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_invalidIdentifiers",
         "offset":4,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_products",
         "offset":8,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -41,15 +49,19 @@
     "className":"SKProductsResponseInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_invalidIdentifiers",
         "offset":4,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_products",
         "offset":8,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -60,15 +72,19 @@
     "className":"SKProductsResponseInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_invalidIdentifiers",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_products",
         "offset":16,
+        "size":0,
         "type":"ivar"
       }
     ],

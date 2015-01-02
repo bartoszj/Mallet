@@ -31,8 +31,8 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
     # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # unknown 16 / 32 bytes                                                   0 = 0x00 / 16           0 = 0x00 / 32
-    # NSURL *url                                                             16 = 0x10 / 4           32 = 0x20 / 8
-    # unknown 24 / 40 bytes                                                  20 = 0x14 / 24          40 = 0x28 / 40
+    # NSURL *url                                                             20 = 0x14 / 4           40 = 0x28 / 8
+    # unknown 24 / 40 bytes                                                  20 = 0x14 / 24          48 = 0x28 / 40
     # struct _tmp1 *tmp1                                                     44 = 0x2c / 4           80 = 0x50 / 8
 
     # struct _tmp1 {
@@ -50,9 +50,9 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
     @Helpers.save_parameter("url")
     def get_url(self):
         if self.is_64bit:
-            offset = 0x20
+            offset = 0x28
         else:
-            offset = 0x10
+            offset = 0x14
 
         return self.get_child_value("url", "NSURL *", offset)
 
@@ -77,7 +77,7 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
     @Helpers.save_parameter("method")
     def get_method(self):
         if self.is_64bit:
-            offset = 0x88
+            offset = 0x98
         else:
             offset = 0x44
 

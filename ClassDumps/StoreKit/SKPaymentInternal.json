@@ -3,45 +3,59 @@
     "className":"SKPaymentInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_applicationUsername",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_partnerIdentifier",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_partnerTransactionIdentifier",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_productIdentifier",
         "offset":32,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_quantity",
         "offset":40,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSData *",
         "name":"_requestData",
         "offset":48,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSDictionary *",
         "name":"_requestParameters",
         "offset":56,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -52,45 +66,59 @@
     "className":"SKPaymentInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_applicationUsername",
         "offset":4,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_partnerIdentifier",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_partnerTransactionIdentifier",
         "offset":12,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_productIdentifier",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_quantity",
         "offset":20,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSData *",
         "name":"_requestData",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSDictionary *",
         "name":"_requestParameters",
         "offset":28,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -101,45 +129,59 @@
     "className":"SKPaymentInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_applicationUsername",
         "offset":4,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_partnerIdentifier",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_partnerTransactionIdentifier",
         "offset":12,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_productIdentifier",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_quantity",
         "offset":20,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSData *",
         "name":"_requestData",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSDictionary *",
         "name":"_requestParameters",
         "offset":28,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -150,45 +192,59 @@
     "className":"SKPaymentInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_applicationUsername",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_partnerIdentifier",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_partnerTransactionIdentifier",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_productIdentifier",
         "offset":32,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_quantity",
         "offset":40,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSData *",
         "name":"_requestData",
         "offset":48,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSDictionary *",
         "name":"_requestParameters",
         "offset":56,
+        "size":0,
         "type":"ivar"
       }
     ],

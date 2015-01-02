@@ -28,11 +28,6 @@ import CFURLRequest
 
 
 class NSURLRequestInternal_SynthProvider(NSObject.NSObject_SynthProvider):
-    # NSURLRequestInternal:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
-    #
-    # struct _CFURLRequest *request                                           4 = 0x04 / 4            8 = 0x08 / 4
-
     def __init__(self, value_obj, internal_dict):
         super(NSURLRequestInternal_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "NSURLRequestInternal"
@@ -42,12 +37,7 @@ class NSURLRequestInternal_SynthProvider(NSObject.NSObject_SynthProvider):
 
     @Helpers.save_parameter("request")
     def get_request(self):
-        if self.is_64bit:
-            offset = 0x08
-        else:
-            offset = 0x04
-
-        return self.get_child_value("request", "addr_ptr_type", offset)
+        return self.get_child_value("request", "addr_ptr_type")
 
     @Helpers.save_parameter("request_provider")
     def get_request_provider(self):

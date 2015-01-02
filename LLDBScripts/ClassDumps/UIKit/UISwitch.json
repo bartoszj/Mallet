@@ -5,43 +5,43 @@
       {
         "ivarType":"UILongPressGestureRecognizer *",
         "name":"_pressGesture",
-        "offset":320,
+        "offset":240,
         "type":"ivar"
       },
       {
         "ivarType":"UIPanGestureRecognizer *",
         "name":"_panGesture",
-        "offset":328,
+        "offset":248,
         "type":"ivar"
       },
       {
         "ivarType":"UIView<_UISwitchInternalViewProtocol> *",
         "name":"_control",
-        "offset":336,
+        "offset":256,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_onStateChangedByLongPressGestureRecognizer",
-        "offset":344,
+        "offset":264,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_onStateChangedByPanGestureRecognizer",
-        "offset":345,
+        "offset":265,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_on",
-        "offset":346,
+        "offset":266,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_enabledAlpha",
-        "offset":352,
+        "offset":272,
         "type":"ivar"
       }
     ],
@@ -54,43 +54,43 @@
       {
         "ivarType":"UILongPressGestureRecognizer *",
         "name":"_pressGesture",
-        "offset":168,
+        "offset":128,
         "type":"ivar"
       },
       {
         "ivarType":"UIPanGestureRecognizer *",
         "name":"_panGesture",
-        "offset":172,
+        "offset":132,
         "type":"ivar"
       },
       {
         "ivarType":"UIView<_UISwitchInternalViewProtocol> *",
         "name":"_control",
-        "offset":176,
+        "offset":136,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_onStateChangedByLongPressGestureRecognizer",
-        "offset":180,
+        "offset":140,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_onStateChangedByPanGestureRecognizer",
-        "offset":181,
+        "offset":141,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_on",
-        "offset":182,
+        "offset":142,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_enabledAlpha",
-        "offset":184,
+        "offset":144,
         "type":"ivar"
       }
     ],
@@ -103,43 +103,43 @@
       {
         "ivarType":"UILongPressGestureRecognizer *",
         "name":"_pressGesture",
-        "offset":168,
+        "offset":128,
         "type":"ivar"
       },
       {
         "ivarType":"UIPanGestureRecognizer *",
         "name":"_panGesture",
-        "offset":172,
+        "offset":132,
         "type":"ivar"
       },
       {
         "ivarType":"UIView<_UISwitchInternalViewProtocol> *",
         "name":"_control",
-        "offset":176,
+        "offset":136,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_onStateChangedByLongPressGestureRecognizer",
-        "offset":180,
+        "offset":140,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_onStateChangedByPanGestureRecognizer",
-        "offset":181,
+        "offset":141,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_on",
-        "offset":182,
+        "offset":142,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_enabledAlpha",
-        "offset":184,
+        "offset":144,
         "type":"ivar"
       }
     ],
@@ -152,43 +152,43 @@
       {
         "ivarType":"UILongPressGestureRecognizer *",
         "name":"_pressGesture",
-        "offset":320,
+        "offset":240,
         "type":"ivar"
       },
       {
         "ivarType":"UIPanGestureRecognizer *",
         "name":"_panGesture",
-        "offset":328,
+        "offset":248,
         "type":"ivar"
       },
       {
         "ivarType":"UIView<_UISwitchInternalViewProtocol> *",
         "name":"_control",
-        "offset":336,
+        "offset":256,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_onStateChangedByLongPressGestureRecognizer",
-        "offset":344,
+        "offset":264,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_onStateChangedByPanGestureRecognizer",
-        "offset":345,
+        "offset":265,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_on",
-        "offset":346,
+        "offset":266,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_enabledAlpha",
-        "offset":352,
+        "offset":272,
         "type":"ivar"
       }
     ],

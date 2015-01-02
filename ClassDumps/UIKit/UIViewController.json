@@ -3,447 +3,595 @@
     "className":"UIViewController",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_view",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UITabBarItem *",
         "name":"_tabBarItem",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UINavigationItem *",
         "name":"_navigationItem",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_toolbarItems",
         "offset":32,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_title",
         "offset":40,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_nibName",
         "offset":48,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSBundle *",
         "name":"_nibBundle",
         "offset":56,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_parentViewController",
         "offset":64,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_childModalViewController",
         "offset":72,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_parentModalViewController",
         "offset":80,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_previousRootViewController",
         "offset":88,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_modalTransitionView",
         "offset":96,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIResponder *",
         "name":"_modalPreservedFirstResponder",
         "offset":104,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"id",
         "name":"_dimmingView",
         "offset":112,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"id",
         "name":"_dropShadowView",
         "offset":120,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"id",
         "name":"_currentAction",
         "offset":128,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIStoryboard *",
         "name":"_storyboard",
         "offset":136,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_storyboardSegueTemplates",
         "offset":144,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSDictionary *",
         "name":"_externalObjectsTableForViewLoading",
         "offset":152,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_topLevelObjectsToKeepAliveFromStoryboard",
         "offset":160,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_savedHeaderSuperview",
         "offset":168,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_savedFooterSuperview",
         "offset":176,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIBarButtonItem *",
         "name":"_editButtonItem",
         "offset":184,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UISearchDisplayController *",
         "name":"_searchDisplayController",
         "offset":192,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_modalTransitionStyle",
         "offset":200,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_modalPresentationStyle",
         "offset":208,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_lastKnownInterfaceOrientation",
         "offset":216,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIPopoverController *",
         "name":"_popoverController",
         "offset":224,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_containerViewInSheet",
         "offset":232,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "alignment":0,
+        "ivarType":"struct CGSize",
         "name":"_contentSizeForViewInPopover",
         "offset":240,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "alignment":0,
+        "ivarType":"struct CGSize",
         "name":"_formSheetSize",
         "offset":256,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIScrollView *",
         "name":"_recordedContentScrollView",
         "offset":272,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"id",
+        "alignment":0,
+        "ivarType":"CDUnknownBlockType",
         "name":"_afterAppearance",
         "offset":280,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_explicitAppearanceTransitionLevel",
         "offset":288,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_keyCommands",
         "offset":296,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSMapTable *",
         "name":"_overrideTraitCollections",
         "offset":304,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int appearState : 2; \n        unsigned int isEditing : 1; \n        unsigned int isPerformingModalTransition : 1; \n        unsigned int hidesBottomBarWhenPushed : 1; \n        unsigned int autoresizesArchivedViewToFullSize : 1; \n        unsigned int viewLoadedFromControllerNib : 1; \n        unsigned int isRootViewController : 1; \n        unsigned int customizesForPresentationInPopover : 1; \n        unsigned int isSuspended : 1; \n        unsigned int wasApplicationFrameAtSuspend : 1; \n        unsigned int wantsFullScreenLayout : 1; \n        unsigned int shouldUseFullScreenLayout : 1; \n        unsigned int allowsAutorotation : 1; \n        unsigned int searchControllerRetained : 1; \n        unsigned int oldModalInPopover : 1; \n        unsigned int isModalInPopover : 1; \n        unsigned int isInWillRotateCallback : 1; \n        unsigned int disallowMixedOrientationPresentations : 1; \n        unsigned int isFinishingModalTransition : 1; \n        unsigned int definesPresentationContext : 1; \n        unsigned int providesPresentationContextTransitionStyle : 1; \n        unsigned int containmentSupport : 1; \n        unsigned int isSettingAppearState : 1; \n        unsigned int isInAnimatedVCTransition : 1; \n        unsigned int presentationIsChanging : 1; \n        unsigned int isBeingPresented : 1; \n        unsigned int containmentIsChanging : 1; \n        unsigned int explicitTransitionIsAppearing : 1; \n        unsigned int disableAppearanceTransitions : 1; \n        unsigned int needsDidMoveCleanup : 1; \n        unsigned int suppressesBottomBar : 1; \n        unsigned int disableRootPromotion : 1; \n        unsigned int interfaceOrientationReentranceGuard : 1; \n        unsigned int isExecutingAfterAppearance : 1; \n        unsigned int rootResignationNeeded : 1; \n        unsigned int shouldSynthesizeSupportedOrientations : 1; \n        unsigned int viewConstraintsNeedUpdateOnAppearance : 1; \n        unsigned int shouldForceNonAnimatedTransition : 1; \n        unsigned int isInCustomTransition : 1; \n        unsigned int usesSharedView : 1; \n        unsigned int extendedLayoutIncludesOpaqueBars : 1; \n        unsigned int automaticallyAdjustInsets : 1; \n        unsigned int previousShouldUnderlapUnderStatusBar : 1; \n        unsigned int freezeShouldUnderlapUnderStatusBar : 1; \n        unsigned int neverResizeRoot : 1; \n        unsigned int monitorsSystemLayoutFittingSize : 1; \n    }",
+        "alignment":0,
+        "ivarType":"struct {\n        unsigned int appearState:2;\n        unsigned int isEditing:1;\n        unsigned int isPerformingModalTransition:1;\n        unsigned int hidesBottomBarWhenPushed:1;\n        unsigned int autoresizesArchivedViewToFullSize:1;\n        unsigned int viewLoadedFromControllerNib:1;\n        unsigned int isRootViewController:1;\n        unsigned int customizesForPresentationInPopover:1;\n        unsigned int isSuspended:1;\n        unsigned int wasApplicationFrameAtSuspend:1;\n        unsigned int wantsFullScreenLayout:1;\n        unsigned int shouldUseFullScreenLayout:1;\n        unsigned int allowsAutorotation:1;\n        unsigned int searchControllerRetained:1;\n        unsigned int oldModalInPopover:1;\n        unsigned int isModalInPopover:1;\n        unsigned int isInWillRotateCallback:1;\n        unsigned int disallowMixedOrientationPresentations:1;\n        unsigned int isFinishingModalTransition:1;\n        unsigned int definesPresentationContext:1;\n        unsigned int providesPresentationContextTransitionStyle:1;\n        unsigned int containmentSupport:1;\n        unsigned int isSettingAppearState:1;\n        unsigned int isInAnimatedVCTransition:1;\n        unsigned int presentationIsChanging:1;\n        unsigned int isBeingPresented:1;\n        unsigned int containmentIsChanging:1;\n        unsigned int explicitTransitionIsAppearing:1;\n        unsigned int disableAppearanceTransitions:1;\n        unsigned int needsDidMoveCleanup:1;\n        unsigned int suppressesBottomBar:1;\n        unsigned int disableRootPromotion:1;\n        unsigned int interfaceOrientationReentranceGuard:1;\n        unsigned int isExecutingAfterAppearance:1;\n        unsigned int rootResignationNeeded:1;\n        unsigned int shouldSynthesizeSupportedOrientations:1;\n        unsigned int viewConstraintsNeedUpdateOnAppearance:1;\n        unsigned int shouldForceNonAnimatedTransition:1;\n        unsigned int isInCustomTransition:1;\n        unsigned int usesSharedView:1;\n        unsigned int extendedLayoutIncludesOpaqueBars:1;\n        unsigned int automaticallyAdjustInsets:1;\n        unsigned int previousShouldUnderlapUnderStatusBar:1;\n        unsigned int freezeShouldUnderlapUnderStatusBar:1;\n        unsigned int neverResizeRoot:1;\n        unsigned int monitorsSystemLayoutFittingSize:1;\n    }",
         "name":"_viewControllerFlags",
         "offset":312,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_retainCount",
         "offset":320,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_ignoreAppSupportedOrientations",
         "offset":328,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_viewHostsLayoutEngine",
         "offset":329,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_storyboardIdentifier",
         "offset":336,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"<UIViewControllerTransitioningDelegate> *",
+        "alignment":0,
+        "ivarType":"id <UIViewControllerTransitioningDelegate>",
         "name":"_transitioningDelegate",
         "offset":344,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_modalPresentationCapturesStatusBarAppearance",
         "offset":352,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSMutableArray *",
         "name":"_childViewControllers",
         "offset":360,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"double",
         "name":"_customNavigationInteractiveTransitionDuration",
         "offset":368,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"double",
         "name":"_customNavigationInteractiveTransitionPercentComplete",
         "offset":376,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UITransitionView *",
         "name":"_customTransitioningView",
         "offset":384,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UITraitCollection *",
         "name":"_lastNotifiedTraitCollection",
         "offset":392,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIPresentationController *",
         "name":"_presentationController",
         "offset":400,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"double",
         "name":"_navigationControllerContentOffsetAdjustment",
         "offset":408,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"double",
         "name":"_contentMargin",
         "offset":416,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UILayoutGuide *",
         "name":"_topLayoutGuide",
         "offset":424,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UILayoutGuide *",
         "name":"_bottomLayoutGuide",
         "offset":432,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLayoutConstraint *",
         "name":"_topBarInsetGuideConstraint",
         "offset":440,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLayoutConstraint *",
         "name":"_bottomBarInsetGuideConstraint",
         "offset":448,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UILayoutGuide *",
         "name":"_leftLayoutGuide",
         "offset":456,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UILayoutGuide *",
         "name":"_rightLayoutGuide",
         "offset":464,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLayoutConstraint *",
         "name":"_leftMarginGuideConstraint",
         "offset":472,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLayoutConstraint *",
         "name":"_rightMarginGuideConstraint",
         "offset":480,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_sourceViewControllerIfPresentedViaPopoverSegue",
         "offset":488,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_modalSourceViewController",
         "offset":496,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_presentedStatusBarViewController",
         "offset":504,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"unsigned long long",
         "name":"_edgesForExtendedLayout",
         "offset":512,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"__embeddedView",
         "offset":520,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"__embeddingView",
         "offset":528,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"<_UIViewControllerContentViewEmbedding> *",
+        "alignment":0,
+        "ivarType":"id <_UIViewControllerContentViewEmbedding>",
         "name":"__embeddedDelegate",
         "offset":536,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIPresentationController *",
         "name":"_originalPresentationController",
         "offset":544,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIPresentationController *",
         "name":"_temporaryPresentationController",
         "offset":552,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"__childControllerToIgnoreWhileLookingForTransitionCoordinator",
         "offset":560,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "alignment":0,
+        "ivarType":"struct CGSize",
         "name":"_preferredContentSize",
         "offset":568,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        long long width; \n        long long height; \n    }",
+        "alignment":0,
+        "ivarType":"struct {\n        long long width;\n        long long height;\n    }",
         "name":"_presentationSizeClassPair",
         "offset":584,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        double top; \n        double left; \n        double bottom; \n        double right; \n    }",
+        "alignment":0,
+        "ivarType":"struct UIEdgeInsets",
         "name":"_navigationControllerContentInsetAdjustment",
         "offset":600,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        double top; \n        double left; \n        double bottom; \n        double right; \n    }",
+        "alignment":0,
+        "ivarType":"struct UIEdgeInsets",
         "name":"_contentOverlayInsets",
         "offset":632,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "alignment":0,
+        "ivarType":"struct CGRect",
         "name":"__embeddedViewFrame",
         "offset":664,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -454,447 +602,595 @@
     "className":"UIViewController",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_view",
         "offset":4,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UITabBarItem *",
         "name":"_tabBarItem",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UINavigationItem *",
         "name":"_navigationItem",
         "offset":12,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_toolbarItems",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_title",
         "offset":20,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_nibName",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSBundle *",
         "name":"_nibBundle",
         "offset":28,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_parentViewController",
         "offset":32,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_childModalViewController",
         "offset":36,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_parentModalViewController",
         "offset":40,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_previousRootViewController",
         "offset":44,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_modalTransitionView",
         "offset":48,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIResponder *",
         "name":"_modalPreservedFirstResponder",
         "offset":52,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"id",
         "name":"_dimmingView",
         "offset":56,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"id",
         "name":"_dropShadowView",
         "offset":60,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"id",
         "name":"_currentAction",
         "offset":64,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIStoryboard *",
         "name":"_storyboard",
         "offset":68,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_storyboardSegueTemplates",
         "offset":72,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSDictionary *",
         "name":"_externalObjectsTableForViewLoading",
         "offset":76,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_topLevelObjectsToKeepAliveFromStoryboard",
         "offset":80,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_savedHeaderSuperview",
         "offset":84,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_savedFooterSuperview",
         "offset":88,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIBarButtonItem *",
         "name":"_editButtonItem",
         "offset":92,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UISearchDisplayController *",
         "name":"_searchDisplayController",
         "offset":96,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_modalTransitionStyle",
         "offset":100,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_modalPresentationStyle",
         "offset":104,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_lastKnownInterfaceOrientation",
         "offset":108,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIPopoverController *",
         "name":"_popoverController",
         "offset":112,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_containerViewInSheet",
         "offset":116,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "alignment":0,
+        "ivarType":"struct CGSize",
         "name":"_contentSizeForViewInPopover",
         "offset":120,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "alignment":0,
+        "ivarType":"struct CGSize",
         "name":"_formSheetSize",
         "offset":128,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIScrollView *",
         "name":"_recordedContentScrollView",
         "offset":136,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"id",
+        "alignment":0,
+        "ivarType":"CDUnknownBlockType",
         "name":"_afterAppearance",
         "offset":140,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_explicitAppearanceTransitionLevel",
         "offset":144,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_keyCommands",
         "offset":148,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSMapTable *",
         "name":"_overrideTraitCollections",
         "offset":152,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int appearState : 2; \n        unsigned int isEditing : 1; \n        unsigned int isPerformingModalTransition : 1; \n        unsigned int hidesBottomBarWhenPushed : 1; \n        unsigned int autoresizesArchivedViewToFullSize : 1; \n        unsigned int viewLoadedFromControllerNib : 1; \n        unsigned int isRootViewController : 1; \n        unsigned int customizesForPresentationInPopover : 1; \n        unsigned int isSuspended : 1; \n        unsigned int wasApplicationFrameAtSuspend : 1; \n        unsigned int wantsFullScreenLayout : 1; \n        unsigned int shouldUseFullScreenLayout : 1; \n        unsigned int allowsAutorotation : 1; \n        unsigned int searchControllerRetained : 1; \n        unsigned int oldModalInPopover : 1; \n        unsigned int isModalInPopover : 1; \n        unsigned int isInWillRotateCallback : 1; \n        unsigned int disallowMixedOrientationPresentations : 1; \n        unsigned int isFinishingModalTransition : 1; \n        unsigned int definesPresentationContext : 1; \n        unsigned int providesPresentationContextTransitionStyle : 1; \n        unsigned int containmentSupport : 1; \n        unsigned int isSettingAppearState : 1; \n        unsigned int isInAnimatedVCTransition : 1; \n        unsigned int presentationIsChanging : 1; \n        unsigned int isBeingPresented : 1; \n        unsigned int containmentIsChanging : 1; \n        unsigned int explicitTransitionIsAppearing : 1; \n        unsigned int disableAppearanceTransitions : 1; \n        unsigned int needsDidMoveCleanup : 1; \n        unsigned int suppressesBottomBar : 1; \n        unsigned int disableRootPromotion : 1; \n        unsigned int interfaceOrientationReentranceGuard : 1; \n        unsigned int isExecutingAfterAppearance : 1; \n        unsigned int rootResignationNeeded : 1; \n        unsigned int shouldSynthesizeSupportedOrientations : 1; \n        unsigned int viewConstraintsNeedUpdateOnAppearance : 1; \n        unsigned int shouldForceNonAnimatedTransition : 1; \n        unsigned int isInCustomTransition : 1; \n        unsigned int usesSharedView : 1; \n        unsigned int extendedLayoutIncludesOpaqueBars : 1; \n        unsigned int automaticallyAdjustInsets : 1; \n        unsigned int previousShouldUnderlapUnderStatusBar : 1; \n        unsigned int freezeShouldUnderlapUnderStatusBar : 1; \n        unsigned int neverResizeRoot : 1; \n        unsigned int monitorsSystemLayoutFittingSize : 1; \n    }",
+        "alignment":0,
+        "ivarType":"struct {\n        unsigned int appearState:2;\n        unsigned int isEditing:1;\n        unsigned int isPerformingModalTransition:1;\n        unsigned int hidesBottomBarWhenPushed:1;\n        unsigned int autoresizesArchivedViewToFullSize:1;\n        unsigned int viewLoadedFromControllerNib:1;\n        unsigned int isRootViewController:1;\n        unsigned int customizesForPresentationInPopover:1;\n        unsigned int isSuspended:1;\n        unsigned int wasApplicationFrameAtSuspend:1;\n        unsigned int wantsFullScreenLayout:1;\n        unsigned int shouldUseFullScreenLayout:1;\n        unsigned int allowsAutorotation:1;\n        unsigned int searchControllerRetained:1;\n        unsigned int oldModalInPopover:1;\n        unsigned int isModalInPopover:1;\n        unsigned int isInWillRotateCallback:1;\n        unsigned int disallowMixedOrientationPresentations:1;\n        unsigned int isFinishingModalTransition:1;\n        unsigned int definesPresentationContext:1;\n        unsigned int providesPresentationContextTransitionStyle:1;\n        unsigned int containmentSupport:1;\n        unsigned int isSettingAppearState:1;\n        unsigned int isInAnimatedVCTransition:1;\n        unsigned int presentationIsChanging:1;\n        unsigned int isBeingPresented:1;\n        unsigned int containmentIsChanging:1;\n        unsigned int explicitTransitionIsAppearing:1;\n        unsigned int disableAppearanceTransitions:1;\n        unsigned int needsDidMoveCleanup:1;\n        unsigned int suppressesBottomBar:1;\n        unsigned int disableRootPromotion:1;\n        unsigned int interfaceOrientationReentranceGuard:1;\n        unsigned int isExecutingAfterAppearance:1;\n        unsigned int rootResignationNeeded:1;\n        unsigned int shouldSynthesizeSupportedOrientations:1;\n        unsigned int viewConstraintsNeedUpdateOnAppearance:1;\n        unsigned int shouldForceNonAnimatedTransition:1;\n        unsigned int isInCustomTransition:1;\n        unsigned int usesSharedView:1;\n        unsigned int extendedLayoutIncludesOpaqueBars:1;\n        unsigned int automaticallyAdjustInsets:1;\n        unsigned int previousShouldUnderlapUnderStatusBar:1;\n        unsigned int freezeShouldUnderlapUnderStatusBar:1;\n        unsigned int neverResizeRoot:1;\n        unsigned int monitorsSystemLayoutFittingSize:1;\n    }",
         "name":"_viewControllerFlags",
         "offset":156,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_retainCount",
         "offset":164,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_ignoreAppSupportedOrientations",
         "offset":168,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_viewHostsLayoutEngine",
         "offset":169,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_storyboardIdentifier",
         "offset":172,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"<UIViewControllerTransitioningDelegate> *",
+        "alignment":0,
+        "ivarType":"id <UIViewControllerTransitioningDelegate>",
         "name":"_transitioningDelegate",
         "offset":176,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_modalPresentationCapturesStatusBarAppearance",
         "offset":180,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSMutableArray *",
         "name":"_childViewControllers",
         "offset":184,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"float",
         "name":"_customNavigationInteractiveTransitionDuration",
         "offset":188,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"float",
         "name":"_customNavigationInteractiveTransitionPercentComplete",
         "offset":192,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UITransitionView *",
         "name":"_customTransitioningView",
         "offset":196,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UITraitCollection *",
         "name":"_lastNotifiedTraitCollection",
         "offset":200,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIPresentationController *",
         "name":"_presentationController",
         "offset":204,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"float",
         "name":"_navigationControllerContentOffsetAdjustment",
         "offset":208,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"float",
         "name":"_contentMargin",
         "offset":212,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UILayoutGuide *",
         "name":"_topLayoutGuide",
         "offset":216,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UILayoutGuide *",
         "name":"_bottomLayoutGuide",
         "offset":220,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLayoutConstraint *",
         "name":"_topBarInsetGuideConstraint",
         "offset":224,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLayoutConstraint *",
         "name":"_bottomBarInsetGuideConstraint",
         "offset":228,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UILayoutGuide *",
         "name":"_leftLayoutGuide",
         "offset":232,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UILayoutGuide *",
         "name":"_rightLayoutGuide",
         "offset":236,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLayoutConstraint *",
         "name":"_leftMarginGuideConstraint",
         "offset":240,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLayoutConstraint *",
         "name":"_rightMarginGuideConstraint",
         "offset":244,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_sourceViewControllerIfPresentedViaPopoverSegue",
         "offset":248,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_modalSourceViewController",
         "offset":252,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_presentedStatusBarViewController",
         "offset":256,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"unsigned int",
         "name":"_edgesForExtendedLayout",
         "offset":260,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"__embeddedView",
         "offset":264,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"__embeddingView",
         "offset":268,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"<_UIViewControllerContentViewEmbedding> *",
+        "alignment":0,
+        "ivarType":"id <_UIViewControllerContentViewEmbedding>",
         "name":"__embeddedDelegate",
         "offset":272,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIPresentationController *",
         "name":"_originalPresentationController",
         "offset":276,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIPresentationController *",
         "name":"_temporaryPresentationController",
         "offset":280,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"__childControllerToIgnoreWhileLookingForTransitionCoordinator",
         "offset":284,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "alignment":0,
+        "ivarType":"struct CGSize",
         "name":"_preferredContentSize",
         "offset":288,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        int width; \n        int height; \n    }",
+        "alignment":0,
+        "ivarType":"CDStruct_79c71658",
         "name":"_presentationSizeClassPair",
         "offset":296,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        float top; \n        float left; \n        float bottom; \n        float right; \n    }",
+        "alignment":0,
+        "ivarType":"struct UIEdgeInsets",
         "name":"_navigationControllerContentInsetAdjustment",
         "offset":304,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        float top; \n        float left; \n        float bottom; \n        float right; \n    }",
+        "alignment":0,
+        "ivarType":"struct UIEdgeInsets",
         "name":"_contentOverlayInsets",
         "offset":320,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "alignment":0,
+        "ivarType":"struct CGRect",
         "name":"__embeddedViewFrame",
         "offset":336,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -905,447 +1201,595 @@
     "className":"UIViewController",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_view",
         "offset":4,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UITabBarItem *",
         "name":"_tabBarItem",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UINavigationItem *",
         "name":"_navigationItem",
         "offset":12,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_toolbarItems",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_title",
         "offset":20,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_nibName",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSBundle *",
         "name":"_nibBundle",
         "offset":28,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_parentViewController",
         "offset":32,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_childModalViewController",
         "offset":36,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_parentModalViewController",
         "offset":40,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_previousRootViewController",
         "offset":44,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_modalTransitionView",
         "offset":48,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIResponder *",
         "name":"_modalPreservedFirstResponder",
         "offset":52,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"id",
         "name":"_dimmingView",
         "offset":56,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"id",
         "name":"_dropShadowView",
         "offset":60,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"id",
         "name":"_currentAction",
         "offset":64,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIStoryboard *",
         "name":"_storyboard",
         "offset":68,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_storyboardSegueTemplates",
         "offset":72,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSDictionary *",
         "name":"_externalObjectsTableForViewLoading",
         "offset":76,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_topLevelObjectsToKeepAliveFromStoryboard",
         "offset":80,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_savedHeaderSuperview",
         "offset":84,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_savedFooterSuperview",
         "offset":88,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIBarButtonItem *",
         "name":"_editButtonItem",
         "offset":92,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UISearchDisplayController *",
         "name":"_searchDisplayController",
         "offset":96,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_modalTransitionStyle",
         "offset":100,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_modalPresentationStyle",
         "offset":104,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_lastKnownInterfaceOrientation",
         "offset":108,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIPopoverController *",
         "name":"_popoverController",
         "offset":112,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_containerViewInSheet",
         "offset":116,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "alignment":0,
+        "ivarType":"struct CGSize",
         "name":"_contentSizeForViewInPopover",
         "offset":120,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "alignment":0,
+        "ivarType":"struct CGSize",
         "name":"_formSheetSize",
         "offset":128,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIScrollView *",
         "name":"_recordedContentScrollView",
         "offset":136,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"id",
+        "alignment":0,
+        "ivarType":"CDUnknownBlockType",
         "name":"_afterAppearance",
         "offset":140,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_explicitAppearanceTransitionLevel",
         "offset":144,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_keyCommands",
         "offset":148,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSMapTable *",
         "name":"_overrideTraitCollections",
         "offset":152,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int appearState : 2; \n        unsigned int isEditing : 1; \n        unsigned int isPerformingModalTransition : 1; \n        unsigned int hidesBottomBarWhenPushed : 1; \n        unsigned int autoresizesArchivedViewToFullSize : 1; \n        unsigned int viewLoadedFromControllerNib : 1; \n        unsigned int isRootViewController : 1; \n        unsigned int customizesForPresentationInPopover : 1; \n        unsigned int isSuspended : 1; \n        unsigned int wasApplicationFrameAtSuspend : 1; \n        unsigned int wantsFullScreenLayout : 1; \n        unsigned int shouldUseFullScreenLayout : 1; \n        unsigned int allowsAutorotation : 1; \n        unsigned int searchControllerRetained : 1; \n        unsigned int oldModalInPopover : 1; \n        unsigned int isModalInPopover : 1; \n        unsigned int isInWillRotateCallback : 1; \n        unsigned int disallowMixedOrientationPresentations : 1; \n        unsigned int isFinishingModalTransition : 1; \n        unsigned int definesPresentationContext : 1; \n        unsigned int providesPresentationContextTransitionStyle : 1; \n        unsigned int containmentSupport : 1; \n        unsigned int isSettingAppearState : 1; \n        unsigned int isInAnimatedVCTransition : 1; \n        unsigned int presentationIsChanging : 1; \n        unsigned int isBeingPresented : 1; \n        unsigned int containmentIsChanging : 1; \n        unsigned int explicitTransitionIsAppearing : 1; \n        unsigned int disableAppearanceTransitions : 1; \n        unsigned int needsDidMoveCleanup : 1; \n        unsigned int suppressesBottomBar : 1; \n        unsigned int disableRootPromotion : 1; \n        unsigned int interfaceOrientationReentranceGuard : 1; \n        unsigned int isExecutingAfterAppearance : 1; \n        unsigned int rootResignationNeeded : 1; \n        unsigned int shouldSynthesizeSupportedOrientations : 1; \n        unsigned int viewConstraintsNeedUpdateOnAppearance : 1; \n        unsigned int shouldForceNonAnimatedTransition : 1; \n        unsigned int isInCustomTransition : 1; \n        unsigned int usesSharedView : 1; \n        unsigned int extendedLayoutIncludesOpaqueBars : 1; \n        unsigned int automaticallyAdjustInsets : 1; \n        unsigned int previousShouldUnderlapUnderStatusBar : 1; \n        unsigned int freezeShouldUnderlapUnderStatusBar : 1; \n        unsigned int neverResizeRoot : 1; \n        unsigned int monitorsSystemLayoutFittingSize : 1; \n    }",
+        "alignment":0,
+        "ivarType":"struct {\n        unsigned int appearState:2;\n        unsigned int isEditing:1;\n        unsigned int isPerformingModalTransition:1;\n        unsigned int hidesBottomBarWhenPushed:1;\n        unsigned int autoresizesArchivedViewToFullSize:1;\n        unsigned int viewLoadedFromControllerNib:1;\n        unsigned int isRootViewController:1;\n        unsigned int customizesForPresentationInPopover:1;\n        unsigned int isSuspended:1;\n        unsigned int wasApplicationFrameAtSuspend:1;\n        unsigned int wantsFullScreenLayout:1;\n        unsigned int shouldUseFullScreenLayout:1;\n        unsigned int allowsAutorotation:1;\n        unsigned int searchControllerRetained:1;\n        unsigned int oldModalInPopover:1;\n        unsigned int isModalInPopover:1;\n        unsigned int isInWillRotateCallback:1;\n        unsigned int disallowMixedOrientationPresentations:1;\n        unsigned int isFinishingModalTransition:1;\n        unsigned int definesPresentationContext:1;\n        unsigned int providesPresentationContextTransitionStyle:1;\n        unsigned int containmentSupport:1;\n        unsigned int isSettingAppearState:1;\n        unsigned int isInAnimatedVCTransition:1;\n        unsigned int presentationIsChanging:1;\n        unsigned int isBeingPresented:1;\n        unsigned int containmentIsChanging:1;\n        unsigned int explicitTransitionIsAppearing:1;\n        unsigned int disableAppearanceTransitions:1;\n        unsigned int needsDidMoveCleanup:1;\n        unsigned int suppressesBottomBar:1;\n        unsigned int disableRootPromotion:1;\n        unsigned int interfaceOrientationReentranceGuard:1;\n        unsigned int isExecutingAfterAppearance:1;\n        unsigned int rootResignationNeeded:1;\n        unsigned int shouldSynthesizeSupportedOrientations:1;\n        unsigned int viewConstraintsNeedUpdateOnAppearance:1;\n        unsigned int shouldForceNonAnimatedTransition:1;\n        unsigned int isInCustomTransition:1;\n        unsigned int usesSharedView:1;\n        unsigned int extendedLayoutIncludesOpaqueBars:1;\n        unsigned int automaticallyAdjustInsets:1;\n        unsigned int previousShouldUnderlapUnderStatusBar:1;\n        unsigned int freezeShouldUnderlapUnderStatusBar:1;\n        unsigned int neverResizeRoot:1;\n        unsigned int monitorsSystemLayoutFittingSize:1;\n    }",
         "name":"_viewControllerFlags",
         "offset":156,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_retainCount",
         "offset":164,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_ignoreAppSupportedOrientations",
         "offset":168,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_viewHostsLayoutEngine",
         "offset":169,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_storyboardIdentifier",
         "offset":172,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"<UIViewControllerTransitioningDelegate> *",
+        "alignment":0,
+        "ivarType":"id <UIViewControllerTransitioningDelegate>",
         "name":"_transitioningDelegate",
         "offset":176,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "alignment":0,
+        "ivarType":"char",
         "name":"_modalPresentationCapturesStatusBarAppearance",
         "offset":180,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSMutableArray *",
         "name":"_childViewControllers",
         "offset":184,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"float",
         "name":"_customNavigationInteractiveTransitionDuration",
         "offset":188,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"float",
         "name":"_customNavigationInteractiveTransitionPercentComplete",
         "offset":192,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UITransitionView *",
         "name":"_customTransitioningView",
         "offset":196,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UITraitCollection *",
         "name":"_lastNotifiedTraitCollection",
         "offset":200,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIPresentationController *",
         "name":"_presentationController",
         "offset":204,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"float",
         "name":"_navigationControllerContentOffsetAdjustment",
         "offset":208,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"float",
         "name":"_contentMargin",
         "offset":212,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UILayoutGuide *",
         "name":"_topLayoutGuide",
         "offset":216,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UILayoutGuide *",
         "name":"_bottomLayoutGuide",
         "offset":220,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLayoutConstraint *",
         "name":"_topBarInsetGuideConstraint",
         "offset":224,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLayoutConstraint *",
         "name":"_bottomBarInsetGuideConstraint",
         "offset":228,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UILayoutGuide *",
         "name":"_leftLayoutGuide",
         "offset":232,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UILayoutGuide *",
         "name":"_rightLayoutGuide",
         "offset":236,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLayoutConstraint *",
         "name":"_leftMarginGuideConstraint",
         "offset":240,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLayoutConstraint *",
         "name":"_rightMarginGuideConstraint",
         "offset":244,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_sourceViewControllerIfPresentedViaPopoverSegue",
         "offset":248,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_modalSourceViewController",
         "offset":252,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_presentedStatusBarViewController",
         "offset":256,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"unsigned int",
         "name":"_edgesForExtendedLayout",
         "offset":260,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"__embeddedView",
         "offset":264,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"__embeddingView",
         "offset":268,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"<_UIViewControllerContentViewEmbedding> *",
+        "alignment":0,
+        "ivarType":"id <_UIViewControllerContentViewEmbedding>",
         "name":"__embeddedDelegate",
         "offset":272,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIPresentationController *",
         "name":"_originalPresentationController",
         "offset":276,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIPresentationController *",
         "name":"_temporaryPresentationController",
         "offset":280,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"__childControllerToIgnoreWhileLookingForTransitionCoordinator",
         "offset":284,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "alignment":0,
+        "ivarType":"struct CGSize",
         "name":"_preferredContentSize",
         "offset":288,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        int width; \n        int height; \n    }",
+        "alignment":0,
+        "ivarType":"CDStruct_79c71658",
         "name":"_presentationSizeClassPair",
         "offset":296,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        float top; \n        float left; \n        float bottom; \n        float right; \n    }",
+        "alignment":0,
+        "ivarType":"struct UIEdgeInsets",
         "name":"_navigationControllerContentInsetAdjustment",
         "offset":304,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        float top; \n        float left; \n        float bottom; \n        float right; \n    }",
+        "alignment":0,
+        "ivarType":"struct UIEdgeInsets",
         "name":"_contentOverlayInsets",
         "offset":320,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "alignment":0,
+        "ivarType":"struct CGRect",
         "name":"__embeddedViewFrame",
         "offset":336,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -1356,447 +1800,595 @@
     "className":"UIViewController",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_view",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UITabBarItem *",
         "name":"_tabBarItem",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UINavigationItem *",
         "name":"_navigationItem",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_toolbarItems",
         "offset":32,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_title",
         "offset":40,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_nibName",
         "offset":48,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSBundle *",
         "name":"_nibBundle",
         "offset":56,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_parentViewController",
         "offset":64,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_childModalViewController",
         "offset":72,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_parentModalViewController",
         "offset":80,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_previousRootViewController",
         "offset":88,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_modalTransitionView",
         "offset":96,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIResponder *",
         "name":"_modalPreservedFirstResponder",
         "offset":104,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"id",
         "name":"_dimmingView",
         "offset":112,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"id",
         "name":"_dropShadowView",
         "offset":120,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"id",
         "name":"_currentAction",
         "offset":128,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIStoryboard *",
         "name":"_storyboard",
         "offset":136,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_storyboardSegueTemplates",
         "offset":144,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSDictionary *",
         "name":"_externalObjectsTableForViewLoading",
         "offset":152,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_topLevelObjectsToKeepAliveFromStoryboard",
         "offset":160,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_savedHeaderSuperview",
         "offset":168,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_savedFooterSuperview",
         "offset":176,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIBarButtonItem *",
         "name":"_editButtonItem",
         "offset":184,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UISearchDisplayController *",
         "name":"_searchDisplayController",
         "offset":192,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_modalTransitionStyle",
         "offset":200,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_modalPresentationStyle",
         "offset":208,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_lastKnownInterfaceOrientation",
         "offset":216,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIPopoverController *",
         "name":"_popoverController",
         "offset":224,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"_containerViewInSheet",
         "offset":232,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "alignment":0,
+        "ivarType":"struct CGSize",
         "name":"_contentSizeForViewInPopover",
         "offset":240,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "alignment":0,
+        "ivarType":"struct CGSize",
         "name":"_formSheetSize",
         "offset":256,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIScrollView *",
         "name":"_recordedContentScrollView",
         "offset":272,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"id",
+        "alignment":0,
+        "ivarType":"CDUnknownBlockType",
         "name":"_afterAppearance",
         "offset":280,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_explicitAppearanceTransitionLevel",
         "offset":288,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSArray *",
         "name":"_keyCommands",
         "offset":296,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSMapTable *",
         "name":"_overrideTraitCollections",
         "offset":304,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int appearState : 2; \n        unsigned int isEditing : 1; \n        unsigned int isPerformingModalTransition : 1; \n        unsigned int hidesBottomBarWhenPushed : 1; \n        unsigned int autoresizesArchivedViewToFullSize : 1; \n        unsigned int viewLoadedFromControllerNib : 1; \n        unsigned int isRootViewController : 1; \n        unsigned int customizesForPresentationInPopover : 1; \n        unsigned int isSuspended : 1; \n        unsigned int wasApplicationFrameAtSuspend : 1; \n        unsigned int wantsFullScreenLayout : 1; \n        unsigned int shouldUseFullScreenLayout : 1; \n        unsigned int allowsAutorotation : 1; \n        unsigned int searchControllerRetained : 1; \n        unsigned int oldModalInPopover : 1; \n        unsigned int isModalInPopover : 1; \n        unsigned int isInWillRotateCallback : 1; \n        unsigned int disallowMixedOrientationPresentations : 1; \n        unsigned int isFinishingModalTransition : 1; \n        unsigned int definesPresentationContext : 1; \n        unsigned int providesPresentationContextTransitionStyle : 1; \n        unsigned int containmentSupport : 1; \n        unsigned int isSettingAppearState : 1; \n        unsigned int isInAnimatedVCTransition : 1; \n        unsigned int presentationIsChanging : 1; \n        unsigned int isBeingPresented : 1; \n        unsigned int containmentIsChanging : 1; \n        unsigned int explicitTransitionIsAppearing : 1; \n        unsigned int disableAppearanceTransitions : 1; \n        unsigned int needsDidMoveCleanup : 1; \n        unsigned int suppressesBottomBar : 1; \n        unsigned int disableRootPromotion : 1; \n        unsigned int interfaceOrientationReentranceGuard : 1; \n        unsigned int isExecutingAfterAppearance : 1; \n        unsigned int rootResignationNeeded : 1; \n        unsigned int shouldSynthesizeSupportedOrientations : 1; \n        unsigned int viewConstraintsNeedUpdateOnAppearance : 1; \n        unsigned int shouldForceNonAnimatedTransition : 1; \n        unsigned int isInCustomTransition : 1; \n        unsigned int usesSharedView : 1; \n        unsigned int extendedLayoutIncludesOpaqueBars : 1; \n        unsigned int automaticallyAdjustInsets : 1; \n        unsigned int previousShouldUnderlapUnderStatusBar : 1; \n        unsigned int freezeShouldUnderlapUnderStatusBar : 1; \n        unsigned int neverResizeRoot : 1; \n        unsigned int monitorsSystemLayoutFittingSize : 1; \n    }",
+        "alignment":0,
+        "ivarType":"struct {\n        unsigned int appearState:2;\n        unsigned int isEditing:1;\n        unsigned int isPerformingModalTransition:1;\n        unsigned int hidesBottomBarWhenPushed:1;\n        unsigned int autoresizesArchivedViewToFullSize:1;\n        unsigned int viewLoadedFromControllerNib:1;\n        unsigned int isRootViewController:1;\n        unsigned int customizesForPresentationInPopover:1;\n        unsigned int isSuspended:1;\n        unsigned int wasApplicationFrameAtSuspend:1;\n        unsigned int wantsFullScreenLayout:1;\n        unsigned int shouldUseFullScreenLayout:1;\n        unsigned int allowsAutorotation:1;\n        unsigned int searchControllerRetained:1;\n        unsigned int oldModalInPopover:1;\n        unsigned int isModalInPopover:1;\n        unsigned int isInWillRotateCallback:1;\n        unsigned int disallowMixedOrientationPresentations:1;\n        unsigned int isFinishingModalTransition:1;\n        unsigned int definesPresentationContext:1;\n        unsigned int providesPresentationContextTransitionStyle:1;\n        unsigned int containmentSupport:1;\n        unsigned int isSettingAppearState:1;\n        unsigned int isInAnimatedVCTransition:1;\n        unsigned int presentationIsChanging:1;\n        unsigned int isBeingPresented:1;\n        unsigned int containmentIsChanging:1;\n        unsigned int explicitTransitionIsAppearing:1;\n        unsigned int disableAppearanceTransitions:1;\n        unsigned int needsDidMoveCleanup:1;\n        unsigned int suppressesBottomBar:1;\n        unsigned int disableRootPromotion:1;\n        unsigned int interfaceOrientationReentranceGuard:1;\n        unsigned int isExecutingAfterAppearance:1;\n        unsigned int rootResignationNeeded:1;\n        unsigned int shouldSynthesizeSupportedOrientations:1;\n        unsigned int viewConstraintsNeedUpdateOnAppearance:1;\n        unsigned int shouldForceNonAnimatedTransition:1;\n        unsigned int isInCustomTransition:1;\n        unsigned int usesSharedView:1;\n        unsigned int extendedLayoutIncludesOpaqueBars:1;\n        unsigned int automaticallyAdjustInsets:1;\n        unsigned int previousShouldUnderlapUnderStatusBar:1;\n        unsigned int freezeShouldUnderlapUnderStatusBar:1;\n        unsigned int neverResizeRoot:1;\n        unsigned int monitorsSystemLayoutFittingSize:1;\n    }",
         "name":"_viewControllerFlags",
         "offset":312,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_retainCount",
         "offset":320,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_ignoreAppSupportedOrientations",
         "offset":328,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_viewHostsLayoutEngine",
         "offset":329,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSString *",
         "name":"_storyboardIdentifier",
         "offset":336,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"<UIViewControllerTransitioningDelegate> *",
+        "alignment":0,
+        "ivarType":"id <UIViewControllerTransitioningDelegate>",
         "name":"_transitioningDelegate",
         "offset":344,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "alignment":0,
+        "ivarType":"_Bool",
         "name":"_modalPresentationCapturesStatusBarAppearance",
         "offset":352,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSMutableArray *",
         "name":"_childViewControllers",
         "offset":360,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"double",
         "name":"_customNavigationInteractiveTransitionDuration",
         "offset":368,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"double",
         "name":"_customNavigationInteractiveTransitionPercentComplete",
         "offset":376,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UITransitionView *",
         "name":"_customTransitioningView",
         "offset":384,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UITraitCollection *",
         "name":"_lastNotifiedTraitCollection",
         "offset":392,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIPresentationController *",
         "name":"_presentationController",
         "offset":400,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"double",
         "name":"_navigationControllerContentOffsetAdjustment",
         "offset":408,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"double",
         "name":"_contentMargin",
         "offset":416,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UILayoutGuide *",
         "name":"_topLayoutGuide",
         "offset":424,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UILayoutGuide *",
         "name":"_bottomLayoutGuide",
         "offset":432,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLayoutConstraint *",
         "name":"_topBarInsetGuideConstraint",
         "offset":440,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLayoutConstraint *",
         "name":"_bottomBarInsetGuideConstraint",
         "offset":448,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UILayoutGuide *",
         "name":"_leftLayoutGuide",
         "offset":456,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"_UILayoutGuide *",
         "name":"_rightLayoutGuide",
         "offset":464,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLayoutConstraint *",
         "name":"_leftMarginGuideConstraint",
         "offset":472,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"NSLayoutConstraint *",
         "name":"_rightMarginGuideConstraint",
         "offset":480,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_sourceViewControllerIfPresentedViaPopoverSegue",
         "offset":488,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_modalSourceViewController",
         "offset":496,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"_presentedStatusBarViewController",
         "offset":504,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"unsigned long long",
         "name":"_edgesForExtendedLayout",
         "offset":512,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"__embeddedView",
         "offset":520,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIView *",
         "name":"__embeddingView",
         "offset":528,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"<_UIViewControllerContentViewEmbedding> *",
+        "alignment":0,
+        "ivarType":"id <_UIViewControllerContentViewEmbedding>",
         "name":"__embeddedDelegate",
         "offset":536,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIPresentationController *",
         "name":"_originalPresentationController",
         "offset":544,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIPresentationController *",
         "name":"_temporaryPresentationController",
         "offset":552,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"UIViewController *",
         "name":"__childControllerToIgnoreWhileLookingForTransitionCoordinator",
         "offset":560,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "alignment":0,
+        "ivarType":"struct CGSize",
         "name":"_preferredContentSize",
         "offset":568,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        long long width; \n        long long height; \n    }",
+        "alignment":0,
+        "ivarType":"struct {\n        long long width;\n        long long height;\n    }",
         "name":"_presentationSizeClassPair",
         "offset":584,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        double top; \n        double left; \n        double bottom; \n        double right; \n    }",
+        "alignment":0,
+        "ivarType":"struct UIEdgeInsets",
         "name":"_navigationControllerContentInsetAdjustment",
         "offset":600,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        double top; \n        double left; \n        double bottom; \n        double right; \n    }",
+        "alignment":0,
+        "ivarType":"struct UIEdgeInsets",
         "name":"_contentOverlayInsets",
         "offset":632,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "alignment":0,
+        "ivarType":"struct CGRect",
         "name":"__embeddedViewFrame",
         "offset":664,
+        "size":0,
         "type":"ivar"
       }
     ],

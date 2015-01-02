@@ -27,28 +27,6 @@ import Helpers
 
 
 class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
-    # NSDateComponents:
-    # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
-    #
-    # NSCalendar *calendar                                                    4 = 0x04 / 4            8 = 0x08 / 8
-    # NSTimeZone *timeZone                                                    8 = 0x08 / 4           16 = 0x10 / 8
-    # NSInteger era                                                          12 = 0x0c / 4           24 = 0x18 / 8
-    # NSInteger year                                                         16 = 0x10 / 4           32 = 0x20 / 8
-    # NSInteger month                                                        20 = 0x14 / 4           40 = 0x28 / 8
-    # NSInteger day                                                          24 = 0x18 / 4           48 = 0x30 / 8
-    # NSInteger hour                                                         28 = 0x1c / 4           56 = 0x38 / 8
-    # NSInteger minute                                                       32 = 0x20 / 4           64 = 0x40 / 8
-    # NSInteger seconds                                                      36 = 0x24 / 4           72 = 0x48 / 8
-    # NSInteger week                                                         40 = 0x28 / 4           80 = 0x50 / 8
-    # NSInteger weekday                                                      44 = 0x2c / 4           88 = 0x58 / 8
-    # NSInteger weekdayOrdinal                                               48 = 0x30 / 4           96 = 0x60 / 8
-    # NSInteger quarter                                                      52 = 0x34 / 4          104 = 0x68 / 8
-    # id ?                                                                   56 = 0x38 / 4          112 = 0x70 / 8
-    # NSInteger weekOfYear                                                   60 = 0x3c / 4          120 = 0x78 / 8
-    # NSInteger weekOfMonth                                                  64 = 0x40 / 4          128 = 0x80 / 8
-    # NSInteger yearForWeekOfYear                                            68 = 0x44 / 4          136 = 0x88 / 8
-    # NSInteger leapMonth                                                    72 = 0x48 / 4          144 = 0x90 / 8
-
     def __init__(self, value_obj, internal_dict):
         super(NSDateComponents_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "NSDateComponents"

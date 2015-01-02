@@ -557,8 +557,7 @@ class OffsetsList(object):
             o = ClassOffset(cl)
             l.append(o)
 
-        if len(l) > 0:
-            self.list = l
+        self.list = l
 
     def has_class_offset(self, class_name):
         self._get_class_map()

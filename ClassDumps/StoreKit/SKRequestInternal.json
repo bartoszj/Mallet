@@ -3,33 +3,43 @@
     "className":"SKRequestInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_backgroundTaskIdentifier",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"SKPaymentQueueClient *",
         "name":"_client",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"SKXPCConnection *",
         "name":"_connection",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"<SKRequestDelegate> *",
+        "alignment":0,
+        "ivarType":"id <SKRequestDelegate>",
         "name":"_delegate",
         "offset":32,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_state",
         "offset":40,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -40,33 +50,43 @@
     "className":"SKRequestInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_backgroundTaskIdentifier",
         "offset":4,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"SKPaymentQueueClient *",
         "name":"_client",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"SKXPCConnection *",
         "name":"_connection",
         "offset":12,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"<SKRequestDelegate> *",
+        "alignment":0,
+        "ivarType":"id <SKRequestDelegate>",
         "name":"_delegate",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_state",
         "offset":20,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -77,33 +97,43 @@
     "className":"SKRequestInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_backgroundTaskIdentifier",
         "offset":4,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"SKPaymentQueueClient *",
         "name":"_client",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"SKXPCConnection *",
         "name":"_connection",
         "offset":12,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"<SKRequestDelegate> *",
+        "alignment":0,
+        "ivarType":"id <SKRequestDelegate>",
         "name":"_delegate",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"int",
         "name":"_state",
         "offset":20,
+        "size":0,
         "type":"ivar"
       }
     ],
@@ -114,33 +144,43 @@
     "className":"SKRequestInternal",
     "ivars":[
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_backgroundTaskIdentifier",
         "offset":8,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"SKPaymentQueueClient *",
         "name":"_client",
         "offset":16,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"SKXPCConnection *",
         "name":"_connection",
         "offset":24,
+        "size":0,
         "type":"ivar"
       },
       {
-        "ivarType":"<SKRequestDelegate> *",
+        "alignment":0,
+        "ivarType":"id <SKRequestDelegate>",
         "name":"_delegate",
         "offset":32,
+        "size":0,
         "type":"ivar"
       },
       {
+        "alignment":0,
         "ivarType":"long long",
         "name":"_state",
         "offset":40,
+        "size":0,
         "type":"ivar"
       }
     ],

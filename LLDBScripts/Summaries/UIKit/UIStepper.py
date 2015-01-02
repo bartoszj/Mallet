@@ -27,24 +27,6 @@ import UIControl
 
 
 class UIStepper_SynthProvider(UIControl.UIControl_SynthProvider):
-    # Class: UIStepper
-    # Super class: UIControl
-    # Name:                                    armv7                 i386                  arm64                 x86_64
-    # BOOL _isRtoL                         131 (0x083) / 1       124 (0x07C) / 1  + 3  212 (0x0D4) / 1  + 3  220 (0x0DC) / 1  + 3
-    # UIImageView * _middleView            132 (0x084) / 4       128 (0x080) / 4       216 (0x0D8) / 8       224 (0x0E0) / 8
-    # UIButton * _plusButton               136 (0x088) / 4       132 (0x084) / 4       224 (0x0E0) / 8       232 (0x0E8) / 8
-    # UIButton * _minusButton              140 (0x08C) / 4       136 (0x088) / 4       232 (0x0E8) / 8       240 (0x0F0) / 8
-    # NSTimer * _repeatTimer               144 (0x090) / 4       140 (0x08C) / 4       240 (0x0F0) / 8       248 (0x0F8) / 8
-    # NSInteger _repeatCount               148 (0x094) / 4       144 (0x090) / 4       248 (0x0F8) / 8       256 (0x100) / 8
-    # NSMutableDictionary * _dividerImages 152 (0x098) / 4       148 (0x094) / 4       256 (0x100) / 8       264 (0x108) / 8
-    # BOOL _continuous                     156 (0x09C) / 1       152 (0x098) / 1       264 (0x108) / 1       272 (0x110) / 1
-    # BOOL _autorepeat                     157 (0x09D) / 1       153 (0x099) / 1       265 (0x109) / 1       273 (0x111) / 1
-    # BOOL _wraps                          158 (0x09E) / 1  + 1  154 (0x09A) / 1  + 1  266 (0x10A) / 1  + 5  274 (0x112) / 1  + 5
-    # double _value                        160 (0x0A0) / 8       156 (0x09C) / 8       272 (0x110) / 8       280 (0x118) / 8
-    # double _minimumValue                 168 (0x0A8) / 8       164 (0x0A4) / 8       280 (0x118) / 8       288 (0x120) / 8
-    # double _maximumValue                 176 (0x0B0) / 8       172 (0x0AC) / 8       288 (0x120) / 8       296 (0x128) / 8
-    # double _stepValue                    184 (0x0B8) / 8       180 (0x0B4) / 8       296 (0x128) / 8       304 (0x130) / 8
-
     def __init__(self, value_obj, internal_dict):
         super(UIStepper_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIStepper"

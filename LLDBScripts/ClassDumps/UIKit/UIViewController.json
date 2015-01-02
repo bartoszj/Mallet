@@ -177,13 +177,13 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_contentSizeForViewInPopover",
         "offset":240,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_formSheetSize",
         "offset":256,
         "type":"ivar"
@@ -195,7 +195,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"id",
+        "ivarType":"CDUnknownBlockType",
         "name":"_afterAppearance",
         "offset":280,
         "type":"ivar"
@@ -219,7 +219,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int appearState : 2; \n        unsigned int isEditing : 1; \n        unsigned int isPerformingModalTransition : 1; \n        unsigned int hidesBottomBarWhenPushed : 1; \n        unsigned int autoresizesArchivedViewToFullSize : 1; \n        unsigned int viewLoadedFromControllerNib : 1; \n        unsigned int isRootViewController : 1; \n        unsigned int customizesForPresentationInPopover : 1; \n        unsigned int isSuspended : 1; \n        unsigned int wasApplicationFrameAtSuspend : 1; \n        unsigned int wantsFullScreenLayout : 1; \n        unsigned int shouldUseFullScreenLayout : 1; \n        unsigned int allowsAutorotation : 1; \n        unsigned int searchControllerRetained : 1; \n        unsigned int oldModalInPopover : 1; \n        unsigned int isModalInPopover : 1; \n        unsigned int isInWillRotateCallback : 1; \n        unsigned int disallowMixedOrientationPresentations : 1; \n        unsigned int isFinishingModalTransition : 1; \n        unsigned int definesPresentationContext : 1; \n        unsigned int providesPresentationContextTransitionStyle : 1; \n        unsigned int containmentSupport : 1; \n        unsigned int isSettingAppearState : 1; \n        unsigned int isInAnimatedVCTransition : 1; \n        unsigned int presentationIsChanging : 1; \n        unsigned int isBeingPresented : 1; \n        unsigned int containmentIsChanging : 1; \n        unsigned int explicitTransitionIsAppearing : 1; \n        unsigned int disableAppearanceTransitions : 1; \n        unsigned int needsDidMoveCleanup : 1; \n        unsigned int suppressesBottomBar : 1; \n        unsigned int disableRootPromotion : 1; \n        unsigned int interfaceOrientationReentranceGuard : 1; \n        unsigned int isExecutingAfterAppearance : 1; \n        unsigned int rootResignationNeeded : 1; \n        unsigned int shouldSynthesizeSupportedOrientations : 1; \n        unsigned int viewConstraintsNeedUpdateOnAppearance : 1; \n        unsigned int shouldForceNonAnimatedTransition : 1; \n        unsigned int isInCustomTransition : 1; \n        unsigned int usesSharedView : 1; \n        unsigned int extendedLayoutIncludesOpaqueBars : 1; \n        unsigned int automaticallyAdjustInsets : 1; \n        unsigned int previousShouldUnderlapUnderStatusBar : 1; \n        unsigned int freezeShouldUnderlapUnderStatusBar : 1; \n        unsigned int neverResizeRoot : 1; \n        unsigned int monitorsSystemLayoutFittingSize : 1; \n    }",
+        "ivarType":"struct {\n        unsigned int appearState:2;\n        unsigned int isEditing:1;\n        unsigned int isPerformingModalTransition:1;\n        unsigned int hidesBottomBarWhenPushed:1;\n        unsigned int autoresizesArchivedViewToFullSize:1;\n        unsigned int viewLoadedFromControllerNib:1;\n        unsigned int isRootViewController:1;\n        unsigned int customizesForPresentationInPopover:1;\n        unsigned int isSuspended:1;\n        unsigned int wasApplicationFrameAtSuspend:1;\n        unsigned int wantsFullScreenLayout:1;\n        unsigned int shouldUseFullScreenLayout:1;\n        unsigned int allowsAutorotation:1;\n        unsigned int searchControllerRetained:1;\n        unsigned int oldModalInPopover:1;\n        unsigned int isModalInPopover:1;\n        unsigned int isInWillRotateCallback:1;\n        unsigned int disallowMixedOrientationPresentations:1;\n        unsigned int isFinishingModalTransition:1;\n        unsigned int definesPresentationContext:1;\n        unsigned int providesPresentationContextTransitionStyle:1;\n        unsigned int containmentSupport:1;\n        unsigned int isSettingAppearState:1;\n        unsigned int isInAnimatedVCTransition:1;\n        unsigned int presentationIsChanging:1;\n        unsigned int isBeingPresented:1;\n        unsigned int containmentIsChanging:1;\n        unsigned int explicitTransitionIsAppearing:1;\n        unsigned int disableAppearanceTransitions:1;\n        unsigned int needsDidMoveCleanup:1;\n        unsigned int suppressesBottomBar:1;\n        unsigned int disableRootPromotion:1;\n        unsigned int interfaceOrientationReentranceGuard:1;\n        unsigned int isExecutingAfterAppearance:1;\n        unsigned int rootResignationNeeded:1;\n        unsigned int shouldSynthesizeSupportedOrientations:1;\n        unsigned int viewConstraintsNeedUpdateOnAppearance:1;\n        unsigned int shouldForceNonAnimatedTransition:1;\n        unsigned int isInCustomTransition:1;\n        unsigned int usesSharedView:1;\n        unsigned int extendedLayoutIncludesOpaqueBars:1;\n        unsigned int automaticallyAdjustInsets:1;\n        unsigned int previousShouldUnderlapUnderStatusBar:1;\n        unsigned int freezeShouldUnderlapUnderStatusBar:1;\n        unsigned int neverResizeRoot:1;\n        unsigned int monitorsSystemLayoutFittingSize:1;\n    }",
         "name":"_viewControllerFlags",
         "offset":312,
         "type":"ivar"
@@ -231,13 +231,13 @@
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_ignoreAppSupportedOrientations",
         "offset":328,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_viewHostsLayoutEngine",
         "offset":329,
         "type":"ivar"
@@ -249,13 +249,13 @@
         "type":"ivar"
       },
       {
-        "ivarType":"<UIViewControllerTransitioningDelegate> *",
+        "ivarType":"id <UIViewControllerTransitioningDelegate>",
         "name":"_transitioningDelegate",
         "offset":344,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_modalPresentationCapturesStatusBarAppearance",
         "offset":352,
         "type":"ivar"
@@ -393,7 +393,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"<_UIViewControllerContentViewEmbedding> *",
+        "ivarType":"id <_UIViewControllerContentViewEmbedding>",
         "name":"__embeddedDelegate",
         "offset":536,
         "type":"ivar"
@@ -417,31 +417,31 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_preferredContentSize",
         "offset":568,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        long long width; \n        long long height; \n    }",
+        "ivarType":"struct {\n        long long width;\n        long long height;\n    }",
         "name":"_presentationSizeClassPair",
         "offset":584,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        double top; \n        double left; \n        double bottom; \n        double right; \n    }",
+        "ivarType":"struct UIEdgeInsets",
         "name":"_navigationControllerContentInsetAdjustment",
         "offset":600,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        double top; \n        double left; \n        double bottom; \n        double right; \n    }",
+        "ivarType":"struct UIEdgeInsets",
         "name":"_contentOverlayInsets",
         "offset":632,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"__embeddedViewFrame",
         "offset":664,
         "type":"ivar"
@@ -628,13 +628,13 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_contentSizeForViewInPopover",
         "offset":120,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_formSheetSize",
         "offset":128,
         "type":"ivar"
@@ -646,7 +646,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"id",
+        "ivarType":"CDUnknownBlockType",
         "name":"_afterAppearance",
         "offset":140,
         "type":"ivar"
@@ -670,7 +670,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int appearState : 2; \n        unsigned int isEditing : 1; \n        unsigned int isPerformingModalTransition : 1; \n        unsigned int hidesBottomBarWhenPushed : 1; \n        unsigned int autoresizesArchivedViewToFullSize : 1; \n        unsigned int viewLoadedFromControllerNib : 1; \n        unsigned int isRootViewController : 1; \n        unsigned int customizesForPresentationInPopover : 1; \n        unsigned int isSuspended : 1; \n        unsigned int wasApplicationFrameAtSuspend : 1; \n        unsigned int wantsFullScreenLayout : 1; \n        unsigned int shouldUseFullScreenLayout : 1; \n        unsigned int allowsAutorotation : 1; \n        unsigned int searchControllerRetained : 1; \n        unsigned int oldModalInPopover : 1; \n        unsigned int isModalInPopover : 1; \n        unsigned int isInWillRotateCallback : 1; \n        unsigned int disallowMixedOrientationPresentations : 1; \n        unsigned int isFinishingModalTransition : 1; \n        unsigned int definesPresentationContext : 1; \n        unsigned int providesPresentationContextTransitionStyle : 1; \n        unsigned int containmentSupport : 1; \n        unsigned int isSettingAppearState : 1; \n        unsigned int isInAnimatedVCTransition : 1; \n        unsigned int presentationIsChanging : 1; \n        unsigned int isBeingPresented : 1; \n        unsigned int containmentIsChanging : 1; \n        unsigned int explicitTransitionIsAppearing : 1; \n        unsigned int disableAppearanceTransitions : 1; \n        unsigned int needsDidMoveCleanup : 1; \n        unsigned int suppressesBottomBar : 1; \n        unsigned int disableRootPromotion : 1; \n        unsigned int interfaceOrientationReentranceGuard : 1; \n        unsigned int isExecutingAfterAppearance : 1; \n        unsigned int rootResignationNeeded : 1; \n        unsigned int shouldSynthesizeSupportedOrientations : 1; \n        unsigned int viewConstraintsNeedUpdateOnAppearance : 1; \n        unsigned int shouldForceNonAnimatedTransition : 1; \n        unsigned int isInCustomTransition : 1; \n        unsigned int usesSharedView : 1; \n        unsigned int extendedLayoutIncludesOpaqueBars : 1; \n        unsigned int automaticallyAdjustInsets : 1; \n        unsigned int previousShouldUnderlapUnderStatusBar : 1; \n        unsigned int freezeShouldUnderlapUnderStatusBar : 1; \n        unsigned int neverResizeRoot : 1; \n        unsigned int monitorsSystemLayoutFittingSize : 1; \n    }",
+        "ivarType":"struct {\n        unsigned int appearState:2;\n        unsigned int isEditing:1;\n        unsigned int isPerformingModalTransition:1;\n        unsigned int hidesBottomBarWhenPushed:1;\n        unsigned int autoresizesArchivedViewToFullSize:1;\n        unsigned int viewLoadedFromControllerNib:1;\n        unsigned int isRootViewController:1;\n        unsigned int customizesForPresentationInPopover:1;\n        unsigned int isSuspended:1;\n        unsigned int wasApplicationFrameAtSuspend:1;\n        unsigned int wantsFullScreenLayout:1;\n        unsigned int shouldUseFullScreenLayout:1;\n        unsigned int allowsAutorotation:1;\n        unsigned int searchControllerRetained:1;\n        unsigned int oldModalInPopover:1;\n        unsigned int isModalInPopover:1;\n        unsigned int isInWillRotateCallback:1;\n        unsigned int disallowMixedOrientationPresentations:1;\n        unsigned int isFinishingModalTransition:1;\n        unsigned int definesPresentationContext:1;\n        unsigned int providesPresentationContextTransitionStyle:1;\n        unsigned int containmentSupport:1;\n        unsigned int isSettingAppearState:1;\n        unsigned int isInAnimatedVCTransition:1;\n        unsigned int presentationIsChanging:1;\n        unsigned int isBeingPresented:1;\n        unsigned int containmentIsChanging:1;\n        unsigned int explicitTransitionIsAppearing:1;\n        unsigned int disableAppearanceTransitions:1;\n        unsigned int needsDidMoveCleanup:1;\n        unsigned int suppressesBottomBar:1;\n        unsigned int disableRootPromotion:1;\n        unsigned int interfaceOrientationReentranceGuard:1;\n        unsigned int isExecutingAfterAppearance:1;\n        unsigned int rootResignationNeeded:1;\n        unsigned int shouldSynthesizeSupportedOrientations:1;\n        unsigned int viewConstraintsNeedUpdateOnAppearance:1;\n        unsigned int shouldForceNonAnimatedTransition:1;\n        unsigned int isInCustomTransition:1;\n        unsigned int usesSharedView:1;\n        unsigned int extendedLayoutIncludesOpaqueBars:1;\n        unsigned int automaticallyAdjustInsets:1;\n        unsigned int previousShouldUnderlapUnderStatusBar:1;\n        unsigned int freezeShouldUnderlapUnderStatusBar:1;\n        unsigned int neverResizeRoot:1;\n        unsigned int monitorsSystemLayoutFittingSize:1;\n    }",
         "name":"_viewControllerFlags",
         "offset":156,
         "type":"ivar"
@@ -682,13 +682,13 @@
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_ignoreAppSupportedOrientations",
         "offset":168,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_viewHostsLayoutEngine",
         "offset":169,
         "type":"ivar"
@@ -700,13 +700,13 @@
         "type":"ivar"
       },
       {
-        "ivarType":"<UIViewControllerTransitioningDelegate> *",
+        "ivarType":"id <UIViewControllerTransitioningDelegate>",
         "name":"_transitioningDelegate",
         "offset":176,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_modalPresentationCapturesStatusBarAppearance",
         "offset":180,
         "type":"ivar"
@@ -844,7 +844,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"<_UIViewControllerContentViewEmbedding> *",
+        "ivarType":"id <_UIViewControllerContentViewEmbedding>",
         "name":"__embeddedDelegate",
         "offset":272,
         "type":"ivar"
@@ -868,31 +868,31 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_preferredContentSize",
         "offset":288,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        int width; \n        int height; \n    }",
+        "ivarType":"CDStruct_79c71658",
         "name":"_presentationSizeClassPair",
         "offset":296,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        float top; \n        float left; \n        float bottom; \n        float right; \n    }",
+        "ivarType":"struct UIEdgeInsets",
         "name":"_navigationControllerContentInsetAdjustment",
         "offset":304,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        float top; \n        float left; \n        float bottom; \n        float right; \n    }",
+        "ivarType":"struct UIEdgeInsets",
         "name":"_contentOverlayInsets",
         "offset":320,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"__embeddedViewFrame",
         "offset":336,
         "type":"ivar"
@@ -1079,13 +1079,13 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_contentSizeForViewInPopover",
         "offset":120,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_formSheetSize",
         "offset":128,
         "type":"ivar"
@@ -1097,7 +1097,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"id",
+        "ivarType":"CDUnknownBlockType",
         "name":"_afterAppearance",
         "offset":140,
         "type":"ivar"
@@ -1121,7 +1121,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int appearState : 2; \n        unsigned int isEditing : 1; \n        unsigned int isPerformingModalTransition : 1; \n        unsigned int hidesBottomBarWhenPushed : 1; \n        unsigned int autoresizesArchivedViewToFullSize : 1; \n        unsigned int viewLoadedFromControllerNib : 1; \n        unsigned int isRootViewController : 1; \n        unsigned int customizesForPresentationInPopover : 1; \n        unsigned int isSuspended : 1; \n        unsigned int wasApplicationFrameAtSuspend : 1; \n        unsigned int wantsFullScreenLayout : 1; \n        unsigned int shouldUseFullScreenLayout : 1; \n        unsigned int allowsAutorotation : 1; \n        unsigned int searchControllerRetained : 1; \n        unsigned int oldModalInPopover : 1; \n        unsigned int isModalInPopover : 1; \n        unsigned int isInWillRotateCallback : 1; \n        unsigned int disallowMixedOrientationPresentations : 1; \n        unsigned int isFinishingModalTransition : 1; \n        unsigned int definesPresentationContext : 1; \n        unsigned int providesPresentationContextTransitionStyle : 1; \n        unsigned int containmentSupport : 1; \n        unsigned int isSettingAppearState : 1; \n        unsigned int isInAnimatedVCTransition : 1; \n        unsigned int presentationIsChanging : 1; \n        unsigned int isBeingPresented : 1; \n        unsigned int containmentIsChanging : 1; \n        unsigned int explicitTransitionIsAppearing : 1; \n        unsigned int disableAppearanceTransitions : 1; \n        unsigned int needsDidMoveCleanup : 1; \n        unsigned int suppressesBottomBar : 1; \n        unsigned int disableRootPromotion : 1; \n        unsigned int interfaceOrientationReentranceGuard : 1; \n        unsigned int isExecutingAfterAppearance : 1; \n        unsigned int rootResignationNeeded : 1; \n        unsigned int shouldSynthesizeSupportedOrientations : 1; \n        unsigned int viewConstraintsNeedUpdateOnAppearance : 1; \n        unsigned int shouldForceNonAnimatedTransition : 1; \n        unsigned int isInCustomTransition : 1; \n        unsigned int usesSharedView : 1; \n        unsigned int extendedLayoutIncludesOpaqueBars : 1; \n        unsigned int automaticallyAdjustInsets : 1; \n        unsigned int previousShouldUnderlapUnderStatusBar : 1; \n        unsigned int freezeShouldUnderlapUnderStatusBar : 1; \n        unsigned int neverResizeRoot : 1; \n        unsigned int monitorsSystemLayoutFittingSize : 1; \n    }",
+        "ivarType":"struct {\n        unsigned int appearState:2;\n        unsigned int isEditing:1;\n        unsigned int isPerformingModalTransition:1;\n        unsigned int hidesBottomBarWhenPushed:1;\n        unsigned int autoresizesArchivedViewToFullSize:1;\n        unsigned int viewLoadedFromControllerNib:1;\n        unsigned int isRootViewController:1;\n        unsigned int customizesForPresentationInPopover:1;\n        unsigned int isSuspended:1;\n        unsigned int wasApplicationFrameAtSuspend:1;\n        unsigned int wantsFullScreenLayout:1;\n        unsigned int shouldUseFullScreenLayout:1;\n        unsigned int allowsAutorotation:1;\n        unsigned int searchControllerRetained:1;\n        unsigned int oldModalInPopover:1;\n        unsigned int isModalInPopover:1;\n        unsigned int isInWillRotateCallback:1;\n        unsigned int disallowMixedOrientationPresentations:1;\n        unsigned int isFinishingModalTransition:1;\n        unsigned int definesPresentationContext:1;\n        unsigned int providesPresentationContextTransitionStyle:1;\n        unsigned int containmentSupport:1;\n        unsigned int isSettingAppearState:1;\n        unsigned int isInAnimatedVCTransition:1;\n        unsigned int presentationIsChanging:1;\n        unsigned int isBeingPresented:1;\n        unsigned int containmentIsChanging:1;\n        unsigned int explicitTransitionIsAppearing:1;\n        unsigned int disableAppearanceTransitions:1;\n        unsigned int needsDidMoveCleanup:1;\n        unsigned int suppressesBottomBar:1;\n        unsigned int disableRootPromotion:1;\n        unsigned int interfaceOrientationReentranceGuard:1;\n        unsigned int isExecutingAfterAppearance:1;\n        unsigned int rootResignationNeeded:1;\n        unsigned int shouldSynthesizeSupportedOrientations:1;\n        unsigned int viewConstraintsNeedUpdateOnAppearance:1;\n        unsigned int shouldForceNonAnimatedTransition:1;\n        unsigned int isInCustomTransition:1;\n        unsigned int usesSharedView:1;\n        unsigned int extendedLayoutIncludesOpaqueBars:1;\n        unsigned int automaticallyAdjustInsets:1;\n        unsigned int previousShouldUnderlapUnderStatusBar:1;\n        unsigned int freezeShouldUnderlapUnderStatusBar:1;\n        unsigned int neverResizeRoot:1;\n        unsigned int monitorsSystemLayoutFittingSize:1;\n    }",
         "name":"_viewControllerFlags",
         "offset":156,
         "type":"ivar"
@@ -1133,13 +1133,13 @@
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_ignoreAppSupportedOrientations",
         "offset":168,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_viewHostsLayoutEngine",
         "offset":169,
         "type":"ivar"
@@ -1151,13 +1151,13 @@
         "type":"ivar"
       },
       {
-        "ivarType":"<UIViewControllerTransitioningDelegate> *",
+        "ivarType":"id <UIViewControllerTransitioningDelegate>",
         "name":"_transitioningDelegate",
         "offset":176,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_modalPresentationCapturesStatusBarAppearance",
         "offset":180,
         "type":"ivar"
@@ -1295,7 +1295,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"<_UIViewControllerContentViewEmbedding> *",
+        "ivarType":"id <_UIViewControllerContentViewEmbedding>",
         "name":"__embeddedDelegate",
         "offset":272,
         "type":"ivar"
@@ -1319,31 +1319,31 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        float width; \n        float height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_preferredContentSize",
         "offset":288,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        int width; \n        int height; \n    }",
+        "ivarType":"CDStruct_79c71658",
         "name":"_presentationSizeClassPair",
         "offset":296,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        float top; \n        float left; \n        float bottom; \n        float right; \n    }",
+        "ivarType":"struct UIEdgeInsets",
         "name":"_navigationControllerContentInsetAdjustment",
         "offset":304,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        float top; \n        float left; \n        float bottom; \n        float right; \n    }",
+        "ivarType":"struct UIEdgeInsets",
         "name":"_contentOverlayInsets",
         "offset":320,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            float x; \n            float y; \n        } origin; \n        struct CGSize { \n            float width; \n            float height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"__embeddedViewFrame",
         "offset":336,
         "type":"ivar"
@@ -1530,13 +1530,13 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_contentSizeForViewInPopover",
         "offset":240,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_formSheetSize",
         "offset":256,
         "type":"ivar"
@@ -1548,7 +1548,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"id",
+        "ivarType":"CDUnknownBlockType",
         "name":"_afterAppearance",
         "offset":280,
         "type":"ivar"
@@ -1572,7 +1572,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        unsigned int appearState : 2; \n        unsigned int isEditing : 1; \n        unsigned int isPerformingModalTransition : 1; \n        unsigned int hidesBottomBarWhenPushed : 1; \n        unsigned int autoresizesArchivedViewToFullSize : 1; \n        unsigned int viewLoadedFromControllerNib : 1; \n        unsigned int isRootViewController : 1; \n        unsigned int customizesForPresentationInPopover : 1; \n        unsigned int isSuspended : 1; \n        unsigned int wasApplicationFrameAtSuspend : 1; \n        unsigned int wantsFullScreenLayout : 1; \n        unsigned int shouldUseFullScreenLayout : 1; \n        unsigned int allowsAutorotation : 1; \n        unsigned int searchControllerRetained : 1; \n        unsigned int oldModalInPopover : 1; \n        unsigned int isModalInPopover : 1; \n        unsigned int isInWillRotateCallback : 1; \n        unsigned int disallowMixedOrientationPresentations : 1; \n        unsigned int isFinishingModalTransition : 1; \n        unsigned int definesPresentationContext : 1; \n        unsigned int providesPresentationContextTransitionStyle : 1; \n        unsigned int containmentSupport : 1; \n        unsigned int isSettingAppearState : 1; \n        unsigned int isInAnimatedVCTransition : 1; \n        unsigned int presentationIsChanging : 1; \n        unsigned int isBeingPresented : 1; \n        unsigned int containmentIsChanging : 1; \n        unsigned int explicitTransitionIsAppearing : 1; \n        unsigned int disableAppearanceTransitions : 1; \n        unsigned int needsDidMoveCleanup : 1; \n        unsigned int suppressesBottomBar : 1; \n        unsigned int disableRootPromotion : 1; \n        unsigned int interfaceOrientationReentranceGuard : 1; \n        unsigned int isExecutingAfterAppearance : 1; \n        unsigned int rootResignationNeeded : 1; \n        unsigned int shouldSynthesizeSupportedOrientations : 1; \n        unsigned int viewConstraintsNeedUpdateOnAppearance : 1; \n        unsigned int shouldForceNonAnimatedTransition : 1; \n        unsigned int isInCustomTransition : 1; \n        unsigned int usesSharedView : 1; \n        unsigned int extendedLayoutIncludesOpaqueBars : 1; \n        unsigned int automaticallyAdjustInsets : 1; \n        unsigned int previousShouldUnderlapUnderStatusBar : 1; \n        unsigned int freezeShouldUnderlapUnderStatusBar : 1; \n        unsigned int neverResizeRoot : 1; \n        unsigned int monitorsSystemLayoutFittingSize : 1; \n    }",
+        "ivarType":"struct {\n        unsigned int appearState:2;\n        unsigned int isEditing:1;\n        unsigned int isPerformingModalTransition:1;\n        unsigned int hidesBottomBarWhenPushed:1;\n        unsigned int autoresizesArchivedViewToFullSize:1;\n        unsigned int viewLoadedFromControllerNib:1;\n        unsigned int isRootViewController:1;\n        unsigned int customizesForPresentationInPopover:1;\n        unsigned int isSuspended:1;\n        unsigned int wasApplicationFrameAtSuspend:1;\n        unsigned int wantsFullScreenLayout:1;\n        unsigned int shouldUseFullScreenLayout:1;\n        unsigned int allowsAutorotation:1;\n        unsigned int searchControllerRetained:1;\n        unsigned int oldModalInPopover:1;\n        unsigned int isModalInPopover:1;\n        unsigned int isInWillRotateCallback:1;\n        unsigned int disallowMixedOrientationPresentations:1;\n        unsigned int isFinishingModalTransition:1;\n        unsigned int definesPresentationContext:1;\n        unsigned int providesPresentationContextTransitionStyle:1;\n        unsigned int containmentSupport:1;\n        unsigned int isSettingAppearState:1;\n        unsigned int isInAnimatedVCTransition:1;\n        unsigned int presentationIsChanging:1;\n        unsigned int isBeingPresented:1;\n        unsigned int containmentIsChanging:1;\n        unsigned int explicitTransitionIsAppearing:1;\n        unsigned int disableAppearanceTransitions:1;\n        unsigned int needsDidMoveCleanup:1;\n        unsigned int suppressesBottomBar:1;\n        unsigned int disableRootPromotion:1;\n        unsigned int interfaceOrientationReentranceGuard:1;\n        unsigned int isExecutingAfterAppearance:1;\n        unsigned int rootResignationNeeded:1;\n        unsigned int shouldSynthesizeSupportedOrientations:1;\n        unsigned int viewConstraintsNeedUpdateOnAppearance:1;\n        unsigned int shouldForceNonAnimatedTransition:1;\n        unsigned int isInCustomTransition:1;\n        unsigned int usesSharedView:1;\n        unsigned int extendedLayoutIncludesOpaqueBars:1;\n        unsigned int automaticallyAdjustInsets:1;\n        unsigned int previousShouldUnderlapUnderStatusBar:1;\n        unsigned int freezeShouldUnderlapUnderStatusBar:1;\n        unsigned int neverResizeRoot:1;\n        unsigned int monitorsSystemLayoutFittingSize:1;\n    }",
         "name":"_viewControllerFlags",
         "offset":312,
         "type":"ivar"
@@ -1584,13 +1584,13 @@
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_ignoreAppSupportedOrientations",
         "offset":328,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_viewHostsLayoutEngine",
         "offset":329,
         "type":"ivar"
@@ -1602,13 +1602,13 @@
         "type":"ivar"
       },
       {
-        "ivarType":"<UIViewControllerTransitioningDelegate> *",
+        "ivarType":"id <UIViewControllerTransitioningDelegate>",
         "name":"_transitioningDelegate",
         "offset":344,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_modalPresentationCapturesStatusBarAppearance",
         "offset":352,
         "type":"ivar"
@@ -1746,7 +1746,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"<_UIViewControllerContentViewEmbedding> *",
+        "ivarType":"id <_UIViewControllerContentViewEmbedding>",
         "name":"__embeddedDelegate",
         "offset":536,
         "type":"ivar"
@@ -1770,31 +1770,31 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize { \n        double width; \n        double height; \n    }",
+        "ivarType":"struct CGSize",
         "name":"_preferredContentSize",
         "offset":568,
         "type":"ivar"
       },
       {
-        "ivarType":"struct { \n        long long width; \n        long long height; \n    }",
+        "ivarType":"struct {\n        long long width;\n        long long height;\n    }",
         "name":"_presentationSizeClassPair",
         "offset":584,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        double top; \n        double left; \n        double bottom; \n        double right; \n    }",
+        "ivarType":"struct UIEdgeInsets",
         "name":"_navigationControllerContentInsetAdjustment",
         "offset":600,
         "type":"ivar"
       },
       {
-        "ivarType":"struct UIEdgeInsets { \n        double top; \n        double left; \n        double bottom; \n        double right; \n    }",
+        "ivarType":"struct UIEdgeInsets",
         "name":"_contentOverlayInsets",
         "offset":632,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGRect { \n        struct CGPoint { \n            double x; \n            double y; \n        } origin; \n        struct CGSize { \n            double width; \n            double height; \n        } size; \n    }",
+        "ivarType":"struct CGRect",
         "name":"__embeddedViewFrame",
         "offset":664,
         "type":"ivar"

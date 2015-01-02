@@ -28,12 +28,6 @@ import CALayerIvars
 
 
 class CALayer_SynthProvider(NSObject.NSObject_SynthProvider):
-    # Class: CALayer
-    # Super class: NSObject
-    # Protocols: CAPropertyInfo, NSCoding, CAMediaTiming
-    # Name:                          armv7                 i386                  arm64                 x86_64
-    # struct _CALayerIvars _attr   4 (0x004) / 44        4 (0x004) / 44        8 (0x008) / 16        8 (0x008) / 16
-
     def __init__(self, value_obj, internal_dict):
         super(CALayer_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "CALayer"

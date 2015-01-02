@@ -3,7 +3,7 @@
     "className":"SKPaymentQueueInternal",
     "ivars":[
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_checkedIn",
         "offset":8,
         "type":"ivar"
@@ -15,7 +15,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_isRefreshing",
         "offset":24,
         "type":"ivar"
@@ -27,7 +27,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct __CFArray { } *",
+        "ivarType":"struct __CFArray *",
         "name":"_observers",
         "offset":40,
         "type":"ivar"
@@ -45,13 +45,13 @@
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_restoreFinishedDuringRefresh",
         "offset":64,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_restoringCompletedTransactions",
         "offset":65,
         "type":"ivar"
@@ -70,7 +70,7 @@
     "className":"SKPaymentQueueInternal",
     "ivars":[
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_checkedIn",
         "offset":4,
         "type":"ivar"
@@ -82,7 +82,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_isRefreshing",
         "offset":12,
         "type":"ivar"
@@ -94,7 +94,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct __CFArray { } *",
+        "ivarType":"struct __CFArray *",
         "name":"_observers",
         "offset":20,
         "type":"ivar"
@@ -112,13 +112,13 @@
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_restoreFinishedDuringRefresh",
         "offset":32,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_restoringCompletedTransactions",
         "offset":33,
         "type":"ivar"
@@ -137,7 +137,7 @@
     "className":"SKPaymentQueueInternal",
     "ivars":[
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_checkedIn",
         "offset":4,
         "type":"ivar"
@@ -149,7 +149,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_isRefreshing",
         "offset":12,
         "type":"ivar"
@@ -161,7 +161,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct __CFArray { } *",
+        "ivarType":"struct __CFArray *",
         "name":"_observers",
         "offset":20,
         "type":"ivar"
@@ -179,13 +179,13 @@
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_restoreFinishedDuringRefresh",
         "offset":32,
         "type":"ivar"
       },
       {
-        "ivarType":"BOOL",
+        "ivarType":"char",
         "name":"_restoringCompletedTransactions",
         "offset":33,
         "type":"ivar"
@@ -204,7 +204,7 @@
     "className":"SKPaymentQueueInternal",
     "ivars":[
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_checkedIn",
         "offset":8,
         "type":"ivar"
@@ -216,7 +216,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_isRefreshing",
         "offset":24,
         "type":"ivar"
@@ -228,7 +228,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct __CFArray { } *",
+        "ivarType":"struct __CFArray *",
         "name":"_observers",
         "offset":40,
         "type":"ivar"
@@ -246,13 +246,13 @@
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_restoreFinishedDuringRefresh",
         "offset":64,
         "type":"ivar"
       },
       {
-        "ivarType":"bool",
+        "ivarType":"_Bool",
         "name":"_restoringCompletedTransactions",
         "offset":65,
         "type":"ivar"
