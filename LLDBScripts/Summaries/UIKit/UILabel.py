@@ -63,7 +63,7 @@ def UILabel_SummaryProvider(value_obj, internal_dict):
     return Helpers.generic_summary_provider(value_obj, internal_dict, UILabel_SynthProvider)
 
 
-def __lldb_init_module(debugger, dict):
+def __lldb_init_module(debugger, dictionary):
     debugger.HandleCommand("type summary add -F UILabel.UILabel_SummaryProvider \
                             --category UIKit \
                             UILabel")

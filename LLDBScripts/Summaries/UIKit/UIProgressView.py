@@ -55,7 +55,7 @@ def UIProgressView_SummaryProvider(value_obj, internal_dict):
     return Helpers.generic_summary_provider(value_obj, internal_dict, UIProgressView_SynthProvider)
 
 
-def __lldb_init_module(debugger, dict):
+def __lldb_init_module(debugger, dictionary):
     debugger.HandleCommand("type summary add -F UIProgressView.UIProgressView_SummaryProvider \
                             --category UIKit \
                             UIProgressView")

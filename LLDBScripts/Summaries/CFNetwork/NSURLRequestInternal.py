@@ -86,7 +86,7 @@ def NSURLRequestInternal_SummaryProvider(value_obj, internal_dict):
     return Helpers.generic_summary_provider(value_obj, internal_dict, NSURLRequestInternal_SynthProvider)
 
 
-def __lldb_init_module(debugger, dict):
+def __lldb_init_module(debugger, dictionary):
     debugger.HandleCommand("type summary add -F NSURLRequestInternal.NSURLRequestInternal_SummaryProvider \
                             --category CFNetwork \
                             NSURLRequestInternal")

@@ -133,7 +133,7 @@ def UIDatePickerView_SummaryProvider(value_obj, internal_dict):
     return Helpers.generic_summary_provider(value_obj, internal_dict, UIDatePickerView_SynthProvider)
 
 
-def __lldb_init_module(debugger, dict):
+def __lldb_init_module(debugger, dictionary):
     debugger.HandleCommand("type summary add -F UIDatePickerView.UIDatePickerView_SummaryProvider \
                             --category UIKit \
                             _UIDatePickerView")

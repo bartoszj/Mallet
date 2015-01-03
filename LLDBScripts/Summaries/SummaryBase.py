@@ -257,7 +257,6 @@ class SummaryBaseSyntheticProvider(object):
         :rtype: lldb.SBValue | str | int | float | None
         :raises AttributeError: If registered attribute doesn't exists.
         """
-        print("__getattr__: {}".format(item))
         logger = logging.getLogger(__name__)
         # Check is child value, primitive value or summary value should be returned.
         attribute_name = item

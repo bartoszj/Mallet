@@ -85,7 +85,7 @@ def UIPageControl_SummaryProvider(value_obj, internal_dict):
     return Helpers.generic_summary_provider(value_obj, internal_dict, UIPageControl_SynthProvider)
 
 
-def __lldb_init_module(debugger, dict):
+def __lldb_init_module(debugger, dictionary):
     debugger.HandleCommand("type summary add -F UIPageControl.UIPageControl_SummaryProvider \
                             --category UIKit \
                             UIPageControl")

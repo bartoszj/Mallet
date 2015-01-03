@@ -142,7 +142,7 @@ def UIScrollView_SummaryProvider(value_obj, internal_dict):
     return Helpers.generic_summary_provider(value_obj, internal_dict, UIScrollView_SynthProvider)
 
 
-def __lldb_init_module(debugger, dict):
+def __lldb_init_module(debugger, dictionary):
     debugger.HandleCommand("type summary add -F UIScrollView.UIScrollView_SummaryProvider \
                             --category UIKit \
                             UIScrollView")

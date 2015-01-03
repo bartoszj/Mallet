@@ -850,4 +850,3 @@ class ClassOffset(object):
         if "super_class" in json_data:
             self.super_class_name = json_data["super_class"]
         self.offset = json_data["offset"]
-

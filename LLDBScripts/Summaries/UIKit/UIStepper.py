@@ -101,7 +101,7 @@ def UIStepper_SummaryProvider(value_obj, internal_dict):
     return Helpers.generic_summary_provider(value_obj, internal_dict, UIStepper_SynthProvider)
 
 
-def __lldb_init_module(debugger, dict):
+def __lldb_init_module(debugger, dictionary):
     debugger.HandleCommand("type summary add -F UIStepper.UIStepper_SummaryProvider \
                             --category UIKit \
                             UIStepper")

@@ -73,7 +73,7 @@ def NSUUID_SummaryProvider(value_obj, internal_dict):
     return Helpers.generic_summary_provider(value_obj, internal_dict, NSUUID_SynthProvider)
 
 
-def __lldb_init_module(debugger, dict):
+def __lldb_init_module(debugger, dictionary):
     debugger.HandleCommand("type summary add -F NSUUID.NSUUID_SummaryProvider \
                             --category Foundation \
                             NSUUID __NSConcreteUUID")

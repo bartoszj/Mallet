@@ -67,7 +67,7 @@ class UIEdgeInsets_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
         return SummaryBase.get_float_value(self.get_right())
 
 
-def __lldb_init_module(debugger, dict):
+def __lldb_init_module(debugger, dictionary):
     # UIEdgeInsets
     debugger.HandleCommand("type summary add -s \
             \"(top=${var.top}, left=${var.left}, bottom=${var.bottom}, right=${var.right})\" -v \

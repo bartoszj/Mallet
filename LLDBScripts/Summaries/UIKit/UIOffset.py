@@ -51,7 +51,7 @@ class UIOffset_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
         return get_float_value(self.get_vertical())
 
 
-def __lldb_init_module(debugger, dict):
+def __lldb_init_module(debugger, dictionary):
     # UIOffset
     debugger.HandleCommand("type summary add -s \
             \"(horizontal=${var.horizontal}, vertical=${var.vertical})\" -v \

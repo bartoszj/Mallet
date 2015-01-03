@@ -70,7 +70,7 @@ def UIButton_SummaryProvider(value_obj, internal_dict):
     return Helpers.generic_summary_provider(value_obj, internal_dict, UIButton_SynthProvider)
 
 
-def __lldb_init_module(debugger, dict):
+def __lldb_init_module(debugger, dictionary):
     debugger.HandleCommand("type summary add -F UIButton.UIButton_SummaryProvider \
                             --category UIKit \
                             UIButton")

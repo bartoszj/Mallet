@@ -120,7 +120,7 @@ def UIView_SummaryProvider(value_obj, internal_dict):
     return Helpers.generic_summary_provider(value_obj, internal_dict, UIView_SynthProvider)
 
 
-def __lldb_init_module(debugger, dict):
+def __lldb_init_module(debugger, dictionary):
     debugger.HandleCommand("type summary add -F UIView.UIView_SummaryProvider \
                             --category UIKit \
                             UIImageView UIView UIWindow")

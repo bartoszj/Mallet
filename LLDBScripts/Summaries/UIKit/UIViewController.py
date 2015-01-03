@@ -60,7 +60,7 @@ def UIViewController_SummaryProvider(value_obj, internal_dict):
     return Helpers.generic_summary_provider(value_obj, internal_dict, UIViewController_SynthProvider)
 
 
-def __lldb_init_module(debugger, dict):
+def __lldb_init_module(debugger, dictionary):
     debugger.HandleCommand("type summary add -F UIViewController.UIViewController_SummaryProvider \
                             --category UIKit \
                             UIViewController")
