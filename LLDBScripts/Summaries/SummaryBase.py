@@ -31,6 +31,40 @@ import Helpers
 import TypeCache
 
 
+class RegisterValue(object):
+    """
+    Stores register value parameters.
+
+    :param str attribute_name: Child value name.
+    :param str ivar_name: Instance variable name.
+    :param str type_name: Type name of child value.
+    :param int offset: Offset of child value.
+    :param bool cache_value: Indicates if child value should be cached.
+    :param lldb.SBValue cached_value: Cached child value.
+    :param (lldb.SBValue) -> int | float | str | None primitive_value_function: Function that return primitive vale of object.
+    :param bool cache_primitive_value: Indicates if primitive value should be cached.
+    :param int | float | str | None cached_primitive_value: Cached primitive value.
+    :param (int | float | str) -> str | None summary_function: Summary function.
+    :param bool cache_summary: Indicates if summary value should be cached.
+    :param str | None cached_summary: Cached summary.
+    """
+    def __init__(self):
+        self.attribute_name = None
+        self.ivar_name = None
+        self.type_name = None
+        self.offset = None
+        self.cache_value = True
+        self.cached_value = None
+
+        self.primitive_value_function = None
+        self.cache_primitive_value = False
+        self.cached_primitive_value = None
+
+        self.summary_function = None
+        self.cache_summary = False
+        self.cached_summary = None
+
+
 class SummaryBaseSyntheticProvider(object):
     """
     Base class for all summaries.
@@ -44,6 +78,7 @@ class SummaryBaseSyntheticProvider(object):
     :param int architecture: Architecture type.
     :param str architecture_name: Architecture name.
     :param bool is_64bit: Is 64 bit architecture.
+    :param list[RegisterValue] registeredChildValues: List of registered parameters.
     """
     def __init__(self, value_obj, internal_dict):
         """
@@ -64,6 +99,8 @@ class SummaryBaseSyntheticProvider(object):
         self.architecture = Helpers.architecture_type_from_target(self.target)
         self.architecture_name = Helpers.architecture_name_from_target(self.target)
         self.is_64bit = Helpers.is_64bit_architecture(self.architecture)
+
+        self.registeredChildValues = list()
 
     def get_type(self, type_name):
         """
@@ -89,7 +126,7 @@ class SummaryBaseSyntheticProvider(object):
             return None
         return get_architecture_list().get_ivar(self.architecture_name, self.type_name, ivar_name)
 
-    def get_child_value(self, value_name, type_name=None, offset=None):
+    def get_child_value(self, ivar_name, type_name=None, offset=None):
         """
         Returns child value (SBValue) with given name (or offset). If variable cannot be find by name then uses ivar offset.
 
@@ -98,7 +135,7 @@ class SummaryBaseSyntheticProvider(object):
         2. If there is no offset then method try to get child value from LLDB (if possible) using only name.
         3. If LLDB fails then method try to find offset value (and type name if not provided) from json file.
 
-        :param str value_name: Instance variable name.
+        :param str ivar_name: Instance variable name.
         :param str type_name: Type name of ivar.
         :param int offset: Offset value.
         :return: Child value with given name.
@@ -116,11 +153,11 @@ class SummaryBaseSyntheticProvider(object):
             if t is None:
                 logger.error("get_child_value: cannot find type for name: {}.".format(type_name))
                 return None
-            value = self.dynamic_value_obj.CreateChildAtOffset(value_name, offset, t)
+            value = self.dynamic_value_obj.CreateChildAtOffset(ivar_name, offset, t)
             """:type: lldb.SBValue"""
         # Using LLDB to get child value
         else:
-            value = self.dynamic_value_obj.GetChildMemberWithName(value_name, self.default_dynamic_type)
+            value = self.dynamic_value_obj.GetChildMemberWithName(ivar_name, self.default_dynamic_type)
             """:type: lldb.SBValue"""
             if value:
                 # Get dynamic value.
@@ -130,9 +167,9 @@ class SummaryBaseSyntheticProvider(object):
                 return value
 
             # Find ivar object.
-            ivar = self.get_ivar(value_name)
+            ivar = self.get_ivar(ivar_name)
             if ivar is None:
-                logger.error("get_child_value: no ivar {} for type {}.".format(value_name, self.type_name))
+                logger.error("get_child_value: no ivar {} for type {}.".format(ivar_name, self.type_name))
                 return None
 
             # Get value from offset.
@@ -143,7 +180,7 @@ class SummaryBaseSyntheticProvider(object):
             if t is None:
                 logger.error("get_child_value: cannot find type for name: {}.".format(type_name))
                 return None
-            value = self.dynamic_value_obj.CreateChildAtOffset(value_name, ivar.offset, t)
+            value = self.dynamic_value_obj.CreateChildAtOffset(ivar_name, ivar.offset, t)
             """:type: lldb.SBValue"""
 
         # Get dynamic value.
@@ -151,6 +188,153 @@ class SummaryBaseSyntheticProvider(object):
             value = value.GetDynamicValue(self.default_dynamic_type)
             """:type: lldb.SBValue"""
         return value
+
+    def register_child_value(self, attribute_name, ivar_name, type_name=None, offset=None, cache_value=True,
+                             primitive_value_function=None, cache_primitive_value=False,
+                             summary_function=None, cache_summary=False):
+        """
+        Creates three attributes:
+        1. `attribute_name` - Stores child value object (SBValue) using ivar_name, type_name and offset.
+        2. `attribute_name`_value - Stores primitive value of object, like integer, string.
+        3. `attribute_name`_summary - Stores child value summary based on summary_format.
+
+        If get_value_function is None then `value_name`_value and `value_name`_summary will not be created.
+        If summary_format is None then `value_name`_summary will not be created.
+
+        :param str attribute_name: Child value name.
+        :param str ivar_name: Instance variable name.
+        :param str type_name: Type name of child value.
+        :param int offset: Offset of child value.
+        :param bool cache_value: Indicates if child value should be cached.
+        :param (lldb.SBValue) -> int | float | str | None primitive_value_function: Function that return primitive vale of object.
+        :param bool cache_primitive_value: Indicates if primitive value should be cached.
+        :param (int | float | str) -> str | None summary_function: Summary function. Summary function will be called only when primitive value is not None.
+        :param bool cache_summary: Indicates if summary value should be cached.
+        """
+
+        if self.get_registered_child_value_parameter(attribute_name) is not None:
+            # Registered value already exists.
+            raise StandardError()
+
+        # Create registered child value parameters.
+        r = RegisterValue()
+        # Child value.
+        r.attribute_name = attribute_name
+        r.ivar_name = ivar_name
+        r.type_name = type_name
+        r.offset = offset
+        r.cache_value = cache_value
+
+        # Primitive value.
+        r.primitive_value_function = primitive_value_function
+        r.cache_primitive_value = cache_primitive_value
+
+        # Summary value.
+        r.summary_function = summary_function
+        r.cache_summary = cache_summary
+
+        self.registeredChildValues.append(r)
+
+    def get_registered_child_value_parameter(self, attribute_name):
+        """
+        Returns registered value parameters for given name.
+
+        :param str attribute_name: Attribute name.
+        :return: Registered value parameters.
+        :rtype: RegisterValue
+        """
+        for r in self.registeredChildValues:
+            if r.attribute_name == attribute_name:
+                return r
+        return None
+
+    def __getattr__(self, item):
+        """
+        Returns computed values of registered child values.
+
+        :param str item: Attribute name.
+        :return: Computed values of registered child values.
+        :rtype: lldb.SBValue | str | int | float | None
+        :raises AttributeError: If registered attribute doesn't exists.
+        """
+        print("__getattr__: {}".format(item))
+        logger = logging.getLogger(__name__)
+        # Check is child value, primitive value or summary value should be returned.
+        attribute_name = item
+        primitive_value = False
+        summary_value = False
+        index = item.rfind("_value")
+        if index != -1:
+            primitive_value = True
+            attribute_name = item[:index]
+        else:
+            index = item.rfind("_summary")
+            if index != -1:
+                summary_value = True
+                attribute_name = item[:index]
+
+        # Get registered value.
+        r = self.get_registered_child_value_parameter(attribute_name)
+        if r is None:
+            logger.error("__getattr__: Cannot find registered attribute \"{}\" in object {}.".format(attribute_name, self.type_name))
+            raise AttributeError()
+
+        # Get child value.
+        if primitive_value is False and summary_value is False:
+            logger.debug("__getattr__: Getting child value for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+            # Get cached value.
+            if r.cache_value is True and r.cached_value is not None:
+                logger.debug("__getattr__: Getting cached child value for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+                return r.cached_value
+
+            # Computing child value.
+            logger.debug("__getattr__: Computing child value for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+            value = self.get_child_value(r.ivar_name, r.type_name, r.offset)
+            if r.cache_value is True:
+                r.cached_value = value
+            return value
+        # Getting primitive value.
+        elif primitive_value is True:
+            logger.debug("__getattr__: Getting primitive value for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+            # Get cached value.
+            if r.cache_primitive_value is True and r.cached_primitive_value is not None:
+                logger.debug("__getattr__: Getting cached primitive value for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+                return r.cached_primitive_value
+
+            # Get child value.
+            logger.debug("__getattr__: Computing primitive value for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+            value = getattr(self, attribute_name)
+            """:type: lldb.SBValue"""
+            if value is None:
+                logger.debug("__getattr__: Cannot compute child value for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+                return None
+
+            # Computing primitive value.
+            primitive = r.primitive_value_function(value)
+            if r.cache_primitive_value is True:
+                r.cached_primitive_value = primitive
+            return primitive
+        # Getting summary.
+        elif summary_value is True:
+            logger.debug("__getattr__: Getting summary for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+            # Get cached summary.
+            if r.cache_summary is True and r.cached_summary is not None:
+                logger.debug("__getattr__: Getting cached summary for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+                return r.cached_summary
+
+            # Getting primitive value.
+            logger.debug("__getattr__: Computing summary for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+            primitive_value = getattr(self, attribute_name+"_value")
+            """:type: str | int | float | None"""
+            if primitive_value is None:
+                logger.debug("__getattr__: Cannot compute primitive value for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+                return None
+
+            # Computing summary.
+            summary = r.summary_function(primitive_value)
+            if r.cache_summary is True:
+                r.cached_summary = summary
+            return summary
 
     def summary(self):
         """
@@ -237,6 +421,23 @@ def formatted_float(f, precision=2):
     :rtype: str
     """
     return "{:.{precision}f}".format(f, precision=precision).rstrip("0").rstrip(".")
+
+
+def join_summaries(*args):
+    """
+    Joins summaries. If summary value is not string, it will be ignored.
+
+    :param str separator: Summary separator.
+    :param list[str] args: List of summaries.
+    :return:
+    """
+    summaries_strings = []
+    """:type: list[str]"""
+    for summary in args:
+        if isinstance(summary, str):
+            summaries_strings.append(summary)
+
+    return ", ".join(summaries_strings)
 
 
 def get_architecture_list():

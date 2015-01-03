@@ -27,66 +27,38 @@ import SummaryBase
 import UIControl
 
 
-class UISlider_SynthProvider(UIControl.UIControl_SynthProvider):
+class UISliderSyntheticProvider(UIControl.UIControl_SynthProvider):
     def __init__(self, value_obj, internal_dict):
-        super(UISlider_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UISliderSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UISlider"
 
-        self.value = None
-        self.min = None
-        self.max = None
+        self.register_child_value("value", "_value", primitive_value_function=SummaryBase.get_float_value, summary_function=self.get_value_summary)
+        self.register_child_value("min", "_minValue", primitive_value_function=SummaryBase.get_float_value, summary_function=self.get_min_summary)
+        self.register_child_value("max", "_maxValue", primitive_value_function=SummaryBase.get_float_value, summary_function=self.get_max_summary)
 
-    @Helpers.save_parameter("value")
-    def get_value(self):
-        return self.get_child_value("_value")
+    @staticmethod
+    def get_value_summary(value):
+        return "value={}".format(SummaryBase.formatted_float(value))
 
-    def get_value_value(self):
-        return SummaryBase.get_float_value(self.get_value())
+    @staticmethod
+    def get_min_summary(value):
+        return "min={}".format(SummaryBase.formatted_float(value))
 
-    def get_value_summary(self):
-        value_value = self.get_value_value()
-        return None if value_value is None else "value={}".format(SummaryBase.formatted_float(value_value))
-
-    @Helpers.save_parameter("min")
-    def get_min(self):
-        return self.get_child_value("_minValue")
-
-    def get_min_value(self):
-        return SummaryBase.get_float_value(self.get_min())
-
-    def get_min_summary(self):
-        minimum_value = self.get_min_value()
-        return None if minimum_value is None else "min={}".format(SummaryBase.formatted_float(minimum_value))
-
-    @Helpers.save_parameter("max")
-    def get_max(self):
-        return self.get_child_value("_maxValue")
-
-    def get_max_value(self):
-        return SummaryBase.get_float_value(self.get_max())
-
-    def get_max_summary(self):
-        maximum_value = self.get_max_value()
-        return None if maximum_value is None else "max={}".format(SummaryBase.formatted_float(maximum_value))
+    @staticmethod
+    def get_max_summary(value):
+        return "max={}".format(SummaryBase.formatted_float(value))
 
     def summary(self):
-        value_summary = self.get_value_summary()
-        minimum_summary = self.get_min_summary()
-        maximum_summary = self.get_max_summary()
-
-        # Summaries
-        summaries = [value_summary, minimum_summary, maximum_summary]
-
-        summary = ", ".join(summaries)
+        summary = SummaryBase.join_summaries(self.value_summary, self.min_summary, self.max_summary)
         return summary
 
 
-def UISlider_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UISlider_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UISliderSyntheticProvider)
 
 
-def __lldb_init_module(debugger, dict):
-    debugger.HandleCommand("type summary add -F UISlider.UISlider_SummaryProvider \
+def __lldb_init_module(debugger, dictionary):
+    debugger.HandleCommand("type summary add -F UISlider.summary_provider \
                             --category UIKit \
                             UISlider")
     debugger.HandleCommand("type category enable UIKit")
