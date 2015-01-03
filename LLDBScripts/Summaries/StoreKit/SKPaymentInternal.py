@@ -26,7 +26,7 @@ import NSObject
 import Helpers
 
 
-class SKPaymentInternal_SynthProvider(NSObject.NSObject_SynthProvider):
+class SKPaymentInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
     # Class: SKPaymentInternal
     # Super class: NSObject
     # Protocols: NSCopying

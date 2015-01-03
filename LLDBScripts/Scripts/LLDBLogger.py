@@ -31,7 +31,8 @@ def configure_loggers():
     Configure all well known loggers.
     """
 
-    logger_names = ["LLDBLogger", "LoadScripts", "Helpers", "TypeCache", "ClassDump", "SummaryBase"]
+    logger_names = ["LLDBLogger", "LoadScripts", "Helpers", "TypeCache", "ClassDump",
+                    "SummaryBase", "UIView"]
     for logger_name in logger_names:
         logger = logging.getLogger(logger_name)
         configure_logger(logger)

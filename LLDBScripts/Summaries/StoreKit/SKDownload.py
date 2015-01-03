@@ -26,7 +26,7 @@ import Helpers
 import NSObject
 
 
-class SKDownload_SynthProvider(NSObject.NSObject_SynthProvider):
+class SKDownload_SynthProvider(NSObject.NSObjectSyntheticProvider):
     # Class: SKDownload
     # Super class: NSObject
     # Name:                                   armv7                 i386                  arm64                 x86_64

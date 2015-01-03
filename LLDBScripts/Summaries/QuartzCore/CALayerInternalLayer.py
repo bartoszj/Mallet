@@ -28,7 +28,7 @@ import CADoubleRect
 import Helpers
 
 
-class CALayerInternalLayer_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
+class CALayerInternalLayer_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
     # Name:                          armv7                 i386                  arm64                 x86_64
     # CADoublPoint position       32 (0x020) / 16       32 (0x020) / 16       48 (0x030) / 16       48 (0x030) / 16
     # CADoubleRect bounds         48 (0x030) / 32       48 (0x030) / 32       64 (0x040) / 16       64 (0x040) / 16

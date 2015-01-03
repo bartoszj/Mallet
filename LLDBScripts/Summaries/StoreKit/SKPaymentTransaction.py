@@ -27,7 +27,7 @@ import NSObject
 import SKPaymentTransactionInternal
 
 
-class SKPaymentTransaction_SynthProvider(NSObject.NSObject_SynthProvider):
+class SKPaymentTransaction_SynthProvider(NSObject.NSObjectSyntheticProvider):
     # Class: SKPaymentTransaction
     # Super class: NSObject
     # Name:            armv7                 i386                  arm64                 x86_64

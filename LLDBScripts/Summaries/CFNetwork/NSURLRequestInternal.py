@@ -27,7 +27,7 @@ import NSObject
 import CFURLRequest
 
 
-class NSURLRequestInternal_SynthProvider(NSObject.NSObject_SynthProvider):
+class NSURLRequestInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
     def __init__(self, value_obj, internal_dict):
         super(NSURLRequestInternal_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "NSURLRequestInternal"

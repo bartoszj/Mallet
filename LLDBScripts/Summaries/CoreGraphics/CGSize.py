@@ -27,7 +27,7 @@ import Helpers
 
 
 
-class CGSize_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
+class CGSize_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
     # struct CGSize {
     #   CGFloat width;
     #   CGFloat height;

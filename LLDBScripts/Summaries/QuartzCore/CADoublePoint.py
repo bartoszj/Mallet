@@ -26,7 +26,7 @@ import SummaryBase
 import Helpers
 
 
-class CADoublePoint_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
+class CADoublePoint_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
     # struct CADoublePoint {
     #     double x;
     #     double y;

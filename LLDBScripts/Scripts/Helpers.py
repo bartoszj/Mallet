@@ -27,7 +27,6 @@ import lldb
 import lldb.formatters
 import objc_runtime
 import logging
-import LLDBLogger
 
 Architecture_unknown = 0
 Architecture_armv7 = 1
@@ -91,8 +90,8 @@ def architecture_type_from_target(target):
     Returns architecture name from target.
 
     :param lldb.SBTarget target: LLDB target
-    :return: Architecture name.
-    :rtype: str
+    :return: Architecture type.
+    :rtype: int
     """
     architecture_name = architecture_name_from_target(target)
     return architecture_type_from_name(architecture_name)

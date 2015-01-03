@@ -26,7 +26,7 @@ import SummaryBase
 import Helpers
 
 
-class UIEdgeInsets_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
+class UIEdgeInsets_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
     # typedef struct UIEdgeInsets {
     #     CGFloat top, left, bottom, right;
     # } UIEdgeInsets;

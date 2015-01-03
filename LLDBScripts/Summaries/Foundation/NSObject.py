@@ -25,7 +25,14 @@
 import SummaryBase
 
 
-class NSObject_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
+class NSObjectSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
+    """
+    Class representing NSObject.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(NSObject_SynthProvider, self).__init__(value_obj, internal_dict)
+        """
+        :param lldb.SBValue value_obj: LLDB variable to compute summary.
+        :param dict internal_dict: Internal LLDB dictionary.
+        """
+        super(NSObjectSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "NSObject"

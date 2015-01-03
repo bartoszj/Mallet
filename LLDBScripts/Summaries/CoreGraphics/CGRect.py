@@ -28,7 +28,7 @@ import CGPoint
 import CGSize
 
 
-class CGRect_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
+class CGRect_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
     # struct CGRect {
     #   CGPoint origin;
     #   CGSize size;

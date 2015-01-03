@@ -27,6 +27,8 @@ import os
 import logging
 import LLDBLogger
 
+LLDBLogger.configure_loggers()
+
 lldb_scripts_dir = "~/Library/LLDBScripts/"
 lldb_class_dump_dir = "ClassDumps"
 lldb_commands_paths = ["Commands"]

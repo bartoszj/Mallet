@@ -26,7 +26,7 @@ import SummaryBase
 import Helpers
 
 
-class CGPoint_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
+class CGPoint_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
     # struct CGPoint {
     #   CGFloat x;
     #   CGFloat y;

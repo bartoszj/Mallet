@@ -26,7 +26,7 @@ import SummaryBase
 import Helpers
 
 
-class CGVector_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
+class CGVector_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
     # struct CGVector {
     #   CGFloat dx;
     #   CGFloat dy;

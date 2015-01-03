@@ -33,6 +33,8 @@ except ImportError:
     imp.load_source("LLDBLogger", "LLDBScripts/Scripts/ClassDump.py")
     import LLDBLogger
 
+
+LLDBLogger.configure_loggers()
 class_map_file_name = "class.map"
 
 
@@ -849,6 +851,3 @@ class ClassOffset(object):
             self.super_class_name = json_data["super_class"]
         self.offset = json_data["offset"]
 
-
-if __name__ == "__main__":
-    pass

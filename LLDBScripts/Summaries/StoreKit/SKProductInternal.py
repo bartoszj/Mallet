@@ -26,7 +26,7 @@ import NSObject
 import Helpers
 
 
-class SKProductInternal_SynthProvider(NSObject.NSObject_SynthProvider):
+class SKProductInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
     # Class: SKProductInternal
     # Super class: NSObject
     # Name:                                 armv7                 i386                  arm64                 x86_64

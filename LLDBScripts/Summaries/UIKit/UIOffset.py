@@ -26,7 +26,7 @@ import SummaryBase
 import Helpers
 
 
-class UIOffset_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
+class UIOffset_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
     # typedef struct UIOffset {
     #     CGFloat horizontal, vertical;
     # } UIOffset;

@@ -27,7 +27,7 @@ import NSObject
 import CALayerIvars
 
 
-class CALayer_SynthProvider(NSObject.NSObject_SynthProvider):
+class CALayer_SynthProvider(NSObject.NSObjectSyntheticProvider):
     def __init__(self, value_obj, internal_dict):
         super(CALayer_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "CALayer"

@@ -26,7 +26,7 @@ import Helpers
 import SummaryBase
 
 
-class CFURLRequest_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
+class CFURLRequest_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
     # _CFURLRequest:
     # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #

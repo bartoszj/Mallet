@@ -26,7 +26,7 @@ import NSObject
 import Helpers
 
 
-class SKPaymentQueueInternal_SynthProvider(NSObject.NSObject_SynthProvider):
+class SKPaymentQueueInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
     # Class: SKPaymentQueueInternal
     # Super class: NSObject
     # Name:                                     armv7                 i386                  arm64                 x86_64

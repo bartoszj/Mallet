@@ -28,7 +28,7 @@ import CADoubleSize
 import Helpers
 
 
-class CADoubleRect_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
+class CADoubleRect_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
     # struct CADoubleRect {
     #     struct CADoublePoint origin;
     #     struct CADoubleSize size;

@@ -26,7 +26,6 @@ import logging
 import Helpers
 import UIResponder
 import CALayer
-import LLDBLogger
 
 
 class Rect(object):

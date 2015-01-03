@@ -27,7 +27,7 @@ import NSObject
 import SKRequestInternal
 
 
-class SKRequest_SynthProvider(NSObject.NSObject_SynthProvider):
+class SKRequest_SynthProvider(NSObject.NSObjectSyntheticProvider):
     # Class: SKRequest
     # Super class: NSObject
     # Name:                   armv7                 i386                  arm64                 x86_64

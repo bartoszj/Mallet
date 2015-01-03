@@ -26,7 +26,7 @@ import NSObject
 import Helpers
 
 
-class NSDateComponents_SynthProvider(NSObject.NSObject_SynthProvider):
+class NSDateComponents_SynthProvider(NSObject.NSObjectSyntheticProvider):
     def __init__(self, value_obj, internal_dict):
         super(NSDateComponents_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "NSDateComponents"

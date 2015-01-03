@@ -32,7 +32,7 @@ SKPaymentTransactionStateRestored = 3
 SKPaymentTransactionStateDeferred = 4
 
 
-class SKPaymentTransactionInternal_SynthProvider(NSObject.NSObject_SynthProvider):
+class SKPaymentTransactionInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
     # Class: SKPaymentTransactionInternal
     # Super class: NSObject
     # Name:                                           armv7                 i386                  arm64                 x86_64

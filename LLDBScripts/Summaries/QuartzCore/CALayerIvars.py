@@ -27,7 +27,7 @@ import CALayerInternalLayer
 import Helpers
 
 
-class CALayerIvars_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
+class CALayerIvars_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
     # armv7s, armv7, i386:
     # struct _CALayerIvars {
     #     int refcount;

@@ -26,7 +26,7 @@ import SummaryBase
 import Helpers
 
 
-class CADoubleSize_SynthProvider(SummaryBase.SummaryBase_SynthProvider):
+class CADoubleSize_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
     # struct CADoubleSize {
     #     double width;
     #     double height;
