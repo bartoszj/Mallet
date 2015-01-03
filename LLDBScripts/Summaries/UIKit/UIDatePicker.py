@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import Helpers
+import SummaryBase
 import UIControl
 
 
@@ -38,7 +39,7 @@ class UIDatePicker_SynthProvider(UIControl.UIControl_SynthProvider):
         return self.get_child_value("_pickerView")
 
     def get_picker_view_value(self):
-        return self.get_summary_value(self.get_picker_view())
+        return SummaryBase.get_summary_value(self.get_picker_view())
 
     def get_picker_view_summary(self):
         picker_view_value = self.get_picker_view_value()

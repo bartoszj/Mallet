@@ -42,22 +42,22 @@ class CADoublePoint_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
         return self.get_child_value("x", type_name="double", offset=0)
 
     def get_x_value(self):
-        return self.get_float_value(self.get_x())
+        return SummaryBase.get_float_value(self.get_x())
 
     def get_x_summary(self):
         x = self.get_x_value()
-        return None if x is None else "x={}".format(self.formatted_float(x))
+        return None if x is None else "x={}".format(SummaryBase.formatted_float(x))
 
     @Helpers.save_parameter("y")
     def get_y(self):
         return self.get_child_value("y", type_name="double", offset=8)
 
     def get_y_value(self):
-        return self.get_float_value(self.get_y())
+        return SummaryBase.get_float_value(self.get_y())
 
     def get_y_summary(self):
         y = self.get_y_value()
-        return None if y is None else "y={}".format(self.formatted_float(y))
+        return None if y is None else "y={}".format(SummaryBase.formatted_float(y))
 
     def summary(self):
         summary = "({}, {})".format(self.get_x_summary(), self.get_y_summary())

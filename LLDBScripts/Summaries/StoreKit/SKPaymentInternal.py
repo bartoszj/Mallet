@@ -22,6 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+import SummaryBase
 import NSObject
 import Helpers
 
@@ -54,7 +55,7 @@ class SKPaymentInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
         return self.get_child_value("_applicationUsername")
 
     def get_application_username_value(self):
-        return self.get_stripped_summary_value(self.get_application_username())
+        return SummaryBase.get_stripped_summary_value(self.get_application_username())
 
     def get_application_username_summary(self):
         application_username_value = self.get_application_username_value()
@@ -73,7 +74,7 @@ class SKPaymentInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
         return self.get_child_value("_productIdentifier")
 
     def get_product_identifier_value(self):
-        return self.get_summary_value(self.get_product_identifier())
+        return SummaryBase.get_summary_value(self.get_product_identifier())
 
     def get_product_identifier_summary(self):
         product_identifier_value = self.get_product_identifier_value()
@@ -84,7 +85,7 @@ class SKPaymentInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
         return self.get_child_value("_quantity")
 
     def get_quantity_value(self):
-        return self.get_signed_value(self.get_quantity())
+        return SummaryBase.get_signed_value(self.get_quantity())
 
     def get_quantity_summary(self):
         quantity_value = self.get_quantity_value()

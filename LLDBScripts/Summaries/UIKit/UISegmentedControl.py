@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import Helpers
+import SummaryBase
 import UIControl
 
 
@@ -40,7 +41,7 @@ class UISegmentedControl_SynthProvider(UIControl.UIControl_SynthProvider):
         return self.get_child_value("_segments")
 
     def get_segments_value(self):
-        return self.get_count_value(self.get_segments())
+        return SummaryBase.get_count_value(self.get_segments())
 
     def get_segments_summary(self):
         segments_value = self.get_segments_value()
@@ -51,7 +52,7 @@ class UISegmentedControl_SynthProvider(UIControl.UIControl_SynthProvider):
         return self.get_child_value("_selectedSegment")
 
     def get_selected_segments_value(self):
-        return self.get_signed_value(self.get_selected_segments())
+        return SummaryBase.get_signed_value(self.get_selected_segments())
 
     def get_selected_segments_summary(self):
         selected_segments_value = self.get_selected_segments_value()
@@ -62,7 +63,7 @@ class UISegmentedControl_SynthProvider(UIControl.UIControl_SynthProvider):
         return self.get_child_value("_highlightedSegment")
 
     def get_highlighted_segment_value(self):
-        return self.get_signed_value(self.get_highlighted_segment())
+        return SummaryBase.get_signed_value(self.get_highlighted_segment())
 
     def get_highlighted_segment_summary(self):
         highlighted_segment_value = self.get_highlighted_segment_value()

@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import Helpers
+import SummaryBase
 import NSObject
 import CGRect
 
@@ -48,29 +49,29 @@ class UIScreen_SynthProvider(NSObject.NSObjectSyntheticProvider):
     def get_bounds_summary(self):
         w = self.get_bounds_provider().get_size_provider().get_width_value()
         h = self.get_bounds_provider().get_size_provider().get_height_value()
-        return "size=({}, {})".format(self.formatted_float(w), self.formatted_float(h))
+        return "size=({}, {})".format(SummaryBase.formatted_float(w), SummaryBase.formatted_float(h))
 
     @Helpers.save_parameter("scale")
     def get_scale(self):
         return self.get_child_value("_scale")
 
     def get_scale_value(self):
-        return self.get_float_value(self.get_scale())
+        return SummaryBase.get_float_value(self.get_scale())
 
     def get_scale_summary(self):
         scale_value = self.get_scale_value()
-        return None if scale_value is None else "scale={}".format(self.formatted_float(scale_value))
+        return None if scale_value is None else "scale={}".format(SummaryBase.formatted_float(scale_value))
 
     @Helpers.save_parameter("horizontal_scale")
     def get_horizontal_scale(self):
         return self.get_child_value("_horizontalScale")
 
     def get_horizontal_scale_value(self):
-        return self.get_float_value(self.get_horizontal_scale())
+        return SummaryBase.get_float_value(self.get_horizontal_scale())
 
     def get_horizontal_scale_summary(self):
         horizontal_scale_value = self.get_horizontal_scale_value()
-        return None if horizontal_scale_value is None else "hScale={:.0f}".format(self.formatted_float(horizontal_scale_value))
+        return None if horizontal_scale_value is None else "hScale={:.0f}".format(SummaryBase.formatted_float(horizontal_scale_value))
 
     @Helpers.save_parameter("interface_idiom")
     def get_interface_idiom(self):

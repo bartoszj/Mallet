@@ -26,7 +26,6 @@ import SummaryBase
 import Helpers
 
 
-
 class CGSize_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
     # struct CGSize {
     #   CGFloat width;
@@ -44,11 +43,11 @@ class CGSize_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
         return self.get_child_value("width")
 
     def get_width_value(self):
-        return self.get_float_value(self.get_width())
+        return SummaryBase.get_float_value(self.get_width())
 
     @Helpers.save_parameter("height")
     def get_height(self):
         return self.get_child_value("height")
 
     def get_height_value(self):
-        return self.get_float_value(self.get_height())
+        return SummaryBase.get_float_value(self.get_height())

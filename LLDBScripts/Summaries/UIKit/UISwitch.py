@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import Helpers
+import SummaryBase
 import UIControl
 
 
@@ -38,7 +39,7 @@ class UISwitch_SynthProvider(UIControl.UIControl_SynthProvider):
         return self.get_child_value("_on")
 
     def get_on_value(self):
-        return self.get_unsigned_value(self.get_on())
+        return SummaryBase.get_unsigned_value(self.get_on())
 
     def get_on_summary(self):
         on_value = self.get_on_value()

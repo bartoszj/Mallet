@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import Helpers
+import SummaryBase
 import UIControl
 
 
@@ -40,33 +41,33 @@ class UISlider_SynthProvider(UIControl.UIControl_SynthProvider):
         return self.get_child_value("_value")
 
     def get_value_value(self):
-        return self.get_float_value(self.get_value())
+        return SummaryBase.get_float_value(self.get_value())
 
     def get_value_summary(self):
         value_value = self.get_value_value()
-        return None if value_value is None else "value={}".format(self.formatted_float(value_value))
+        return None if value_value is None else "value={}".format(SummaryBase.formatted_float(value_value))
 
     @Helpers.save_parameter("min")
     def get_min(self):
         return self.get_child_value("_minValue")
 
     def get_min_value(self):
-        return self.get_float_value(self.get_min())
+        return SummaryBase.get_float_value(self.get_min())
 
     def get_min_summary(self):
         minimum_value = self.get_min_value()
-        return None if minimum_value is None else "min={}".format(self.formatted_float(minimum_value))
+        return None if minimum_value is None else "min={}".format(SummaryBase.formatted_float(minimum_value))
 
     @Helpers.save_parameter("max")
     def get_max(self):
         return self.get_child_value("_maxValue")
 
     def get_max_value(self):
-        return self.get_float_value(self.get_max())
+        return SummaryBase.get_float_value(self.get_max())
 
     def get_max_summary(self):
         maximum_value = self.get_max_value()
-        return None if maximum_value is None else "max={}".format(self.formatted_float(maximum_value))
+        return None if maximum_value is None else "max={}".format(SummaryBase.formatted_float(maximum_value))
 
     def summary(self):
         value_summary = self.get_value_summary()

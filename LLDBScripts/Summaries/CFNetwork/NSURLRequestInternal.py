@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import Helpers
+import SummaryBase
 import NSObject
 import CFURLRequest
 
@@ -49,7 +50,7 @@ class NSURLRequestInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
         return None if request_provider is None else request_provider.get_url()
 
     def get_url_value(self):
-        return self.get_summary_value(self.get_url())
+        return SummaryBase.get_summary_value(self.get_url())
 
     def get_url_summary(self):
         url_value = self.get_url_value()
@@ -60,7 +61,7 @@ class NSURLRequestInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
         return None if request_provider is None else request_provider.get_method()
 
     def get_method_value(self):
-        return self.get_summary_value(self.get_method())
+        return SummaryBase.get_summary_value(self.get_method())
 
     def get_method_summary(self):
         method_value = self.get_method_value()
@@ -87,6 +88,6 @@ def NSURLRequestInternal_SummaryProvider(value_obj, internal_dict):
 
 def __lldb_init_module(debugger, dict):
     debugger.HandleCommand("type summary add -F NSURLRequestInternal.NSURLRequestInternal_SummaryProvider \
-                            --category Foundation \
+                            --category CFNetwork \
                             NSURLRequestInternal")
-    debugger.HandleCommand("type category enable Foundation")
+    debugger.HandleCommand("type category enable CFNetwork")

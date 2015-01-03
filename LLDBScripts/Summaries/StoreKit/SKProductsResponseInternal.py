@@ -45,7 +45,7 @@ class SKProductsResponseInternal_SynthProvider(NSObject.NSObjectSyntheticProvide
         return self.get_child_value("_products")
 
     def get_products_value(self):
-        return self.get_count_value(self.get_products())
+        return get_count_value(self.get_products())
 
     def get_products_summary(self):
         products_value = self.get_products_value()
@@ -56,7 +56,7 @@ class SKProductsResponseInternal_SynthProvider(NSObject.NSObjectSyntheticProvide
         return self.get_child_value("_invalidIdentifiers")
 
     def get_invalid_identifiers_value(self):
-        return self.get_count_value(self.get_invalid_identifiers())
+        return get_count_value(self.get_invalid_identifiers())
 
     def get_invalid_identifiers_summary(self):
         invalid_identifiers_value = self.get_invalid_identifiers_value()

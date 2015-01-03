@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import NSObject
+import SummaryBase
 import Helpers
 
 
@@ -57,7 +58,7 @@ class SKProductInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
         return self.get_child_value("_contentVersion")
 
     def get_content_version_value(self):
-        return self.get_stripped_summary_value(self.get_content_version())
+        return SummaryBase.get_stripped_summary_value(self.get_content_version())
 
     def get_content_version_summary(self):
         content_version_value = self.get_content_version_value()
@@ -68,7 +69,7 @@ class SKProductInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
         return self.get_child_value("_downloadable")
 
     def get_downloadable_value(self):
-        return self.get_unsigned_value(self.get_downloadable())
+        return SummaryBase.get_unsigned_value(self.get_downloadable())
 
     def get_downloadable_summary(self):
         downloadable_value = self.get_downloadable_value()
@@ -87,7 +88,7 @@ class SKProductInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
         return self.get_child_value("_localizedTitle")
 
     def get_localized_title_value(self):
-        return self.get_summary_value(self.localized_title())
+        return SummaryBase.get_summary_value(self.localized_title())
 
     def get_localized_title_summary(self):
         localized_title_value = self.get_localized_title_value()
@@ -98,7 +99,7 @@ class SKProductInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
         return self.get_child_value("_price")
 
     def get_price_value(self):
-        return self.get_summary_value(self.get_price())
+        return SummaryBase.get_summary_value(self.get_price())
 
     def get_price_summary(self):
         price_value = self.get_price_value()

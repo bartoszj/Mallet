@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import Helpers
+import SummaryBase
 import UIView
 
 
@@ -38,7 +39,7 @@ class UILabel_SynthProvider(UIView.UIView_SynthProvider):
         return self.get_child_value("_content", "NSAttributedString *")
 
     def get_text_value(self):
-        return self.get_summary_value(self.get_text())
+        return SummaryBase.get_summary_value(self.get_text())
 
     def get_text_summary(self):
         text_value = self.get_text_value()

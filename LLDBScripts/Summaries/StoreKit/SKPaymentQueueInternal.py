@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import NSObject
+import SummaryBase
 import Helpers
 
 
@@ -53,7 +54,7 @@ class SKPaymentQueueInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
         return self.get_child_value("_localTransactions")
 
     def get_local_transactions_value(self):
-        return self.get_signed_value(self.get_local_transactions())
+        return SummaryBase.get_signed_value(self.get_local_transactions())
 
     def get_local_transactions_summary(self):
         local_transactions_value = self.get_local_transactions_value()
@@ -64,7 +65,7 @@ class SKPaymentQueueInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
         return self.get_child_value("_transactions")
 
     def get_transactions_value(self):
-        return self.get_count_value(self.get_transactions())
+        return SummaryBase.get_count_value(self.get_transactions())
 
     def get_transactions_summary(self):
         transactions_value = self.get_transactions_value()

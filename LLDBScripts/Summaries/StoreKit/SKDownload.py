@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import Helpers
+import SummaryBase
 import NSObject
 
 
@@ -59,7 +60,7 @@ class SKDownload_SynthProvider(NSObject.NSObjectSyntheticProvider):
         return self.get_child_value("_contentIdentifier")
 
     def get_content_identifier_value(self):
-        return self.get_summary_value(self.get_content_identifier())
+        return SummaryBase.get_summary_value(self.get_content_identifier())
 
     def get_content_identifier_summary(self):
         content_identifier_value = self.get_content_identifier_value()
@@ -70,7 +71,7 @@ class SKDownload_SynthProvider(NSObject.NSObjectSyntheticProvider):
         return self.get_child_value("_contentLength")
 
     def get_content_length_value(self):
-        return self.get_signed_value(self.get_content_length())
+        return SummaryBase.get_signed_value(self.get_content_length())
 
     def get_content_length_summary(self):
         content_length_value = self.get_content_length_value()

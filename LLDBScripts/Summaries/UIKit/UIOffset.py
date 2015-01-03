@@ -41,14 +41,14 @@ class UIOffset_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
         return self.get_child_value("horizontal")
 
     def get_horizontal_value(self):
-        return self.get_float_value(self.get_horizontal())
+        return get_float_value(self.get_horizontal())
 
     @Helpers.save_parameter("vertical")
     def get_vertical(self):
         return self.get_child_value("vertical")
 
     def get_vertical_value(self):
-        return self.get_float_value(self.get_vertical())
+        return get_float_value(self.get_vertical())
 
 
 def __lldb_init_module(debugger, dict):

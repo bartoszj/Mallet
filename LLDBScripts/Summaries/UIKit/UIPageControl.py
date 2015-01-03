@@ -23,11 +23,12 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import Helpers
+import SummaryBase
 import UIControl
 
 
 class UIPageControl_SynthProvider(UIControl.UIControl_SynthProvider):
-    def __init__(self, value_obj,internal_dict):
+    def __init__(self, value_obj, internal_dict):
         super(UIPageControl_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIPageControl"
 
@@ -40,7 +41,7 @@ class UIPageControl_SynthProvider(UIControl.UIControl_SynthProvider):
         return self.get_child_value("_indicators")
 
     def get_indicators_value(self):
-        return self.get_count_value(self.get_indicators())
+        return SummaryBase.get_count_value(self.get_indicators())
 
     def get_indicators_summary(self):
         indicators_value = self.get_indicators_value()
@@ -51,7 +52,7 @@ class UIPageControl_SynthProvider(UIControl.UIControl_SynthProvider):
         return self.get_child_value("_currentPage")
 
     def get_current_page_value(self):
-        return self.get_signed_value(self.get_current_page())
+        return SummaryBase.get_signed_value(self.get_current_page())
 
     def get_current_page_summary(self):
         current_page_value = self.get_current_page_value()
@@ -62,7 +63,7 @@ class UIPageControl_SynthProvider(UIControl.UIControl_SynthProvider):
         return self.get_child_value("_displayedPage")
 
     def get_displayed_page_value(self):
-        return self.get_signed_value(self.get_displayed_page())
+        return SummaryBase.get_signed_value(self.get_displayed_page())
 
     def get_displayed_page_summary(self):
         displayed_page_value = self.get_displayed_page_value()

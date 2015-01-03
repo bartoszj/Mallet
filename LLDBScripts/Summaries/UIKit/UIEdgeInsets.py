@@ -43,28 +43,28 @@ class UIEdgeInsets_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
         return self.get_child_value("top")
 
     def get_top_value(self):
-        return self.get_float_value(self.get_top())
+        return SummaryBase.get_float_value(self.get_top())
 
     @Helpers.save_parameter("left")
     def get_left(self):
         return self.get_child_value("left")
 
     def get_left_value(self):
-        return self.get_float_value(self.get_left())
+        return SummaryBase.get_float_value(self.get_left())
 
     @Helpers.save_parameter("bottom")
     def get_bottom(self):
         return self.get_child_value("bottom")
 
     def get_bottom_value(self):
-        return self.get_float_value(self.get_bottom())
+        return SummaryBase.get_float_value(self.get_bottom())
 
     @Helpers.save_parameter("right")
     def get_right(self):
         return self.get_child_value("right")
 
     def get_right_value(self):
-        return self.get_float_value(self.get_right())
+        return SummaryBase.get_float_value(self.get_right())
 
 
 def __lldb_init_module(debugger, dict):

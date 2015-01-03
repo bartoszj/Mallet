@@ -152,83 +152,6 @@ class SummaryBaseSyntheticProvider(object):
             """:type: lldb.SBValue"""
         return value
 
-    @staticmethod
-    def get_signed_value(obj):
-        """
-        Returns signed integer from LLDB value.
-
-        :param lldb.SBValue obj: LLDB value object.
-        :return: Signed integer from LLDB value.
-        :rtype: int | None
-        """
-        return None if obj is None else obj.GetValueAsSigned()
-
-    @staticmethod
-    def get_unsigned_value(obj):
-        """
-        Returns unsigned integer from LLDB value.
-
-        :param lldb.SBValue obj: LLDB value object.
-        :return: Unsigned integer from LLDB value.
-        :rtype: int | None
-        """
-        return None if obj is None else obj.GetValueAsUnsigned()
-
-    @staticmethod
-    def get_float_value(obj):
-        """
-        Returns float from LLDB value.
-
-        :param lldb.SBValue obj: LLDB value object.
-        :return: float from LLDB value.
-        :rtype: float | None
-        """
-        return None if obj is None else float(obj.GetValue())
-
-    @staticmethod
-    def get_summary_value(obj):
-        """
-        Returns summary from LLDB value.
-
-        :param lldb.SBValue obj: LLDB value object.
-        :return: Summary from LLDB value.
-        :rtype: str | None
-        """
-        return None if obj is None else obj.GetSummary()
-
-    @staticmethod
-    def get_stripped_summary_value(obj):
-        """
-        Returns stripped summary (without '@"' at the beginning and '"' at the end) from LLDB value.
-
-        :param lldb.SBValue obj: LLDB value object.
-        :return: Stripped summary from LLDB value.
-        :rtype: str | None
-        """
-        return None if obj is None else obj.GetSummary()[2:-1]
-
-    @staticmethod
-    def get_count_value(obj):
-        """
-        Returns count of child objects from LLDB value.
-
-        :param lldb.SBValue obj: LLDB value object.
-        :return: Count of child objects from LLDB value.
-        :rtype: int | None
-        """
-        return None if obj is None else obj.GetNumChildren()
-
-    @staticmethod
-    def formatted_float(f, precision=2):
-        """
-        Returns formatted float value to given precision (or less).
-
-        :param float f: Float value.
-        :return: Formatted float value.
-        :rtype: str
-        """
-        return "{:.{precision}f}".format(f, precision=precision).rstrip("0").rstrip(".")
-
     def summary(self):
         """
         Return object summary.
@@ -237,6 +160,83 @@ class SummaryBaseSyntheticProvider(object):
         :rtype: str | None
         """
         return None
+
+
+def get_signed_value(obj):
+    """
+    Returns signed integer from LLDB value.
+
+    :param lldb.SBValue obj: LLDB value object.
+    :return: Signed integer from LLDB value.
+    :rtype: int | None
+    """
+    return None if obj is None else obj.GetValueAsSigned()
+
+
+def get_unsigned_value(obj):
+    """
+    Returns unsigned integer from LLDB value.
+
+    :param lldb.SBValue obj: LLDB value object.
+    :return: Unsigned integer from LLDB value.
+    :rtype: int | None
+    """
+    return None if obj is None else obj.GetValueAsUnsigned()
+
+
+def get_float_value(obj):
+    """
+    Returns float from LLDB value.
+
+    :param lldb.SBValue obj: LLDB value object.
+    :return: float from LLDB value.
+    :rtype: float | None
+    """
+    return None if obj is None else float(obj.GetValue())
+
+
+def get_summary_value(obj):
+    """
+    Returns summary from LLDB value.
+
+    :param lldb.SBValue obj: LLDB value object.
+    :return: Summary from LLDB value.
+    :rtype: str | None
+    """
+    return None if obj is None else obj.GetSummary()
+
+
+def get_stripped_summary_value(obj):
+    """
+    Returns stripped summary (without '@"' at the beginning and '"' at the end) from LLDB value.
+
+    :param lldb.SBValue obj: LLDB value object.
+    :return: Stripped summary from LLDB value.
+    :rtype: str | None
+    """
+    return None if obj is None else obj.GetSummary()[2:-1]
+
+
+def get_count_value(obj):
+    """
+    Returns count of child objects from LLDB value.
+
+    :param lldb.SBValue obj: LLDB value object.
+    :return: Count of child objects from LLDB value.
+    :rtype: int | None
+    """
+    return None if obj is None else obj.GetNumChildren()
+
+
+def formatted_float(f, precision=2):
+    """
+    Returns formatted float value to given precision (or less).
+
+    :param float f: Float value.
+    :return: Formatted float value.
+    :rtype: str
+    """
+    return "{:.{precision}f}".format(f, precision=precision).rstrip("0").rstrip(".")
 
 
 def get_architecture_list():

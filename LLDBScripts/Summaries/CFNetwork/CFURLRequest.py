@@ -57,7 +57,7 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
         return self.get_child_value("url", "NSURL *", offset)
 
     def get_url_value(self):
-        return self.get_summary_value(self.get_url())
+        return SummaryBase.get_summary_value(self.get_url())
 
     def get_url_summary(self):
         url_value = self.get_url_value()
@@ -85,7 +85,7 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
         return self.tmp1_structure.CreateChildAtOffset("HTTPMethod", offset, self.get_type("NSString *"))
 
     def get_method_value(self):
-        return self.get_summary_value(self.get_method())
+        return SummaryBase.get_summary_value(self.get_method())
 
     def get_method_summary(self):
         method_value = self.get_method_value()
@@ -112,6 +112,6 @@ def CFURLRequest_SummaryProvider(value_obj, internal_dict):
 
 def __lldb_init_module(debugger, dict):
     debugger.HandleCommand("type summary add -F CFURLRequest.CFURLRequest_SummaryProvider \
-                            --category Foundation \
+                            --category CFNetwork \
                             _CFURLRequest")
-    debugger.HandleCommand("type category enable Foundation")
+    debugger.HandleCommand("type category enable CFNetwork")

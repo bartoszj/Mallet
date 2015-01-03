@@ -42,22 +42,22 @@ class CADoubleSize_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
         return self.get_child_value("width", type_name="double", offset=0)
 
     def get_width_value(self):
-        return self.get_float_value(self.get_width())
+        return SummaryBase.get_float_value(self.get_width())
 
     def get_width_summary(self):
         width = self.get_width_value()
-        return None if width is None else "width={}".format(self.formatted_float(width))
+        return None if width is None else "width={}".format(SummaryBase.formatted_float(width))
 
     @Helpers.save_parameter("height")
     def get_height(self):
         return self.get_child_value("height", type_name="double", offset=8)
 
     def get_height_value(self):
-        return self.get_float_value(self.get_height())
+        return SummaryBase.get_float_value(self.get_height())
 
     def get_height_summary(self):
         height = self.get_height_value()
-        return None if height is None else "height={}".format((self.formatted_float(height)))
+        return None if height is None else "height={}".format((SummaryBase.formatted_float(height)))
 
     def summary(self):
         summary = "(width={}, height={})".format(self.get_width_summary(), self.get_height_summary())

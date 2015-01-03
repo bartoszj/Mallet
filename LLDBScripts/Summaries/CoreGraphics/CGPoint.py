@@ -43,11 +43,11 @@ class CGPoint_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
         return self.get_child_value("x")
 
     def get_x_value(self):
-        return self.get_float_value(self.get_x())
+        return SummaryBase.get_float_value(self.get_x())
 
     @Helpers.save_parameter("y")
     def get_y(self):
         return self.get_child_value("y")
 
     def get_y_value(self):
-        return self.get_float_value(self.get_y())
+        return SummaryBase.get_float_value(self.get_y())

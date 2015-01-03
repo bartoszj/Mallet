@@ -102,7 +102,7 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
             return None
 
         buttons_objects = []
-        for i in xrange(0, self.get_count_value(buttons)):
+        for i in xrange(0, get_count_value(buttons)):
             b = buttons.GetChildAtIndex(i)
             buttons_objects.append(b)
         return buttons_objects

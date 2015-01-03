@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import Helpers
+import SummaryBase
 import UIPickerView
 
 
@@ -43,7 +44,7 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
         return self.get_child_value("_userSuppliedDate")
 
     def get_date_value(self):
-        return self.get_summary_value(self.get_date())
+        return SummaryBase.get_summary_value(self.get_date())
 
     def get_date_summary(self):
         date_value = self.get_date_value()
@@ -54,7 +55,7 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
         return self.get_child_value("_userSuppliedMinimumDate")
 
     def get_min_user_date_value(self):
-        return self.get_summary_value(self.get_min_user_date())
+        return SummaryBase.get_summary_value(self.get_min_user_date())
 
     def get_min_user_date_summary(self):
         min_user_date_value = self.get_min_user_date_value()
@@ -65,7 +66,7 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
         return self.get_child_value("_userSuppliedMaximumDate")
 
     def get_max_user_date_value(self):
-        return self.get_summary_value(self.get_max_user_date())
+        return SummaryBase.get_summary_value(self.get_max_user_date())
 
     def get_max_user_date_summary(self):
         max_user_date_value = self.get_max_user_date_value()
@@ -76,7 +77,7 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
         return self.get_child_value("_minimumDate")
 
     def get_min_date_value(self):
-        return self.get_summary_value(self.get_min_date())
+        return SummaryBase.get_summary_value(self.get_min_date())
 
     def get_min_date_summary(self):
         min_date_value = self.get_min_date_value()
@@ -87,7 +88,7 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
         return self.get_child_value("_maximumDate")
 
     def get_max_date_value(self):
-        return self.get_summary_value(self.get_max_user_date())
+        return SummaryBase.get_summary_value(self.get_max_user_date())
 
     def get_max_date_summary(self):
         max_date_value = self.get_max_date_value()
@@ -98,7 +99,7 @@ class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
         return self.get_child_value("_lastSelectedDateComponents")
 
     def get_date_components_value(self):
-        return self.get_summary_value(self.get_date_components())
+        return SummaryBase.get_summary_value(self.get_date_components())
 
     def get_date_components_summary(self):
         date_components_value = self.get_date_components_value()

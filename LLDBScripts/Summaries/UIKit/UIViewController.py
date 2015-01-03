@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import Helpers
+import SummaryBase
 import UIResponder
 
 
@@ -38,7 +39,7 @@ class UIViewController_SynthProvider(UIResponder.UIResponder_SynthProvider):
         return self.get_child_value("_title")
 
     def get_title_value(self):
-        return self.get_summary_value(self.get_title())
+        return SummaryBase.get_summary_value(self.get_title())
 
     def get_title_summary(self):
         title_value = self.get_title_value()

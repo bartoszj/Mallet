@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import NSObject
+import SummaryBase
 import Helpers
 
 SKPaymentTransactionStatePurchasing = 0
@@ -72,7 +73,7 @@ class SKPaymentTransactionInternal_SynthProvider(NSObject.NSObjectSyntheticProvi
         return self.get_child_value("_transactionState")
 
     def get_transaction_state_value(self):
-        return self.get_unsigned_value(self.get_transaction_state())
+        return SummaryBase.get_unsigned_value(self.get_transaction_state())
 
     def get_transaction_value_text(self):
         transaction_state_value = self.get_transaction_state_value()

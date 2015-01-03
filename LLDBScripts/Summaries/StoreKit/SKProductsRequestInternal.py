@@ -43,7 +43,7 @@ class SKProductsRequestInternal_SynthProvider(NSObject.NSObjectSyntheticProvider
         return self.product_identifiers
 
     def get_product_identifiers_value(self):
-        return self.get_count_value(self.get_product_identifiers())
+        return get_count_value(self.get_product_identifiers())
 
     def get_product_identifiers_summary(self):
         product_identifiers_value = self.get_product_identifiers_value()

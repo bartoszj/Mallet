@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import Helpers
+import SummaryBase
 import UIView
 
 
@@ -38,11 +39,11 @@ class UIProgressView_SynthProvider(UIView.UIView_SynthProvider):
         return self.get_child_value("_progress")
 
     def get_progress_value(self):
-        return self.get_float_value(self.get_progress())
+        return SummaryBase.get_float_value(self.get_progress())
 
     def get_progress_summary(self):
         progress_value = self.get_progress_value()
-        return None if progress_value is None else "progress={}".format(self.formatted_float(progress_value))
+        return None if progress_value is None else "progress={}".format(SummaryBase.formatted_float(progress_value))
 
     def summary(self):
         progress_summary = self.get_progress_summary()

@@ -24,6 +24,7 @@
 
 import logging
 import Helpers
+import SummaryBase
 import UIResponder
 import CALayer
 
@@ -66,10 +67,10 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
         if frame is None:
             return None
 
-        frame_summary = "frame=({} {}; {} {})".format(self.formatted_float(frame.x),
-                                                      self.formatted_float(frame.y),
-                                                      self.formatted_float(frame.width),
-                                                      self.formatted_float(frame.height))
+        frame_summary = "frame=({} {}; {} {})".format(SummaryBase.formatted_float(frame.x),
+                                                      SummaryBase.formatted_float(frame.y),
+                                                      SummaryBase.formatted_float(frame.width),
+                                                      SummaryBase.formatted_float(frame.height))
         return frame_summary
 
     @Helpers.save_parameter("tag")
@@ -77,7 +78,7 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
         return self.get_child_value("_tag")
 
     def get_tag_value(self):
-        return self.get_signed_value(self.get_tag())
+        return SummaryBase.get_signed_value(self.get_tag())
 
     def get_tag_summary(self):
         return "tag={}".format(self.get_tag_value())

@@ -43,14 +43,14 @@ class CGVector_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
         return self.get_child_value("dx")
 
     def get_dx_value(self):
-        return self.get_float_value(self.get_dx())
+        return SummaryBase.get_float_value(self.get_dx())
 
     @Helpers.save_parameter("dy")
     def get_dy(self):
         return self.get_child_value("dy")
 
     def get_dy_value(self):
-        return self.get_float_value(self.get_dy())
+        return SummaryBase.get_float_value(self.get_dy())
 
 
 def __lldb_init_module(debugger, dict):

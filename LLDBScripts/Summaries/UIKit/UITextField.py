@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import Helpers
+import SummaryBase
 import UIControl
 import UILabel
 
@@ -51,7 +52,7 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
         return None if display_label_provider is None else display_label_provider.get_text()
 
     def get_display_label_text_value(self):
-        return self.get_summary_value(self.get_display_label_text())
+        return SummaryBase.get_summary_value(self.get_display_label_text())
 
     def get_display_label_text_summary(self):
         display_label_text_value = self.get_display_label_text_value()
@@ -71,7 +72,7 @@ class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
         return None if placeholder_label_provider is None else placeholder_label_provider.get_text()
 
     def get_placeholder_label_text_value(self):
-        return self.get_summary_value(self.get_placeholder_label_text())
+        return SummaryBase.get_summary_value(self.get_placeholder_label_text())
 
     def get_placeholder_label_text_summary(self):
         placeholder_label_text_value = self.get_placeholder_label_text_value()
