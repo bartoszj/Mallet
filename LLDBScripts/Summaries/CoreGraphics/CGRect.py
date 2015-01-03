@@ -23,40 +23,21 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import SummaryBase
-import Helpers
 import CGPoint
 import CGSize
 
 
-class CGRect_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
+class CGRectSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
+    """
+    Class representing CGRect structure.
+    """
     # struct CGRect {
     #   CGPoint origin;
     #   CGSize size;
     # };
     # typedef struct CGRect CGRect;
     def __init__(self, value_obj, internal_dict):
-        super(CGRect_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(CGRectSyntheticProvider, self).__init__(value_obj, internal_dict)
 
-        self.origin = None
-        self.size = None
-
-        self.origin_provider = None
-        self.size_provider = None
-
-    @Helpers.save_parameter("origin")
-    def get_origin(self):
-        return self.get_child_value("origin")
-
-    @Helpers.save_parameter("origin_provider")
-    def get_origin_provider(self):
-        origin = self.get_origin()
-        return None if origin is None else CGPoint.CGPoint_SynthProvider(origin, self.internal_dict)
-
-    @Helpers.save_parameter("size")
-    def get_size(self):
-        return self.get_child_value("size")
-
-    @Helpers.save_parameter("size_provider")
-    def get_size_provider(self):
-        size = self.get_size()
-        return None if size is None else CGSize.CGSize_SynthProvider(size, self.internal_dict)
+        self.register_child_value("origin", ivar_name="origin", provider_class=CGPoint.CGPointSyntheticProvider)
+        self.register_child_value("size", ivar_name="size", provider_class=CGSize.CGSizeSyntheticProvider)

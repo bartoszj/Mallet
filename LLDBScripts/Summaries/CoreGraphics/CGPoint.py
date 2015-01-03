@@ -23,31 +23,19 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import SummaryBase
-import Helpers
 
 
-class CGPoint_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
+class CGPointSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
+    """
+    Class representing CGPoint structure.
+    """
     # struct CGPoint {
     #   CGFloat x;
     #   CGFloat y;
     # };
     # typedef struct CGPoint CGPoint;
     def __init__(self, value_obj, internal_dict):
-        super(CGPoint_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(CGPointSyntheticProvider, self).__init__(value_obj, internal_dict)
 
-        self.x = None
-        self.y = None
-
-    @Helpers.save_parameter("x")
-    def get_x(self):
-        return self.get_child_value("x")
-
-    def get_x_value(self):
-        return SummaryBase.get_float_value(self.get_x())
-
-    @Helpers.save_parameter("y")
-    def get_y(self):
-        return self.get_child_value("y")
-
-    def get_y_value(self):
-        return SummaryBase.get_float_value(self.get_y())
+        self.register_child_value("x", ivar_name="x", primitive_value_function=SummaryBase.get_float_value)
+        self.register_child_value("y", ivar_name="y", primitive_value_function=SummaryBase.get_float_value)

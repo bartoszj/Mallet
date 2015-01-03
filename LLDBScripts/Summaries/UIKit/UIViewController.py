@@ -27,7 +27,7 @@ import SummaryBase
 import UIResponder
 
 
-class UIViewController_SynthProvider(UIResponder.UIResponder_SynthProvider):
+class UIViewController_SynthProvider(UIResponder.UIResponderSyntheticProvider):
     def __init__(self, value_obj, internal_dict):
         super(UIViewController_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIViewController"

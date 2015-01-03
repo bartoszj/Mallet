@@ -24,10 +24,12 @@
 
 import SummaryBase
 import CALayerInternalLayer
-import Helpers
 
 
-class CALayerIvars_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
+class CALayerIvarsSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
+    """
+    Class representing CALayer private ivar.
+    """
     # armv7s, armv7, i386:
     # struct _CALayerIvars {
     #     int refcount;
@@ -44,16 +46,6 @@ class CALayerIvars_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
     # };
 
     def __init__(self, value_obj, internal_dict):
-        super(CALayerIvars_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(CALayerIvarsSyntheticProvider, self).__init__(value_obj, internal_dict)
 
-        self.layer = None
-        self.layer_provider = None
-
-    @Helpers.save_parameter("layer")
-    def get_layer(self):
-        return self.get_child_value("layer")
-
-    @Helpers.save_parameter("layer_provider")
-    def get_layer_provider(self):
-        layer = self.get_layer()
-        return None if layer is None else CALayerInternalLayer.CALayerInternalLayer_SynthProvider(layer, self.internal_dict)
+        self.register_child_value("layer", ivar_name="layer", provider_class=CALayerInternalLayer.CALayerInternalLayerSyntheticProvider)

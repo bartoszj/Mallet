@@ -25,55 +25,42 @@
 import SummaryBase
 import CADoublePoint
 import CADoubleSize
-import Helpers
 
 
-class CADoubleRect_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
+class CADoubleRectSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
+    """
+    Class representing CADoubleRect structure.
+    """
     # struct CADoubleRect {
     #     struct CADoublePoint origin;
     #     struct CADoubleSize size;
     # };
     def __init__(self, value_obj, internal_dict):
-        super(CADoubleRect_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(CADoubleRectSyntheticProvider, self).__init__(value_obj, internal_dict)
 
-        self.origin = None
-        self.size = None
-
-        self.origin_provider = None
-        self.size_provider = None
-
-    @Helpers.save_parameter("origin")
-    def get_origin(self):
         # Using CGPoint for workaround. LLDB cannot find type CADoublePoint.
-        return self.get_child_value("origin", type_name="CGPoint", offset=0)
-
-    @Helpers.save_parameter("origin_provider")
-    def get_origin_provider(self):
-        origin = self.get_origin()
-        return None if origin is None else CADoublePoint.CADoublePoint_SynthProvider(origin, self.internal_dict)
-
-    def get_origin_summary(self):
-        origin = self.get_origin_provider()
-        return None if origin is None else "origin={}".format(origin.summary())
-
-    @Helpers.save_parameter("size")
-    def get_size(self):
+        self.register_child_value("origin", ivar_name="origin", type_name="CGPoint", offset=0,
+                                  provider_class=CADoublePoint.CADoublePointSyntheticProvider,
+                                  summary_function=self.get_origin_summary)
         # Using CGSize for workaround. LLDB cannot find type CADoubleSize.
-        return self.get_child_value("size", type_name="CGSize", offset=16)
+        self.register_child_value("size", ivar_name="size", type_name="CGSize", offset=16,
+                                  provider_class=CADoubleSize.CADoubleSizeSyntheticProvider,
+                                  summary_function=self.get_size_summary)
 
-    @Helpers.save_parameter("size_provider")
-    def get_size_provider(self):
-        size = self.get_size()
-        return None if size is None else CADoubleSize.CADoubleSize_SynthProvider(size, self.internal_dict)
+    @staticmethod
+    def get_origin_summary(provider):
+        """
+        :param CADoublePoint.CADoublePointSyntheticProvider provider: CADoublePoint provider.
+        """
+        return "origin={}".format(provider.summary())
 
-    def get_size_summary(self):
-        size = self.get_size_provider()
-        return None if size is None else "size={}".format(size.summary())
+    @staticmethod
+    def get_size_summary(provider):
+        """
+        :param CADoubleSize.CADoubleSizeSyntheticProvider provider: CADoublePoint provider.
+        """
+        return "size={}".format(provider.summary())
 
     def summary(self):
-        origin_summary = self.get_origin_summary()
-        size_summary = self.get_size_summary()
-
-        summaries = [origin_summary, size_summary]
-        summary = ", ".join(summaries)
+        summary = SummaryBase.join_summaries(self.origin_summary, self.size_summary)
         return summary

@@ -23,42 +23,34 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import SummaryBase
-import Helpers
 
 
-class CADoublePoint_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
+class CADoublePointSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
+    """
+    Class representing CADoublePoint structure.
+    """
     # struct CADoublePoint {
     #     double x;
     #     double y;
     # };
     def __init__(self, value_obj, internal_dict):
-        super(CADoublePoint_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(CADoublePointSyntheticProvider, self).__init__(value_obj, internal_dict)
 
-        self.x = None
-        self.y = None
+        self.register_child_value("x", ivar_name="x", type_name="double", offset=0,
+                                  primitive_value_function=SummaryBase.get_float_value,
+                                  summary_function=self.get_x_summary)
+        self.register_child_value("y", ivar_name="y", type_name="double", offset=8,
+                                  primitive_value_function=SummaryBase.get_float_value,
+                                  summary_function=self.get_y_summary)
 
-    @Helpers.save_parameter("x")
-    def get_x(self):
-        return self.get_child_value("x", type_name="double", offset=0)
+    @staticmethod
+    def get_x_summary(value):
+        return "x={}".format(SummaryBase.formatted_float(value))
 
-    def get_x_value(self):
-        return SummaryBase.get_float_value(self.get_x())
-
-    def get_x_summary(self):
-        x = self.get_x_value()
-        return None if x is None else "x={}".format(SummaryBase.formatted_float(x))
-
-    @Helpers.save_parameter("y")
-    def get_y(self):
-        return self.get_child_value("y", type_name="double", offset=8)
-
-    def get_y_value(self):
-        return SummaryBase.get_float_value(self.get_y())
-
-    def get_y_summary(self):
-        y = self.get_y_value()
-        return None if y is None else "y={}".format(SummaryBase.formatted_float(y))
+    @staticmethod
+    def get_y_summary(value):
+        return "y={}".format(SummaryBase.formatted_float(value))
 
     def summary(self):
-        summary = "({}, {})".format(self.get_x_summary(), self.get_y_summary())
+        summary = "({}, {})".format(self.x_summary, self.y_summary)
         return summary

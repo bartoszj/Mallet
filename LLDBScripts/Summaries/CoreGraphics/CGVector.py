@@ -23,34 +23,22 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import SummaryBase
-import Helpers
 
 
-class CGVector_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
+class CGVectorSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
+    """
+    Class representing CGVector structure.
+    """
     # struct CGVector {
     #   CGFloat dx;
     #   CGFloat dy;
     # };
     # typedef struct CGVector CGVector;
     def __init__(self, value_obj, internal_dict):
-        super(CGVector_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(CGVectorSyntheticProvider, self).__init__(value_obj, internal_dict)
 
-        self.dx = None
-        self.dy = None
-
-    @Helpers.save_parameter("dx")
-    def get_dx(self):
-        return self.get_child_value("dx")
-
-    def get_dx_value(self):
-        return SummaryBase.get_float_value(self.get_dx())
-
-    @Helpers.save_parameter("dy")
-    def get_dy(self):
-        return self.get_child_value("dy")
-
-    def get_dy_value(self):
-        return SummaryBase.get_float_value(self.get_dy())
+        self.register_child_value("dx", ivar_name="dx", primitive_value_function=SummaryBase.get_float_value)
+        self.register_child_value("dy", ivar_name="dy", primitive_value_function=SummaryBase.get_float_value)
 
 
 def __lldb_init_module(debugger, dictionary):

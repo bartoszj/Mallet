@@ -37,7 +37,7 @@ class Rect(object):
         self.height = None
 
 
-class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
+class UIView_SynthProvider(UIResponder.UIResponderSyntheticProvider):
     def __init__(self, value_obj, internal_dict):
         super(UIView_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIView"
@@ -56,10 +56,10 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
         bounds = self.get_layer_provider().get_bounds_provider()
 
         frame = Rect()
-        frame.width = bounds.get_size_provider().get_width_value()
-        frame.height = bounds.get_size_provider().get_height_value()
-        frame.x = position.get_x_value() - frame.width / 2
-        frame.y = position.get_y_value() - frame.height / 2
+        frame.width = bounds.size_provider.width_value
+        frame.height = bounds.size_provider.height_value
+        frame.x = position.x_value - frame.width / 2
+        frame.y = position.y_value - frame.height / 2
         return frame
 
     def get_frame_summary(self):
@@ -100,7 +100,7 @@ class UIView_SynthProvider(UIResponder.UIResponder_SynthProvider):
     @Helpers.save_parameter("layer_provider")
     def get_layer_provider(self):
         layer = self.get_layer()
-        return None if layer is None else CALayer.CALayer_SynthProvider(layer, self.internal_dict)
+        return None if layer is None else CALayer.CALayerSyntheticProvider(layer, self.internal_dict)
 
     def summary(self):
         frame_summary = self.get_frame_summary()

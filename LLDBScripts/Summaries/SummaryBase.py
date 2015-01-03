@@ -44,7 +44,10 @@ class RegisterValue(object):
     :param (lldb.SBValue) -> int | float | str | None primitive_value_function: Function that return primitive vale of object.
     :param bool cache_primitive_value: Indicates if primitive value should be cached.
     :param int | float | str | None cached_primitive_value: Cached primitive value.
-    :param (int | float | str) -> str | None summary_function: Summary function.
+    :param class provider_class: Provider class (subclass of SummaryBase).
+    :param bool cache_provider: Indicates if provider should be cached.
+    :param SummaryBaseSyntheticProvider cached_provider: Cached provider.
+    :param (int | float | str | SummaryBaseSyntheticProvider) -> str | None summary_function: Summary function.
     :param bool cache_summary: Indicates if summary value should be cached.
     :param str | None cached_summary: Cached summary.
     """
@@ -59,6 +62,10 @@ class RegisterValue(object):
         self.primitive_value_function = None
         self.cache_primitive_value = False
         self.cached_primitive_value = None
+
+        self.provider_class = None
+        self.cache_provider = None
+        self.cached_provider = None
 
         self.summary_function = None
         self.cache_summary = False
@@ -189,17 +196,20 @@ class SummaryBaseSyntheticProvider(object):
             """:type: lldb.SBValue"""
         return value
 
-    def register_child_value(self, attribute_name, ivar_name, type_name=None, offset=None, cache_value=True,
+    def register_child_value(self, attribute_name, ivar_name=None, type_name=None, offset=None, cache_value=True,
                              primitive_value_function=None, cache_primitive_value=False,
+                             provider_class=None, cache_provider=True,
                              summary_function=None, cache_summary=False):
         """
-        Creates three attributes:
+        Creates four attributes:
         1. `attribute_name` - Stores child value object (SBValue) using ivar_name, type_name and offset.
         2. `attribute_name`_value - Stores primitive value of object, like integer, string.
-        3. `attribute_name`_summary - Stores child value summary based on summary_format.
+        3. `attribute_name`_provider - Stores object provider.
+        4. `attribute_name`_summary - Stores child value summary based on summary_format.
 
-        If get_value_function is None then `value_name`_value and `value_name`_summary will not be created.
-        If summary_format is None then `value_name`_summary will not be created.
+        if both primitive_value_function and provider_class are specified, then primitive_value_function is used.
+        If both primitive_value_function and provider_class are None, then `attribute_name`_summary will raise exception.
+        If summary_function is None then `attribute_name`_summary will raise exception.
 
         :param str attribute_name: Child value name.
         :param str ivar_name: Instance variable name.
@@ -208,7 +218,10 @@ class SummaryBaseSyntheticProvider(object):
         :param bool cache_value: Indicates if child value should be cached.
         :param (lldb.SBValue) -> int | float | str | None primitive_value_function: Function that return primitive vale of object.
         :param bool cache_primitive_value: Indicates if primitive value should be cached.
-        :param (int | float | str) -> str | None summary_function: Summary function. Summary function will be called only when primitive value is not None.
+        :param class provider_class: Provider class (subclass of SummaryBaseSyntheticProvider).
+        :param bool cache_provider: Indicates if provider should be cached.
+        :param (int | float | str | SummaryBaseSyntheticProvider) -> str | None summary_function: Summary function.
+        Summary function will be called only when primitive value or provider is not None.
         :param bool cache_summary: Indicates if summary value should be cached.
         """
 
@@ -218,6 +231,7 @@ class SummaryBaseSyntheticProvider(object):
 
         # Create registered child value parameters.
         r = RegisterValue()
+
         # Child value.
         r.attribute_name = attribute_name
         r.ivar_name = ivar_name
@@ -228,6 +242,10 @@ class SummaryBaseSyntheticProvider(object):
         # Primitive value.
         r.primitive_value_function = primitive_value_function
         r.cache_primitive_value = cache_primitive_value
+
+        # Provider.
+        r.provider_class = provider_class
+        r.cache_provider = cache_provider
 
         # Summary value.
         r.summary_function = summary_function
@@ -261,16 +279,22 @@ class SummaryBaseSyntheticProvider(object):
         # Check is child value, primitive value or summary value should be returned.
         attribute_name = item
         primitive_value = False
+        provider_value = False
         summary_value = False
         index = item.rfind("_value")
         if index != -1:
             primitive_value = True
             attribute_name = item[:index]
         else:
-            index = item.rfind("_summary")
+            index = item.rfind("_provider")
             if index != -1:
-                summary_value = True
+                provider_value = True
                 attribute_name = item[:index]
+            else:
+                index = item.rfind("_summary")
+                if index != -1:
+                    summary_value = True
+                    attribute_name = item[:index]
 
         # Get registered value.
         r = self.get_registered_child_value_parameter(attribute_name)
@@ -279,7 +303,7 @@ class SummaryBaseSyntheticProvider(object):
             raise AttributeError()
 
         # Get child value.
-        if primitive_value is False and summary_value is False:
+        if primitive_value is False and provider_value is False and summary_value is False:
             logger.debug("__getattr__: Getting child value for name \"{}\" in object {}.".format(attribute_name, self.type_name))
             # Get cached value.
             if r.cache_value is True and r.cached_value is not None:
@@ -295,6 +319,11 @@ class SummaryBaseSyntheticProvider(object):
         # Getting primitive value.
         elif primitive_value is True:
             logger.debug("__getattr__: Getting primitive value for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+            # Check is primitive function exists.
+            if r.primitive_value_function is None:
+                logger.error("__getattr__: Primitive function not found for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+                raise AttributeError()
+
             # Get cached value.
             if r.cache_primitive_value is True and r.cached_primitive_value is not None:
                 logger.debug("__getattr__: Getting cached primitive value for name \"{}\" in object {}.".format(attribute_name, self.type_name))
@@ -313,9 +342,46 @@ class SummaryBaseSyntheticProvider(object):
             if r.cache_primitive_value is True:
                 r.cached_primitive_value = primitive
             return primitive
+        # Getting provider.
+        elif provider_value is True:
+            logger.debug("__getattr__: Getting provider for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+            # Check is provider class exists.
+            if r.provider_class is None:
+                logger.error("__getattr__: Provider class not found for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+                raise AttributeError()
+
+            # Get cached value.
+            if r.cache_provider is True and r.cached_provider is not None:
+                logger.debug("__getattr__: Getting cached provider for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+                return r.cached_provider
+
+            # Get child value.
+            logger.debug("__getattr__: Computing provider for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+            value = getattr(self, attribute_name)
+            """:type: lldb.SBValue"""
+            if value is None:
+                logger.debug("__getattr__: Cannot compute child value for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+                return None
+
+            # Computing provider.
+            provider = r.provider_class(value, self.internal_dict)
+            """:type: SummaryBaseSyntheticProvider"""
+            if r.cache_provider is True:
+                r.cached_provider = provider
+            return provider
         # Getting summary.
         elif summary_value is True:
             logger.debug("__getattr__: Getting summary for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+            # Check if summary function exists.
+            if r.summary_function is None:
+                logger.error("__getattr__: Summary function not found for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+                raise AttributeError()
+
+            # Check if primitive function and provider class are None.
+            if r.primitive_value_function is None and r.provider_class is None:
+                logger.error("__getattr__: Primitive function and provider class not found for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+                raise AttributeError()
+
             # Get cached summary.
             if r.cache_summary is True and r.cached_summary is not None:
                 logger.debug("__getattr__: Getting cached summary for name \"{}\" in object {}.".format(attribute_name, self.type_name))
@@ -323,14 +389,23 @@ class SummaryBaseSyntheticProvider(object):
 
             # Getting primitive value.
             logger.debug("__getattr__: Computing summary for name \"{}\" in object {}.".format(attribute_name, self.type_name))
-            primitive_value = getattr(self, attribute_name+"_value")
-            """:type: str | int | float | None"""
-            if primitive_value is None:
-                logger.debug("__getattr__: Cannot compute primitive value for name \"{}\" in object {}.".format(attribute_name, self.type_name))
-                return None
+            if r.primitive_value_function:
+                primitive = getattr(self, attribute_name+"_value")
+                """:type: str | int | float | None"""
+                if primitive is None:
+                    logger.debug("__getattr__: Cannot compute primitive value for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+                    return None
+                summary_function_parameter = primitive
+            else:
+                provider = getattr(self, attribute_name+"_provider")
+                """:type: SummaryBaseSyntheticProvider"""
+                if provider is None:
+                    logger.debug("__getattr__: Cannot compute provider for name \"{}\" in object {}.".format(attribute_name, self.type_name))
+                    return None
+                summary_function_parameter = provider
 
             # Computing summary.
-            summary = r.summary_function(primitive_value)
+            summary = r.summary_function(summary_function_parameter)
             if r.cache_summary is True:
                 r.cached_summary = summary
             return summary

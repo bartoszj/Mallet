@@ -23,71 +23,39 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import Helpers
-import SummaryBase
 import NSObject
 import CFURLRequest
 
 
-class NSURLRequestInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
+class NSURLRequestInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider):
+    """
+    Class representing NSURLRequestInternal.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(NSURLRequestInternal_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(NSURLRequestInternalSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "NSURLRequestInternal"
 
-        self.request = None
-        self.request_provider = None
+        self.register_child_value("request", ivar_name="request", type_name="addr_ptr_type",
+                                  provider_class=CFURLRequest.CFURLRequestSyntheticProvider,
+                                  summary_function=self.get_request_summary)
 
-    @Helpers.save_parameter("request")
-    def get_request(self):
-        return self.get_child_value("request", "addr_ptr_type")
-
-    @Helpers.save_parameter("request_provider")
-    def get_request_provider(self):
-        request = self.get_request()
-        return None if request is None else CFURLRequest.CFURLRequest_SynthProvider(request, self.internal_dict)
-
-    def get_url(self):
-        request_provider = self.get_request_provider()
-        return None if request_provider is None else request_provider.get_url()
-
-    def get_url_value(self):
-        return SummaryBase.get_summary_value(self.get_url())
-
-    def get_url_summary(self):
-        url_value = self.get_url_value()
-        return None if url_value is None else "url={}".format(url_value)
-
-    def get_method(self):
-        request_provider = self.get_request_provider()
-        return None if request_provider is None else request_provider.get_method()
-
-    def get_method_value(self):
-        return SummaryBase.get_summary_value(self.get_method())
-
-    def get_method_summary(self):
-        method_value = self.get_method_value()
-        return None if method_value is None else "method={}".format(method_value)
+    @staticmethod
+    def get_request_summary(provider):
+        """
+        :param CFURLRequest.CFURLRequestSyntheticProvider provider: _CFURLRequest provider.
+        """
+        return provider.summary()
 
     def summary(self):
-        request_url_summary = self.get_url_summary()
-        request_method_summary = self.get_method_summary()
-
-        # Summaries
-        summaries = []
-        if request_url_summary:
-            summaries.append(request_url_summary)
-        if request_method_summary:
-            summaries.append(request_method_summary)
-
-        summary = ", ".join(summaries)
-        return summary
+        return self.request_summary
 
 
-def NSURLRequestInternal_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, NSURLRequestInternal_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, NSURLRequestInternalSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F NSURLRequestInternal.NSURLRequestInternal_SummaryProvider \
+    debugger.HandleCommand("type summary add -F NSURLRequestInternal.summary_provider \
                             --category CFNetwork \
                             NSURLRequestInternal")
     debugger.HandleCommand("type category enable CFNetwork")

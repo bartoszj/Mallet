@@ -30,7 +30,7 @@ import imp
 try:
     import LLDBLogger
 except ImportError:
-    imp.load_source("LLDBLogger", "LLDBScripts/Scripts/ClassDump.py")
+    imp.load_source("LLDBLogger", "LLDBScripts/Scripts/LLDBLogger.py")
     import LLDBLogger
 
 

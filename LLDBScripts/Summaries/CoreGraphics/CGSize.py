@@ -23,31 +23,19 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import SummaryBase
-import Helpers
 
 
-class CGSize_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
+class CGSizeSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
+    """
+    Class representing CGSize structure.
+    """
     # struct CGSize {
     #   CGFloat width;
     #   CGFloat height;
     # };
     # typedef struct CGSize CGSize;
     def __init__(self, value_obj, internal_dict):
-        super(CGSize_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(CGSizeSyntheticProvider, self).__init__(value_obj, internal_dict)
 
-        self.width = None
-        self.height = None
-
-    @Helpers.save_parameter("width")
-    def get_width(self):
-        return self.get_child_value("width")
-
-    def get_width_value(self):
-        return SummaryBase.get_float_value(self.get_width())
-
-    @Helpers.save_parameter("height")
-    def get_height(self):
-        return self.get_child_value("height")
-
-    def get_height_value(self):
-        return SummaryBase.get_float_value(self.get_height())
+        self.register_child_value("width", ivar_name="width", primitive_value_function=SummaryBase.get_float_value)
+        self.register_child_value("height", ivar_name="height", primitive_value_function=SummaryBase.get_float_value)

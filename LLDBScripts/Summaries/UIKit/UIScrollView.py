@@ -42,9 +42,9 @@ class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
     def get_content_offset_summary(self):
         if self.has_valid_layer() is None:
             return None
-        origin = self.get_layer_provider().get_bounds_provider().get_origin_provider()
-        return "contentOffset=({}, {})".format(SummaryBase.formatted_float(origin.get_x_value()),
-                                               SummaryBase.formatted_float(origin.get_y_value()))
+        origin = self.get_layer_provider().get_bounds_provider().origin_provider
+        return "contentOffset=({}, {})".format(SummaryBase.formatted_float(origin.x_value),
+                                               SummaryBase.formatted_float(origin.y_value))
 
     @Helpers.save_parameter("content_size")
     def get_content_size(self):
@@ -52,11 +52,11 @@ class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
 
     def get_content_size_provider(self):
         content_size = self.get_content_size()
-        return None if content_size is None else CGSize.CGSize_SynthProvider(content_size, self.internal_dict)
+        return None if content_size is None else CGSize.CGSizeSyntheticProvider(content_size, self.internal_dict)
 
     def get_content_size_summary(self):
-        content_size_w = self.get_content_size_provider().get_width_value()
-        content_size_h = self.get_content_size_provider().get_height_value()
+        content_size_w = self.get_content_size_provider().width_value
+        content_size_h = self.get_content_size_provider().height_value
         return "contentSize=({}, {})".format(SummaryBase.formatted_float(content_size_w), SummaryBase.formatted_float(content_size_h))
 
     @Helpers.save_parameter("content_inset")

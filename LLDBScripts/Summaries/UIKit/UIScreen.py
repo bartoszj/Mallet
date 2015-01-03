@@ -44,11 +44,11 @@ class UIScreen_SynthProvider(NSObject.NSObjectSyntheticProvider):
 
     def get_bounds_provider(self):
         bounds = self.get_bounds()
-        return None if bounds is None else CGRect.CGRect_SynthProvider(bounds, self.internal_dict)
+        return None if bounds is None else CGRect.CGRectSyntheticProvider(bounds, self.internal_dict)
 
     def get_bounds_summary(self):
-        w = self.get_bounds_provider().get_size_provider().get_width_value()
-        h = self.get_bounds_provider().get_size_provider().get_height_value()
+        w = self.get_bounds_provider().size_provider.width_value
+        h = self.get_bounds_provider().size_provider.height_value
         return "size=({}, {})".format(SummaryBase.formatted_float(w), SummaryBase.formatted_float(h))
 
     @Helpers.save_parameter("scale")

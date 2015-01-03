@@ -28,63 +28,68 @@ import SummaryBase
 import CALayerIvars
 
 
-class CALayer_SynthProvider(NSObject.NSObjectSyntheticProvider):
+class CALayerSyntheticProvider(NSObject.NSObjectSyntheticProvider):
+    """
+    Class representing CALayer.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(CALayer_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(CALayerSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "CALayer"
 
-        self.attr = None
-        self.attr_provider = None
-
-    @Helpers.save_parameter("attr")
-    def get_attr(self):
-        return self.get_child_value("_attr")
-
-    @Helpers.save_parameter("attr_provider")
-    def get_attr_provider(self):
-        attr = self.get_attr()
-        return None if attr is None else CALayerIvars.CALayerIvars_SynthProvider(attr, self.internal_dict)
-
-    def get_position(self):
-        return self.get_attr_provider().get_layer_provider().get_position()
+        self.register_child_value("attr", ivar_name="_attr", provider_class=CALayerIvars.CALayerIvarsSyntheticProvider)
 
     def get_position_provider(self):
-        return self.get_attr_provider().get_layer_provider().get_position_provider()
+        """
+        Returns position provider.
+
+        :return: Position provider.
+        :rtype: CADoublePoint.CADoublePointSyntheticProvider
+        """
+        return self.attr_provider.layer_provider.position_provider
 
     def get_position_summary(self):
-        position = self.get_position_provider()
-        return None if position is None else "position=({}, {})".format(SummaryBase.formatted_float(position.get_x_value()),
-                                                                        SummaryBase.formatted_float(position.get_y_value()))
+        """
+        Returns position summary.
 
-    def get_bounds(self):
-        return self.get_attr_provider().get_layer_provider().get_bounds()
+        :return: Position summary.
+        :rtype: str
+        """
+        position = self.get_position_provider()
+        return None if position is None else "position=({}, {})".format(SummaryBase.formatted_float(position.x_value),
+                                                                        SummaryBase.formatted_float(position.y_value))
 
     def get_bounds_provider(self):
-        return self.get_attr_provider().get_layer_provider().get_bounds_provider()
+        """
+        Returns bounds provider.
+
+        :return: bounds provider.
+        :rtype: CADoubleRect.CADoubleRectSyntheticProvider
+        """
+        return self.attr_provider.layer_provider.bounds_provider
 
     def get_bounds_summary(self):
+        """
+        Returns bounds summary.
+        :return: Bounds summary.
+        :rtype: str
+        """
         bounds = self.get_bounds_provider()
-        return None if bounds is None else "bounds=({} {}; {} {})".format(SummaryBase.formatted_float(bounds.get_origin_provider().get_x_value()),
-                                                                          SummaryBase.formatted_float(bounds.get_origin_provider().get_y_value()),
-                                                                          SummaryBase.formatted_float(bounds.get_size_provider().get_width_value()),
-                                                                          SummaryBase.formatted_float(bounds.get_size_provider().get_height_value()))
+        return None if bounds is None else "bounds=({} {}; {} {})".format(SummaryBase.formatted_float(bounds.origin_provider.x_value),
+                                                                          SummaryBase.formatted_float(bounds.origin_provider.y_value),
+                                                                          SummaryBase.formatted_float(bounds.size_provider.width_value),
+                                                                          SummaryBase.formatted_float(bounds.size_provider.height_value))
 
     def summary(self):
-        position_summary = self.get_position_summary()
-        bounds_summary = self.get_bounds_summary()
-
-        summaries = [position_summary, bounds_summary]
-        summary = ", ".join(summaries)
-
+        summary = SummaryBase.join_summaries(self.get_position_summary(), self.get_bounds_summary())
         return summary
 
 
-def CALayer_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, CALayer_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, CALayerSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F CALayer.CALayer_SummaryProvider \
+    debugger.HandleCommand("type summary add -F CALayer.summary_provider \
                             --category QuartzCore \
                             CALayer")
     debugger.HandleCommand("type category enable QuartzCore")

@@ -26,7 +26,10 @@ import Helpers
 import SummaryBase
 
 
-class CFURLRequest_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
+class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
+    """
+    Class representing _CFURLRequest structure.
+    """
     # _CFURLRequest:
     # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
@@ -41,38 +44,29 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
     # }
 
     def __init__(self, value_obj, internal_dict):
-        super(CFURLRequest_SynthProvider, self).__init__(value_obj, internal_dict)
+        """
+        :param lldb.SBValue value_obj: LLDB variable to compute summary.
+        :param dict internal_dict: Internal LLDB dictionary.
+        """
+        super(CFURLRequestSyntheticProvider, self).__init__(value_obj, internal_dict)
 
-        self.url = None
-        self.tmp1_structure = None
+        if self.is_64bit:
+            url_offset = 0x28
+            tmp1_offset = 0x50
+        else:
+            url_offset = 0x14
+            tmp1_offset = 0x2c
+
+        self.register_child_value("url", type_name="NSURL *", offset=url_offset,
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_url_summary)
+        self.register_child_value("tmp1", type_name="addr_ptr_type", offset=tmp1_offset)
+
         self.method = None
 
-    @Helpers.save_parameter("url")
-    def get_url(self):
-        if self.is_64bit:
-            offset = 0x28
-        else:
-            offset = 0x14
-
-        return self.get_child_value("url", "NSURL *", offset)
-
-    def get_url_value(self):
-        return SummaryBase.get_summary_value(self.get_url())
-
-    def get_url_summary(self):
-        url_value = self.get_url_value()
-        if url_value is None:
-            return None
-        return "url={}".format(url_value)
-
-    @Helpers.save_parameter("tmp1_structure")
-    def get_tmp1_structure(self):
-        if self.is_64bit:
-            offset = 0x50
-        else:
-            offset = 0x2c
-
-        return self.get_child_value("tmp1", "addr_ptr_type", offset)
+    @staticmethod
+    def get_url_summary(value):
+        return "url={}".format(value)
 
     @Helpers.save_parameter("method")
     def get_method(self):
@@ -81,8 +75,7 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
         else:
             offset = 0x44
 
-        self.get_tmp1_structure()
-        return self.tmp1_structure.CreateChildAtOffset("HTTPMethod", offset, self.get_type("NSString *"))
+        return self.tmp1.CreateChildAtOffset("HTTPMethod", offset, self.get_type("NSString *"))
 
     def get_method_value(self):
         return SummaryBase.get_summary_value(self.get_method())
@@ -92,26 +85,16 @@ class CFURLRequest_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
         return None if method_value is None else "method={}".format(method_value)
 
     def summary(self):
-        url_summary = self.get_url_summary()
-        method_summary = self.get_method_summary()
-
-        # Summaries
-        summaries = []
-        if url_summary:
-            summaries.append(url_summary)
-        if method_summary:
-            summaries.append(method_summary)
-
-        summary = ", ".join(summaries)
+        summary = SummaryBase.join_summaries(self.url_summary, self.get_method_summary())
         return summary
 
 
-def CFURLRequest_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, CFURLRequest_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, CFURLRequestSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F CFURLRequest.CFURLRequest_SummaryProvider \
+    debugger.HandleCommand("type summary add -F CFURLRequest.summary_provider \
                             --category CFNetwork \
                             _CFURLRequest")
     debugger.HandleCommand("type category enable CFNetwork")

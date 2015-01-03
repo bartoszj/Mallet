@@ -23,42 +23,34 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import SummaryBase
-import Helpers
 
 
-class CADoubleSize_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
+class CADoubleSizeSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
+    """
+    Class representing CADoubleSize structure.
+    """
     # struct CADoubleSize {
     #     double width;
     #     double height;
     # };
     def __init__(self, value_obj, internal_dict):
-        super(CADoubleSize_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(CADoubleSizeSyntheticProvider, self).__init__(value_obj, internal_dict)
 
-        self.width = None
-        self.height = None
+        self.register_child_value("width", ivar_name="width", type_name="double", offset=0,
+                                  primitive_value_function=SummaryBase.get_float_value,
+                                  summary_function=self.get_width_summary)
+        self.register_child_value("height", ivar_name="height", type_name="double", offset=8,
+                                  primitive_value_function=SummaryBase.get_float_value,
+                                  summary_function=self.get_height_summary)
 
-    @Helpers.save_parameter("width")
-    def get_width(self):
-        return self.get_child_value("width", type_name="double", offset=0)
+    @staticmethod
+    def get_width_summary(value):
+        return "width={}".format(SummaryBase.formatted_float(value))
 
-    def get_width_value(self):
-        return SummaryBase.get_float_value(self.get_width())
-
-    def get_width_summary(self):
-        width = self.get_width_value()
-        return None if width is None else "width={}".format(SummaryBase.formatted_float(width))
-
-    @Helpers.save_parameter("height")
-    def get_height(self):
-        return self.get_child_value("height", type_name="double", offset=8)
-
-    def get_height_value(self):
-        return SummaryBase.get_float_value(self.get_height())
-
-    def get_height_summary(self):
-        height = self.get_height_value()
-        return None if height is None else "height={}".format((SummaryBase.formatted_float(height)))
+    @staticmethod
+    def get_height_summary(value):
+        return "height={}".format(SummaryBase.formatted_float(value))
 
     def summary(self):
-        summary = "(width={}, height={})".format(self.get_width_summary(), self.get_height_summary())
+        summary = "(width={}, height={})".format(self.width_summary, self.height_summary)
         return summary

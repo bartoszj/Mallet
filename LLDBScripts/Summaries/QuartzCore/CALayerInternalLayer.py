@@ -25,48 +25,29 @@
 import SummaryBase
 import CADoublePoint
 import CADoubleRect
-import Helpers
 
 
-class CALayerInternalLayer_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
+class CALayerInternalLayerSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
+    """
+    Class representing CALayer internals.
+    """
     # Name:                          armv7                 i386                  arm64                 x86_64
     # CADoublPoint position       32 (0x020) / 16       32 (0x020) / 16       48 (0x030) / 16       48 (0x030) / 16
     # CADoubleRect bounds         48 (0x030) / 32       48 (0x030) / 32       64 (0x040) / 16       64 (0x040) / 16
 
     def __init__(self, value_obj, internal_dict):
-        super(CALayerInternalLayer_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(CALayerInternalLayerSyntheticProvider, self).__init__(value_obj, internal_dict)
 
-        self.position = None
-        self.position_provider = None
-        self.bounds = None
-        self.bounds_provider = None
-
-    @Helpers.save_parameter("position")
-    def get_position(self):
         if self.is_64bit:
-            offset = 0x30
+            position_offset = 0x30
+            bounds_offset = 0x40
         else:
-            offset = 0x20
+            position_offset = 0x20
+            bounds_offset = 0x30
 
         # Using CGPoint for workaround. LLDB cannot find type CADoublePoint.
-        return self.get_child_value("position", type_name="CGPoint", offset=offset)
-
-    @Helpers.save_parameter("position_provider")
-    def get_position_provider(self):
-        position = self.get_position()
-        return None if position is None else CADoublePoint.CADoublePoint_SynthProvider(position, self.internal_dict)
-
-    @Helpers.save_parameter("bounds")
-    def get_bounds(self):
-        if self.is_64bit:
-            offset = 0x40
-        else:
-            offset = 0x30
-
+        self.register_child_value("position", ivar_name="position", type_name="CGPoint", offset=position_offset,
+                                  provider_class=CADoublePoint.CADoublePointSyntheticProvider)
         # Using CGRect for workaround. LLDB cannot find type CADoubleRect.
-        return self.get_child_value("bounds", type_name="CGRect", offset=offset)
-
-    @Helpers.save_parameter("bounds_provider")
-    def get_bounds_provider(self):
-        bounds = self.get_bounds()
-        return None if bounds is None else CADoubleRect.CADoubleRect_SynthProvider(bounds, self.internal_dict)
+        self.register_child_value("bounds", ivar_name="bounds", type_name="CGRect", offset=bounds_offset,
+                                  provider_class=CADoubleRect.CADoubleRectSyntheticProvider)
