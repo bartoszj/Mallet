@@ -48,4 +48,20 @@ class CALayerIvarsSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
     def __init__(self, value_obj, internal_dict):
         super(CALayerIvarsSyntheticProvider, self).__init__(value_obj, internal_dict)
 
-        self.register_child_value("layer", ivar_name="layer", provider_class=CALayerInternalLayer.CALayerInternalLayerSyntheticProvider)
+        self.register_child_value("layer", ivar_name="layer",
+                                  provider_class=CALayerInternalLayer.CALayerInternalLayerSyntheticProvider,
+                                  summary_function=self.get_layer_summary)
+
+    @staticmethod
+    def get_layer_summary(provider):
+        """
+        Returns layer internal provider.
+
+        :param CALayerInternalLayer.CALayerInternalLayerSyntheticProvider provider: Layer internal provider.
+        :return: Layer internal provider.
+        :rtype: str
+        """
+        return provider.summary()
+
+    def summary(self):
+        return self.layer_summary

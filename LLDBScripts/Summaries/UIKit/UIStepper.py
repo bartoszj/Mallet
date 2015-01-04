@@ -27,82 +27,56 @@ import SummaryBase
 import UIControl
 
 
-class UIStepper_SynthProvider(UIControl.UIControl_SynthProvider):
+class UIStepperSyntheticProvider(UIControl.UIControlSyntheticProvider):
+    """
+    Class representing UIStepper.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(UIStepper_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UIStepperSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIStepper"
 
-        self.value = None
-        self.min = None
-        self.max = None
-        self.step = None
+        self.register_child_value("value", ivar_name="_value",
+                                  primitive_value_function=SummaryBase.get_float_value,
+                                  summary_function=self.get_value_summary)
+        self.register_child_value("min", ivar_name="_minimumValue",
+                                  primitive_value_function=SummaryBase.get_float_value,
+                                  summary_function=self.get_min_summary)
+        self.register_child_value("max", ivar_name="_maximumValue",
+                                  primitive_value_function=SummaryBase.get_float_value,
+                                  summary_function=self.get_max_summary)
+        self.register_child_value("step", ivar_name="_stepValue",
+                                  primitive_value_function=SummaryBase.get_float_value,
+                                  summary_function=self.get_step_summary)
 
-    @Helpers.save_parameter("value")
-    def get_value(self):
-        return self.get_child_value("_value")
+    @staticmethod
+    def get_value_summary(value):
+        return "value={}".format(SummaryBase.formatted_float(value))
 
-    def get_value_value(self):
-        return SummaryBase.get_float_value(self.get_value())
+    @staticmethod
+    def get_min_summary(value):
+        return "min={}".format(SummaryBase.formatted_float(value))
 
-    def get_value_summary(self):
-        value_value = self.get_value_value()
-        return None if value_value is None else "value={}".format(SummaryBase.formatted_float(value_value))
+    @staticmethod
+    def get_max_summary(value):
+        return "max={}".format(SummaryBase.formatted_float(value))
 
-    @Helpers.save_parameter("min")
-    def get_min(self):
-        return self.get_child_value("_minimumValue")
-
-    def get_min_value(self):
-        return SummaryBase.get_float_value(self.get_min())
-
-    def get_min_summary(self):
-        minimum_value = self.get_min_value()
-        return None if minimum_value is None else "min={}".format(SummaryBase.formatted_float(minimum_value))
-
-    @Helpers.save_parameter("max")
-    def get_max(self):
-        return self.get_child_value("_maximumValue")
-
-    def get_max_value(self):
-        return SummaryBase.get_float_value(self.get_max())
-
-    def get_max_summary(self):
-        maximum_value = self.get_max_value()
-        return None if maximum_value is None else "max={}".format(SummaryBase.formatted_float(maximum_value))
-
-    @Helpers.save_parameter("step")
-    def get_step(self):
-        return self.get_child_value("_stepValue")
-
-    def get_step_value(self):
-        return SummaryBase.get_float_value(self.get_step())
-
-    def get_step_summary(self):
-        step_value = self.get_step_value()
-        return None if step_value is None else "step={}".format(SummaryBase.formatted_float(step_value))
+    @staticmethod
+    def get_step_summary(value):
+        if value != 1.0:
+            return "step={}".format(SummaryBase.formatted_float(value))
+        return None
 
     def summary(self):
-        value_summary = self.get_value_summary()
-        minimum_summary = self.get_min_summary()
-        maximum_summary = self.get_max_summary()
-        step_value = self.get_step_value()
-        step_summary = self.get_step_summary()
-
-        # Summaries
-        summaries = [value_summary]
-        if step_value != 1.0:
-            summaries.append(step_summary)
-        summaries.extend([minimum_summary, maximum_summary])
-        summary = ", ".join(summaries)
+        summary = SummaryBase.join_summaries(self.value_summary, self.step_summary, self.min_summary, self.max_summary)
         return summary
 
 
-def UIStepper_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UIStepper_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIStepperSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F UIStepper.UIStepper_SummaryProvider \
+    debugger.HandleCommand("type summary add -F UIStepper.summary_provider \
                             --category UIKit \
                             UIStepper")
     debugger.HandleCommand("type category enable UIKit")

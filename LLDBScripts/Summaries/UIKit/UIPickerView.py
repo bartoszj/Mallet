@@ -26,18 +26,21 @@ import Helpers
 import UIView
 
 
-class UIPickerView_SynthProvider(UIView.UIView_SynthProvider):
+class UIPickerViewSyntheticProvider(UIView.UIViewSyntheticProvider):
+    """
+    Class representing UIPickerView.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(UIPickerView_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UIPickerViewSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIPickerView"
 
 
-def UIPickerView_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UIPickerView_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIPickerViewSyntheticProvider)
 
 
 # def __lldb_init_module(debugger, dictionary):
-#     debugger.HandleCommand("type summary add -F UIPickerView.UIPickerView_SummaryProvider \
+#     debugger.HandleCommand("type summary add -F UIPickerView.summary_provider \
 #                             --category UIKit \
 #                             UIPickerView")
 #     debugger.HandleCommand("type category enable UIKit")

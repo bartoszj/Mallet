@@ -27,40 +27,32 @@ import SummaryBase
 import UIControl
 
 
-class UISwitch_SynthProvider(UIControl.UIControl_SynthProvider):
+class UISwitchSyntheticProvider(UIControl.UIControlSyntheticProvider):
+    """
+    Class representing UISwitch.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(UISwitch_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UISwitchSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UISwitch"
 
-        self.on = None
+        self.register_child_value("on", ivar_name="_on",
+                                  primitive_value_function=SummaryBase.get_unsigned_value,
+                                  summary_function=self.get_on_summary)
 
-    @Helpers.save_parameter("on")
-    def get_on(self):
-        return self.get_child_value("_on")
-
-    def get_on_value(self):
-        return SummaryBase.get_unsigned_value(self.get_on())
-
-    def get_on_summary(self):
-        on_value = self.get_on_value()
-        return None if on_value is None else "on={}".format("YES" if on_value != 0 else "NO")
+    @staticmethod
+    def get_on_summary(value):
+        return "on={}".format("YES" if value != 0 else "NO")
 
     def summary(self):
-        on_summary = self.get_on_summary()
-
-        # Summaries
-        summaries = [on_summary]
-
-        summary = ", ".join(summaries)
-        return summary
+        return self.on_summary
 
 
-def UISwitch_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UISwitch_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UISwitchSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F UISwitch.UISwitch_SummaryProvider \
+    debugger.HandleCommand("type summary add -F UISwitch.summary_provider \
                             --category UIKit \
                             UISwitch")
     debugger.HandleCommand("type category enable UIKit")

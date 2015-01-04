@@ -24,7 +24,6 @@
 
 import Helpers
 import NSObject
-import SummaryBase
 import CALayerIvars
 
 
@@ -36,7 +35,20 @@ class CALayerSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         super(CALayerSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "CALayer"
 
-        self.register_child_value("attr", ivar_name="_attr", provider_class=CALayerIvars.CALayerIvarsSyntheticProvider)
+        self.register_child_value("attr", ivar_name="_attr",
+                                  provider_class=CALayerIvars.CALayerIvarsSyntheticProvider,
+                                  summary_function=self.get_attr_summary)
+
+    @staticmethod
+    def get_attr_summary(provider):
+        """
+        Returns attr provider.
+
+        :param CALayerIvars.CALayerIvarsSyntheticProvider provider: Attributes provider.
+        :return: Attributes summary.
+        :rtype: str
+        """
+        return provider.summary()
 
     def get_position_provider(self):
         """
@@ -47,17 +59,6 @@ class CALayerSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         """
         return self.attr_provider.layer_provider.position_provider
 
-    def get_position_summary(self):
-        """
-        Returns position summary.
-
-        :return: Position summary.
-        :rtype: str
-        """
-        position = self.get_position_provider()
-        return None if position is None else "position=({}, {})".format(SummaryBase.formatted_float(position.x_value),
-                                                                        SummaryBase.formatted_float(position.y_value))
-
     def get_bounds_provider(self):
         """
         Returns bounds provider.
@@ -67,21 +68,8 @@ class CALayerSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         """
         return self.attr_provider.layer_provider.bounds_provider
 
-    def get_bounds_summary(self):
-        """
-        Returns bounds summary.
-        :return: Bounds summary.
-        :rtype: str
-        """
-        bounds = self.get_bounds_provider()
-        return None if bounds is None else "bounds=({} {}; {} {})".format(SummaryBase.formatted_float(bounds.origin_provider.x_value),
-                                                                          SummaryBase.formatted_float(bounds.origin_provider.y_value),
-                                                                          SummaryBase.formatted_float(bounds.size_provider.width_value),
-                                                                          SummaryBase.formatted_float(bounds.size_provider.height_value))
-
     def summary(self):
-        summary = SummaryBase.join_summaries(self.get_position_summary(), self.get_bounds_summary())
-        return summary
+        return self.attr_summary
 
 
 def summary_provider(value_obj, internal_dict):

@@ -27,36 +27,32 @@ import SummaryBase
 import UIView
 
 
-class UIProgressView_SynthProvider(UIView.UIView_SynthProvider):
+class UIProgressViewSyntheticProvider(UIView.UIViewSyntheticProvider):
+    """
+    Class representing UIProgressView.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(UIProgressView_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UIProgressViewSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIProgressView"
 
-        self.progress = None
+        self.register_child_value("progress", ivar_name="_progress",
+                                  primitive_value_function=SummaryBase.get_float_value,
+                                  summary_function=self.get_progress_summary)
 
-    @Helpers.save_parameter("progress")
-    def get_progress(self):
-        return self.get_child_value("_progress")
-
-    def get_progress_value(self):
-        return SummaryBase.get_float_value(self.get_progress())
-
-    def get_progress_summary(self):
-        progress_value = self.get_progress_value()
-        return None if progress_value is None else "progress={}".format(SummaryBase.formatted_float(progress_value))
+    @staticmethod
+    def get_progress_summary(value):
+        return "progress={}".format(SummaryBase.formatted_float(value))
 
     def summary(self):
-        progress_summary = self.get_progress_summary()
-
-        return progress_summary
+        return self.progress_summary
 
 
-def UIProgressView_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UIProgressView_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIProgressViewSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F UIProgressView.UIProgressView_SummaryProvider \
+    debugger.HandleCommand("type summary add -F UIProgressView.summary_provider \
                             --category UIKit \
                             UIProgressView")
     debugger.HandleCommand("type category enable UIKit")

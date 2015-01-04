@@ -28,77 +28,60 @@ import UIControl
 import UILabel
 
 
-class UITextField_SynthProvider(UIControl.UIControl_SynthProvider):
+class UITextFieldSyntheticProvider(UIControl.UIControlSyntheticProvider):
+    """
+    Class representing UITextField.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(UITextField_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UITextFieldSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UITextField"
 
-        self.display_label = None
-        self.display_label_provider = None
-        self.placeholder_label = None
-        self.placeholder_label_provider = None
+        self.register_child_value("display_label", ivar_name="_displayLabel",
+                                  provider_class=UILabel.UILabelSyntheticProvider,
+                                  summary_function=self.get_display_label_summary)
+        self.register_child_value("placeholder_label", ivar_name="_placeholderLabel",
+                                  provider_class=UILabel.UILabelSyntheticProvider,
+                                  summary_function=self.get_placeholder_label_summary)
 
-    @Helpers.save_parameter("display_label")
-    def get_display_label(self):
-        return self.get_child_value("_displayLabel")
+    @staticmethod
+    def get_display_label_summary(provider):
+        """
+        Display label summary.
 
-    @Helpers.save_parameter("display_label_provider")
-    def get_display_label_provider(self):
-        display_label = self.get_display_label()
-        return None if display_label is None else UILabel.UILabel_SynthProvider(display_label, self.internal_dict)
+        :param UILabel.UILabelSyntheticProvider provider: Label provider.
+        :return: Display label summary.
+        :rtype: str
+        """
+        value = provider.text_value
+        if value is not None:
+            return "text={}".format(value)
+        return None
 
-    def get_display_label_text(self):
-        display_label_provider = self.get_display_label_provider()
-        return None if display_label_provider is None else display_label_provider.get_text()
+    @staticmethod
+    def get_placeholder_label_summary(provider):
+        """
+        Placeholder label summary.
 
-    def get_display_label_text_value(self):
-        return SummaryBase.get_summary_value(self.get_display_label_text())
-
-    def get_display_label_text_summary(self):
-        display_label_text_value = self.get_display_label_text_value()
-        return None if display_label_text_value is None else "text={}".format(display_label_text_value)
-
-    @Helpers.save_parameter("placeholder_label")
-    def get_placeholder_label(self):
-        return self.get_child_value("_placeholderLabel")
-
-    @Helpers.save_parameter("placeholder_label_provider")
-    def get_placeholder_label_provider(self):
-        placeholder_label = self.get_placeholder_label()
-        return None if placeholder_label is None else UILabel.UILabel_SynthProvider(placeholder_label, self.internal_dict)
-
-    def get_placeholder_label_text(self):
-        placeholder_label_provider = self.get_placeholder_label_provider()
-        return None if placeholder_label_provider is None else placeholder_label_provider.get_text()
-
-    def get_placeholder_label_text_value(self):
-        return SummaryBase.get_summary_value(self.get_placeholder_label_text())
-
-    def get_placeholder_label_text_summary(self):
-        placeholder_label_text_value = self.get_placeholder_label_text_value()
-        return None if placeholder_label_text_value is None else "placeholder={}".format(placeholder_label_text_value)
+        :param UILabel.UILabelSyntheticProvider provider: Label provider.
+        :return: Placeholder label summary.
+        :rtype: str
+        """
+        value = provider.text_value
+        if value is not None:
+            return "placeholder={}".format(value)
+        return None
 
     def summary(self):
-        display_label_text_summary = self.get_display_label_text_summary()
-        placeholder_label_text_summary = self.get_placeholder_label_text_summary()
-
-        # Summary
-        summaries = []
-        if display_label_text_summary:
-            summaries.append(display_label_text_summary)
-        if placeholder_label_text_summary:
-            summaries.append(placeholder_label_text_summary)
-
-        summary = ", ".join(summaries)
+        summary = SummaryBase.join_summaries(self.display_label_summary, self.placeholder_label_summary)
         return summary
 
 
-def UITextField_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UITextField_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UITextFieldSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F UITextField.UITextField_SummaryProvider \
+    debugger.HandleCommand("type summary add -F UITextField.summary_provider \
                             --category UIKit \
                             UITextField")
     debugger.HandleCommand("type category enable UIKit")

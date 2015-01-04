@@ -28,7 +28,7 @@ import UILabel
 import UIButton
 
 
-class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
+class UIAlertView_SynthProvider(UIView.UIViewSyntheticProvider):
     def __init__(self, value_obj, internal_dict):
         super(UIAlertView_SynthProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIAlertView"
@@ -48,7 +48,7 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
     @Helpers.save_parameter("title_provider")
     def get_title_provider(self):
         title = self.get_title()
-        return None if title is None else UILabel.UILabel_SynthProvider(title, self.internal_dict)
+        return None if title is None else UILabel.UILabelSyntheticProvider(title, self.internal_dict)
 
     def get_title_value(self):
         title_provider = self.get_title_provider()
@@ -65,7 +65,7 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
     @Helpers.save_parameter("subtitle_provider")
     def get_subtitle_provider(self):
         subtitle = self.get_subtitle()
-        return None if subtitle is None else UILabel.UILabel_SynthProvider(subtitle, self.internal_dict)
+        return None if subtitle is None else UILabel.UILabelSyntheticProvider(subtitle, self.internal_dict)
 
     def get_subtitle_value(self):
         subtitle_provider = self.get_subtitle_provider()
@@ -82,7 +82,7 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
     @Helpers.save_parameter("body_provider")
     def get_body_provider(self):
         body = self.get_body()
-        return None if body is None else UILabel.UILabel_SynthProvider(body, self.internal_dict)
+        return None if body is None else UILabel.UILabelSyntheticProvider(body, self.internal_dict)
 
     def get_body_value(self):
         body_provider = self.get_body_provider()
@@ -111,7 +111,7 @@ class UIAlertView_SynthProvider(UIView.UIView_SynthProvider):
         buttons = self.get_buttons_objects()
         buttons_names = []
         for button in buttons:
-            button_provider = UIButton.UIButton_SynthProvider(button, self.internal_dict)
+            button_provider = UIButton.UIButtonSyntheticProvider(button, self.internal_dict)
             button_label_text = button_provider.get_label_value()
             if button_label_text:
                 buttons_names.append(button_label_text)

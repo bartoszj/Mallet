@@ -23,48 +23,22 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import SummaryBase
-import Helpers
 
 
-class UIEdgeInsets_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
+class UIEdgeInsetsSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
+    """
+    Class representing UIEdgeInsets structure.
+    """
     # typedef struct UIEdgeInsets {
     #     CGFloat top, left, bottom, right;
     # } UIEdgeInsets;
     def __init__(self, value_obj, internal_dict):
-        super(UIEdgeInsets_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UIEdgeInsetsSyntheticProvider, self).__init__(value_obj, internal_dict)
 
-        self.top = None
-        self.left = None
-        self.bottom = None
-        self.right = None
-
-    @Helpers.save_parameter("top")
-    def get_top(self):
-        return self.get_child_value("top")
-
-    def get_top_value(self):
-        return SummaryBase.get_float_value(self.get_top())
-
-    @Helpers.save_parameter("left")
-    def get_left(self):
-        return self.get_child_value("left")
-
-    def get_left_value(self):
-        return SummaryBase.get_float_value(self.get_left())
-
-    @Helpers.save_parameter("bottom")
-    def get_bottom(self):
-        return self.get_child_value("bottom")
-
-    def get_bottom_value(self):
-        return SummaryBase.get_float_value(self.get_bottom())
-
-    @Helpers.save_parameter("right")
-    def get_right(self):
-        return self.get_child_value("right")
-
-    def get_right_value(self):
-        return SummaryBase.get_float_value(self.get_right())
+        self.register_child_value("top", ivar_name="top", primitive_value_function=SummaryBase.get_float_value)
+        self.register_child_value("left", ivar_name="left", primitive_value_function=SummaryBase.get_float_value)
+        self.register_child_value("bottom", ivar_name="bottom", primitive_value_function=SummaryBase.get_float_value)
+        self.register_child_value("right", ivar_name="right", primitive_value_function=SummaryBase.get_float_value)
 
 
 def __lldb_init_module(debugger, dictionary):

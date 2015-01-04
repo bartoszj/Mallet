@@ -27,7 +27,10 @@ import SummaryBase
 import UIControl
 
 
-class UISliderSyntheticProvider(UIControl.UIControl_SynthProvider):
+class UISliderSyntheticProvider(UIControl.UIControlSyntheticProvider):
+    """
+    Class representing UISlider.
+    """
     def __init__(self, value_obj, internal_dict):
         super(UISliderSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UISlider"

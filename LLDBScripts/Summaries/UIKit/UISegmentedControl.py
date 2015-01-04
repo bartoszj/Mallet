@@ -27,66 +27,44 @@ import SummaryBase
 import UIControl
 
 
-class UISegmentedControl_SynthProvider(UIControl.UIControl_SynthProvider):
+class UISegmentedControlSyntheticProvider(UIControl.UIControlSyntheticProvider):
     def __init__(self, value_obj, internal_dict):
-        super(UISegmentedControl_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UISegmentedControlSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UISegmentedControl"
 
-        self.segments = None
-        self.selected_segment = None
-        self.highlighted_segment = None
+        self.register_child_value("segments", ivar_name="_segments",
+                                  primitive_value_function=SummaryBase.get_count_value,
+                                  summary_function=self.get_segments_summary)
+        self.register_child_value("selected_segment", ivar_name="_selectedSegment",
+                                  primitive_value_function=SummaryBase.get_signed_value,
+                                  summary_function=self.get_selected_segments_summary)
+        self.register_child_value("highlighted_segment", ivar_name="_highlightedSegment",
+                                  primitive_value_function=SummaryBase.get_signed_value,
+                                  summary_function=self.get_highlighted_segment_summary)
 
-    @Helpers.save_parameter("segments")
-    def get_segments(self):
-        return self.get_child_value("_segments")
+    @staticmethod
+    def get_segments_summary(value):
+        return "segments={}".format(value)
 
-    def get_segments_value(self):
-        return SummaryBase.get_count_value(self.get_segments())
+    @staticmethod
+    def get_selected_segments_summary(value):
+        return "selected={}".format(value)
 
-    def get_segments_summary(self):
-        segments_value = self.get_segments_value()
-        return None if segments_value is None else "segments={}".format(segments_value)
-
-    @Helpers.save_parameter("selected_segment")
-    def get_selected_segments(self):
-        return self.get_child_value("_selectedSegment")
-
-    def get_selected_segments_value(self):
-        return SummaryBase.get_signed_value(self.get_selected_segments())
-
-    def get_selected_segments_summary(self):
-        selected_segments_value = self.get_selected_segments_value()
-        return None if selected_segments_value is None else "selected={}".format(selected_segments_value)
-
-    @Helpers.save_parameter("highlighted_segment")
-    def get_highlighted_segment(self):
-        return self.get_child_value("_highlightedSegment")
-
-    def get_highlighted_segment_value(self):
-        return SummaryBase.get_signed_value(self.get_highlighted_segment())
-
-    def get_highlighted_segment_summary(self):
-        highlighted_segment_value = self.get_highlighted_segment_value()
-        return None if highlighted_segment_value is None else "highlighted={}".format(highlighted_segment_value)
+    @staticmethod
+    def get_highlighted_segment_summary(value):
+        return "highlighted={}".format(value)
 
     def summary(self):
-        segments_summary = self.get_segments_summary()
-        selected_segment_summary = self.get_selected_segments_summary()
-        # highlighted_segment_summary = self.get_highlighted_segment_summary()
-
-        # Summaries
-        summaries = [selected_segment_summary, segments_summary]
-
-        summary = ", ".join(summaries)
+        summary = SummaryBase.join_summaries(self.selected_segment_summary, self.segments_summary)
         return summary
 
 
-def UISegmentedControl_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UISegmentedControl_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UISegmentedControlSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F UISegmentedControl.UISegmentedControl_SummaryProvider \
+    debugger.HandleCommand("type summary add -F UISegmentedControl.summary_provider \
                             --category UIKit \
                             UISegmentedControl")
     debugger.HandleCommand("type category enable UIKit")

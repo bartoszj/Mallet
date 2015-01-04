@@ -23,55 +23,38 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import Helpers
+import SummaryBase
 import UIControl
 import UILabel
 
 
-class UIButton_SynthProvider(UIControl.UIControl_SynthProvider):
+class UIButtonSyntheticProvider(UIControl.UIControlSyntheticProvider):
+    """
+    Class representing UIButton.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(UIButton_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UIButtonSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIButton"
 
-        self.label = None
-        self.label_provider = None
+        self.register_child_value("label", ivar_name="_titleView",
+                                  provider_class=UILabel.UILabelSyntheticProvider,
+                                  summary_function=self.get_label_summary)
 
-    @Helpers.save_parameter("label")
-    def get_label(self):
-        return self.get_child_value("_titleView")
-
-    @Helpers.save_parameter("label_provider")
-    def get_label_provider(self):
-        label = self.get_label()
-        return None if label is None else UILabel.UILabel_SynthProvider(label, self.internal_dict)
-
-    def get_label_value(self):
-        label_provider = self.get_label_provider()
-        return None if label_provider is None else label_provider.get_text_value()
-
-    def get_label_summary(self):
-        label_value = self.get_label_value()
-        return None if label_value is None else "text={}".format(self.get_label_value())
+    @staticmethod
+    def get_label_summary(provider):
+        return "text={}".format(provider.text_value)
 
     def summary(self):
-        label_summary = self.get_label_summary()
-        tag_summary = self.get_tag_summary()
-
-        summaries = []
-        if label_summary:
-            summaries.append(label_summary)
-        if self.get_tag_value() != 0:
-            summaries.append(tag_summary)
-
-        summary = ", ".join(summaries)
+        summary = SummaryBase.join_summaries(self.label_summary, self.tag_summary)
         return summary
 
 
-def UIButton_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UIButton_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIButtonSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F UIButton.UIButton_SummaryProvider \
+    debugger.HandleCommand("type summary add -F UIButton.summary_provider \
                             --category UIKit \
                             UIButton")
     debugger.HandleCommand("type category enable UIKit")

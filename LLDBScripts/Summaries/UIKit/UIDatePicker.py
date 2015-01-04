@@ -27,36 +27,32 @@ import SummaryBase
 import UIControl
 
 
-class UIDatePicker_SynthProvider(UIControl.UIControl_SynthProvider):
+class UIDatePickerSyntheticProvider(UIControl.UIControlSyntheticProvider):
+    """
+    Class representing UIDatePicker.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(UIDatePicker_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UIDatePickerSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIDatePicker"
 
-        self.picker_view = None
+        self.register_child_value("picker_view", ivar_name="_pickerView",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_picker_view_summary)
 
-    @Helpers.save_parameter("picker_view")
-    def get_picker_view(self):
-        return self.get_child_value("_pickerView")
-
-    def get_picker_view_value(self):
-        return SummaryBase.get_summary_value(self.get_picker_view())
-
-    def get_picker_view_summary(self):
-        picker_view_value = self.get_picker_view_value()
-        return None if picker_view_value is None else "{}".format(picker_view_value)
+    @staticmethod
+    def get_picker_view_summary(value):
+        return "{}".format(value)
 
     def summary(self):
-        picker_view_summary = self.get_picker_view_summary()
-
-        return picker_view_summary
+        return self.picker_view_summary
 
 
-def UIDatePicker_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UIDatePicker_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIDatePickerSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F UIDatePicker.UIDatePicker_SummaryProvider \
+    debugger.HandleCommand("type summary add -F UIDatePicker.summary_provider \
                             --category UIKit \
                             UIDatePicker")
     debugger.HandleCommand("type category enable UIKit")

@@ -29,121 +29,78 @@ import CGSize
 import UIEdgeInsets
 
 
-class UIScrollView_SynthProvider(UIView.UIView_SynthProvider):
+class UIScrollViewSyntheticProvider(UIView.UIViewSyntheticProvider):
+    """
+    Class representing UIScrollView.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(UIScrollView_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UIScrollViewSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIScrollView"
 
-        self.content_size = None
-        self.content_inset = None
-        self.minimum_zoom_scale = None
-        self.maximum_zoom_scale = None
+        self.register_child_value("content_size", ivar_name="_contentSize",
+                                  provider_class=CGSize.CGSizeSyntheticProvider,
+                                  summary_function=self.get_content_size_summary)
+        self.register_child_value("content_inset", ivar_name="_contentInset",
+                                  provider_class=UIEdgeInsets.UIEdgeInsetsSyntheticProvider,
+                                  summary_function=self.get_content_inset_summary)
+        self.register_child_value("minimum_zoom_scale", ivar_name="_minimumZoomScale",
+                                  primitive_value_function=SummaryBase.get_float_value,
+                                  summary_function=self.get_minimum_zoom_scale_summary)
+        self.register_child_value("maximum_zoom_scale", ivar_name="_maximumZoomScale",
+                                  primitive_value_function=SummaryBase.get_float_value,
+                                  summary_function=self.get_maximum_zoom_scale_summary)
 
     def get_content_offset_summary(self):
         if self.has_valid_layer() is None:
             return None
-        origin = self.get_layer_provider().get_bounds_provider().origin_provider
+        origin = self.layer_provider.get_bounds_provider().origin_provider
         return "contentOffset=({}, {})".format(SummaryBase.formatted_float(origin.x_value),
                                                SummaryBase.formatted_float(origin.y_value))
 
-    @Helpers.save_parameter("content_size")
-    def get_content_size(self):
-        return self.get_child_value("_contentSize")
+    @staticmethod
+    def get_content_size_summary(provider):
+        return "contentSize=({}, {})".format(SummaryBase.formatted_float(provider.width_value),
+                                             SummaryBase.formatted_float(provider.height_value))
 
-    def get_content_size_provider(self):
-        content_size = self.get_content_size()
-        return None if content_size is None else CGSize.CGSizeSyntheticProvider(content_size, self.internal_dict)
+    @staticmethod
+    def get_content_inset_summary(provider):
+        if provider.top_value != 0 and provider.left_value != 0 and provider.bottom_value != 0 and provider.right_value != 0:
+            return "inset=({}, {}, {}, {})".format(SummaryBase.formatted_float(provider.top_value),
+                                                   SummaryBase.formatted_float(provider.left_value),
+                                                   SummaryBase.formatted_float(provider.bottom_value),
+                                                   SummaryBase.formatted_float(provider.right_value))
+        return None
 
-    def get_content_size_summary(self):
-        content_size_w = self.get_content_size_provider().width_value
-        content_size_h = self.get_content_size_provider().height_value
-        return "contentSize=({}, {})".format(SummaryBase.formatted_float(content_size_w), SummaryBase.formatted_float(content_size_h))
+    @staticmethod
+    def get_minimum_zoom_scale_summary(value):
+        if value != 1:
+            return "minScale={}".format(SummaryBase.formatted_float(value))
+        return None
 
-    @Helpers.save_parameter("content_inset")
-    def get_content_inset(self):
-        return self.get_child_value("_contentInset")
-
-    def get_content_inset_provider(self):
-        content_inset = self.get_content_inset()
-        return None if content_inset is None else UIEdgeInsets.UIEdgeInsets_SynthProvider(content_inset, self.internal_dict)
-
-    def get_content_inset_summary(self):
-        content_inset_t = self.get_content_inset_provider().get_top_value()
-        content_inset_l = self.get_content_inset_provider().get_left_value()
-        content_inset_b = self.get_content_inset_provider().get_bottom_value()
-        content_inset_r = self.get_content_inset_provider().get_right_value()
-        return "inset=({}, {}, {}, {})".format(SummaryBase.formatted_float(content_inset_t),
-                                               SummaryBase.formatted_float(content_inset_l),
-                                               SummaryBase.formatted_float(content_inset_b),
-                                               SummaryBase.formatted_float(content_inset_r))
-
-    @Helpers.save_parameter("minimum_zoom_scale")
-    def get_minimum_zoom_scale(self):
-        return self.get_child_value("_minimumZoomScale")
-
-    def get_minimum_zoom_scale_value(self):
-        return SummaryBase.get_float_value(self.get_minimum_zoom_scale())
-
-    def get_minimum_zoom_scale_summary(self):
-        minimum_zoom_scale_value = self.get_minimum_zoom_scale_value()
-        return None if minimum_zoom_scale_value is None else "minScale={}".format(SummaryBase.formatted_float(minimum_zoom_scale_value))
-
-    @Helpers.save_parameter("maximum_zoom_scale")
-    def get_maximum_zoom_scale(self):
-        return self.get_child_value("_maximumZoomScale")
-
-    def get_maximum_zoom_scale_value(self):
-        return SummaryBase.get_float_value(self.get_maximum_zoom_scale())
-
-    def get_maximum_zoom_scale_summary(self):
-        maximum_zoom_scale_value = self.get_maximum_zoom_scale_value()
-        return None if maximum_zoom_scale_value is None else "maxScale={}".format(SummaryBase.formatted_float(maximum_zoom_scale_value))
+    @staticmethod
+    def get_maximum_zoom_scale_summary(value):
+        if value != 1:
+            return "maxScale={}".format(SummaryBase.formatted_float(value))
+        return None
 
     def summary(self):
-        frame_summary = self.get_frame_summary()
-        content_offset_summary = self.get_content_offset_summary()
-        content_size_summary = self.get_content_size_summary()
-
-        content_inset_t = self.get_content_inset_provider().get_top_value()
-        content_inset_l = self.get_content_inset_provider().get_left_value()
-        content_inset_b = self.get_content_inset_provider().get_bottom_value()
-        content_inset_r = self.get_content_inset_provider().get_right_value()
-        content_inset_summary = self.get_content_inset_summary()
-
-        minimum_zoom_scale_value = self.get_minimum_zoom_scale_value()
-        minimum_zoom_scale_summary = self.get_minimum_zoom_scale_summary()
-
-        maximum_zoom_scale_value = self.get_maximum_zoom_scale_value()
-        maximum_zoom_scale_summary = self.get_maximum_zoom_scale_summary()
-        tag_summary = self.get_tag_summary()
-
-        # Summaries
-        summaries = []
-        if frame_summary:
-            summaries.append(frame_summary)
-        if content_offset_summary:
-            summaries.append(content_offset_summary)
-        if content_size_summary:
-            summaries.append(content_size_summary)
-        if content_inset_t != 0 or content_inset_l != 0 or content_inset_b != 0 or content_inset_r != 0:
-            summaries.append(content_inset_summary)
-        if minimum_zoom_scale_value != 1:
-            summaries.append(minimum_zoom_scale_summary)
-        if maximum_zoom_scale_value != 1:
-            summaries.append(maximum_zoom_scale_summary)
-        if self.get_tag_value() != 0:
-            summaries.append(tag_summary)
-
-        summary = ", ".join(summaries)
+        summary = SummaryBase.join_summaries(self.get_frame_summary(),
+                                             self.get_content_offset_summary(),
+                                             self.content_size_summary,
+                                             self.content_inset_summary,
+                                             self.minimum_zoom_scale_summary,
+                                             self.maximum_zoom_scale_summary,
+                                             self.tag_summary
+                                             )
         return summary
 
 
-def UIScrollView_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UIScrollView_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIScrollViewSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F UIScrollView.UIScrollView_SummaryProvider \
+    debugger.HandleCommand("type summary add -F UIScrollView.summary_provider \
                             --category UIKit \
                             UIScrollView")
     debugger.HandleCommand("type category enable UIKit")

@@ -47,7 +47,39 @@ class CALayerInternalLayerSyntheticProvider(SummaryBase.SummaryBaseSyntheticProv
 
         # Using CGPoint for workaround. LLDB cannot find type CADoublePoint.
         self.register_child_value("position", ivar_name="position", type_name="CGPoint", offset=position_offset,
-                                  provider_class=CADoublePoint.CADoublePointSyntheticProvider)
+                                  provider_class=CADoublePoint.CADoublePointSyntheticProvider,
+                                  summary_function=self.get_position_summary)
         # Using CGRect for workaround. LLDB cannot find type CADoubleRect.
         self.register_child_value("bounds", ivar_name="bounds", type_name="CGRect", offset=bounds_offset,
-                                  provider_class=CADoubleRect.CADoubleRectSyntheticProvider)
+                                  provider_class=CADoubleRect.CADoubleRectSyntheticProvider,
+                                  summary_function=self.get_bounds_summary)
+
+    @staticmethod
+    def get_position_summary(provider):
+        """
+        Returns position summary.
+
+        :param CADoublePoint.CADoublePointSyntheticProvider provider: Position provider.
+        :return: Position summary.
+        :rtype: str
+        """
+        return "position=({}, {})".format(SummaryBase.formatted_float(provider.x_value),
+                                          SummaryBase.formatted_float(provider.y_value))
+
+    @staticmethod
+    def get_bounds_summary(provider):
+        """
+        Returns bounds summary.
+
+        :param CADoubleRect.CADoubleRectSyntheticProvider provider: Bounds provider.
+        :return: Bounds summary.
+        :rtype: str
+        """
+        return "bounds=({} {}; {} {})".format(SummaryBase.formatted_float(provider.origin_provider.x_value),
+                                              SummaryBase.formatted_float(provider.origin_provider.y_value),
+                                              SummaryBase.formatted_float(provider.size_provider.width_value),
+                                              SummaryBase.formatted_float(provider.size_provider.height_value))
+
+    def summary(self):
+        summary = SummaryBase.join_summaries(self.position_summary, self.bounds_summary)
+        return summary

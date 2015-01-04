@@ -25,7 +25,10 @@
 import UIView
 
 
-class UIControl_SynthProvider(UIView.UIView_SynthProvider):
+class UIControlSyntheticProvider(UIView.UIViewSyntheticProvider):
+    """
+    Class representing UIControl.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(UIControl_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UIControlSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIControl"

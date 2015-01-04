@@ -27,44 +27,33 @@ import SummaryBase
 import UIView
 
 
-class UILabel_SynthProvider(UIView.UIView_SynthProvider):
+class UILabelSyntheticProvider(UIView.UIViewSyntheticProvider):
+    """
+    Class representing UILabel.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(UILabel_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UILabelSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UILabel"
 
-        self.text = None
+        self.register_child_value("text", ivar_name="_content", type_name="NSAttributedString *",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_text_summary)
 
-    @Helpers.save_parameter("text")
-    def get_text(self):
-        return self.get_child_value("_content", "NSAttributedString *")
-
-    def get_text_value(self):
-        return SummaryBase.get_summary_value(self.get_text())
-
-    def get_text_summary(self):
-        text_value = self.get_text_value()
-        return None if text_value is None else "text={}".format(text_value)
+    @staticmethod
+    def get_text_summary(value):
+        return "text={}".format(value)
 
     def summary(self):
-        text_summary = self.get_text_summary()
-        tag_summary = self.get_tag_summary()
-
-        summaries = []
-        if text_summary:
-            summaries.append(text_summary)
-        if self.get_tag_value() != 0:
-            summaries.append(tag_summary)
-
-        summary = ", ".join(summaries)
+        summary = SummaryBase.join_summaries(self.text_summary, self.tag_summary)
         return summary
 
 
-def UILabel_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UILabel_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UILabelSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F UILabel.UILabel_SummaryProvider \
+    debugger.HandleCommand("type summary add -F UILabel.summary_provider \
                             --category UIKit \
                             UILabel")
     debugger.HandleCommand("type category enable UIKit")

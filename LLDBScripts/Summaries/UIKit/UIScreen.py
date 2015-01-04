@@ -28,57 +28,43 @@ import NSObject
 import CGRect
 
 
-class UIScreen_SynthProvider(NSObject.NSObjectSyntheticProvider):
+class UIScreenSyntheticProvider(NSObject.NSObjectSyntheticProvider):
+    """
+    Class representing UIScreen.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(UIScreen_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UIScreenSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIScreen"
 
-        self.bounds = None
-        self.scale = None
-        self.horizontal_scale = None
-        self.interface_idiom = None
+        self.register_child_value("bounds", ivar_name="_bounds",
+                                  provider_class=CGRect.CGRectSyntheticProvider,
+                                  summary_function=self.get_bounds_summary)
+        self.register_child_value("scale", ivar_name="_scale",
+                                  primitive_value_function=SummaryBase.get_float_value,
+                                  summary_function=self.get_scale_summary)
+        self.register_child_value("horizontal_scale", ivar_name="_horizontalScale",
+                                  primitive_value_function=SummaryBase.get_float_value,
+                                  summary_function=self.get_horizontal_scale_summary)
+        self.register_child_value("interface_idiom", ivar_name="_userInterfaceIdiom",
+                                  primitive_value_function=self.get_interface_idiom_value,
+                                  summary_function=self.get_interface_idiom_summary)
 
-    @Helpers.save_parameter("bounds")
-    def get_bounds(self):
-        return self.get_child_value("_bounds")
+    @staticmethod
+    def get_bounds_summary(provider):
+        return "size=({}, {})".format(SummaryBase.formatted_float(provider.size_provider.width_value),
+                                      SummaryBase.formatted_float(provider.size_provider.height_value))
 
-    def get_bounds_provider(self):
-        bounds = self.get_bounds()
-        return None if bounds is None else CGRect.CGRectSyntheticProvider(bounds, self.internal_dict)
+    @staticmethod
+    def get_scale_summary(value):
+        return "scale={}".format(SummaryBase.formatted_float(value))
 
-    def get_bounds_summary(self):
-        w = self.get_bounds_provider().size_provider.width_value
-        h = self.get_bounds_provider().size_provider.height_value
-        return "size=({}, {})".format(SummaryBase.formatted_float(w), SummaryBase.formatted_float(h))
+    @staticmethod
+    def get_horizontal_scale_summary(value):
+        return "hScale={:.0f}".format(SummaryBase.formatted_float(value))
 
-    @Helpers.save_parameter("scale")
-    def get_scale(self):
-        return self.get_child_value("_scale")
-
-    def get_scale_value(self):
-        return SummaryBase.get_float_value(self.get_scale())
-
-    def get_scale_summary(self):
-        scale_value = self.get_scale_value()
-        return None if scale_value is None else "scale={}".format(SummaryBase.formatted_float(scale_value))
-
-    @Helpers.save_parameter("horizontal_scale")
-    def get_horizontal_scale(self):
-        return self.get_child_value("_horizontalScale")
-
-    def get_horizontal_scale_value(self):
-        return SummaryBase.get_float_value(self.get_horizontal_scale())
-
-    def get_horizontal_scale_summary(self):
-        horizontal_scale_value = self.get_horizontal_scale_value()
-        return None if horizontal_scale_value is None else "hScale={:.0f}".format(SummaryBase.formatted_float(horizontal_scale_value))
-
-    @Helpers.save_parameter("interface_idiom")
-    def get_interface_idiom(self):
-        return self.get_child_value("_userInterfaceIdiom")
-
-    def get_interface_idiom_value(self):
-        interface_idiom_value = self.get_interface_idiom().GetValueAsSigned()
+    @staticmethod
+    def get_interface_idiom_value(value):
+        interface_idiom_value = value.GetValueAsSigned()
         interface_idiom_name = "Unknown"
         if interface_idiom_value == 0:
             interface_idiom_name = "Phone"
@@ -86,28 +72,21 @@ class UIScreen_SynthProvider(NSObject.NSObjectSyntheticProvider):
             interface_idiom_name = "Pad"
         return interface_idiom_name
 
-    def get_interface_idiom_summary(self):
-        interface_idiom_name = self.get_interface_idiom_value()
-        return None if interface_idiom_name is None else "idiom={}".format(interface_idiom_name)
+    @staticmethod
+    def get_interface_idiom_summary(value):
+        return "idiom={}".format(value)
 
     def summary(self):
-        bounds_summary = self.get_bounds_summary()
-        scale_summary = self.get_scale_summary()
-        # horizontal_scale_summary = self.get_horizontal_scale_summary()
-        interface_idiom_summary = self.get_interface_idiom_summary()
-
-        # Summaries
-        summaries = [bounds_summary, scale_summary, interface_idiom_summary]
-        summary = ", ".join(summaries)
+        summary = SummaryBase.join_summaries(self.bounds_summary, self.scale_summary, self.interface_idiom_summary)
         return summary
 
 
-def UIScreen_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UIScreen_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIScreenSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F UIScreen.UIScreen_SummaryProvider \
+    debugger.HandleCommand("type summary add -F UIScreen.summary_provider \
                             --category UIKit \
                             UIScreen")
     debugger.HandleCommand("type category enable UIKit")

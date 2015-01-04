@@ -23,32 +23,20 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import SummaryBase
-import Helpers
 
 
-class UIOffset_SynthProvider(SummaryBase.SummaryBaseSyntheticProvider):
+class UIOffsetSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
+    """
+    Class representing UIOffset structure.
+    """
     # typedef struct UIOffset {
     #     CGFloat horizontal, vertical;
     # } UIOffset;
     def __init__(self, value_obj, internal_dict):
-        super(UIOffset_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UIOffsetSyntheticProvider, self).__init__(value_obj, internal_dict)
 
-        self.horizontal = None
-        self.vertical = None
-
-    @Helpers.save_parameter("horizontal")
-    def get_horizontal(self):
-        return self.get_child_value("horizontal")
-
-    def get_horizontal_value(self):
-        return get_float_value(self.get_horizontal())
-
-    @Helpers.save_parameter("vertical")
-    def get_vertical(self):
-        return self.get_child_value("vertical")
-
-    def get_vertical_value(self):
-        return get_float_value(self.get_vertical())
+        self.register_child_value("horizontal", ivar_name="horizontal", primitive_value_function=SummaryBase.get_float_value)
+        self.register_child_value("vertical", ivar_name="vertical", primitive_value_function=SummaryBase.get_float_value)
 
 
 def __lldb_init_module(debugger, dictionary):

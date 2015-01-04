@@ -37,23 +37,35 @@ class Rect(object):
         self.height = None
 
 
-class UIView_SynthProvider(UIResponder.UIResponderSyntheticProvider):
+class UIViewSyntheticProvider(UIResponder.UIResponderSyntheticProvider):
+    """
+    Class representing UIView.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(UIView_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UIViewSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIView"
 
+        self.register_child_value("tag", ivar_name="_tag",
+                                  primitive_value_function=SummaryBase.get_signed_value,
+                                  summary_function=self.get_tag_summary)
+        self.register_child_value("layer", ivar_name="_layer",
+                                  provider_class=CALayer.CALayerSyntheticProvider)
         self.frame = None
-        self.tag = None
-        self.layer = None
-        self.layer_provider = None
+
+    @staticmethod
+    def get_tag_summary(value):
+        if value != 0:
+            return "tag={}".format(value)
+        else:
+            return None
 
     @Helpers.save_parameter("frame")
     def get_frame(self):
         if not self.has_valid_layer():
             return None
 
-        position = self.get_layer_provider().get_position_provider()
-        bounds = self.get_layer_provider().get_bounds_provider()
+        position = self.layer_provider.get_position_provider()
+        bounds = self.layer_provider.get_bounds_provider()
 
         frame = Rect()
         frame.width = bounds.size_provider.width_value
@@ -73,23 +85,9 @@ class UIView_SynthProvider(UIResponder.UIResponderSyntheticProvider):
                                                       SummaryBase.formatted_float(frame.height))
         return frame_summary
 
-    @Helpers.save_parameter("tag")
-    def get_tag(self):
-        return self.get_child_value("_tag")
-
-    def get_tag_value(self):
-        return SummaryBase.get_signed_value(self.get_tag())
-
-    def get_tag_summary(self):
-        return "tag={}".format(self.get_tag_value())
-
-    @Helpers.save_parameter("layer")
-    def get_layer(self):
-        return self.get_child_value("_layer")
-
     def has_valid_layer(self):
         # In some cases CALayer object is invalid.
-        layer = self.get_layer()
+        layer = self.layer
         class_data, wrapper = Helpers.get_class_data(layer)
         if class_data.is_valid() is None:
             logger = logging.getLogger(__name__)
@@ -97,31 +95,17 @@ class UIView_SynthProvider(UIResponder.UIResponderSyntheticProvider):
             return False
         return True
 
-    @Helpers.save_parameter("layer_provider")
-    def get_layer_provider(self):
-        layer = self.get_layer()
-        return None if layer is None else CALayer.CALayerSyntheticProvider(layer, self.internal_dict)
-
     def summary(self):
-        frame_summary = self.get_frame_summary()
-        tag_summary = self.get_tag_summary()
-
-        summaries = []
-        if frame_summary:
-            summaries.append(frame_summary)
-        if self.get_tag_value() != 0:
-            summaries.append(tag_summary)
-
-        summary = ", ".join(summaries)
+        summary = SummaryBase.join_summaries(self.get_frame_summary(), self.tag_summary)
         return summary
 
 
-def UIView_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UIView_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIViewSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F UIView.UIView_SummaryProvider \
+    debugger.HandleCommand("type summary add -F UIView.summary_provider \
                             --category UIKit \
                             UIImageView UIView UIWindow")
     debugger.HandleCommand("type category enable UIKit")

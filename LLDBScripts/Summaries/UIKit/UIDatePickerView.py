@@ -27,114 +27,67 @@ import SummaryBase
 import UIPickerView
 
 
-class UIDatePickerView_SynthProvider(UIPickerView.UIPickerView_SynthProvider):
+class UIDatePickerViewSyntheticProvider(UIPickerView.UIPickerViewSyntheticProvider):
+    """
+    Class representing _UIDatePickerView.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(UIDatePickerView_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UIDatePickerViewSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "_UIDatePickerView"
 
-        self.date = None
-        self.min_user_date = None
-        self.max_user_date = None
-        self.min_date = None
-        self.max_date = None
-        self.date_components = None
+        self.register_child_value("date", ivar_name="_userSuppliedDate",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_date_summary)
+        self.register_child_value("min_user_date", ivar_name="_userSuppliedMinimumDate",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_min_user_date_summary)
+        self.register_child_value("max_user_date", ivar_name="_userSuppliedMaximumDate",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_max_user_date_summary)
+        self.register_child_value("min_date", ivar_name="_minimumDate",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_min_date_summary)
+        self.register_child_value("max_date", ivar_name="_maximumDate",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_max_date_summary)
+        self.register_child_value("date_components", ivar_name="_lastSelectedDateComponents",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_date_components_summary)
 
-    @Helpers.save_parameter("date")
-    def get_date(self):
-        return self.get_child_value("_userSuppliedDate")
+    @staticmethod
+    def get_date_summary(value):
+        return "date={}".format(value)
 
-    def get_date_value(self):
-        return SummaryBase.get_summary_value(self.get_date())
+    @staticmethod
+    def get_min_user_date_summary(value):
+        return "minDate={}".format(value)
 
-    def get_date_summary(self):
-        date_value = self.get_date_value()
-        return None if date_value is None else "date={}".format(date_value)
+    @staticmethod
+    def get_max_user_date_summary(value):
+        return "maxDate={}".format(value)
 
-    @Helpers.save_parameter("min_user_date")
-    def get_min_user_date(self):
-        return self.get_child_value("_userSuppliedMinimumDate")
+    @staticmethod
+    def get_min_date_summary(value):
+        return "minDate={}".format(value)
 
-    def get_min_user_date_value(self):
-        return SummaryBase.get_summary_value(self.get_min_user_date())
+    @staticmethod
+    def get_max_date_summary(value):
+        return "maxDate={}".format(value)
 
-    def get_min_user_date_summary(self):
-        min_user_date_value = self.get_min_user_date_value()
-        return None if min_user_date_value is None else "minDate={}".format(min_user_date_value)
-
-    @Helpers.save_parameter("max_user_date")
-    def get_max_user_date(self):
-        return self.get_child_value("_userSuppliedMaximumDate")
-
-    def get_max_user_date_value(self):
-        return SummaryBase.get_summary_value(self.get_max_user_date())
-
-    def get_max_user_date_summary(self):
-        max_user_date_value = self.get_max_user_date_value()
-        return None if max_user_date_value is None else "maxDate={}".format(max_user_date_value)
-
-    @Helpers.save_parameter("min_date")
-    def get_min_date(self):
-        return self.get_child_value("_minimumDate")
-
-    def get_min_date_value(self):
-        return SummaryBase.get_summary_value(self.get_min_date())
-
-    def get_min_date_summary(self):
-        min_date_value = self.get_min_date_value()
-        return None if min_date_value is None else "minDate={}".format(min_date_value)
-
-    @Helpers.save_parameter("max_date")
-    def get_max_date(self):
-        return self.get_child_value("_maximumDate")
-
-    def get_max_date_value(self):
-        return SummaryBase.get_summary_value(self.get_max_user_date())
-
-    def get_max_date_summary(self):
-        max_date_value = self.get_max_date_value()
-        return None if max_date_value is None else "maxDate={}".format(max_date_value)
-
-    @Helpers.save_parameter("date_components")
-    def get_date_components(self):
-        return self.get_child_value("_lastSelectedDateComponents")
-
-    def get_date_components_value(self):
-        return SummaryBase.get_summary_value(self.get_date_components())
-
-    def get_date_components_summary(self):
-        date_components_value = self.get_date_components_value()
-        return None if date_components_value is None else "{}".format(date_components_value)
+    @staticmethod
+    def get_date_components_summary(value):
+        return "{}".format(value)
 
     def summary(self):
-        # date_summary = self.get_date_summary()
-        # min_user_date_summary = self.get_min_user_date_summary()
-        # max_user_date_summary = self.get_max_user_date_summary()
-        # min_date_summary = self.get_min_date_summary()
-        # max_date_summary = self.get_max_date_summary()
-
-        date_components_summary = self.get_date_components_summary()
-
-        # Summaries
-        summaries = []
-        # if date_value:
-        #     summaries.append(date_summary)
-        # if min_user_date_value:
-        #     summaries.append(min_user_date_summary)
-        # if max_user_date_value:
-        #     summaries.append(max_user_date_summary)
-        if date_components_summary:
-            summaries.append(date_components_summary)
-
-        summary = ", ".join(summaries)
-        return summary
+        return self.date_components_summary
 
 
-def UIDatePickerView_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UIDatePickerView_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIDatePickerViewSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F UIDatePickerView.UIDatePickerView_SummaryProvider \
+    debugger.HandleCommand("type summary add -F UIDatePickerView.summary_provider \
                             --category UIKit \
                             _UIDatePickerView")
     debugger.HandleCommand("type category enable UIKit")
