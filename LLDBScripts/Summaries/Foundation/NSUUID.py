@@ -27,54 +27,48 @@ import Helpers
 import NSObject
 
 
-class NSUUID_SynthProvider(NSObject.NSObjectSyntheticProvider):
+class NSUUIDSyntheticProvider(NSObject.NSObjectSyntheticProvider):
+    """
+    Class representing NSUUID.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(NSUUID_SynthProvider, self).__init__(value_obj, internal_dict)
-        self.type_name = "NSUUID"
+        super(NSUUIDSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "NSUUID *"
 
-        self.uuid = None
-
-    @Helpers.save_parameter("uuid")
-    def get_uuid(self):
         if self.is_64bit:
-            offset = 8
+            uuid_offset = 8
         else:
-            offset = 4
+            uuid_offset = 4
+        self.register_child_value("uuid", ivar_name="uuid", type_name="uuid_t", offset=uuid_offset,
+                                  primitive_value_function=self.get_uuid_data,
+                                  summary_function=self.get_uuid_summary)
 
-        return self.get_child_value("uuid", "uuid_t", offset)
-
-    def get_uuid_data(self):
-        uuid = self.get_uuid()
-        if uuid is None:
-            return None
-        uuid_data = self.get_uuid().GetData()
+    @staticmethod
+    def get_uuid_data(value):
+        uuid_data = value.GetData()
         uuid_data.SetByteOrder(lldb.eByteOrderBig)
         return uuid_data
 
-    def get_uuid_summary(self):
-        uuid_data = self.get_uuid_data()
-        if uuid_data is None:
-            return None
+    @staticmethod
+    def get_uuid_summary(data):
         error = lldb.SBError()
-        return "{:08X}-{:04X}-{:04X}-{:04X}-{:08X}{:04X}".format(uuid_data.GetUnsignedInt32(error, 0),
-                                                                 uuid_data.GetUnsignedInt16(error, 4),
-                                                                 uuid_data.GetUnsignedInt16(error, 6),
-                                                                 uuid_data.GetUnsignedInt16(error, 8),
-                                                                 uuid_data.GetUnsignedInt32(error, 10),
-                                                                 uuid_data.GetUnsignedInt16(error, 14))
+        return "{:08X}-{:04X}-{:04X}-{:04X}-{:08X}{:04X}".format(data.GetUnsignedInt32(error, 0),
+                                                                 data.GetUnsignedInt16(error, 4),
+                                                                 data.GetUnsignedInt16(error, 6),
+                                                                 data.GetUnsignedInt16(error, 8),
+                                                                 data.GetUnsignedInt32(error, 10),
+                                                                 data.GetUnsignedInt16(error, 14))
 
     def summary(self):
-        uuid_summary = self.get_uuid_summary()
-
-        return uuid_summary
+        return self.uuid_summary
 
 
-def NSUUID_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, NSUUID_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, NSUUIDSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F NSUUID.NSUUID_SummaryProvider \
+    debugger.HandleCommand("type summary add -F NSUUID.summary_provider \
                             --category Foundation \
                             NSUUID __NSConcreteUUID")
     debugger.HandleCommand("type category enable Foundation")

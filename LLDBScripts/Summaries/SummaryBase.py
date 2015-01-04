@@ -41,7 +41,7 @@ class RegisterValue(object):
     :param int offset: Offset of child value.
     :param bool cache_value: Indicates if child value should be cached.
     :param lldb.SBValue cached_value: Cached child value.
-    :param (lldb.SBValue) -> int | float | str | None primitive_value_function: Function that return primitive vale of object.
+    :param (lldb.SBValue | (SummaryBaseSyntheticProvider | lldb.SBValue)) -> int | float | str | None primitive_value_function: Function that return primitive vale of object.
     :param bool cache_primitive_value: Indicates if primitive value should be cached.
     :param int | float | str | None cached_primitive_value: Cached primitive value.
     :param class provider_class: Provider class (subclass of SummaryBase).
@@ -216,11 +216,12 @@ class SummaryBaseSyntheticProvider(object):
         :param str type_name: Type name of child value.
         :param int offset: Offset of child value.
         :param bool cache_value: Indicates if child value should be cached.
-        :param (lldb.SBValue) -> int | float | str | None primitive_value_function: Function that return primitive vale of object.
+        :param (lldb.SBValue | (SummaryBaseSyntheticProvider | lldb.SBValue)) -> int | float | str | None primitive_value_function: Function or method
+        that returns primitive vale of object.
         :param bool cache_primitive_value: Indicates if primitive value should be cached.
         :param class provider_class: Provider class (subclass of SummaryBaseSyntheticProvider).
         :param bool cache_provider: Indicates if provider should be cached.
-        :param (int | float | str | SummaryBaseSyntheticProvider) -> str | None summary_function: Summary function.
+        :param (int | float | str | SummaryBaseSyntheticProvider) -> str | None summary_function: Summary function or method.
         Summary function will be called only when primitive value or provider is not None.
         :param bool cache_summary: Indicates if summary value should be cached.
         """
@@ -281,20 +282,18 @@ class SummaryBaseSyntheticProvider(object):
         primitive_value = False
         provider_value = False
         summary_value = False
-        index = item.rfind("_value")
-        if index != -1:
+        if item.endswith("_value"):
+            index = item.rfind("_value")
             primitive_value = True
             attribute_name = item[:index]
-        else:
+        elif item.endswith("_provider"):
             index = item.rfind("_provider")
-            if index != -1:
-                provider_value = True
-                attribute_name = item[:index]
-            else:
-                index = item.rfind("_summary")
-                if index != -1:
-                    summary_value = True
-                    attribute_name = item[:index]
+            provider_value = True
+            attribute_name = item[:index]
+        elif item.endswith("_summary"):
+            index = item.rfind("_summary")
+            summary_value = True
+            attribute_name = item[:index]
 
         # Get registered value.
         r = self.get_registered_child_value_parameter(attribute_name)

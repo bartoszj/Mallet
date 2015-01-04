@@ -24,323 +24,252 @@
 
 import NSObject
 import Helpers
+import SummaryBase
 
 
-class NSDateComponents_SynthProvider(NSObject.NSObjectSyntheticProvider):
+class NSDateComponentsSyntheticProvider(NSObject.NSObjectSyntheticProvider):
+    """
+    Class representing NSDateComponents.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(NSDateComponents_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(NSDateComponentsSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "NSDateComponents"
 
-        self.era = None
-        self.year = None
-        self.month = None
-        self.day = None
-        self.hour = None
-        self.minute = None
-        self.second = None
-        self.week = None
-        self.weekday = None
-        self.weekday_ordinal = None
-        self.quarter = None
-        self.week_of_year = None
-        self.week_of_month = None
-        self.year_for_week_of_year = None
-        self.leap_month = None
+        if self.is_64bit:
+            era_offset = 0x18
+            year_offset = 0x20
+            month_offset = 0x28
+            day_offset = 0x30
+            hour_offset = 0x38
+            minute_offset = 0x40
+            second_offset = 0x48
+            week_offset = 0x50
+            weekday_offset = 0x58
+            weekday_ordinal_offset = 0x60
+            quarter_offset = 0x68
+            week_of_year_offset = 0x78
+            week_of_month_offset = 0x80
+            year_for_week_of_year_offset = 0x88
+            leap_month_offset = 0x90
+        else:
+            era_offset = 0x0c
+            year_offset = 0x10
+            month_offset = 0x14
+            day_offset = 0x18
+            hour_offset = 0x1c
+            minute_offset = 0x20
+            second_offset = 0x24
+            week_offset = 0x28
+            weekday_offset = 0x2c
+            weekday_ordinal_offset = 0x30
+            quarter_offset = 0x38
+            week_of_year_offset = 0x3c
+            week_of_month_offset = 0x40
+            year_for_week_of_year_offset = 0x44
+            leap_month_offset = 0x48
+
+        self.register_child_value("era", ivar_name="era", type_name="NSInteger", offset=era_offset,
+                                  primitive_value_function=self.get_signed_not_empty_value,
+                                  summary_function=self.get_era_summary)
+        self.register_child_value("year", ivar_name="year", type_name="NSInteger", offset=year_offset,
+                                  primitive_value_function=self.get_signed_not_empty_value,
+                                  summary_function=self.get_year_summary)
+        self.register_child_value("month", ivar_name="month", type_name="NSInteger", offset=month_offset,
+                                  primitive_value_function=self.get_signed_not_empty_value,
+                                  summary_function=self.get_month_summary)
+        self.register_child_value("day", ivar_name="day", type_name="NSInteger", offset=day_offset,
+                                  primitive_value_function=self.get_signed_not_empty_value,
+                                  summary_function=self.get_day_summary)
+        self.register_child_value("hour", ivar_name="hour", type_name="NSInteger", offset=hour_offset,
+                                  primitive_value_function=self.get_signed_not_empty_value,
+                                  summary_function=self.get_hour_summary)
+        self.register_child_value("minute", ivar_name="minute", type_name="NSInteger", offset=minute_offset,
+                                  primitive_value_function=self.get_signed_not_empty_value,
+                                  summary_function=self.get_minute_summary)
+        self.register_child_value("second", ivar_name="second", type_name="NSInteger", offset=second_offset,
+                                  primitive_value_function=self.get_signed_not_empty_value,
+                                  summary_function=self.get_second_summary)
+        self.register_child_value("week", ivar_name="week", type_name="NSInteger", offset=week_offset,
+                                  primitive_value_function=self.get_signed_not_empty_value,
+                                  summary_function=self.get_week_summary)
+        self.register_child_value("weekday", ivar_name="weekday", type_name="NSInteger", offset=weekday_offset,
+                                  primitive_value_function=self.get_signed_not_empty_value,
+                                  summary_function=self.get_weekday_summary)
+        self.register_child_value("weekday_ordinal", ivar_name="weekday_ordinal", type_name="NSInteger", offset=weekday_ordinal_offset,
+                                  primitive_value_function=self.get_signed_not_empty_value,
+                                  summary_function=self.get_weekday_ordinal_summary)
+        self.register_child_value("quarter", ivar_name="quarter", type_name="NSInteger", offset=quarter_offset,
+                                  primitive_value_function=self.get_signed_not_empty_value,
+                                  summary_function=self.get_quarter_summary)
+        self.register_child_value("week_of_year", ivar_name="week_of_year", type_name="NSInteger", offset=week_of_year_offset,
+                                  primitive_value_function=self.get_signed_not_empty_value,
+                                  summary_function=self.get_week_of_year_summary)
+        self.register_child_value("week_of_month", ivar_name="week_of_month", type_name="NSInteger", offset=week_of_month_offset,
+                                  primitive_value_function=self.get_signed_not_empty_value,
+                                  summary_function=self.get_week_of_month_summary)
+        self.register_child_value("year_for_week_of_year", ivar_name="year_for_week_of_year", type_name="NSInteger", offset=year_for_week_of_year_offset,
+                                  primitive_value_function=self.get_signed_not_empty_value,
+                                  summary_function=self.get_year_for_week_of_year_summary)
+        self.register_child_value("leap_month", ivar_name="leap_month", type_name="NSInteger", offset=leap_month_offset,
+                                  primitive_value_function=self.get_signed_not_empty_value,
+                                  summary_function=self.get_leap_month_summary)
+
+    def get_signed_not_empty_value(self, obj):
+        """
+        Returns signed integer from LLDB value if it is not equal to 0x7FFFFFFFFFFFFFFF or 0x7FFFFFFF.
+
+        :param lldb.SBValue obj: LLDB value object.
+        :return: Signed integer from LLDB value.
+        :rtype: int | None
+        """
+        value = SummaryBase.get_signed_value(obj)
+        if value is None:
+            return None
+
+        if self.is_not_empty_value(value):
+            return value
+        return None
 
     def is_not_empty_value(self, value):
+        """
+        Returns True if value is different than 0x7FFFFFFFFFFFFFFF or 0x7FFFFFFF.
+
+        :param int value: Value
+        :return: True if value is not 'empty'.
+        :rtype: bool
+        """
         if self.is_64bit and value == 0x7FFFFFFFFFFFFFFF:
             return False
         elif not self.is_64bit and value == 0x7FFFFFFF:
             return False
         return True
 
-    @Helpers.save_parameter("era")
-    def get_era(self):
-        if self.is_64bit:
-            offset = 0x18
+    @staticmethod
+    def get_era_summary(value):
+        return "era={}".format(value)
+
+    @staticmethod
+    def get_year_summary(value):
+        return "year={}".format(value)
+
+    @staticmethod
+    def get_month_summary(value):
+        return "month={}".format(value)
+
+    @staticmethod
+    def get_day_summary(value):
+        return "day={}".format(value)
+
+    @staticmethod
+    def get_hour_summary(value):
+        return "hour={}".format(value)
+
+    @staticmethod
+    def get_minute_summary(value):
+        return "minute={}".format(value)
+
+    @staticmethod
+    def get_second_summary(value):
+        return "second={}".format(value)
+
+    @staticmethod
+    def get_week_summary(value):
+        return "week={}".format(value)
+
+    @staticmethod
+    def get_weekday_summary(value):
+        return "weekday={}".format(value)
+
+    @staticmethod
+    def get_weekday_ordinal_summary(value):
+        return "weekdayOrdinal={}".format(value)
+
+    @staticmethod
+    def get_quarter_summary(value):
+        return "quarter={}".format(value)
+
+    @staticmethod
+    def get_week_of_year_summary(value):
+        return "weekOfYear={}".format(value)
+
+    @staticmethod
+    def get_week_of_month_summary(value):
+        return "weekOfMonth={}".format(value)
+
+    @staticmethod
+    def get_year_for_week_of_year_summary(value):
+        return "yearForWeekOfYear={}".format(value)
+
+    @staticmethod
+    def get_leap_month_summary(value):
+        if value != 0:
+            return "leapMonth=YES"
         else:
-            offset = 0x0c
-
-        return self.get_child_value("era", "NSInteger", offset)
-
-    @Helpers.save_parameter("year")
-    def get_year(self):
-        if self.is_64bit:
-            offset = 0x20
-        else:
-            offset = 0x10
-
-        return self.get_child_value("year", "NSInteger", offset)
-
-    @Helpers.save_parameter("month")
-    def get_month(self):
-        if self.is_64bit:
-            offset = 0x28
-        else:
-            offset = 0x14
-
-        return self.get_child_value("month", "NSInteger", offset)
-
-    @Helpers.save_parameter("day")
-    def get_day(self):
-        if self.is_64bit:
-            offset = 0x30
-        else:
-            offset = 0x18
-
-        return self.get_child_value("day", "NSInteger", offset)
-
-    @Helpers.save_parameter("hour")
-    def get_hour(self):
-        if self.is_64bit:
-            offset = 0x38
-        else:
-            offset = 0x1c
-
-        return self.get_child_value("hour", "NSInteger", offset)
-
-    @Helpers.save_parameter("minute")
-    def get_minute(self):
-        if self.is_64bit:
-            offset = 0x40
-        else:
-            offset = 0x20
-
-        return self.get_child_value("minute", "NSInteger", offset)
-
-    @Helpers.save_parameter("second")
-    def get_second(self):
-        if self.is_64bit:
-            offset = 0x48
-        else:
-            offset = 0x24
-
-        return self.get_child_value("second", "NSInteger", offset)
-
-    @Helpers.save_parameter("week")
-    def get_week(self):
-        if self.is_64bit:
-            offset = 0x50
-        else:
-            offset = 0x28
-
-        return self.get_child_value("week", "NSInteger", offset)
-
-    @Helpers.save_parameter("weekday")
-    def get_weekday(self):
-        if self.is_64bit:
-            offset = 0x58
-        else:
-            offset = 0x2c
-
-        return self.get_child_value("weekday", "NSInteger", offset)
-
-    @Helpers.save_parameter("weekday_ordinal")
-    def get_weekday_ordinal(self):
-        if self.is_64bit:
-            offset = 0x60
-        else:
-            offset = 0x30
-
-        return self.get_child_value("weekday_ordinal", "NSInteger", offset)
-
-    @Helpers.save_parameter("quarter")
-    def get_quarter(self):
-        if self.is_64bit:
-            offset = 0x68
-        else:
-            offset = 0x34
-
-        return self.get_child_value("quarter", "NSInteger", offset)
-
-    @Helpers.save_parameter("week_of_year")
-    def get_week_of_year(self):
-        if self.is_64bit:
-            offset = 0x78
-        else:
-            offset = 0x3c
-
-        return self.get_child_value("week_of_year", "NSInteger", offset)
-
-    @Helpers.save_parameter("week_of_month")
-    def get_week_of_month(self):
-        if self.is_64bit:
-            offset = 0x80
-        else:
-            offset = 0x40
-
-        return self.get_child_value("week_of_month", "NSInteger", offset)
-
-    @Helpers.save_parameter("year_for_week_of_year")
-    def get_year_for_week_of_year(self):
-        if self.is_64bit:
-            offset = 0x88
-        else:
-            offset = 0x44
-
-        return self.get_child_value("year_of_week_of_year", "NSInteger", offset)
-
-    @Helpers.save_parameter("leap_month")
-    def get_leap_month(self):
-        if self.is_64bit:
-            offset = 0x90
-        else:
-            offset = 0x48
-
-        return self.get_child_value("leap_month", "NSInteger", offset)
+            return "leapMonth=NO"
 
     def summary(self):
-        era = self.get_era()
-        era_value = era.GetValueAsSigned()
-        era_summary = "era={}".format(era_value)
-
-        year = self.get_year()
-        year_value = year.GetValueAsSigned()
-        year_summary = "year={}".format(year_value)
-
-        month = self.get_month()
-        month_value = month.GetValueAsSigned()
-        month_summary = "month={}".format(month_value)
-
-        day = self.get_day()
-        day_value = day.GetValueAsSigned()
-        day_summary = "day={}".format(day_value)
-
-        hour = self.get_hour()
-        hour_value = hour.GetValueAsSigned()
-        hour_summary = "hour={}".format(hour_value)
-
-        minute = self.get_minute()
-        minute_value = minute.GetValueAsSigned()
-        minute_summary = "minute={}".format(minute_value)
-
-        second = self.get_second()
-        second_value = second.GetValueAsSigned()
-        second_summary = "second={}".format(second_value)
+        year_value = self.year_value
+        month_value = self.month_value
+        day_value = self.day_value
+        hour_value = self.hour_value
+        minute_value = self.minute_value
+        second_value = self.second_value
 
         # Date in ISO format.
-        if self.is_not_empty_value(year_value) and \
-           self.is_not_empty_value(month_value) and \
-           self.is_not_empty_value(day_value) and \
-           self.is_not_empty_value(hour_value) and \
-           self.is_not_empty_value(minute_value):
-            if self.is_not_empty_value(second_value):
+        iso_date_summary = None
+        date_summary = None
+        time_summary = None
+
+        if year_value is not None and \
+           month_value is not None and \
+           day_value is not None and \
+           hour_value is not None and \
+           minute_value is not None:
+            if second_value is not None:
                 # YYYY-MM-dd HH:mm:ss
-                date_summary = "{}-{:02}-{:02} {:02}:{:02}:{:02}".format(year_value, month_value, day_value,
-                                                                         hour_value, minute_value, second_value)
+                iso_date_summary = "{}-{:02}-{:02} {:02}:{:02}:{:02}".format(year_value, month_value, day_value,
+                                                                             hour_value, minute_value, second_value)
             else:
                 # YYYY-MM-dd HH:mm
-                date_summary = "{}-{:02}-{:02} {:02}:{:02}".format(year_value, month_value, day_value,
-                                                                   hour_value, minute_value)
+                iso_date_summary = "{}-{:02}-{:02} {:02}:{:02}".format(year_value, month_value, day_value,
+                                                                       hour_value, minute_value)
         else:
-            if self.is_not_empty_value(year_value) and \
-               self.is_not_empty_value(month_value) and \
-               self.is_not_empty_value(day_value):
+            if year_value is not None and \
+               month_value is not None and \
+               day_value is not None:
                 # YYYY-MM-dd
                 date_summary = "date={}-{:02}-{:02}".format(year_value, month_value, day_value)
 
-            if self.is_not_empty_value(hour_value) and \
-               self.is_not_empty_value(minute_value):
-                if self.is_not_empty_value(second_value):
+            if hour_value is not None and \
+               minute_value is not None:
+                if second_value is not None:
                     # HH:mm:ss
                     time_summary = "time={:02}:{:02}:{:02}".format(hour_value, minute_value, second_value)
                 else:
                     # HH:mm
                     time_summary = "time={:02}:{:02}".format(hour_value, minute_value)
 
-        week = self.get_week()
-        week_value = week.GetValueAsSigned()
-        week_summary = "week={}".format(week_value)
-
-        weekday = self.get_weekday()
-        weekday_value = weekday.GetValueAsSigned()
-        weekday_summary = "weekday={}".format(weekday_value)
-
-        weekday_ordinal = self.get_weekday_ordinal()
-        weekday_ordinal_value = weekday_ordinal.GetValueAsSigned()
-        weekday_ordinal_summary = "weekdayOrdinal={}".format(weekday_ordinal_value)
-
-        quarter = self.get_quarter()
-        quarter_value = quarter.GetValueAsSigned()
-        quarter_summary = "quarter={}".format(quarter_value)
-
-        week_of_year = self.get_week_of_year()
-        week_of_year_value = week_of_year.GetValueAsSigned()
-        week_of_year_summary = "weekOfYear={}".format(week_of_year_value)
-
-        week_of_month = self.get_week_of_month()
-        week_of_month_value = week_of_month.GetValueAsSigned()
-        week_of_month_summary = "weekOfMonth={}".format(week_of_month_value)
-
-        year_for_week_of_year = self.get_year_for_week_of_year()
-        year_for_week_of_year_value = year_for_week_of_year.GetValueAsSigned()
-        year_for_week_of_year_summary = "yearForWeekOfYear={}".format(year_for_week_of_year_value)
-
-        leap_month = self.get_leap_month()
-        leap_month_value = leap_month.GetValueAsSigned()
-        leap_month_summary = "leapMonth={}".format(format("YES" if leap_month_value != 0 else "NO"))
-
         # Summaries
-        summaries = []
-        if self.is_not_empty_value(era_value):
-            summaries.append(era_summary)
+        summaries = [self.era_summary, iso_date_summary, date_summary, time_summary]
+        if iso_date_summary is None:
+            if date_summary is None:
+                summaries.extend([self.year_summary, self.month_summary, self.day_summary])
+            if time_summary is None:
+                summaries.extend([self.hour_summary, self.minute_summary, self.second_summary])
+        summaries.extend([self.week_summary, self.weekday_summary, self.weekday_ordinal_summary,
+                          self.quarter_summary, self.week_of_year_summary, self.week_of_month_summary,
+                          self.year_for_week_of_year_summary, self.leap_month_summary])
 
-        if self.is_not_empty_value(year_value) and \
-           self.is_not_empty_value(month_value) and \
-           self.is_not_empty_value(day_value) and \
-           self.is_not_empty_value(hour_value) and \
-           self.is_not_empty_value(minute_value):
-            summaries.append(date_summary)
-        else:
-            if self.is_not_empty_value(year_value) and \
-               self.is_not_empty_value(month_value) and \
-               self.is_not_empty_value(day_value):
-                summaries.append(date_summary)
-            else:
-                if self.is_not_empty_value(year_value):
-                    summaries.append(year_summary)
-                if self.is_not_empty_value(month_value):
-                    summaries.append(month_summary)
-                if self.is_not_empty_value(day_value):
-                    summaries.append(day_summary)
-
-            if self.is_not_empty_value(hour_value) and \
-               self.is_not_empty_value(minute_value):
-                summaries.append(time_summary)
-            else:
-                if self.is_not_empty_value(hour_value):
-                    summaries.append(hour_summary)
-                if self.is_not_empty_value(minute_value):
-                    summaries.append(minute_summary)
-                if self.is_not_empty_value(second_value):
-                    summaries.append(second_summary)
-        if self.is_not_empty_value(week_value):
-            summaries.append(week_summary)
-        if self.is_not_empty_value(weekday_value):
-            summaries.append(weekday_summary)
-        if self.is_not_empty_value(weekday_ordinal_value):
-            summaries.append(weekday_ordinal_summary)
-        if self.is_not_empty_value(quarter_value):
-            summaries.append(quarter_summary)
-        if self.is_not_empty_value(week_of_year_value):
-            summaries.append(week_of_year_summary)
-        if self.is_not_empty_value(week_of_month_value):
-            summaries.append(week_of_month_summary)
-        if self.is_not_empty_value(year_for_week_of_year_value):
-            summaries.append(year_for_week_of_year_summary)
-        if self.is_not_empty_value(leap_month_value):
-            summaries.append(leap_month_summary)
-
-        summary = ", ".join(summaries)
+        summary = SummaryBase.join_summaries(*summaries)
         return summary
 
 
-def NSDateComponents_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, NSDateComponents_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, NSDateComponentsSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F NSDateComponents.NSDateComponents_SummaryProvider \
+    debugger.HandleCommand("type summary add -F NSDateComponents.summary_provider \
                             --category Foundation \
                             NSDateComponents")
     debugger.HandleCommand("type category enable Foundation")
