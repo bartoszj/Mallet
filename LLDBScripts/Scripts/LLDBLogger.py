@@ -57,10 +57,10 @@ def configure_logger(logger):
         file_handler.setFormatter(formatter)
 
         # Null handler.
-        # null_handler = logging.NullHandler()
+        null_handler = logging.NullHandler()
 
-        logger.addHandler(file_handler)
-        # logger.addHandler(null_handler)
+        # logger.addHandler(file_handler)
+        logger.addHandler(null_handler)
         logger.debug("Logger \"{}\" configured.".format(logger.name))
 
 
