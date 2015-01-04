@@ -23,41 +23,37 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import NSObject
-import Helpers
+import SummaryBase
 
 
-class SKProductsResponseInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
-    # Class: SKProductsResponseInternal
-    # Super class: NSObject
-    # Name:                             armv7                 i386                  arm64                 x86_64
-    # NSArray * _invalidIdentifiers   4 (0x004) / 4         4 (0x004) / 4         8 (0x008) / 8         8 (0x008) / 8
-    # NSArray * _products             8 (0x008) / 4         8 (0x008) / 4        16 (0x010) / 8        16 (0x010) / 8
+class SKProductsResponseInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider):
+    """
+    Class representing SKProductsResponseInternal.
+    """
 
     def __init__(self, value_obj, internal_dict):
-        super(SKProductsResponseInternal_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(SKProductsResponseInternalSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "SKProductsResponseInternal"
 
-        self.products = None
-        self.invalid_identifiers = None
+        self.register_child_value("products", ivar_name="_products",
+                                  primitive_value_function=SummaryBase.get_count_value,
+                                  summary_function=self.get_products_summary)
+        self.register_child_value("invalid_identifiers", ivar_name="_invalidIdentifiers",
+                                  primitive_value_function=SummaryBase.get_count_value,
+                                  summary_function=self.get_invalid_identifiers_summary)
 
-    @Helpers.save_parameter("products")
-    def get_products(self):
-        return self.get_child_value("_products")
+    @staticmethod
+    def get_products_summary(value):
+        if value != 0:
+            return "{} valid".format(value)
+        return None
 
-    def get_products_value(self):
-        return get_count_value(self.get_products())
+    @staticmethod
+    def get_invalid_identifiers_summary(value):
+        if value != 0:
+            return "{} invalid".format(value)
+        return None
 
-    def get_products_summary(self):
-        products_value = self.get_products_value()
-        return None if products_value is None else "{} valid".format(products_value)
-
-    @Helpers.save_parameter("invalid_identifiers")
-    def get_invalid_identifiers(self):
-        return self.get_child_value("_invalidIdentifiers")
-
-    def get_invalid_identifiers_value(self):
-        return get_count_value(self.get_invalid_identifiers())
-
-    def get_invalid_identifiers_summary(self):
-        invalid_identifiers_value = self.get_invalid_identifiers_value()
-        return None if invalid_identifiers_value is None else "{} invalid".format(invalid_identifiers_value)
+    def summary(self):
+        summary = SummaryBase.join_summaries(self.products_summary, self.invalid_identifiers_summary)
+        return summary

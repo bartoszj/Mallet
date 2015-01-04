@@ -27,41 +27,32 @@ import SummaryBase
 import UIResponder
 
 
-class UIViewController_SynthProvider(UIResponder.UIResponderSyntheticProvider):
+class UIViewControllerSyntheticProvider(UIResponder.UIResponderSyntheticProvider):
+    """
+    Class representing UIViewController.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(UIViewController_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(UIViewControllerSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UIViewController"
 
-        self.title = None
+        self.register_child_value("title", ivar_name="_title",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_title_summary)
 
-    @Helpers.save_parameter("title")
-    def get_title(self):
-        return self.get_child_value("_title")
-
-    def get_title_value(self):
-        return SummaryBase.get_summary_value(self.get_title())
-
-    def get_title_summary(self):
-        title_value = self.get_title_value()
-        return None if title_value is None else "title={}".format(title_value)
+    @staticmethod
+    def get_title_summary(value):
+        return "title={}".format(value)
 
     def summary(self):
-        title_summary = self.get_title_summary()
-
-        summaries = []
-        if title_summary:
-            summaries.append(title_summary)
-
-        summary = ", ".join(summaries)
-        return summary
+        return self.title_summary
 
 
-def UIViewController_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UIViewController_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, UIViewControllerSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F UIViewController.UIViewController_SummaryProvider \
+    debugger.HandleCommand("type summary add -F UIViewController.summary_provider \
                             --category UIKit \
                             UIViewController")
     debugger.HandleCommand("type category enable UIKit")

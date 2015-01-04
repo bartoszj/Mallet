@@ -26,26 +26,21 @@ import Helpers
 import SKRequest
 
 
-class SKReceiptRefreshRequest_SynthProvider(SKRequest.SKRequest_SynthProvider):
-    # Class: SKReceiptRefreshRequest
-    # Super class: SKRequest
-    # Name:                          armv7                 i386                  arm64                 x86_64
-    # NSDictionary * _properties   8 (0x008) / 4         8 (0x008) / 4        16 (0x010) / 8        16 (0x010) / 8
-
+class SKReceiptRefreshRequestSyntheticProvider(SKRequest.SKRequestSyntheticProvider):
+    """
+    Class representing SKReceiptRefreshRequest.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(SKReceiptRefreshRequest_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(SKReceiptRefreshRequestSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "SKReceiptRefreshRequest"
 
-    def summary(self):
-        return ""
 
-
-def SKReceiptRefreshRequest_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, SKReceiptRefreshRequest_SynthProvider)
-
-
-def __lldb_init_module(debugger, internal_dict):
-    debugger.HandleCommand("type summary add -F SKReceiptRefreshRequest.SKReceiptRefreshRequest_SummaryProvider \
-                            --category StoreKit \
-                            SKReceiptRefreshRequest")
-    debugger.HandleCommand("type category enable StoreKit")
+# def summary_provider(value_obj, internal_dict):
+#     return Helpers.generic_summary_provider(value_obj, internal_dict, SKReceiptRefreshRequestSyntheticProvider)
+#
+#
+# def __lldb_init_module(debugger, internal_dict):
+#     debugger.HandleCommand("type summary add -F SKReceiptRefreshRequest.summary_provider \
+#                             --category StoreKit \
+#                             SKReceiptRefreshRequest")
+#     debugger.HandleCommand("type category enable StoreKit")

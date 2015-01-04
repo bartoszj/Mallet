@@ -27,50 +27,39 @@ import SKRequest
 import SKProductsRequestInternal
 
 
-class SKProductsRequest_SynthProvider(SKRequest.SKRequest_SynthProvider):
-    # Class: SKProductsRequest
-    # Super class: SKRequest
-    # Name:                           armv7                 i386                  arm64                 x86_64
-    # id _productsRequestInternal   8 (0x008) / 4         8 (0x008) / 4        16 (0x010) / 8        16 (0x010) / 8
-
+class SKProductsRequestSyntheticProvider(SKRequest.SKRequestSyntheticProvider):
+    """
+    Class representing SKProductsRequest.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(SKProductsRequest_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(SKProductsRequestSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "SKProductsRequest"
 
-        self.products_request_internal = None
-        self.products_request_internal_provider = None
+        self.register_child_value("products_request_internal", ivar_name="_productsRequestInternal",
+                                  provider_class=SKProductsRequestInternal.SKProductsRequestInternalSyntheticProvider,
+                                  summary_function=self.get_products_request_internal_summary)
 
-    @Helpers.save_parameter("products_request_internal")
-    def get_products_request_internal(self):
-        return self.get_child_value("_productsRequestInternal")
+    @staticmethod
+    def get_products_request_internal_summary(provider):
+        """
+        SKProductsRequestInternal summary.
 
-    @Helpers.save_parameter("products_request_internal_provider")
-    def get_products_request_internal_provider(self):
-        products_request_internal = self.get_products_request_internal()
-        return products_request_internal if products_request_internal is None else \
-            SKProductsRequestInternal.SKProductsRequestInternal_SynthProvider(products_request_internal, self.internal_dict)
-
-    def get_product_identifiers_summary(self):
-        products_request_internal_provider = self.get_products_request_internal_provider()
-        return None if products_request_internal_provider is None else products_request_internal_provider.get_product_identifiers_summary()
+        :param SKProductsRequestInternal.SKProductsRequestInternalSyntheticProvider provider: SKProductsRequestInternal provider.
+        :return: SKProductsRequestInternal summary.
+        :rtype: str
+        """
+        return provider.summary()
 
     def summary(self):
-        product_identifiers_summary = self.get_product_identifiers_summary()
-
-        summaries = []
-        if product_identifiers_summary:
-            summaries.append(product_identifiers_summary)
-
-        summary = ", ".join(summaries)
-        return summary
+        return self.products_request_internal_summary
 
 
-def SKProductsRequest_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, SKProductsRequest_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, SKProductsRequestSyntheticProvider)
 
 
 def __lldb_init_module(debugger, internal_dict):
-    debugger.HandleCommand("type summary add -F SKProductsRequest.SKProductsRequest_SummaryProvider \
+    debugger.HandleCommand("type summary add -F SKProductsRequest.summary_provider \
                             --category StoreKit \
                             SKProductsRequest")
     debugger.HandleCommand("type category enable StoreKit")

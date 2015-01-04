@@ -24,87 +24,69 @@
 
 import NSObject
 import SummaryBase
-import Helpers
 
 
-class SKProductInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
-    # Class: SKProductInternal
-    # Super class: NSObject
-    # Name:                                 armv7                 i386                  arm64                 x86_64
-    # NSString * _contentVersion          4 (0x004) / 4         4 (0x004) / 4         8 (0x008) / 8         8 (0x008) / 8
-    # BOOL _downloadable                  8 (0x008) / 1  + 3    8 (0x008) / 1  + 3   16 (0x010) / 1  + 7   16 (0x010) / 1  + 7
-    # NSArray * _downloadContentLengths  12 (0x00C) / 4        12 (0x00C) / 4        24 (0x018) / 8        24 (0x018) / 8
-    # NSString * _localeIdentifier       16 (0x010) / 4        16 (0x010) / 4        32 (0x020) / 8        32 (0x020) / 8
-    # NSString * _localizedDescription   20 (0x014) / 4        20 (0x014) / 4        40 (0x028) / 8        40 (0x028) / 8
-    # NSString * _localizedTitle         24 (0x018) / 4        24 (0x018) / 4        48 (0x030) / 8        48 (0x030) / 8
-    # NSDecimalNumber * _price           28 (0x01C) / 4        28 (0x01C) / 4        56 (0x038) / 8        56 (0x038) / 8
-    # NSLocale * _priceLocale            32 (0x020) / 4        32 (0x020) / 4        64 (0x040) / 8        64 (0x040) / 8
-    # NSString * _productIdentifier      36 (0x024) / 4        36 (0x024) / 4        72 (0x048) / 8        72 (0x048) / 8
-
+class SKProductInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider):
+    """
+    Class representing SKProductInternal.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(SKProductInternal_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(SKProductInternalSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "SKProductInternal"
 
-        self.content_version = None
-        self.downloadable = None
-        self.locale_identifier = None
-        self.localized_description = None
-        self.localized_title = None
-        self.price = None
-        self.product_identifier = None
+        self.register_child_value("content_version", ivar_name="_contentVersion",
+                                  primitive_value_function=SummaryBase.get_stripped_summary_value,
+                                  summary_function=self.get_content_version_summary)
+        self.register_child_value("downloadable", ivar_name="_downloadable",
+                                  primitive_value_function=SummaryBase.get_bool_value,
+                                  summary_function=self.get_downloadable_summary)
+        self.register_child_value("locale_identifier", ivar_name="_localeIdentifier",
+                                  primitive_value_function=SummaryBase.get_stripped_summary_value,
+                                  summary_function=self.get_locale_identifier_summary)
+        self.register_child_value("localized_description", ivar_name="_localizedDescription",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_localized_description_summary)
+        self.register_child_value("localized_title", ivar_name="_localizedTitle",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_localized_title_summary)
+        self.register_child_value("price", ivar_name="_price",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_price_summary)
+        self.register_child_value("product_identifier", ivar_name="_productIdentifier",
+                                  primitive_value_function=SummaryBase.get_stripped_summary_value,
+                                  summary_function=self.get_price_summary)
 
-    @Helpers.save_parameter("content_version")
-    def get_content_version(self):
-        return self.get_child_value("_contentVersion")
+    @staticmethod
+    def get_content_version_summary(value):
+        return "version={}".format(value)
 
-    def get_content_version_value(self):
-        return SummaryBase.get_stripped_summary_value(self.get_content_version())
+    @staticmethod
+    def get_downloadable_summary(value):
+        if value is True:
+            return "downloadable=YES"
+        return None
 
-    def get_content_version_summary(self):
-        content_version_value = self.get_content_version_value()
-        return None if content_version_value is None else "version={}".format(content_version_value)
+    @staticmethod
+    def get_locale_identifier_summary(value):
+        return "localeIdentifier={}".format(value)
 
-    @Helpers.save_parameter("downloadable")
-    def get_downloadable(self):
-        return self.get_child_value("_downloadable")
+    @staticmethod
+    def get_localized_description_summary(value):
+        return "description={}".format(value)
 
-    def get_downloadable_value(self):
-        return SummaryBase.get_unsigned_value(self.get_downloadable())
+    @staticmethod
+    def get_localized_title_summary(value):
+        return "{}".format(value)
 
-    def get_downloadable_summary(self):
-        downloadable_value = self.get_downloadable_value()
-        return None if downloadable_value is None else "downloadable={}".format("YES" if downloadable_value != 0 else "NO")
+    @staticmethod
+    def get_price_summary(value):
+        return "price={}".format(value)
 
-    @Helpers.save_parameter("locale_identifier")
-    def get_locale_identifier(self):
-        return self.get_child_value("_localeIdentifier")
+    @staticmethod
+    def get_product_identifier_summary(value):
+        return "identifier={}".format(value)
 
-    @Helpers.save_parameter("localized_description")
-    def get_localized_description(self):
-        return self.get_child_value("_localizedDescription")
-
-    @Helpers.save_parameter("localized_title")
-    def get_localized_title(self):
-        return self.get_child_value("_localizedTitle")
-
-    def get_localized_title_value(self):
-        return SummaryBase.get_summary_value(self.localized_title())
-
-    def get_localized_title_summary(self):
-        localized_title_value = self.get_localized_title_value()
-        return None if localized_title_value is None else "{}".format(localized_title_value)
-
-    @Helpers.save_parameter("price")
-    def get_price(self):
-        return self.get_child_value("_price")
-
-    def get_price_value(self):
-        return SummaryBase.get_summary_value(self.get_price())
-
-    def get_price_summary(self):
-        price_value = self.get_price_value()
-        return None if price_value is None else "price={}".format(price_value)
-
-    @Helpers.save_parameter("product_identifier")
-    def get_product_identifier(self):
-        return self.get_child_value("_productIdentifier")
+    def summary(self):
+        summary = SummaryBase.join_summaries(self.localized_title_summary, self.price_summary,
+                                             self.downloadable_summary, self.content_version_summary)
+        return summary

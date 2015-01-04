@@ -25,16 +25,10 @@
 import NSObject
 
 
-class SKRequestInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
-    # Class: SKRequestInternal
-    # Super class: NSObject
-    # Name:                                   armv7                 i386                  arm64                 x86_64
-    # NSInteger _backgroundTaskIdentifier   4 (0x004) / 4         4 (0x004) / 4         8 (0x008) / 8         8 (0x008) / 8
-    # SKPaymentQueueClient * _client        8 (0x008) / 4         8 (0x008) / 4        16 (0x010) / 8        16 (0x010) / 8
-    # SKXPCConnection * _connection        12 (0x00C) / 4        12 (0x00C) / 4        24 (0x018) / 8        24 (0x018) / 8
-    # id <SKRequestDelegate> _delegate     16 (0x010) / 4        16 (0x010) / 4        32 (0x020) / 8        32 (0x020) / 8
-    # int _state                           20 (0x014) / 4        20 (0x014) / 4        40 (0x028) / 4        40 (0x028) / 4
-
+class SKRequestInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider):
+    """
+    Class representing SKRequestInternal.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(SKRequestInternal_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(SKRequestInternalSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "SKRequestInternal"

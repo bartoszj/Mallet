@@ -441,6 +441,22 @@ def get_unsigned_value(obj):
     return None if obj is None else obj.GetValueAsUnsigned()
 
 
+def get_bool_value(obj):
+    """
+    Returns bool from LLDB value.
+
+    :param lldb.SBValue obj: LLDB value object.
+    :return: Bool from LLDB value.
+    :rtype: bool | None
+    """
+    value = get_signed_value(obj)
+    if value is None:
+        return None
+    if value == 0:
+        return False
+    return True
+
+
 def get_float_value(obj):
     """
     Returns float from LLDB value.
@@ -471,7 +487,8 @@ def get_stripped_summary_value(obj):
     :return: Stripped summary from LLDB value.
     :rtype: str | None
     """
-    return None if obj is None else obj.GetSummary()[2:-1]
+    summary = get_summary_value(obj)
+    return None if summary is None else summary[2:-1]
 
 
 def get_count_value(obj):

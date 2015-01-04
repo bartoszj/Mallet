@@ -26,101 +26,104 @@ import Helpers
 import SummaryBase
 import NSObject
 
+SKDownloadStateWaiting = 0
+SKDownloadStateActive = 1
+SKDownloadStatePaused = 2
+SKDownloadStateFinished = 3
+SKDownloadStateFailed = 4
+SKDownloadStateCancelled = 5
 
-class SKDownload_SynthProvider(NSObject.NSObjectSyntheticProvider):
-    # Class: SKDownload
-    # Super class: NSObject
-    # Name:                                   armv7                 i386                  arm64                 x86_64
-    # NSString * _contentIdentifier         4 (0x004) / 4         4 (0x004) / 4         8 (0x008) / 8         8 (0x008) / 8
-    # long long _contentLength              8 (0x008) / 8         8 (0x008) / 8        16 (0x010) / 8        16 (0x010) / 8
-    # NSURL * _contentURL                  16 (0x010) / 4        16 (0x010) / 4        24 (0x018) / 8        24 (0x018) / 8
-    # NSNumber * _downloadID               20 (0x014) / 4        20 (0x014) / 4        32 (0x020) / 8        32 (0x020) / 8
-    # NSInteger _downloadState             24 (0x018) / 4        24 (0x018) / 4        40 (0x028) / 8        40 (0x028) / 8
-    # NSError * _error                     28 (0x01C) / 4        28 (0x01C) / 4        48 (0x030) / 8        48 (0x030) / 8
-    # float _progress                      32 (0x020) / 4        32 (0x020) / 4        56 (0x038) / 4  + 4   56 (0x038) / 4  + 4
-    # double _timeRemaining                36 (0x024) / 8        36 (0x024) / 8        64 (0x040) / 8        64 (0x040) / 8
-    # SKPaymentTransaction * _transaction  44 (0x02C) / 4        44 (0x02C) / 4        72 (0x048) / 8        72 (0x048) / 8
-    # NSString * _version                  48 (0x030) / 4        48 (0x030) / 4        80 (0x050) / 8        80 (0x050) / 8
 
+class SKDownloadSyntheticProvider(NSObject.NSObjectSyntheticProvider):
+    """
+    Class representing SKDownload.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(SKDownload_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(SKDownloadSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "SKDownload"
 
-        self.content_identifier = None
-        self.content_length = None
-        self.content_url = None
-        self.download_id = None
-        self.download_state = None
-        self.progress = None
-        self.time_remaining = None
-        self.version = None
+        self.register_child_value("content_identifier", ivar_name="_contentIdentifier",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_content_identifier_summary)
+        self.register_child_value("content_length", ivar_name="_contentLength",
+                                  primitive_value_function=SummaryBase.get_signed_value,
+                                  summary_function=self.get_content_length_summary)
+        self.register_child_value("content_url", ivar_name="_contentURL",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_content_url_summary)
+        self.register_child_value("download_id", ivar_name="_downloadID",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_download_id_summary)
+        self.register_child_value("download_state", ivar_name="_downloadState",
+                                  primitive_value_function=SummaryBase.get_signed_value,
+                                  summary_function=self.get_download_state_summary)
+        self.register_child_value("progress", ivar_name="_progress",
+                                  primitive_value_function=SummaryBase.get_float_value,
+                                  summary_function=self.get_progress_summary)
+        self.register_child_value("time_remaining", ivar_name="_timeRemaining",
+                                  primitive_value_function=SummaryBase.get_float_value,
+                                  summary_function=self.get_time_remaining_summary)
+        self.register_child_value("version", ivar_name="_version",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_version_summary)
 
-    @Helpers.save_parameter("content_identifier")
-    def get_content_identifier(self):
-        return self.get_child_value("_contentIdentifier")
+    @staticmethod
+    def get_content_identifier_summary(value):
+        return "{}".format(value)
 
-    def get_content_identifier_value(self):
-        return SummaryBase.get_summary_value(self.get_content_identifier())
+    @staticmethod
+    def get_content_length_summary(value):
+        return "length={}".format(value)
 
-    def get_content_identifier_summary(self):
-        content_identifier_value = self.get_content_identifier_value()
-        return None if content_identifier_value is None else "{}".format(content_identifier_value)
+    @staticmethod
+    def get_content_url_summary(value):
+        return "url={}".format(value)
 
-    @Helpers.save_parameter("content_length")
-    def get_content_length(self):
-        return self.get_child_value("_contentLength")
+    @staticmethod
+    def get_download_id_summary(value):
+        return "downloadID={}".format(value)
 
-    def get_content_length_value(self):
-        return SummaryBase.get_signed_value(self.get_content_length())
+    @staticmethod
+    def get_download_state_summary(value):
+        name = "Unknown"
+        if value == SKDownloadStateWaiting:
+            name = "Waiting"
+        elif value == SKDownloadStateActive:
+            name = "Active"
+        elif value == SKDownloadStatePaused:
+            name = "Paused"
+        elif value == SKDownloadStateFinished:
+            name = "Finished"
+        elif value == SKDownloadStateFailed:
+            name = "Failed"
+        elif value == SKDownloadStateCancelled:
+            name = "Cancelled"
 
-    def get_content_length_summary(self):
-        content_length_value = self.get_content_length_value()
-        return None if content_length_value is None else "length={}".format(content_length_value)
+        return "state={}".format(name)
 
-    @Helpers.save_parameter("content_url")
-    def get_content_url(self):
-        return self.get_child_value("_contentURL")
+    @staticmethod
+    def get_progress_summary(value):
+        return "progress={}".format(SummaryBase.formatted_float(value))
 
-    @Helpers.save_parameter("download_id")
-    def get_download_id(self):
-        return self.get_child_value("_downloadID")
+    @staticmethod
+    def get_time_remaining_summary(value):
+        return "timeRemaining={}".format(SummaryBase.formatted_float(value))
 
-    @Helpers.save_parameter("download_state")
-    def get_download_state(self):
-        return self.get_child_value("_downloadState")
-
-    @Helpers.save_parameter("progress")
-    def get_progress(self):
-        return self.get_child_value("_progress")
-
-    @Helpers.save_parameter("time_remaining")
-    def get_time_remaining(self):
-        return self.get_child_value("_timeRemaining")
-
-    @Helpers.save_parameter("version")
-    def get_version(self):
-        return self.get_child_value("_version")
+    @staticmethod
+    def get_version_summary(value):
+        return "version={}".format(value)
 
     def summary(self):
-        content_id_summary = self.get_content_identifier_summary()
-        content_length_summary = self.get_content_length_summary()
-
-        summaries = []
-        if content_id_summary:
-            summaries.append(content_id_summary)
-        if content_length_summary:
-            summaries.append(content_length_summary)
-
-        summary = ", ".join(summaries)
+        summary = SummaryBase.join_summaries(self.content_identifier_summary, self.content_length_summary)
         return summary
 
 
-def SKDownload_SummaryProvider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, SKDownload_SynthProvider)
+def summary_provider(value_obj, internal_dict):
+    return Helpers.generic_summary_provider(value_obj, internal_dict, SKDownloadSyntheticProvider)
 
 
 def __lldb_init_module(debugger, internal_dict):
-    debugger.HandleCommand("type summary add -F SKDownload.SKDownload_SummaryProvider \
+    debugger.HandleCommand("type summary add -F SKDownload.summary_provider \
                             --category StoreKit \
                             SKDownload")
     debugger.HandleCommand("type category enable StoreKit")

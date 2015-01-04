@@ -24,69 +24,55 @@
 
 import SummaryBase
 import NSObject
-import Helpers
 
 
-class SKPaymentInternal_SynthProvider(NSObject.NSObjectSyntheticProvider):
-    # Class: SKPaymentInternal
-    # Super class: NSObject
-    # Protocols: NSCopying
-    # Name:                                        armv7                 i386                  arm64                 x86_64
-    # NSString * _applicationUsername            4 (0x004) / 4         4 (0x004) / 4         8 (0x008) / 8         8 (0x008) / 8
-    # NSString * _partnerIdentifier              8 (0x008) / 4         8 (0x008) / 4        16 (0x010) / 8        16 (0x010) / 8
-    # NSString * _partnerTransactionIdentifier  12 (0x00C) / 4        12 (0x00C) / 4        24 (0x018) / 8        24 (0x018) / 8
-    # NSString * _productIdentifier             16 (0x010) / 4        16 (0x010) / 4        32 (0x020) / 8        32 (0x020) / 8
-    # NSInteger _quantity                       20 (0x014) / 4        20 (0x014) / 4        40 (0x028) / 8        40 (0x028) / 8
-    # NSData * _requestData                     24 (0x018) / 4        24 (0x018) / 4        48 (0x030) / 8        48 (0x030) / 8
-    # NSDictionary * _requestParameters         28 (0x01C) / 4        28 (0x01C) / 4        56 (0x038) / 8        56 (0x038) / 8
-
+class SKPaymentInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider):
+    """
+    Class representing SKPaymentInternal.
+    """
     def __init__(self, value_obj, internal_dict):
-        super(SKPaymentInternal_SynthProvider, self).__init__(value_obj, internal_dict)
+        super(SKPaymentInternalSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "SKPaymentInternal"
 
-        self.application_username = None
-        self.partner_identifier = None
-        self.partner_transaction_identifier = None
-        self.product_identifier = None
-        self.quantity = None
+        self.register_child_value("application_username", ivar_name="_applicationUsername",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_application_username_summary)
+        self.register_child_value("partner_identifier", ivar_name="_partnerIdentifier",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_partner_identifier_summary)
+        self.register_child_value("partner_transaction_identifier", ivar_name="_partnerTransactionIdentifier",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_partner_transaction_identifier_summary)
+        self.register_child_value("product_identifier", ivar_name="_productIdentifier",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_product_identifier_summary)
+        self.register_child_value("quantity", ivar_name="_quantity",
+                                  primitive_value_function=SummaryBase.get_signed_value,
+                                  summary_function=self.get_quantity_summary)
 
-    @Helpers.save_parameter("application_username")
-    def get_application_username(self):
-        return self.get_child_value("_applicationUsername")
+    @staticmethod
+    def get_application_username_summary(value):
+        return "applicationUsername={}".format(value)
 
-    def get_application_username_value(self):
-        return SummaryBase.get_stripped_summary_value(self.get_application_username())
+    @staticmethod
+    def get_partner_identifier_summary(value):
+        return "partnerIdentifier={}".format(value)
 
-    def get_application_username_summary(self):
-        application_username_value = self.get_application_username_value()
-        return None if application_username_value is None else "applicationUsername={}".format(application_username_value)
+    @staticmethod
+    def get_partner_transaction_identifier_summary(value):
+        return "partnerTransactionIdentifier={}".format(value)
 
-    @Helpers.save_parameter("partner_identifier")
-    def get_partner_identifier(self):
-        return self.get_child_value("_partnerIdentifier")
+    @staticmethod
+    def get_product_identifier_summary(value):
+        return "{}".format(value)
 
-    @Helpers.save_parameter("partner_transaction_identifier")
-    def get_partner_transaction_identifier(self):
-        return self.get_child_value("_partnerTransactionIdentifier")
+    @staticmethod
+    def get_quantity_summary(value):
+        if value != 1:
+            return "quantity={}".format(value)
+        return None
 
-    @Helpers.save_parameter("product_identifier")
-    def get_product_identifier(self):
-        return self.get_child_value("_productIdentifier")
-
-    def get_product_identifier_value(self):
-        return SummaryBase.get_summary_value(self.get_product_identifier())
-
-    def get_product_identifier_summary(self):
-        product_identifier_value = self.get_product_identifier_value()
-        return None if product_identifier_value is None else "{}".format(product_identifier_value)
-
-    @Helpers.save_parameter("quantity")
-    def get_quantity(self):
-        return self.get_child_value("_quantity")
-
-    def get_quantity_value(self):
-        return SummaryBase.get_signed_value(self.get_quantity())
-
-    def get_quantity_summary(self):
-        quantity_value = self.get_quantity_value()
-        return None if quantity_value is None else "quantity={}".format(quantity_value)
+    def summary(self):
+        summary = SummaryBase.join_summaries(self.product_identifier_summary, self.quantity_summary,
+                                             self.application_username_summary)
+        return summary
