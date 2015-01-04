@@ -10,15 +10,16 @@ LLDB commands and summaries
 ## Supported types:
 - CoreGraphics:
     - CGVector
+- CFNetowrk:
+    - NSURLRequest (NSMutableURLRequest)
 - Foundation:
     - NSDateComponents
     - NSObject
-    - NSURLRequest (NSMutableURLRequest)
     - NSUUID (__NSConcreteUUID)
 - QuartzCore:
     - CALayer
 - UIKit:
-    - UIAlertView
+    - UIAlertView (temporary disabled)
     - UIButton
     - UIDatePicker
     - UIEdgeInsets
