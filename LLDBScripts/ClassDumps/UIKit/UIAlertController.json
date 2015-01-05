@@ -1,0 +1,486 @@
+{
+  "arm64":{
+    "className":"UIAlertController",
+    "ivars":[
+      {
+        "ivarType":"NSString *",
+        "name":"_message",
+        "offset":696,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSAttributedString *",
+        "name":"_attributedTitle",
+        "offset":704,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSAttributedString *",
+        "name":"_attributedMessage",
+        "offset":712,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableArray *",
+        "name":"_actions",
+        "offset":720,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSSet *",
+        "name":"_linkedAlertControllers",
+        "offset":728,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIAlertAction *",
+        "name":"_cancelAction",
+        "offset":736,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_resolvedStyle",
+        "offset":744,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_preferredStyle",
+        "offset":752,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<UIAlertControllerVisualStyleProviding> *",
+        "name":"_styleProvider",
+        "offset":760,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIViewController *",
+        "name":"_contentViewController",
+        "offset":768,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_UIAlertControllerTextFieldViewController *",
+        "name":"_textFieldViewController",
+        "offset":776,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_textFieldsHidden",
+        "offset":784,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIGestureRecognizer *",
+        "name":"_backButtonDismissGestureRecognizer",
+        "offset":792,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"_ownedTransitioningDelegate",
+        "offset":800,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_shouldEnsureContentControllerViewIsVisibleOnAppearance",
+        "offset":808,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldAllowNilParameters",
+        "offset":809,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldFlipFrameForShimDismissal",
+        "offset":810,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIAlertAction *",
+        "name":"__defaultAlertAction",
+        "offset":816,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIPopoverController *",
+        "name":"__compatibilityPopoverController",
+        "offset":824,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIViewController",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"UIAlertController",
+    "ivars":[
+      {
+        "ivarType":"NSString *",
+        "name":"_message",
+        "offset":352,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSAttributedString *",
+        "name":"_attributedTitle",
+        "offset":356,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSAttributedString *",
+        "name":"_attributedMessage",
+        "offset":360,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableArray *",
+        "name":"_actions",
+        "offset":364,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSSet *",
+        "name":"_linkedAlertControllers",
+        "offset":368,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIAlertAction *",
+        "name":"_cancelAction",
+        "offset":372,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_resolvedStyle",
+        "offset":376,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_preferredStyle",
+        "offset":380,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<UIAlertControllerVisualStyleProviding> *",
+        "name":"_styleProvider",
+        "offset":384,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIViewController *",
+        "name":"_contentViewController",
+        "offset":388,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_UIAlertControllerTextFieldViewController *",
+        "name":"_textFieldViewController",
+        "offset":392,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_textFieldsHidden",
+        "offset":396,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIGestureRecognizer *",
+        "name":"_backButtonDismissGestureRecognizer",
+        "offset":400,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"_ownedTransitioningDelegate",
+        "offset":404,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_shouldEnsureContentControllerViewIsVisibleOnAppearance",
+        "offset":408,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__shouldAllowNilParameters",
+        "offset":409,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__shouldFlipFrameForShimDismissal",
+        "offset":410,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIAlertAction *",
+        "name":"__defaultAlertAction",
+        "offset":412,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIPopoverController *",
+        "name":"__compatibilityPopoverController",
+        "offset":416,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIViewController",
+    "type":"class"
+  },
+  "i386":{
+    "className":"UIAlertController",
+    "ivars":[
+      {
+        "ivarType":"NSString *",
+        "name":"_message",
+        "offset":352,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSAttributedString *",
+        "name":"_attributedTitle",
+        "offset":356,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSAttributedString *",
+        "name":"_attributedMessage",
+        "offset":360,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableArray *",
+        "name":"_actions",
+        "offset":364,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSSet *",
+        "name":"_linkedAlertControllers",
+        "offset":368,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIAlertAction *",
+        "name":"_cancelAction",
+        "offset":372,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_resolvedStyle",
+        "offset":376,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_preferredStyle",
+        "offset":380,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<UIAlertControllerVisualStyleProviding> *",
+        "name":"_styleProvider",
+        "offset":384,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIViewController *",
+        "name":"_contentViewController",
+        "offset":388,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_UIAlertControllerTextFieldViewController *",
+        "name":"_textFieldViewController",
+        "offset":392,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_textFieldsHidden",
+        "offset":396,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIGestureRecognizer *",
+        "name":"_backButtonDismissGestureRecognizer",
+        "offset":400,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"_ownedTransitioningDelegate",
+        "offset":404,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_shouldEnsureContentControllerViewIsVisibleOnAppearance",
+        "offset":408,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__shouldAllowNilParameters",
+        "offset":409,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__shouldFlipFrameForShimDismissal",
+        "offset":410,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIAlertAction *",
+        "name":"__defaultAlertAction",
+        "offset":412,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIPopoverController *",
+        "name":"__compatibilityPopoverController",
+        "offset":416,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIViewController",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"UIAlertController",
+    "ivars":[
+      {
+        "ivarType":"NSString *",
+        "name":"_message",
+        "offset":696,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSAttributedString *",
+        "name":"_attributedTitle",
+        "offset":704,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSAttributedString *",
+        "name":"_attributedMessage",
+        "offset":712,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableArray *",
+        "name":"_actions",
+        "offset":720,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSSet *",
+        "name":"_linkedAlertControllers",
+        "offset":728,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIAlertAction *",
+        "name":"_cancelAction",
+        "offset":736,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_resolvedStyle",
+        "offset":744,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_preferredStyle",
+        "offset":752,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<UIAlertControllerVisualStyleProviding> *",
+        "name":"_styleProvider",
+        "offset":760,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIViewController *",
+        "name":"_contentViewController",
+        "offset":768,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_UIAlertControllerTextFieldViewController *",
+        "name":"_textFieldViewController",
+        "offset":776,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_textFieldsHidden",
+        "offset":784,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIGestureRecognizer *",
+        "name":"_backButtonDismissGestureRecognizer",
+        "offset":792,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"_ownedTransitioningDelegate",
+        "offset":800,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_shouldEnsureContentControllerViewIsVisibleOnAppearance",
+        "offset":808,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldAllowNilParameters",
+        "offset":809,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldFlipFrameForShimDismissal",
+        "offset":810,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIAlertAction *",
+        "name":"__defaultAlertAction",
+        "offset":816,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIPopoverController *",
+        "name":"__compatibilityPopoverController",
+        "offset":824,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIViewController",
+    "type":"class"
+  }
+}
