@@ -42,6 +42,13 @@ class UIButtonSyntheticProvider(UIControl.UIControlSyntheticProvider):
 
     @staticmethod
     def get_label_summary(provider):
+        """
+        UILabel summary.
+
+        :param UILabel.UILabelSyntheticProvider provider: UILabel provider.
+        :return: UILabel summary.
+        :rtype: str
+        """
         return "text={}".format(provider.text_value)
 
     def summary(self):

@@ -223,7 +223,8 @@
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:@"title" forState:UIControlStateNormal];
-//    [self compareObject:button ofType:@"UIButton *" toSumamry:@"text=@\"title\""];
+    [button layoutIfNeeded]; // Hack to force drawing.
+    [self compareObject:button ofType:@"UIButton *" toSumamry:@"text=@\"title\""];
 }
 
 - (void)testUIButton2
@@ -231,7 +232,8 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:@"title" forState:UIControlStateNormal];
     button.tag = 123;
-//    [self compareObject:button ofType:@"UIButton *" toSumamry:@"text=@\"title\", tag=123"];
+    [button layoutIfNeeded]; // Hack to force drawing.
+    [self compareObject:button ofType:@"UIButton *" toSumamry:@"text=@\"title\", tag=123"];
 }
 
 #pragma mark - UITextField
