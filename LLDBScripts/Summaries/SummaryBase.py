@@ -228,7 +228,7 @@ class SummaryBaseSyntheticProvider(object):
 
         if self.get_registered_child_value_parameter(attribute_name) is not None:
             # Registered value already exists.
-            raise StandardError()
+            raise StandardError("Attribute \"{}\" already registered.".format(attribute_name))
 
         # Create registered child value parameters.
         r = RegisterValue()

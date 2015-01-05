@@ -204,6 +204,20 @@
     [self compareObject:progresView ofType:@"UIProgressView *" toSumamry:@"progress=0.45"];
 }
 
+#pragma mark - UIBarButtonItem
+- (void)testUIBarButtonItem01
+{
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"title" style:UIBarButtonItemStyleDone target:nil action:nil];
+    [self compareObject:item ofType:@"UIBarButtonItem *" toSumamry:@"title=@\"title\""];
+}
+
+- (void)testUIBarButtonItem02
+{
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"title" style:UIBarButtonItemStyleDone target:nil action:nil];
+    item.width = 123;
+    [self compareObject:item ofType:@"UIBarButtonItem *" toSumamry:@"title=@\"title\", width=123"];
+}
+
 #pragma mark - UIButton
 - (void)testUIButton1
 {

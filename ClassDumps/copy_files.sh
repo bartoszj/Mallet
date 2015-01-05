@@ -39,6 +39,8 @@ CPY=(
     "UIKit.framework/UIAlertAction.json"
     "UIKit.framework/UIAlertController.json"
     "UIKit.framework/UIAlertView.json"
+    "UIKit.framework/UIBarButtonItem.json"
+    "UIKit.framework/UIBarItem.json"
     "UIKit.framework/UIButton.json"
     "UIKit.framework/UIControl.json"
     "UIKit.framework/UIDatePicker.json"

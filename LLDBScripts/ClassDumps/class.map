@@ -19,6 +19,7 @@ UIDatePicker:UIKit/UIDatePicker.json
 UIAlertController:UIKit/UIAlertController.json
 UIProgressView:UIKit/UIProgressView.json
 SKPaymentTransactionInternal:StoreKit/SKPaymentTransactionInternal.json
+UIBarItem:UIKit/UIBarItem.json
 SKProduct:StoreKit/SKProduct.json
 UISlider:UIKit/UISlider.json
 UIButton:UIKit/UIButton.json
@@ -36,5 +37,6 @@ SKRequestInternal:StoreKit/SKRequestInternal.json
 SKProductsResponseInternal:StoreKit/SKProductsResponseInternal.json
 CALayer:QuartzCore/CALayer.json
 UITextField:UIKit/UITextField.json
+UIBarButtonItem:UIKit/UIBarButtonItem.json
 UIViewController:UIKit/UIViewController.json
 UISegmentedControl:UIKit/UISegmentedControl.json
