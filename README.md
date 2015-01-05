@@ -22,6 +22,7 @@ LLDB commands and summaries
     - UIAlertAction
     - UIAlertController
     - UIAlertView
+    - UIBarItem, UIBarButtonItem
     - UIButton
     - UIDatePicker
     - UIEdgeInsets
