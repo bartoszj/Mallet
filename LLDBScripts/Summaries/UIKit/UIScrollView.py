@@ -51,8 +51,6 @@ class UIScrollViewSyntheticProvider(UIView.UIViewSyntheticProvider):
                                   summary_function=self.get_maximum_zoom_scale_summary)
 
     def get_content_offset_summary(self):
-        if self.has_valid_layer() is None:
-            return None
         origin = self.layer_provider.get_bounds_provider().origin_provider
         return "contentOffset=({}, {})".format(SummaryBase.formatted_float(origin.x_value),
                                                SummaryBase.formatted_float(origin.y_value))

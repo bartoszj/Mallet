@@ -22,10 +22,6 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import functools
-import lldb
-import lldb.formatters
-import objc_runtime
 import logging
 
 Architecture_unknown = 0
@@ -136,63 +132,26 @@ def is_64bit_architecture_from_target(target):
     return is_64bit_architecture(architecture)
 
 
-# Statistics for objc_runtime.
-statistics = lldb.formatters.metrics.Metrics()
-statistics.add_metric("invalid_isa")
-statistics.add_metric("invalid_pointer")
-statistics.add_metric("unknown_class")
-statistics.add_metric("code_notrun")
-
-
-def get_class_data(value_obj):
-    """
-    Get class_data and wrapper.
-
-    :param lldb.SBValue value_obj:
-    :return: Wrapper and class data.
-    """
-    global statistics
-    class_data, wrapper = objc_runtime.Utilities.prepare_class_detection(value_obj, statistics)
-    return class_data, wrapper
-
-
-def generic_summary_provider(value_obj, internal_dict, class_synthetic_provider, supported_classes=[]):
+def generic_summary_provider(value_obj, internal_dict, class_synthetic_provider):
     """
     Checks value type and returns summary.
 
-    :param lldb.SBValue value_obj:
-    :param dict internal_dict:
-    :param class class_synthetic_provider:
-    :param dict[str] supported_classes:
+    :param lldb.SBValue value_obj: LLDB object.
+    :param dict internal_dict: Internal LLDB dictionary.
+    :param class class_synthetic_provider: Synthetic provider class.
     :return: Value summary.
     :rtype: str
     """
     # Class data.
-    logger = logging.getLogger(__name__)
-    type_name = value_obj.GetTypeName() if value_obj.GetTypeName() else "Unknown type name"
-    class_data, wrapper = get_class_data(value_obj)
-
-    # Class data invalid.
-    # if not class_data.is_valid():
-    #     logger.debug("generic_summary_provider: class_data invalid for \"{}\".".format(type_name))
-    #     return ""
-
-    # Not supported class.
-    if len(supported_classes) > 0 and class_data.class_name() not in supported_classes:
-        logger.debug("generic_summary_provider: not supported class \"{}\" in {}.".format(type_name, supported_classes))
-        return ""
-
-    # Using wrapper if available.
-    # if wrapper is not None:
-    #     logger.debug("generic_summary_provider: using wrapper for \"{}\".".format(type_name))
-    #     return wrapper.message()
+    # logger = logging.getLogger(__name__)
+    # type_name = value_obj.GetTypeName() if value_obj.GetTypeName() else "Unknown type name"
 
     # Using Class Summary Provider.
-    wrapper = class_synthetic_provider(value_obj, internal_dict)
-    if wrapper is not None:
+    provider = class_synthetic_provider(value_obj, internal_dict)
+    if provider is not None:
         # logger.debug("generic_summary_provider: using summary provider {} for \"{}\"."
         #                               .format(class_synthetic_provider, type_name))
-        return wrapper.summary()
+        return provider.summary()
 
     # Summary not available.
     # logger.debug("generic_summary_provider: summary unavailable")
@@ -230,7 +189,7 @@ class save_parameter(object):
             :return: Value.
             :raise AttributeError: If object doesn't have given attribute.
             """
-            logger = logging.getLogger(__name__)
+            # logger = logging.getLogger(__name__)
             # Check if "cache" parameter exists.
             if not hasattr(s, self._param_name):
                 # logger.error("SaveParam.save_parameter.wrapper: no attribute with name: \"{}\"".

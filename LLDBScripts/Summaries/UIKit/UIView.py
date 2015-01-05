@@ -61,9 +61,6 @@ class UIViewSyntheticProvider(UIResponder.UIResponderSyntheticProvider):
 
     @Helpers.save_parameter("frame")
     def get_frame(self):
-        if not self.has_valid_layer():
-            return None
-
         position = self.layer_provider.get_position_provider()
         bounds = self.layer_provider.get_bounds_provider()
 
@@ -84,16 +81,6 @@ class UIViewSyntheticProvider(UIResponder.UIResponderSyntheticProvider):
                                                       SummaryBase.formatted_float(frame.width),
                                                       SummaryBase.formatted_float(frame.height))
         return frame_summary
-
-    def has_valid_layer(self):
-        # In some cases CALayer object is invalid.
-        layer = self.layer
-        class_data, wrapper = Helpers.get_class_data(layer)
-        if class_data.is_valid() is None:
-            logger = logging.getLogger(__name__)
-            logger.info("has_valid_layer: not valid class_data.")
-            return False
-        return True
 
     def summary(self):
         summary = SummaryBase.join_summaries(self.get_frame_summary(), self.tag_summary)
