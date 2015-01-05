@@ -34,7 +34,8 @@
     layer.position = CGPointMake(1, 2);
     layer.bounds = CGRectMake(1, 2, 160, 161);
     
-    CompareObjectWithSummary(layer, @"CALayer *", @"position=(1, 2), bounds=(1 2; 160 161)");
+    [self compareObject:layer ofType:@"CALayer *" toSumamry:@"position=(1, 2), bounds=(1 2; 160 161)"];
+
 }
 
 @end
