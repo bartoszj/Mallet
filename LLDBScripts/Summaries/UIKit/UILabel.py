@@ -35,7 +35,7 @@ class UILabelSyntheticProvider(UIView.UIViewSyntheticProvider):
         super(UILabelSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UILabel"
 
-        self.register_child_value("text", ivar_name="_content", type_name="NSAttributedString *",
+        self.register_child_value("text", ivar_name="_content",
                                   primitive_value_function=SummaryBase.get_summary_value,
                                   summary_function=self.get_text_summary)
 
