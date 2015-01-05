@@ -151,11 +151,49 @@
     [self compareObject:scrollView ofType:@"UIScrollView *" toSumamry:@"frame=(0 0; 30 40), contentOffset=(20, 21), contentSize=(33, 44), inset=(1, 2, 3, 4), minScale=0.2, maxScale=3.5"];
 }
 
+#pragma mark - UIAlertAction
+- (void)testUIAlertAction01
+{
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"alert title" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        NSLog(@"action");
+    }];
+    [self compareObject:action ofType:@"UIAlertAction *" toSumamry:@"title=@\"alert title\", style=Cancel"];
+}
+
+- (void)testUIAlertAction02
+{
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"alert title" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        NSLog(@"action");
+    }];
+    action.enabled = NO;
+    [self compareObject:action ofType:@"UIAlertAction *" toSumamry:@"title=@\"alert title\", style=Destructive, disabled"];
+}
+
+#pragma mark - UIAlertController
+- (void)testUIAlertController01
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"alert title" message:@"alert message" preferredStyle:UIAlertControllerStyleActionSheet];
+    [self compareObject:alertController ofType:@"UIAlertController *" toSumamry:@"title=@\"alert title\", message=@\"alert message\", preferredStyle=ActionSheet, actions=0"];
+}
+
+- (void)testUIAlertController02
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"alert title" message:@"alert message" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"alert title" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        NSLog(@"action");
+    }];
+    
+    [alertController addAction:action];
+    
+    [self compareObject:alertController ofType:@"UIAlertController *" toSumamry:@"title=@\"alert title\", message=@\"alert message\", preferredStyle=Alert, actions=1"];
+}
+
 #pragma mark - UIAlertView
 - (void)testUIAlertView
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles:@"OK", nil];
-    [self compareObject:alertView ofType:@"UIAlertView *" toSumamry:@"title=@\"title\", message=@\"message\""];
+    [self compareObject:alertView ofType:@"UIAlertView *" toSumamry:@"title=@\"title\", message=@\"message\", style=Default"];
 }
 
 #pragma mark - UIProgressView

@@ -36,7 +36,8 @@ CPY=(
     "StoreKit.framework/SKRequest.json"
     "StoreKit.framework/SKRequestInternal.json"
 
-    "UIKit.framework/_UIDatePickerView.json"
+    "UIKit.framework/UIAlertAction.json"
+    "UIKit.framework/UIAlertController.json"
     "UIKit.framework/UIAlertView.json"
     "UIKit.framework/UIButton.json"
     "UIKit.framework/UIControl.json"
@@ -55,6 +56,7 @@ CPY=(
     "UIKit.framework/UITextField.json"
     "UIKit.framework/UIView.json"
     "UIKit.framework/UIViewController.json"
+    "UIKit.framework/_UIDatePickerView.json"
     )
 
 for c in ${CPY[@]}; do

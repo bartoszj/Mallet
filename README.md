@@ -19,7 +19,9 @@ LLDB commands and summaries
 - QuartzCore:
     - CALayer
 - UIKit:
-    - UIAlertView (temporary disabled)
+    - UIAlertAction
+    - UIAlertController
+    - UIAlertView
     - UIButton
     - UIDatePicker
     - UIEdgeInsets

@@ -1,5 +1,6 @@
 SKDownload:StoreKit/SKDownload.json
 _UIDatePickerView:UIKit/_UIDatePickerView.json
+UIAlertAction:UIKit/UIAlertAction.json
 UIControl:UIKit/UIControl.json
 SKPayment:StoreKit/SKPayment.json
 SKPaymentQueue:StoreKit/SKPaymentQueue.json
@@ -15,7 +16,7 @@ UIScreen:UIKit/UIScreen.json
 NSURLRequestInternal:CFNetwork/NSURLRequestInternal.json
 SKProductsRequestInternal:StoreKit/SKProductsRequestInternal.json
 UIDatePicker:UIKit/UIDatePicker.json
-SKProductInternal:StoreKit/SKProductInternal.json
+UIAlertController:UIKit/UIAlertController.json
 UIProgressView:UIKit/UIProgressView.json
 SKPaymentTransactionInternal:StoreKit/SKPaymentTransactionInternal.json
 SKProduct:StoreKit/SKProduct.json
@@ -24,6 +25,7 @@ UIButton:UIKit/UIButton.json
 UIResponder:UIKit/UIResponder.json
 UILabel:UIKit/UILabel.json
 UISwitch:UIKit/UISwitch.json
+SKProductInternal:StoreKit/SKProductInternal.json
 UIStepper:UIKit/UIStepper.json
 UIPageControl:UIKit/UIPageControl.json
 UIAlertView:UIKit/UIAlertView.json

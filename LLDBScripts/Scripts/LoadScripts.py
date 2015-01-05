@@ -54,6 +54,7 @@ lldb_summaries_load_order = ["SummaryBase",
                              "UIView",
                              "UIControl",
                              "UIPickerView",
+                             "UIViewController",
 
                              "SKRequestInternal",
                              "SKRequest",
