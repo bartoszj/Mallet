@@ -114,6 +114,9 @@ class NSDateComponentsSyntheticProvider(NSObject.NSObjectSyntheticProvider):
                                   primitive_value_function=self.get_signed_not_empty_value,
                                   summary_function=self.get_leap_month_summary)
 
+        self.synthetic_children_to_check = ["era", "year", "month", "day", "hour", "minute", "second", "week", "weekday", "weekday_ordinal",
+                                            "quarter", "week_of_year", "week_of_month", "year_for_week_of_year", "leap_month"]
+
     def get_signed_not_empty_value(self, obj):
         """
         Returns signed integer from LLDB value if it is not equal to 0x7FFFFFFFFFFFFFFF or 0x7FFFFFFF.
@@ -207,6 +210,18 @@ class NSDateComponentsSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         else:
             return "leapMonth=NO"
 
+    def update_synthetic_children(self):
+        synthetic_children = []
+        for name in self.synthetic_children_to_check:
+            value = getattr(self, name+"_value")
+            if value is not None:
+                synthetic_children.append(name)
+        self.synthetic_children = synthetic_children
+
+    def update(self):
+        self.update_synthetic_children()
+        return True
+
     def summary(self):
         year_value = self.year_value
         month_value = self.month_value
@@ -272,4 +287,7 @@ def __lldb_init_module(debugger, dictionary):
     debugger.HandleCommand("type summary add -F NSDateComponents.summary_provider \
                             --category Foundation \
                             NSDateComponents")
+    debugger.HandleCommand("type synthetic add -l NSDateComponents.NSDateComponentsSyntheticProvider \
+                           --category Foundation \
+                           NSDateComponents")
     debugger.HandleCommand("type category enable Foundation")

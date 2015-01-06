@@ -54,6 +54,7 @@ LLDB commands and summaries
 
 ## Supported synthetic children:
 - Foundation:
+    - NSDateComponents
     - NSURLComponents
 
 ## Summaries that I've failed to implement:

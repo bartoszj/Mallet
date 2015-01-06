@@ -63,9 +63,9 @@ class NSURLComponentsSyntheticProvider(NSObject.NSObjectSyntheticProvider):
                                   primitive_value_function=SummaryBase.get_stripped_summary_value,
                                   summary_function=self.get_fragment_component_summary)
 
-        self.synthetic_children = ["url_string", "scheme_component", "user_component",
-                                   "password_component", "host_component", "port_component",
-                                   "path_component", "query_component", "fragment_component"]
+        self.synthetic_children_to_check = ["url_string", "scheme_component", "user_component",
+                                            "password_component", "host_component", "port_component",
+                                            "path_component", "query_component", "fragment_component"]
 
     @staticmethod
     def get_url_string_summary(value):
@@ -103,18 +103,17 @@ class NSURLComponentsSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def get_fragment_component_summary(value):
         return "fragment=\"{}\"".format(value)
 
-    def num_children(self):
-        return len(self.synthetic_children)
+    def update_synthetic_children(self):
+        synthetic_children = []
+        for name in self.synthetic_children_to_check:
+            value = getattr(self, name+"_value")
+            if value is not None:
+                synthetic_children.append(name)
+        self.synthetic_children = synthetic_children
 
-    def get_child_index(self, name):
-        r = self.get_registered_child_value_parameter(ivar_name=name)
-        index = self.synthetic_children.index(r.attribute_name)
-        return index
-
-    def get_child_at_index(self, index):
-        name = self.synthetic_children[index]
-        value = getattr(self, name)
-        return value
+    def update(self):
+        self.update_synthetic_children()
+        return True
 
     def summary(self):
         summary = SummaryBase.join_summaries(self.url_string_summary, self.scheme_component_summary,

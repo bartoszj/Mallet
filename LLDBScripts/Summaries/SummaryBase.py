@@ -86,6 +86,7 @@ class SummaryBaseSyntheticProvider(object):
     :param str architecture_name: Architecture name.
     :param bool is_64bit: Is 64 bit architecture.
     :param list[RegisterValue] registeredChildValues: List of registered parameters.
+    :param list[str] synthetic_children: List of synthetic children.
     """
     def __init__(self, value_obj, internal_dict):
         """
@@ -108,6 +109,7 @@ class SummaryBaseSyntheticProvider(object):
         self.is_64bit = Helpers.is_64bit_architecture(self.architecture)
 
         self.registeredChildValues = list()
+        self.synthetic_children = list()
 
     def get_type(self, type_name):
         """
@@ -204,7 +206,7 @@ class SummaryBaseSyntheticProvider(object):
         :return: Number of children that the object have.
         :rtype: int
         """
-        return 0
+        return len(self.synthetic_children)
 
     def get_child_index(self, name):
         """
@@ -215,7 +217,11 @@ class SummaryBaseSyntheticProvider(object):
         :return: The index of the synthetic child.
         :rtype: int
         """
-        return 0
+        r = self.get_registered_child_value_parameter(ivar_name=name)
+        index = None
+        if self.synthetic_children.count(r.attribute_name):
+            index = self.synthetic_children.index(r.attribute_name)
+        return index
 
     def get_child_at_index(self, index):
         """
@@ -226,22 +232,25 @@ class SummaryBaseSyntheticProvider(object):
         :return: LLDB SBValue object representing the child.
         :rtype: lldb.SBValue
         """
-        return None
+        name = self.synthetic_children[index]
+        value = getattr(self, name)
+        return value
 
-    # def update(self):
-    #     """
-    #     Synthetic children.
-    #     This call should be used to update the internal state of this Python object whenever the state of the variables in LLDB changes.
-    #
-    #     This method is optional. Also, it may optionally choose to return a value (starting with SVN rev153061/LLDB-134).
-    #     If it returns a value, and that value is True, LLDB will be allowed to cache the children
-    #     and the children count it previously obtained, and will not return to the provider class to ask.
-    #     If nothing, None, or anything other than True is returned, LLDB will discard the cached information and ask.
-    #     Regardless, whenever necessary LLDB will call update.
-    #
-    #     :return: True if internal state of the Python object was changed.
-    #     :rtype: bool
-    #     """
+    def update(self):
+        """
+        Synthetic children.
+        This call should be used to update the internal state of this Python object whenever the state of the variables in LLDB changes.
+
+        This method is optional. Also, it may optionally choose to return a value (starting with SVN rev153061/LLDB-134).
+        If it returns a value, and that value is True, LLDB will be allowed to cache the children
+        and the children count it previously obtained, and will not return to the provider class to ask.
+        If nothing, None, or anything other than True is returned, LLDB will discard the cached information and ask.
+        Regardless, whenever necessary LLDB will call update.
+
+        :return: True if internal state of the Python object was changed.
+        :rtype: bool
+        """
+        return True
 
     # def has_children(self):
     #     """
