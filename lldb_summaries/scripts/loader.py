@@ -25,20 +25,15 @@
 import lldb
 import os
 import logging
-import LLDBLogger
+import imp
+import logger
 
-LLDBLogger.configure_loggers()
+logger.configure_loggers()
 
-lldb_scripts_dir = "~/Library/LLDBScripts/"
-lldb_class_dump_dir = "ClassDumps"
-lldb_commands_paths = ["Commands"]
-lldb_scripts_paths = ["Scripts"]
-lldb_scripts_load_order = ["Helpers",
-                           "LLDBLogger",
-                           "SaveParam"]
+lldb_summaries_package_name = "lldb_summaries"
 lldb_script_extensions = [".py"]
-
-lldb_summaries_paths = ["Summaries"]
+lldb_commands_paths = ["commands"]
+lldb_summaries_paths = ["summaries"]
 lldb_summaries_load_order = ["SummaryBase",
 
                              "NSObject",
@@ -67,6 +62,36 @@ lldb_summaries_load_order = ["SummaryBase",
                              ]
 
 
+def split_path(path):
+    """
+    Split directory path into list.
+
+    :param str path:
+    :return: directory path split into list.
+    :rtype: list[str]
+    """
+    folders = []
+    while path != "":
+        path, last = os.path.split(path)
+        if last != "":
+            folders.append(last)
+    folders.reverse()
+    return folders
+
+
+def get_package_dir_path():
+    """
+    Returns absolute package path.
+
+    :return: Absolute package path.
+    :rtype: str
+    """
+    file_path = os.path.realpath(__file__)
+    cur_dir_path = os.path.dirname(file_path)
+    module_dir_path = os.path.dirname(cur_dir_path)
+    return module_dir_path
+
+
 def scripts_in_directory(path):
     """
     Finds all Python scripts in given directory.
@@ -75,87 +100,102 @@ def scripts_in_directory(path):
     :return: List of founded scripts.
     :rtype: list[(str, str)]
     """
-    extensions = tuple(lldb_script_extensions)
-    scripts = []
+    scripts = list()
 
-    # Go through all folders
+    # Go through all folders.
     for root, dirs, files in os.walk(os.path.expanduser(path)):
-        # Got through all files in folder
+        # Got through all files in folder.
         for f in files:
-            # Add only files with correct suffix
-            if f.endswith(extensions):
-                file_name = os.path.splitext(f)[0]
+            # Work only files with correct suffix.
+            file_name, file_extension = os.path.splitext(f)
+            # Add only files with correct suffix.
+            if lldb_script_extensions.count(file_extension) != 0:
                 full_file_path = os.path.join(root, f)
                 scripts.append((file_name, full_file_path))
-                # print f
-                # print file_name
-                # print full_file_path
     return scripts
 
 
-def load_scripts(scripts, debugger, order_list=[]):
+def load_scripts(scripts, debugger, internal_dict, order_list=[]):
     """
     Loads scripts to the debugger. It uses order_list to load scripts in correct order if needed.
 
     :param list[(str, str)] scripts: List of scripts to load.
     :param lldb.SBDebugger debugger: LLDB debugger.
+    :param dict internal_dict: Internal LLDB dictionary.
     :param list[str] order_list: List of ordered scripts that have to be loaded in order.
     """
     scripts.sort()
 
     # Load scripts from ordered list.
     for ordered_script in order_list:
+        # Find script index.
         indexes = [i for i, v in enumerate(scripts) if v[0] == ordered_script]
         if len(indexes) > 0:
             index = indexes[0]
             script_name, script_path = scripts[index]
-            load_script(script_path, debugger)
+            load_script(script_path, debugger, internal_dict)
             del scripts[index]
 
     # Load other scripts
     for script_name, script_path in scripts:
-        load_script(script_path, debugger)
+        load_script(script_path, debugger, internal_dict)
 
 
-def load_script(script_path, debugger):
+def load_script(script_path, debugger, internal_dict):
     """
     Loads script at script_path to debugger.
 
     :param str script_path: Path to script.
     :param lldb.SBDebugger debugger: LLDB debugger.
+    :param dict internal_dict: Internal LLDB dictionary.
     """
-    command = "command script import \"{}\"".format(script_path)
-    debugger.HandleCommand(command)
-    # print script_path
-    # print command
+    # Helpers.
+    log = logging.getLogger(__name__)
+    package_dir_path = get_package_dir_path()
+    script_dir_path = os.path.dirname(script_path)
+    relative_path = os.path.relpath(script_dir_path, package_dir_path)
+    file_name, file_extension = os.path.splitext(os.path.basename(script_path))
+
+    # Create module path.
+    module_paths = [lldb_summaries_package_name]
+    module_paths.extend(split_path(relative_path))
+    module_paths.append(file_name)
+    module_path = ".".join(module_paths)
+
+    # Load module to LLDB.
+    if file_name != "__init__":
+        # Load module to LLDB.
+        debugger.HandleCommand("command script import {}".format(module_path))
+
+    # Load module.
+    module = imp.load_source(module_path, script_path)
+
+    # Execute init method.
+    if hasattr(module, "lldbinit"):
+        # Initialize module.
+        log.debug("Loading script: {}".format(file_name))
+        module.lldbinit(debugger, internal_dict, module_path)
 
 
-def load_lldb_scripts(debugger):
+def load_all(debugger, internal_dict):
     """
     Loads all scripts from Commands, Scripts and Summaries directories.
 
-    :param lldb.SBDebugger debugger: LLDB debugger.
+    :param lldb.SBDebugger debugger: LLDB debugger
+    :param dict internal_dict: Internal LLDB dictionary.
     """
-    # Load commands.
-    scripts = []
-    for directory in lldb_commands_paths:
-        full_path = os.path.join(lldb_scripts_dir, directory)
-        scripts.extend(scripts_in_directory(full_path))
-    load_scripts(scripts, debugger)
+    log = logging.getLogger(__name__)
+    package_dir_path = get_package_dir_path()
 
-    # Load scripts.
-    scripts = []
-    for directory in lldb_scripts_paths:
-        full_path = os.path.join(lldb_scripts_dir, directory)
-        scripts.extend(scripts_in_directory(full_path))
-    load_scripts(scripts, debugger, lldb_scripts_load_order)
+    # Load commands.
+    scripts = list()
+    for directory in lldb_commands_paths:
+        directory_path = os.path.join(package_dir_path, directory)
+        scripts.extend(scripts_in_directory(directory_path))
+    load_scripts(scripts, debugger, internal_dict)
 
     # Load summaries.
-    scripts = []
-    for directory in lldb_summaries_paths:
-        full_path = os.path.join(lldb_scripts_dir, directory)
-        scripts.extend(scripts_in_directory(full_path))
-    load_scripts(scripts, debugger, lldb_summaries_load_order)
+    # for directory in lldb_summaries_paths:
+    #     load_scripts_in_directory(directory, lldb_summaries_load_order, debugger, internal_dict)
 
-    logger = logging.getLogger(__name__)
-    logger.debug("Scripts loaded.")
+    log.debug("Scripts loaded.")

@@ -31,8 +31,13 @@ def configure_loggers():
     Configure all well known loggers.
     """
 
-    logger_names = ["LLDBLogger", "LoadScripts", "Helpers", "TypeCache", "ClassDump",
-                    "SummaryBase", "UIView"]
+    logger_names = ["lldb_summaries.scripts.class_dump",
+                    "lldb_summaries.scripts.helpers",
+                    "lldb_summaries.scripts.loader",
+                    "lldb_summaries.scripts.logger",
+                    "lldb_summaries.scripts.type_cache",
+                    "lldb_summaries.summaries.SummaryBase",
+                    "lldb_summaries.summaries.UIView"]
     for logger_name in logger_names:
         logger = logging.getLogger(logger_name)
         configure_logger(logger)
@@ -57,10 +62,10 @@ def configure_logger(logger):
         file_handler.setFormatter(formatter)
 
         # Null handler.
-        null_handler = logging.NullHandler()
+        # null_handler = logging.NullHandler()
 
-        # logger.addHandler(file_handler)
-        logger.addHandler(null_handler)
+        logger.addHandler(file_handler)
+        # logger.addHandler(null_handler)
         logger.debug("Logger \"{}\" configured.".format(logger.name))
 
 

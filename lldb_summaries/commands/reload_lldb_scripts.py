@@ -22,15 +22,15 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import LoadScripts
+from ..scripts import loader
 
 
 def reload_lldb_scripts(debugger, command, result, internal_dict):
     """
     Reloads all scripts, command, summaries.
     """
-    LoadScripts.load_lldb_scripts(debugger)
+    loader.load_all(debugger, internal_dict)
 
 
-def __lldb_init_module(debugger, internal_dict):
-    debugger.HandleCommand('command script add -f reload_lldb_scripts.reload_lldb_scripts reload_lldb_scripts')
+def lldbinit(debugger, internal_dict, module_path):
+    debugger.HandleCommand("command script add -f {}.reload_lldb_scripts reload_lldb_scripts".format(module_path))

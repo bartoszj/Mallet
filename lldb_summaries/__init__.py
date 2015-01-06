@@ -25,11 +25,16 @@
 __all__ = []
 
 
-def __lldb_init_module(debugger, dictionary):
+def __lldb_init_module(debugger, internal_dict):
     """
     :param lldb.SBDebugger debugger: LLDB debugger
+    :param dict internal_dict: Internal LLDB dictionary.
     """
-    print(__file__, "__lldb_init_module")
 
-    # import scripts.load_scripts as ls
-    # ls.load_lldb_scripts(debugger)
+    # Configure loggers.
+    import scripts.logger as logger
+    logger.configure_loggers()
+
+    # Load commands and summaries.
+    import scripts.loader
+    scripts.loader.load_all(debugger, internal_dict)
