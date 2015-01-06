@@ -7,7 +7,7 @@ LLDB commands and summaries
 1. Copy **lldbinit** to **~/.lldbinit**.
 2. Copy **LLDBScripts** to **~/Library/**.
 
-## Supported types:
+## Supported summaries:
 - CoreGraphics:
     - CGVector
 - CFNetowrk:
@@ -51,6 +51,10 @@ LLDB commands and summaries
     - SKProductsResponse
     - SKReceiptRefreshRequest (doesn't return anything)
     - SKRequest
+
+## Supported synthetic children:
+- Foundation:
+    - NSURLComponents
 
 ## Summaries that I've failed to implement:
 - NSIndexPath

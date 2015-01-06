@@ -196,6 +196,79 @@ class SummaryBaseSyntheticProvider(object):
             """:type: lldb.SBValue"""
         return value
 
+    def num_children(self):
+        """
+        Synthetic children.
+        Return the number of children that the object have.
+
+        :return: Number of children that the object have.
+        :rtype: int
+        """
+        return 0
+
+    def get_child_index(self, name):
+        """
+        Synthetic children.
+        Return the index of the synthetic child whose name is given as argument.
+
+        :param str name: Name of synthetic child.
+        :return: The index of the synthetic child.
+        :rtype: int
+        """
+        return 0
+
+    def get_child_at_index(self, index):
+        """
+        Synthetic children.
+        Return a new LLDB SBValue object representing the child at the index given as argument.
+
+        :param int index: Index of synthetic child.
+        :return: LLDB SBValue object representing the child.
+        :rtype: lldb.SBValue
+        """
+        return None
+
+    # def update(self):
+    #     """
+    #     Synthetic children.
+    #     This call should be used to update the internal state of this Python object whenever the state of the variables in LLDB changes.
+    #
+    #     This method is optional. Also, it may optionally choose to return a value (starting with SVN rev153061/LLDB-134).
+    #     If it returns a value, and that value is True, LLDB will be allowed to cache the children
+    #     and the children count it previously obtained, and will not return to the provider class to ask.
+    #     If nothing, None, or anything other than True is returned, LLDB will discard the cached information and ask.
+    #     Regardless, whenever necessary LLDB will call update.
+    #
+    #     :return: True if internal state of the Python object was changed.
+    #     :rtype: bool
+    #     """
+
+    # def has_children(self):
+    #     """
+    #     Synthetic children.
+    #     This call should return True if this object might have children, and False if this object can be guaranteed not to have children.
+    #
+    #     This method is optional (starting with SVN rev166495/LLDB-175). While implementing it in terms of num_children is acceptable,
+    #     implementors are encouraged to look for optimized coding alternatives whenever reasonable.
+    #
+    #     :return: True if this object might have children, and False if this object can be guaranteed not to have children.
+    #     :rtype: bool
+    #     """
+
+    # def get_value(self):
+    #     """
+    #     Synthetic children.
+    #     This call can return an SBValue to be presented as the value of the synthetic value under consideration.
+    #
+    #     This method is optional (starting with SVN revision 219330). The SBValue you return here will most likely
+    #     be a numeric type (int, float, ...) as its value bytes will be used as-if they were the value of the
+    #     root SBValue proper. As a shortcut for this, you can inherit from lldb.SBSyntheticValueProvider,
+    #     and just define get_value as other methods are defaulted in the superclass as returning default no-children responses.
+    #
+    #     :return: return an SBValue to be presented as the value of the synthetic value under consideration.
+    #     :rtype: lldb.SBValue
+    #     """
+
     def register_child_value(self, attribute_name, ivar_name=None, type_name=None, offset=None, cache_value=True,
                              primitive_value_function=None, cache_primitive_value=False,
                              provider_class=None, cache_provider=True,
@@ -226,7 +299,7 @@ class SummaryBaseSyntheticProvider(object):
         :param bool cache_summary: Indicates if summary value should be cached.
         """
 
-        if self.get_registered_child_value_parameter(attribute_name) is not None:
+        if self.get_registered_child_value_parameter(attribute_name=attribute_name) is not None:
             # Registered value already exists.
             raise StandardError("Attribute \"{}\" already registered.".format(attribute_name))
 
@@ -254,17 +327,23 @@ class SummaryBaseSyntheticProvider(object):
 
         self.registeredChildValues.append(r)
 
-    def get_registered_child_value_parameter(self, attribute_name):
+    def get_registered_child_value_parameter(self, attribute_name=None, ivar_name=None):
         """
-        Returns registered value parameters for given name.
+        Returns registered value parameters for given name or ivar_name.
 
         :param str attribute_name: Attribute name.
+        :param str ivar_name: Ivar name.
         :return: Registered value parameters.
-        :rtype: RegisterValue
+        :rtype: RegisterValue | None
         """
-        for r in self.registeredChildValues:
-            if r.attribute_name == attribute_name:
-                return r
+        if attribute_name is not None:
+            for r in self.registeredChildValues:
+                if r.attribute_name == attribute_name:
+                    return r
+        elif ivar_name is not None:
+            for r in self.registeredChildValues:
+                if r.ivar_name == ivar_name:
+                    return r
         return None
 
     def __getattr__(self, item):

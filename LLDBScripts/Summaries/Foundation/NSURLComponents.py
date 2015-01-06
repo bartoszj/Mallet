@@ -63,6 +63,10 @@ class NSURLComponentsSyntheticProvider(NSObject.NSObjectSyntheticProvider):
                                   primitive_value_function=SummaryBase.get_stripped_summary_value,
                                   summary_function=self.get_fragment_component_summary)
 
+        self.synthetic_children = ["url_string", "scheme_component", "user_component",
+                                   "password_component", "host_component", "port_component",
+                                   "path_component", "query_component", "fragment_component"]
+
     @staticmethod
     def get_url_string_summary(value):
         return "url=\"{}\"".format(value)
@@ -99,6 +103,19 @@ class NSURLComponentsSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def get_fragment_component_summary(value):
         return "fragment=\"{}\"".format(value)
 
+    def num_children(self):
+        return len(self.synthetic_children)
+
+    def get_child_index(self, name):
+        r = self.get_registered_child_value_parameter(ivar_name=name)
+        index = self.synthetic_children.index(r.attribute_name)
+        return index
+
+    def get_child_at_index(self, index):
+        name = self.synthetic_children[index]
+        value = getattr(self, name)
+        return value
+
     def summary(self):
         summary = SummaryBase.join_summaries(self.url_string_summary, self.scheme_component_summary,
                                              self.user_component_summary, self.password_component_summary,
@@ -116,4 +133,7 @@ def __lldb_init_module(debugger, dictionary):
     debugger.HandleCommand("type summary add -F NSURLComponents.summary_provider \
                             --category Foundation \
                             NSURLComponents __NSConcreteURLComponents")
+    debugger.HandleCommand("type synthetic add -l NSURLComponents.NSURLComponentsSyntheticProvider \
+                           --category Foundation \
+                           NSURLComponents __NSConcreteURLComponents")
     debugger.HandleCommand("type category enable Foundation")
