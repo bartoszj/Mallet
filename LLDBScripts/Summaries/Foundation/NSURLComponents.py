@@ -36,52 +36,52 @@ class NSURLComponentsSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         self.type_name = "__NSConcreteURLComponents"
 
         self.register_child_value("url_string", ivar_name="_urlString",
-                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  primitive_value_function=SummaryBase.get_stripped_summary_value,
                                   summary_function=self.get_url_string_summary)
         self.register_child_value("scheme_component", ivar_name="_schemeComponent",
-                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  primitive_value_function=SummaryBase.get_stripped_summary_value,
                                   summary_function=self.get_scheme_component_summary)
         self.register_child_value("user_component", ivar_name="_userComponent",
-                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  primitive_value_function=SummaryBase.get_stripped_summary_value,
                                   summary_function=self.get_user_component_summary)
         self.register_child_value("password_component", ivar_name="_passwordComponent",
-                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  primitive_value_function=SummaryBase.get_stripped_summary_value,
                                   summary_function=self.get_password_component_summary)
         self.register_child_value("host_component", ivar_name="_hostComponent",
-                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  primitive_value_function=SummaryBase.get_stripped_summary_value,
                                   summary_function=self.get_host_component_summary)
         self.register_child_value("port_component", ivar_name="_portComponent",
                                   primitive_value_function=SummaryBase.get_description_value,
                                   summary_function=self.get_port_component_summary)
         self.register_child_value("path_component", ivar_name="_pathComponent",
-                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  primitive_value_function=SummaryBase.get_stripped_summary_value,
                                   summary_function=self.get_path_component_summary)
         self.register_child_value("query_component", ivar_name="_queryComponent",
-                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  primitive_value_function=SummaryBase.get_stripped_summary_value,
                                   summary_function=self.get_query_component_summary)
         self.register_child_value("fragment_component", ivar_name="_fragmentComponent",
-                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  primitive_value_function=SummaryBase.get_stripped_summary_value,
                                   summary_function=self.get_fragment_component_summary)
 
     @staticmethod
     def get_url_string_summary(value):
-        return "url={}".format(value)
+        return "url=\"{}\"".format(value)
 
     @staticmethod
     def get_scheme_component_summary(value):
-        return "scheme={}".format(value)
+        return "scheme=\"{}\"".format(value)
 
     @staticmethod
     def get_user_component_summary(value):
-        return "user={}".format(value)
+        return "user=\"{}\"".format(value)
 
     @staticmethod
     def get_password_component_summary(value):
-        return "password={}".format(value)
+        return "password=\"{}\"".format(value)
 
     @staticmethod
     def get_host_component_summary(value):
-        return "host={}".format(value)
+        return "host=\"{}\"".format(value)
 
     @staticmethod
     def get_port_component_summary(value):
@@ -89,15 +89,15 @@ class NSURLComponentsSyntheticProvider(NSObject.NSObjectSyntheticProvider):
 
     @staticmethod
     def get_path_component_summary(value):
-        return "path={}".format(value)
+        return "path=\"{}\"".format(value)
 
     @staticmethod
     def get_query_component_summary(value):
-        return "query={}".format(value)
+        return "query=\"{}\"".format(value)
 
     @staticmethod
     def get_fragment_component_summary(value):
-        return "fragment={}".format(value)
+        return "fragment=\"{}\"".format(value)
 
     def summary(self):
         summary = SummaryBase.join_summaries(self.url_string_summary, self.scheme_component_summary,

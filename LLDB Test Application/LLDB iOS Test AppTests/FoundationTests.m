@@ -255,12 +255,36 @@
 }
 
 #pragma mark - NSURLComponents
-- (void)testNSURLComponents
+- (void)testNSURLComponents01
 {
     NSURLComponents *components = [[NSURLComponents alloc] initWithString:@"http://google.com"];
-    components.scheme = @"https";
-    components.port = @(8080);
-    NSLog(@"a");
+    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"url=\"http://google.com\""];
+}
+
+- (void)testNSURLComponents02
+{
+    NSURLComponents *components = [[NSURLComponents alloc] init];
+    components.scheme = @"scheme";
+    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"scheme=\"scheme\""];
+    components.user = @"user";
+    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"scheme=\"scheme\", user=\"user\""];
+    components.password = @"password";
+    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"scheme=\"scheme\", user=\"user\", password=\"password\""];
+}
+
+- (void)testNSURLComponents03
+{
+    NSURLComponents *components = [[NSURLComponents alloc] init];
+    components.host = @"host";
+    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"host=\"host\""];
+    components.port = @(1234);
+    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"host=\"host\", port=1234"];
+    components.path = @"path1/path2";
+    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"host=\"host\", port=1234, path=\"path1/path2\""];
+    components.query = @"query";
+    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"host=\"host\", port=1234, path=\"path1/path2\", query=\"query\""];
+    components.fragment = @"fragment";
+    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"host=\"host\", port=1234, path=\"path1/path2\", query=\"query\", fragment=\"fragment\""];
 }
 
 @end
