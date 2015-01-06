@@ -33,7 +33,7 @@ class NSUUIDSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(NSUUIDSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.type_name = "NSUUID *"
+        self.type_name = "NSUUID"
 
         if self.is_64bit:
             uuid_offset = 8

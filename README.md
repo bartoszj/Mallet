@@ -14,6 +14,7 @@ LLDB commands and summaries
     - NSURLRequest (NSMutableURLRequest)
 - Foundation:
     - NSDateComponents
+    - NSURLComponents (__NSConcreteURLComponents)
     - NSObject
     - NSUUID (__NSConcreteUUID)
 - QuartzCore:

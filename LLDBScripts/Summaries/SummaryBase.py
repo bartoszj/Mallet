@@ -491,6 +491,20 @@ def get_stripped_summary_value(obj):
     return None if summary is None else summary[2:-1]
 
 
+def get_description_value(obj):
+    """
+    Returns object description from LLDB value.
+
+    :param lldb.SBValue obj: LLDB value object.
+    :return: Object description from LLDB value.
+    :rtype: str | None
+    """
+    desc = None if obj is None else obj.GetObjectDescription()
+    if desc == "<nil>":
+        desc = None
+    return desc
+
+
 def get_count_value(obj):
     """
     Returns count of child objects from LLDB value.

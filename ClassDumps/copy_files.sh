@@ -17,6 +17,9 @@ CPY=(
     "CFNetwork.framework/NSURLRequest.json"
     "CFNetwork.framework/NSURLRequestInternal.json"
 
+    "Foundation.framework/__NSConcreteURLComponents.json"
+    "Foundation.framework/NSURLComponents.json"
+
     "QuartzCore.framework/CALayer.json"
 
     "StoreKit.framework/SKDownload.json"

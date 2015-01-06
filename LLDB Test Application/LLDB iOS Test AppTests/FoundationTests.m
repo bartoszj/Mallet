@@ -254,4 +254,13 @@
     [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"2014-03-21 05:06:07"];
 }
 
+#pragma mark - NSURLComponents
+- (void)testNSURLComponents
+{
+    NSURLComponents *components = [[NSURLComponents alloc] initWithString:@"http://google.com"];
+    components.scheme = @"https";
+    components.port = @(8080);
+    NSLog(@"a");
+}
+
 @end

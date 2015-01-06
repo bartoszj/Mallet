@@ -1,0 +1,486 @@
+{
+  "arm64":{
+    "className":"__NSConcreteURLComponents",
+    "ivars":[
+      {
+        "ivarType":"int",
+        "name":"_lock",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_urlString",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _URIParseInfo",
+        "name":"_parseInfo",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_schemeComponentValid",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_userComponentValid",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_passwordComponentValid",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_hostComponentValid",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_portComponentValid",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_pathComponentValid",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_queryComponentValid",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_fragmentComponentValid",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_schemeComponent",
+        "offset":112,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_userComponent",
+        "offset":120,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_passwordComponent",
+        "offset":128,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_hostComponent",
+        "offset":136,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSNumber *",
+        "name":"_portComponent",
+        "offset":144,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_pathComponent",
+        "offset":152,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_queryComponent",
+        "offset":160,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_fragmentComponent",
+        "offset":168,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSURLComponents",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"__NSConcreteURLComponents",
+    "ivars":[
+      {
+        "ivarType":"int",
+        "name":"_lock",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_urlString",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _URIParseInfo",
+        "name":"_parseInfo",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_schemeComponentValid",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_userComponentValid",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_passwordComponentValid",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_hostComponentValid",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_portComponentValid",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_pathComponentValid",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_queryComponentValid",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_fragmentComponentValid",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_schemeComponent",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_userComponent",
+        "offset":60,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_passwordComponent",
+        "offset":64,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_hostComponent",
+        "offset":68,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSNumber *",
+        "name":"_portComponent",
+        "offset":72,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_pathComponent",
+        "offset":76,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_queryComponent",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_fragmentComponent",
+        "offset":84,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSURLComponents",
+    "type":"class"
+  },
+  "i386":{
+    "className":"__NSConcreteURLComponents",
+    "ivars":[
+      {
+        "ivarType":"int",
+        "name":"_lock",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_urlString",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _URIParseInfo",
+        "name":"_parseInfo",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_schemeComponentValid",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_userComponentValid",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_passwordComponentValid",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_hostComponentValid",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_portComponentValid",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_pathComponentValid",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_queryComponentValid",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_fragmentComponentValid",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_schemeComponent",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_userComponent",
+        "offset":60,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_passwordComponent",
+        "offset":64,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_hostComponent",
+        "offset":68,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSNumber *",
+        "name":"_portComponent",
+        "offset":72,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_pathComponent",
+        "offset":76,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_queryComponent",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_fragmentComponent",
+        "offset":84,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSURLComponents",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"__NSConcreteURLComponents",
+    "ivars":[
+      {
+        "ivarType":"int",
+        "name":"_lock",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_urlString",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _URIParseInfo",
+        "name":"_parseInfo",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_schemeComponentValid",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_userComponentValid",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_passwordComponentValid",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_hostComponentValid",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_portComponentValid",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_pathComponentValid",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_queryComponentValid",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int :1",
+        "name":"_fragmentComponentValid",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_schemeComponent",
+        "offset":112,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_userComponent",
+        "offset":120,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_passwordComponent",
+        "offset":128,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_hostComponent",
+        "offset":136,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSNumber *",
+        "name":"_portComponent",
+        "offset":144,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_pathComponent",
+        "offset":152,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_queryComponent",
+        "offset":160,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_fragmentComponent",
+        "offset":168,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSURLComponents",
+    "type":"class"
+  }
+}
