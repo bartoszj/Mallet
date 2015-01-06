@@ -30,7 +30,42 @@ import logger
 
 logger.configure_loggers()
 
-lldb_summaries_package_name = "lldb_summaries"
+
+def get_package_name():
+    """
+    Returns package name -> "lldb_summaries"
+
+    :return: Package name.
+    :rtype: str
+    """
+    return __name__.split(".")[0]
+
+
+def get_package_dir_path():
+    """
+    Returns absolute package path.
+
+    :return: Absolute package path.
+    :rtype: str
+    """
+    # Get number of submodules.
+    modules = __name__.split(".")
+    modules_count = len(modules)
+    step_count = modules_count - 1
+    if step_count < 0:
+        step_count = 0
+
+    # Got up to main package folder.
+    path = os.path.realpath(__file__)
+    for _ in range(step_count):
+        path = os.path.dirname(path)
+
+    return path
+
+
+lldb_summaries_package_name = get_package_name()
+lldb_summaries_package_dir_path = get_package_dir_path()
+
 lldb_script_extensions = [".py"]
 lldb_commands_paths = ["commands"]
 lldb_summaries_paths = ["summaries"]
@@ -77,19 +112,6 @@ def split_path(path):
             folders.append(last)
     folders.reverse()
     return folders
-
-
-def get_package_dir_path():
-    """
-    Returns absolute package path.
-
-    :return: Absolute package path.
-    :rtype: str
-    """
-    file_path = os.path.realpath(__file__)
-    cur_dir_path = os.path.dirname(file_path)
-    module_dir_path = os.path.dirname(cur_dir_path)
-    return module_dir_path
 
 
 def scripts_in_directory(path):
@@ -151,10 +173,9 @@ def load_script(script_path, debugger, internal_dict):
     """
     # Helpers.
     log = logging.getLogger(__name__)
-    package_dir_path = get_package_dir_path()
     script_dir_path = os.path.dirname(script_path)
-    relative_path = os.path.relpath(script_dir_path, package_dir_path)
-    file_name, file_extension = os.path.splitext(os.path.basename(script_path))
+    relative_path = os.path.relpath(script_dir_path, lldb_summaries_package_dir_path)
+    file_name, _ = os.path.splitext(os.path.basename(script_path))
 
     # Create module path.
     module_paths = [lldb_summaries_package_name]
@@ -185,12 +206,11 @@ def load_all(debugger, internal_dict):
     :param dict internal_dict: Internal LLDB dictionary.
     """
     log = logging.getLogger(__name__)
-    package_dir_path = get_package_dir_path()
 
     # Load commands.
     scripts = list()
     for directory in lldb_commands_paths:
-        directory_path = os.path.join(package_dir_path, directory)
+        directory_path = os.path.join(lldb_summaries_package_dir_path, directory)
         scripts.extend(scripts_in_directory(directory_path))
     load_scripts(scripts, debugger, internal_dict)
 

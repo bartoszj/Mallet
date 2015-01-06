@@ -24,10 +24,7 @@
 
 import os
 import sys
-import imp
-
-imp.load_source("ClassDump", "LLDBScripts/Scripts/ClassDump.py")
-import ClassDump
+import lldb_summaries.scripts.class_dump as class_dump
 
 
 def normalize_type(type_32bit, type_64bit):
@@ -67,9 +64,9 @@ def dump_class(class_name):
     # Current directory path.
     current_dir = os.path.abspath(__file__)
     current_dir, _ = os.path.split(current_dir)
-    input_dir = os.path.join(current_dir, "LLDBScripts/ClassDumps")
+    input_dir = os.path.join(current_dir, "lldb_summaries/ClassDumps")
 
-    al = ClassDump.ArchitecturesList()
+    al = class_dump.ArchitecturesList()
     al.read_directory_path(input_dir)
 
     architecture_armv7 = al.get_architecture("armv7")

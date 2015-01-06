@@ -36,8 +36,7 @@ def configure_loggers():
                     "lldb_summaries.scripts.loader",
                     "lldb_summaries.scripts.logger",
                     "lldb_summaries.scripts.type_cache",
-                    "lldb_summaries.summaries.SummaryBase",
-                    "lldb_summaries.summaries.UIView"]
+                    "lldb_summaries.summaries.SummaryBase"]
     for logger_name in logger_names:
         logger = logging.getLogger(logger_name)
         configure_logger(logger)
