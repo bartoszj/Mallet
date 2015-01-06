@@ -22,14 +22,8 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import os
+__all__ = []
 
 
 def __lldb_init_module(debugger, dictionary):
-
-    path = os.path.expanduser("~/Library/LLDBScripts/Scripts/LoadScripts.py")
-    command = "command script import \"{}\"".format(path)
-    debugger.HandleCommand(command)
-
-    import LoadScripts
-    LoadScripts.load_lldb_scripts(debugger)
+    print(__file__, "__lldb_init_module")

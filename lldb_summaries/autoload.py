@@ -1,3 +1,6 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+
 # The MIT License (MIT)
 #
 # Copyright (c) 2013 Bartosz Janda
@@ -19,4 +22,14 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-command script import path/to/lldb_summaries
+import os
+
+
+def __lldb_init_module(debugger, dictionary):
+
+    path = os.path.expanduser("~/Library/LLDBScripts/Scripts/LoadScripts.py")
+    command = "command script import \"{}\"".format(path)
+    debugger.HandleCommand(command)
+
+    import lldb_summaries.scripts.LoadScripts as LoadScripts
+    LoadScripts.load_lldb_scripts(debugger)
