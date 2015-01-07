@@ -3,7 +3,7 @@
 
 # The MIT License (MIT)
 #
-# Copyright (c) 2013 Bartosz Janda
+# Copyright (c) 2015 Bartosz Janda
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
 # this software and associated documentation files (the "Software"), to deal in
@@ -25,5 +25,9 @@
 __all__ = []
 
 
-def __lldb_init_module(debugger, dictionary):
+def __lldb_init_module(debugger, internal_dict):
+    """
+    :param lldb.SBDebugger debugger: LLDB debugger
+    :param dict internal_dict: Internal LLDB dictionary.
+    """
     pass

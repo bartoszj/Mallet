@@ -22,9 +22,9 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import NSObject
-import Helpers
-import SummaryBase
+from ...scripts import helpers
+from .. import SummaryBase
+from ..Foundation import NSObject
 
 
 class UIBarButtonItemSyntheticProvider(NSObject.NSObjectSyntheticProvider):
@@ -58,7 +58,7 @@ class UIBarButtonItemSyntheticProvider(NSObject.NSObjectSyntheticProvider):
 
 
 def summary_provider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UIBarButtonItemSyntheticProvider)
+    return helpers.generic_summary_provider(value_obj, internal_dict, UIBarButtonItemSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):

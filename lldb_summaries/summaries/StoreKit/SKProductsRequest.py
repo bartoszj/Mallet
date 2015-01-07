@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import Helpers
+from ...scripts import helpers
 import SKRequest
 import SKProductsRequestInternal
 
@@ -55,7 +55,7 @@ class SKProductsRequestSyntheticProvider(SKRequest.SKRequestSyntheticProvider):
 
 
 def summary_provider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, SKProductsRequestSyntheticProvider)
+    return helpers.generic_summary_provider(value_obj, internal_dict, SKProductsRequestSyntheticProvider)
 
 
 def __lldb_init_module(debugger, internal_dict):

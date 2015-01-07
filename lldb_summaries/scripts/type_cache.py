@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import Helpers
+import helpers
 import lldb
 import logging
 
@@ -100,7 +100,7 @@ class TypeCache(object):
             return
 
         self._populated = True
-        is64bit = Helpers.is_64bit_architecture_from_target(target)
+        is64bit = helpers.is_64bit_architecture_from_target(target)
         logger = logging.getLogger(__name__)
         logger.debug("Populating type cache.")
 

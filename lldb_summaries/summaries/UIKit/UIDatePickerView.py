@@ -22,8 +22,8 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import Helpers
-import SummaryBase
+from ...scripts import helpers
+from .. import SummaryBase
 import UIPickerView
 
 
@@ -83,7 +83,7 @@ class UIDatePickerViewSyntheticProvider(UIPickerView.UIPickerViewSyntheticProvid
 
 
 def summary_provider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UIDatePickerViewSyntheticProvider)
+    return helpers.generic_summary_provider(value_obj, internal_dict, UIDatePickerViewSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):

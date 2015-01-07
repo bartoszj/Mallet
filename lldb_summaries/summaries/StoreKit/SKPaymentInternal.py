@@ -22,8 +22,8 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import SummaryBase
-import NSObject
+from .. import SummaryBase
+from ..Foundation import NSObject
 
 
 class SKPaymentInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider):

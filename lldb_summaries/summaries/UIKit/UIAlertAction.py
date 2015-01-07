@@ -22,9 +22,9 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import Helpers
-import NSObject
-import SummaryBase
+from ...scripts import helpers
+from .. import SummaryBase
+from ..Foundation import NSObject
 
 UIAlertActionStyleDefault = 0
 UIAlertActionStyleCancel = 1
@@ -76,7 +76,7 @@ class UIAlertActionSyntheticProvider(NSObject.NSObjectSyntheticProvider):
 
 
 def summary_provider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UIAlertActionSyntheticProvider)
+    return helpers.generic_summary_provider(value_obj, internal_dict, UIAlertActionSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):

@@ -65,6 +65,7 @@ def get_package_dir_path():
 
 lldb_summaries_package_name = get_package_name()
 lldb_summaries_package_dir_path = get_package_dir_path()
+lldb_summaries_class_dump_dir = "ClassDump"
 
 lldb_script_extensions = [".py"]
 lldb_commands_paths = ["commands"]
@@ -187,7 +188,7 @@ def load_script(script_path, debugger, internal_dict):
     # Load module to LLDB.
     if file_name != "__init__":
         # Load module to LLDB.
-        debugger.HandleCommand("command script import {}".format(module_path))
+        debugger.HandleCommand("script import {}".format(module_path))
 
     # Load module.
     module = imp.load_source(module_path, script_path)
@@ -216,7 +217,10 @@ def load_all(debugger, internal_dict):
     load_scripts(scripts, debugger, internal_dict)
 
     # Load summaries.
-    # for directory in lldb_summaries_paths:
-    #     load_scripts_in_directory(directory, lldb_summaries_load_order, debugger, internal_dict)
+    scripts = list()
+    for directory in lldb_summaries_paths:
+        directory_path = os.path.join(lldb_summaries_package_dir_path, directory)
+        scripts.extend(scripts_in_directory(directory_path))
+    load_scripts(scripts, debugger, internal_dict, lldb_summaries_load_order)
 
     log.debug("Scripts loaded.")

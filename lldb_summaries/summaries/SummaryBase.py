@@ -25,10 +25,10 @@
 import os
 import lldb
 import logging
-import ClassDump
-import LoadScripts
-import Helpers
-import TypeCache
+from ..scripts import class_dump
+from ..scripts import loader
+from ..scripts import helpers
+from ..scripts import type_cache
 
 
 class RegisterValue(object):
@@ -104,9 +104,9 @@ class SummaryBaseSyntheticProvider(object):
         self.type_name = None
 
         self.target = self.dynamic_value_obj.GetTarget()
-        self.architecture = Helpers.architecture_type_from_target(self.target)
-        self.architecture_name = Helpers.architecture_name_from_target(self.target)
-        self.is_64bit = Helpers.is_64bit_architecture(self.architecture)
+        self.architecture = helpers.architecture_type_from_target(self.target)
+        self.architecture_name = helpers.architecture_name_from_target(self.target)
+        self.is_64bit = helpers.is_64bit_architecture(self.architecture)
 
         self.registeredChildValues = list()
         self.synthetic_children = list()
@@ -119,7 +119,7 @@ class SummaryBaseSyntheticProvider(object):
         :return: LLDB type from TypeCache.
         :rtype: lldb.SBType | None
         """
-        return TypeCache.get_type_cache().get_type(type_name, self.target)
+        return type_cache.get_type_cache().get_type(type_name, self.target)
 
     def get_ivar(self, ivar_name):
         """
@@ -642,6 +642,6 @@ def get_architecture_list():
     if not hasattr(get_architecture_list, "architectures_list"):
         logger = logging.getLogger(__name__)
         logger.debug("Creating shared architecture list.")
-        class_dump_dir = os.path.expanduser(os.path.join(LoadScripts.lldb_scripts_dir, LoadScripts.lldb_class_dump_dir))
-        get_architecture_list.architectures_list = ClassDump.LazyArchitecturesList(class_dump_dir)
+        class_dump_dir = os.path.join(loader.lldb_summaries_package_dir_path, loader.lldb_summaries_class_dump_dir)
+        get_architecture_list.architectures_list = class_dump.LazyArchitecturesList(class_dump_dir)
     return get_architecture_list.architectures_list

@@ -22,11 +22,10 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import logging
-import Helpers
-import SummaryBase
+from ...scripts import helpers
+from .. import SummaryBase
+from ..QuartzCore import CALayer
 import UIResponder
-import CALayer
 
 
 class Rect(object):
@@ -59,7 +58,7 @@ class UIViewSyntheticProvider(UIResponder.UIResponderSyntheticProvider):
         else:
             return None
 
-    @Helpers.save_parameter("frame")
+    @helpers.save_parameter("frame")
     def get_frame(self):
         position = self.layer_provider.get_position_provider()
         bounds = self.layer_provider.get_bounds_provider()
@@ -88,7 +87,7 @@ class UIViewSyntheticProvider(UIResponder.UIResponderSyntheticProvider):
 
 
 def summary_provider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, UIViewSyntheticProvider)
+    return helpers.generic_summary_provider(value_obj, internal_dict, UIViewSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):

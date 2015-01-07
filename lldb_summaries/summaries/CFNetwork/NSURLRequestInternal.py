@@ -22,8 +22,8 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import Helpers
-import NSObject
+from ...scripts import helpers
+from ..Foundation import NSObject
 import CFURLRequest
 
 
@@ -51,7 +51,7 @@ class NSURLRequestInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider):
 
 
 def summary_provider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, NSURLRequestInternalSyntheticProvider)
+    return helpers.generic_summary_provider(value_obj, internal_dict, NSURLRequestInternalSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):

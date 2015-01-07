@@ -22,8 +22,8 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import Helpers
-import SummaryBase
+from ...scripts import helpers
+from .. import SummaryBase
 
 
 class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
@@ -68,7 +68,7 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
     def get_url_summary(value):
         return "url={}".format(value)
 
-    @Helpers.save_parameter("method")
+    @helpers.save_parameter("method")
     def get_method(self):
         if self.is_64bit:
             offset = 0x98
@@ -90,7 +90,7 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
 
 
 def summary_provider(value_obj, internal_dict):
-    return Helpers.generic_summary_provider(value_obj, internal_dict, CFURLRequestSyntheticProvider)
+    return helpers.generic_summary_provider(value_obj, internal_dict, CFURLRequestSyntheticProvider)
 
 
 def __lldb_init_module(debugger, dictionary):

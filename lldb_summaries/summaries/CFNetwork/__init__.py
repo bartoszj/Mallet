@@ -3,7 +3,7 @@
 
 # The MIT License (MIT)
 #
-# Copyright (c) 2013 Bartosz Janda
+# Copyright (c) 2015 Bartosz Janda
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
 # this software and associated documentation files (the "Software"), to deal in
@@ -22,14 +22,12 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import os
+__all__ = []
 
 
-def __lldb_init_module(debugger, dictionary):
-
-    path = os.path.expanduser("~/Library/LLDBScripts/Scripts/LoadScripts.py")
-    command = "command script import \"{}\"".format(path)
-    debugger.HandleCommand(command)
-
-    import lldb_summaries.scripts.LoadScripts as LoadScripts
-    LoadScripts.load_lldb_scripts(debugger)
+def __lldb_init_module(debugger, internal_dict):
+    """
+    :param lldb.SBDebugger debugger: LLDB debugger
+    :param dict internal_dict: Internal LLDB dictionary.
+    """
+    pass
