@@ -68,6 +68,7 @@ lldb_summaries_package_dir_path = get_package_dir_path()
 lldb_summaries_class_dump_dir = "ClassDumps"
 
 lldb_script_extensions = [".py"]
+lldb_scripts_paths = ["scripts"]
 lldb_commands_paths = ["commands"]
 lldb_summaries_paths = ["summaries"]
 lldb_summaries_load_order = ["SummaryBase",
@@ -207,6 +208,13 @@ def load_all(debugger, internal_dict):
     :param dict internal_dict: Internal LLDB dictionary.
     """
     log = logging.getLogger(__name__)
+
+    # Load scripts.
+    scripts = list()
+    for directory in lldb_scripts_paths:
+        directory_path = os.path.join(lldb_summaries_package_dir_path, directory)
+        scripts.extend(scripts_in_directory(directory_path))
+    load_scripts(scripts, debugger, internal_dict)
 
     # Load commands.
     scripts = list()
