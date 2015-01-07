@@ -58,8 +58,8 @@ def summary_provider(value_obj, internal_dict):
     return helpers.generic_summary_provider(value_obj, internal_dict, SKPaymentSyntheticProvider)
 
 
-def __lldb_init_module(debugger, internal_dict):
-    debugger.HandleCommand("type summary add -F SKPayment.summary_provider \
+def lldb_init(debugger, internal_dict):
+    debugger.HandleCommand("type summary add -F {}.summary_provider \
                             --category StoreKit \
-                            SKPayment SKMutablePayment")
+                            SKPayment SKMutablePayment".format(__name__))
     debugger.HandleCommand("type category enable StoreKit")

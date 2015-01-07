@@ -641,7 +641,7 @@ def get_architecture_list():
     """
     if not hasattr(get_architecture_list, "architectures_list"):
         logger = logging.getLogger(__name__)
-        logger.debug("Creating shared architecture list.")
         class_dump_dir = os.path.join(loader.lldb_summaries_package_dir_path, loader.lldb_summaries_class_dump_dir)
+        logger.debug("Creating shared architecture list: {}".format(class_dump_dir))
         get_architecture_list.architectures_list = class_dump.LazyArchitecturesList(class_dump_dir)
     return get_architecture_list.architectures_list

@@ -65,7 +65,7 @@ def get_package_dir_path():
 
 lldb_summaries_package_name = get_package_name()
 lldb_summaries_package_dir_path = get_package_dir_path()
-lldb_summaries_class_dump_dir = "ClassDump"
+lldb_summaries_class_dump_dir = "ClassDumps"
 
 lldb_script_extensions = [".py"]
 lldb_commands_paths = ["commands"]
@@ -196,7 +196,6 @@ def load_script(script_path, debugger, internal_dict):
     # Execute init method.
     if hasattr(module, "lldb_init"):
         # Initialize module.
-        log.debug("Loading script: {}".format(file_name))
         module.lldb_init(debugger, internal_dict)
 
 

@@ -41,7 +41,7 @@ class CGVectorSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
         self.register_child_value("dy", ivar_name="dy", primitive_value_function=SummaryBase.get_float_value)
 
 
-def __lldb_init_module(debugger, dictionary):
+def lldb_init(debugger, dictionary):
     # CGVector
     debugger.HandleCommand("type summary add -s \
             \"(dx=${var.dx}, dy=${var.dy})\" -v \

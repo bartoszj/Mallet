@@ -122,8 +122,8 @@ def summary_provider(value_obj, internal_dict):
     return helpers.generic_summary_provider(value_obj, internal_dict, SKDownloadSyntheticProvider)
 
 
-def __lldb_init_module(debugger, internal_dict):
-    debugger.HandleCommand("type summary add -F SKDownload.summary_provider \
+def lldb_init(debugger, internal_dict):
+    debugger.HandleCommand("type summary add -F {}.summary_provider \
                             --category StoreKit \
-                            SKDownload")
+                            SKDownload".format(__name__))
     debugger.HandleCommand("type category enable StoreKit")

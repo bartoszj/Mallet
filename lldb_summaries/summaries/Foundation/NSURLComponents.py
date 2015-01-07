@@ -128,11 +128,11 @@ def summary_provider(value_obj, internal_dict):
     return helpers.generic_summary_provider(value_obj, internal_dict, NSURLComponentsSyntheticProvider)
 
 
-def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F NSURLComponents.summary_provider \
+def lldb_init(debugger, dictionary):
+    debugger.HandleCommand("type summary add -F {}.summary_provider \
                             --category Foundation \
-                            NSURLComponents __NSConcreteURLComponents")
-    debugger.HandleCommand("type synthetic add -l NSURLComponents.NSURLComponentsSyntheticProvider \
+                            NSURLComponents __NSConcreteURLComponents".format(__name__))
+    debugger.HandleCommand("type synthetic add -l {}.NSURLComponentsSyntheticProvider \
                            --category Foundation \
-                           NSURLComponents __NSConcreteURLComponents")
+                           NSURLComponents __NSConcreteURLComponents".format(__name__))
     debugger.HandleCommand("type category enable Foundation")

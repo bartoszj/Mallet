@@ -60,8 +60,8 @@ def summary_provider(value_obj, internal_dict):
     return helpers.generic_summary_provider(value_obj, internal_dict, UISliderSyntheticProvider)
 
 
-def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F UISlider.summary_provider \
+def lldb_init(debugger, dictionary):
+    debugger.HandleCommand("type summary add -F {}.summary_provider \
                             --category UIKit \
-                            UISlider")
+                            UISlider".format(__name__))
     debugger.HandleCommand("type category enable UIKit")

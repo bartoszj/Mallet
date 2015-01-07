@@ -80,8 +80,8 @@ def summary_provider(value_obj, internal_dict):
     return helpers.generic_summary_provider(value_obj, internal_dict, UITextFieldSyntheticProvider)
 
 
-def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F UITextField.summary_provider \
+def lldb_init(debugger, dictionary):
+    debugger.HandleCommand("type summary add -F {}.summary_provider \
                             --category UIKit \
-                            UITextField")
+                            UITextField".format(__name__))
     debugger.HandleCommand("type category enable UIKit")

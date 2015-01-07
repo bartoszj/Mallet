@@ -75,8 +75,8 @@ def summary_provider(value_obj, internal_dict):
     return helpers.generic_summary_provider(value_obj, internal_dict, UIStepperSyntheticProvider)
 
 
-def __lldb_init_module(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F UIStepper.summary_provider \
+def lldb_init(debugger, dictionary):
+    debugger.HandleCommand("type summary add -F {}.summary_provider \
                             --category UIKit \
-                            UIStepper")
+                            UIStepper".format(__name__))
     debugger.HandleCommand("type category enable UIKit")

@@ -41,10 +41,9 @@ class UIEdgeInsetsSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
         self.register_child_value("right", ivar_name="right", primitive_value_function=SummaryBase.get_float_value)
 
 
-def __lldb_init_module(debugger, dictionary):
+def lldb_init(debugger, dictionary):
     # UIEdgeInsets
     debugger.HandleCommand("type summary add -s \
             \"(top=${var.top}, left=${var.left}, bottom=${var.bottom}, right=${var.right})\" -v \
             --category UIKit UIEdgeInsets")
-
     debugger.HandleCommand("type category enable UIKit")

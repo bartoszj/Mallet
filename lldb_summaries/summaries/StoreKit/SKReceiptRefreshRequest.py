@@ -39,8 +39,8 @@ class SKReceiptRefreshRequestSyntheticProvider(SKRequest.SKRequestSyntheticProvi
 #     return helpers.generic_summary_provider(value_obj, internal_dict, SKReceiptRefreshRequestSyntheticProvider)
 #
 #
-# def __lldb_init_module(debugger, internal_dict):
-#     debugger.HandleCommand("type summary add -F SKReceiptRefreshRequest.summary_provider \
+# def lldb_init_module(debugger, internal_dict):
+#     debugger.HandleCommand("type summary add -F {}.summary_provider \
 #                             --category StoreKit \
-#                             SKReceiptRefreshRequest")
+#                             SKReceiptRefreshRequest".format(__name__))
 #     debugger.HandleCommand("type category enable StoreKit")
