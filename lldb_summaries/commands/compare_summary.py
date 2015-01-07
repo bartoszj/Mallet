@@ -126,5 +126,5 @@ def compare_summary(debugger, command, result, internal_dict):
         frame.EvaluateExpression("{} = @0".format(result_name), options)
 
 
-def lldbinit(debugger, internal_dict):
+def lldb_init(debugger, internal_dict):
     debugger.HandleCommand("command script add -f {}.compare_summary compare_summary".format(__name__))

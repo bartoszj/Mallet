@@ -129,7 +129,7 @@ def print_nsdata_as_nsstring_command(debugger, command, result, internal_dict, s
         result.SetError("Invalid frame.")
 
 
-def lldbinit(debugger, internal_dict):
+def lldb_init(debugger, internal_dict):
     debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf8_command pds".format(__name__))
     debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf8_command pds8".format(__name__))
     debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf16_command pds16".format(__name__))

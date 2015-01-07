@@ -194,10 +194,10 @@ def load_script(script_path, debugger, internal_dict):
     module = imp.load_source(module_path, script_path)
 
     # Execute init method.
-    if hasattr(module, "lldbinit"):
+    if hasattr(module, "lldb_init"):
         # Initialize module.
         log.debug("Loading script: {}".format(file_name))
-        module.lldbinit(debugger, internal_dict)
+        module.lldb_init(debugger, internal_dict)
 
 
 def load_all(debugger, internal_dict):
