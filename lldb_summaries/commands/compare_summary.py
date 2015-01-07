@@ -126,5 +126,5 @@ def compare_summary(debugger, command, result, internal_dict):
         frame.EvaluateExpression("{} = @0".format(result_name), options)
 
 
-def lldbinit(debugger, internal_dict, module_path):
-    debugger.HandleCommand("command script add -f {}.compare_summary compare_summary".format(module_path))
+def lldbinit(debugger, internal_dict):
+    debugger.HandleCommand("command script add -f {}.compare_summary compare_summary".format(__name__))

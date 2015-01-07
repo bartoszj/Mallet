@@ -85,6 +85,7 @@ lldb_summaries_load_order = ["SummaryBase",
                              "UIControl",
                              "UIPickerView",
                              "UIViewController",
+                             "UIBarItem",
 
                              "SKRequestInternal",
                              "SKRequest",
@@ -195,7 +196,7 @@ def load_script(script_path, debugger, internal_dict):
     if hasattr(module, "lldbinit"):
         # Initialize module.
         log.debug("Loading script: {}".format(file_name))
-        module.lldbinit(debugger, internal_dict, module_path)
+        module.lldbinit(debugger, internal_dict)
 
 
 def load_all(debugger, internal_dict):

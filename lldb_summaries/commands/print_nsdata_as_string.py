@@ -129,12 +129,12 @@ def print_nsdata_as_nsstring_command(debugger, command, result, internal_dict, s
         result.SetError("Invalid frame.")
 
 
-def lldbinit(debugger, internal_dict, module_path):
-    debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf8_command pds".format(module_path))
-    debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf8_command pds8".format(module_path))
-    debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf16_command pds16".format(module_path))
-    debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf16l_command pds16l".format(module_path))
-    debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf16b_command pds16b".format(module_path))
-    debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf32_command pds32".format(module_path))
-    debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf32l_command pds32l".format(module_path))
-    debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf32b_command pds32b".format(module_path))
+def lldbinit(debugger, internal_dict):
+    debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf8_command pds".format(__name__))
+    debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf8_command pds8".format(__name__))
+    debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf16_command pds16".format(__name__))
+    debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf16l_command pds16l".format(__name__))
+    debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf16b_command pds16b".format(__name__))
+    debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf32_command pds32".format(__name__))
+    debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf32l_command pds32l".format(__name__))
+    debugger.HandleCommand("command script add -f {}.print_nsdata_as_nsstring_utf32b_command pds32b".format(__name__))

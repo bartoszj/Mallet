@@ -32,5 +32,5 @@ def reload_lldb_scripts(debugger, command, result, internal_dict):
     loader.load_all(debugger, internal_dict)
 
 
-def lldbinit(debugger, internal_dict, module_path):
-    debugger.HandleCommand("command script add -f {}.reload_lldb_scripts reload_lldb_scripts".format(module_path))
+def lldbinit(debugger, internal_dict):
+    debugger.HandleCommand("command script add -f {}.reload_lldb_scripts reload_lldb_scripts".format(__name__))
