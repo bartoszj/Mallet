@@ -66,6 +66,7 @@ def get_package_dir_path():
 lldb_summaries_package_name = get_package_name()
 lldb_summaries_package_dir_path = get_package_dir_path()
 lldb_summaries_class_dump_dir = "ClassDumps"
+lldb_summaries_string_summaries_dir = "StringSummaries"
 
 lldb_script_extensions = [".py"]
 lldb_scripts_paths = ["scripts"]
@@ -128,7 +129,7 @@ def scripts_in_directory(path):
     scripts = list()
 
     # Go through all folders.
-    for root, dirs, files in os.walk(os.path.expanduser(path)):
+    for root, dirs, files in os.walk(path):
         # Got through all files in folder.
         for f in files:
             # Work only files with correct suffix.
@@ -200,6 +201,22 @@ def load_script(script_path, debugger, internal_dict):
         module.lldb_init(debugger, internal_dict)
 
 
+def load_lldb_commands_directory(directory, debugger, internal_dict):
+    """
+    Reads all files from the directory and executes them as LLDB commands.
+
+    :param str directory: Path to directory.
+    :param lldb.SBDebugger debugger: LLDB debugger.
+    :param dict internal_dict: Internal LLDB dictionary.
+    """
+    # Go through all folders.
+    for root, dirs, files in os.walk(directory):
+        # Got through all files in folder.
+        for f in files:
+            file_path = os.path.join(root, f)
+            debugger.HandleCommand("command source -s true {}".format(file_path))
+
+
 def load_all(debugger, internal_dict):
     """
     Loads all scripts from Commands, Scripts and Summaries directories.
@@ -229,5 +246,8 @@ def load_all(debugger, internal_dict):
         directory_path = os.path.join(lldb_summaries_package_dir_path, directory)
         scripts.extend(scripts_in_directory(directory_path))
     load_scripts(scripts, debugger, internal_dict, lldb_summaries_load_order)
+
+    # Load summary strings.
+    load_lldb_commands_directory(os.path.join(lldb_summaries_package_dir_path, lldb_summaries_string_summaries_dir), debugger, internal_dict)
 
     log.debug("Scripts loaded.")

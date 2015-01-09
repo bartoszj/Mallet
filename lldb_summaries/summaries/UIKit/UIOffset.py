@@ -37,11 +37,3 @@ class UIOffsetSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
 
         self.register_child_value("horizontal", ivar_name="horizontal", primitive_value_function=SummaryBase.get_float_value)
         self.register_child_value("vertical", ivar_name="vertical", primitive_value_function=SummaryBase.get_float_value)
-
-
-def lldb_init(debugger, dictionary):
-    # UIOffset
-    debugger.HandleCommand("type summary add -s \
-            \"(horizontal=${var.horizontal}, vertical=${var.vertical})\" -v \
-            --category UIKit UIOffset")
-    debugger.HandleCommand("type category enable UIKit")

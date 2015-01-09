@@ -1,0 +1,3 @@
+type summary add -s "(dx=${var.dx}, dy=${var.dy})" -v --category CoreGraphics CGVector
+
+type category enable CoreGraphics

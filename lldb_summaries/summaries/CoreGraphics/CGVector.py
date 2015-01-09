@@ -39,12 +39,3 @@ class CGVectorSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
 
         self.register_child_value("dx", ivar_name="dx", primitive_value_function=SummaryBase.get_float_value)
         self.register_child_value("dy", ivar_name="dy", primitive_value_function=SummaryBase.get_float_value)
-
-
-def lldb_init(debugger, dictionary):
-    # CGVector
-    debugger.HandleCommand("type summary add -s \
-            \"(dx=${var.dx}, dy=${var.dy})\" -v \
-            --category CoreGraphics CGVector")
-
-    debugger.HandleCommand("type category enable CoreGraphics")
