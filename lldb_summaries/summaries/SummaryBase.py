@@ -221,6 +221,9 @@ class SummaryBaseSyntheticProvider(object):
         index = None
         if self.synthetic_children.count(r.attribute_name):
             index = self.synthetic_children.index(r.attribute_name)
+        else:
+            log = logging.getLogger(__name__)
+            log.debug("get_child_index: Cannot find child with name: {} for class {}.".format(name, self.type_name))
         return index
 
     def get_child_at_index(self, index):
