@@ -32,15 +32,15 @@
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Title" message:@"Message" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
     self.alertView = alertView;
     [self.alertView show];
-    CompareObjectWithSummary(alertView, @"UIAlertView *", @"title=@\"Title\", message=@\"Message\", buttons=[@\"Cancel\"]");
-    CompareObjectWithSummary(self.alertView, @"UIAlertView *", @"title=@\"Title\", message=@\"Message\", buttons=[@\"Cancel\"]");
+    CompareObjectWithSummary(alertView, @"UIAlertView *", @"title=@\"Title\", message=@\"Message\", style=Default");
+    CompareObjectWithSummary(self.alertView, @"UIAlertView *", @"title=@\"Title\", message=@\"Message\", style=Default");
 }
 
 #pragma mark - UIAlertViewDelegate
 - (void)didPresentAlertView:(UIAlertView *)alertView
 {
-    CompareObjectWithSummary(alertView, @"UIAlertView *", @"title=@\"Title\", message=@\"Message\", buttons=[@\"Cancel\"]");
-    CompareObjectWithSummary(self.alertView, @"UIAlertView *", @"title=@\"Title\", message=@\"Message\", buttons=[@\"Cancel\"]");
+    CompareObjectWithSummary(alertView, @"UIAlertView *", @"title=@\"Title\", message=@\"Message\", style=Default");
+    CompareObjectWithSummary(self.alertView, @"UIAlertView *", @"title=@\"Title\", message=@\"Message\", style=Default");
 }
 
 @end
