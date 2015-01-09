@@ -1,11 +1,16 @@
-LLDB missing iOS summaries
-==========================
+LLDB missing summaries
+======================
 
-LLDB commands and summaries
+LLDB summaries for iOS Objective-C classes.
 
 ## Instalation
-1. Copy **lldbinit** to **~/.lldbinit**.
-2. Copy **LLDBScripts** to **~/Library/**.
+Clone this repository and add the following line to yout __~/.lldbinit__ file. If it doesn't exist, create it.
+
+    # ~/.lldbinit
+    ...
+    command script import /path/to/lldb_summaries
+
+The summaries will be available the next time Xcode starts.
 
 ## Supported summaries:
 - CoreGraphics:
@@ -56,7 +61,3 @@ LLDB commands and summaries
 - Foundation:
     - NSDateComponents
     - NSURLComponents
-
-## Summaries that I've failed to implement:
-- NSIndexPath
-Data is saved in the `void *_reserved` field. I have no idea how to get values from it.
