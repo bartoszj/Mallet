@@ -65,24 +65,25 @@ CPY=(
     )
 
 for c in ${CPY[@]}; do
-    base=`basename "${c}"`
+    fileName=`basename "${c}"`
     framework=`dirname "${c}"`
-    dir="${framework%\.framework}"
-    in_path="${1}/$c"
-    out_path="${dir}/${base}"
+    directoryName="${framework%\.framework}"
+    inputFilePath="${1}/$c"
+    outputDirectoryPath="ClassDumps/${directoryName}"
+    outputFilePath="${outputDirectoryPath}/${fileName}"
 
     # Create output directory.
-    if [[ ! -e "${dir}" ]]; then
-        mkdir -p "${dir}"
+    if [[ ! -e "${outputDirectoryPath}" ]]; then
+        mkdir -p "${outputDirectoryPath}"
     fi
 
     # Check if input file exists.
-    if [[ ! -e "${in_path}" ]]; then
-        echo -e "File doesn't exists ${in_path}"
+    if [[ ! -e "${inputFilePath}" ]]; then
+        echo -e "File doesn't exists ${inputFilePath}"
         continue
     fi
 
     # Copy.
-    echo -e "Copying: ${out_path}"
-    cp "${in_path}" "${out_path}"
+    echo -e "Copying: ${outputFilePath}"
+    cp "${inputFilePath}" "${outputFilePath}"
 done
