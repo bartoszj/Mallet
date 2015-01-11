@@ -255,17 +255,20 @@ class SummaryBaseSyntheticProvider(object):
         """
         return True
 
-    # def has_children(self):
-    #     """
-    #     Synthetic children.
-    #     This call should return True if this object might have children, and False if this object can be guaranteed not to have children.
-    #
-    #     This method is optional (starting with SVN rev166495/LLDB-175). While implementing it in terms of num_children is acceptable,
-    #     implementors are encouraged to look for optimized coding alternatives whenever reasonable.
-    #
-    #     :return: True if this object might have children, and False if this object can be guaranteed not to have children.
-    #     :rtype: bool
-    #     """
+    def has_children(self):
+        """
+        Synthetic children.
+        This call should return True if this object might have children, and False if this object can be guaranteed not to have children.
+
+        This method is optional (starting with SVN rev166495/LLDB-175). While implementing it in terms of num_children is acceptable,
+        implementors are encouraged to look for optimized coding alternatives whenever reasonable.
+
+        :return: True if this object might have children, and False if this object can be guaranteed not to have children.
+        :rtype: bool
+        """
+        if len(self.synthetic_children) > 0:
+            return True
+        return True
 
     # def get_value(self):
     #     """
