@@ -70,7 +70,9 @@ lldb_summaries_string_summaries_dir = "StringSummaries"
 
 lldb_script_extensions = [".py"]
 lldb_scripts_paths = ["scripts"]
-lldb_commands_paths = ["commands"]
+lldb_commands_paths = ["commands",
+                       "commands/debug"
+                       ]
 lldb_summaries_paths = ["summaries"]
 lldb_summaries_load_order = ["SummaryBase",
 
@@ -119,25 +121,37 @@ def split_path(path):
     return folders
 
 
-def scripts_in_directory(path):
+def scripts_in_directory(path, subdirectories=True):
     """
     Finds all Python scripts in given directory.
 
     :param str path: Path to directory with scripts.
+    :param bool subdirectories: True if subdirectories should also be searched.
     :return: List of founded scripts.
     :rtype: list[(str, str)]
     """
     scripts = list()
 
-    # Go through all folders.
-    for root, dirs, files in os.walk(path):
-        # Got through all files in folder.
-        for f in files:
+    # Search for scripts inf subdirectories.
+    if subdirectories:
+        # Go through all folders.
+        for root, dirs, files in os.walk(path):
+            # Got through all files in folder.
+            for f in files:
+                # Work only files with correct suffix.
+                file_name, file_extension = os.path.splitext(f)
+                # Add only files with correct suffix.
+                if lldb_script_extensions.count(file_extension) != 0:
+                    full_file_path = os.path.join(root, f)
+                    scripts.append((file_name, full_file_path))
+    # Search for scripts only in given directory.
+    else:
+        for f in os.listdir(path):
             # Work only files with correct suffix.
             file_name, file_extension = os.path.splitext(f)
             # Add only files with correct suffix.
             if lldb_script_extensions.count(file_extension) != 0:
-                full_file_path = os.path.join(root, f)
+                full_file_path = os.path.join(path, f)
                 scripts.append((file_name, full_file_path))
     return scripts
 
@@ -238,7 +252,7 @@ def load_all(debugger, internal_dict):
     scripts = list()
     for directory in lldb_commands_paths:
         directory_path = os.path.join(lldb_summaries_package_dir_path, directory)
-        scripts.extend(scripts_in_directory(directory_path))
+        scripts.extend(scripts_in_directory(directory_path, subdirectories=False))
     load_scripts(scripts, debugger, internal_dict)
 
     # Load summaries.
