@@ -56,8 +56,7 @@ def normalize_type(type_32bit, type_64bit):
         return u"CADoublePoint"
 
     print("Different types: {} != {}".format(type_32bit, type_64bit))
-    exit(1)
-    return None
+    return type_64bit
 
 
 def dump_class(class_name):

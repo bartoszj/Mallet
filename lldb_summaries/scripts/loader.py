@@ -88,6 +88,7 @@ lldb_summaries_load_order = ["SummaryBase",
                              "UIControl",
                              "UIPickerView",
                              "UIViewController",
+                             "UINavigationController",
                              "UIBarItem",
 
                              "SKRequestInternal",

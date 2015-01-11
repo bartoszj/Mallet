@@ -16,6 +16,7 @@ UIPageControl:UIKit/UIPageControl.json
 UIPickerView:UIKit/UIPickerView.json
 SKProductsRequest:StoreKit/SKProductsRequest.json
 SKRequestInternal:StoreKit/SKRequestInternal.json
+UINavigationController:UIKit/UINavigationController.json
 UITextField:UIKit/UITextField.json
 UISlider:UIKit/UISlider.json
 _UIDatePickerView:UIKit/_UIDatePickerView.json

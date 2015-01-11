@@ -38,10 +38,24 @@ class UIViewControllerSyntheticProvider(UIResponder.UIResponderSyntheticProvider
         self.register_child_value("title", ivar_name="_title",
                                   primitive_value_function=SummaryBase.get_summary_value,
                                   summary_function=self.get_title_summary)
+        self.register_child_value("nib_name", ivar_name="_nibName",
+                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  summary_function=self.get_nib_name_summary)
+        self.register_child_value("child_view_controllers", ivar_name="_childViewControllers",
+                                  primitive_value_function=SummaryBase.get_count_value,
+                                  summary_function=self.get_child_view_controllers_summary)
 
     @staticmethod
     def get_title_summary(value):
         return "title={}".format(value)
+
+    @staticmethod
+    def get_nib_name_summary(value):
+        return "nibName={}".format(value)
+
+    @staticmethod
+    def get_child_view_controllers_summary(value):
+        return "viewControllers={}".format(value)
 
     def summary(self):
         return self.title_summary

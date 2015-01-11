@@ -48,6 +48,7 @@ CPY=(
     "UIKit.framework/UIControl.json"
     "UIKit.framework/UIDatePicker.json"
     "UIKit.framework/UILabel.json"
+    "UIKit.framework/UINavigationController.json"
     "UIKit.framework/UIPageControl.json"
     "UIKit.framework/UIPickerView.json"
     "UIKit.framework/UIProgressView.json"

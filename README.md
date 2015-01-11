@@ -33,6 +33,7 @@ The summaries will be available the next time Xcode starts.
     - UIDatePicker
     - UIEdgeInsets
     - UILabel
+    - UINavigationController
     - UIOffset
     - UIPageControl
     - UIPickerView (Don't know what / how to show)

@@ -346,4 +346,17 @@
     [self compareObject:vc ofType:@"UIViewController *" toSumamry:@"title=@\"ęóąśłżźćń\""];
 }
 
+#pragma mark - UINavigationController
+- (void)testUINavigationController01
+{
+    UIViewController *vc1 = [[UIViewController alloc] init];
+    vc1.title = @"vc1";
+    UIViewController *vc2 = [[UIViewController alloc] init];
+    vc2.title = @"vc2";
+    UINavigationController *navc = [[UINavigationController alloc] initWithRootViewController:vc1];
+    [self compareObject:navc ofType:@"UINavigationController *" toSumamry:@"viewControllers=1"];
+    [navc pushViewController:vc2 animated:NO];
+    [self compareObject:navc ofType:@"UINavigationController *" toSumamry:@"viewControllers=2"];
+}
+
 @end
