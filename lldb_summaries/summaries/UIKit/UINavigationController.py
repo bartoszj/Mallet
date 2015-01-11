@@ -34,6 +34,9 @@ class UINavigationControllerSyntheticProvider(UIViewController.UIViewControllerS
         super(UINavigationControllerSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UINavigationController"
 
+        self.synthetic_type = self.SYNTHETIC_PROXY
+        self.synthetic_proxy_name = "child_view_controllers"
+
     def summary(self):
         return self.child_view_controllers_summary
 
@@ -46,4 +49,7 @@ def lldb_init(debugger, dictionary):
     debugger.HandleCommand("type summary add -F {}.summary_provider \
                             --category UIKit \
                             UINavigationController".format(__name__))
+    debugger.HandleCommand("type synthetic add -l {}.UINavigationControllerSyntheticProvider \
+                           --category UIKit \
+                           UINavigationController".format(__name__))
     debugger.HandleCommand("type category enable UIKit")

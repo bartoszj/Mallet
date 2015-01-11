@@ -86,8 +86,14 @@ class SummaryBaseSyntheticProvider(object):
     :param str architecture_name: Architecture name.
     :param bool is_64bit: Is 64 bit architecture.
     :param list[RegisterValue] registeredChildValues: List of registered parameters.
+    :param str synthetic_type: Type of synthetic children (list of proxy object).
     :param list[str] synthetic_children: List of synthetic children.
+    :param str synthetic_proxy_name: Name of registered parameter which will be used as proxy for synthetic child.
     """
+
+    SYNTHETIC_CHILDREN = "SYNTHETIC_CHILDREN"
+    SYNTHETIC_PROXY = "SYNTHETIC_PROXY"
+
     def __init__(self, value_obj, internal_dict):
         """
         :param lldb.SBValue value_obj: LLDB variable to compute summary.
@@ -109,7 +115,9 @@ class SummaryBaseSyntheticProvider(object):
         self.is_64bit = helpers.is_64bit_architecture(self.architecture)
 
         self.registeredChildValues = list()
+        self.synthetic_type = self.SYNTHETIC_CHILDREN
         self.synthetic_children = list()
+        self.synthetic_proxy_name = None
 
     def get_type(self, type_name):
         """
@@ -206,7 +214,21 @@ class SummaryBaseSyntheticProvider(object):
         :return: Number of children that the object have.
         :rtype: int
         """
-        return len(self.synthetic_children)
+        log = logging.getLogger(__name__)
+        if self.synthetic_type == self.SYNTHETIC_CHILDREN:
+            return len(self.synthetic_children)
+        elif self.synthetic_type == self.SYNTHETIC_PROXY:
+            value = getattr(self, self.synthetic_proxy_name)
+            """:type: lldb.SBValue"""
+            value.SetPreferSyntheticValue(True)
+            if value is not None:
+                count = value.GetNumChildren()
+                """:type: int"""
+                return count
+            log.error("num_children: Cannot get proxy value: {} for type {}.".format(self.synthetic_proxy_name, self.type_name))
+            return 0
+        log.error("num_children: Unknown synthetic type: {} for type {}.".format(self.synthetic_type, self.type_name))
+        return 0
 
     def get_child_index(self, name):
         """
@@ -217,14 +239,28 @@ class SummaryBaseSyntheticProvider(object):
         :return: The index of the synthetic child.
         :rtype: int
         """
-        r = self.get_registered_child_value_parameter(ivar_name=name)
-        index = None
-        if self.synthetic_children.count(r.attribute_name):
-            index = self.synthetic_children.index(r.attribute_name)
-        else:
-            log = logging.getLogger(__name__)
-            log.debug("get_child_index: Cannot find child with name: {} for class {}.".format(name, self.type_name))
-        return index
+        log = logging.getLogger(__name__)
+        if self.synthetic_type == self.SYNTHETIC_CHILDREN:
+            r = self.get_registered_child_value_parameter(ivar_name=name)
+            index = None
+            if self.synthetic_children.count(r.attribute_name):
+                index = self.synthetic_children.index(r.attribute_name)
+            else:
+                log = logging.getLogger(__name__)
+                log.debug("get_child_index: Cannot find child with name: {} for class {}.".format(name, self.type_name))
+            return index
+        elif self.synthetic_type == self.SYNTHETIC_PROXY:
+            value = getattr(self, self.synthetic_proxy_name)
+            """:type: lldb.SBValue"""
+            value.SetPreferSyntheticValue(True)
+            if value is not None:
+                index = value.GetIndexOfChildWithName(name)
+                """:type: int"""
+                return index
+            log.error("get_child_index: Cannot get proxy value: {} for type {}.".format(self.synthetic_proxy_name, self.type_name))
+            return None
+        log.error("get_child_index: Unknown synthetic type: {} for type {}.".format(self.synthetic_type, self.type_name))
+        return None
 
     def get_child_at_index(self, index):
         """
@@ -235,9 +271,23 @@ class SummaryBaseSyntheticProvider(object):
         :return: LLDB SBValue object representing the child.
         :rtype: lldb.SBValue
         """
-        name = self.synthetic_children[index]
-        value = getattr(self, name)
-        return value
+        log = logging.getLogger(__name__)
+        if self.synthetic_type == self.SYNTHETIC_CHILDREN:
+            name = self.synthetic_children[index]
+            value = getattr(self, name)
+            return value
+        elif self.synthetic_type == self.SYNTHETIC_PROXY:
+            value = getattr(self, self.synthetic_proxy_name)
+            """:type: lldb.SBValue"""
+            value.SetPreferSyntheticValue(True)
+            if value is not None:
+                child = value.GetChildAtIndex(index)
+                """:type: lldb.SBValue"""
+                return child
+            log.error("get_child_at_index: Cannot get proxy value: {} for type {}".format(self.synthetic_proxy_name, self.type_name))
+            return None
+        log.error("get_child_at_index: Unknown synthetic type: {} for type {}.".format(self.synthetic_type, self.type_name))
+        return None
 
     def update(self):
         """
@@ -266,8 +316,22 @@ class SummaryBaseSyntheticProvider(object):
         :return: True if this object might have children, and False if this object can be guaranteed not to have children.
         :rtype: bool
         """
-        if len(self.synthetic_children) > 0:
+        log = logging.getLogger(__name__)
+        if self.synthetic_type == self.SYNTHETIC_CHILDREN:
+            if len(self.synthetic_children) > 0:
+                return True
             return True
+        elif self.synthetic_type == self.SYNTHETIC_PROXY:
+            value = getattr(self, self.synthetic_proxy_name)
+            """:type: lldb.SBValue"""
+            value.SetPreferSyntheticValue(True)
+            if value is not None:
+                has_children = value.MightHaveChildren()
+                """:type: bool"""
+                return has_children
+            log.error("has_children: Cannot get proxy value: {} for type {}".format(self.synthetic_proxy_name, self.type_name))
+            return True
+        log.error("has_children: Unknown synthetic type: {} for type {}.".format(self.synthetic_type, self.type_name))
         return True
 
     # def get_value(self):

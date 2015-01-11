@@ -62,3 +62,5 @@ The summaries will be available the next time Xcode starts.
 - Foundation:
     - NSDateComponents
     - NSURLComponents
+- UIKit:
+    - UINavigationController
