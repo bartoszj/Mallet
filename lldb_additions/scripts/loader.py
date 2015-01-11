@@ -33,7 +33,7 @@ logger.configure_loggers()
 
 def get_package_name():
     """
-    Returns package name -> "lldb_summaries"
+    Returns package name -> "lldb_additions"
 
     :return: Package name.
     :rtype: str
@@ -63,10 +63,10 @@ def get_package_dir_path():
     return path
 
 
-lldb_summaries_package_name = get_package_name()
-lldb_summaries_package_dir_path = get_package_dir_path()
-lldb_summaries_class_dump_dir = "ClassDumps"
-lldb_summaries_string_summaries_dir = "StringSummaries"
+lldb_additions_package_name = get_package_name()
+lldb_additions_package_dir_path = get_package_dir_path()
+lldb_additions_class_dump_dir = "ClassDumps"
+lldb_additions_string_summaries_dir = "StringSummaries"
 
 lldb_script_extensions = [".py"]
 lldb_scripts_paths = ["scripts"]
@@ -193,11 +193,11 @@ def load_script(script_path, debugger, internal_dict):
     # Helpers.
     log = logging.getLogger(__name__)
     script_dir_path = os.path.dirname(script_path)
-    relative_path = os.path.relpath(script_dir_path, lldb_summaries_package_dir_path)
+    relative_path = os.path.relpath(script_dir_path, lldb_additions_package_dir_path)
     file_name, _ = os.path.splitext(os.path.basename(script_path))
 
     # Create module path.
-    module_paths = [lldb_summaries_package_name]
+    module_paths = [lldb_additions_package_name]
     module_paths.extend(split_path(relative_path))
     module_paths.append(file_name)
     module_path = ".".join(module_paths)
@@ -244,25 +244,25 @@ def load_all(debugger, internal_dict):
     # Load scripts.
     scripts = list()
     for directory in lldb_scripts_paths:
-        directory_path = os.path.join(lldb_summaries_package_dir_path, directory)
+        directory_path = os.path.join(lldb_additions_package_dir_path, directory)
         scripts.extend(scripts_in_directory(directory_path))
     load_scripts(scripts, debugger, internal_dict)
 
     # Load commands.
     scripts = list()
     for directory in lldb_commands_paths:
-        directory_path = os.path.join(lldb_summaries_package_dir_path, directory)
+        directory_path = os.path.join(lldb_additions_package_dir_path, directory)
         scripts.extend(scripts_in_directory(directory_path, subdirectories=False))
     load_scripts(scripts, debugger, internal_dict)
 
     # Load summaries.
     scripts = list()
     for directory in lldb_summaries_paths:
-        directory_path = os.path.join(lldb_summaries_package_dir_path, directory)
+        directory_path = os.path.join(lldb_additions_package_dir_path, directory)
         scripts.extend(scripts_in_directory(directory_path))
     load_scripts(scripts, debugger, internal_dict, lldb_summaries_load_order)
 
     # Load summary strings.
-    load_lldb_commands_directory(os.path.join(lldb_summaries_package_dir_path, lldb_summaries_string_summaries_dir), debugger, internal_dict)
+    load_lldb_commands_directory(os.path.join(lldb_additions_package_dir_path, lldb_additions_string_summaries_dir), debugger, internal_dict)
 
     log.debug("Scripts loaded.")

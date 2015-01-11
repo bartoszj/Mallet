@@ -24,7 +24,7 @@
 
 import os
 import sys
-import lldb_summaries.scripts.class_dump as class_dump
+import lldb_additions.scripts.class_dump as class_dump
 
 
 def normalize_type(type_32bit, type_64bit):
@@ -63,7 +63,7 @@ def dump_class(class_name):
     # Current directory path.
     current_dir = os.path.abspath(__file__)
     current_dir, _ = os.path.split(current_dir)
-    input_dir = os.path.join(current_dir, "lldb_summaries/ClassDumps")
+    input_dir = os.path.join(current_dir, "lldb_additions/ClassDumps")
 
     al = class_dump.ArchitecturesList()
     al.read_directory_path(input_dir)

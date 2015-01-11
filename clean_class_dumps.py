@@ -23,7 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import os
-import lldb_summaries.scripts.class_dump as class_dump
+import lldb_additions.scripts.class_dump as class_dump
 
 # Example offsets.json file:
 # {
@@ -59,7 +59,7 @@ def clean_class_dumps():
 
     # Input / output folders.
     input_dir = os.path.join(current_dir, "ClassDumps")
-    output_dir = os.path.join(current_dir, "lldb_summaries/ClassDumps")
+    output_dir = os.path.join(current_dir, "lldb_additions/ClassDumps")
     offsets_file_path = os.path.join(current_dir, "offsets.json")
 
     al = class_dump.ArchitecturesList()

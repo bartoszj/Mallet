@@ -31,12 +31,12 @@ def configure_loggers():
     Configure all well known loggers.
     """
 
-    logger_names = ["lldb_summaries.scripts.class_dump",
-                    "lldb_summaries.scripts.helpers",
-                    "lldb_summaries.scripts.loader",
-                    "lldb_summaries.scripts.logger",
-                    "lldb_summaries.scripts.type_cache",
-                    "lldb_summaries.summaries.SummaryBase"]
+    logger_names = ["lldb_additions.scripts.class_dump",
+                    "lldb_additions.scripts.helpers",
+                    "lldb_additions.scripts.loader",
+                    "lldb_additions.scripts.logger",
+                    "lldb_additions.scripts.type_cache",
+                    "lldb_additions.summaries.SummaryBase"]
     for logger_name in logger_names:
         logger = logging.getLogger(logger_name)
         configure_logger(logger)
@@ -48,8 +48,8 @@ def configure_logger(logger):
     :param logging.Logger logger: Logger object to configure.
     """
 
-    if not hasattr(logger, "LLDB_summaries_configured"):
-        logger.LLDB_summaries_configured = True
+    if not hasattr(logger, "LLDB_additions_configured"):
+        logger.LLDB_additions_configured = True
         logger.setLevel(logging.DEBUG)
 
         # Formatter.

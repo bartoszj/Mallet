@@ -8,7 +8,7 @@ Clone this repository and add the following line to yout __~/.lldbinit__ file. I
 
     # ~/.lldbinit
     ...
-    command script import /path/to/lldb_summaries
+    command script import /path/to/lldb_additions
 
 The summaries will be available the next time Xcode starts.
 
