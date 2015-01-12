@@ -53,12 +53,12 @@ def configure_logger(logger):
         logger.setLevel(logging.DEBUG)
 
         # Formatter.
-        formatter = logging.Formatter('%(asctime)s - %(levelname)-8s - %(name)s - %(message)s')
+        # formatter = logging.Formatter('%(asctime)s - %(levelname)-8s - %(name)s - %(message)s')
 
         # File handler.
-        file_path = os.path.expanduser("~/Library/Logs/LLDBSummaries.log")
-        file_handler = logging.FileHandler(file_path)
-        file_handler.setFormatter(formatter)
+        # file_path = os.path.expanduser("~/Library/Logs/lldb_additions.log")
+        # file_handler = logging.FileHandler(file_path)
+        # file_handler.setFormatter(formatter)
 
         # Null handler.
         null_handler = logging.NullHandler()
