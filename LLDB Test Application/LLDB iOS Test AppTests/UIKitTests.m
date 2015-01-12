@@ -366,4 +366,14 @@
     [self compareObject:storyboard ofType:@"UIStoryboard *" toSumamry:@"fileName=\"Main_iPhone\""];
 }
 
+#pragma mark - UIStoryboardSegue
+- (void)testUIStoryboardSegue01
+{
+    UIViewController *vc1 = [[UIViewController alloc] init];
+    UIViewController *vc2 = [[UIViewController alloc] init];
+    UIStoryboardSegue *segue = [[UIStoryboardSegue alloc] initWithIdentifier:@"idEntiFier" source:vc1 destination:vc2];
+    
+    [self compareObject:segue ofType:@"UIStoryboardSegue *" toSumamry:@"identifier=@\"idEntiFier\""];
+}
+
 @end

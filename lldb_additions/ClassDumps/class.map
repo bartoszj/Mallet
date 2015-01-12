@@ -37,6 +37,7 @@ SKPaymentTransactionInternal:StoreKit/SKPaymentTransactionInternal.json
 UILabel:UIKit/UILabel.json
 UIButton:UIKit/UIButton.json
 UIStepper:UIKit/UIStepper.json
+UIStoryboardSegue:UIKit/UIStoryboardSegue.json
 UIAlertView:UIKit/UIAlertView.json
 SKReceiptRefreshRequest:StoreKit/SKReceiptRefreshRequest.json
 UIViewController:UIKit/UIViewController.json

@@ -44,6 +44,7 @@ The summaries will be available the next time Xcode starts.
     - UISlider
     - UIStepper
     - UIStoryboard
+    - UIStoryboardSegue
     - UISwitch
     - UITextField
     - UIView (UIImageView, UIWindow)

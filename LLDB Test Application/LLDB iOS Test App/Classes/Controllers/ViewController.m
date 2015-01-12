@@ -14,6 +14,7 @@ typedef NS_ENUM (NSInteger, ViewControllerCellId) {
     ViewControllerAlertsCellId,
     ViewControllerViewsCellId,
     ViewControllerScrollViewCellId,
+    ViewControllerModalCellId,
     ViewControllerCrashCellId,
 };
 
@@ -40,6 +41,7 @@ typedef NS_ENUM (NSInteger, ViewControllerCellId) {
                      @(ViewControllerAlertsCellId),
                      @(ViewControllerViewsCellId),
                      @(ViewControllerScrollViewCellId),
+                     @(ViewControllerModalCellId),
                      @(ViewControllerCrashCellId),
                      ];
 }
@@ -82,6 +84,9 @@ typedef NS_ENUM (NSInteger, ViewControllerCellId) {
         case ViewControllerScrollViewCellId:
             cell.textLabel.text = @"Scroll view";
             break;
+        case ViewControllerModalCellId:
+            cell.textLabel.text = @"Modal view";
+            break;
         case ViewControllerCrashCellId:
             cell.textLabel.text = @"Crash";
             break;
@@ -111,6 +116,9 @@ typedef NS_ENUM (NSInteger, ViewControllerCellId) {
             break;
         case ViewControllerScrollViewCellId:
             [self performSegueWithIdentifier:@"ShowScrollView" sender:nil];
+            break;
+        case ViewControllerModalCellId:
+            [self performSegueWithIdentifier:@"ShowModal" sender:nil];
             break;
         case ViewControllerCrashCellId:
         {
