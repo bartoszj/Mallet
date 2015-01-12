@@ -43,6 +43,7 @@ The summaries will be available the next time Xcode starts.
     - UISegmentedControl
     - UISlider
     - UIStepper
+    - UIStoryboard
     - UISwitch
     - UITextField
     - UIView (UIImageView, UIWindow)

@@ -359,4 +359,11 @@
     [self compareObject:navc ofType:@"UINavigationController *" toSumamry:@"viewControllers=2"];
 }
 
+#pragma mark - UIStoryboard
+- (void)testUIStoryboard01
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    [self compareObject:storyboard ofType:@"UIStoryboard *" toSumamry:@"fileName=\"Main_iPhone\""];
+}
+
 @end

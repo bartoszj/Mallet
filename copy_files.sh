@@ -58,6 +58,7 @@ CPY=(
     "UIKit.framework/UISegmentedControl.json"
     "UIKit.framework/UISlider.json"
     "UIKit.framework/UIStepper.json"
+    "UIKit.framework/UIStoryboard.json"
     "UIKit.framework/UISwitch.json"
     "UIKit.framework/UITextField.json"
     "UIKit.framework/UIView.json"

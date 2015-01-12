@@ -1,0 +1,150 @@
+{
+  "arm64":{
+    "className":"UIStoryboard",
+    "ivars":[
+      {
+        "ivarType":"NSBundle *",
+        "name":"bundle",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"storyboardFileName",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"identifierToNibNameMap",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"designatedEntryPointIdentifier",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableDictionary *",
+        "name":"identifierToUINibMap",
+        "offset":40,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"UIStoryboard",
+    "ivars":[
+      {
+        "ivarType":"NSBundle *",
+        "name":"bundle",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"storyboardFileName",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"identifierToNibNameMap",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"designatedEntryPointIdentifier",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableDictionary *",
+        "name":"identifierToUINibMap",
+        "offset":20,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "i386":{
+    "className":"UIStoryboard",
+    "ivars":[
+      {
+        "ivarType":"NSBundle *",
+        "name":"bundle",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"storyboardFileName",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"identifierToNibNameMap",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"designatedEntryPointIdentifier",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableDictionary *",
+        "name":"identifierToUINibMap",
+        "offset":20,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"UIStoryboard",
+    "ivars":[
+      {
+        "ivarType":"NSBundle *",
+        "name":"bundle",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"storyboardFileName",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"identifierToNibNameMap",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"designatedEntryPointIdentifier",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableDictionary *",
+        "name":"identifierToUINibMap",
+        "offset":40,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  }
+}
