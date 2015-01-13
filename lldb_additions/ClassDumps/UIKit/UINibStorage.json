@@ -1,0 +1,222 @@
+{
+  "arm64":{
+    "className":"UINibStorage",
+    "ivars":[
+      {
+        "ivarType":"NSString *",
+        "name":"bundleResourceName",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"bundleDirectoryName",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSBundle *",
+        "name":"bundle",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"identifierForStringsFile",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSData *",
+        "name":"archiveData",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UINibDecoder *",
+        "name":"nibDecoder",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"instantiatingForSimulator",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"captureImplicitLoadingContextOnDecode",
+        "offset":57,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"UINibStorage",
+    "ivars":[
+      {
+        "ivarType":"NSString *",
+        "name":"bundleResourceName",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"bundleDirectoryName",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSBundle *",
+        "name":"bundle",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"identifierForStringsFile",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSData *",
+        "name":"archiveData",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UINibDecoder *",
+        "name":"nibDecoder",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"instantiatingForSimulator",
+        "offset":28,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"captureImplicitLoadingContextOnDecode",
+        "offset":29,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "i386":{
+    "className":"UINibStorage",
+    "ivars":[
+      {
+        "ivarType":"NSString *",
+        "name":"bundleResourceName",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"bundleDirectoryName",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSBundle *",
+        "name":"bundle",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"identifierForStringsFile",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSData *",
+        "name":"archiveData",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UINibDecoder *",
+        "name":"nibDecoder",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"instantiatingForSimulator",
+        "offset":28,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"captureImplicitLoadingContextOnDecode",
+        "offset":29,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"UINibStorage",
+    "ivars":[
+      {
+        "ivarType":"NSString *",
+        "name":"bundleResourceName",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"bundleDirectoryName",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSBundle *",
+        "name":"bundle",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"identifierForStringsFile",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSData *",
+        "name":"archiveData",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UINibDecoder *",
+        "name":"nibDecoder",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"instantiatingForSimulator",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"captureImplicitLoadingContextOnDecode",
+        "offset":57,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  }
+}

@@ -376,4 +376,11 @@
     [self compareObject:segue ofType:@"UIStoryboardSegue *" toSumamry:@"identifier=@\"idEntiFier\""];
 }
 
+#pragma mark - UINib
+- (void)testUINib01
+{
+    UINib *nib = [UINib nibWithNibName:@"View" bundle:nil];
+    [self compareObject:nib ofType:@"UINib *" toSumamry:@"resourceName=@\"View\""];
+}
+
 @end

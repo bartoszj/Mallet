@@ -7,12 +7,14 @@ SKPaymentTransaction:StoreKit/SKPaymentTransaction.json
 UIScrollView:UIKit/UIScrollView.json
 NSURLRequest:CFNetwork/NSURLRequest.json
 UIScreen:UIKit/UIScreen.json
+UINibStorage:UIKit/UINibStorage.json
 SKProductInternal:StoreKit/SKProductInternal.json
 UIProgressView:UIKit/UIProgressView.json
 UIResponder:UIKit/UIResponder.json
 UISwitch:UIKit/UISwitch.json
 UIAlertController:UIKit/UIAlertController.json
 UIPageControl:UIKit/UIPageControl.json
+UINib:UIKit/UINib.json
 UIPickerView:UIKit/UIPickerView.json
 SKProductsRequest:StoreKit/SKProductsRequest.json
 SKRequestInternal:StoreKit/SKRequestInternal.json

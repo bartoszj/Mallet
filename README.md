@@ -34,6 +34,7 @@ The summaries will be available the next time Xcode starts.
     - UIEdgeInsets
     - UILabel
     - UINavigationController
+    - UINib / UINibStorage
     - UIOffset
     - UIPageControl
     - UIPickerView (Don't know what / how to show)
