@@ -623,7 +623,10 @@ def get_float_value(obj):
     :return: float from LLDB value.
     :rtype: float | None
     """
-    return None if obj is None else float(obj.GetValue())
+    if obj:
+        value = obj.GetValue()
+        return None if value is None else float(value)
+    return None
 
 
 def get_summary_value(obj):

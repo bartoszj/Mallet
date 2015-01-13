@@ -36,10 +36,11 @@ def configure_loggers():
                     "lldb_additions.scripts.loader",
                     "lldb_additions.scripts.logger",
                     "lldb_additions.scripts.type_cache",
-                    "lldb_additions.summaries.SummaryBase"]
-    for logger_name in logger_names:
-        logger = logging.getLogger(logger_name)
-        configure_logger(logger)
+                    "lldb_additions.summaries.SummaryBase",
+                    ]
+    # for logger_name in logger_names:
+    #     logger = logging.getLogger(logger_name)
+    #     configure_logger(logger)
 
 
 def configure_logger(logger):
@@ -53,18 +54,14 @@ def configure_logger(logger):
         logger.setLevel(logging.DEBUG)
 
         # Formatter.
-        # formatter = logging.Formatter('%(asctime)s - %(levelname)-8s - %(name)s - %(message)s')
+        formatter = logging.Formatter('%(asctime)s - %(levelname)-8s - %(name)s - %(message)s')
 
         # File handler.
-        # file_path = os.path.expanduser("~/Library/Logs/lldb_additions.log")
-        # file_handler = logging.FileHandler(file_path)
-        # file_handler.setFormatter(formatter)
+        file_path = os.path.expanduser("~/Library/Logs/lldb_additions.log")
+        file_handler = logging.FileHandler(file_path)
+        file_handler.setFormatter(formatter)
 
-        # Null handler.
-        null_handler = logging.NullHandler()
-
-        # logger.addHandler(file_handler)
-        logger.addHandler(null_handler)
+        logger.addHandler(file_handler)
         logger.debug("Logger \"{}\" configured.".format(logger.name))
 
 

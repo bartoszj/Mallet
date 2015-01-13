@@ -26,6 +26,7 @@ from ...scripts import helpers
 from .. import SummaryBase
 from ..QuartzCore import CALayer
 import UIResponder
+import logging
 
 
 class Rect(object):
@@ -66,6 +67,12 @@ class UIViewSyntheticProvider(UIResponder.UIResponderSyntheticProvider):
         frame = Rect()
         frame.width = bounds.size_provider.width_value
         frame.height = bounds.size_provider.height_value
+
+        if frame.width is None:
+            return None
+        if frame.height is None:
+            return None
+
         frame.x = position.x_value - frame.width / 2
         frame.y = position.y_value - frame.height / 2
         return frame
