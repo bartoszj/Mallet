@@ -63,6 +63,7 @@ CPY=(
     "UIKit.framework/UIStoryboard.json"
     "UIKit.framework/UIStoryboardSegue.json"
     "UIKit.framework/UISwitch.json"
+    "UIKit.framework/UITableViewCell.json"
     "UIKit.framework/UITextField.json"
     "UIKit.framework/UIView.json"
     "UIKit.framework/UIViewController.json"

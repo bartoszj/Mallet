@@ -25,6 +25,7 @@ _UIDatePickerView:UIKit/_UIDatePickerView.json
 UIAlertAction:UIKit/UIAlertAction.json
 SKPaymentQueue:StoreKit/SKPaymentQueue.json
 __NSConcreteURLComponents:Foundation/__NSConcreteURLComponents.json
+NSBundle:Foundation/NSBundle.json
 SKProductsResponse:StoreKit/SKProductsResponse.json
 UIView:UIKit/UIView.json
 SKRequest:StoreKit/SKRequest.json
@@ -35,9 +36,10 @@ UIDatePicker:UIKit/UIDatePicker.json
 UIStoryboard:UIKit/UIStoryboard.json
 UIBarItem:UIKit/UIBarItem.json
 SKProduct:StoreKit/SKProduct.json
+UIButton:UIKit/UIButton.json
 SKPaymentTransactionInternal:StoreKit/SKPaymentTransactionInternal.json
 UILabel:UIKit/UILabel.json
-UIButton:UIKit/UIButton.json
+UITableViewCell:UIKit/UITableViewCell.json
 UIStepper:UIKit/UIStepper.json
 UIStoryboardSegue:UIKit/UIStoryboardSegue.json
 UIAlertView:UIKit/UIAlertView.json

@@ -47,6 +47,7 @@ The summaries will be available the next time Xcode starts.
     - UIStoryboard
     - UIStoryboardSegue
     - UISwitch
+    - UITableViewCell
     - UITextField
     - UIView (UIImageView, UIWindow)
     - UIViewController

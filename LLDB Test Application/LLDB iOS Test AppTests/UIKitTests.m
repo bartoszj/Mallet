@@ -383,4 +383,25 @@
     [self compareObject:nib ofType:@"UINib *" toSumamry:@"resourceName=@\"View\""];
 }
 
+#pragma mark - UITableViewCell
+- (void)testUITableViewCell01
+{
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"reuseIdentifier"];
+    [self compareObject:cell ofType:@"UITableViewCell *" toSumamry:@"reuseIdentifier=@\"reuseIdentifier\""];
+    cell.textLabel.text = @"Text";
+    [self compareObject:cell ofType:@"UITableViewCell *" toSumamry:@"textLabel=@\"Text\", reuseIdentifier=@\"reuseIdentifier\""];
+    cell.detailTextLabel.text = @"Detail text";
+    [self compareObject:cell ofType:@"UITableViewCell *" toSumamry:@"textLabel=@\"Text\", detailLabel=@\"Detail text\", reuseIdentifier=@\"reuseIdentifier\""];
+}
+
+- (void)testUITableViewCell02
+{
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuseIdentifier"];
+    [self compareObject:cell ofType:@"UITableViewCell *" toSumamry:@"reuseIdentifier=@\"reuseIdentifier\""];
+    cell.textLabel.text = @"Text";
+    [self compareObject:cell ofType:@"UITableViewCell *" toSumamry:@"textLabel=@\"Text\", reuseIdentifier=@\"reuseIdentifier\""];
+    cell.tag = 325;
+    [self compareObject:cell ofType:@"UITableViewCell *" toSumamry:@"textLabel=@\"Text\", reuseIdentifier=@\"reuseIdentifier\", tag=325"];
+}
+
 @end
