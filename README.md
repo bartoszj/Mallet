@@ -30,6 +30,7 @@ The summaries will be available the next time Xcode starts.
     - UIAlertView
     - UIBarItem, UIBarButtonItem
     - UIButton
+    - UIColor / UIDeviceWhiteColor / UIDeviceRGBColor
     - UIDatePicker
     - UIEdgeInsets
     - UILabel

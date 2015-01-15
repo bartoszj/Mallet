@@ -1,0 +1,54 @@
+{
+  "arm64":{
+    "className":"UIColor",
+    "ivars":[
+      {
+        "ivarType":"NSString *",
+        "name":"_systemColorName",
+        "offset":8,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"UIColor",
+    "ivars":[
+      {
+        "ivarType":"NSString *",
+        "name":"_systemColorName",
+        "offset":4,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "i386":{
+    "className":"UIColor",
+    "ivars":[
+      {
+        "ivarType":"NSString *",
+        "name":"_systemColorName",
+        "offset":4,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"UIColor",
+    "ivars":[
+      {
+        "ivarType":"NSString *",
+        "name":"_systemColorName",
+        "offset":8,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  }
+}

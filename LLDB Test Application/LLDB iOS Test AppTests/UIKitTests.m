@@ -404,4 +404,23 @@
     [self compareObject:cell ofType:@"UITableViewCell *" toSumamry:@"textLabel=@\"Text\", reuseIdentifier=@\"reuseIdentifier\", tag=325"];
 }
 
+#pragma mark - UIColor
+- (void)testUIColor01
+{
+    UIColor *color = [UIColor brownColor];
+    [self compareObject:color ofType:@"UIColor *" toSumamry:@"systemColorName=@\"brownColor\""];
+}
+
+- (void)testUIColor02
+{
+    UIColor *color = [UIColor colorWithWhite:0.4 alpha:1.0];
+    [self compareObject:color ofType:@"UIDeviceWhiteColor *" toSumamry:@"white=0.4, alpha=1"];
+}
+
+- (void)testUIColor03
+{
+    UIColor *color = [UIColor colorWithRed:0.2 green:0.3 blue:0.4 alpha:0.5];
+    [self compareObject:color ofType:@"UIDeviceRGBColor *" toSumamry:@"red=0.2, green=0.3, blue=0.4, alpha=0.5"];
+}
+
 @end
