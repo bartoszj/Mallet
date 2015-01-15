@@ -420,7 +420,13 @@
 - (void)testUIColor03
 {
     UIColor *color = [UIColor colorWithRed:0.2 green:0.3 blue:0.4 alpha:0.5];
-    [self compareObject:color ofType:@"UIDeviceRGBColor *" toSumamry:@"red=0.2, green=0.3, blue=0.4, alpha=0.5"];
+    [self compareObject:color ofType:@"UIDeviceRGBColor *" toSumamry:@"rgba=#334D6680, red=0.2, green=0.3, blue=0.4, alpha=0.5"];
+}
+
+- (void)testUIColor04
+{
+    UIColor *color = [UIColor colorWithHue:0.1 saturation:0.3 brightness:0.7 alpha:0.9];
+    [self compareObject:color ofType:@"UIDeviceRGBColor *" toSumamry:@"rgba=#B39D7DE6, red=0.7, green=0.62, blue=0.49, alpha=0.9"];
 }
 
 @end

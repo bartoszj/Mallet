@@ -55,20 +55,27 @@ def summary_provider(value_obj, internal_dict):
     :param lldb.SBValue value_obj: LLDB object value.
     :param dict internal_dict: Internal LLDB dictionary.
     :return: UIColor summary.
+    :rtype: str
     """
 
     # Very, very ugly solution to get class name.
-    # Expression path.
-    stream = lldb.SBStream()
-    value_obj.GetExpressionPath(stream)
-    expression_path = stream.GetData()
+    # Dynamic value object.
+    dynamic_value_obj = value_obj.GetDynamicValue(lldb.eDynamicDontRunTarget)
+    """:type: lldb.SBValue"""
+
+    # Address.
+    address_object = dynamic_value_obj.GetAddress()
+    """:type: lldb.SBAddress"""
+    address = address_object.GetFileAddress()
 
     # Expression options.
     options = lldb.SBExpressionOptions()
     options.SetIgnoreBreakpoints()
 
-    # Class
-    class_object = value_obj.CreateValueFromExpression("cls", "(Class)[{} class]".format(expression_path), options)
+    # Class name.
+    frame = dynamic_value_obj.GetFrame()
+    """:type: lldb.SBFrame"""
+    class_object = frame.EvaluateExpression("(Class)[(id)({}) class]".format(address), options)
     """:type: lldb.SBValue"""
     class_name = class_object.GetSummary()
     """:type: str"""

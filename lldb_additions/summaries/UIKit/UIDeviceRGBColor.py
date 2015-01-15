@@ -64,8 +64,27 @@ class UIDeviceRGBColorSyntheticProvider(UIColor.UIColorSyntheticProvider):
     def get_alpha_component_summary(value):
         return "alpha={}".format(SummaryBase.formatted_float(value))
 
+    def get_rgb_summary(self):
+        r = self.red_component_value
+        g = self.green_component_value
+        b = self.blue_component_value
+        a = self.alpha_component_value
+        if r is None or g is None or b is None:
+            return None
+
+        r_value = int(round(r * 255))
+        g_value = int(round(g * 255))
+        b_value = int(round(b * 255))
+
+        if a is not None:
+            a_value = int(round(a * 255))
+            return "rgba=#{:02X}{:02X}{:02X}{:02X}".format(r_value, g_value, b_value, a_value)
+        else:
+            return "rgb=#{:02X}{:02X}{:02X}".format(r_value, g_value, b_value)
+
     def summary(self):
-        summary = SummaryBase.join_summaries(self.red_component_summary,
+        summary = SummaryBase.join_summaries(self.get_rgb_summary(),
+                                             self.red_component_summary,
                                              self.green_component_summary,
                                              self.blue_component_summary,
                                              self.alpha_component_summary)
