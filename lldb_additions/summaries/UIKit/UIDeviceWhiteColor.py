@@ -51,7 +51,9 @@ class UIDeviceWhiteColorSyntheticProvider(UIColor.UIColorSyntheticProvider):
         return "alpha={}".format(SummaryBase.formatted_float(value))
 
     def summary(self):
-        summary = SummaryBase.join_summaries(self.white_component_summary, self.alpha_component_summary)
+        summary = SummaryBase.join_summaries(self.white_component_summary,
+                                             self.alpha_component_summary,
+                                             self.system_color_name_summary)
         return summary
 
 

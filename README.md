@@ -63,8 +63,6 @@ The summaries will be available the next time Xcode starts.
     - SKReceiptRefreshRequest (doesn't return anything)
     - SKRequest
 
-> UIColor / UIDeviceWhiteColor / UIDeviceRGBColor doesn't work with `print` and `expression` commands but works with `frame variable`.
-
 ## Supported synthetic children:
 - Foundation:
     - NSDateComponents

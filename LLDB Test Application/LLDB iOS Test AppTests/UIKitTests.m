@@ -408,7 +408,7 @@
 - (void)testUIColor01
 {
     UIColor *color = [UIColor brownColor];
-    [self compareObject:color ofType:@"UIColor *" toSumamry:@"systemColorName=@\"brownColor\""];
+    [self compareObject:color ofType:@"UIColor *" toSumamry:@"rgba=#996633FF, red=0.6, green=0.4, blue=0.2, alpha=1, systemColorName=@\"brownColor\""];
 }
 
 - (void)testUIColor02

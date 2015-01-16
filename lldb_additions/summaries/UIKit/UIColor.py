@@ -72,8 +72,19 @@ def summary_provider(value_obj, internal_dict):
     options = lldb.SBExpressionOptions()
     options.SetIgnoreBreakpoints()
 
+    # Debugger, target, process, thread, frame
+    debugger = lldb.debugger
+    """:type: lldb.SBDebugger"""
+    target = debugger.GetSelectedTarget()
+    """:type: lldb.SBTarget"""
+    process = target.GetProcess()
+    """:type: lldb.SBProcess"""
+    thread = process.GetSelectedThread()
+    """:type: lldb.SBThread"""
+    frame = thread.GetSelectedFrame()
+    """:type: lldb.SBFrame"""
+
     # Class name.
-    frame = dynamic_value_obj.GetFrame()
     """:type: lldb.SBFrame"""
     class_object = frame.EvaluateExpression("(Class)[(id)({}) class]".format(address), options)
     """:type: lldb.SBValue"""

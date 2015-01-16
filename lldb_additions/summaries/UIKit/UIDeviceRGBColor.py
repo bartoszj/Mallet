@@ -87,7 +87,8 @@ class UIDeviceRGBColorSyntheticProvider(UIColor.UIColorSyntheticProvider):
                                              self.red_component_summary,
                                              self.green_component_summary,
                                              self.blue_component_summary,
-                                             self.alpha_component_summary)
+                                             self.alpha_component_summary,
+                                             self.system_color_name_summary)
         return summary
 
 
