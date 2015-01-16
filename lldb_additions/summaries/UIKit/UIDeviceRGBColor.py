@@ -62,6 +62,8 @@ class UIDeviceRGBColorSyntheticProvider(UIColor.UIColorSyntheticProvider):
 
     @staticmethod
     def get_alpha_component_summary(value):
+        if value == 1:
+            return None
         return "alpha={}".format(SummaryBase.formatted_float(value))
 
     def get_rgb_summary(self):
@@ -75,12 +77,11 @@ class UIDeviceRGBColorSyntheticProvider(UIColor.UIColorSyntheticProvider):
         r_value = int(round(r * 255))
         g_value = int(round(g * 255))
         b_value = int(round(b * 255))
+        a_value = int(round(a * 255)) if a is not None else 255
 
-        if a is not None:
-            a_value = int(round(a * 255))
-            return "rgba=#{:02X}{:02X}{:02X}{:02X}".format(r_value, g_value, b_value, a_value)
-        else:
+        if a_value == 255:
             return "rgb=#{:02X}{:02X}{:02X}".format(r_value, g_value, b_value)
+        return "rgba=#{:02X}{:02X}{:02X}{:02X}".format(r_value, g_value, b_value, a_value)
 
     def summary(self):
         summary = SummaryBase.join_summaries(self.get_rgb_summary(),

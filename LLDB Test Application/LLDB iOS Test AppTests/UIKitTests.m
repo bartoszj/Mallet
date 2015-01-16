@@ -408,25 +408,37 @@
 - (void)testUIColor01
 {
     UIColor *color = [UIColor brownColor];
-    [self compareObject:color ofType:@"UIColor *" toSumamry:@"rgba=#996633FF, red=0.6, green=0.4, blue=0.2, alpha=1, systemColorName=@\"brownColor\""];
+    [self compareObject:color ofType:@"UIColor *" toSumamry:@"rgb=#996633, red=0.6, green=0.4, blue=0.2, systemColorName=@\"brownColor\""];
 }
 
 - (void)testUIColor02
 {
     UIColor *color = [UIColor colorWithWhite:0.4 alpha:1.0];
-    [self compareObject:color ofType:@"UIDeviceWhiteColor *" toSumamry:@"white=0.4, alpha=1"];
+    [self compareObject:color ofType:@"UIDeviceWhiteColor *" toSumamry:@"white=0.4"];
 }
 
 - (void)testUIColor03
+{
+    UIColor *color = [UIColor colorWithWhite:0.43 alpha:0.65];
+    [self compareObject:color ofType:@"UIDeviceWhiteColor *" toSumamry:@"white=0.43, alpha=0.65"];
+}
+
+- (void)testUIColor04
 {
     UIColor *color = [UIColor colorWithRed:0.2 green:0.3 blue:0.4 alpha:0.5];
     [self compareObject:color ofType:@"UIDeviceRGBColor *" toSumamry:@"rgba=#334D6680, red=0.2, green=0.3, blue=0.4, alpha=0.5"];
 }
 
-- (void)testUIColor04
+- (void)testUIColor05
 {
     UIColor *color = [UIColor colorWithHue:0.1 saturation:0.3 brightness:0.7 alpha:0.9];
     [self compareObject:color ofType:@"UIDeviceRGBColor *" toSumamry:@"rgba=#B39D7DE6, red=0.7, green=0.62, blue=0.49, alpha=0.9"];
+}
+
+- (void)testUIColor06
+{
+    UIColor *color = [UIColor colorWithRed:0.3 green:0.6 blue:0.9 alpha:1.0];
+    [self compareObject:color ofType:@"UIDeviceRGBColor *" toSumamry:@"rgb=#4D99E6, red=0.3, green=0.6, blue=0.9"];
 }
 
 @end

@@ -48,6 +48,8 @@ class UIDeviceWhiteColorSyntheticProvider(UIColor.UIColorSyntheticProvider):
 
     @staticmethod
     def get_alpha_component_summary(value):
+        if value == 1:
+            return None
         return "alpha={}".format(SummaryBase.formatted_float(value))
 
     def summary(self):
