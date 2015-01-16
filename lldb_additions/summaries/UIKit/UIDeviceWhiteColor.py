@@ -42,6 +42,8 @@ class UIDeviceWhiteColorSyntheticProvider(UIColor.UIColorSyntheticProvider):
                                   primitive_value_function=SummaryBase.get_float_value,
                                   summary_function=self.get_alpha_component_summary)
 
+        self.synthetic_children = ["white_component", "alpha_component", "system_color_name"]
+
     @staticmethod
     def get_white_component_summary(value):
         return "white={}".format(SummaryBase.formatted_float(value))

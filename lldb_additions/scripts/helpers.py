@@ -22,6 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+import lldb
 import logging
 
 Architecture_unknown = 0
@@ -130,6 +131,54 @@ def is_64bit_architecture_from_target(target):
     """
     architecture = architecture_type_from_target(target)
     return is_64bit_architecture(architecture)
+
+
+def get_object_class_name(value_obj):
+    """
+    Returns object class name calling LLDB expression. It does not use Objective-C runtime.
+
+    Very, very ugly solution to get class name. but right now there is
+    no correct Objective-C runtime implementation for LLDB.
+
+    :param lldb.SBValue value_obj: LLDB object.
+    :return: Object class name.
+    :rtype: str
+    """
+
+    # Dynamic value object.
+    dynamic_value_obj = value_obj.GetDynamicValue(lldb.eDynamicDontRunTarget)
+    """:type: lldb.SBValue"""
+
+    # Address.
+    address_object = dynamic_value_obj.GetAddress()
+    """:type: lldb.SBAddress"""
+    address = address_object.GetFileAddress()
+    """:type: int"""
+
+    # Expression options.
+    options = lldb.SBExpressionOptions()
+    options.SetIgnoreBreakpoints()
+
+    # Debugger, target, process, thread, frame
+    debugger = lldb.debugger
+    """:type: lldb.SBDebugger"""
+    target = debugger.GetSelectedTarget()
+    """:type: lldb.SBTarget"""
+    process = target.GetProcess()
+    """:type: lldb.SBProcess"""
+    thread = process.GetSelectedThread()
+    """:type: lldb.SBThread"""
+    frame = thread.GetSelectedFrame()
+    """:type: lldb.SBFrame"""
+
+    # Class name.
+    """:type: lldb.SBFrame"""
+    class_object = frame.EvaluateExpression("(Class)[(id)({}) class]".format(address), options)
+    """:type: lldb.SBValue"""
+    class_name = class_object.GetSummary()
+    """:type: str"""
+
+    return class_name
 
 
 def generic_summary_provider(value_obj, internal_dict, class_synthetic_provider):

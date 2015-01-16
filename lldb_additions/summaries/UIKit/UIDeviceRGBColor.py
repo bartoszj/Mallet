@@ -48,6 +48,8 @@ class UIDeviceRGBColorSyntheticProvider(UIColor.UIColorSyntheticProvider):
                                   primitive_value_function=SummaryBase.get_float_value,
                                   summary_function=self.get_alpha_component_summary)
 
+        self.synthetic_children = ["red_component", "green_component", "blue_component", "alpha_component", "system_color_name"]
+
     @staticmethod
     def get_red_component_summary(value):
         return "red={}".format(SummaryBase.formatted_float(value))

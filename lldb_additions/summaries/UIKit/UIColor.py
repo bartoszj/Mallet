@@ -40,12 +40,47 @@ class UIColorSyntheticProvider(NSObject.NSObjectSyntheticProvider):
                                   primitive_value_function=SummaryBase.get_summary_value,
                                   summary_function=self.get_system_color_name_summary)
 
+        self.synthetic_children = ["system_color_name"]
+
     @staticmethod
     def get_system_color_name_summary(value):
         return "systemColorName={}".format(value)
 
     def summary(self):
         return self.system_color_name_summary
+
+
+class UIColorSubclassesSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
+    """
+    Proxy class calling correct synthetic child class.
+    """
+    def __init__(self, value_obj, internal_dict):
+        super(UIColorSubclassesSyntheticProvider, self).__init__(value_obj, internal_dict)
+
+        self.color_class_name = helpers.get_object_class_name(value_obj)
+        if self.color_class_name == "UIDeviceWhiteColor" or self.color_class_name == "UICachedDeviceWhiteColor":
+            import UIDeviceWhiteColor
+            self.color_proxy = UIDeviceWhiteColor.UIDeviceWhiteColorSyntheticProvider(value_obj, internal_dict)
+        elif self.color_class_name == "UIDeviceRGBColor" or self.color_class_name == "UICachedDeviceRGBColor":
+            import UIDeviceRGBColor
+            self.color_proxy = UIDeviceRGBColor.UIDeviceRGBColorSyntheticProvider(value_obj, internal_dict)
+        else:
+            self.color_proxy = UIColorSyntheticProvider(value_obj, internal_dict)
+
+    def num_children(self):
+        return self.color_proxy.num_children()
+
+    def get_child_index(self, name):
+        return self.color_proxy.get_child_index(name)
+
+    def get_child_at_index(self, index):
+        return self.color_proxy.get_child_at_index(index)
+
+    def update(self):
+        return self.color_proxy.update()
+
+    def has_children(self):
+        return self.color_proxy.has_children()
 
 
 def summary_provider(value_obj, internal_dict):
@@ -58,38 +93,7 @@ def summary_provider(value_obj, internal_dict):
     :rtype: str
     """
 
-    # Very, very ugly solution to get class name.
-    # Dynamic value object.
-    dynamic_value_obj = value_obj.GetDynamicValue(lldb.eDynamicDontRunTarget)
-    """:type: lldb.SBValue"""
-
-    # Address.
-    address_object = dynamic_value_obj.GetAddress()
-    """:type: lldb.SBAddress"""
-    address = address_object.GetFileAddress()
-
-    # Expression options.
-    options = lldb.SBExpressionOptions()
-    options.SetIgnoreBreakpoints()
-
-    # Debugger, target, process, thread, frame
-    debugger = lldb.debugger
-    """:type: lldb.SBDebugger"""
-    target = debugger.GetSelectedTarget()
-    """:type: lldb.SBTarget"""
-    process = target.GetProcess()
-    """:type: lldb.SBProcess"""
-    thread = process.GetSelectedThread()
-    """:type: lldb.SBThread"""
-    frame = thread.GetSelectedFrame()
-    """:type: lldb.SBFrame"""
-
-    # Class name.
-    """:type: lldb.SBFrame"""
-    class_object = frame.EvaluateExpression("(Class)[(id)({}) class]".format(address), options)
-    """:type: lldb.SBValue"""
-    class_name = class_object.GetSummary()
-    """:type: str"""
+    class_name = helpers.get_object_class_name(value_obj)
 
     if class_name == "UIDeviceWhiteColor" or class_name == "UICachedDeviceWhiteColor":
         import UIDeviceWhiteColor
@@ -97,11 +101,15 @@ def summary_provider(value_obj, internal_dict):
     elif class_name == "UIDeviceRGBColor" or class_name == "UICachedDeviceRGBColor":
         import UIDeviceRGBColor
         return helpers.generic_summary_provider(value_obj, internal_dict, UIDeviceRGBColor.UIDeviceRGBColorSyntheticProvider)
-    return helpers.generic_summary_provider(value_obj, internal_dict, UIColorSyntheticProvider)
+    else:
+        return helpers.generic_summary_provider(value_obj, internal_dict, UIColorSyntheticProvider)
 
 
 def lldb_init(debugger, dictionary):
     debugger.HandleCommand("type summary add -F {}.summary_provider \
                             --category UIKit \
                             UIColor".format(__name__))
+    debugger.HandleCommand("type synthetic add -l {}.UIColorSubclassesSyntheticProvider \
+                           --category UIKit \
+                           UIColor".format(__name__))
     debugger.HandleCommand("type category enable UIKit")

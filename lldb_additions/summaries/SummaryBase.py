@@ -85,7 +85,7 @@ class SummaryBaseSyntheticProvider(object):
     :param int architecture: Architecture type.
     :param str architecture_name: Architecture name.
     :param bool is_64bit: Is 64 bit architecture.
-    :param list[RegisterValue] registeredChildValues: List of registered parameters.
+    :param list[RegisterValue] registered_child_values: List of registered parameters.
     :param str synthetic_type: Type of synthetic children (list of proxy object).
     :param list[str] synthetic_children: List of synthetic children.
     :param str synthetic_proxy_name: Name of registered parameter which will be used as proxy for synthetic child.
@@ -114,7 +114,7 @@ class SummaryBaseSyntheticProvider(object):
         self.architecture_name = helpers.architecture_name_from_target(self.target)
         self.is_64bit = helpers.is_64bit_architecture(self.architecture)
 
-        self.registeredChildValues = list()
+        self.registered_child_values = list()
         self.synthetic_type = self.SYNTHETIC_CHILDREN
         self.synthetic_children = list()
         self.synthetic_proxy_name = None
@@ -243,6 +243,10 @@ class SummaryBaseSyntheticProvider(object):
         if self.synthetic_type == self.SYNTHETIC_CHILDREN:
             r = self.get_registered_child_value_parameter(ivar_name=name)
             index = None
+            if r is None:
+                log.debug("get_child_index: Cannot find registered child with ivar name: {} for class {}.".format(name, self.type_name))
+                return index
+
             if self.synthetic_children.count(r.attribute_name):
                 index = self.synthetic_children.index(r.attribute_name)
             else:
@@ -404,7 +408,7 @@ class SummaryBaseSyntheticProvider(object):
         r.summary_function = summary_function
         r.cache_summary = cache_summary
 
-        self.registeredChildValues.append(r)
+        self.registered_child_values.append(r)
 
     def get_registered_child_value_parameter(self, attribute_name=None, ivar_name=None):
         """
@@ -416,11 +420,11 @@ class SummaryBaseSyntheticProvider(object):
         :rtype: RegisterValue | None
         """
         if attribute_name is not None:
-            for r in self.registeredChildValues:
+            for r in self.registered_child_values:
                 if r.attribute_name == attribute_name:
                     return r
         elif ivar_name is not None:
-            for r in self.registeredChildValues:
+            for r in self.registered_child_values:
                 if r.ivar_name == ivar_name:
                     return r
         return None
