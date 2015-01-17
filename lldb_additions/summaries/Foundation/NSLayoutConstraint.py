@@ -39,6 +39,10 @@ NSLayoutAttributeCenterX = 9
 NSLayoutAttributeCenterY = 10
 NSLayoutAttributeBaseline = 11
 
+NSLayoutRelationLessThanOrEqual = 3
+NSLayoutRelationEqual = 0
+NSLayoutRelationGreaterThanOrEqual = 1
+
 
 class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
@@ -91,26 +95,66 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
             return ""
         return "@{}".format(SummaryBase.formatted_float(value))
 
+    @staticmethod
+    def get_first_item_flags(all_flags):
+        if all_flags is None:
+            return 0
+        return all_flags & 0b11111111
+
+    @staticmethod
+    def get_relation_flags(all_flags):
+        if all_flags is None:
+            return 0
+        return all_flags >> 16
+
+    @staticmethod
+    def get_relation_sign(value):
+        if value is None:
+            return ""
+        elif value == NSLayoutRelationLessThanOrEqual:
+            return "<="
+        elif value == NSLayoutRelationEqual:
+            return "=="
+        else:
+            return ">="
+
+    @staticmethod
+    def get_relation_summary(value):
+        if value is None:
+            return ""
+        elif value == NSLayoutRelationLessThanOrEqual:
+            return "<="
+        elif value == NSLayoutRelationEqual:
+            return ""
+        else:
+            return ">="
+
     def summary(self):
         first_item = self.first_item_value
         second_item = self.second_item_value
         constant = self.constant_summary
         priority = self.priority_summary
-        flags = self.layout_constraint_flags_value
+        all_flags = self.layout_constraint_flags_value
+        first_item_flags = self.get_first_item_flags(all_flags)
+        relation_flags = self.get_relation_flags(all_flags)
+        relation = self.get_relation_summary(relation_flags)
 
         # print("first_item:{}".format(first_item))
         # print("second_item:{}".format(second_item))
         # print("constant:{}".format(constant))
         # print("priority:{}".format(priority))
-        # print("flags:{}".format(flags))
+        # print("all_flags:{} {}".format(all_flags, bin(all_flags)))
+        # print("first_item_flags:{} {}".format(first_item_flags, bin(first_item_flags)))
+        # print("relation:{} {}".format(relation_flags, self.get_relation_sign(relation_flags)))
         # print("lowered_constant:{}".format(self.lowered_constant_value))
         # print("coefficient:{}".format(self.coefficient_value))
+        # print("==============================")
 
         summary = None
-        if flags == NSLayoutAttributeWidth:
-            summary = "H:[{}({}{})]".format(first_item, constant, priority)
-        elif flags == NSLayoutAttributeHeight:
-            summary = "V:[{}({}{})]".format(first_item, constant, priority)
+        if first_item_flags == NSLayoutAttributeWidth:
+            summary = "H:[{}({}{}{})]".format(first_item, relation, constant, priority)
+        elif first_item_flags == NSLayoutAttributeHeight:
+            summary = "V:[{}({}{}{})]".format(first_item, relation, constant, priority)
 
         return summary
 
