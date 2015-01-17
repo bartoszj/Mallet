@@ -26,6 +26,10 @@ from ...scripts import helpers
 from .. import SummaryBase
 from ..Foundation import NSObject
 
+NSLayoutRelationLessThanOrEqual = 3
+NSLayoutRelationEqual = 0
+NSLayoutRelationGreaterThanOrEqual = 1
+
 NSLayoutAttributeNotAnAttribute = 0
 NSLayoutAttributeLeft = 1
 NSLayoutAttributeRight = 2
@@ -38,10 +42,16 @@ NSLayoutAttributeHeight = 8
 NSLayoutAttributeCenterX = 9
 NSLayoutAttributeCenterY = 10
 NSLayoutAttributeBaseline = 11
-
-NSLayoutRelationLessThanOrEqual = 3
-NSLayoutRelationEqual = 0
-NSLayoutRelationGreaterThanOrEqual = 1
+NSLayoutAttributeLastBaseline = NSLayoutAttributeBaseline
+NSLayoutAttributeFirstBaseline = 12
+NSLayoutAttributeLeftMargin = 13
+NSLayoutAttributeRightMargin = 14
+NSLayoutAttributeTopMargin = 15
+NSLayoutAttributeBottomMargin = 16
+NSLayoutAttributeLeadingMargin = 17
+NSLayoutAttributeTrailingMargin = 18
+NSLayoutAttributeCenterXWithinMargins = 19
+NSLayoutAttributeCenterYWithinMargins = 20
 
 
 class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
@@ -65,7 +75,8 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         self.register_child_value("layout_constraint_flags", ivar_name="_layoutConstraintFlags",
                                   primitive_value_function=SummaryBase.get_unsigned_value)
         self.register_child_value("coefficient", ivar_name="_coefficient",
-                                  primitive_value_function=SummaryBase.get_float_value)
+                                  primitive_value_function=SummaryBase.get_float_value,
+                                  summary_function=self.get_coefficient_summary)
         self.register_child_value("priority", ivar_name="_priority",
                                   primitive_value_function=SummaryBase.get_float_value,
                                   summary_function=self.get_priority_summary)
@@ -90,6 +101,12 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         return "{}".format(SummaryBase.formatted_float(value))
 
     @staticmethod
+    def get_coefficient_summary(value):
+        if value == 1:
+            return ""
+        return "{}".format(SummaryBase.formatted_float(value))
+
+    @staticmethod
     def get_priority_summary(value):
         if value == 1000:
             return ""
@@ -100,6 +117,61 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         if all_flags is None:
             return 0
         return all_flags & 0b11111111
+
+    @staticmethod
+    def get_second_item_flags(all_flags):
+        if all_flags is None:
+            return 0
+        return (all_flags >> 8) & 0b11111111
+
+    @staticmethod
+    def get_attribute_name(flags):
+        if flags is None:
+            return ""
+        elif flags == NSLayoutAttributeNotAnAttribute:
+            return ""
+        elif flags == NSLayoutAttributeLeft:
+            return "left"
+        elif flags == NSLayoutAttributeRight:
+            return "right"
+        elif flags == NSLayoutAttributeTop:
+            return "top"
+        elif flags == NSLayoutAttributeBottom:
+            return "bottom"
+        elif flags == NSLayoutAttributeLeading:
+            return "leading"
+        elif flags == NSLayoutAttributeTrailing:
+            return "trailing"
+        elif flags == NSLayoutAttributeWidth:
+            return "width"
+        elif flags == NSLayoutAttributeHeight:
+            return "height"
+        elif flags == NSLayoutAttributeCenterX:
+            return "centerX"
+        elif flags == NSLayoutAttributeCenterY:
+            return "centerY"
+        elif flags == NSLayoutAttributeLastBaseline:
+            return "lastBaseline"
+        elif flags == NSLayoutAttributeFirstBaseline:
+            return "firstBaseline"
+        elif flags == NSLayoutAttributeLeftMargin:
+            return "leftMargin"
+        elif flags == NSLayoutAttributeRightMargin:
+            return "rightMargin"
+        elif flags == NSLayoutAttributeTopMargin:
+            return "topMargin"
+        elif flags == NSLayoutAttributeBottomMargin:
+            return "bottomMargin"
+        elif flags == NSLayoutAttributeLeadingMargin:
+            return "leadingMargin"
+        elif flags == NSLayoutAttributeTrailingMargin:
+            return "trailingMargin"
+        elif flags == NSLayoutAttributeCenterXWithinMargins:
+            return "centerXWithMargins"
+        elif flags == NSLayoutAttributeCenterYWithinMargins:
+            return "centerYWithMargins"
+        else:
+            return "unknown ({})".format(flags)
 
     @staticmethod
     def get_relation_flags(all_flags):
@@ -132,29 +204,66 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def summary(self):
         first_item = self.first_item_value
         second_item = self.second_item_value
-        constant = self.constant_summary
-        priority = self.priority_summary
+        multiplier = self.coefficient_value
+        multiplier_summary = self.coefficient_summary
+        constant = self.constant_value
+        constant_summary = self.constant_summary
+        priority = self.priority_value
+        priority_summary = self.priority_summary
         all_flags = self.layout_constraint_flags_value
         first_item_flags = self.get_first_item_flags(all_flags)
+        first_item_attribute = self.get_attribute_name(first_item_flags)
+        second_item_flags = self.get_second_item_flags(all_flags)
+        second_item_attribute = self.get_attribute_name(second_item_flags)
         relation_flags = self.get_relation_flags(all_flags)
-        relation = self.get_relation_summary(relation_flags)
+        relation_summary = self.get_relation_summary(relation_flags)
+        relation_sign = self.get_relation_sign(relation_flags)
 
-        # print("first_item:{}".format(first_item))
-        # print("second_item:{}".format(second_item))
-        # print("constant:{}".format(constant))
-        # print("priority:{}".format(priority))
-        # print("all_flags:{} {}".format(all_flags, bin(all_flags)))
-        # print("first_item_flags:{} {}".format(first_item_flags, bin(first_item_flags)))
-        # print("relation:{} {}".format(relation_flags, self.get_relation_sign(relation_flags)))
+        # print("all_flags         : {} {}".format(all_flags, bin(all_flags)))
+        # print("first_item        : {}".format(first_item))
+        # print("second_item       : {}".format(second_item))
+        # print("first_item_flags  : {} {} {}".format(first_item_attribute, first_item_flags, bin(first_item_flags)))
+        # print("second_item_flags : {} {} {}".format(second_item_attribute, second_item_flags, bin(second_item_flags)))
+        # print("relation          : {} {}".format(relation_flags, relation_sign))
+        # print("multiplier        : {} {}".format(multiplier, multiplier_summary))
+        # print("constant          : {} {}".format(constant, constant_summary))
+        # print("priority          : {} {}".format(priority, priority_summary))
         # print("lowered_constant:{}".format(self.lowered_constant_value))
-        # print("coefficient:{}".format(self.coefficient_value))
         # print("==============================")
 
+        # Unsupported combination.
+        if first_item is None or first_item_flags == NSLayoutAttributeNotAnAttribute:
+            return None
+
         summary = None
-        if first_item_flags == NSLayoutAttributeWidth:
-            summary = "H:[{}({}{}{})]".format(first_item, relation, constant, priority)
-        elif first_item_flags == NSLayoutAttributeHeight:
-            summary = "V:[{}({}{}{})]".format(first_item, relation, constant, priority)
+        # Constraints not dependent on second item.
+        if second_item is None:
+            if first_item_flags == NSLayoutAttributeWidth:
+                summary = "H:[{}({}{}{})]".format(first_item, relation_summary, constant_summary, priority_summary)
+            elif first_item_flags == NSLayoutAttributeHeight:
+                summary = "V:[{}({}{}{})]".format(first_item, relation_summary, constant_summary, priority_summary)
+        # Constraints dependent on second item.
+        else:
+            multiplier_part = ""
+            if multiplier != 1:
+                multiplier_part = "{}*".format(multiplier_summary)
+
+            constant_part = ""
+            if constant != 0:
+                constant_abs = abs(constant)
+                if constant < 0:
+                    constant_part = " - {}".format(SummaryBase.formatted_float(constant_abs))
+                else:
+                    constant_part = " + {}".format(SummaryBase.formatted_float(constant_abs))
+
+            priority_part = ""
+            if priority != 1000:
+                priority_part = " {}".format(priority_summary)
+
+            summary = "{}.{} {} {}{}.{}{}{}".format(first_item, first_item_attribute,
+                                                    relation_sign, multiplier_part,
+                                                    second_item, second_item_attribute,
+                                                    constant_part, priority_part)
 
         return summary
 
