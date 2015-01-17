@@ -19,6 +19,7 @@ UIAlertController:UIKit/UIAlertController.json
 UIPageControl:UIKit/UIPageControl.json
 UINib:UIKit/UINib.json
 UIPickerView:UIKit/UIPickerView.json
+NSLayoutConstraint:Foundation/NSLayoutConstraint.json
 SKProductsRequest:StoreKit/SKProductsRequest.json
 SKRequestInternal:StoreKit/SKRequestInternal.json
 UINavigationController:UIKit/UINavigationController.json

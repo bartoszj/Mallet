@@ -681,6 +681,45 @@ def get_count_value(obj):
     return None if obj is None else obj.GetNumChildren()
 
 
+def get_type_name_value(obj):
+    """
+    Returns object type name from LLDB value.
+
+    It returns type name with asterisk if object is a pointer.
+
+    :param lldb.SBValue obj: LLDB value object.
+    :return: Object type name from LLDB value.
+    :rtype: str | None
+    """
+    return None if obj is None else obj.GetTypeName()
+
+
+def get_class_name_value(obj):
+    """
+    Returns object class name from LLDB value.
+
+    It returns type name without asterisk or ampersand.
+
+    :param lldb.SBValue obj: LLDB value object.
+    :return: Object class name from LLDB value.
+    :rtype: str | None
+    """
+    if obj is None:
+        return None
+
+    t = obj.GetType()
+    """:type: lldb.SBType"""
+    if t is None:
+        return None
+
+    if t.IsPointerType():
+        t = t.GetPointeeType()
+    if t.IsReferenceType():
+        t = t.GetDereferencedType()
+
+    return None if t is None else t.GetName()
+
+
 def formatted_float(f, precision=2):
     """
     Returns formatted float value to given precision (or less).

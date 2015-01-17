@@ -19,8 +19,9 @@ The summaries will be available the next time Xcode starts.
     - NSURLRequest (NSMutableURLRequest)
 - Foundation:
     - NSDateComponents
-    - NSURLComponents (__NSConcreteURLComponents)
+    - NSLayoutConstraint
     - NSObject
+    - NSURLComponents (__NSConcreteURLComponents)
     - NSUUID (__NSConcreteUUID)
 - QuartzCore:
     - CALayer

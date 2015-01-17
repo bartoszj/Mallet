@@ -287,4 +287,18 @@
     [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"host=\"host\", port=1234, path=\"path1/path2\", query=\"query\", fragment=\"fragment\""];
 }
 
+#pragma mark - NSLayoutConstraint
+- (void)testNSLayoutConstraint01
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    NSLayoutConstraint *constraint1 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:200];
+    NSLayoutConstraint *constraint2 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:300];
+    
+    intptr_t ptr = (intptr_t)view;
+    NSString *summary1 = [NSString stringWithFormat:@"H:[UIView:0x%lx(200)]", ptr];
+    NSString *summary2 = [NSString stringWithFormat:@"V:[UIView:0x%lx(300)]", ptr];
+    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:summary1];
+    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:summary2];
+}
+
 @end
