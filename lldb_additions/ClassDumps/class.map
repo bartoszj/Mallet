@@ -29,7 +29,6 @@ _UIDatePickerView:UIKit/_UIDatePickerView.json
 UIAlertAction:UIKit/UIAlertAction.json
 SKPaymentQueue:StoreKit/SKPaymentQueue.json
 __NSConcreteURLComponents:Foundation/__NSConcreteURLComponents.json
-NSBundle:Foundation/NSBundle.json
 SKProductsResponse:StoreKit/SKProductsResponse.json
 UIView:UIKit/UIView.json
 SKRequest:StoreKit/SKRequest.json

@@ -113,6 +113,56 @@ class LazyArchitecturesList(object):
                 return a
         return None
 
+    def get_architecture_or_create(self, name):
+        """
+        Returns Architecture object with given name or create it if was not in the list.
+
+        :param str name: Architecture name.
+        :return: Architecture object with given name.
+        :rtype: Architecture
+        """
+        for a in self.architectures:
+            if a.name == name:
+                return a
+        # Create new architecture.
+        architecture = Architecture(name)
+        self.architectures.append(architecture)
+        return architecture
+
+    def get_class_or_load(self, architecture_name, class_name):
+        """
+        Returns Class object for given architecture or load class JSON file.
+        :param str architecture_name: Architecture name.
+        :param str class_name: Class name.
+        :return: Class object.
+        :rtype: Class
+        """
+        log = logging.getLogger(__name__)
+        architecture = self.get_architecture_or_create(architecture_name)
+
+        # Get class.
+        cl = architecture.get_class(class_name)
+        if cl is None:
+            # Reads JSON from file.
+            log.info("LazyArchitecturesList: get_class_or_load: reading \"{}\".".format(self.class_map[class_name]))
+            file_path = os.path.join(self.dir_path, self.class_map[class_name])
+            if not os.path.exists(file_path):
+                log.error("LazyArchitecturesList: get_class_or_load: missing \"{}\".".format(self.class_map[class_name]))
+                return None
+            j = self.read_file_path(file_path)
+
+            # Empty json data or missing architecture in JSON.
+            if j is None or architecture_name not in j:
+                log.error("LazyArchitecturesList: get_class_or_load: missing data in \"{}\".".format(self.class_map[class_name]))
+                return None
+
+            # Get class json for given architecture.
+            class_json = j[architecture_name]
+
+            # Add class to architecture.
+            cl = architecture.add_json(class_json)
+        return cl
+
     def get_ivar(self, architecture_name, class_name, ivar_name):
         """
         Returns Ivar object based on architecture name, class name and ivar name.
@@ -136,34 +186,8 @@ class LazyArchitecturesList(object):
             log.error("LazyArchitecturesList: get_ivar: no class \"{}\" in class_map.".format(class_name))
             return None
 
-        # Get architecture.
-        architecture = self.get_architecture(architecture_name)
-        if architecture is None:
-            # Create new architecture.
-            architecture = Architecture(architecture_name)
-            self.architectures.append(architecture)
-
         # Get class.
-        cl = architecture.get_class(class_name)
-        if cl is None:
-            # Reads JSON from file.
-            log.info("LazyArchitecturesList: get_ivar: reading \"{}\".".format(self.class_map[class_name]))
-            file_path = os.path.join(self.dir_path, self.class_map[class_name])
-            if not os.path.exists(file_path):
-                log.error("LazyArchitecturesList: get_ivar: missing \"{}\".".format(self.class_map[class_name]))
-                return None
-            j = self.read_file_path(file_path)
-
-            # Empty json data or missing architecture in JSON.
-            if j is None or architecture_name not in j:
-                log.error("LazyArchitecturesList: get_ivar: missing data in \"{}\".".format(self.class_map[class_name]))
-                return None
-
-            # Get class json for given architecture.
-            class_json = j[architecture_name]
-
-            # Add class to architecture.
-            cl = architecture.add_json(class_json)
+        cl = self.get_class_or_load(architecture_name, class_name)
 
         # Get ivar.
         ivar = cl.get_ivar(ivar_name)
