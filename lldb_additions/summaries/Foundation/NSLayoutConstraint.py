@@ -201,7 +201,7 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         else:
             return ">="
 
-    def summary(self):
+    def print_parameters(self):
         first_item = self.first_item_value
         second_item = self.second_item_value
         multiplier = self.coefficient_value
@@ -219,17 +219,35 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         relation_summary = self.get_relation_summary(relation_flags)
         relation_sign = self.get_relation_sign(relation_flags)
 
-        # print("all_flags         : {} {}".format(all_flags, bin(all_flags)))
-        # print("first_item        : {}".format(first_item))
-        # print("second_item       : {}".format(second_item))
-        # print("first_item_flags  : {} {} {}".format(first_item_attribute, first_item_flags, bin(first_item_flags)))
-        # print("second_item_flags : {} {} {}".format(second_item_attribute, second_item_flags, bin(second_item_flags)))
-        # print("relation          : {} {}".format(relation_flags, relation_sign))
-        # print("multiplier        : {} {}".format(multiplier, multiplier_summary))
-        # print("constant          : {} {}".format(constant, constant_summary))
-        # print("priority          : {} {}".format(priority, priority_summary))
-        # print("lowered_constant:{}".format(self.lowered_constant_value))
-        # print("==============================")
+        print("all_flags         : {} {}".format(all_flags, bin(all_flags)))
+        print("first_item        : {}".format(first_item))
+        print("second_item       : {}".format(second_item))
+        print("first_item_flags  : {} {} {}".format(first_item_attribute, first_item_flags, bin(first_item_flags)))
+        print("second_item_flags : {} {} {}".format(second_item_attribute, second_item_flags, bin(second_item_flags)))
+        print("relation          : {} {}".format(relation_flags, relation_sign))
+        print("multiplier        : {} {}".format(multiplier, multiplier_summary))
+        print("constant          : {} {}".format(constant, constant_summary))
+        print("priority          : {} {}".format(priority, priority_summary))
+        print("lowered_constant  : {}".format(self.lowered_constant_value))
+        print("==============================")
+
+    def long_summary(self):
+        first_item = self.first_item_value
+        second_item = self.second_item_value
+        multiplier = self.coefficient_value
+        multiplier_summary = self.coefficient_summary
+        constant = self.constant_value
+        constant_summary = self.constant_summary
+        priority = self.priority_value
+        priority_summary = self.priority_summary
+        all_flags = self.layout_constraint_flags_value
+        first_item_flags = self.get_first_item_flags(all_flags)
+        first_item_attribute = self.get_attribute_name(first_item_flags)
+        second_item_flags = self.get_second_item_flags(all_flags)
+        second_item_attribute = self.get_attribute_name(second_item_flags)
+        relation_flags = self.get_relation_flags(all_flags)
+        relation_summary = self.get_relation_summary(relation_flags)
+        relation_sign = self.get_relation_sign(relation_flags)
 
         # Unsupported combination.
         if first_item is None or first_item_flags == NSLayoutAttributeNotAnAttribute:
@@ -266,6 +284,65 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
                                                     constant_part, priority_part)
 
         return summary
+
+    def short_summary(self):
+        first_item = self.first_item_value
+        second_item = self.second_item_value
+        multiplier = self.coefficient_value
+        multiplier_summary = self.coefficient_summary
+        constant = self.constant_value
+        constant_summary = self.constant_summary
+        priority = self.priority_value
+        priority_summary = self.priority_summary
+        all_flags = self.layout_constraint_flags_value
+        first_item_flags = self.get_first_item_flags(all_flags)
+        first_item_attribute = self.get_attribute_name(first_item_flags)
+        second_item_flags = self.get_second_item_flags(all_flags)
+        second_item_attribute = self.get_attribute_name(second_item_flags)
+        relation_flags = self.get_relation_flags(all_flags)
+        relation_summary = self.get_relation_summary(relation_flags)
+        relation_sign = self.get_relation_sign(relation_flags)
+
+        # Unsupported combination.
+        if first_item is None or first_item_flags == NSLayoutAttributeNotAnAttribute:
+            return None
+
+        summary = None
+        # Constraints not dependent on second item.
+        if second_item is None:
+            if first_item_flags == NSLayoutAttributeWidth:
+                summary = "H:[{}({}{}{})]".format(first_item, relation_summary, constant_summary, priority_summary)
+            elif first_item_flags == NSLayoutAttributeHeight:
+                summary = "V:[{}({}{}{})]".format(first_item, relation_summary, constant_summary, priority_summary)
+        # Constraints dependent on second item.
+        else:
+            multiplier_part = ""
+            if multiplier != 1:
+                multiplier_part = "{}*".format(multiplier_summary)
+
+            constant_part = ""
+            if constant != 0:
+                constant_abs = abs(constant)
+                if constant < 0:
+                    constant_part = " - {}".format(SummaryBase.formatted_float(constant_abs))
+                else:
+                    constant_part = " + {}".format(SummaryBase.formatted_float(constant_abs))
+
+            priority_part = ""
+            if priority != 1000:
+                priority_part = " {}".format(priority_summary)
+
+            summary = "{} {} {}{}{}{}".format(first_item_attribute,
+                                              relation_sign, multiplier_part,
+                                              second_item_attribute,
+                                              constant_part, priority_part)
+
+        return summary
+
+    def summary(self):
+        # self.print_parameters()
+        # return self.short_summary()
+        return self.long_summary()
 
 
 def summary_provider(value_obj, internal_dict):
