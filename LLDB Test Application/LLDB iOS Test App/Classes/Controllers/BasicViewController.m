@@ -60,4 +60,12 @@
     CompareObjectWithSummary(self.pageControl, @"UIPageControl *", @"currentPage=2, numberOfPages=5");
 }
 
+#pragma mark - Actions
+- (IBAction)plainButtonTouched:(UIButton *)sender forEvent:(UIEvent *)event
+{
+    UITouch *touch = event.allTouches.anyObject;
+    NSLog(@"%@", event);
+    NSLog(@"%@", touch);
+}
+
 @end

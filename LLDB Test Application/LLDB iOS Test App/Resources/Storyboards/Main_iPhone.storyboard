@@ -31,7 +31,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -247,7 +247,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkD-uE-JQH">
                                 <rect key="frame" x="20" y="72" width="76" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbL-qS-rlr">
@@ -297,11 +297,14 @@
                                 <state key="normal" title="Some button text">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="plainButtonTouched:forEvent:" destination="Wh4-9B-u56" eventType="touchUpInside" id="bVG-4a-oQz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9X-PG-K01">
                                 <rect key="frame" x="20" y="167" width="184" height="34"/>
                                 <state key="normal" title="Some plain button text">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -317,7 +320,7 @@
                                         </fragment>
                                         <fragment content=" ">
                                             <attributes>
-                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
                                             </attributes>
                                         </fragment>
@@ -329,7 +332,7 @@
                                         </fragment>
                                         <fragment content=" ">
                                             <attributes>
-                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
                                             </attributes>
                                         </fragment>
@@ -341,13 +344,13 @@
                                         </fragment>
                                         <fragment content=" ">
                                             <attributes>
-                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
                                             </attributes>
                                         </fragment>
                                         <fragment content="text">
                                             <attributes>
-                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="15" name="HelveticaNeue"/>
                                             </attributes>
                                         </fragment>

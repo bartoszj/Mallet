@@ -69,6 +69,7 @@ CPY=(
     "UIKit.framework/UISwitch.json"
     "UIKit.framework/UITableViewCell.json"
     "UIKit.framework/UITextField.json"
+    "UIKit.framework/UITouch.json"
     "UIKit.framework/UIView.json"
     "UIKit.framework/UIViewController.json"
     "UIKit.framework/_UIDatePickerView.json"

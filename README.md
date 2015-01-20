@@ -14,6 +14,7 @@ The summaries will be available the next time Xcode starts.
 
 ## Supported summaries:
 - CoreGraphics:
+    - CGAffineTransform
     - CGVector
 - CFNetowrk:
     - NSURLRequest (NSMutableURLRequest)
@@ -51,6 +52,7 @@ The summaries will be available the next time Xcode starts.
     - UISwitch
     - UITableViewCell
     - UITextField
+    - UITouch
     - UIView (UIImageView, UIWindow)
     - UIViewController
 - StoreKit:

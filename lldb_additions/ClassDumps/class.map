@@ -18,6 +18,7 @@ UISwitch:UIKit/UISwitch.json
 UIAlertController:UIKit/UIAlertController.json
 UIPageControl:UIKit/UIPageControl.json
 UINib:UIKit/UINib.json
+UITouch:UIKit/UITouch.json
 UIPickerView:UIKit/UIPickerView.json
 NSLayoutConstraint:Foundation/NSLayoutConstraint.json
 SKProductsRequest:StoreKit/SKProductsRequest.json

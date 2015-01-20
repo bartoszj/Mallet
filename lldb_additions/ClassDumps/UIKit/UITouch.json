@@ -1,0 +1,606 @@
+{
+  "arm64":{
+    "className":"UITouch",
+    "ivars":[
+      {
+        "ivarType":"double",
+        "name":"_movementMagnitudeSquared",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_timestamp",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_phase",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_savedPhase",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned long long",
+        "name":"_tapCount",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_edgeType",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIWindow *",
+        "name":"_window",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIView *",
+        "name":"_view",
+        "offset":64,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIView *",
+        "name":"_warpedIntoView",
+        "offset":72,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableArray *",
+        "name":"_gestureRecognizers",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableArray *",
+        "name":"_forwardingRecord",
+        "offset":88,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGPoint",
+        "name":"_locationInWindow",
+        "offset":96,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGPoint",
+        "name":"_previousLocationInWindow",
+        "offset":112,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_previousPressure",
+        "offset":128,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"_pathIndex",
+        "offset":136,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"_pathIdentity",
+        "offset":137,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_pathMajorRadius",
+        "offset":144,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_majorRadiusTolerance",
+        "offset":152,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_pressure",
+        "offset":160,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int _firstTouchForView:1;\n        unsigned int _isTap:1;\n        unsigned int _isDelayed:1;\n        unsigned int _sentTouchesEnded:1;\n        unsigned int _abandonForwardingRecord:1;\n    }",
+        "name":"_touchFlags",
+        "offset":168,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_eaten",
+        "offset":172,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id <_UITouchPhaseChangeDelegate>",
+        "name":"__phaseChangeDelegate",
+        "offset":176,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIWindow *",
+        "name":"__windowServerHitTestWindow",
+        "offset":184,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGSize",
+        "name":"_displacement",
+        "offset":192,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"UITouch",
+    "ivars":[
+      {
+        "ivarType":"float",
+        "name":"_movementMagnitudeSquared",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_timestamp",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_phase",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_savedPhase",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"_tapCount",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_edgeType",
+        "offset":28,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIWindow *",
+        "name":"_window",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIView *",
+        "name":"_view",
+        "offset":36,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIView *",
+        "name":"_warpedIntoView",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableArray *",
+        "name":"_gestureRecognizers",
+        "offset":44,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableArray *",
+        "name":"_forwardingRecord",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGPoint",
+        "name":"_locationInWindow",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGPoint",
+        "name":"_previousLocationInWindow",
+        "offset":60,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_previousPressure",
+        "offset":68,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"_pathIndex",
+        "offset":72,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"_pathIdentity",
+        "offset":73,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_pathMajorRadius",
+        "offset":76,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_majorRadiusTolerance",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_pressure",
+        "offset":84,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int _firstTouchForView:1;\n        unsigned int _isTap:1;\n        unsigned int _isDelayed:1;\n        unsigned int _sentTouchesEnded:1;\n        unsigned int _abandonForwardingRecord:1;\n    }",
+        "name":"_touchFlags",
+        "offset":88,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_eaten",
+        "offset":89,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id <_UITouchPhaseChangeDelegate>",
+        "name":"__phaseChangeDelegate",
+        "offset":92,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIWindow *",
+        "name":"__windowServerHitTestWindow",
+        "offset":96,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGSize",
+        "name":"_displacement",
+        "offset":100,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "i386":{
+    "className":"UITouch",
+    "ivars":[
+      {
+        "ivarType":"float",
+        "name":"_movementMagnitudeSquared",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_timestamp",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_phase",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_savedPhase",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"_tapCount",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_edgeType",
+        "offset":28,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIWindow *",
+        "name":"_window",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIView *",
+        "name":"_view",
+        "offset":36,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIView *",
+        "name":"_warpedIntoView",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableArray *",
+        "name":"_gestureRecognizers",
+        "offset":44,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableArray *",
+        "name":"_forwardingRecord",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGPoint",
+        "name":"_locationInWindow",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGPoint",
+        "name":"_previousLocationInWindow",
+        "offset":60,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_previousPressure",
+        "offset":68,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"_pathIndex",
+        "offset":72,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"_pathIdentity",
+        "offset":73,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_pathMajorRadius",
+        "offset":76,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_majorRadiusTolerance",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_pressure",
+        "offset":84,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int _firstTouchForView:1;\n        unsigned int _isTap:1;\n        unsigned int _isDelayed:1;\n        unsigned int _sentTouchesEnded:1;\n        unsigned int _abandonForwardingRecord:1;\n    }",
+        "name":"_touchFlags",
+        "offset":88,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_eaten",
+        "offset":92,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id <_UITouchPhaseChangeDelegate>",
+        "name":"__phaseChangeDelegate",
+        "offset":96,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIWindow *",
+        "name":"__windowServerHitTestWindow",
+        "offset":100,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGSize",
+        "name":"_displacement",
+        "offset":104,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"UITouch",
+    "ivars":[
+      {
+        "ivarType":"double",
+        "name":"_movementMagnitudeSquared",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_timestamp",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_phase",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_savedPhase",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned long long",
+        "name":"_tapCount",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_edgeType",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIWindow *",
+        "name":"_window",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIView *",
+        "name":"_view",
+        "offset":64,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIView *",
+        "name":"_warpedIntoView",
+        "offset":72,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableArray *",
+        "name":"_gestureRecognizers",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableArray *",
+        "name":"_forwardingRecord",
+        "offset":88,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGPoint",
+        "name":"_locationInWindow",
+        "offset":96,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGPoint",
+        "name":"_previousLocationInWindow",
+        "offset":112,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_previousPressure",
+        "offset":128,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"_pathIndex",
+        "offset":136,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"_pathIdentity",
+        "offset":137,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_pathMajorRadius",
+        "offset":144,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_majorRadiusTolerance",
+        "offset":152,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_pressure",
+        "offset":160,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int _firstTouchForView:1;\n        unsigned int _isTap:1;\n        unsigned int _isDelayed:1;\n        unsigned int _sentTouchesEnded:1;\n        unsigned int _abandonForwardingRecord:1;\n    }",
+        "name":"_touchFlags",
+        "offset":168,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_eaten",
+        "offset":172,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id <_UITouchPhaseChangeDelegate>",
+        "name":"__phaseChangeDelegate",
+        "offset":176,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIWindow *",
+        "name":"__windowServerHitTestWindow",
+        "offset":184,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGSize",
+        "name":"_displacement",
+        "offset":192,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  }
+}
