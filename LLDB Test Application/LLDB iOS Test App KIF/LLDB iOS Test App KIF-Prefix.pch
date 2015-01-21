@@ -1,0 +1,10 @@
+//
+//  LLDB iOS Test App KIF-Prefix.pch
+//  LLDB Test Application
+//
+//  Created by Bartosz Janda on 21.01.2015.
+//  Copyright (c) 2015 Bartosz Janda. All rights reserved.
+//
+
+#import "LLDB iOS Test App-Prefix.pch"
+#import <KIF/KIF.h>

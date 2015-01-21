@@ -64,8 +64,14 @@
 - (IBAction)plainButtonTouched:(UIButton *)sender forEvent:(UIEvent *)event
 {
     UITouch *touch = event.allTouches.anyObject;
-    NSLog(@"%@", event);
-    NSLog(@"%@", touch);
+    CGPoint locationInWindow = [touch locationInView:self.view.window];
+    NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
+    nf.maximumFractionDigits = 1;
+    nf.minimumFractionDigits = 0;
+    NSString *x = [nf stringFromNumber:@(locationInWindow.x)];
+    NSString *y = [nf stringFromNumber:@(locationInWindow.y)];
+    NSString *touchSummary = [NSString stringWithFormat:@"locationInWindow=(x=%@, y=%@), phase=ended, tapCount=1", x, y];
+    CompareObjectWithSummary(touch, @"UITouch *", touchSummary);
 }
 
 @end

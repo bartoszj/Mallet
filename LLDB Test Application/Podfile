@@ -2,22 +2,26 @@
 # platform :ios, "7.0"
 
 target "LLDB iOS Test App" do
-    pod "AFNetworking", "~> 2.3.1"
-    pod "FMDB", "~> 2.3"
-    pod "Facebook-iOS-SDK", "~> 3.15"
-    pod "MBProgressHUD", "~> 0.8"
-    pod "Reachability", "~> 3.1.1"
+    pod "AFNetworking", "~> 2.5.0"
+    pod "FMDB", "~> 2.4"
+    pod "Facebook-iOS-SDK", "~> 3.22"
+    pod "MBProgressHUD", "~> 0.9"
+    pod "Reachability", "~> 3.2"
 end
 
-target "LLDB iOS Test AppTests" do
+target "LLDB iOS Test AppTests", :exclusive => true do
+    
+end
 
+target "LLDB iOS Test App KIF", :exclusive => true do
+    pod 'KIF', '~> 3.1'
 end
 
 target "LLDB Mac Test App" do
 
 end
 
-target "LLDB Mac Test AppTests" do
+target "LLDB Mac Test AppTests", :exclusive => true do
 
 end
 
