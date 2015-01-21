@@ -177,7 +177,7 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def get_relation_flags(all_flags):
         if all_flags is None:
             return 0
-        return all_flags >> 16
+        return (all_flags >> 16) & 0b11
 
     @staticmethod
     def get_relation_sign(value):
@@ -187,8 +187,10 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
             return "<="
         elif value == NSLayoutRelationEqual:
             return "=="
-        else:
+        elif value == NSLayoutRelationGreaterThanOrEqual:
             return ">="
+        else:
+            return "??"
 
     @staticmethod
     def get_relation_summary(value):
@@ -198,8 +200,9 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
             return "<="
         elif value == NSLayoutRelationEqual:
             return ""
-        else:
+        elif value == NSLayoutRelationGreaterThanOrEqual:
             return ">="
+        return "??"
 
     def print_parameters(self):
         first_item = self.first_item_value
