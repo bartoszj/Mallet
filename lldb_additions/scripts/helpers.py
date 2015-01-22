@@ -158,6 +158,7 @@ def get_object_class_name(value_obj):
     # Expression options.
     options = lldb.SBExpressionOptions()
     options.SetIgnoreBreakpoints()
+    options.SetLanguage(lldb.eLanguageTypeObjC_plus_plus)
 
     # Debugger, target, process, thread, frame
     debugger = lldb.debugger

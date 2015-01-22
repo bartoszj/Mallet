@@ -63,7 +63,6 @@
 #pragma mark - Actions
 - (IBAction)plainButtonTouched:(UIButton *)sender forEvent:(UIEvent *)event
 {
-//    id e = event;
     UITouch *touch = event.allTouches.anyObject;
     CGPoint locationInWindow = [touch locationInView:self.view.window];
     NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
