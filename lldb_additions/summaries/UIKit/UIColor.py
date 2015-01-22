@@ -25,7 +25,6 @@
 from ...scripts import helpers
 from .. import SummaryBase
 from ..Foundation import NSObject
-import lldb
 
 
 class UIColorSyntheticProvider(NSObject.NSObjectSyntheticProvider):
@@ -50,39 +49,6 @@ class UIColorSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         return self.system_color_name_summary
 
 
-class UIColorSubclassesSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
-    """
-    Proxy class calling correct synthetic child class.
-    """
-    def __init__(self, value_obj, internal_dict):
-        super(UIColorSubclassesSyntheticProvider, self).__init__(value_obj, internal_dict)
-
-        self.color_class_name = helpers.get_object_class_name(value_obj)
-        if self.color_class_name == "UIDeviceWhiteColor" or self.color_class_name == "UICachedDeviceWhiteColor":
-            import UIDeviceWhiteColor
-            self.color_proxy = UIDeviceWhiteColor.UIDeviceWhiteColorSyntheticProvider(value_obj, internal_dict)
-        elif self.color_class_name == "UIDeviceRGBColor" or self.color_class_name == "UICachedDeviceRGBColor":
-            import UIDeviceRGBColor
-            self.color_proxy = UIDeviceRGBColor.UIDeviceRGBColorSyntheticProvider(value_obj, internal_dict)
-        else:
-            self.color_proxy = UIColorSyntheticProvider(value_obj, internal_dict)
-
-    def num_children(self):
-        return self.color_proxy.num_children()
-
-    def get_child_index(self, name):
-        return self.color_proxy.get_child_index(name)
-
-    def get_child_at_index(self, index):
-        return self.color_proxy.get_child_at_index(index)
-
-    def update(self):
-        return self.color_proxy.update()
-
-    def has_children(self):
-        return self.color_proxy.has_children()
-
-
 def summary_provider(value_obj, internal_dict):
     """
     Returns summary for UIColor classes.
@@ -92,7 +58,6 @@ def summary_provider(value_obj, internal_dict):
     :return: UIColor summary.
     :rtype: str
     """
-
     class_name = helpers.get_object_class_name(value_obj)
 
     if class_name == "UIDeviceWhiteColor" or class_name == "UICachedDeviceWhiteColor":
@@ -109,7 +74,4 @@ def lldb_init(debugger, dictionary):
     debugger.HandleCommand("type summary add -F {}.summary_provider \
                             --category UIKit \
                             UIColor".format(__name__))
-    debugger.HandleCommand("type synthetic add -l {}.UIColorSubclassesSyntheticProvider \
-                           --category UIKit \
-                           UIColor".format(__name__))
     debugger.HandleCommand("type category enable UIKit")

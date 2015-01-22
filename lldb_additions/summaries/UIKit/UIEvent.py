@@ -51,9 +51,9 @@ def summary_provider(value_obj, internal_dict):
     :return: UIEvent summary.
     :rtype: str
     """
-    type_name = helpers.get_dynamic_non_synthetic_type_name(value_obj)
+    class_name = helpers.get_object_class_name(value_obj)
 
-    if type_name == "UITouchesEvent":
+    if class_name == "UITouchesEvent":
         import UITouchesEvent
         return helpers.generic_summary_provider(value_obj, internal_dict, UITouchesEvent.UITouchesEventSyntheticProvider)
     else:

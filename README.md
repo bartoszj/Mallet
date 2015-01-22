@@ -73,4 +73,5 @@ The summaries will be available the next time Xcode starts.
     - NSURLComponents
 - UIKit:
     - UINavigationController
-    - UIColor / UIDeviceWhiteColor / UIDeviceRGBColor
+    - UIDeviceWhiteColor / UIDeviceRGBColor
+    - UITouchesEvent
