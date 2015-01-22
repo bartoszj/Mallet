@@ -181,6 +181,35 @@ def get_object_class_name(value_obj):
     return class_name
 
 
+def get_dynamic_non_synthetic_type_name(value_obj):
+    """
+    Return LLDB value object type name. Function convert value to non synthetic and dynamic variant
+
+    :param lldb.SBValue value_obj: LLDB object.
+    :return: Type class name.
+    :rtype: str
+    """
+    no_synthetic_value = value_obj.GetNonSyntheticValue()
+    """:type: lldb.SBValue"""
+    no_synthetic_value = no_synthetic_value.GetDynamicValue(lldb.eDynamicDontRunTarget)
+    """:type: lldb.SBValue"""
+
+    target_type = no_synthetic_value.GetType()
+    """:type: lldb.SBType"""
+    if target_type.IsPointerType():
+        target_type = target_type.GetPointeeType()
+    type_name = target_type.GetName()
+    """:type: str"""
+
+    # print("IsDynamic: {}".format(no_synthetic_value.IsDynamic()))
+    # print("GetPreferDynamicValue: {}".format(no_synthetic_value.GetPreferDynamicValue()))
+    # print("IsSynthetic: {}".format(no_synthetic_value.IsSynthetic()))
+    # print("GetPreferSyntheticValue: {}".format(no_synthetic_value.GetPreferSyntheticValue()))
+    # print("GetTypeSynthetic: {}".format(no_synthetic_value.GetTypeSynthetic()))
+
+    return type_name
+
+
 def generic_summary_provider(value_obj, internal_dict, class_synthetic_provider):
     """
     Checks value type and returns summary.

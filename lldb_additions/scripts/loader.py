@@ -93,6 +93,8 @@ lldb_summaries_load_order = ["SummaryBase",
                              "UINavigationController",
                              "UIBarItem",
                              "UIColor",
+                             "UIEvent",
+                             "UIInternalEvent",
 
                              "SKRequestInternal",
                              "SKRequest",

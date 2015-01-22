@@ -1,0 +1,150 @@
+{
+  "arm64":{
+    "className":"UITouchesEvent",
+    "ivars":[
+      {
+        "ivarType":"NSMutableSet *",
+        "name":"_touches",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __CFDictionary *",
+        "name":"_keyedTouches",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __CFDictionary *",
+        "name":"_keyedTouchesByWindow",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __CFDictionary *",
+        "name":"_gestureRecognizersByWindow",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMapTable *",
+        "name":"_latentSystemGestureWindows",
+        "offset":64,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIInternalEvent",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"UITouchesEvent",
+    "ivars":[
+      {
+        "ivarType":"NSMutableSet *",
+        "name":"_touches",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __CFDictionary *",
+        "name":"_keyedTouches",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __CFDictionary *",
+        "name":"_keyedTouchesByWindow",
+        "offset":28,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __CFDictionary *",
+        "name":"_gestureRecognizersByWindow",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMapTable *",
+        "name":"_latentSystemGestureWindows",
+        "offset":36,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIInternalEvent",
+    "type":"class"
+  },
+  "i386":{
+    "className":"UITouchesEvent",
+    "ivars":[
+      {
+        "ivarType":"NSMutableSet *",
+        "name":"_touches",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __CFDictionary *",
+        "name":"_keyedTouches",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __CFDictionary *",
+        "name":"_keyedTouchesByWindow",
+        "offset":28,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __CFDictionary *",
+        "name":"_gestureRecognizersByWindow",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMapTable *",
+        "name":"_latentSystemGestureWindows",
+        "offset":36,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIInternalEvent",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"UITouchesEvent",
+    "ivars":[
+      {
+        "ivarType":"NSMutableSet *",
+        "name":"_touches",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __CFDictionary *",
+        "name":"_keyedTouches",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __CFDictionary *",
+        "name":"_keyedTouchesByWindow",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __CFDictionary *",
+        "name":"_gestureRecognizersByWindow",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMapTable *",
+        "name":"_latentSystemGestureWindows",
+        "offset":64,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIInternalEvent",
+    "type":"class"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "arm64":{
+    "className":"UIInternalEvent",
+    "ivars":[
+      {
+        "ivarType":"struct __GSEvent *",
+        "name":"_gsEvent",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __IOHIDEvent *",
+        "name":"_hidEvent",
+        "offset":24,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIEvent",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"UIInternalEvent",
+    "ivars":[
+      {
+        "ivarType":"struct __GSEvent *",
+        "name":"_gsEvent",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __IOHIDEvent *",
+        "name":"_hidEvent",
+        "offset":16,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIEvent",
+    "type":"class"
+  },
+  "i386":{
+    "className":"UIInternalEvent",
+    "ivars":[
+      {
+        "ivarType":"struct __GSEvent *",
+        "name":"_gsEvent",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __IOHIDEvent *",
+        "name":"_hidEvent",
+        "offset":16,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIEvent",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"UIInternalEvent",
+    "ivars":[
+      {
+        "ivarType":"struct __GSEvent *",
+        "name":"_gsEvent",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __IOHIDEvent *",
+        "name":"_hidEvent",
+        "offset":24,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"UIEvent",
+    "type":"class"
+  }
+}

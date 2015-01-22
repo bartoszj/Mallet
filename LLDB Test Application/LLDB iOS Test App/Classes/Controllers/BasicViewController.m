@@ -63,6 +63,7 @@
 #pragma mark - Actions
 - (IBAction)plainButtonTouched:(UIButton *)sender forEvent:(UIEvent *)event
 {
+//    id e = event;
     UITouch *touch = event.allTouches.anyObject;
     CGPoint locationInWindow = [touch locationInView:self.view.window];
     NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
@@ -72,6 +73,7 @@
     NSString *y = [nf stringFromNumber:@(locationInWindow.y)];
     NSString *touchSummary = [NSString stringWithFormat:@"locationInWindow=(x=%@, y=%@), phase=ended, tapCount=1", x, y];
     CompareObjectWithSummary(touch, @"UITouch *", touchSummary);
+    CompareObjectWithSummary(event, @"UIEvent *", @"touches=1");
 }
 
 @end

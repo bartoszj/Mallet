@@ -30,11 +30,12 @@ The summaries will be available the next time Xcode starts.
     - UIAlertAction
     - UIAlertController
     - UIAlertView
-    - UIBarItem, UIBarButtonItem
+    - UIBarItem / UIBarButtonItem
     - UIButton
     - UIColor / UIDeviceWhiteColor / UIDeviceRGBColor
     - UIDatePicker
     - UIEdgeInsets
+    - UIEvent / UIInternalEvent / UITouchesEvent
     - UILabel
     - UINavigationController
     - UINib / UINibStorage

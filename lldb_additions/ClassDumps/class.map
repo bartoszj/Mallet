@@ -2,12 +2,14 @@ SKDownload:StoreKit/SKDownload.json
 UIControl:UIKit/UIControl.json
 SKPayment:StoreKit/SKPayment.json
 SKPaymentQueueInternal:StoreKit/SKPaymentQueueInternal.json
+UIEvent:UIKit/UIEvent.json
 SKPaymentInternal:StoreKit/SKPaymentInternal.json
 SKPaymentTransaction:StoreKit/SKPaymentTransaction.json
 UIDeviceRGBColor:UIKit/UIDeviceRGBColor.json
 UIScrollView:UIKit/UIScrollView.json
 NSURLRequest:CFNetwork/NSURLRequest.json
 UIScreen:UIKit/UIScreen.json
+UITouchesEvent:UIKit/UITouchesEvent.json
 UINibStorage:UIKit/UINibStorage.json
 SKProductInternal:StoreKit/SKProductInternal.json
 UIProgressView:UIKit/UIProgressView.json
@@ -38,6 +40,7 @@ NSURLComponents:Foundation/NSURLComponents.json
 SKProductsRequestInternal:StoreKit/SKProductsRequestInternal.json
 UIDatePicker:UIKit/UIDatePicker.json
 UIStoryboard:UIKit/UIStoryboard.json
+UIInternalEvent:UIKit/UIInternalEvent.json
 UIBarItem:UIKit/UIBarItem.json
 SKProduct:StoreKit/SKProduct.json
 UIButton:UIKit/UIButton.json
