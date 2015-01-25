@@ -48,6 +48,7 @@
 		9686224619B2014D00096721 /* ViewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9686224519B2014D00096721 /* ViewsViewController.m */; };
 		96982C1D1A64607400C78595 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96982C1C1A64607400C78595 /* ModalViewController.m */; };
 		96C0BB091A659789005A34BD /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C0BB081A659789005A34BD /* View.xib */; };
+		96ED44C71A7587E000224ED1 /* AutolayoutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96ED44C61A7587E000224ED1 /* AutolayoutView.xib */; };
 		96F0F8C119B1D74B0033ACED /* QuartzCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F0F8C019B1D74B0033ACED /* QuartzCoreTests.m */; };
 		96FCE39B19B0CE6E00A5A883 /* PickersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FCE39A19B0CE6E00A5A883 /* PickersViewController.m */; };
 		96FCE39E19B0D7B000A5A883 /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FCE39D19B0D7B000A5A883 /* AlertsViewController.m */; };
@@ -151,6 +152,7 @@
 		96982C1B1A64607400C78595 /* ModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
 		96982C1C1A64607400C78595 /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
 		96C0BB081A659789005A34BD /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		96ED44C61A7587E000224ED1 /* AutolayoutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutolayoutView.xib; sourceTree = "<group>"; };
 		96F0F8C019B1D74B0033ACED /* QuartzCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuartzCoreTests.m; sourceTree = "<group>"; };
 		96FCE39919B0CE6E00A5A883 /* PickersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickersViewController.h; sourceTree = "<group>"; };
 		96FCE39A19B0CE6E00A5A883 /* PickersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickersViewController.m; sourceTree = "<group>"; };
@@ -474,6 +476,7 @@
 			isa = PBXGroup;
 			children = (
 				96C0BB081A659789005A34BD /* View.xib */,
+				96ED44C61A7587E000224ED1 /* AutolayoutView.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				966019571985884F00BDBB71 /* Main_iPad.storyboard in Resources */,
+				96ED44C71A7587E000224ED1 /* AutolayoutView.xib in Resources */,
 				96C0BB091A659789005A34BD /* View.xib in Resources */,
 				9660196B1985897700BDBB71 /* Images.xcassets in Resources */,
 				966019581985884F00BDBB71 /* Main_iPhone.storyboard in Resources */,

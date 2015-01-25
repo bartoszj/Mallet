@@ -57,12 +57,20 @@ NSLayoutAttributeCenterYWithinMargins = 20
 class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     Class representing NSLayoutConstraint.
+
+    _layoutConstraintFlags description:
+    44      : Use standard value.
+    45      : Set to 1 by method `- (int)_constraintType;`.
+    48 - 49 : Relation type (NSLayoutRelation).
+    50 - 57 :
+    56 - 63 : First item attribute (NSLayoutAttribute).
     """
     def __init__(self, value_obj, internal_dict):
         super(NSLayoutConstraintSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "NSLayoutConstraint"
 
-        self.register_child_value("container", ivar_name="_container")
+        self.register_child_value("container", ivar_name="_container",
+                                  primitive_value_function=self.get_class_and_address_value)
         self.register_child_value("first_item", ivar_name="_firstItem",
                                   primitive_value_function=self.get_class_and_address_value)
         self.register_child_value("second_item", ivar_name="_secondItem",
@@ -204,7 +212,17 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
             return ">="
         return "??"
 
+    @staticmethod
+    def get_is_standard_value(all_flags):
+        if all_flags is None:
+            return False
+        standard = (all_flags >> 19) & 0b1
+        if standard != 0:
+            return True
+        return False
+
     def print_parameters(self):
+        container = self.container_value
         first_item = self.first_item_value
         second_item = self.second_item_value
         multiplier = self.coefficient_value
@@ -221,13 +239,16 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         relation_flags = self.get_relation_flags(all_flags)
         relation_summary = self.get_relation_summary(relation_flags)
         relation_sign = self.get_relation_sign(relation_flags)
+        standard_value = self.get_is_standard_value(all_flags)
 
-        print("all_flags         : {} {}".format(all_flags, bin(all_flags)))
+        print("all_flags         : {0} {0:#x} {0:#b}".format(all_flags))
+        print("container         : {}".format(container))
         print("first_item        : {}".format(first_item))
         print("second_item       : {}".format(second_item))
         print("first_item_flags  : {} {} {}".format(first_item_attribute, first_item_flags, bin(first_item_flags)))
         print("second_item_flags : {} {} {}".format(second_item_attribute, second_item_flags, bin(second_item_flags)))
         print("relation          : {} {}".format(relation_flags, relation_sign))
+        print("standard_value    : {}".format(standard_value))
         print("multiplier        : {} {}".format(multiplier, multiplier_summary))
         print("constant          : {} {}".format(constant, constant_summary))
         print("priority          : {} {}".format(priority, priority_summary))
@@ -251,6 +272,7 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         relation_flags = self.get_relation_flags(all_flags)
         relation_summary = self.get_relation_summary(relation_flags)
         relation_sign = self.get_relation_sign(relation_flags)
+        standard_value = self.get_is_standard_value(all_flags)
 
         # Unsupported combination.
         if first_item is None or first_item_flags == NSLayoutAttributeNotAnAttribute:
@@ -270,7 +292,9 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
                 multiplier_part = "{}*".format(multiplier_summary)
 
             constant_part = ""
-            if constant != 0:
+            if standard_value is True:
+                constant_part = " + standard"
+            elif constant != 0:
                 constant_abs = abs(constant)
                 if constant < 0:
                     constant_part = " - {}".format(SummaryBase.formatted_float(constant_abs))
@@ -305,6 +329,7 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         relation_flags = self.get_relation_flags(all_flags)
         relation_summary = self.get_relation_summary(relation_flags)
         relation_sign = self.get_relation_sign(relation_flags)
+        standard_value = self.get_is_standard_value(all_flags)
 
         # Unsupported combination.
         if first_item is None or first_item_flags == NSLayoutAttributeNotAnAttribute:
@@ -324,7 +349,9 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
                 multiplier_part = "{}*".format(multiplier_summary)
 
             constant_part = ""
-            if constant != 0:
+            if standard_value is True:
+                constant_part = " + standard"
+            elif constant != 0:
                 constant_abs = abs(constant)
                 if constant < 0:
                     constant_part = " - {}".format(SummaryBase.formatted_float(constant_abs))
@@ -344,8 +371,8 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
 
     def summary(self):
         # self.print_parameters()
-        # return self.short_summary()
         return self.long_summary()
+        # return self.short_summary()
 
 
 def summary_provider(value_obj, internal_dict):

@@ -342,4 +342,20 @@
     [self compareObject:constraint3 ofType:@"NSLayoutConstraint *" toSumamry:summary3];
 }
 
+- (void)testNSLayoutConstraint04
+{
+    UIView *view = [[[UINib nibWithNibName:@"AutolayoutView" bundle:nil] instantiateWithOwner:nil options:nil] firstObject];
+    UIView *subView = [view subviews][0];
+    NSArray *constraints = [view constraints];
+    NSLayoutConstraint *constraint1 = constraints[0];
+    NSLayoutConstraint *constraint2 = constraints[1];
+    
+    intptr_t ptr1 = (intptr_t)subView;
+    intptr_t ptr2 = (intptr_t)view;
+    NSString *summary1 = [NSString stringWithFormat:@"UIView:0x%lx.top == UIView:0x%lx.top + standard", ptr1, ptr2];
+    NSString *summary2 = [NSString stringWithFormat:@"UIView:0x%lx.leading == UIView:0x%lx.leading + standard", ptr1, ptr2];
+    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:summary1];
+    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:summary2];
+}
+
 @end
