@@ -335,38 +335,33 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         if first_item is None or first_item_flags == NSLayoutAttributeNotAnAttribute:
             return None
 
-        summary = None
-        # Constraints not dependent on second item.
-        if second_item is None:
-            if first_item_flags == NSLayoutAttributeWidth:
-                summary = "H:[{}({}{}{})]".format(first_item, relation_summary, constant_summary, priority_summary)
-            elif first_item_flags == NSLayoutAttributeHeight:
-                summary = "V:[{}({}{}{})]".format(first_item, relation_summary, constant_summary, priority_summary)
-        # Constraints dependent on second item.
-        else:
-            multiplier_part = ""
-            if multiplier != 1:
-                multiplier_part = "{}*".format(multiplier_summary)
+        multiplier_part = ""
+        if multiplier != 1:
+            multiplier_part = "{}*".format(multiplier_summary)
 
-            constant_part = ""
-            if standard_value is True:
-                constant_part = " + standard"
-            elif constant != 0:
-                constant_abs = abs(constant)
-                if constant < 0:
-                    constant_part = " - {}".format(SummaryBase.formatted_float(constant_abs))
-                else:
-                    constant_part = " + {}".format(SummaryBase.formatted_float(constant_abs))
+        second_item_part = ""
+        if second_item is not None:
+            second_item_part = second_item_attribute
 
-            priority_part = ""
-            if priority != 1000:
-                priority_part = " {}".format(priority_summary)
+        constant_part = ""
+        if standard_value is True:
+            constant_part = "+standard"
+        elif constant != 0:
+            constant_abs = abs(constant)
+            if constant < 0:
+                constant_part = "-{}".format(SummaryBase.formatted_float(constant_abs))
+            else:
+                constant_part = "+{}".format(SummaryBase.formatted_float(constant_abs))
 
-            summary = "{} {} {}{}{}{}".format(first_item_attribute,
-                                              relation_sign, multiplier_part,
-                                              second_item_attribute,
-                                              constant_part, priority_part)
+        priority_part = ""
+        if priority != 1000:
+            priority_part = "{}".format(priority_summary)
 
+        summary = "{} {} {}{}{}{}".format(first_item_attribute,
+                                          relation_sign,
+                                          multiplier_part, second_item_part,
+                                          constant_part, priority_part)
+        summary = summary.rstrip()
         return summary
 
     def summary(self):
