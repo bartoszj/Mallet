@@ -288,6 +288,7 @@
 }
 
 #pragma mark - NSLayoutConstraint
+#define NSLayoutConstraintSummaryShort 0
 - (void)testNSLayoutConstraint01
 {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
@@ -295,18 +296,20 @@
     NSLayoutConstraint *constraint2 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:200];
     NSLayoutConstraint *constraint3 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationLessThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:300];
     
+#if !(NSLayoutConstraintSummaryShort)
     intptr_t ptr = (intptr_t)view;
     NSString *summary1 = [NSString stringWithFormat:@"H:[UIView:0x%lx(200)]", ptr];
     NSString *summary2 = [NSString stringWithFormat:@"H:[UIView:0x%lx(>=200)]", ptr];
     NSString *summary3 = [NSString stringWithFormat:@"V:[UIView:0x%lx(<=300)]", ptr];
-//    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:summary1];
-//    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:summary2];
-//    [self compareObject:constraint3 ofType:@"NSLayoutConstraint *" toSumamry:summary3];
-    
+    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:summary1];
+    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:summary2];
+    [self compareObject:constraint3 ofType:@"NSLayoutConstraint *" toSumamry:summary3];
+#else
     // Short version.
     [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:@"width == +200"];
     [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:@"width >= +200"];
     [self compareObject:constraint3 ofType:@"NSLayoutConstraint *" toSumamry:@"height <= +300"];
+#endif
 }
 
 - (void)testNSLayoutConstraint02
@@ -319,6 +322,7 @@
     NSLayoutConstraint *constraint3 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationLessThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:300];
     constraint3.priority = 789;
     
+#if !(NSLayoutConstraintSummaryShort)
     intptr_t ptr = (intptr_t)view;
     NSString *summary1 = [NSString stringWithFormat:@"H:[UIView:0x%lx(200@123)]", ptr];
     NSString *summary2 = [NSString stringWithFormat:@"H:[UIView:0x%lx(>=200@456)]", ptr];
@@ -326,11 +330,12 @@
     [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:summary1];
     [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:summary2];
     [self compareObject:constraint3 ofType:@"NSLayoutConstraint *" toSumamry:summary3];
-    
+#else
     // Short version.
-//    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:@"width == +200@123"];
-//    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:@"width >= +200@456"];
-//    [self compareObject:constraint3 ofType:@"NSLayoutConstraint *" toSumamry:@"height <= +300@789"];
+    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:@"width == +200@123"];
+    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:@"width >= +200@456"];
+    [self compareObject:constraint3 ofType:@"NSLayoutConstraint *" toSumamry:@"height <= +300@789"];
+#endif
 }
 
 - (void)testNSLayoutConstraint03
@@ -341,7 +346,8 @@
     NSLayoutConstraint *constraint2 = [NSLayoutConstraint constraintWithItem:view1 attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:view2 attribute:NSLayoutAttributeCenterX multiplier:2 constant:200];
     NSLayoutConstraint *constraint3 = [NSLayoutConstraint constraintWithItem:view1 attribute:NSLayoutAttributeTopMargin relatedBy:NSLayoutRelationLessThanOrEqual toItem:view2 attribute:NSLayoutAttributeCenterYWithinMargins multiplier:1 constant:300];
     constraint3.priority = 300;
-    
+
+#if !(NSLayoutConstraintSummaryShort)
     intptr_t ptr1 = (intptr_t)view1;
     intptr_t ptr2 = (intptr_t)view2;
     NSString *summary1 = [NSString stringWithFormat:@"UIView:0x%lx.left == UIView:0x%lx.lastBaseline - 200", ptr1, ptr2];
@@ -350,11 +356,12 @@
     [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:summary1];
     [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:summary2];
     [self compareObject:constraint3 ofType:@"NSLayoutConstraint *" toSumamry:summary3];
-    
+#else
     // Short version.
-//    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:@"left == lastBaseline-200"];
-//    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:@"trailing >= 2*centerX+200"];
-//    [self compareObject:constraint3 ofType:@"NSLayoutConstraint *" toSumamry:@"topMargin <= centerYWithMargins+300@300"];
+    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:@"left == lastBaseline-200"];
+    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:@"trailing >= 2*centerX+200"];
+    [self compareObject:constraint3 ofType:@"NSLayoutConstraint *" toSumamry:@"topMargin <= centerYWithMargins+300@300"];
+#endif
 }
 
 - (void)testNSLayoutConstraint04
@@ -365,16 +372,18 @@
     NSLayoutConstraint *constraint1 = constraints[0];
     NSLayoutConstraint *constraint2 = constraints[1];
     
+#if !(NSLayoutConstraintSummaryShort)
     intptr_t ptr1 = (intptr_t)subView;
     intptr_t ptr2 = (intptr_t)view;
     NSString *summary1 = [NSString stringWithFormat:@"UIView:0x%lx.top == UIView:0x%lx.top + standard", ptr1, ptr2];
     NSString *summary2 = [NSString stringWithFormat:@"UIView:0x%lx.leading == UIView:0x%lx.leading + standard", ptr1, ptr2];
     [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:summary1];
     [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:summary2];
-    
+#else
     // Short version.
-//    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:@"top == top+standard"];
-//    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:@"leading == leading+standard"];
+    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:@"top == top+standard"];
+    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:@"leading == leading+standard"];
+#endif
 }
 
 @end

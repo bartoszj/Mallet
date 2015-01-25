@@ -59,11 +59,10 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     Class representing NSLayoutConstraint.
 
     _layoutConstraintFlags description:
-    44      : Use standard value.
-    45      : Set to 1 by method `- (int)_constraintType;`.
+    39      : Use standard value.
     48 - 49 : Relation type (NSLayoutRelation).
-    50 - 57 :
-    56 - 63 : First item attribute (NSLayoutAttribute).
+    50 - 57 : First item attribute (NSLayoutAttribute).
+    56 - 63 : Second item attribute (NSLayoutAttribute).
     """
     def __init__(self, value_obj, internal_dict):
         super(NSLayoutConstraintSyntheticProvider, self).__init__(value_obj, internal_dict)
@@ -216,7 +215,7 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def get_is_standard_value(all_flags):
         if all_flags is None:
             return False
-        standard = (all_flags >> 19) & 0b1
+        standard = (all_flags >> 24) & 0b1
         if standard != 0:
             return True
         return False
@@ -377,5 +376,5 @@ def summary_provider(value_obj, internal_dict):
 def lldb_init(debugger, dictionary):
     debugger.HandleCommand("type summary add -F {}.summary_provider \
                             --category Foundation \
-                            NSLayoutConstraint".format(__name__))
+                            NSAutoresizingMaskLayoutConstraint NSLayoutConstraint NSIBPrototypingLayoutConstraint".format(__name__))
     debugger.HandleCommand("type category enable UIKit")
