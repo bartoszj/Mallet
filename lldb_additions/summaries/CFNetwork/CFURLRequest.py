@@ -52,10 +52,10 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
 
         if self.is_64bit:
             url_offset = 0x28
-            tmp1_offset = 0x50
+            tmp1_offset = 0x58
         else:
             url_offset = 0x14
-            tmp1_offset = 0x2c
+            tmp1_offset = 0x30
 
         self.register_child_value("url", type_name="NSURL *", offset=url_offset,
                                   primitive_value_function=SummaryBase.get_summary_value,
@@ -71,7 +71,7 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
     @helpers.save_parameter("method")
     def get_method(self):
         if self.is_64bit:
-            offset = 0x98
+            offset = 0x88
         else:
             offset = 0x44
 
