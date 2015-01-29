@@ -33,14 +33,16 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
     # _CFURLRequest:
     # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
-    # unknown 16 / 32 bytes                                                   0 = 0x00 / 16           0 = 0x00 / 32
     # NSURL *url                                                             20 = 0x14 / 4           40 = 0x28 / 8
-    # unknown 24 / 40 bytes                                                  20 = 0x14 / 24          48 = 0x28 / 40
-    # struct _tmp1 *tmp1                                                     44 = 0x2c / 4           80 = 0x50 / 8
+    # struct _tmp1 *tmp1                                                     48 = 0x30 / 4           88 = 0x58 / 8
 
     # struct _tmp1 {
-    #     unknown 68 / 136 bytes                                              0 = 0x00 / 68           0 = 0x00 / 136
+    #     struct _tmp2 *tmp2                                                 24 = 0x18 / 4           48 = 0x30 / 8
     #     NSString *HTTPMethod                                               68 = 0x44 / 4          136 = 0x88 / 8
+    # }
+
+    # struct _tmp2 {
+    #     NSData *HTTPBody                                                    8 = 0x08 / 4           16 = 0x10 / 8
     # }
 
     def __init__(self, value_obj, internal_dict):
@@ -63,6 +65,8 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
         self.register_child_value("tmp1", type_name="addr_ptr_type", offset=tmp1_offset)
 
         self.method = None
+        self.tmp2 = None
+        self.http_body = None
 
     @staticmethod
     def get_url_summary(value):
@@ -84,8 +88,42 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
         method_value = self.get_method_value()
         return None if method_value is None else "method={}".format(method_value)
 
+    @helpers.save_parameter("tmp2")
+    def get_tmp2(self):
+        if self.tmp1 is None:
+            return None
+
+        if self.is_64bit:
+            offset = 0x30
+        else:
+            offset = 0x18
+
+        tmp1 = self.tmp1.CreateChildAtOffset("tmp2", offset, self.get_type("addr_ptr_type"))
+        return tmp1
+
+    @helpers.save_parameter("http_body")
+    def get_http_body(self):
+        tmp2 = self.get_tmp2()
+        if tmp2 is None:
+            return None
+
+        if self.is_64bit:
+            offset = 0x10
+        else:
+            offset = 0x08
+
+        http_body = self.tmp2.CreateChildAtOffset("HTTPBody", offset, self.get_type("NSData *"))
+        return http_body
+
+    def get_http_body_value(self):
+        return SummaryBase.get_summary_value(self.get_http_body())
+
+    def get_http_body_summary(self):
+        value = self.get_http_body_value()
+        return None if value is None else "body={}".format(value)
+
     def summary(self):
-        summary = SummaryBase.join_summaries(self.url_summary, self.get_method_summary())
+        summary = SummaryBase.join_summaries(self.url_summary, self.get_method_summary(), self.get_http_body_summary())
         return summary
 
 

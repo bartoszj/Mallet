@@ -114,13 +114,19 @@
 
     mutableRequest.HTTPBody = [@"httpBodyData" dataUsingEncoding:NSUTF8StringEncoding];
     request = [mutableRequest copy];
-    [self compareObject:mutableRequest ofType:@"NSMutableURLRequest *" toSumamry:@"url=@\"https://google.com\", method=@\"GET\""];
-    [self compareObject:request ofType:@"NSURLRequest *" toSumamry:@"url=@\"https://google.com\", method=@\"GET\""];
+    [self compareObject:mutableRequest ofType:@"NSMutableURLRequest *" toSumamry:@"url=@\"https://google.com\", method=@\"GET\", body=12 bytes"];
+    [self compareObject:request ofType:@"NSURLRequest *" toSumamry:@"url=@\"https://google.com\", method=@\"GET\", body=12 bytes"];
 
     mutableRequest.HTTPMethod = @"POST";
     request = [mutableRequest copy];
-    [self compareObject:mutableRequest ofType:@"NSMutableURLRequest *" toSumamry:@"url=@\"https://google.com\", method=@\"POST\""];
-    [self compareObject:request ofType:@"NSURLRequest *" toSumamry:@"url=@\"https://google.com\", method=@\"POST\""];
+    [self compareObject:mutableRequest ofType:@"NSMutableURLRequest *" toSumamry:@"url=@\"https://google.com\", method=@\"POST\", body=12 bytes"];
+    [self compareObject:request ofType:@"NSURLRequest *" toSumamry:@"url=@\"https://google.com\", method=@\"POST\", body=12 bytes"];
+    
+    NSData *bodyData = [@"test data" dataUsingEncoding:NSUTF8StringEncoding];
+    mutableRequest.HTTPBody = bodyData;
+    request = [mutableRequest copy];
+    [self compareObject:mutableRequest ofType:@"NSMutableURLRequest *" toSumamry:@"url=@\"https://google.com\", method=@\"POST\", body=9 bytes"];
+    [self compareObject:request ofType:@"NSURLRequest *" toSumamry:@"url=@\"https://google.com\", method=@\"POST\", body=9 bytes"];
 }
 
 #pragma mark - NSDateComponents
