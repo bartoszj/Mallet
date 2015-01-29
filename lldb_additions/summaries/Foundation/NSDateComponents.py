@@ -62,7 +62,7 @@ class NSDateComponentsSyntheticProvider(NSObject.NSObjectSyntheticProvider):
             week_offset = 0x28
             weekday_offset = 0x2c
             weekday_ordinal_offset = 0x30
-            quarter_offset = 0x38
+            quarter_offset = 0x34
             week_of_year_offset = 0x3c
             week_of_month_offset = 0x40
             year_for_week_of_year_offset = 0x44
