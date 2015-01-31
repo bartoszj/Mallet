@@ -64,11 +64,13 @@ class NSURLRequestSyntheticProvider(NSObject.NSObjectSyntheticProvider):
 
         headers = headers.GetDynamicValue(self.default_dynamic_type)
         """:type: lldb.SBValue"""
-        headers.SetPreferSyntheticValue(True)
         if headers_value is None or headers_value == 0:
             return None
 
         return headers
+
+    def get_child_index(self, name):
+        return self.value_obj.GetIndexOfChildWithName(name)
 
     def summary(self):
         return self.request_internal_summary
