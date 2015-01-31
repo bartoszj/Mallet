@@ -766,6 +766,26 @@ def get_synthetic_count_value(obj):
     return obj.GetNumChildren()
 
 
+def get_nsset_count_value(obj):
+    """
+    Returns count of child objects NSSet using summary value.
+
+    :param lldb.SBValue obj: LLDB value representing NSSet.
+    :return: Count of child objects from LLDB synthetic value.
+    :rtype: int | None
+    """
+    summary = get_summary_value(obj)
+    if summary is None:
+        return None
+
+    values = summary.split(" ")
+    if len(values) == 2:
+        s = values[0]
+        if s.isdigit():
+            return int(s)
+    return None
+
+
 def get_type_name_value(obj):
     """
     Returns object type name from LLDB value.

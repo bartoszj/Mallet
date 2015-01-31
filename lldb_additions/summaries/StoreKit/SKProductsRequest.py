@@ -36,7 +36,7 @@ class SKProductsRequestSyntheticProvider(SKRequest.SKRequestSyntheticProvider):
         self.type_name = "SKProductsRequest"
 
         self.register_child_value("products_request_internal", ivar_name="_productsRequestInternal",
-                                  provider_class=SKProductsRequestInternal.SKProductsRequestInternalSyntheticProvider,
+                                  provider_class=SKProductsRequestInternal.SKProductŃsRequestInternalSyntheticProvider,
                                   summary_function=self.get_products_request_internal_summary)
 
     @staticmethod

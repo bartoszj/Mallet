@@ -35,7 +35,7 @@ class SKProductsRequestInternalSyntheticProvider(NSObject.NSObjectSyntheticProvi
         self.type_name = "SKProductsRequestInternal"
 
         self.register_child_value("product_identifiers", ivar_name="_productIdentifiers",
-                                  primitive_value_function=SummaryBase.get_count_value,
+                                  primitive_value_function=SummaryBase.get_nsset_count_value,
                                   summary_function=self.get_product_identifiers_summary)
 
     @staticmethod
