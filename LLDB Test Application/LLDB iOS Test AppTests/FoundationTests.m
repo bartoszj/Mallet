@@ -131,17 +131,12 @@
     [self compareObject:mutableRequest ofType:@"NSMutableURLRequest *" toSumamry:@"POST, https://google.com, body=9 bytes"];
     [self compareObject:request ofType:@"NSURLRequest *" toSumamry:@"POST, https://google.com, body=9 bytes"];
     
+    // HTTP headers.
     [mutableRequest setValue:@"headerValue" forHTTPHeaderField:@"headerName"];
     [mutableRequest setValue:@"headerValue2" forHTTPHeaderField:@"headerName2"];
-    NSDictionary *headers = [mutableRequest allHTTPHeaderFields];
-    [mutableRequest allHTTPHeaderFields];
-    [mutableRequest allHTTPHeaderFields];
-    [mutableRequest allHTTPHeaderFields];
-    [mutableRequest allHTTPHeaderFields];
-    [mutableRequest allHTTPHeaderFields];
-    [mutableRequest allHTTPHeaderFields];
-    [mutableRequest allHTTPHeaderFields];
-    [mutableRequest allHTTPHeaderFields];
+    request = [mutableRequest copy];
+    [self compareObject:mutableRequest ofType:@"NSMutableURLRequest *" toSumamry:@"POST, https://google.com, body=9 bytes"];
+    [self compareObject:request ofType:@"NSURLRequest *" toSumamry:@"POST, https://google.com, body=9 bytes"];
 }
 
 #pragma mark - NSDateComponents

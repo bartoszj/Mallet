@@ -46,8 +46,8 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
 
     # struct _tmp1 {
     #     struct _tmp2 *tmp2                                                 24 = 0x18 / 4           48 = 0x30 / 8
-    #     struct _tmp3 *tmp3                                                                         96 = 0x60 / 8
-    #                                                                                               104 = 0x68 / 8
+    #     struct _tmp3 *tmp3                                                 48 = 0x30 / 4           96 = 0x60 / 8
+    #                                                                        52 = 0x34 / 4          104 = 0x68 / 8
     #     NSString *HTTPMethod                                               68 = 0x44 / 4          136 = 0x88 / 8
     # }
 
@@ -56,7 +56,7 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
     # }
 
     # struct _tmp3 {
-    #     NSDictionary *allHTTPHeaderFields                                                           8 = 0x08 / 8
+    #     NSDictionary *allHTTPHeaderFields                                   4 = 0x08 / 4            8 = 0x08 / 8
     # }
 
     def __init__(self, value_obj, internal_dict):
@@ -78,10 +78,10 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
             self.url_offset = 0x14
             self.tmp1_offset = 0x30
             self.tmp2_offset = 0x18
-            self.tmp3_offset = 0x60 #?
+            self.tmp3_offset = 0x30
             self.http_method_offset = 0x44
             self.http_body_offset = 0x8
-            self.http_headers_offset = 0x08 #?
+            self.http_headers_offset = 0x04
 
         self.register_child_value("url", type_name="NSURL *", offset=self.url_offset,
                                   primitive_value_function=SummaryBase.get_stripped_summary_value,
