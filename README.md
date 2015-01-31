@@ -68,6 +68,8 @@ The summaries will be available the next time Xcode starts.
     - SKRequest
 
 ## Supported synthetic children:
+- CFNetowrk:
+    - NSURLRequest / NSMutableURLRequest
 - Foundation:
     - NSDateComponents
     - NSURLComponents

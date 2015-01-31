@@ -38,9 +38,36 @@ def configure_loggers():
                     "lldb_additions.scripts.type_cache",
                     "lldb_additions.summaries.SummaryBase",
                     ]
-    # for logger_name in logger_names:
-    #     logger = logging.getLogger(logger_name)
-    #     configure_logger(logger)
+    for logger_name in logger_names:
+        logger = logging.getLogger(logger_name)
+        configure_null_logger(logger)
+        # configure_logger(logger)
+
+
+def configure_null_logger(logger):
+    """
+    Configure given logger with NullHandler.
+
+    :param logging.Logger logger: Logger object to configure.
+    """
+    # Remove previous file handle if it is not a NullHandler.
+    if hasattr(logger, "lldb_additions_handler"):
+        handler = logger.lldb_additions_handler
+        """:type: logging.Handler"""
+        if isinstance(handler, logging.NullHandler) is False:
+            logger.removeHandler(handler)
+            del logger.lldb_additions_handler
+
+    # Add FileHandler.
+    if not hasattr(logger, "lldb_additions_handler"):
+        logger.lldb_additions_logger = True
+        logger.setLevel(logging.DEBUG)
+
+        # Null handler.
+        null_handler = logging.NullHandler()
+
+        logger.addHandler(null_handler)
+        logger.lldb_additions_logger = null_handler
 
 
 def configure_logger(logger):
@@ -48,9 +75,16 @@ def configure_logger(logger):
     Configure given logger.
     :param logging.Logger logger: Logger object to configure.
     """
+    # Remove previous file handle if it is not a FileHandler.
+    if hasattr(logger, "lldb_additions_handler"):
+        handler = logger.lldb_additions_handler
+        """:type: logging.Handler"""
+        if isinstance(handler, logging.FileHandler) is False:
+            logger.removeHandler(handler)
+            del logger.lldb_additions_handler
 
-    if not hasattr(logger, "LLDB_additions_configured"):
-        logger.LLDB_additions_configured = True
+    # Add FileHandler.
+    if not hasattr(logger, "lldb_additions_handler"):
         logger.setLevel(logging.DEBUG)
 
         # Formatter.
@@ -62,6 +96,7 @@ def configure_logger(logger):
         file_handler.setFormatter(formatter)
 
         logger.addHandler(file_handler)
+        logger.lldb_additions_handler = file_handler
         logger.debug("Logger \"{}\" configured.".format(logger.name))
 
 
