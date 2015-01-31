@@ -96,10 +96,23 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
 
     @staticmethod
     def get_url_summary(value):
+        """
+        Returns URL summary.
+
+        :param str value: URL value.
+        :return: URL summary.
+        :rtype: str
+        """
         return "{}".format(value)
 
     @helpers.save_parameter("tmp2")
     def get_tmp2(self):
+        """
+        Returns LLDB value of tmp2 structure.
+
+        :return: LLDB value of tmp2 structure.
+        :rtype: lldb.SBValue
+        """
         if self.tmp1 is None:
             return None
 
@@ -108,6 +121,12 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
 
     @helpers.save_parameter("tmp3")
     def get_tmp3(self):
+        """
+        Returns LLDB value of tmp3 structure.
+
+        :return: LLDB value of tmp3 structure.
+        :rtype: lldb.SBValue
+        """
         if self.tmp1 is None:
             return None
 
@@ -116,46 +135,98 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
 
     @helpers.save_parameter("http_method")
     def get_http_method(self):
+        """
+        Returns LLDB object representing HTTP method.
+
+        :return: LLDB object representing HTTP method.
+        :rtype: lldb.SBValue
+        """
         if self.tmp1 is None:
             return None
         return self.tmp1.CreateChildAtOffset("HTTPMethod", self.http_method_offset, self.get_type("NSString *"))
 
     def get_http_method_value(self):
+        """
+        Returns HTTP method value.
+
+        :return: HTTP method value.
+        :rtype: str
+        """
         return SummaryBase.get_stripped_summary_value(self.get_http_method())
 
     def get_http_method_summary(self):
+        """
+        Returns HTTP method summary.
+
+        :return: HTTP method summary.
+        :rtype: str
+        """
         method_value = self.get_http_method_value()
         return None if method_value is None else "{}".format(method_value)
 
     @helpers.save_parameter("http_body")
     def get_http_body(self):
+        """
+        Returns LLDB object representing HTTP body data.
+
+        :return: LLDB object representing HTTP body data.
+        :rtype: lldb.SBValue
+        """
         tmp2 = self.get_tmp2()
         if tmp2 is None:
             return None
 
-        http_body = tmp2.CreateChildAtOffset("HTTPBody", self.http_body_offset, self.get_type("NSData *"))
-        return http_body
+        return tmp2.CreateChildAtOffset("HTTPBody", self.http_body_offset, self.get_type("NSData *"))
 
     def get_http_body_value(self):
+        """
+        Returns HTTP body value.
+
+        :return: HTTP body value.
+        :rtype: str
+        """
         return SummaryBase.get_summary_value(self.get_http_body())
 
     def get_http_body_summary(self):
+        """
+        Returns HTTP body summary.
+
+        :return: HTTP body summary.
+        :rtype: str
+        """
         value = self.get_http_body_value()
         return None if value is None else "body={}".format(value)
 
     @helpers.save_parameter("http_headers")
     def get_http_headers(self):
+        """
+        Returns LLDB object representing HTTP headers.
+
+        :return: LLDB object representing HTTP headers.
+        :rtype: lldb.SBValue
+        """
         tmp3 = self.get_tmp3()
         if tmp3 is None:
             return None
 
-        http_headers = tmp3.CreateChildAtOffset("allHTTPHeaderFields", self.http_headers_offset, self.get_type("NSDictionary *"))
-        return http_headers
+        return tmp3.CreateChildAtOffset("allHTTPHeaderFields", self.http_headers_offset, self.get_type("NSDictionary *"))
 
     def get_http_headers_value(self):
-        return SummaryBase.get_count_value(self.get_http_headers())
+        """
+        Returns HTTP headers value.
+
+        :return: HTTP headers value.
+        :rtype: str
+        """
+        return SummaryBase.get_synthetic_count_value(self.get_http_headers())
 
     def get_http_headers_summary(self):
+        """
+        Returns HTTP headers summary.
+
+        :return: HTTP headers summary.
+        :rtype: str
+        """
         value = self.get_http_headers_value()
         if value is None or value == 0:
             return None

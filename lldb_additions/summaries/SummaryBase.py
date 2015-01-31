@@ -74,7 +74,20 @@ class RegisterValue(object):
 
 class SummaryBaseSyntheticProvider(object):
     """
-    Base class for all summaries.
+    Base class for all summaries and synthetic child.
+
+    This class adds wrappers around synthetic child for easiest implementation.
+    Exists several types of synthetic child wrappers:
+    - SYNTHETIC_CHILDREN
+      Uses synthetic_children list to present children.
+
+    - SYNTHETIC_PROXY_NAME
+      Uses name of registered variable at variable `synthetic_proxy_name` (registered by `register_child_value`)
+      to be used as proxy.
+
+    - SYNTHETIC_PROXY_VALUE
+      Uses value (lldb.SBValue) at variable `synthetic_proxy_value` to be used as proxy.
+
 
     :param dict internal_dict: Internal LLDB dictionary.
     :param int default_dynamic_type: Default dynamic type.
@@ -89,10 +102,12 @@ class SummaryBaseSyntheticProvider(object):
     :param str synthetic_type: Type of synthetic children (list of proxy object).
     :param list[str] synthetic_children: List of synthetic children.
     :param str synthetic_proxy_name: Name of registered parameter which will be used as proxy for synthetic child.
+    :param lldb.SBValue synthetic_proxy_value: LLDB value which will be used as proxy for synthetic child.
     """
 
     SYNTHETIC_CHILDREN = "SYNTHETIC_CHILDREN"
-    SYNTHETIC_PROXY = "SYNTHETIC_PROXY"
+    SYNTHETIC_PROXY_NAME = "SYNTHETIC_PROXY_NAME"
+    SYNTHETIC_PROXY_VALUE = "SYNTHETIC_PROXY_VALUE"
 
     def __init__(self, value_obj, internal_dict):
         """
@@ -118,6 +133,7 @@ class SummaryBaseSyntheticProvider(object):
         self.synthetic_type = self.SYNTHETIC_CHILDREN
         self.synthetic_children = list()
         self.synthetic_proxy_name = None
+        self.synthetic_proxy_value = None
 
     def get_type(self, type_name):
         """
@@ -217,16 +233,26 @@ class SummaryBaseSyntheticProvider(object):
         log = logging.getLogger(__name__)
         if self.synthetic_type == self.SYNTHETIC_CHILDREN:
             return len(self.synthetic_children)
-        elif self.synthetic_type == self.SYNTHETIC_PROXY:
+        elif self.synthetic_type == self.SYNTHETIC_PROXY_NAME:
             value = getattr(self, self.synthetic_proxy_name)
             """:type: lldb.SBValue"""
-            value.SetPreferSyntheticValue(True)
             if value is not None:
+                value.SetPreferSyntheticValue(True)
                 count = value.GetNumChildren()
                 """:type: int"""
                 return count
             log.error("num_children: Cannot get proxy value: {} for type {}.".format(self.synthetic_proxy_name, self.type_name))
             return 0
+        elif self.synthetic_type == self.SYNTHETIC_PROXY_VALUE:
+            if self.synthetic_proxy_value is not None:
+                self.synthetic_proxy_value.SetPreferSyntheticValue(True)
+                count = self.synthetic_proxy_value.GetNumChildren()
+                """:type: int"""
+                return count
+            log.error("num_children: No proxy value for type {}.".format(self.type_name))
+            # Returns child number for current object.
+            return self.value_obj.GetNumChildren()
+
         log.error("num_children: Unknown synthetic type: {} for type {}.".format(self.synthetic_type, self.type_name))
         return 0
 
@@ -253,16 +279,26 @@ class SummaryBaseSyntheticProvider(object):
                 log = logging.getLogger(__name__)
                 log.debug("get_child_index: Cannot find child with name: {} for class {}.".format(name, self.type_name))
             return index
-        elif self.synthetic_type == self.SYNTHETIC_PROXY:
+        elif self.synthetic_type == self.SYNTHETIC_PROXY_NAME:
             value = getattr(self, self.synthetic_proxy_name)
             """:type: lldb.SBValue"""
-            value.SetPreferSyntheticValue(True)
             if value is not None:
+                value.SetPreferSyntheticValue(True)
                 index = value.GetIndexOfChildWithName(name)
                 """:type: int"""
                 return index
             log.error("get_child_index: Cannot get proxy value: {} for type {}.".format(self.synthetic_proxy_name, self.type_name))
             return None
+        elif self.synthetic_type == self.SYNTHETIC_PROXY_VALUE:
+            if self.synthetic_proxy_value is not None:
+                self.synthetic_proxy_value.SetPreferSyntheticValue(True)
+                index = self.synthetic_proxy_value.GetIndexOfChildWithName(name)
+                """:type: int"""
+                return index
+            log.error("get_child_index: No proxy value for type {}.".format(self.type_name))
+            # Returns index of child for current object.
+            return self.value_obj.GetIndexOfChildWithName(name)
+
         log.error("get_child_index: Unknown synthetic type: {} for type {}.".format(self.synthetic_type, self.type_name))
         return None
 
@@ -280,16 +316,26 @@ class SummaryBaseSyntheticProvider(object):
             name = self.synthetic_children[index]
             value = getattr(self, name)
             return value
-        elif self.synthetic_type == self.SYNTHETIC_PROXY:
+        elif self.synthetic_type == self.SYNTHETIC_PROXY_NAME:
             value = getattr(self, self.synthetic_proxy_name)
             """:type: lldb.SBValue"""
-            value.SetPreferSyntheticValue(True)
             if value is not None:
+                value.SetPreferSyntheticValue(True)
                 child = value.GetChildAtIndex(index)
                 """:type: lldb.SBValue"""
                 return child
             log.error("get_child_at_index: Cannot get proxy value: {} for type {}".format(self.synthetic_proxy_name, self.type_name))
             return None
+        elif self.synthetic_type == self.SYNTHETIC_PROXY_VALUE:
+            if self.synthetic_proxy_value is not None:
+                self.synthetic_proxy_value.SetPreferSyntheticValue(True)
+                child = self.synthetic_proxy_value.GetChildAtIndex(index)
+                """:type: lldb.SBValue"""
+                return child
+            log.error("get_child_at_index: No proxy value for type {}.".format(self.type_name))
+            # Return child for current object.
+            return self.value_obj.GetChildAtIndex(index)
+
         log.error("get_child_at_index: Unknown synthetic type: {} for type {}.".format(self.synthetic_type, self.type_name))
         return None
 
@@ -325,16 +371,26 @@ class SummaryBaseSyntheticProvider(object):
             if len(self.synthetic_children) > 0:
                 return True
             return True
-        elif self.synthetic_type == self.SYNTHETIC_PROXY:
+        elif self.synthetic_type == self.SYNTHETIC_PROXY_NAME:
             value = getattr(self, self.synthetic_proxy_name)
             """:type: lldb.SBValue"""
-            value.SetPreferSyntheticValue(True)
             if value is not None:
+                value.SetPreferSyntheticValue(True)
                 has_children = value.MightHaveChildren()
                 """:type: bool"""
                 return has_children
             log.error("has_children: Cannot get proxy value: {} for type {}".format(self.synthetic_proxy_name, self.type_name))
             return True
+        elif self.synthetic_type == self.SYNTHETIC_PROXY_VALUE:
+            if self.synthetic_proxy_value is not None:
+                self.synthetic_proxy_value.SetPreferSyntheticValue(True)
+                has_children = self.synthetic_proxy_value.MightHaveChildren()
+                """:type: bool"""
+                return has_children
+            log.error("has_children: No proxy value for type {}.".format(self.type_name))
+            # Returns value for current object.
+            return self.value_obj.MightHaveChildren()
+
         log.error("has_children: Unknown synthetic type: {} for type {}.".format(self.synthetic_type, self.type_name))
         return True
 
@@ -678,7 +734,37 @@ def get_count_value(obj):
     :return: Count of child objects from LLDB value.
     :rtype: int | None
     """
-    return None if obj is None else obj.GetNumChildren()
+    # Passed None value.
+    if obj is None:
+        return None
+
+    # Return 0 if object has no value.
+    if obj.GetValue() is None:
+        return 0
+    return obj.GetNumChildren()
+
+
+def get_synthetic_count_value(obj):
+    """
+    Returns count of child objects from LLDB synthetic value.
+
+    :param lldb.SBValue obj: LLDB value synthetic object.
+    :return: Count of child objects from LLDB synthetic value.
+    :rtype: int | None
+    """
+    # Passed None value.
+    if obj is None:
+        return None
+
+    # Return 0 if object has no value.
+    if obj.GetValue() is None:
+        return 0
+
+    # Get synthetic value.
+    if obj.IsSynthetic() is False:
+        obj.SetPreferSyntheticValue(True)
+
+    return obj.GetNumChildren()
 
 
 def get_type_name_value(obj):

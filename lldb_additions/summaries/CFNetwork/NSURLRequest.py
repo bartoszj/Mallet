@@ -36,12 +36,39 @@ class NSURLRequestSyntheticProvider(NSObject.NSObjectSyntheticProvider):
                                   provider_class=NSURLRequestInternal.NSURLRequestInternalSyntheticProvider,
                                   summary_function=self.get_request_internal_summary)
 
+        self.synthetic_type = self.SYNTHETIC_PROXY_VALUE
+        self.synthetic_proxy_value = self.get_proxy_value()
+
     @staticmethod
     def get_request_internal_summary(provider):
         """
         :param NSURLRequestInternal.NSURLRequestInternalSyntheticProvider provider: NSURLRequestInternal provider.
         """
         return provider.summary()
+
+    def get_proxy_value(self):
+        """
+        Returns proxy value.
+
+        :return: Proxy value.
+        :rtype: lldb.SBValue
+        """
+        request_internal = self.request_internal_provider
+        """:type: NSURLRequestInternal.NSURLRequestInternalSyntheticProvider"""
+        request = request_internal.request_provider
+        """:type: CFURLRequest.CFURLRequestSyntheticProvider"""
+        headers = request.get_http_headers()
+        """:type: lldb.SBValue"""
+        headers_value = request.get_http_headers_value()
+        """:type: int"""
+
+        headers = headers.GetDynamicValue(self.default_dynamic_type)
+        """:type: lldb.SBValue"""
+        headers.SetPreferSyntheticValue(True)
+        if headers_value is None or headers_value == 0:
+            return None
+
+        return headers
 
     def summary(self):
         return self.request_internal_summary
@@ -55,4 +82,7 @@ def lldb_init(debugger, dictionary):
     debugger.HandleCommand("type summary add -F {}.summary_provider \
                             --category CFNetwork \
                             NSURLRequest NSMutableURLRequest".format(__name__))
+    debugger.HandleCommand("type synthetic add -l {}.NSURLRequestSyntheticProvider \
+                           --category CFNetwork \
+                           NSURLRequest NSMutableURLRequest".format(__name__))
     debugger.HandleCommand("type category enable CFNetwork")

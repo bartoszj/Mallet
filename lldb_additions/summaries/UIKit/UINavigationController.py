@@ -34,7 +34,7 @@ class UINavigationControllerSyntheticProvider(UIViewController.UIViewControllerS
         super(UINavigationControllerSyntheticProvider, self).__init__(value_obj, internal_dict)
         self.type_name = "UINavigationController"
 
-        self.synthetic_type = self.SYNTHETIC_PROXY
+        self.synthetic_type = self.SYNTHETIC_PROXY_NAME
         self.synthetic_proxy_name = "child_view_controllers"
 
     def summary(self):

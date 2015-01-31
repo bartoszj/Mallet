@@ -40,7 +40,7 @@ class UITouchesEventSyntheticProvider(UIInternalEvent.UIInternalEventSyntheticPr
                                   summary_function=self.get_touches_summary)
 
         self.synthetic_proxy_name = "touches"
-        self.synthetic_type = self.SYNTHETIC_PROXY
+        self.synthetic_type = self.SYNTHETIC_PROXY_NAME
 
     @staticmethod
     def get_touches_summary(value):
