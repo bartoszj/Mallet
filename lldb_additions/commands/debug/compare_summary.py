@@ -108,6 +108,7 @@ def compare_summary(debugger, command, result, internal_dict):
     if use_swift:
         compare_description = SummaryBase.get_stripped_summary_value(compare_val)
         """:type: str"""
+        compare_description = compare_description.replace("\\\"", "\"")
     else:
         compare_description = compare_val.GetObjectDescription()
         """:type: str"""

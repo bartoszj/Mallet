@@ -713,16 +713,7 @@ def get_stripped_summary_value(obj):
     if summary is None:
         return None
 
-    # Removes @" or " from the beginning of the string.
-    if summary.startswith("@\""):
-        summary = summary[2:]
-    elif summary.startswith("\""):
-        summary = summary[1:]
-
-    # Removes " from the ond of the string.
-    if summary.endswith("\""):
-        summary = summary[:-1]
-
+    summary = strip_string(summary)
     return summary
 
 
@@ -738,6 +729,23 @@ def get_description_value(obj):
     if desc == "<nil>":
         desc = None
     return desc
+
+
+def get_stripped_description_value(obj):
+    """
+    Returns stripped object description (without '@"' ot '"' at the beginning and '"' at the end) from LLDB value.
+
+    :param lldb.SBValue obj: LLDB value object.
+    :return: Object description from LLDB value.
+    :rtype: str | None
+    """
+    description = get_description_value(obj)
+
+    if description is None:
+        return None
+
+    description = strip_string(description)
+    return description
 
 
 def get_count_value(obj):
@@ -867,6 +875,20 @@ def get_synthetic_value_copy(obj):
     obj = copy_value(obj)
     obj.SetPreferSyntheticValue(True)
     return obj
+
+
+def strip_string(string):
+    # Removes @" or " from the beginning of the string.
+    if string.startswith("@\""):
+        summary = string[2:]
+    elif string.startswith("\""):
+        summary = string[1:]
+
+    # Removes " from the ond of the string.
+    if string.endswith("\""):
+        string = summary[:-1]
+
+    return string
 
 
 def formatted_float(f, precision=2):

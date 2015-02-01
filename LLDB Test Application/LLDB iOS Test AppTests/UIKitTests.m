@@ -8,16 +8,6 @@
 
 #import "SharedTestCase.h"
 
-@interface NSLayoutConstraint (CC)
-
-- (id)equationDescription;	// IMP=0x00000000001d1018
-- (id)descriptionAccessory;	// IMP=0x00000000001d1010
-- (id)_priorityDescription;	// IMP=0x00000000001d0fa0
-- (id)asciiArtDescription;	// IMP=0x00000000001d0b7b
-- (int)_constraintType;	// IMP=0x000000000004b8c9
-
-@end
-
 @interface UIKitTests : SharedTestCase
 
 @end

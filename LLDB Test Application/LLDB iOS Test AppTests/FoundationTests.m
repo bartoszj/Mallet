@@ -90,7 +90,7 @@
     [self compareObject:uuid ofType:@"__NSConcreteUUID *" toSummary:@"68753A44-4D6F-1226-9C60-0050E4C00067"];
 }
 
-#pragma mark - NSURL / NSURLRequest
+#pragma mark - NSURL
 - (void)testNSURL
 {
     NSURL *url = [NSURL URLWithString:@"https://google.com"];
