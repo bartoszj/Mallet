@@ -24,7 +24,7 @@
  *
  *  @return Comarision result. @c @YES if everything is OK, @c @NO if @c variable summary is not equal to @c summary. @c nil if comparing function doesn't work.
  */
-- (NSNumber *)compareVariable:(void *)variable ofType:(NSString *)type toSumamry:(NSString *)summary;
+- (NSNumber *)compareVariable:(void *)variable ofType:(NSString *)type toSummary:(NSString *)summary;
 
 /**
  *  Compare @c object summary of type @c type with @summary.
@@ -35,6 +35,6 @@
  *
  *  @return Comarision result. @c @YES if everything is OK, @c @NO if @c object summary is not equal to @c summary. @c nil if comparing function doesn't work.
  */
-- (NSNumber *)compareObject:(id)object ofType:(NSString *)type toSumamry:(NSString *)summary;
+- (NSNumber *)compareObject:(id)object ofType:(NSString *)type toSummary:(NSString *)summary;
 
 @end

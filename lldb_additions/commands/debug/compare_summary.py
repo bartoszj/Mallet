@@ -34,8 +34,9 @@ def compare_summary(debugger, command, result, internal_dict):
 
     - object: Object which summary should be compared.
     - type: Type of object (as string).
-    - summary: Predefined summary to compare
+    - summary: Predefined summary to compare.
     - equal: Variable of type NSNumber to which results will be set.
+    - swift: 1, if Swift object is used.
 
     :param lldb.SBDebugger debugger: LLDB debugger.
     :param str command: Command attributes.
@@ -43,7 +44,7 @@ def compare_summary(debugger, command, result, internal_dict):
     :param dict internal_dict: Internal LLDB dictionary.
     """
     args = command.split(" ")
-    if len(args) != 4:
+    if len(args) != 4 and len(args) != 5:
         result.SetError("Not enough arguments.")
         return
 
@@ -55,6 +56,11 @@ def compare_summary(debugger, command, result, internal_dict):
     """:type: lldb.SBThread"""
     frame = thread.GetSelectedFrame()
     """:type: lldb.SBFrame"""
+
+    # Use Swift expressions
+    use_swift = False
+    if len(args) == 5:
+        use_swift = bool(int(args[4]))
 
     # Object name.
     obj_name = args[0]
@@ -75,8 +81,15 @@ def compare_summary(debugger, command, result, internal_dict):
 
     # Casting object to given class.
     # casted_val = obj_val.Cast(class_type)
-    casted_val = obj_val.CreateValueFromExpression("casted", "({}){}".format(class_type_name, obj_name))
-    """:type: lldb.SBValue"""
+    options = lldb.SBExpressionOptions()
+    options.SetIgnoreBreakpoints()
+    if use_swift:
+        options.SetLanguage(lldb.eLanguageTypeSwift)
+        casted_val = obj_val.CreateValueFromExpression("casted", "{} as {}".format(obj_name, class_type_name), options)
+        """:type: lldb.SBValue"""
+    else:
+        casted_val = obj_val.CreateValueFromExpression("casted", "({}){}".format(class_type_name, obj_name), options)
+        """:type: lldb.SBValue"""
     casted_val = casted_val.GetDynamicValue(lldb.eDynamicDontRunTarget)
     """:type: lldb.SBValue"""
     # casted_val = casted_val.GetDynamicValue(lldb.eDynamicCanRunTarget)
@@ -92,8 +105,12 @@ def compare_summary(debugger, command, result, internal_dict):
     """:type: str"""
     compare_val = frame.FindVariable(compare_name)
     """:type: lldb.SBValue"""
-    compare_description = compare_val.GetObjectDescription()
-    """:type: str"""
+    if use_swift:
+        compare_description = SummaryBase.get_stripped_summary_value(compare_val)
+        """:type: str"""
+    else:
+        compare_description = compare_val.GetObjectDescription()
+        """:type: str"""
 
     # Result object.
     result_name = args[3]
@@ -121,11 +138,19 @@ def compare_summary(debugger, command, result, internal_dict):
     options = lldb.SBExpressionOptions()
     options.SetIgnoreBreakpoints()
     if summary == compare_description:
-        frame.EvaluateExpression("{} = @1".format(result_name), options)
+        if use_swift:
+            options.SetLanguage(lldb.eLanguageTypeSwift)
+            frame.EvaluateExpression("{} = 1".format(result_name), options)
+        else:
+            frame.EvaluateExpression("{} = @1".format(result_name), options)
     else:
         print >> result, "object   : {}".format(summary)
         print >> result, "should be: {}".format(compare_description)
-        frame.EvaluateExpression("{} = @0".format(result_name), options)
+        if use_swift:
+            options.SetLanguage(lldb.eLanguageTypeSwift)
+            frame.EvaluateExpression("{} = 0".format(result_name), options)
+        else:
+            frame.EvaluateExpression("{} = @0".format(result_name), options)
 
 
 def lldb_init(debugger, internal_dict):

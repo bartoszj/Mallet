@@ -32,69 +32,69 @@
 {
     NSString *s = @"ęóąśłżźćń";
     NSData *d8 = [s dataUsingEncoding:NSUTF8StringEncoding];
-    [self compareObject:d8 ofType:@"NSData *" toSumamry:@"18 bytes"];
+    [self compareObject:d8 ofType:@"NSData *" toSummary:@"18 bytes"];
 }
 
 - (void)testNSData2
 {
     NSString *s = @"ęóąśłżźćń";
     NSData *d16 = [s dataUsingEncoding:NSUTF16StringEncoding];
-    [self compareObject:d16 ofType:@"NSData *" toSumamry:@"20 bytes"];
+    [self compareObject:d16 ofType:@"NSData *" toSummary:@"20 bytes"];
 }
 
 - (void)testNSData3
 {
     NSString *s = @"ęóąśłżźćń";
     NSData *d16l = [s dataUsingEncoding:NSUTF16LittleEndianStringEncoding];
-    [self compareObject:d16l ofType:@"NSData *" toSumamry:@"18 bytes"];
+    [self compareObject:d16l ofType:@"NSData *" toSummary:@"18 bytes"];
 }
 
 - (void)testNSData4
 {
     NSString *s = @"ęóąśłżźćń";
     NSData *d16b = [s dataUsingEncoding:NSUTF16BigEndianStringEncoding];
-    [self compareObject:d16b ofType:@"NSData *" toSumamry:@"18 bytes"];
+    [self compareObject:d16b ofType:@"NSData *" toSummary:@"18 bytes"];
 }
 
 - (void)testNSData5
 {
     NSString *s = @"ęóąśłżźćń";
     NSData *d32 = [s dataUsingEncoding:NSUTF32StringEncoding];
-    [self compareObject:d32 ofType:@"NSData *" toSumamry:@"40 bytes"];
+    [self compareObject:d32 ofType:@"NSData *" toSummary:@"40 bytes"];
 }
 
 - (void)testNSData6
 {
     NSString *s = @"ęóąśłżźćń";
     NSData *d32l = [s dataUsingEncoding:NSUTF32LittleEndianStringEncoding];
-    [self compareObject:d32l ofType:@"NSData *" toSumamry:@"36 bytes"];
+    [self compareObject:d32l ofType:@"NSData *" toSummary:@"36 bytes"];
 }
 
 - (void)testNSData7
 {
     NSString *s = @"ęóąśłżźćń";
     NSData *d32b = [s dataUsingEncoding:NSUTF32BigEndianStringEncoding];
-    [self compareObject:d32b ofType:@"NSData *" toSumamry:@"36 bytes"];
+    [self compareObject:d32b ofType:@"NSData *" toSummary:@"36 bytes"];
 }
 
 #pragma mark - NSUUID
 - (void)testNSUUID1
 {
     NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"68753A44-4D6F-1226-9C60-0050E4C00067"];
-    [self compareObject:uuid ofType:@"NSUUID *" toSumamry:@"68753A44-4D6F-1226-9C60-0050E4C00067"];
+    [self compareObject:uuid ofType:@"NSUUID *" toSummary:@"68753A44-4D6F-1226-9C60-0050E4C00067"];
 }
 
 - (void)testNSUUID2
 {
     NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"68753A44-4D6F-1226-9C60-0050E4C00067"];
-    [self compareObject:uuid ofType:@"__NSConcreteUUID *" toSumamry:@"68753A44-4D6F-1226-9C60-0050E4C00067"];
+    [self compareObject:uuid ofType:@"__NSConcreteUUID *" toSummary:@"68753A44-4D6F-1226-9C60-0050E4C00067"];
 }
 
 #pragma mark - NSURL / NSURLRequest
 - (void)testNSURL
 {
     NSURL *url = [NSURL URLWithString:@"https://google.com"];
-    [self compareObject:url ofType:@"NSURL *" toSumamry:@"@\"https://google.com\""];
+    [self compareObject:url ofType:@"NSURL *" toSummary:@"@\"https://google.com\""];
 }
 
 #pragma mark - NSDateComponents
@@ -102,98 +102,98 @@
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.era = 1;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"era=1"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"era=1"];
 }
 
 - (void)testNSDateComponents02
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.year = 2;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"year=2"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"year=2"];
 }
 
 - (void)testNSDateComponents03
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.month = 3;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"month=3"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"month=3"];
 }
 
 - (void)testNSDateComponents04
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.day = 4;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"day=4"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"day=4"];
 }
 
 - (void)testNSDateComponents05
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.hour = 5;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"hour=5"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"hour=5"];
 }
 
 - (void)testNSDateComponents06
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.minute = 6;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"minute=6"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"minute=6"];
 }
 
 - (void)testNSDateComponents07
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.second = 7;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"second=7"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"second=7"];
 }
 
 - (void)testNSDateComponents08
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.week = 8;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"week=8"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"week=8"];
 }
 
 - (void)testNSDateComponents09
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.weekday = 9;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"weekday=9"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"weekday=9"];
 }
 
 - (void)testNSDateComponents10
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.weekdayOrdinal = 10;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"weekdayOrdinal=10"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"weekdayOrdinal=10"];
 }
 
 - (void)testNSDateComponents11
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.quarter = 11;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"quarter=11"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"quarter=11"];
 }
 
 - (void)testNSDateComponents12
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.weekOfYear = 12;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"weekOfYear=12"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"weekOfYear=12"];
 }
 
 - (void)testNSDateComponents13
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.weekOfMonth = 13;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"weekOfMonth=13"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"weekOfMonth=13"];
 }
 
 - (void)testNSDateComponents14
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.yearForWeekOfYear = 14;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"yearForWeekOfYear=14"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"yearForWeekOfYear=14"];
 }
 
 - (void)testNSDateComponents15
@@ -201,7 +201,7 @@
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     dateComponents.hour = 5;
     dateComponents.minute = 6;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"time=05:06"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"time=05:06"];
 }
 
 - (void)testNSDateComponents16
@@ -210,7 +210,7 @@
     dateComponents.hour = 5;
     dateComponents.minute = 6;
     dateComponents.second = 7;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"time=05:06:07"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"time=05:06:07"];
 }
 
 - (void)testNSDateComponents17
@@ -219,7 +219,7 @@
     dateComponents.year = 2014;
     dateComponents.month = 3;
     dateComponents.day = 21;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"date=2014-03-21"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"date=2014-03-21"];
 }
 
 - (void)testNSDateComponents18
@@ -231,40 +231,40 @@
     dateComponents.hour = 5;
     dateComponents.minute = 6;
     dateComponents.second = 7;
-    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSumamry:@"2014-03-21 05:06:07"];
+    [self compareObject:dateComponents ofType:@"NSDateComponents *" toSummary:@"2014-03-21 05:06:07"];
 }
 
 #pragma mark - NSURLComponents
 - (void)testNSURLComponents01
 {
     NSURLComponents *components = [[NSURLComponents alloc] initWithString:@"http://google.com"];
-    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"url=\"http://google.com\""];
+    [self compareObject:components ofType:@"NSURLComponents *" toSummary:@"url=\"http://google.com\""];
 }
 
 - (void)testNSURLComponents02
 {
     NSURLComponents *components = [[NSURLComponents alloc] init];
     components.scheme = @"scheme";
-    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"scheme=\"scheme\""];
+    [self compareObject:components ofType:@"NSURLComponents *" toSummary:@"scheme=\"scheme\""];
     components.user = @"user";
-    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"scheme=\"scheme\", user=\"user\""];
+    [self compareObject:components ofType:@"NSURLComponents *" toSummary:@"scheme=\"scheme\", user=\"user\""];
     components.password = @"password";
-    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"scheme=\"scheme\", user=\"user\", password=\"password\""];
+    [self compareObject:components ofType:@"NSURLComponents *" toSummary:@"scheme=\"scheme\", user=\"user\", password=\"password\""];
 }
 
 - (void)testNSURLComponents03
 {
     NSURLComponents *components = [[NSURLComponents alloc] init];
     components.host = @"host";
-    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"host=\"host\""];
+    [self compareObject:components ofType:@"NSURLComponents *" toSummary:@"host=\"host\""];
     components.port = @(1234);
-    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"host=\"host\", port=1234"];
+    [self compareObject:components ofType:@"NSURLComponents *" toSummary:@"host=\"host\", port=1234"];
     components.path = @"path1/path2";
-    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"host=\"host\", port=1234, path=\"path1/path2\""];
+    [self compareObject:components ofType:@"NSURLComponents *" toSummary:@"host=\"host\", port=1234, path=\"path1/path2\""];
     components.query = @"query";
-    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"host=\"host\", port=1234, path=\"path1/path2\", query=\"query\""];
+    [self compareObject:components ofType:@"NSURLComponents *" toSummary:@"host=\"host\", port=1234, path=\"path1/path2\", query=\"query\""];
     components.fragment = @"fragment";
-    [self compareObject:components ofType:@"NSURLComponents *" toSumamry:@"host=\"host\", port=1234, path=\"path1/path2\", query=\"query\", fragment=\"fragment\""];
+    [self compareObject:components ofType:@"NSURLComponents *" toSummary:@"host=\"host\", port=1234, path=\"path1/path2\", query=\"query\", fragment=\"fragment\""];
 }
 
 #pragma mark - NSLayoutConstraint
@@ -281,9 +281,9 @@
     NSString *summary1 = [NSString stringWithFormat:@"H:[UIView:0x%lx(200)]", ptr];
     NSString *summary2 = [NSString stringWithFormat:@"H:[UIView:0x%lx(>=200)]", ptr];
     NSString *summary3 = [NSString stringWithFormat:@"V:[UIView:0x%lx(<=300)]", ptr];
-    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:summary1];
-    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:summary2];
-    [self compareObject:constraint3 ofType:@"NSLayoutConstraint *" toSumamry:summary3];
+    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSummary:summary1];
+    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSummary:summary2];
+    [self compareObject:constraint3 ofType:@"NSLayoutConstraint *" toSummary:summary3];
 #else
     // Short version.
     [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:@"width == +200"];
@@ -307,9 +307,9 @@
     NSString *summary1 = [NSString stringWithFormat:@"H:[UIView:0x%lx(200@123)]", ptr];
     NSString *summary2 = [NSString stringWithFormat:@"H:[UIView:0x%lx(>=200@456)]", ptr];
     NSString *summary3 = [NSString stringWithFormat:@"V:[UIView:0x%lx(<=300@789)]", ptr];
-    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:summary1];
-    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:summary2];
-    [self compareObject:constraint3 ofType:@"NSLayoutConstraint *" toSumamry:summary3];
+    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSummary:summary1];
+    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSummary:summary2];
+    [self compareObject:constraint3 ofType:@"NSLayoutConstraint *" toSummary:summary3];
 #else
     // Short version.
     [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:@"width == +200@123"];
@@ -333,9 +333,9 @@
     NSString *summary1 = [NSString stringWithFormat:@"UIView:0x%lx.left == UIView:0x%lx.lastBaseline - 200", ptr1, ptr2];
     NSString *summary2 = [NSString stringWithFormat:@"UIView:0x%lx.trailing >= 2*UIView:0x%lx.centerX + 200", ptr1, ptr2];
     NSString *summary3 = [NSString stringWithFormat:@"UIView:0x%lx.topMargin <= UIView:0x%lx.centerYWithMargins + 300 @300", ptr1, ptr2];
-    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:summary1];
-    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:summary2];
-    [self compareObject:constraint3 ofType:@"NSLayoutConstraint *" toSumamry:summary3];
+    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSummary:summary1];
+    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSummary:summary2];
+    [self compareObject:constraint3 ofType:@"NSLayoutConstraint *" toSummary:summary3];
 #else
     // Short version.
     [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:@"left == lastBaseline-200"];
@@ -357,8 +357,8 @@
     intptr_t ptr2 = (intptr_t)view;
     NSString *summary1 = [NSString stringWithFormat:@"UIView:0x%lx.top == UIView:0x%lx.top + standard", ptr1, ptr2];
     NSString *summary2 = [NSString stringWithFormat:@"UIView:0x%lx.leading == UIView:0x%lx.leading + standard", ptr1, ptr2];
-    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:summary1];
-    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSumamry:summary2];
+    [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSummary:summary1];
+    [self compareObject:constraint2 ofType:@"NSLayoutConstraint *" toSummary:summary2];
 #else
     // Short version.
     [self compareObject:constraint1 ofType:@"NSLayoutConstraint *" toSumamry:@"top == top+standard"];

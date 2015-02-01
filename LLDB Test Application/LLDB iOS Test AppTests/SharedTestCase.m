@@ -15,7 +15,7 @@
     
 }
 
-- (NSNumber *)compareVariable:(void *)variable ofType:(NSString *)type toSumamry:(NSString *)summary
+- (NSNumber *)compareVariable:(void *)variable ofType:(NSString *)type toSummary:(NSString *)summary
 {
     NSNumber *equal;
     // Set breakpoint here:
@@ -29,7 +29,7 @@
     return equal;
 }
 
-- (NSNumber *)compareObject:(id)object ofType:(NSString *)type toSumamry:(NSString *)summary
+- (NSNumber *)compareObject:(id)object ofType:(NSString *)type toSummary:(NSString *)summary
 {
     NSNumber *equal;
     // Set breakpoint here:

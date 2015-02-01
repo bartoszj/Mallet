@@ -21,6 +21,7 @@
 		9636C874182977A700FD4AEA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9636C873182977A700FD4AEA /* XCTest.framework */; };
 		9636C875182977A700FD4AEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9636C851182977A700FD4AEA /* Foundation.framework */; };
 		9636C876182977A700FD4AEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9636C855182977A700FD4AEA /* UIKit.framework */; };
+		9648D8621A7E749800615E85 /* SharedSwiftTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9648D8611A7E749800615E85 /* SharedSwiftTestCase.swift */; };
 		96601909198587C200BDBB71 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96601908198587C200BDBB71 /* Cocoa.framework */; };
 		96601913198587C200BDBB71 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96601911198587C200BDBB71 /* InfoPlist.strings */; };
 		96601915198587C200BDBB71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96601914198587C200BDBB71 /* main.m */; };
@@ -111,6 +112,7 @@
 		9636C855182977A700FD4AEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9636C872182977A700FD4AEA /* LLDB iOS Test AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LLDB iOS Test AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9636C873182977A700FD4AEA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9648D8611A7E749800615E85 /* SharedSwiftTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedSwiftTestCase.swift; sourceTree = "<group>"; };
 		96601907198587C100BDBB71 /* LLDB Mac Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LLDB Mac Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96601908198587C200BDBB71 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		9660190B198587C200BDBB71 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -462,6 +464,7 @@
 				9660195E198588E400BDBB71 /* FoundationTests.m */,
 				960C0DC11A7E6953000BB452 /* LLDB iOS Test AppTests-Bridging-Header.h */,
 				96F0F8C019B1D74B0033ACED /* QuartzCoreTests.m */,
+				9648D8611A7E749800615E85 /* SharedSwiftTestCase.swift */,
 				96601960198588E400BDBB71 /* SharedTestCase.h */,
 				96601961198588E400BDBB71 /* SharedTestCase.m */,
 				96601969198588ED00BDBB71 /* Supporting Files */,
@@ -782,6 +785,7 @@
 				96739E6A1A7E4D6F00D50717 /* CFNetworkTests.m in Sources */,
 				96601967198588E400BDBB71 /* SharedTestCase.m in Sources */,
 				960C0DC31A7E6954000BB452 /* CFNetworkSwiftTests.swift in Sources */,
+				9648D8621A7E749800615E85 /* SharedSwiftTestCase.swift in Sources */,
 				96601965198588E400BDBB71 /* FoundationTests.m in Sources */,
 				96601963198588E400BDBB71 /* CoreGraphicsTests.m in Sources */,
 				96F0F8C119B1D74B0033ACED /* QuartzCoreTests.m in Sources */,
