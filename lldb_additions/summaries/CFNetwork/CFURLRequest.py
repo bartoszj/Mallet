@@ -28,34 +28,35 @@ from .. import SummaryBase
 
 class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
     """
-    Class representing _CFURLRequest structure.
+    Class representing CFURLRequest structure.
 
     :param int url_offset: Offset to HTTP url.
+    :param int http_message_offset: Offset to CFHTTPMessageRef.
     :param int tmp1_offset: Offset to "structure _tmp1"
-    :param int tmp2_offset: Offset to "structure _tmp2"
-    :param int tmp3_offset: Offset to "structure _tmp3"
+    :param int http_header_dict_offset1: Offset to HTTPHeaderDict.
+    :param int http_header_dict_offset2: Offset to HTTPHeaderDict.
     :param int http_method_offset: Offset to HTTP method.
     :param int http_body_offset: Offset to HTTP body data.
     :param int http_headers_offset: Offset to HTTP headers.
     """
-    # _CFURLRequest:
+    # CFURLRequest:
     # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
     # NSURL *url                                                             20 = 0x14 / 4           40 = 0x28 / 8
-    # struct _tmp1 *tmp1                                                     48 = 0x30 / 4           88 = 0x58 / 8
+    # CFHTTPMessageRef http_message                                          48 = 0x30 / 4           88 = 0x58 / 8
 
-    # struct _tmp1 {
-    #     struct _tmp2 *tmp2                                                 24 = 0x18 / 4           48 = 0x30 / 8
-    #     struct _tmp3 *tmp3                                                 48 = 0x30 / 4           96 = 0x60 / 8
-    #                                                                        52 = 0x34 / 4          104 = 0x68 / 8
+    # CFHTTPMessageRef {
+    #     struct _tmp1 *tmp1                                                 24 = 0x18 / 4           48 = 0x30 / 8
+    #     HTTPHeaderDict *http_header_dict                                   48 = 0x30 / 4           96 = 0x60 / 8
+    #     HTTPHeaderDict *http_header_dict                                   52 = 0x34 / 4          104 = 0x68 / 8
     #     NSString *HTTPMethod                                               68 = 0x44 / 4          136 = 0x88 / 8
     # }
 
-    # struct _tmp2 {
+    # struct _tmp1 {
     #     NSData *HTTPBody                                                    8 = 0x08 / 4           16 = 0x10 / 8
     # }
 
-    # struct _tmp3 {
+    # HTTPHeaderDict {
     #     NSDictionary *allHTTPHeaderFields                                   4 = 0x08 / 4            8 = 0x08 / 8
     # }
 
@@ -68,17 +69,19 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
 
         if self.is_64bit:
             self.url_offset = 0x28
-            self.tmp1_offset = 0x58
-            self.tmp2_offset = 0x30
-            self.tmp3_offset = 0x60
+            self.http_message_offset = 0x58
+            self.tmp1_offset = 0x30
+            self.http_header_dict_offset1 = 0x68
+            self.http_header_dict_offset2 = 0x60
             self.http_method_offset = 0x88
             self.http_body_offset = 0x10
             self.http_headers_offset = 0x08
         else:
             self.url_offset = 0x14
-            self.tmp1_offset = 0x30
-            self.tmp2_offset = 0x18
-            self.tmp3_offset = 0x30
+            self.http_message_offset = 0x30
+            self.tmp1_offset = 0x18
+            self.http_header_dict_offset1 = 0x34
+            self.http_header_dict_offset2 = 0x30
             self.http_method_offset = 0x44
             self.http_body_offset = 0x8
             self.http_headers_offset = 0x04
@@ -86,11 +89,11 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
         self.register_child_value("url", type_name="NSURL *", offset=self.url_offset,
                                   primitive_value_function=SummaryBase.get_stripped_summary_value,
                                   summary_function=self.get_url_summary)
-        self.register_child_value("tmp1", type_name="addr_ptr_type", offset=self.tmp1_offset)
+        self.register_child_value("http_message", type_name="addr_ptr_type", offset=self.http_message_offset)
 
         self.http_method = None
-        self.tmp2 = None
-        self.tmp3 = None
+        self.tmp1 = None
+        self.http_header_dict = None
         self.http_body = None
         self.http_headers = None
 
@@ -105,33 +108,39 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
         """
         return "{}".format(value)
 
-    @helpers.save_parameter("tmp2")
-    def get_tmp2(self):
+    @helpers.save_parameter("tmp1")
+    def get_tmp1(self):
         """
-        Returns LLDB value of tmp2 structure.
+        Returns LLDB value of tmp1 structure.
 
-        :return: LLDB value of tmp2 structure.
+        :return: LLDB value of tmp1 structure.
         :rtype: lldb.SBValue
         """
-        if self.tmp1 is None:
+        if self.http_message is None:
             return None
 
-        tmp2 = self.tmp1.CreateChildAtOffset("tmp2", self.tmp2_offset, self.get_type("addr_ptr_type"))
-        return tmp2
+        tmp1 = self.http_message.CreateChildAtOffset("tmp1", self.tmp1_offset, self.get_type("addr_ptr_type"))
+        return tmp1
 
-    @helpers.save_parameter("tmp3")
-    def get_tmp3(self):
+    @helpers.save_parameter("http_header_dict")
+    def get_http_header_dict(self):
         """
-        Returns LLDB value of tmp3 structure.
+        Returns LLDB value of HTTPHeaderDict.
 
-        :return: LLDB value of tmp3 structure.
+        :return: LLDB value of HTTPHeaderDict.
         :rtype: lldb.SBValue
         """
-        if self.tmp1 is None:
+        if self.http_message is None:
             return None
 
-        tmp3 = self.tmp1.CreateChildAtOffset("tmp3", self.tmp3_offset, self.get_type("addr_ptr_type"))
-        return tmp3
+        http_header_dict = self.http_message.CreateChildAtOffset("http_header_dict", self.http_header_dict_offset1, self.get_type("addr_ptr_type"))
+        """:type: lldb.SBValue"""
+        value = SummaryBase.get_signed_value(http_header_dict)
+        if value is None or value == 0:
+            http_header_dict = self.http_message.CreateChildAtOffset("http_header_dict", self.http_header_dict_offset2, self.get_type("addr_ptr_type"))
+            """:type: lldb.SBValue"""
+
+        return http_header_dict
 
     @helpers.save_parameter("http_method")
     def get_http_method(self):
@@ -141,9 +150,9 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
         :return: LLDB object representing HTTP method.
         :rtype: lldb.SBValue
         """
-        if self.tmp1 is None:
+        if self.http_message is None:
             return None
-        return self.tmp1.CreateChildAtOffset("HTTPMethod", self.http_method_offset, self.get_type("NSString *"))
+        return self.http_message.CreateChildAtOffset("HTTPMethod", self.http_method_offset, self.get_type("NSString *"))
 
     def get_http_method_value(self):
         """
@@ -172,11 +181,11 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
         :return: LLDB object representing HTTP body data.
         :rtype: lldb.SBValue
         """
-        tmp2 = self.get_tmp2()
-        if tmp2 is None:
+        tmp1 = self.get_tmp1()
+        if tmp1 is None:
             return None
 
-        return tmp2.CreateChildAtOffset("HTTPBody", self.http_body_offset, self.get_type("NSData *"))
+        return tmp1.CreateChildAtOffset("HTTPBody", self.http_body_offset, self.get_type("NSData *"))
 
     def get_http_body_value(self):
         """
@@ -205,11 +214,11 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
         :return: LLDB object representing HTTP headers.
         :rtype: lldb.SBValue
         """
-        tmp3 = self.get_tmp3()
-        if tmp3 is None:
+        http_header_dict = self.get_http_header_dict()
+        if http_header_dict is None:
             return None
 
-        return tmp3.CreateChildAtOffset("allHTTPHeaderFields", self.http_headers_offset, self.get_type("NSDictionary *"))
+        return http_header_dict.CreateChildAtOffset("allHTTPHeaderFields", self.http_headers_offset, self.get_type("NSDictionary *"))
 
     def get_http_headers_value(self):
         """
