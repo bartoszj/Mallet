@@ -44,6 +44,7 @@
 		96601967198588E400BDBB71 /* SharedTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 96601961198588E400BDBB71 /* SharedTestCase.m */; };
 		96601968198588E400BDBB71 /* UIKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96601962198588E400BDBB71 /* UIKitTests.m */; };
 		9660196B1985897700BDBB71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9660196A1985897700BDBB71 /* Images.xcassets */; };
+		96739E6A1A7E4D6F00D50717 /* CFNetworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96739E691A7E4D6F00D50717 /* CFNetworkTests.m */; };
 		9677E6AC19B0878F002DBAE1 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9677E6AB19B0878F002DBAE1 /* BasicViewController.m */; };
 		9686224619B2014D00096721 /* ViewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9686224519B2014D00096721 /* ViewsViewController.m */; };
 		96982C1D1A64607400C78595 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96982C1C1A64607400C78595 /* ModalViewController.m */; };
@@ -145,6 +146,7 @@
 		9660196C1985898500BDBB71 /* LLDB iOS Test App-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LLDB iOS Test App-Info.plist"; sourceTree = "<group>"; };
 		9660196D1985898500BDBB71 /* LLDB iOS Test App-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LLDB iOS Test App-Prefix.pch"; sourceTree = "<group>"; };
 		9660196F19858AA800BDBB71 /* LLDB iOS Test AppTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LLDB iOS Test AppTests-Info.plist"; sourceTree = "<group>"; };
+		96739E691A7E4D6F00D50717 /* CFNetworkTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFNetworkTests.m; sourceTree = "<group>"; };
 		9677E6AA19B0878F002DBAE1 /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
 		9677E6AB19B0878F002DBAE1 /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
 		9686224419B2014D00096721 /* ViewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewsViewController.h; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 		9660195A198588E400BDBB71 /* LLDB iOS Test AppTests */ = {
 			isa = PBXGroup;
 			children = (
+				96739E691A7E4D6F00D50717 /* CFNetworkTests.m */,
 				9660195B198588E400BDBB71 /* CoreGraphicsTests.m */,
 				9660195E198588E400BDBB71 /* FoundationTests.m */,
 				96F0F8C019B1D74B0033ACED /* QuartzCoreTests.m */,
@@ -771,6 +774,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96601968198588E400BDBB71 /* UIKitTests.m in Sources */,
+				96739E6A1A7E4D6F00D50717 /* CFNetworkTests.m in Sources */,
 				96601967198588E400BDBB71 /* SharedTestCase.m in Sources */,
 				96601965198588E400BDBB71 /* FoundationTests.m in Sources */,
 				96601963198588E400BDBB71 /* CoreGraphicsTests.m in Sources */,

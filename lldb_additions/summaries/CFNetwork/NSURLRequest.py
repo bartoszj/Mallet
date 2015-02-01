@@ -70,7 +70,7 @@ class NSURLRequestSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         return headers
 
     def get_child_index(self, name):
-        return self.value_obj.GetIndexOfChildWithName(name)
+        return None
 
     def summary(self):
         return self.request_internal_summary
