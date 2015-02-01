@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
+from ...summaries import SummaryBase
 
 
 def compare_summary(debugger, command, result, internal_dict):
@@ -68,7 +69,7 @@ def compare_summary(debugger, command, result, internal_dict):
     """:type: str"""
     class_val = frame.FindVariable(class_name)
     """:type: lldb.SBValue"""
-    class_type_name = class_val.GetSummary()[2:-1]
+    class_type_name = SummaryBase.get_stripped_summary_value(class_val)
     """:type: str"""
     # class_type = target.FindFirstType(class_type_name).GetPointerType()
 

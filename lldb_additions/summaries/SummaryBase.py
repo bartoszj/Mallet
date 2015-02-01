@@ -702,14 +702,28 @@ def get_summary_value(obj):
 
 def get_stripped_summary_value(obj):
     """
-    Returns stripped summary (without '@"' at the beginning and '"' at the end) from LLDB value.
+    Returns stripped summary (without '@"' ot '"' at the beginning and '"' at the end) from LLDB value.
 
     :param lldb.SBValue obj: LLDB value object.
     :return: Stripped summary from LLDB value.
     :rtype: str | None
     """
     summary = get_summary_value(obj)
-    return None if summary is None else summary[2:-1]
+
+    if summary is None:
+        return None
+
+    # Removes @" or " from the beginning of the string.
+    if summary.startswith("@\""):
+        summary = summary[2:]
+    elif summary.startswith("\""):
+        summary = summary[1:]
+
+    # Removes " from the ond of the string.
+    if summary.endswith("\""):
+        summary = summary[:-1]
+
+    return summary
 
 
 def get_description_value(obj):

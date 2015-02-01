@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C64CBC33E0A3D323E080F59 /* libPods-LLDB iOS Test App KIF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA597B251E3AB87822EFCB11 /* libPods-LLDB iOS Test App KIF.a */; };
+		960C0DC31A7E6954000BB452 /* CFNetworkSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C0DC21A7E6954000BB452 /* CFNetworkSwiftTests.swift */; };
 		962B272B1A7031C5003A213C /* LLDB_iOS_Test_App_KIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 962B272A1A7031C5003A213C /* LLDB_iOS_Test_App_KIF.m */; };
 		962B27351A703AD3003A213C /* KIFUITestActor+ViewControllerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 962B27341A703AD3003A213C /* KIFUITestActor+ViewControllerAdditions.m */; };
 		962B27381A703CA8003A213C /* KIFUITestActor+BasicControllerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 962B27371A703CA8003A213C /* KIFUITestActor+BasicControllerAdditions.m */; };
@@ -87,6 +88,8 @@
 		6F330B12F38F4AE0A6DD753E /* libPods-LLDB iOS Test App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LLDB iOS Test App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA5C0FBEB3F483539462ACE /* Pods-LLDB iOS Test App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLDB iOS Test App.release.xcconfig"; path = "Pods/Target Support Files/Pods-LLDB iOS Test App/Pods-LLDB iOS Test App.release.xcconfig"; sourceTree = "<group>"; };
 		84C74F1235B516E2B1DBC411 /* Pods-LLDB iOS Test App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLDB iOS Test App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LLDB iOS Test App/Pods-LLDB iOS Test App.debug.xcconfig"; sourceTree = "<group>"; };
+		960C0DC11A7E6953000BB452 /* LLDB iOS Test AppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LLDB iOS Test AppTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		960C0DC21A7E6954000BB452 /* CFNetworkSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFNetworkSwiftTests.swift; sourceTree = "<group>"; };
 		962B27211A703008003A213C /* LLDB iOS Test AppTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LLDB iOS Test AppTests-Prefix.pch"; sourceTree = "<group>"; };
 		962B27261A7031C4003A213C /* LLDB iOS Test App KIF.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LLDB iOS Test App KIF.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		962B27291A7031C5003A213C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -453,9 +456,11 @@
 		9660195A198588E400BDBB71 /* LLDB iOS Test AppTests */ = {
 			isa = PBXGroup;
 			children = (
+				960C0DC21A7E6954000BB452 /* CFNetworkSwiftTests.swift */,
 				96739E691A7E4D6F00D50717 /* CFNetworkTests.m */,
 				9660195B198588E400BDBB71 /* CoreGraphicsTests.m */,
 				9660195E198588E400BDBB71 /* FoundationTests.m */,
+				960C0DC11A7E6953000BB452 /* LLDB iOS Test AppTests-Bridging-Header.h */,
 				96F0F8C019B1D74B0033ACED /* QuartzCoreTests.m */,
 				96601960198588E400BDBB71 /* SharedTestCase.h */,
 				96601961198588E400BDBB71 /* SharedTestCase.m */,
@@ -776,6 +781,7 @@
 				96601968198588E400BDBB71 /* UIKitTests.m in Sources */,
 				96739E6A1A7E4D6F00D50717 /* CFNetworkTests.m in Sources */,
 				96601967198588E400BDBB71 /* SharedTestCase.m in Sources */,
+				960C0DC31A7E6954000BB452 /* CFNetworkSwiftTests.swift in Sources */,
 				96601965198588E400BDBB71 /* FoundationTests.m in Sources */,
 				96601963198588E400BDBB71 /* CoreGraphicsTests.m in Sources */,
 				96F0F8C119B1D74B0033ACED /* QuartzCoreTests.m in Sources */,
@@ -1028,6 +1034,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LLDB iOS Test App.app/LLDB iOS Test App";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1040,7 +1047,10 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "LLDB iOS Test AppTests/LLDB iOS Test AppTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LLDB iOS Test AppTests/LLDB iOS Test AppTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1050,6 +1060,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LLDB iOS Test App.app/LLDB iOS Test App";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1058,7 +1069,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LLDB iOS Test AppTests/LLDB iOS Test AppTests-Prefix.pch";
 				INFOPLIST_FILE = "LLDB iOS Test AppTests/LLDB iOS Test AppTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LLDB iOS Test AppTests/LLDB iOS Test AppTests-Bridging-Header.h";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};

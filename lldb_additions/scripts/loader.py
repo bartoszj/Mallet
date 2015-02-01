@@ -251,19 +251,19 @@ def load_all(debugger, internal_dict):
         scripts.extend(scripts_in_directory(directory_path))
     load_scripts(scripts, debugger, internal_dict)
 
-    # Load commands.
-    scripts = list()
-    for directory in lldb_commands_paths:
-        directory_path = os.path.join(lldb_additions_package_dir_path, directory)
-        scripts.extend(scripts_in_directory(directory_path, subdirectories=False))
-    load_scripts(scripts, debugger, internal_dict)
-
     # Load summaries.
     scripts = list()
     for directory in lldb_summaries_paths:
         directory_path = os.path.join(lldb_additions_package_dir_path, directory)
         scripts.extend(scripts_in_directory(directory_path))
     load_scripts(scripts, debugger, internal_dict, lldb_summaries_load_order)
+
+    # Load commands.
+    scripts = list()
+    for directory in lldb_commands_paths:
+        directory_path = os.path.join(lldb_additions_package_dir_path, directory)
+        scripts.extend(scripts_in_directory(directory_path, subdirectories=False))
+    load_scripts(scripts, debugger, internal_dict)
 
     # Load summary strings.
     load_lldb_commands_directory(os.path.join(lldb_additions_package_dir_path, lldb_additions_string_summaries_dir), debugger, internal_dict)

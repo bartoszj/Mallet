@@ -15,12 +15,15 @@
 
 @implementation CFNetworkTests
 
-- (void)setUp {
+#pragma mark - Setup
+- (void)setUp
+{
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
-- (void)tearDown {
+- (void)tearDown
+{
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
@@ -64,18 +67,6 @@
     [self compareObject:request ofType:@"NSURLRequest *" toSumamry:@"GET, https://google.com, body=12 bytes"];
 }
 
-- (void)testNSURLRequest5
-{
-    // HTTP Body.
-    NSURL *url = [NSURL URLWithString:@"https://google.com"];
-    NSMutableURLRequest *mutableRequest = [NSMutableURLRequest requestWithURL:url];
-    mutableRequest.HTTPBody = [@"test data" dataUsingEncoding:NSUTF8StringEncoding];
-    NSURLRequest *request = [mutableRequest copy];
-    
-    [self compareObject:mutableRequest ofType:@"NSMutableURLRequest *" toSumamry:@"GET, https://google.com, body=9 bytes"];
-    [self compareObject:request ofType:@"NSURLRequest *" toSumamry:@"GET, https://google.com, body=9 bytes"];
-}
-
 - (void)testNSURLRequest6
 {
     NSURL *url = [NSURL URLWithString:@"https://google.com"];
@@ -91,6 +82,22 @@
     
     [self compareObject:mutableRequest ofType:@"NSMutableURLRequest *" toSumamry:@"GET, https://google.com"];
     [self compareObject:request ofType:@"NSURLRequest *" toSumamry:@"GET, https://google.com"];
+}
+
+#pragma mark - NSURLConnection
+- (void)testNSURLResponse01
+{
+    NSURL *url = [NSURL URLWithString:@"http://api.openweathermap.org/data/2.5/weather?q=London,uk"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    XCTestExpectation *exceptation = [self expectationWithDescription:@"GET"];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        
+        [exceptation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
 @end
