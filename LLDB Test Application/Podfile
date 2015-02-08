@@ -1,27 +1,31 @@
 # Uncomment this line to define a global platform for your project
 # platform :ios, "7.0"
 
-target "LLDB iOS Test App" do
+target "LLDB iOS App" do
     pod "AFNetworking", "~> 2.5.0"
-    pod "FMDB", "~> 2.4"
-    pod "Facebook-iOS-SDK", "~> 3.22"
+    pod "FMDB", "~> 2.5"
+    pod "Facebook-iOS-SDK", "~> 3.23"
     pod "MBProgressHUD", "~> 0.9"
     pod "Reachability", "~> 3.2"
 end
 
-target "LLDB iOS Test AppTests", :exclusive => true do
-    
-end
-
-target "LLDB iOS Test App KIF", :exclusive => true do
+target "LLDB iOS App KIF", :exclusive => true do
     pod 'KIF', '~> 3.1'
 end
 
-target "LLDB Mac Test App" do
+target "LLDB iOS App Swift Tests", :exclusive => true do
+    
+end
+
+target "LLDB iOS App Tests", :exclusive => true do
+    
+end
+
+target "LLDB Mac App" do
 
 end
 
-target "LLDB Mac Test AppTests", :exclusive => true do
+target "LLDB Mac App Tests", :exclusive => true do
 
 end
 

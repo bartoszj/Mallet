@@ -21,12 +21,12 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Bolts (1.1.3)
-  - Facebook-iOS-SDK (3.22.0):
+  - Facebook-iOS-SDK (3.23.0):
     - Bolts (~> 1.0)
-  - FMDB (2.4):
-    - FMDB/standard (= 2.4)
-  - FMDB/common (2.4)
-  - FMDB/standard (2.4):
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
     - FMDB/common
   - KIF (3.1.2):
     - KIF/XCTest (= 3.1.2)
@@ -36,8 +36,8 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.0)
-  - Facebook-iOS-SDK (~> 3.22)
-  - FMDB (~> 2.4)
+  - Facebook-iOS-SDK (~> 3.23)
+  - FMDB (~> 2.5)
   - KIF (~> 3.1)
   - MBProgressHUD (~> 0.9)
   - Reachability (~> 3.2)
@@ -45,8 +45,8 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
   Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
-  Facebook-iOS-SDK: 0eda8ff7120aada0a9c5f98552f7625da6c3440a
-  FMDB: 0b2fa25e5264ef177973c0cb8c02c711107979aa
+  Facebook-iOS-SDK: 3d65f685348b789e46a9aacf92bfa85b60b63755
+  FMDB: 0efa188cf0dd1ce82c27a478cd5f5fa245308677
   KIF: 068074b24dd455025e7f2a488ba4fb07b9ce047b
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   Reachability: 1ef8adf5c4e3d362f96515d4278f68dad3c26930

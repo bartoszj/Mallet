@@ -14,11 +14,11 @@
 #import "KIFUITestActor+ModalControllerAdditions.h"
 #import "KIFUITestActor+ViewControllerAdditions.h"
 
-@interface LLDB_iOS_Test_App_KIF : KIFTestCase
+@interface LLDB_iOS_App_KIF : KIFTestCase
 
 @end
 
-@implementation LLDB_iOS_Test_App_KIF
+@implementation LLDB_iOS_App_KIF
 
 #pragma mark - Setup
 - (void)beforeAll

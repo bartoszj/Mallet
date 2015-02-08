@@ -7,12 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C64CBC33E0A3D323E080F59 /* libPods-LLDB iOS Test App KIF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA597B251E3AB87822EFCB11 /* libPods-LLDB iOS Test App KIF.a */; };
-		960C0DC31A7E6954000BB452 /* CFNetworkSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C0DC21A7E6954000BB452 /* CFNetworkSwiftTests.swift */; };
-		9628A0491A7EBBE900BC5992 /* QuartzCoreSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9628A0481A7EBBE900BC5992 /* QuartzCoreSwiftTests.swift */; };
-		9628A04B1A7EBCA000BC5992 /* UIKitSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9628A04A1A7EBCA000BC5992 /* UIKitSwiftTests.swift */; };
-		9628A04D1A7EBE1E00BC5992 /* CoreGraphicsSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9628A04C1A7EBE1E00BC5992 /* CoreGraphicsSwiftTests.swift */; };
-		962B272B1A7031C5003A213C /* LLDB_iOS_Test_App_KIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 962B272A1A7031C5003A213C /* LLDB_iOS_Test_App_KIF.m */; };
+		6E773FD0C3DF76CCB5337582 /* libPods-LLDB iOS App KIF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76FA55F9ADBAB52D95B54550 /* libPods-LLDB iOS App KIF.a */; };
+		962B272B1A7031C5003A213C /* LLDB_iOS_App_KIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 962B272A1A7031C5003A213C /* LLDB_iOS_App_KIF.m */; };
 		962B27351A703AD3003A213C /* KIFUITestActor+ViewControllerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 962B27341A703AD3003A213C /* KIFUITestActor+ViewControllerAdditions.m */; };
 		962B27381A703CA8003A213C /* KIFUITestActor+BasicControllerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 962B27371A703CA8003A213C /* KIFUITestActor+BasicControllerAdditions.m */; };
 		962B273B1A703F70003A213C /* KIFUITestActor+Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 962B273A1A703F70003A213C /* KIFUITestActor+Application.m */; };
@@ -24,8 +20,6 @@
 		9636C874182977A700FD4AEA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9636C873182977A700FD4AEA /* XCTest.framework */; };
 		9636C875182977A700FD4AEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9636C851182977A700FD4AEA /* Foundation.framework */; };
 		9636C876182977A700FD4AEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9636C855182977A700FD4AEA /* UIKit.framework */; };
-		9648D8621A7E749800615E85 /* SharedSwiftTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9648D8611A7E749800615E85 /* SharedSwiftTestCase.swift */; };
-		9648D8681A7EA8C200615E85 /* FoundationSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9648D8671A7EA8C200615E85 /* FoundationSwiftTests.swift */; };
 		96601909198587C200BDBB71 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96601908198587C200BDBB71 /* Cocoa.framework */; };
 		96601913198587C200BDBB71 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96601911198587C200BDBB71 /* InfoPlist.strings */; };
 		96601915198587C200BDBB71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96601914198587C200BDBB71 /* main.m */; };
@@ -36,7 +30,7 @@
 		96601927198587C200BDBB71 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9636C873182977A700FD4AEA /* XCTest.framework */; };
 		96601928198587C200BDBB71 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96601908198587C200BDBB71 /* Cocoa.framework */; };
 		96601930198587C200BDBB71 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9660192E198587C200BDBB71 /* InfoPlist.strings */; };
-		96601932198587C200BDBB71 /* LLDB_Mac_Test_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96601931198587C200BDBB71 /* LLDB_Mac_Test_AppTests.m */; };
+		96601932198587C200BDBB71 /* LLDB_Mac_App_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96601931198587C200BDBB71 /* LLDB_Mac_App_Tests.m */; };
 		966019501985884F00BDBB71 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9660193D1985884F00BDBB71 /* ViewController.m */; };
 		966019511985884F00BDBB71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 966019411985884F00BDBB71 /* AppDelegate.m */; };
 		966019521985884F00BDBB71 /* Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 966019431985884F00BDBB71 /* Compare.m */; };
@@ -51,6 +45,14 @@
 		96601968198588E400BDBB71 /* UIKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96601962198588E400BDBB71 /* UIKitTests.m */; };
 		9660196B1985897700BDBB71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9660196A1985897700BDBB71 /* Images.xcassets */; };
 		96739E6A1A7E4D6F00D50717 /* CFNetworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96739E691A7E4D6F00D50717 /* CFNetworkTests.m */; };
+		9675D66F1A87EA9F00CFA33C /* LLDB_iOS_App_Swift_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675D66E1A87EA9F00CFA33C /* LLDB_iOS_App_Swift_Tests.swift */; };
+		9675D67C1A87EBDA00CFA33C /* CFNetworkSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675D6751A87EBDA00CFA33C /* CFNetworkSwiftTests.swift */; };
+		9675D67D1A87EBDA00CFA33C /* CoreGraphicsSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675D6761A87EBDA00CFA33C /* CoreGraphicsSwiftTests.swift */; };
+		9675D67E1A87EBDA00CFA33C /* FoundationSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675D6771A87EBDA00CFA33C /* FoundationSwiftTests.swift */; };
+		9675D67F1A87EBDA00CFA33C /* LLDB iOS App Swift Tests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9675D6781A87EBDA00CFA33C /* LLDB iOS App Swift Tests-Info.plist */; };
+		9675D6801A87EBDA00CFA33C /* QuartzCoreSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675D6791A87EBDA00CFA33C /* QuartzCoreSwiftTests.swift */; };
+		9675D6811A87EBDA00CFA33C /* SharedSwiftTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675D67A1A87EBDA00CFA33C /* SharedSwiftTestCase.swift */; };
+		9675D6821A87EBDA00CFA33C /* UIKitSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675D67B1A87EBDA00CFA33C /* UIKitSwiftTests.swift */; };
 		9677E6AC19B0878F002DBAE1 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9677E6AB19B0878F002DBAE1 /* BasicViewController.m */; };
 		9686224619B2014D00096721 /* ViewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9686224519B2014D00096721 /* ViewsViewController.m */; };
 		96982C1D1A64607400C78595 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96982C1C1A64607400C78595 /* ModalViewController.m */; };
@@ -60,7 +62,7 @@
 		96FCE39B19B0CE6E00A5A883 /* PickersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FCE39A19B0CE6E00A5A883 /* PickersViewController.m */; };
 		96FCE39E19B0D7B000A5A883 /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FCE39D19B0D7B000A5A883 /* AlertsViewController.m */; };
 		96FCE3A419B0D9D900A5A883 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FCE3A319B0D9D900A5A883 /* ScrollViewController.m */; };
-		B16225C58D39463287A04370 /* libPods-LLDB iOS Test App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F330B12F38F4AE0A6DD753E /* libPods-LLDB iOS Test App.a */; };
+		A597FD061987E9B8BBDFFB19 /* libPods-LLDB iOS App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A44E32993B26CDA5A75D18C9 /* libPods-LLDB iOS App.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,24 +87,25 @@
 			remoteGlobalIDString = 96601906198587C100BDBB71;
 			remoteInfo = "LLDB Mac Test App";
 		};
+		9675D6701A87EA9F00CFA33C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9636C846182977A700FD4AEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9636C84D182977A700FD4AEA;
+			remoteInfo = "LLDB iOS App";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0702D1BE4ED8A610F3E52141 /* Pods-LLDB iOS Test AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLDB iOS Test AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LLDB iOS Test AppTests/Pods-LLDB iOS Test AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		0AF70374A0FB4072ACCED657 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		384920F1A68E138ABA620A4E /* Pods-LLDB iOS App KIF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLDB iOS App KIF.release.xcconfig"; path = "Pods/Target Support Files/Pods-LLDB iOS App KIF/Pods-LLDB iOS App KIF.release.xcconfig"; sourceTree = "<group>"; };
 		6F330B12F38F4AE0A6DD753E /* libPods-LLDB iOS Test App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LLDB iOS Test App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DA5C0FBEB3F483539462ACE /* Pods-LLDB iOS Test App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLDB iOS Test App.release.xcconfig"; path = "Pods/Target Support Files/Pods-LLDB iOS Test App/Pods-LLDB iOS Test App.release.xcconfig"; sourceTree = "<group>"; };
-		84C74F1235B516E2B1DBC411 /* Pods-LLDB iOS Test App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLDB iOS Test App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LLDB iOS Test App/Pods-LLDB iOS Test App.debug.xcconfig"; sourceTree = "<group>"; };
-		960C0DC11A7E6953000BB452 /* LLDB iOS Test AppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LLDB iOS Test AppTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		960C0DC21A7E6954000BB452 /* CFNetworkSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFNetworkSwiftTests.swift; sourceTree = "<group>"; };
-		9628A0481A7EBBE900BC5992 /* QuartzCoreSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuartzCoreSwiftTests.swift; sourceTree = "<group>"; };
-		9628A04A1A7EBCA000BC5992 /* UIKitSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitSwiftTests.swift; sourceTree = "<group>"; };
-		9628A04C1A7EBE1E00BC5992 /* CoreGraphicsSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphicsSwiftTests.swift; sourceTree = "<group>"; };
-		962B27211A703008003A213C /* LLDB iOS Test AppTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LLDB iOS Test AppTests-Prefix.pch"; sourceTree = "<group>"; };
-		962B27261A7031C4003A213C /* LLDB iOS Test App KIF.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LLDB iOS Test App KIF.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		962B27291A7031C5003A213C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		962B272A1A7031C5003A213C /* LLDB_iOS_Test_App_KIF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLDB_iOS_Test_App_KIF.m; sourceTree = "<group>"; };
-		962B27311A7032F5003A213C /* LLDB iOS Test App KIF-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LLDB iOS Test App KIF-Prefix.pch"; sourceTree = "<group>"; };
+		76FA55F9ADBAB52D95B54550 /* libPods-LLDB iOS App KIF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LLDB iOS App KIF.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		962B27211A703008003A213C /* LLDB iOS App Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LLDB iOS App Tests-Prefix.pch"; sourceTree = "<group>"; };
+		962B27261A7031C4003A213C /* LLDB iOS App KIF.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LLDB iOS App KIF.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		962B27291A7031C5003A213C /* LLDB iOS App KIF-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LLDB iOS App KIF-Info.plist"; sourceTree = "<group>"; };
+		962B272A1A7031C5003A213C /* LLDB_iOS_App_KIF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLDB_iOS_App_KIF.m; sourceTree = "<group>"; };
+		962B27311A7032F5003A213C /* LLDB iOS App KIF-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LLDB iOS App KIF-Prefix.pch"; sourceTree = "<group>"; };
 		962B27331A703AD3003A213C /* KIFUITestActor+ViewControllerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFUITestActor+ViewControllerAdditions.h"; sourceTree = "<group>"; };
 		962B27341A703AD3003A213C /* KIFUITestActor+ViewControllerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+ViewControllerAdditions.m"; sourceTree = "<group>"; };
 		962B27361A703CA8003A213C /* KIFUITestActor+BasicControllerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFUITestActor+BasicControllerAdditions.h"; sourceTree = "<group>"; };
@@ -113,32 +116,30 @@
 		962B273D1A7043F2003A213C /* KIFUITestActor+AlertsAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+AlertsAdditions.m"; sourceTree = "<group>"; };
 		962B273F1A704452003A213C /* KIFUITestActor+ModalControllerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFUITestActor+ModalControllerAdditions.h"; sourceTree = "<group>"; };
 		962B27401A704452003A213C /* KIFUITestActor+ModalControllerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+ModalControllerAdditions.m"; sourceTree = "<group>"; };
-		9636C84E182977A700FD4AEA /* LLDB iOS Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LLDB iOS Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9636C84E182977A700FD4AEA /* LLDB iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LLDB iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9636C851182977A700FD4AEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9636C853182977A700FD4AEA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9636C855182977A700FD4AEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		9636C872182977A700FD4AEA /* LLDB iOS Test AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LLDB iOS Test AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9636C872182977A700FD4AEA /* LLDB iOS App Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LLDB iOS App Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9636C873182977A700FD4AEA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		9648D8611A7E749800615E85 /* SharedSwiftTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedSwiftTestCase.swift; sourceTree = "<group>"; };
-		9648D8671A7EA8C200615E85 /* FoundationSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationSwiftTests.swift; sourceTree = "<group>"; };
-		96601907198587C100BDBB71 /* LLDB Mac Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LLDB Mac Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96601907198587C100BDBB71 /* LLDB Mac App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LLDB Mac App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96601908198587C200BDBB71 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		9660190B198587C200BDBB71 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		9660190C198587C200BDBB71 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9660190D198587C200BDBB71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		96601910198587C200BDBB71 /* LLDB Mac Test App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LLDB Mac Test App-Info.plist"; sourceTree = "<group>"; };
+		96601910198587C200BDBB71 /* LLDB Mac App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LLDB Mac App-Info.plist"; sourceTree = "<group>"; };
 		96601912198587C200BDBB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		96601914198587C200BDBB71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		96601916198587C200BDBB71 /* LLDB Mac Test App-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LLDB Mac Test App-Prefix.pch"; sourceTree = "<group>"; };
+		96601916198587C200BDBB71 /* LLDB Mac App-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LLDB Mac App-Prefix.pch"; sourceTree = "<group>"; };
 		96601918198587C200BDBB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		9660191A198587C200BDBB71 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9660191B198587C200BDBB71 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9660191E198587C200BDBB71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		96601920198587C200BDBB71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		96601926198587C200BDBB71 /* LLDB Mac Test AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LLDB Mac Test AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9660192D198587C200BDBB71 /* LLDB Mac Test AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LLDB Mac Test AppTests-Info.plist"; sourceTree = "<group>"; };
+		96601926198587C200BDBB71 /* LLDB Mac App Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LLDB Mac App Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9660192D198587C200BDBB71 /* LLDB Mac App Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LLDB Mac App Tests-Info.plist"; sourceTree = "<group>"; };
 		9660192F198587C200BDBB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		96601931198587C200BDBB71 /* LLDB_Mac_Test_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLDB_Mac_Test_AppTests.m; sourceTree = "<group>"; };
+		96601931198587C200BDBB71 /* LLDB_Mac_App_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLDB_Mac_App_Tests.m; sourceTree = "<group>"; };
 		9660193C1985884F00BDBB71 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9660193D1985884F00BDBB71 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		966019401985884F00BDBB71 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -156,10 +157,19 @@
 		96601961198588E400BDBB71 /* SharedTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedTestCase.m; sourceTree = "<group>"; };
 		96601962198588E400BDBB71 /* UIKitTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitTests.m; sourceTree = "<group>"; };
 		9660196A1985897700BDBB71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9660196C1985898500BDBB71 /* LLDB iOS Test App-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LLDB iOS Test App-Info.plist"; sourceTree = "<group>"; };
-		9660196D1985898500BDBB71 /* LLDB iOS Test App-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LLDB iOS Test App-Prefix.pch"; sourceTree = "<group>"; };
-		9660196F19858AA800BDBB71 /* LLDB iOS Test AppTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LLDB iOS Test AppTests-Info.plist"; sourceTree = "<group>"; };
+		9660196C1985898500BDBB71 /* LLDB iOS App-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LLDB iOS App-Info.plist"; sourceTree = "<group>"; };
+		9660196D1985898500BDBB71 /* LLDB iOS App-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LLDB iOS App-Prefix.pch"; sourceTree = "<group>"; };
+		9660196F19858AA800BDBB71 /* LLDB iOS App Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LLDB iOS App Tests-Info.plist"; sourceTree = "<group>"; };
 		96739E691A7E4D6F00D50717 /* CFNetworkTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFNetworkTests.m; sourceTree = "<group>"; };
+		9675D66A1A87EA9F00CFA33C /* LLDB iOS App Swift Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LLDB iOS App Swift Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9675D66E1A87EA9F00CFA33C /* LLDB_iOS_App_Swift_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLDB_iOS_App_Swift_Tests.swift; sourceTree = "<group>"; };
+		9675D6751A87EBDA00CFA33C /* CFNetworkSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFNetworkSwiftTests.swift; sourceTree = "<group>"; };
+		9675D6761A87EBDA00CFA33C /* CoreGraphicsSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphicsSwiftTests.swift; sourceTree = "<group>"; };
+		9675D6771A87EBDA00CFA33C /* FoundationSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationSwiftTests.swift; sourceTree = "<group>"; };
+		9675D6781A87EBDA00CFA33C /* LLDB iOS App Swift Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LLDB iOS App Swift Tests-Info.plist"; sourceTree = "<group>"; };
+		9675D6791A87EBDA00CFA33C /* QuartzCoreSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuartzCoreSwiftTests.swift; sourceTree = "<group>"; };
+		9675D67A1A87EBDA00CFA33C /* SharedSwiftTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedSwiftTestCase.swift; sourceTree = "<group>"; };
+		9675D67B1A87EBDA00CFA33C /* UIKitSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitSwiftTests.swift; sourceTree = "<group>"; };
 		9677E6AA19B0878F002DBAE1 /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
 		9677E6AB19B0878F002DBAE1 /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
 		9686224419B2014D00096721 /* ViewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewsViewController.h; sourceTree = "<group>"; };
@@ -175,10 +185,11 @@
 		96FCE39D19B0D7B000A5A883 /* AlertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertsViewController.m; sourceTree = "<group>"; };
 		96FCE3A219B0D9D900A5A883 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
 		96FCE3A319B0D9D900A5A883 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
+		9A0FE07D9303545DF8D49AD8 /* Pods-LLDB iOS App KIF.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLDB iOS App KIF.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LLDB iOS App KIF/Pods-LLDB iOS App KIF.debug.xcconfig"; sourceTree = "<group>"; };
+		A44E32993B26CDA5A75D18C9 /* libPods-LLDB iOS App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LLDB iOS App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA597B251E3AB87822EFCB11 /* libPods-LLDB iOS Test App KIF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LLDB iOS Test App KIF.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB1EE8E0CD9393842D4E8A8A /* Pods-LLDB iOS Test App KIF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLDB iOS Test App KIF.release.xcconfig"; path = "Pods/Target Support Files/Pods-LLDB iOS Test App KIF/Pods-LLDB iOS Test App KIF.release.xcconfig"; sourceTree = "<group>"; };
-		EBCA053ECCB9F886894C743D /* Pods-LLDB iOS Test App KIF.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLDB iOS Test App KIF.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LLDB iOS Test App KIF/Pods-LLDB iOS Test App KIF.debug.xcconfig"; sourceTree = "<group>"; };
-		FA775EEF924C317F6383AD55 /* Pods-LLDB iOS Test AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLDB iOS Test AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LLDB iOS Test AppTests/Pods-LLDB iOS Test AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D11F59B1D6471342EEECB7C4 /* Pods-LLDB iOS App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLDB iOS App.release.xcconfig"; path = "Pods/Target Support Files/Pods-LLDB iOS App/Pods-LLDB iOS App.release.xcconfig"; sourceTree = "<group>"; };
+		D809A9DCCBAD72E9D08C7532 /* Pods-LLDB iOS App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLDB iOS App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LLDB iOS App/Pods-LLDB iOS App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,7 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C64CBC33E0A3D323E080F59 /* libPods-LLDB iOS Test App KIF.a in Frameworks */,
+				6E773FD0C3DF76CCB5337582 /* libPods-LLDB iOS App KIF.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +208,7 @@
 				9636C854182977A700FD4AEA /* CoreGraphics.framework in Frameworks */,
 				9636C856182977A700FD4AEA /* UIKit.framework in Frameworks */,
 				9636C852182977A700FD4AEA /* Foundation.framework in Frameworks */,
-				B16225C58D39463287A04370 /* libPods-LLDB iOS Test App.a in Frameworks */,
+				A597FD061987E9B8BBDFFB19 /* libPods-LLDB iOS App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,23 +239,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9675D6671A87EA9F00CFA33C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		405FCFAAAE0D3A913CDD7B4C /* Pods */ = {
+		1BFF9129582CD1AB5F83DF38 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				84C74F1235B516E2B1DBC411 /* Pods-LLDB iOS Test App.debug.xcconfig */,
-				7DA5C0FBEB3F483539462ACE /* Pods-LLDB iOS Test App.release.xcconfig */,
-				FA775EEF924C317F6383AD55 /* Pods-LLDB iOS Test AppTests.debug.xcconfig */,
-				0702D1BE4ED8A610F3E52141 /* Pods-LLDB iOS Test AppTests.release.xcconfig */,
-				EBCA053ECCB9F886894C743D /* Pods-LLDB iOS Test App KIF.debug.xcconfig */,
-				BB1EE8E0CD9393842D4E8A8A /* Pods-LLDB iOS Test App KIF.release.xcconfig */,
+				D809A9DCCBAD72E9D08C7532 /* Pods-LLDB iOS App.debug.xcconfig */,
+				D11F59B1D6471342EEECB7C4 /* Pods-LLDB iOS App.release.xcconfig */,
+				9A0FE07D9303545DF8D49AD8 /* Pods-LLDB iOS App KIF.debug.xcconfig */,
+				384920F1A68E138ABA620A4E /* Pods-LLDB iOS App KIF.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		962B27271A7031C5003A213C /* LLDB iOS Test App KIF */ = {
+		962B27271A7031C5003A213C /* LLDB iOS App KIF */ = {
 			isa = PBXGroup;
 			children = (
 				962B273C1A7043F2003A213C /* KIFUITestActor+AlertsAdditions.h */,
@@ -257,17 +273,17 @@
 				962B27401A704452003A213C /* KIFUITestActor+ModalControllerAdditions.m */,
 				962B27331A703AD3003A213C /* KIFUITestActor+ViewControllerAdditions.h */,
 				962B27341A703AD3003A213C /* KIFUITestActor+ViewControllerAdditions.m */,
-				962B272A1A7031C5003A213C /* LLDB_iOS_Test_App_KIF.m */,
+				962B272A1A7031C5003A213C /* LLDB_iOS_App_KIF.m */,
 				962B27281A7031C5003A213C /* Supporting Files */,
 			);
-			path = "LLDB iOS Test App KIF";
+			path = "LLDB iOS App KIF";
 			sourceTree = "<group>";
 		};
 		962B27281A7031C5003A213C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				962B27291A7031C5003A213C /* Info.plist */,
-				962B27311A7032F5003A213C /* LLDB iOS Test App KIF-Prefix.pch */,
+				962B27291A7031C5003A213C /* LLDB iOS App KIF-Info.plist */,
+				962B27311A7032F5003A213C /* LLDB iOS App KIF-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -275,25 +291,27 @@
 		9636C845182977A700FD4AEA = {
 			isa = PBXGroup;
 			children = (
-				966019391985884F00BDBB71 /* LLDB iOS Test App */,
-				962B27271A7031C5003A213C /* LLDB iOS Test App KIF */,
-				9660195A198588E400BDBB71 /* LLDB iOS Test AppTests */,
-				9660190E198587C200BDBB71 /* LLDB Mac Test App */,
-				9660192B198587C200BDBB71 /* LLDB Mac Test AppTests */,
+				966019391985884F00BDBB71 /* LLDB iOS App */,
+				962B27271A7031C5003A213C /* LLDB iOS App KIF */,
+				9675D66B1A87EA9F00CFA33C /* LLDB iOS App Swift Tests */,
+				9660195A198588E400BDBB71 /* LLDB iOS App Tests */,
+				9660190E198587C200BDBB71 /* LLDB Mac App */,
+				9660192B198587C200BDBB71 /* LLDB Mac App Tests */,
 				9636C850182977A700FD4AEA /* Frameworks */,
-				405FCFAAAE0D3A913CDD7B4C /* Pods */,
 				9636C84F182977A700FD4AEA /* Products */,
+				1BFF9129582CD1AB5F83DF38 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		9636C84F182977A700FD4AEA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9636C84E182977A700FD4AEA /* LLDB iOS Test App.app */,
-				9636C872182977A700FD4AEA /* LLDB iOS Test AppTests.xctest */,
-				96601907198587C100BDBB71 /* LLDB Mac Test App.app */,
-				96601926198587C200BDBB71 /* LLDB Mac Test AppTests.xctest */,
-				962B27261A7031C4003A213C /* LLDB iOS Test App KIF.xctest */,
+				9636C84E182977A700FD4AEA /* LLDB iOS App.app */,
+				9636C872182977A700FD4AEA /* LLDB iOS App Tests.xctest */,
+				96601907198587C100BDBB71 /* LLDB Mac App.app */,
+				96601926198587C200BDBB71 /* LLDB Mac App Tests.xctest */,
+				962B27261A7031C4003A213C /* LLDB iOS App KIF.xctest */,
+				9675D66A1A87EA9F00CFA33C /* LLDB iOS App Swift Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -310,6 +328,8 @@
 				9660190A198587C200BDBB71 /* Other Frameworks */,
 				6F330B12F38F4AE0A6DD753E /* libPods-LLDB iOS Test App.a */,
 				BA597B251E3AB87822EFCB11 /* libPods-LLDB iOS Test App KIF.a */,
+				A44E32993B26CDA5A75D18C9 /* libPods-LLDB iOS App.a */,
+				76FA55F9ADBAB52D95B54550 /* libPods-LLDB iOS App KIF.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -324,7 +344,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		9660190E198587C200BDBB71 /* LLDB Mac Test App */ = {
+		9660190E198587C200BDBB71 /* LLDB Mac App */ = {
 			isa = PBXGroup;
 			children = (
 				9660191A198587C200BDBB71 /* AppDelegate.h */,
@@ -333,47 +353,47 @@
 				96601920198587C200BDBB71 /* Images.xcassets */,
 				9660190F198587C200BDBB71 /* Supporting Files */,
 			);
-			path = "LLDB Mac Test App";
+			path = "LLDB Mac App";
 			sourceTree = "<group>";
 		};
 		9660190F198587C200BDBB71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				96601910198587C200BDBB71 /* LLDB Mac Test App-Info.plist */,
+				96601910198587C200BDBB71 /* LLDB Mac App-Info.plist */,
 				96601911198587C200BDBB71 /* InfoPlist.strings */,
 				96601914198587C200BDBB71 /* main.m */,
-				96601916198587C200BDBB71 /* LLDB Mac Test App-Prefix.pch */,
+				96601916198587C200BDBB71 /* LLDB Mac App-Prefix.pch */,
 				96601917198587C200BDBB71 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9660192B198587C200BDBB71 /* LLDB Mac Test AppTests */ = {
+		9660192B198587C200BDBB71 /* LLDB Mac App Tests */ = {
 			isa = PBXGroup;
 			children = (
-				96601931198587C200BDBB71 /* LLDB_Mac_Test_AppTests.m */,
+				96601931198587C200BDBB71 /* LLDB_Mac_App_Tests.m */,
 				9660192C198587C200BDBB71 /* Supporting Files */,
 			);
-			path = "LLDB Mac Test AppTests";
+			path = "LLDB Mac App Tests";
 			sourceTree = "<group>";
 		};
 		9660192C198587C200BDBB71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9660192D198587C200BDBB71 /* LLDB Mac Test AppTests-Info.plist */,
+				9660192D198587C200BDBB71 /* LLDB Mac App Tests-Info.plist */,
 				9660192E198587C200BDBB71 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		966019391985884F00BDBB71 /* LLDB iOS Test App */ = {
+		966019391985884F00BDBB71 /* LLDB iOS App */ = {
 			isa = PBXGroup;
 			children = (
 				9660193A1985884F00BDBB71 /* Classes */,
 				966019591985886E00BDBB71 /* Supporting Files */,
 				9660194A1985884F00BDBB71 /* Resources */,
 			);
-			path = "LLDB iOS Test App";
+			path = "LLDB iOS App";
 			sourceTree = "<group>";
 		};
 		9660193A1985884F00BDBB71 /* Classes */ = {
@@ -457,40 +477,56 @@
 			isa = PBXGroup;
 			children = (
 				966019461985884F00BDBB71 /* InfoPlist.strings */,
-				9660196C1985898500BDBB71 /* LLDB iOS Test App-Info.plist */,
-				9660196D1985898500BDBB71 /* LLDB iOS Test App-Prefix.pch */,
+				9660196C1985898500BDBB71 /* LLDB iOS App-Info.plist */,
+				9660196D1985898500BDBB71 /* LLDB iOS App-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9660195A198588E400BDBB71 /* LLDB iOS Test AppTests */ = {
+		9660195A198588E400BDBB71 /* LLDB iOS App Tests */ = {
 			isa = PBXGroup;
 			children = (
-				960C0DC21A7E6954000BB452 /* CFNetworkSwiftTests.swift */,
 				96739E691A7E4D6F00D50717 /* CFNetworkTests.m */,
-				9628A04C1A7EBE1E00BC5992 /* CoreGraphicsSwiftTests.swift */,
 				9660195B198588E400BDBB71 /* CoreGraphicsTests.m */,
-				9648D8671A7EA8C200615E85 /* FoundationSwiftTests.swift */,
 				9660195E198588E400BDBB71 /* FoundationTests.m */,
-				960C0DC11A7E6953000BB452 /* LLDB iOS Test AppTests-Bridging-Header.h */,
-				9628A0481A7EBBE900BC5992 /* QuartzCoreSwiftTests.swift */,
 				96F0F8C019B1D74B0033ACED /* QuartzCoreTests.m */,
-				9648D8611A7E749800615E85 /* SharedSwiftTestCase.swift */,
 				96601960198588E400BDBB71 /* SharedTestCase.h */,
 				96601961198588E400BDBB71 /* SharedTestCase.m */,
 				96601969198588ED00BDBB71 /* Supporting Files */,
-				9628A04A1A7EBCA000BC5992 /* UIKitSwiftTests.swift */,
 				96601962198588E400BDBB71 /* UIKitTests.m */,
 			);
-			path = "LLDB iOS Test AppTests";
+			path = "LLDB iOS App Tests";
 			sourceTree = "<group>";
 		};
 		96601969198588ED00BDBB71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				9660195C198588E400BDBB71 /* InfoPlist.strings */,
-				9660196F19858AA800BDBB71 /* LLDB iOS Test AppTests-Info.plist */,
-				962B27211A703008003A213C /* LLDB iOS Test AppTests-Prefix.pch */,
+				9660196F19858AA800BDBB71 /* LLDB iOS App Tests-Info.plist */,
+				962B27211A703008003A213C /* LLDB iOS App Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9675D66B1A87EA9F00CFA33C /* LLDB iOS App Swift Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9675D6751A87EBDA00CFA33C /* CFNetworkSwiftTests.swift */,
+				9675D6761A87EBDA00CFA33C /* CoreGraphicsSwiftTests.swift */,
+				9675D6771A87EBDA00CFA33C /* FoundationSwiftTests.swift */,
+				9675D66E1A87EA9F00CFA33C /* LLDB_iOS_App_Swift_Tests.swift */,
+				9675D6791A87EBDA00CFA33C /* QuartzCoreSwiftTests.swift */,
+				9675D67A1A87EBDA00CFA33C /* SharedSwiftTestCase.swift */,
+				9675D66C1A87EA9F00CFA33C /* Supporting Files */,
+				9675D67B1A87EBDA00CFA33C /* UIKitSwiftTests.swift */,
+			);
+			path = "LLDB iOS App Swift Tests";
+			sourceTree = "<group>";
+		};
+		9675D66C1A87EA9F00CFA33C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9675D6781A87EBDA00CFA33C /* LLDB iOS App Swift Tests-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -507,9 +543,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		962B27251A7031C4003A213C /* LLDB iOS Test App KIF */ = {
+		962B27251A7031C4003A213C /* LLDB iOS App KIF */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 962B272E1A7031C5003A213C /* Build configuration list for PBXNativeTarget "LLDB iOS Test App KIF" */;
+			buildConfigurationList = 962B272E1A7031C5003A213C /* Build configuration list for PBXNativeTarget "LLDB iOS App KIF" */;
 			buildPhases = (
 				689E0720C44FFE479C45A3F7 /* Check Pods Manifest.lock */,
 				962B27221A7031C4003A213C /* Sources */,
@@ -522,14 +558,14 @@
 			dependencies = (
 				962B272D1A7031C5003A213C /* PBXTargetDependency */,
 			);
-			name = "LLDB iOS Test App KIF";
+			name = "LLDB iOS App KIF";
 			productName = "LLDB iOS Test App KIF";
-			productReference = 962B27261A7031C4003A213C /* LLDB iOS Test App KIF.xctest */;
+			productReference = 962B27261A7031C4003A213C /* LLDB iOS App KIF.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9636C84D182977A700FD4AEA /* LLDB iOS Test App */ = {
+		9636C84D182977A700FD4AEA /* LLDB iOS App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9636C883182977A700FD4AEA /* Build configuration list for PBXNativeTarget "LLDB iOS Test App" */;
+			buildConfigurationList = 9636C883182977A700FD4AEA /* Build configuration list for PBXNativeTarget "LLDB iOS App" */;
 			buildPhases = (
 				1918014D73F946A2A5D7F284 /* Check Pods Manifest.lock */,
 				9636C84A182977A700FD4AEA /* Sources */,
@@ -541,14 +577,14 @@
 			);
 			dependencies = (
 			);
-			name = "LLDB iOS Test App";
+			name = "LLDB iOS App";
 			productName = "LLDB Test Application";
-			productReference = 9636C84E182977A700FD4AEA /* LLDB iOS Test App.app */;
+			productReference = 9636C84E182977A700FD4AEA /* LLDB iOS App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9636C871182977A700FD4AEA /* LLDB iOS Test AppTests */ = {
+		9636C871182977A700FD4AEA /* LLDB iOS App Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9636C886182977A700FD4AEA /* Build configuration list for PBXNativeTarget "LLDB iOS Test AppTests" */;
+			buildConfigurationList = 9636C886182977A700FD4AEA /* Build configuration list for PBXNativeTarget "LLDB iOS App Tests" */;
 			buildPhases = (
 				9636C86E182977A700FD4AEA /* Sources */,
 				9636C86F182977A700FD4AEA /* Frameworks */,
@@ -559,14 +595,14 @@
 			dependencies = (
 				9636C878182977A700FD4AEA /* PBXTargetDependency */,
 			);
-			name = "LLDB iOS Test AppTests";
+			name = "LLDB iOS App Tests";
 			productName = "LLDB Test ApplicationTests";
-			productReference = 9636C872182977A700FD4AEA /* LLDB iOS Test AppTests.xctest */;
+			productReference = 9636C872182977A700FD4AEA /* LLDB iOS App Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		96601906198587C100BDBB71 /* LLDB Mac Test App */ = {
+		96601906198587C100BDBB71 /* LLDB Mac App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 96601937198587C200BDBB71 /* Build configuration list for PBXNativeTarget "LLDB Mac Test App" */;
+			buildConfigurationList = 96601937198587C200BDBB71 /* Build configuration list for PBXNativeTarget "LLDB Mac App" */;
 			buildPhases = (
 				96601903198587C100BDBB71 /* Sources */,
 				96601904198587C100BDBB71 /* Frameworks */,
@@ -576,14 +612,14 @@
 			);
 			dependencies = (
 			);
-			name = "LLDB Mac Test App";
+			name = "LLDB Mac App";
 			productName = "LLDB Mac Test App";
-			productReference = 96601907198587C100BDBB71 /* LLDB Mac Test App.app */;
+			productReference = 96601907198587C100BDBB71 /* LLDB Mac App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		96601925198587C200BDBB71 /* LLDB Mac Test AppTests */ = {
+		96601925198587C200BDBB71 /* LLDB Mac App Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 96601938198587C200BDBB71 /* Build configuration list for PBXNativeTarget "LLDB Mac Test AppTests" */;
+			buildConfigurationList = 96601938198587C200BDBB71 /* Build configuration list for PBXNativeTarget "LLDB Mac App Tests" */;
 			buildPhases = (
 				96601922198587C200BDBB71 /* Sources */,
 				96601923198587C200BDBB71 /* Frameworks */,
@@ -594,9 +630,27 @@
 			dependencies = (
 				9660192A198587C200BDBB71 /* PBXTargetDependency */,
 			);
-			name = "LLDB Mac Test AppTests";
+			name = "LLDB Mac App Tests";
 			productName = "LLDB Mac Test AppTests";
-			productReference = 96601926198587C200BDBB71 /* LLDB Mac Test AppTests.xctest */;
+			productReference = 96601926198587C200BDBB71 /* LLDB Mac App Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9675D6691A87EA9F00CFA33C /* LLDB iOS App Swift Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9675D6721A87EA9F00CFA33C /* Build configuration list for PBXNativeTarget "LLDB iOS App Swift Tests" */;
+			buildPhases = (
+				9675D6661A87EA9F00CFA33C /* Sources */,
+				9675D6671A87EA9F00CFA33C /* Frameworks */,
+				9675D6681A87EA9F00CFA33C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9675D6711A87EA9F00CFA33C /* PBXTargetDependency */,
+			);
+			name = "LLDB iOS App Swift Tests";
+			productName = "LLDB iOS App Swift Tests";
+			productReference = 9675D66A1A87EA9F00CFA33C /* LLDB iOS App Swift Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -612,14 +666,15 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 9636C84D182977A700FD4AEA;
 					};
-					9636C84D182977A700FD4AEA = {
-						DevelopmentTeam = 36CHZQXF4C;
-					};
 					9636C871182977A700FD4AEA = {
 						TestTargetID = 9636C84D182977A700FD4AEA;
 					};
 					96601925198587C200BDBB71 = {
 						TestTargetID = 96601906198587C100BDBB71;
+					};
+					9675D6691A87EA9F00CFA33C = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 9636C84D182977A700FD4AEA;
 					};
 				};
 			};
@@ -636,11 +691,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9636C84D182977A700FD4AEA /* LLDB iOS Test App */,
-				9636C871182977A700FD4AEA /* LLDB iOS Test AppTests */,
-				962B27251A7031C4003A213C /* LLDB iOS Test App KIF */,
-				96601906198587C100BDBB71 /* LLDB Mac Test App */,
-				96601925198587C200BDBB71 /* LLDB Mac Test AppTests */,
+				9636C84D182977A700FD4AEA /* LLDB iOS App */,
+				962B27251A7031C4003A213C /* LLDB iOS App KIF */,
+				9675D6691A87EA9F00CFA33C /* LLDB iOS App Swift Tests */,
+				9636C871182977A700FD4AEA /* LLDB iOS App Tests */,
+				96601906198587C100BDBB71 /* LLDB Mac App */,
+				96601925198587C200BDBB71 /* LLDB Mac App Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -693,6 +749,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9675D6681A87EA9F00CFA33C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9675D67F1A87EBDA00CFA33C /* LLDB iOS App Swift Tests-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -708,7 +772,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LLDB iOS Test App KIF/Pods-LLDB iOS Test App KIF-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LLDB iOS App KIF/Pods-LLDB iOS App KIF-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		1918014D73F946A2A5D7F284 /* Check Pods Manifest.lock */ = {
@@ -753,7 +817,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LLDB iOS Test App/Pods-LLDB iOS Test App-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LLDB iOS App/Pods-LLDB iOS App-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -763,7 +827,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				962B272B1A7031C5003A213C /* LLDB_iOS_Test_App_KIF.m in Sources */,
+				962B272B1A7031C5003A213C /* LLDB_iOS_App_KIF.m in Sources */,
 				962B27351A703AD3003A213C /* KIFUITestActor+ViewControllerAdditions.m in Sources */,
 				962B273E1A7043F2003A213C /* KIFUITestActor+AlertsAdditions.m in Sources */,
 				962B27381A703CA8003A213C /* KIFUITestActor+BasicControllerAdditions.m in Sources */,
@@ -795,14 +859,8 @@
 			files = (
 				96601968198588E400BDBB71 /* UIKitTests.m in Sources */,
 				96739E6A1A7E4D6F00D50717 /* CFNetworkTests.m in Sources */,
-				9628A04B1A7EBCA000BC5992 /* UIKitSwiftTests.swift in Sources */,
 				96601967198588E400BDBB71 /* SharedTestCase.m in Sources */,
-				960C0DC31A7E6954000BB452 /* CFNetworkSwiftTests.swift in Sources */,
-				9628A04D1A7EBE1E00BC5992 /* CoreGraphicsSwiftTests.swift in Sources */,
-				9648D8621A7E749800615E85 /* SharedSwiftTestCase.swift in Sources */,
-				9648D8681A7EA8C200615E85 /* FoundationSwiftTests.swift in Sources */,
 				96601965198588E400BDBB71 /* FoundationTests.m in Sources */,
-				9628A0491A7EBBE900BC5992 /* QuartzCoreSwiftTests.swift in Sources */,
 				96601963198588E400BDBB71 /* CoreGraphicsTests.m in Sources */,
 				96F0F8C119B1D74B0033ACED /* QuartzCoreTests.m in Sources */,
 			);
@@ -821,7 +879,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96601932198587C200BDBB71 /* LLDB_Mac_Test_AppTests.m in Sources */,
+				96601932198587C200BDBB71 /* LLDB_Mac_App_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9675D6661A87EA9F00CFA33C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9675D6821A87EBDA00CFA33C /* UIKitSwiftTests.swift in Sources */,
+				9675D67E1A87EBDA00CFA33C /* FoundationSwiftTests.swift in Sources */,
+				9675D66F1A87EA9F00CFA33C /* LLDB_iOS_App_Swift_Tests.swift in Sources */,
+				9675D6801A87EBDA00CFA33C /* QuartzCoreSwiftTests.swift in Sources */,
+				9675D67C1A87EBDA00CFA33C /* CFNetworkSwiftTests.swift in Sources */,
+				9675D6811A87EBDA00CFA33C /* SharedSwiftTestCase.swift in Sources */,
+				9675D67D1A87EBDA00CFA33C /* CoreGraphicsSwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,18 +902,23 @@
 /* Begin PBXTargetDependency section */
 		962B272D1A7031C5003A213C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9636C84D182977A700FD4AEA /* LLDB iOS Test App */;
+			target = 9636C84D182977A700FD4AEA /* LLDB iOS App */;
 			targetProxy = 962B272C1A7031C5003A213C /* PBXContainerItemProxy */;
 		};
 		9636C878182977A700FD4AEA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9636C84D182977A700FD4AEA /* LLDB iOS Test App */;
+			target = 9636C84D182977A700FD4AEA /* LLDB iOS App */;
 			targetProxy = 9636C877182977A700FD4AEA /* PBXContainerItemProxy */;
 		};
 		9660192A198587C200BDBB71 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 96601906198587C100BDBB71 /* LLDB Mac Test App */;
+			target = 96601906198587C100BDBB71 /* LLDB Mac App */;
 			targetProxy = 96601929198587C200BDBB71 /* PBXContainerItemProxy */;
+		};
+		9675D6711A87EA9F00CFA33C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9636C84D182977A700FD4AEA /* LLDB iOS App */;
+			targetProxy = 9675D6701A87EA9F00CFA33C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -899,7 +976,7 @@
 /* Begin XCBuildConfiguration section */
 		962B272F1A7031C5003A213C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBCA053ECCB9F886894C743D /* Pods-LLDB iOS Test App KIF.debug.xcconfig */;
+			baseConfigurationReference = 9A0FE07D9303545DF8D49AD8 /* Pods-LLDB iOS App KIF.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -909,24 +986,23 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LLDB iOS Test App KIF/LLDB iOS Test App KIF-Prefix.pch";
+				GCC_PREFIX_HEADER = "LLDB iOS App KIF/LLDB iOS App KIF-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "LLDB iOS Test App KIF/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				INFOPLIST_FILE = "LLDB iOS App KIF/LLDB iOS App KIF-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LLDB iOS Test App.app/LLDB iOS Test App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LLDB iOS App.app/LLDB iOS App";
 			};
 			name = Debug;
 		};
 		962B27301A7031C5003A213C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB1EE8E0CD9393842D4E8A8A /* Pods-LLDB iOS Test App KIF.release.xcconfig */;
+			baseConfigurationReference = 384920F1A68E138ABA620A4E /* Pods-LLDB iOS App KIF.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -937,14 +1013,13 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LLDB iOS Test App KIF/LLDB iOS Test App KIF-Prefix.pch";
+				GCC_PREFIX_HEADER = "LLDB iOS App KIF/LLDB iOS App KIF-Prefix.pch";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "LLDB iOS Test App KIF/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				INFOPLIST_FILE = "LLDB iOS App KIF/LLDB iOS App KIF-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LLDB iOS Test App.app/LLDB iOS Test App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LLDB iOS App.app/LLDB iOS App";
 			};
 			name = Release;
 		};
@@ -964,7 +1039,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1003,7 +1077,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1022,14 +1095,14 @@
 		};
 		9636C884182977A700FD4AEA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84C74F1235B516E2B1DBC411 /* Pods-LLDB iOS Test App.debug.xcconfig */;
+			baseConfigurationReference = D809A9DCCBAD72E9D08C7532 /* Pods-LLDB iOS App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LLDB iOS Test App/LLDB iOS Test App-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/LLDB iOS Test App/LLDB iOS Test App-Info.plist";
+				GCC_PREFIX_HEADER = "LLDB iOS App/LLDB iOS App-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/LLDB iOS App/LLDB iOS App-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1037,14 +1110,14 @@
 		};
 		9636C885182977A700FD4AEA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DA5C0FBEB3F483539462ACE /* Pods-LLDB iOS Test App.release.xcconfig */;
+			baseConfigurationReference = D11F59B1D6471342EEECB7C4 /* Pods-LLDB iOS App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LLDB iOS Test App/LLDB iOS Test App-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/LLDB iOS Test App/LLDB iOS Test App-Info.plist";
+				GCC_PREFIX_HEADER = "LLDB iOS App/LLDB iOS App-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/LLDB iOS App/LLDB iOS App-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1053,7 +1126,7 @@
 		9636C887182977A700FD4AEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LLDB iOS Test App.app/LLDB iOS Test App";
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1061,17 +1134,15 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LLDB iOS Test AppTests/LLDB iOS Test AppTests-Prefix.pch";
+				GCC_PREFIX_HEADER = "LLDB iOS App Tests/LLDB iOS App Tests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "LLDB iOS Test AppTests/LLDB iOS Test AppTests-Info.plist";
+				INFOPLIST_FILE = "LLDB iOS App Tests/LLDB iOS App Tests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "LLDB iOS Test AppTests/LLDB iOS Test AppTests-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LLDB iOS App.app/LLDB iOS App";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -1079,7 +1150,7 @@
 		9636C888182977A700FD4AEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LLDB iOS Test App.app/LLDB iOS Test App";
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1087,12 +1158,11 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LLDB iOS Test AppTests/LLDB iOS Test AppTests-Prefix.pch";
-				INFOPLIST_FILE = "LLDB iOS Test AppTests/LLDB iOS Test AppTests-Info.plist";
+				GCC_PREFIX_HEADER = "LLDB iOS App Tests/LLDB iOS App Tests-Prefix.pch";
+				INFOPLIST_FILE = "LLDB iOS App Tests/LLDB iOS App Tests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "LLDB iOS Test AppTests/LLDB iOS Test AppTests-Bridging-Header.h";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LLDB iOS App.app/LLDB iOS App";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -1108,13 +1178,13 @@
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LLDB Mac Test App/LLDB Mac Test App-Prefix.pch";
+				GCC_PREFIX_HEADER = "LLDB Mac App/LLDB Mac App-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "LLDB Mac Test App/LLDB Mac Test App-Info.plist";
+				INFOPLIST_FILE = "LLDB Mac App/LLDB Mac App-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1134,9 +1204,9 @@
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LLDB Mac Test App/LLDB Mac Test App-Prefix.pch";
+				GCC_PREFIX_HEADER = "LLDB Mac App/LLDB Mac App-Prefix.pch";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "LLDB Mac Test App/LLDB Mac Test App-Info.plist";
+				INFOPLIST_FILE = "LLDB Mac App/LLDB Mac App-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1147,7 +1217,7 @@
 		96601935198587C200BDBB71 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LLDB Mac Test App.app/Contents/MacOS/LLDB Mac Test App";
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -1155,17 +1225,17 @@
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LLDB Mac Test App/LLDB Mac Test App-Prefix.pch";
+				GCC_PREFIX_HEADER = "LLDB Mac App/LLDB Mac App-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "LLDB Mac Test AppTests/LLDB Mac Test AppTests-Info.plist";
+				INFOPLIST_FILE = "LLDB Mac App Tests/LLDB Mac App Tests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LLDB Mac App.app/Contents/MacOS/LLDB Mac App";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -1173,7 +1243,7 @@
 		96601936198587C200BDBB71 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LLDB Mac Test App.app/Contents/MacOS/LLDB Mac Test App";
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1182,21 +1252,66 @@
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LLDB Mac Test App/LLDB Mac Test App-Prefix.pch";
+				GCC_PREFIX_HEADER = "LLDB Mac App/LLDB Mac App-Prefix.pch";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "LLDB Mac Test AppTests/LLDB Mac Test AppTests-Info.plist";
+				INFOPLIST_FILE = "LLDB Mac App Tests/LLDB Mac App Tests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LLDB Mac App.app/Contents/MacOS/LLDB Mac App";
 				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		9675D6731A87EA9F00CFA33C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "LLDB iOS App Swift Tests/LLDB iOS App Swift Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LLDB iOS App.app/LLDB iOS App";
+			};
+			name = Debug;
+		};
+		9675D6741A87EA9F00CFA33C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "LLDB iOS App Swift Tests/LLDB iOS App Swift Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LLDB iOS App.app/LLDB iOS App";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		962B272E1A7031C5003A213C /* Build configuration list for PBXNativeTarget "LLDB iOS Test App KIF" */ = {
+		962B272E1A7031C5003A213C /* Build configuration list for PBXNativeTarget "LLDB iOS App KIF" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				962B272F1A7031C5003A213C /* Debug */,
@@ -1214,7 +1329,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9636C883182977A700FD4AEA /* Build configuration list for PBXNativeTarget "LLDB iOS Test App" */ = {
+		9636C883182977A700FD4AEA /* Build configuration list for PBXNativeTarget "LLDB iOS App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9636C884182977A700FD4AEA /* Debug */,
@@ -1223,7 +1338,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9636C886182977A700FD4AEA /* Build configuration list for PBXNativeTarget "LLDB iOS Test AppTests" */ = {
+		9636C886182977A700FD4AEA /* Build configuration list for PBXNativeTarget "LLDB iOS App Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9636C887182977A700FD4AEA /* Debug */,
@@ -1232,7 +1347,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		96601937198587C200BDBB71 /* Build configuration list for PBXNativeTarget "LLDB Mac Test App" */ = {
+		96601937198587C200BDBB71 /* Build configuration list for PBXNativeTarget "LLDB Mac App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96601933198587C200BDBB71 /* Debug */,
@@ -1241,11 +1356,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		96601938198587C200BDBB71 /* Build configuration list for PBXNativeTarget "LLDB Mac Test AppTests" */ = {
+		96601938198587C200BDBB71 /* Build configuration list for PBXNativeTarget "LLDB Mac App Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96601935198587C200BDBB71 /* Debug */,
 				96601936198587C200BDBB71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9675D6721A87EA9F00CFA33C /* Build configuration list for PBXNativeTarget "LLDB iOS App Swift Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9675D6731A87EA9F00CFA33C /* Debug */,
+				9675D6741A87EA9F00CFA33C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
