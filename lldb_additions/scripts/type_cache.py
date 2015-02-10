@@ -132,6 +132,7 @@ class TypeCache(object):
             self.types["addr_type"] = target.GetBasicType(lldb.eBasicTypeUnsignedLong)
 
         self.types["addr_ptr_type"] = self.types["addr_type"].GetPointerType()
+        self.types["void_ptr_type"] = target.GetBasicType(lldb.eBasicTypeVoid).GetPointerType()
         self.types["CGPoint"] = target.FindFirstType("CGPoint")
         self.types["CGSize"] = target.FindFirstType("CGSize")
         self.types["CGRect"] = target.FindFirstType("CGRect")

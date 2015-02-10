@@ -57,17 +57,14 @@ class NSURLRequestSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         """:type: NSURLRequestInternal.NSURLRequestInternalSyntheticProvider"""
         request = request_internal.request_provider
         """:type: CFURLRequest.CFURLRequestSyntheticProvider"""
-        headers = request.get_http_headers()
-        """:type: lldb.SBValue"""
-        headers_value = request.get_http_headers_value()
-        """:type: int"""
+        http_message = request.http_message_provider
+        """:type: CFHTTPMessage.CFHTTPMessageContentSyntheticProvider"""
+        headers_dict = http_message.get_http_header_dict_provider()
+        headers_count = headers_dict.all_http_header_fields_value
 
-        headers = headers.GetDynamicValue(self.default_dynamic_type)
-        """:type: lldb.SBValue"""
-        if headers_value is None or headers_value == 0:
+        if headers_count is None or headers_count == 0:
             return None
-
-        return headers
+        return headers_dict.all_http_header_fields
 
     def get_child_index(self, name):
         return None
