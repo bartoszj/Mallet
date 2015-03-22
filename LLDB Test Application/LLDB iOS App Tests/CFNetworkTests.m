@@ -84,7 +84,7 @@
     [self compareObject:request ofType:@"NSURLRequest *" toSummary:@"GET, https://google.com"];
 }
 
-#pragma mark - NSURLConnection
+#pragma mark - NSURLResponse
 - (void)testNSURLResponse01
 {
     NSURL *url = [NSURL URLWithString:@"http://api.openweathermap.org/data/2.5/weather?q=London,uk"];
@@ -93,6 +93,11 @@
     XCTestExpectation *exceptation = [self expectationWithDescription:@"GET"];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        
+        [self compareObject:response ofType:@"NSURLResponse *" toSummary:@"http://api.openweathermap.org/data/2.5/weather?q=London,uk"];
+        [self compareObject:httpResponse ofType:@"NSHTTPURLResponse *" toSummary:@"http://api.openweathermap.org/data/2.5/weather?q=London,uk"];
         
         [exceptation fulfill];
     }];

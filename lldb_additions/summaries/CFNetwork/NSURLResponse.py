@@ -3,7 +3,7 @@
 
 # The MIT License (MIT)
 #
-# Copyright (c) 2014 Bartosz Janda
+# Copyright (c) 2015 Bartosz Janda
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
 # this software and associated documentation files (the "Software"), to deal in
@@ -24,28 +24,28 @@
 
 from ...scripts import helpers
 from ..Foundation import NSObject
-import NSURLRequestInternal
+import NSURLResponseInternal
 
 
-class NSURLRequestSyntheticProvider(NSObject.NSObjectSyntheticProvider):
+class NSURLResponseSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
-    Class representing NSURLRequest.
+    Class representing NSURLResponse.
     """
     def __init__(self, value_obj, internal_dict):
-        super(NSURLRequestSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.type_name = "NSURLRequest"
+        super(NSURLResponseSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "NSURLResponse"
 
-        self.register_child_value("request_internal", ivar_name="_internal",
-                                  provider_class=NSURLRequestInternal.NSURLRequestInternalSyntheticProvider,
-                                  summary_function=self.get_request_internal_summary)
+        self.register_child_value("response_internal", ivar_name="_internal",
+                                  provider_class=NSURLResponseInternal.NSURLResponseInternalSyntheticProvider,
+                                  summary_function=self.get_response_internal_summary)
 
         self.synthetic_type = self.SYNTHETIC_PROXY_VALUE
         self.synthetic_proxy_value = self.get_proxy_value()
 
     @staticmethod
-    def get_request_internal_summary(provider):
+    def get_response_internal_summary(provider):
         """
-        :param NSURLRequestInternal.NSURLRequestInternalSyntheticProvider provider: NSURLRequestInternal provider.
+        :param NSURLResponseInternal.NSURLResponseInternalSyntheticProvider provider: NSURLResponseInternal provider.
         """
         return provider.summary()
 
@@ -56,10 +56,10 @@ class NSURLRequestSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         :return: Proxy value.
         :rtype: lldb.SBValue
         """
-        request_internal = self.request_internal_provider
-        """:type: NSURLRequestInternal.NSURLRequestInternalSyntheticProvider"""
-        request = request_internal.request_provider
-        """:type: CFURLResponse.CFURLResponseSyntheticProvider"""
+        response_internal = self.response_internal_provider
+        """:type: NSURLResponseInternal.NSURLResponseInternalSyntheticProvider"""
+        request = response_internal.response_provider
+        """:type: CFURLRequest.CFURLRequestSyntheticProvider"""
         http_message_content = request.http_message_content_provider
         """:type: CFHTTPMessage.CFHTTPMessageContentSyntheticProvider"""
         headers_dict = http_message_content.get_http_header_dict_provider()
@@ -73,18 +73,18 @@ class NSURLRequestSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         return None
 
     def summary(self):
-        return self.request_internal_summary
+        return self.response_internal_summary
 
 
 def summary_provider(value_obj, internal_dict):
-    return helpers.generic_summary_provider(value_obj, internal_dict, NSURLRequestSyntheticProvider)
+    return helpers.generic_summary_provider(value_obj, internal_dict, NSURLResponseSyntheticProvider)
 
 
 def lldb_init(debugger, dictionary):
     debugger.HandleCommand("type summary add -F {}.summary_provider \
                             --category CFNetwork \
-                            NSURLRequest NSMutableURLRequest".format(__name__))
-    debugger.HandleCommand("type synthetic add -l {}.NSURLRequestSyntheticProvider \
+                            NSURLResponse".format(__name__))
+    debugger.HandleCommand("type synthetic add -l {}.NSURLResponseSyntheticProvider \
                            --category CFNetwork \
-                           NSURLRequest NSMutableURLRequest".format(__name__))
+                           NSURLResponse NSHTTPURLResponse".format(__name__))
     debugger.HandleCommand("type category enable CFNetwork")

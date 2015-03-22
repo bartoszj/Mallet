@@ -16,6 +16,10 @@ fi
 CPY=(
     "CFNetwork.framework/NSURLRequest.json"
     "CFNetwork.framework/NSURLRequestInternal.json"
+    "CFNetwork.framework/NSURLResponse.json"
+    "CFNetwork.framework/NSURLResponseInternal.json"
+    "CFNetwork.framework/NSHTTPURLResponse.json"
+    "CFNetwork.framework/NSHTTPURLResponseInternal.json"
 
     "Foundation.framework/NSLayoutConstraint.json"
     "Foundation.framework/NSURLComponents.json"

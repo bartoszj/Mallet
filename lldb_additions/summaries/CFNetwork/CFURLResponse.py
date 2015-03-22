@@ -3,7 +3,7 @@
 
 # The MIT License (MIT)
 #
-# Copyright (c) 2014 Bartosz Janda
+# Copyright (c) 2015 Bartosz Janda
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
 # this software and associated documentation files (the "Software"), to deal in
@@ -27,32 +27,32 @@ from .. import SummaryBase
 import CFHTTPMessage
 
 
-class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
+class CFURLResponseSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
     """
-    Class representing CFURLRequest structure.
+    Class representing CFURLResponse structure.
 
     :param int url_offset: Offset to HTTP url.
     :param int http_message_content_offset: Offset to CFHTTPMessageRef content.
     """
-    # CFURLRequest:
+    # CFURLResponse:
     # Offset / size + alignment (+ arch alignment)                          armv7:                  arm64:
     #
-    # NSURL *url                                                             20 = 0x14 / 4           40 = 0x28 / 8
-    # CFHTTPMessageRef http_message_content                                  48 = 0x30 / 4           88 = 0x58 / 8
+    # NSURL *url                                                             16 = 0x10 / 4           32 = 0x20 / 8
+    # CFHTTPMessageRef http_message_content                                  68 = 0x44 / 4          113 = 0x70 / 8
 
     def __init__(self, value_obj, internal_dict):
         """
         :param lldb.SBValue value_obj: LLDB variable to compute summary.
         :param dict internal_dict: Internal LLDB dictionary.
         """
-        super(CFURLRequestSyntheticProvider, self).__init__(value_obj, internal_dict)
+        super(CFURLResponseSyntheticProvider, self).__init__(value_obj, internal_dict)
 
         if self.is_64bit:
-            self.url_offset = 0x28
-            self.http_message_content_offset = 0x58
+            self.url_offset = 0x20
+            self.http_message_content_offset = 0x70
         else:
-            self.url_offset = 0x14
-            self.http_message_content_offset = 0x30
+            self.url_offset = 0x10
+            self.http_message_content_offset = 0x44
 
         self.register_child_value("url", type_name="NSURL *", offset=self.url_offset,
                                   primitive_value_function=SummaryBase.get_stripped_summary_value,
@@ -72,18 +72,16 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
         return "{}".format(value)
 
     def summary(self):
-        summary = SummaryBase.join_summaries(self.http_message_content_provider.http_method_summary,
-                                             self.url_summary,
-                                             self.http_message_content_provider.tmp1_provider.http_body_summary)
+        summary = SummaryBase.join_summaries(self.url_summary)
         return summary
 
 
 def summary_provider(value_obj, internal_dict):
-    return helpers.generic_summary_provider(value_obj, internal_dict, CFURLRequestSyntheticProvider)
+    return helpers.generic_summary_provider(value_obj, internal_dict, CFURLResponseSyntheticProvider)
 
 
 def lldb_init(debugger, dictionary):
     debugger.HandleCommand("type summary add -F {}.summary_provider \
                             --category CFNetwork \
-                            _CFURLRequest".format(__name__))
+                            CFURLResponse".format(__name__))
     debugger.HandleCommand("type category enable CFNetwork")

@@ -1,0 +1,54 @@
+{
+  "arm64":{
+    "className":"NSHTTPURLResponse",
+    "ivars":[
+      {
+        "ivarType":"NSHTTPURLResponseInternal *",
+        "name":"_httpInternal",
+        "offset":16,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSURLResponse",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"NSHTTPURLResponse",
+    "ivars":[
+      {
+        "ivarType":"NSHTTPURLResponseInternal *",
+        "name":"_httpInternal",
+        "offset":8,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSURLResponse",
+    "type":"class"
+  },
+  "i386":{
+    "className":"NSHTTPURLResponse",
+    "ivars":[
+      {
+        "ivarType":"NSHTTPURLResponseInternal *",
+        "name":"_httpInternal",
+        "offset":8,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSURLResponse",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"NSHTTPURLResponse",
+    "ivars":[
+      {
+        "ivarType":"NSHTTPURLResponseInternal *",
+        "name":"_httpInternal",
+        "offset":16,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSURLResponse",
+    "type":"class"
+  }
+}

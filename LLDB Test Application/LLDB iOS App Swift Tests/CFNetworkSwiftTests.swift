@@ -71,4 +71,22 @@ class CFNetworkSwiftTests: SharedSwiftTestCase {
         self.compareObject(mutableRequest, type: "NSMutableURLRequest", summary: "GET, https://google.com")
         self.compareObject(request, type: "NSURLRequest", summary: "GET, https://google.com")
     }
+
+    // MARK: - NSURLResponse
+    func testNSURLREsponse01() {
+        let url = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=London,uk")!
+        let request = NSURLRequest(URL: url)
+        
+        let expectation = self.expectationWithDescription("GET")
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
+            let httpResponse = response as NSHTTPURLResponse
+            self.compareObject(response, type: "NSURLResponse", summary: "http://api.openweathermap.org/data/2.5/weather?q=London,uk")
+            self.compareObject(httpResponse, type: "NSHTTPURLResponse", summary: "http://api.openweathermap.org/data/2.5/weather?q=London,uk")
+            
+            expectation.fulfill()
+        }
+        
+        self.waitForExpectationsWithTimeout(10, handler: nil)
+    }
 }

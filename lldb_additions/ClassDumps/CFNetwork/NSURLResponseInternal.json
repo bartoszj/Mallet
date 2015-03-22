@@ -1,0 +1,54 @@
+{
+  "arm64":{
+    "className":"NSURLResponseInternal",
+    "ivars":[
+      {
+        "ivarType":"struct _CFURLResponse *",
+        "name":"response",
+        "offset":8,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"NSURLResponseInternal",
+    "ivars":[
+      {
+        "ivarType":"struct _CFURLResponse *",
+        "name":"response",
+        "offset":4,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "i386":{
+    "className":"NSURLResponseInternal",
+    "ivars":[
+      {
+        "ivarType":"struct _CFURLResponse *",
+        "name":"response",
+        "offset":4,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"NSURLResponseInternal",
+    "ivars":[
+      {
+        "ivarType":"struct _CFURLResponse *",
+        "name":"response",
+        "offset":8,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  }
+}

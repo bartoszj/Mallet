@@ -18,6 +18,7 @@ The summaries will be available the next time Xcode starts.
     - CGVector
 - CFNetowrk:
     - NSURLRequest (NSMutableURLRequest)
+    - NSURLResponse, NSHTTPURLResponse
 - Foundation:
     - NSDateComponents
     - NSLayoutConstraint
@@ -70,6 +71,7 @@ The summaries will be available the next time Xcode starts.
 ## Supported synthetic children:
 - CFNetowrk:
     - NSURLRequest / NSMutableURLRequest
+    - NSURLResponse, NSHTTPURLResponse
 - Foundation:
     - NSDateComponents
     - NSURLComponents
