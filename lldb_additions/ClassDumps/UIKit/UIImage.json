@@ -1,0 +1,174 @@
+{
+  "arm64":{
+    "className":"UIImage",
+    "ivars":[
+      {
+        "ivarType":"void *",
+        "name":"_imageRef",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_scale",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int named:1;\n        unsigned int imageOrientation:3;\n        unsigned int cached:1;\n        unsigned int hasPattern:1;\n        unsigned int isCIImage:1;\n        unsigned int renderingMode:2;\n        unsigned int suppressesAccessibilityHairlineThickening:1;\n        unsigned int hasDecompressionInfo:1;\n    }",
+        "name":"_imageFlags",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_traitCollection",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIImageAsset *",
+        "name":"_imageAsset",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_alignmentRectInsets",
+        "offset":48,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"UIImage",
+    "ivars":[
+      {
+        "ivarType":"void *",
+        "name":"_imageRef",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_scale",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int named:1;\n        unsigned int imageOrientation:3;\n        unsigned int cached:1;\n        unsigned int hasPattern:1;\n        unsigned int isCIImage:1;\n        unsigned int renderingMode:2;\n        unsigned int suppressesAccessibilityHairlineThickening:1;\n        unsigned int hasDecompressionInfo:1;\n    }",
+        "name":"_imageFlags",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_traitCollection",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIImageAsset *",
+        "name":"_imageAsset",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_alignmentRectInsets",
+        "offset":24,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "i386":{
+    "className":"UIImage",
+    "ivars":[
+      {
+        "ivarType":"void *",
+        "name":"_imageRef",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_scale",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int named:1;\n        unsigned int imageOrientation:3;\n        unsigned int cached:1;\n        unsigned int hasPattern:1;\n        unsigned int isCIImage:1;\n        unsigned int renderingMode:2;\n        unsigned int suppressesAccessibilityHairlineThickening:1;\n        unsigned int hasDecompressionInfo:1;\n    }",
+        "name":"_imageFlags",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_traitCollection",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIImageAsset *",
+        "name":"_imageAsset",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_alignmentRectInsets",
+        "offset":24,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"UIImage",
+    "ivars":[
+      {
+        "ivarType":"void *",
+        "name":"_imageRef",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_scale",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int named:1;\n        unsigned int imageOrientation:3;\n        unsigned int cached:1;\n        unsigned int hasPattern:1;\n        unsigned int isCIImage:1;\n        unsigned int renderingMode:2;\n        unsigned int suppressesAccessibilityHairlineThickening:1;\n        unsigned int hasDecompressionInfo:1;\n    }",
+        "name":"_imageFlags",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_traitCollection",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIImageAsset *",
+        "name":"_imageAsset",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct UIEdgeInsets",
+        "name":"_alignmentRectInsets",
+        "offset":48,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  }
+}

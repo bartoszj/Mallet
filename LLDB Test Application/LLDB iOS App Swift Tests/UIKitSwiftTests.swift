@@ -382,4 +382,21 @@ class UIKitSwiftTests: SharedSwiftTestCase {
 //        let color = UIColor(red: 0.3, green: 0.6, blue: 0.9, alpha: 1.0)
 //        self.compareObject(color, type: "UIDeviceRGBColor", summary: "rgb=#4D99E6, red=0.3, green=0.6, blue=0.9")
 //    }
+    
+    // MARK: - UIImage
+    func testUIImage01() {
+        let img = UIImage(named: "LLVM_scale")!
+        let i = img.CGImage
+        
+        if img.scale == 1 {
+            self.compareObject(img, type: "UIImage", summary: "(width=75, height=83)")
+            self.compareObject(i, type: "CGImage", summary: "(width=75, height=83)")
+        } else if img.scale == 2 {
+            self.compareObject(img, type: "UIImage", summary: "(width=75, height=83), @2x")
+            self.compareObject(i, type: "CGImage", summary: "(width=150, height=166)")
+        } else {
+            self.compareObject(img, type: "UIImage", summary: "(width=75, height=83.33), @3x")
+            self.compareObject(i, type: "CGImage", summary: "(width=225, height=250)")
+        }
+    }
 }

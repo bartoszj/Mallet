@@ -15,6 +15,7 @@ The summaries will be available the next time Xcode starts.
 ## Supported summaries:
 - CoreGraphics:
     - CGAffineTransform
+    - CGImage
     - CGVector
 - CFNetowrk:
     - NSURLRequest (NSMutableURLRequest)
@@ -37,6 +38,7 @@ The summaries will be available the next time Xcode starts.
     - UIDatePicker
     - UIEdgeInsets
     - UIEvent / UIInternalEvent / UITouchesEvent
+    - UIImage
     - UILabel
     - UINavigationController
     - UINib / UINibStorage

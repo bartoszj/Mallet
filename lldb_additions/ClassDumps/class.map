@@ -58,5 +58,6 @@ SKReceiptRefreshRequest:StoreKit/SKReceiptRefreshRequest.json
 UIViewController:UIKit/UIViewController.json
 SKProductsResponseInternal:StoreKit/SKProductsResponseInternal.json
 CALayer:QuartzCore/CALayer.json
+UIImage:UIKit/UIImage.json
 UIBarButtonItem:UIKit/UIBarButtonItem.json
 UISegmentedControl:UIKit/UISegmentedControl.json

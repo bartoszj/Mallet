@@ -441,4 +441,22 @@
     [self compareObject:color ofType:@"UIDeviceRGBColor *" toSummary:@"rgb=#4D99E6, red=0.3, green=0.6, blue=0.9"];
 }
 
+#pragma mark - UIImage
+- (void)testUIImage01
+{
+    UIImage *img = [UIImage imageNamed:@"LLVM_scale"];
+    CGImageRef i = img.CGImage;
+    
+    if (img.scale == 1) {
+        [self compareObject:img ofType:@"UIImage *" toSummary:@"(width=75, height=83)"];
+        [self compareVariable:i ofType:@"CGImageRef" toSummary:@"(width=75, height=83)"];
+    } else if (img.scale == 2) {
+        [self compareObject:img ofType:@"UIImage *" toSummary:@"(width=75, height=83), @2x"];
+        [self compareVariable:i ofType:@"CGImageRef" toSummary:@"(width=150, height=166)"];
+    } else {
+        [self compareObject:img ofType:@"UIImage *" toSummary:@"(width=75, height=83.33), @3x"];
+        [self compareVariable:i ofType:@"CGImageRef" toSummary:@"(width=225, height=250)"];
+    }
+}
+
 @end

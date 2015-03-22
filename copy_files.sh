@@ -14,12 +14,12 @@ fi
 
 # Files to copy
 CPY=(
+    "CFNetwork.framework/NSHTTPURLResponse.json"
+    "CFNetwork.framework/NSHTTPURLResponseInternal.json"
     "CFNetwork.framework/NSURLRequest.json"
     "CFNetwork.framework/NSURLRequestInternal.json"
     "CFNetwork.framework/NSURLResponse.json"
     "CFNetwork.framework/NSURLResponseInternal.json"
-    "CFNetwork.framework/NSHTTPURLResponse.json"
-    "CFNetwork.framework/NSHTTPURLResponseInternal.json"
 
     "Foundation.framework/NSLayoutConstraint.json"
     "Foundation.framework/NSURLComponents.json"
@@ -56,6 +56,7 @@ CPY=(
     "UIKit.framework/UIDeviceRGBColor.json"
     "UIKit.framework/UIDeviceWhiteColor.json"
     "UIKit.framework/UIEvent.json"
+    "UIKit.framework/UIImage.json"
     "UIKit.framework/UIInternalEvent.json"
     "UIKit.framework/UILabel.json"
     "UIKit.framework/UINavigationController.json"
