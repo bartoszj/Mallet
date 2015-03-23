@@ -71,7 +71,7 @@ lldb_additions_string_summaries_dir = "StringSummaries"
 lldb_script_extensions = [".py"]
 lldb_scripts_paths = ["scripts"]
 lldb_commands_paths = ["commands",
-                       # "commands/debug"
+                       "commands/debug"
                        ]
 lldb_summaries_paths = ["summaries"]
 lldb_summaries_load_order = ["SummaryBase",

@@ -31,6 +31,9 @@
     
     CompareObjectWithSummary(self.rectView1, @"UIView *", @"frame=(42 72; 123 157)");
     CompareObjectWithSummary(self.imageView, @"UIImageView *", @"frame=(173 72; 128 128)");
+    
+    CompareObjectWithSummary(self.imageView.image, @"UIImage *", @"(width=128, height=128)");
+//    CompareVariableWithSummary(self.imageView.image.CGImage, @"CGimageRef", @"(width=128, height=128)");
 }
 
 @end
