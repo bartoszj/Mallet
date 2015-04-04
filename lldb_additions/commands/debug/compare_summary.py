@@ -85,7 +85,7 @@ def compare_summary(debugger, command, result, internal_dict):
     options.SetIgnoreBreakpoints()
     if use_swift:
         options.SetLanguage(lldb.eLanguageTypeSwift)
-        casted_val = obj_val.CreateValueFromExpression("casted", "{} as {}".format(obj_name, class_type_name), options)
+        casted_val = obj_val.CreateValueFromExpression("casted", "{} as! {}".format(obj_name, class_type_name), options)
         """:type: lldb.SBValue"""
     else:
         casted_val = obj_val.CreateValueFromExpression("casted", "({}){}".format(class_type_name, obj_name), options)

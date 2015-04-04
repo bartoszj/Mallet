@@ -70,7 +70,7 @@
     nf.minimumFractionDigits = 0;
     NSString *x = [nf stringFromNumber:@(locationInWindow.x)];
     NSString *y = [nf stringFromNumber:@(locationInWindow.y)];
-    NSString *touchSummary = [NSString stringWithFormat:@"locationInWindow=(x=%@, y=%@), phase=ended, tapCount=1", x, y];
+    NSString *touchSummary = [NSString stringWithFormat:@"locationInWindow=(x = %@, y = %@), phase=ended, tapCount=1", x, y];
     CompareObjectWithSummary(touch, @"UITouch *", touchSummary);
     CompareObjectWithSummary(event, @"UIEvent *", @"touches=1");
 }
