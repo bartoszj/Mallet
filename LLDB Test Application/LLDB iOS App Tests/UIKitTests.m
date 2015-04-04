@@ -69,7 +69,16 @@
 {
     UIImage *image = [UIImage imageNamed:@"llvm"];
     UIImageView *view = [[UIImageView alloc] initWithImage:image];
-    [self compareObject:view ofType:@"UIImageView *" toSummary:@"frame=(0 0; 128 128)"];
+    [self compareObject:view ofType:@"UIImageView *" toSummary:@"frame=(0 0; 128 128), image=(width=128, height=128)"];
+}
+
+- (void)testUIImageView2
+{
+    UIImage *image = [UIImage imageNamed:@"LLVM_scale"];
+    UIImageView *view = [[UIImageView alloc] init];
+    [self compareObject:view ofType:@"UIImageView *" toSummary:@"frame=(0 0; 0 0)"];
+    view.image = image;
+    [self compareObject:view ofType:@"UIImageView *" toSummary:@"frame=(0 0; 0 0), image=(width=75, height=83), @2x"];
 }
 
 #pragma mark - UIWindow

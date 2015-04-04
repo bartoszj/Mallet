@@ -58,7 +58,15 @@ class UIKitSwiftTests: SharedSwiftTestCase {
     func testUIImageView1() {
         let image = UIImage(named: "llvm")!
         let view = UIImageView(image: image)
-        self.compareObject(view, type: "UIImageView", summary: "frame=(0 0; 128 128)")
+        self.compareObject(view, type: "UIImageView", summary: "frame=(0 0; 128 128), image=(width=128, height=128)")
+    }
+    
+    func testUIImageView2() {
+        let image = UIImage(named: "LLVM_scale")!
+        let view = UIImageView()
+        self.compareObject(view, type: "UIImageView", summary: "frame=(0 0; 0 0)")
+        view.image = image
+        self.compareObject(view, type: "UIImageView", summary: "frame=(0 0; 0 0), image=(width=75, height=83), @2x")
     }
     
     // MARK: - UIWindow

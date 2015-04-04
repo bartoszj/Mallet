@@ -57,6 +57,7 @@ CPY=(
     "UIKit.framework/UIDeviceWhiteColor.json"
     "UIKit.framework/UIEvent.json"
     "UIKit.framework/UIImage.json"
+    "UIKit.framework/UIImageView.json"
     "UIKit.framework/UIInternalEvent.json"
     "UIKit.framework/UILabel.json"
     "UIKit.framework/UINavigationController.json"

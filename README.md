@@ -39,6 +39,7 @@ The summaries will be available the next time Xcode starts.
     - UIEdgeInsets
     - UIEvent / UIInternalEvent / UITouchesEvent
     - UIImage
+    - UIImageView
     - UILabel
     - UINavigationController
     - UINib / UINibStorage
@@ -57,7 +58,7 @@ The summaries will be available the next time Xcode starts.
     - UITableViewCell
     - UITextField
     - UITouch
-    - UIView (UIImageView, UIWindow)
+    - UIView (UIWindow)
     - UIViewController
 - StoreKit:
     - SKDownload (not tested!)

@@ -60,9 +60,23 @@ class UIImageSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         return "@{}x".format(SummaryBase.formatted_float(value))
 
     def get_size_summary(self):
+        """
+        Returns image size summary.
+
+        :return: image size summary.
+        :rtype str | None
+        """
         scale = self.scale_value
-        width = self.image_ref_provider.width_value / scale
-        height = self.image_ref_provider.height_value / scale
+        if scale == 0 or scale is None:
+            return None
+
+        width = self.image_ref_provider.width_value
+        height = self.image_ref_provider.height_value
+        if width is None or height is None:
+            return None
+
+        width = width / scale
+        height = height / scale
         return "(width={}, height={})".format(SummaryBase.formatted_float(width), SummaryBase.formatted_float(height))
 
     def summary(self):
