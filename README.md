@@ -18,6 +18,8 @@ The summaries will be available the next time Xcode starts.
     - CGImage
     - CGVector
 - CFNetowrk:
+    - CFURLRequest
+    - CFURLResponse
     - NSURLRequest (NSMutableURLRequest)
     - NSURLResponse, NSHTTPURLResponse
 - Foundation:
