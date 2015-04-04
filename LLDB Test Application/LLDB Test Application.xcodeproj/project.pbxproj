@@ -49,7 +49,6 @@
 		9675D67C1A87EBDA00CFA33C /* CFNetworkSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675D6751A87EBDA00CFA33C /* CFNetworkSwiftTests.swift */; };
 		9675D67D1A87EBDA00CFA33C /* CoreGraphicsSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675D6761A87EBDA00CFA33C /* CoreGraphicsSwiftTests.swift */; };
 		9675D67E1A87EBDA00CFA33C /* FoundationSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675D6771A87EBDA00CFA33C /* FoundationSwiftTests.swift */; };
-		9675D67F1A87EBDA00CFA33C /* LLDB iOS App Swift Tests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9675D6781A87EBDA00CFA33C /* LLDB iOS App Swift Tests-Info.plist */; };
 		9675D6801A87EBDA00CFA33C /* QuartzCoreSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675D6791A87EBDA00CFA33C /* QuartzCoreSwiftTests.swift */; };
 		9675D6811A87EBDA00CFA33C /* SharedSwiftTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675D67A1A87EBDA00CFA33C /* SharedSwiftTestCase.swift */; };
 		9675D6821A87EBDA00CFA33C /* UIKitSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675D67B1A87EBDA00CFA33C /* UIKitSwiftTests.swift */; };
@@ -753,7 +752,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9675D67F1A87EBDA00CFA33C /* LLDB iOS App Swift Tests-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -980,6 +978,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1006,6 +1005,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1128,6 +1128,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1152,6 +1153,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1268,6 +1270,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1293,6 +1296,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
