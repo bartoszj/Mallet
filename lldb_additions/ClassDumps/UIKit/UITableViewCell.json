@@ -787,385 +787,385 @@
       {
         "ivarType":"UITableView *",
         "name":"_tableView",
-        "offset":104,
+        "offset":144,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_layoutManager",
-        "offset":108,
+        "offset":148,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_target",
-        "offset":112,
+        "offset":152,
         "type":"ivar"
       },
       {
         "ivarType":"SEL",
         "name":"_editAction",
-        "offset":116,
+        "offset":156,
         "type":"ivar"
       },
       {
         "ivarType":"SEL",
         "name":"_accessoryAction",
-        "offset":120,
+        "offset":160,
         "type":"ivar"
       },
       {
         "ivarType":"_UITableViewCellOldEditingData *",
         "name":"_oldEditingData",
-        "offset":124,
+        "offset":164,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_editingData",
-        "offset":128,
+        "offset":168,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_rightMargin",
-        "offset":132,
+        "offset":172,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_indentationLevel",
-        "offset":136,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"float",
-        "name":"_indentationWidth",
-        "offset":140,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"NSString *",
-        "name":"_reuseIdentifier",
-        "offset":144,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIView *",
-        "name":"_contentView",
-        "offset":148,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIImageView *",
-        "name":"_imageView",
-        "offset":152,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UILabel *",
-        "name":"_textLabel",
-        "offset":156,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UILabel *",
-        "name":"_detailTextLabel",
-        "offset":160,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIView *",
-        "name":"_backgroundView",
-        "offset":164,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIView *",
-        "name":"_selectedBackgroundView",
-        "offset":168,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIView *",
-        "name":"_multipleSelectionBackgroundView",
-        "offset":172,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIView *",
-        "name":"_selectedOverlayView",
         "offset":176,
         "type":"ivar"
       },
       {
         "ivarType":"float",
-        "name":"_selectionFadeDuration",
+        "name":"_indentationWidth",
         "offset":180,
         "type":"ivar"
       },
       {
-        "ivarType":"UIColor *",
-        "name":"_backgroundColor",
+        "ivarType":"NSString *",
+        "name":"_reuseIdentifier",
         "offset":184,
         "type":"ivar"
       },
       {
-        "ivarType":"UIColor *",
-        "name":"_separatorColor",
+        "ivarType":"UIView *",
+        "name":"_contentView",
         "offset":188,
         "type":"ivar"
       },
       {
-        "ivarType":"UIVisualEffect *",
-        "name":"_separatorEffect",
+        "ivarType":"UIImageView *",
+        "name":"_imageView",
         "offset":192,
         "type":"ivar"
       },
       {
-        "ivarType":"UIColor *",
-        "name":"_topShadowColor",
+        "ivarType":"UILabel *",
+        "name":"_textLabel",
         "offset":196,
         "type":"ivar"
       },
       {
-        "ivarType":"UIColor *",
-        "name":"_bottomShadowColor",
+        "ivarType":"UILabel *",
+        "name":"_detailTextLabel",
         "offset":200,
         "type":"ivar"
       },
       {
-        "ivarType":"UIColor *",
-        "name":"_sectionBorderColor",
+        "ivarType":"UIView *",
+        "name":"_backgroundView",
         "offset":204,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
-        "name":"_floatingSeparatorView",
+        "name":"_selectedBackgroundView",
         "offset":208,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
-        "name":"_topShadowAnimationView",
+        "name":"_multipleSelectionBackgroundView",
         "offset":212,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
-        "name":"_bottomShadowAnimationView",
+        "name":"_selectedOverlayView",
         "offset":216,
         "type":"ivar"
       },
       {
-        "ivarType":"id",
-        "name":"_badge",
+        "ivarType":"float",
+        "name":"_selectionFadeDuration",
         "offset":220,
         "type":"ivar"
       },
       {
-        "ivarType":"struct __CFDictionary *",
-        "name":"_unhighlightedStates",
+        "ivarType":"UIColor *",
+        "name":"_backgroundColor",
         "offset":224,
         "type":"ivar"
       },
       {
-        "ivarType":"id",
-        "name":"_highlightingSupport",
+        "ivarType":"UIColor *",
+        "name":"_separatorColor",
         "offset":228,
         "type":"ivar"
       },
       {
-        "ivarType":"id",
-        "name":"_selectionSegueTemplate",
+        "ivarType":"UIVisualEffect *",
+        "name":"_separatorEffect",
         "offset":232,
         "type":"ivar"
       },
       {
-        "ivarType":"id",
-        "name":"_accessoryActionSegueTemplate",
+        "ivarType":"UIColor *",
+        "name":"_topShadowColor",
         "offset":236,
         "type":"ivar"
       },
       {
-        "ivarType":"UIControl *",
-        "name":"_accessoryView",
+        "ivarType":"UIColor *",
+        "name":"_bottomShadowColor",
         "offset":240,
         "type":"ivar"
       },
       {
-        "ivarType":"UIControl *",
-        "name":"_editingAccessoryView",
+        "ivarType":"UIColor *",
+        "name":"_sectionBorderColor",
         "offset":244,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
-        "name":"_customAccessoryView",
+        "name":"_floatingSeparatorView",
         "offset":248,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
-        "name":"_customEditingAccessoryView",
+        "name":"_topShadowAnimationView",
         "offset":252,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIView *",
+        "name":"_bottomShadowAnimationView",
+        "offset":256,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"_badge",
+        "offset":260,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __CFDictionary *",
+        "name":"_unhighlightedStates",
+        "offset":264,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"_highlightingSupport",
+        "offset":268,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"_selectionSegueTemplate",
+        "offset":272,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"_accessoryActionSegueTemplate",
+        "offset":276,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIControl *",
+        "name":"_accessoryView",
+        "offset":280,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIControl *",
+        "name":"_editingAccessoryView",
+        "offset":284,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIView *",
+        "name":"_customAccessoryView",
+        "offset":288,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIView *",
+        "name":"_customEditingAccessoryView",
+        "offset":292,
         "type":"ivar"
       },
       {
         "ivarType":"_UITableViewCellSeparatorView *",
         "name":"_separatorView",
-        "offset":256,
+        "offset":296,
         "type":"ivar"
       },
       {
         "ivarType":"_UITableViewCellSeparatorView *",
         "name":"_topSeparatorView",
-        "offset":260,
+        "offset":300,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_topShadowView",
-        "offset":264,
+        "offset":304,
         "type":"ivar"
       },
       {
         "ivarType":"UITextField *",
         "name":"_editableTextField",
-        "offset":268,
+        "offset":308,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_lastSelectionTime",
-        "offset":272,
+        "offset":312,
         "type":"ivar"
       },
       {
         "ivarType":"NSTimer *",
         "name":"_deselectTimer",
-        "offset":280,
+        "offset":320,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_textFieldOffset",
-        "offset":284,
+        "offset":324,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_indexBarWidth",
-        "offset":288,
+        "offset":328,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_separatorInset",
-        "offset":292,
+        "offset":332,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_backgroundInset",
-        "offset":308,
+        "offset":348,
         "type":"ivar"
       },
       {
         "ivarType":"SEL",
         "name":"_returnAction",
-        "offset":324,
+        "offset":364,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_selectionTintColor",
-        "offset":328,
+        "offset":368,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_accessoryTintColor",
-        "offset":332,
+        "offset":372,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_reorderControlImage",
-        "offset":336,
+        "offset":376,
         "type":"ivar"
       },
       {
         "ivarType":"UILongPressGestureRecognizer *",
         "name":"_menuGesture",
-        "offset":340,
+        "offset":380,
         "type":"ivar"
       },
       {
         "ivarType":"NSIndexPath *",
         "name":"_representedIndexPath",
-        "offset":344,
+        "offset":384,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_isPigglyWigglyCell",
-        "offset":348,
+        "offset":388,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_focusable",
-        "offset":349,
+        "offset":389,
         "type":"ivar"
       },
       {
         "ivarType":"UITableViewCellDeleteConfirmationView *",
         "name":"_swipeToDeleteConfirmationView",
-        "offset":352,
+        "offset":392,
         "type":"ivar"
       },
       {
         "ivarType":"UITapGestureRecognizer *",
         "name":"_swipeToDeleteCancelationGesture",
-        "offset":356,
+        "offset":396,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_clearBlendingView",
-        "offset":360,
+        "offset":400,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_swipeToDeleteDistancePulled",
-        "offset":364,
+        "offset":404,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_sectionCornerRadius",
-        "offset":368,
+        "offset":408,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_sectionBorderWidth",
-        "offset":372,
+        "offset":412,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_defaultMarginWidth",
-        "offset":376,
+        "offset":416,
         "type":"ivar"
       },
       {
         "ivarType":"struct {\n        unsigned int showingDeleteConfirmation:1;\n        unsigned int separatorStyle:3;\n        unsigned int selectionStyle:3;\n        unsigned int selectionFadeFraction:11;\n        unsigned int editing:1;\n        unsigned int editingStyle:3;\n        unsigned int accessoryType:3;\n        unsigned int editingAccessoryType:3;\n        unsigned int showsAccessoryWhenEditing:1;\n        unsigned int showsReorderControl:1;\n        unsigned int showDisclosure:1;\n        unsigned int showTopSeparator:1;\n        unsigned int hideTopSeparatorDuringReordering:1;\n        unsigned int disclosureClickable:1;\n        unsigned int disclosureStyle:1;\n        unsigned int showingRemoveControl:1;\n        unsigned int sectionLocation:3;\n        unsigned int tableViewStyle:1;\n        unsigned int shouldIndentWhileEditing:1;\n        unsigned int fontSet:1;\n        unsigned int usingDefaultSelectedBackgroundView:1;\n        unsigned int wasSwiped:1;\n        unsigned int highlighted:1;\n        unsigned int separatorDirty:1;\n        unsigned int drawn:1;\n        unsigned int drawingDisabled:1;\n        unsigned int style:12;\n        unsigned int showingMenu:1;\n        unsigned int clipsContents:1;\n        unsigned int animatingSelection:1;\n        unsigned int backgroundColorSet:1;\n        unsigned int needsSetup:1;\n        unsigned int dontDrawTopShadow:1;\n        unsigned int usingMultiselectbackgroundView:1;\n        unsigned int layoutLoopCounter:2;\n        unsigned int isPigglyWigglyCell;\n        unsigned int deleteAnimationInProgress:1;\n        unsigned int deleteCancelationAnimationInProgress:1;\n        unsigned int animating:1;\n        unsigned int shouldHaveFullLengthBottomSeparator:1;\n        unsigned int shouldHaveFullLengthTopSeparator:1;\n        unsigned int drawsSeparatorAtTopOfSection:1;\n        unsigned int drawsSeparatorAtBottomOfSection:1;\n        unsigned int separatorBackdropOverlayBlendMode:3;\n        unsigned int separatorDrawsInVibrantLightMode:1;\n        unsigned int separatorHidden:1;\n        unsigned int hidingSeparatorsForSelection:1;\n        unsigned int clippedBeforeSwiping:1;\n        unsigned int allowsReorderingWhenNotEditing:1;\n        unsigned int needsHeightCalculation:1;\n    }",
         "name":"_tableCellFlags",
-        "offset":380,
+        "offset":420,
         "type":"ivar"
       }
     ],
@@ -1178,385 +1178,385 @@
       {
         "ivarType":"UITableView *",
         "name":"_tableView",
-        "offset":200,
+        "offset":272,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_layoutManager",
-        "offset":208,
+        "offset":280,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_target",
-        "offset":216,
+        "offset":288,
         "type":"ivar"
       },
       {
         "ivarType":"SEL",
         "name":"_editAction",
-        "offset":224,
+        "offset":296,
         "type":"ivar"
       },
       {
         "ivarType":"SEL",
         "name":"_accessoryAction",
-        "offset":232,
+        "offset":304,
         "type":"ivar"
       },
       {
         "ivarType":"_UITableViewCellOldEditingData *",
         "name":"_oldEditingData",
-        "offset":240,
+        "offset":312,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_editingData",
-        "offset":248,
+        "offset":320,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_rightMargin",
-        "offset":256,
+        "offset":328,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_indentationLevel",
-        "offset":264,
+        "offset":336,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_indentationWidth",
-        "offset":272,
+        "offset":344,
         "type":"ivar"
       },
       {
         "ivarType":"NSString *",
         "name":"_reuseIdentifier",
-        "offset":280,
+        "offset":352,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_contentView",
-        "offset":288,
+        "offset":360,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_imageView",
-        "offset":296,
+        "offset":368,
         "type":"ivar"
       },
       {
         "ivarType":"UILabel *",
         "name":"_textLabel",
-        "offset":304,
+        "offset":376,
         "type":"ivar"
       },
       {
         "ivarType":"UILabel *",
         "name":"_detailTextLabel",
-        "offset":312,
+        "offset":384,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_backgroundView",
-        "offset":320,
+        "offset":392,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_selectedBackgroundView",
-        "offset":328,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIView *",
-        "name":"_multipleSelectionBackgroundView",
-        "offset":336,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIView *",
-        "name":"_selectedOverlayView",
-        "offset":344,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_selectionFadeDuration",
-        "offset":352,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIColor *",
-        "name":"_backgroundColor",
-        "offset":360,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIColor *",
-        "name":"_separatorColor",
-        "offset":368,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIVisualEffect *",
-        "name":"_separatorEffect",
-        "offset":376,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIColor *",
-        "name":"_topShadowColor",
-        "offset":384,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIColor *",
-        "name":"_bottomShadowColor",
-        "offset":392,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIColor *",
-        "name":"_sectionBorderColor",
         "offset":400,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
-        "name":"_floatingSeparatorView",
+        "name":"_multipleSelectionBackgroundView",
         "offset":408,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
-        "name":"_topShadowAnimationView",
+        "name":"_selectedOverlayView",
         "offset":416,
         "type":"ivar"
       },
       {
-        "ivarType":"UIView *",
-        "name":"_bottomShadowAnimationView",
+        "ivarType":"double",
+        "name":"_selectionFadeDuration",
         "offset":424,
         "type":"ivar"
       },
       {
-        "ivarType":"id",
-        "name":"_badge",
+        "ivarType":"UIColor *",
+        "name":"_backgroundColor",
         "offset":432,
         "type":"ivar"
       },
       {
-        "ivarType":"struct __CFDictionary *",
-        "name":"_unhighlightedStates",
+        "ivarType":"UIColor *",
+        "name":"_separatorColor",
         "offset":440,
         "type":"ivar"
       },
       {
-        "ivarType":"id",
-        "name":"_highlightingSupport",
+        "ivarType":"UIVisualEffect *",
+        "name":"_separatorEffect",
         "offset":448,
         "type":"ivar"
       },
       {
-        "ivarType":"id",
-        "name":"_selectionSegueTemplate",
+        "ivarType":"UIColor *",
+        "name":"_topShadowColor",
         "offset":456,
         "type":"ivar"
       },
       {
-        "ivarType":"id",
-        "name":"_accessoryActionSegueTemplate",
+        "ivarType":"UIColor *",
+        "name":"_bottomShadowColor",
         "offset":464,
         "type":"ivar"
       },
       {
-        "ivarType":"UIControl *",
-        "name":"_accessoryView",
+        "ivarType":"UIColor *",
+        "name":"_sectionBorderColor",
         "offset":472,
         "type":"ivar"
       },
       {
-        "ivarType":"UIControl *",
-        "name":"_editingAccessoryView",
+        "ivarType":"UIView *",
+        "name":"_floatingSeparatorView",
         "offset":480,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
-        "name":"_customAccessoryView",
+        "name":"_topShadowAnimationView",
         "offset":488,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
-        "name":"_customEditingAccessoryView",
+        "name":"_bottomShadowAnimationView",
         "offset":496,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"_badge",
+        "offset":504,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __CFDictionary *",
+        "name":"_unhighlightedStates",
+        "offset":512,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"_highlightingSupport",
+        "offset":520,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"_selectionSegueTemplate",
+        "offset":528,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"_accessoryActionSegueTemplate",
+        "offset":536,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIControl *",
+        "name":"_accessoryView",
+        "offset":544,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIControl *",
+        "name":"_editingAccessoryView",
+        "offset":552,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIView *",
+        "name":"_customAccessoryView",
+        "offset":560,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIView *",
+        "name":"_customEditingAccessoryView",
+        "offset":568,
         "type":"ivar"
       },
       {
         "ivarType":"_UITableViewCellSeparatorView *",
         "name":"_separatorView",
-        "offset":504,
+        "offset":576,
         "type":"ivar"
       },
       {
         "ivarType":"_UITableViewCellSeparatorView *",
         "name":"_topSeparatorView",
-        "offset":512,
+        "offset":584,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_topShadowView",
-        "offset":520,
+        "offset":592,
         "type":"ivar"
       },
       {
         "ivarType":"UITextField *",
         "name":"_editableTextField",
-        "offset":528,
+        "offset":600,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_lastSelectionTime",
-        "offset":536,
+        "offset":608,
         "type":"ivar"
       },
       {
         "ivarType":"NSTimer *",
         "name":"_deselectTimer",
-        "offset":544,
+        "offset":616,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_textFieldOffset",
-        "offset":552,
+        "offset":624,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_indexBarWidth",
-        "offset":560,
+        "offset":632,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_separatorInset",
-        "offset":568,
+        "offset":640,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_backgroundInset",
-        "offset":600,
+        "offset":672,
         "type":"ivar"
       },
       {
         "ivarType":"SEL",
         "name":"_returnAction",
-        "offset":632,
+        "offset":704,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_selectionTintColor",
-        "offset":640,
+        "offset":712,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_accessoryTintColor",
-        "offset":648,
+        "offset":720,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_reorderControlImage",
-        "offset":656,
+        "offset":728,
         "type":"ivar"
       },
       {
         "ivarType":"UILongPressGestureRecognizer *",
         "name":"_menuGesture",
-        "offset":664,
+        "offset":736,
         "type":"ivar"
       },
       {
         "ivarType":"NSIndexPath *",
         "name":"_representedIndexPath",
-        "offset":672,
+        "offset":744,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_isPigglyWigglyCell",
-        "offset":680,
+        "offset":752,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_focusable",
-        "offset":681,
+        "offset":753,
         "type":"ivar"
       },
       {
         "ivarType":"UITableViewCellDeleteConfirmationView *",
         "name":"_swipeToDeleteConfirmationView",
-        "offset":688,
+        "offset":760,
         "type":"ivar"
       },
       {
         "ivarType":"UITapGestureRecognizer *",
         "name":"_swipeToDeleteCancelationGesture",
-        "offset":696,
+        "offset":768,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_clearBlendingView",
-        "offset":704,
+        "offset":776,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_swipeToDeleteDistancePulled",
-        "offset":712,
+        "offset":784,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_sectionCornerRadius",
-        "offset":720,
+        "offset":792,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_sectionBorderWidth",
-        "offset":728,
+        "offset":800,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_defaultMarginWidth",
-        "offset":736,
+        "offset":808,
         "type":"ivar"
       },
       {
         "ivarType":"struct {\n        unsigned int showingDeleteConfirmation:1;\n        unsigned int separatorStyle:3;\n        unsigned int selectionStyle:3;\n        unsigned int selectionFadeFraction:11;\n        unsigned int editing:1;\n        unsigned int editingStyle:3;\n        unsigned int accessoryType:3;\n        unsigned int editingAccessoryType:3;\n        unsigned int showsAccessoryWhenEditing:1;\n        unsigned int showsReorderControl:1;\n        unsigned int showDisclosure:1;\n        unsigned int showTopSeparator:1;\n        unsigned int hideTopSeparatorDuringReordering:1;\n        unsigned int disclosureClickable:1;\n        unsigned int disclosureStyle:1;\n        unsigned int showingRemoveControl:1;\n        unsigned int sectionLocation:3;\n        unsigned int tableViewStyle:1;\n        unsigned int shouldIndentWhileEditing:1;\n        unsigned int fontSet:1;\n        unsigned int usingDefaultSelectedBackgroundView:1;\n        unsigned int wasSwiped:1;\n        unsigned int highlighted:1;\n        unsigned int separatorDirty:1;\n        unsigned int drawn:1;\n        unsigned int drawingDisabled:1;\n        unsigned int style:12;\n        unsigned int showingMenu:1;\n        unsigned int clipsContents:1;\n        unsigned int animatingSelection:1;\n        unsigned int backgroundColorSet:1;\n        unsigned int needsSetup:1;\n        unsigned int dontDrawTopShadow:1;\n        unsigned int usingMultiselectbackgroundView:1;\n        unsigned int layoutLoopCounter:2;\n        unsigned int isPigglyWigglyCell;\n        unsigned int deleteAnimationInProgress:1;\n        unsigned int deleteCancelationAnimationInProgress:1;\n        unsigned int animating:1;\n        unsigned int shouldHaveFullLengthBottomSeparator:1;\n        unsigned int shouldHaveFullLengthTopSeparator:1;\n        unsigned int drawsSeparatorAtTopOfSection:1;\n        unsigned int drawsSeparatorAtBottomOfSection:1;\n        unsigned int separatorBackdropOverlayBlendMode:3;\n        unsigned int separatorDrawsInVibrantLightMode:1;\n        unsigned int separatorHidden:1;\n        unsigned int hidingSeparatorsForSelection:1;\n        unsigned int clippedBeforeSwiping:1;\n        unsigned int allowsReorderingWhenNotEditing:1;\n        unsigned int needsHeightCalculation:1;\n    }",
         "name":"_tableCellFlags",
-        "offset":744,
+        "offset":816,
         "type":"ivar"
       }
     ],

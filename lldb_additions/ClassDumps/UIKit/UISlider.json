@@ -319,151 +319,151 @@
       {
         "ivarType":"float",
         "name":"_value",
-        "offset":128,
+        "offset":168,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_minValue",
-        "offset":132,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"float",
-        "name":"_maxValue",
-        "offset":136,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"float",
-        "name":"_alpha",
-        "offset":140,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"struct __CFDictionary *",
-        "name":"_contentLookup",
-        "offset":144,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIImageView *",
-        "name":"_minValueImageView",
-        "offset":148,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIImageView *",
-        "name":"_maxValueImageView",
-        "offset":152,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIImageView *",
-        "name":"_thumbView",
-        "offset":156,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIImageView *",
-        "name":"_minTrackView",
-        "offset":160,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIImageView *",
-        "name":"_maxTrackView",
-        "offset":164,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIView *",
-        "name":"_maxTrackClipView",
-        "offset":168,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"struct {\n        unsigned int continuous:1;\n        unsigned int animating:1;\n        unsigned int preparingToAnimate:1;\n        unsigned int showValue:1;\n        unsigned int trackEnabled:1;\n        unsigned int creatingSnapshot:1;\n        unsigned int thumbDisabled:1;\n        unsigned int minTrackHidden:1;\n    }",
-        "name":"_sliderFlags",
         "offset":172,
         "type":"ivar"
       },
       {
         "ivarType":"float",
-        "name":"_hitOffset",
+        "name":"_maxValue",
         "offset":176,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_alpha",
+        "offset":180,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __CFDictionary *",
+        "name":"_contentLookup",
+        "offset":184,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIImageView *",
+        "name":"_minValueImageView",
+        "offset":188,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIImageView *",
+        "name":"_maxValueImageView",
+        "offset":192,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIImageView *",
+        "name":"_thumbView",
+        "offset":196,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIImageView *",
+        "name":"_minTrackView",
+        "offset":200,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIImageView *",
+        "name":"_maxTrackView",
+        "offset":204,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIView *",
+        "name":"_maxTrackClipView",
+        "offset":208,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int continuous:1;\n        unsigned int animating:1;\n        unsigned int preparingToAnimate:1;\n        unsigned int showValue:1;\n        unsigned int trackEnabled:1;\n        unsigned int creatingSnapshot:1;\n        unsigned int thumbDisabled:1;\n        unsigned int minTrackHidden:1;\n    }",
+        "name":"_sliderFlags",
+        "offset":212,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_hitOffset",
+        "offset":216,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_minTintColor",
-        "offset":180,
+        "offset":220,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_maxTintColor",
-        "offset":184,
+        "offset":224,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_thumbTintColor",
-        "offset":188,
+        "offset":228,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_thumbViewNeue",
-        "offset":192,
+        "offset":232,
         "type":"ivar"
       },
       {
         "ivarType":"CAShapeLayer *",
         "name":"_thumbViewNeueShape",
-        "offset":196,
+        "offset":236,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_useLookNeue",
-        "offset":200,
+        "offset":240,
         "type":"ivar"
       },
       {
         "ivarType":"NSArray *",
         "name":"_trackColors",
-        "offset":204,
+        "offset":244,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_trackIsArtworkBased",
-        "offset":208,
+        "offset":248,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_thumbIsArtworkBased",
-        "offset":209,
+        "offset":249,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_maxColorIsValid",
-        "offset":210,
+        "offset":250,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_animatingWithDynamics",
-        "offset":211,
+        "offset":251,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_innerThumbView",
-        "offset":212,
+        "offset":252,
         "type":"ivar"
       }
     ],
@@ -476,151 +476,151 @@
       {
         "ivarType":"float",
         "name":"_value",
-        "offset":236,
+        "offset":308,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_minValue",
-        "offset":240,
+        "offset":312,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_maxValue",
-        "offset":244,
+        "offset":316,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_alpha",
-        "offset":248,
+        "offset":320,
         "type":"ivar"
       },
       {
         "ivarType":"struct __CFDictionary *",
         "name":"_contentLookup",
-        "offset":256,
+        "offset":328,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_minValueImageView",
-        "offset":264,
+        "offset":336,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_maxValueImageView",
-        "offset":272,
+        "offset":344,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_thumbView",
-        "offset":280,
+        "offset":352,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_minTrackView",
-        "offset":288,
+        "offset":360,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_maxTrackView",
-        "offset":296,
+        "offset":368,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_maxTrackClipView",
-        "offset":304,
+        "offset":376,
         "type":"ivar"
       },
       {
         "ivarType":"struct {\n        unsigned int continuous:1;\n        unsigned int animating:1;\n        unsigned int preparingToAnimate:1;\n        unsigned int showValue:1;\n        unsigned int trackEnabled:1;\n        unsigned int creatingSnapshot:1;\n        unsigned int thumbDisabled:1;\n        unsigned int minTrackHidden:1;\n    }",
         "name":"_sliderFlags",
-        "offset":312,
+        "offset":384,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_hitOffset",
-        "offset":320,
+        "offset":392,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_minTintColor",
-        "offset":328,
+        "offset":400,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_maxTintColor",
-        "offset":336,
+        "offset":408,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_thumbTintColor",
-        "offset":344,
+        "offset":416,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_thumbViewNeue",
-        "offset":352,
+        "offset":424,
         "type":"ivar"
       },
       {
         "ivarType":"CAShapeLayer *",
         "name":"_thumbViewNeueShape",
-        "offset":360,
+        "offset":432,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_useLookNeue",
-        "offset":368,
+        "offset":440,
         "type":"ivar"
       },
       {
         "ivarType":"NSArray *",
         "name":"_trackColors",
-        "offset":376,
+        "offset":448,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_trackIsArtworkBased",
-        "offset":384,
+        "offset":456,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_thumbIsArtworkBased",
-        "offset":385,
+        "offset":457,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_maxColorIsValid",
-        "offset":386,
+        "offset":458,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_animatingWithDynamics",
-        "offset":387,
+        "offset":459,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_innerThumbView",
-        "offset":392,
+        "offset":464,
         "type":"ivar"
       }
     ],

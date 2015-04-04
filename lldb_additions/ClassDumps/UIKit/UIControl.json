@@ -67,25 +67,25 @@
       {
         "ivarType":"NSMutableArray *",
         "name":"_targetActions",
-        "offset":104,
+        "offset":144,
         "type":"ivar"
       },
       {
         "ivarType":"struct CGPoint",
         "name":"_previousPoint",
-        "offset":108,
+        "offset":148,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_downTime",
-        "offset":116,
+        "offset":156,
         "type":"ivar"
       },
       {
         "ivarType":"struct {\n        unsigned int disabled:1;\n        unsigned int tracking:1;\n        unsigned int touchInside:1;\n        unsigned int touchDragged:1;\n        unsigned int requiresDisplayOnTracking:1;\n        unsigned int highlighted:1;\n        unsigned int dontHighlightOnTouchDown:1;\n        unsigned int delayActions:1;\n        unsigned int allowActionsToQueue:1;\n        unsigned int pendingUnhighlight:1;\n        unsigned int selected:1;\n        unsigned int verticalAlignment:2;\n        unsigned int horizontalAlignment:2;\n        unsigned int wasLastHighlightSuccessful:1;\n        unsigned int touchHasHighlighted:1;\n    }",
         "name":"_controlFlags",
-        "offset":124,
+        "offset":164,
         "type":"ivar"
       }
     ],
@@ -98,25 +98,25 @@
       {
         "ivarType":"NSMutableArray *",
         "name":"_targetActions",
-        "offset":200,
+        "offset":272,
         "type":"ivar"
       },
       {
         "ivarType":"struct CGPoint",
         "name":"_previousPoint",
-        "offset":208,
+        "offset":280,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_downTime",
-        "offset":224,
+        "offset":296,
         "type":"ivar"
       },
       {
         "ivarType":"struct {\n        unsigned int disabled:1;\n        unsigned int tracking:1;\n        unsigned int touchInside:1;\n        unsigned int touchDragged:1;\n        unsigned int requiresDisplayOnTracking:1;\n        unsigned int highlighted:1;\n        unsigned int dontHighlightOnTouchDown:1;\n        unsigned int delayActions:1;\n        unsigned int allowActionsToQueue:1;\n        unsigned int pendingUnhighlight:1;\n        unsigned int selected:1;\n        unsigned int verticalAlignment:2;\n        unsigned int horizontalAlignment:2;\n        unsigned int wasLastHighlightSuccessful:1;\n        unsigned int touchHasHighlighted:1;\n    }",
         "name":"_controlFlags",
-        "offset":232,
+        "offset":304,
         "type":"ivar"
       }
     ],

@@ -527,87 +527,99 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int screenUpdatesDisabled:1;\n        unsigned int wantsWideContentMargins:1;\n        unsigned int queriedDeviceContentMargins:1;\n        unsigned int hasCalculatedPointsPerInch:1;\n    }",
-        "name":"_screenFlags",
+        "ivarType":"id <UIFocusContainer>",
+        "name":"_focusedItem",
         "offset":144,
         "type":"ivar"
       },
       {
-        "ivarType":"char",
-        "name":"_wantsSoftwareDimming",
+        "ivarType":"struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int screenUpdatesDisabled:1;\n        unsigned int wantsWideContentMargins:1;\n        unsigned int queriedDeviceContentMargins:1;\n        unsigned int hasCalculatedPointsPerInch:1;\n        unsigned int screenCreatedFBSDisplay:1;\n    }",
+        "name":"_screenFlags",
         "offset":148,
         "type":"ivar"
       },
       {
         "ivarType":"char",
+        "name":"_wantsSoftwareDimming",
+        "offset":152,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
         "name":"_jailUsesHitTestWindow",
-        "offset":149,
+        "offset":153,
         "type":"ivar"
       },
       {
         "ivarType":"UITraitCollection *",
         "name":"_defaultTraitCollection",
-        "offset":152,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UITraitCollection *",
-        "name":"_overrideTraitCollection",
         "offset":156,
         "type":"ivar"
       },
       {
         "ivarType":"UITraitCollection *",
-        "name":"_lastNotifiedTraitCollection",
+        "name":"_overrideTraitCollection",
         "offset":160,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_lastNotifiedTraitCollection",
+        "offset":164,
         "type":"ivar"
       },
       {
         "ivarType":"FBSDisplay *",
         "name":"_fbsDisplay",
-        "offset":164,
+        "offset":168,
         "type":"ivar"
       },
       {
         "ivarType":"UISoftwareDimmingWindow *",
         "name":"_softwareDimmingWindow",
-        "offset":168,
+        "offset":172,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_lastNotifiedBacklightLevel",
-        "offset":172,
+        "offset":176,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_jailScale",
-        "offset":176,
+        "offset":180,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_jailOrientation",
-        "offset":180,
+        "offset":184,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIWindow<UIFocusContainer> *",
+        "name":"__focusedWindow",
+        "offset":188,
         "type":"ivar"
       },
       {
         "ivarType":"struct CGSize",
         "name":"_jailSize",
-        "offset":184,
+        "offset":192,
         "type":"ivar"
       },
       {
         "ivarType":"struct CGPoint",
         "name":"_jailOffset",
-        "offset":192,
+        "offset":200,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_jailTouchInsets",
-        "offset":200,
+        "offset":208,
         "type":"ivar"
       }
     ],
@@ -732,87 +744,99 @@
         "type":"ivar"
       },
       {
-        "ivarType":"struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int screenUpdatesDisabled:1;\n        unsigned int wantsWideContentMargins:1;\n        unsigned int queriedDeviceContentMargins:1;\n        unsigned int hasCalculatedPointsPerInch:1;\n    }",
-        "name":"_screenFlags",
+        "ivarType":"id <UIFocusContainer>",
+        "name":"_focusedItem",
         "offset":280,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int bitsPerComponent:4;\n        unsigned int initialized:1;\n        unsigned int connected:1;\n        unsigned int overscanCompensation:2;\n        unsigned int screenUpdatesDisabled:1;\n        unsigned int wantsWideContentMargins:1;\n        unsigned int queriedDeviceContentMargins:1;\n        unsigned int hasCalculatedPointsPerInch:1;\n        unsigned int screenCreatedFBSDisplay:1;\n    }",
+        "name":"_screenFlags",
+        "offset":288,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_wantsSoftwareDimming",
-        "offset":284,
+        "offset":292,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_jailUsesHitTestWindow",
-        "offset":285,
+        "offset":293,
         "type":"ivar"
       },
       {
         "ivarType":"UITraitCollection *",
         "name":"_defaultTraitCollection",
-        "offset":288,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UITraitCollection *",
-        "name":"_overrideTraitCollection",
         "offset":296,
         "type":"ivar"
       },
       {
         "ivarType":"UITraitCollection *",
-        "name":"_lastNotifiedTraitCollection",
+        "name":"_overrideTraitCollection",
         "offset":304,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITraitCollection *",
+        "name":"_lastNotifiedTraitCollection",
+        "offset":312,
         "type":"ivar"
       },
       {
         "ivarType":"FBSDisplay *",
         "name":"_fbsDisplay",
-        "offset":312,
+        "offset":320,
         "type":"ivar"
       },
       {
         "ivarType":"UISoftwareDimmingWindow *",
         "name":"_softwareDimmingWindow",
-        "offset":320,
+        "offset":328,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_lastNotifiedBacklightLevel",
-        "offset":328,
+        "offset":336,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_jailScale",
-        "offset":336,
+        "offset":344,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_jailOrientation",
-        "offset":344,
+        "offset":352,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIWindow<UIFocusContainer> *",
+        "name":"__focusedWindow",
+        "offset":360,
         "type":"ivar"
       },
       {
         "ivarType":"struct CGSize",
         "name":"_jailSize",
-        "offset":352,
+        "offset":368,
         "type":"ivar"
       },
       {
         "ivarType":"struct CGPoint",
         "name":"_jailOffset",
-        "offset":368,
+        "offset":384,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_jailTouchInsets",
-        "offset":384,
+        "offset":400,
         "type":"ivar"
       }
     ],

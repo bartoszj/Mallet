@@ -79,31 +79,31 @@
       {
         "ivarType":"id",
         "name":"_storage",
-        "offset":104,
+        "offset":144,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_cachedEdgeInsetsForEffects",
-        "offset":108,
+        "offset":148,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_templateSettingsAreInvalid",
-        "offset":124,
+        "offset":164,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_edgeInsetsForEffectsAreValid",
-        "offset":125,
+        "offset":165,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"__animatesContents",
-        "offset":126,
+        "offset":166,
         "type":"ivar"
       }
     ],
@@ -116,31 +116,31 @@
       {
         "ivarType":"id",
         "name":"_storage",
-        "offset":200,
+        "offset":272,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_cachedEdgeInsetsForEffects",
-        "offset":208,
+        "offset":280,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_templateSettingsAreInvalid",
-        "offset":240,
+        "offset":312,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_edgeInsetsForEffectsAreValid",
-        "offset":241,
+        "offset":313,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"__animatesContents",
-        "offset":242,
+        "offset":314,
         "type":"ivar"
       }
     ],

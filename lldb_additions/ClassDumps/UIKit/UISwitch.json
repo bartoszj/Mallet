@@ -103,43 +103,43 @@
       {
         "ivarType":"UILongPressGestureRecognizer *",
         "name":"_pressGesture",
-        "offset":128,
+        "offset":168,
         "type":"ivar"
       },
       {
         "ivarType":"UIPanGestureRecognizer *",
         "name":"_panGesture",
-        "offset":132,
+        "offset":172,
         "type":"ivar"
       },
       {
         "ivarType":"UIView<_UISwitchInternalViewProtocol> *",
         "name":"_control",
-        "offset":136,
+        "offset":176,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_onStateChangedByLongPressGestureRecognizer",
-        "offset":140,
+        "offset":180,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_onStateChangedByPanGestureRecognizer",
-        "offset":141,
+        "offset":181,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_on",
-        "offset":142,
+        "offset":182,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_enabledAlpha",
-        "offset":144,
+        "offset":184,
         "type":"ivar"
       }
     ],
@@ -152,43 +152,43 @@
       {
         "ivarType":"UILongPressGestureRecognizer *",
         "name":"_pressGesture",
-        "offset":240,
+        "offset":312,
         "type":"ivar"
       },
       {
         "ivarType":"UIPanGestureRecognizer *",
         "name":"_panGesture",
-        "offset":248,
+        "offset":320,
         "type":"ivar"
       },
       {
         "ivarType":"UIView<_UISwitchInternalViewProtocol> *",
         "name":"_control",
-        "offset":256,
+        "offset":328,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_onStateChangedByLongPressGestureRecognizer",
-        "offset":264,
+        "offset":336,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_onStateChangedByPanGestureRecognizer",
-        "offset":265,
+        "offset":337,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_on",
-        "offset":266,
+        "offset":338,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_enabledAlpha",
-        "offset":272,
+        "offset":344,
         "type":"ivar"
       }
     ],

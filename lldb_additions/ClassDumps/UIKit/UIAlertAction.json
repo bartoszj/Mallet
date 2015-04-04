@@ -167,69 +167,93 @@
         "type":"ivar"
       },
       {
-        "ivarType":"char",
-        "name":"_enabled",
+        "ivarType":"int",
+        "name":"_titleTextAlignment",
         "offset":8,
         "type":"ivar"
       },
       {
         "ivarType":"char",
-        "name":"_checked",
-        "offset":9,
+        "name":"_enabled",
+        "offset":12,
         "type":"ivar"
       },
       {
         "ivarType":"char",
-        "name":"__isDefault",
-        "offset":10,
+        "name":"_checked",
+        "offset":13,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_isDefault",
+        "offset":14,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIColor *",
+        "name":"_imageTintColor",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIColor *",
+        "name":"_titleTextColor",
+        "offset":20,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_style",
-        "offset":12,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"CDUnknownBlockType",
-        "name":"_handler",
-        "offset":16,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"CDUnknownBlockType",
-        "name":"_simpleHandler",
-        "offset":20,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIImage *",
-        "name":"_image",
         "offset":24,
         "type":"ivar"
       },
       {
         "ivarType":"CDUnknownBlockType",
-        "name":"_shouldDismissHandler",
+        "name":"_handler",
         "offset":28,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"CDUnknownBlockType",
+        "name":"_simpleHandler",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIImage *",
+        "name":"_image",
+        "offset":36,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"CDUnknownBlockType",
+        "name":"_shouldDismissHandler",
+        "offset":40,
         "type":"ivar"
       },
       {
         "ivarType":"NSString *",
         "name":"__descriptiveText",
-        "offset":32,
+        "offset":44,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIViewController *",
+        "name":"_contentViewController",
+        "offset":48,
         "type":"ivar"
       },
       {
         "ivarType":"id <_UIAlertActionRepresenting>",
         "name":"__representer",
-        "offset":36,
+        "offset":52,
         "type":"ivar"
       },
       {
         "ivarType":"UIAlertController *",
         "name":"__alertController",
-        "offset":40,
+        "offset":56,
         "type":"ivar"
       }
     ],
@@ -246,69 +270,93 @@
         "type":"ivar"
       },
       {
-        "ivarType":"_Bool",
-        "name":"_enabled",
+        "ivarType":"long long",
+        "name":"_titleTextAlignment",
         "offset":16,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
-        "name":"_checked",
-        "offset":17,
+        "name":"_enabled",
+        "offset":24,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
-        "name":"__isDefault",
-        "offset":18,
+        "name":"_checked",
+        "offset":25,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_isDefault",
+        "offset":26,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIColor *",
+        "name":"_imageTintColor",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIColor *",
+        "name":"_titleTextColor",
+        "offset":40,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_style",
-        "offset":24,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"CDUnknownBlockType",
-        "name":"_handler",
-        "offset":32,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"CDUnknownBlockType",
-        "name":"_simpleHandler",
-        "offset":40,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIImage *",
-        "name":"_image",
         "offset":48,
         "type":"ivar"
       },
       {
         "ivarType":"CDUnknownBlockType",
-        "name":"_shouldDismissHandler",
+        "name":"_handler",
         "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"CDUnknownBlockType",
+        "name":"_simpleHandler",
+        "offset":64,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIImage *",
+        "name":"_image",
+        "offset":72,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"CDUnknownBlockType",
+        "name":"_shouldDismissHandler",
+        "offset":80,
         "type":"ivar"
       },
       {
         "ivarType":"NSString *",
         "name":"__descriptiveText",
-        "offset":64,
+        "offset":88,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIViewController *",
+        "name":"_contentViewController",
+        "offset":96,
         "type":"ivar"
       },
       {
         "ivarType":"id <_UIAlertActionRepresenting>",
         "name":"__representer",
-        "offset":72,
+        "offset":104,
         "type":"ivar"
       },
       {
         "ivarType":"UIAlertController *",
         "name":"__alertController",
-        "offset":80,
+        "offset":112,
         "type":"ivar"
       }
     ],

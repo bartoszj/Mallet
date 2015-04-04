@@ -715,349 +715,349 @@
       {
         "ivarType":"id",
         "name":"_delegate",
-        "offset":104,
+        "offset":144,
         "type":"ivar"
       },
       {
         "ivarType":"struct CGSize",
         "name":"_contentSize",
-        "offset":108,
+        "offset":148,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_contentInset",
-        "offset":116,
+        "offset":156,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_verticalScrollIndicator",
-        "offset":132,
+        "offset":172,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_horizontalScrollIndicator",
-        "offset":136,
+        "offset":176,
         "type":"ivar"
       },
       {
         "ivarType":"_UIStaticScrollBar *",
         "name":"_staticScrollBar",
-        "offset":140,
+        "offset":180,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_scrollIndicatorInset",
-        "offset":144,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_startOffsetX",
-        "offset":160,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_startOffsetY",
-        "offset":168,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_lastUpdateOffsetX",
-        "offset":176,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_lastUpdateOffsetY",
         "offset":184,
         "type":"ivar"
       },
       {
         "ivarType":"double",
-        "name":"_lastUpdateTime",
-        "offset":192,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"float",
-        "name":"_minimumZoomScale",
+        "name":"_startOffsetX",
         "offset":200,
         "type":"ivar"
       },
       {
-        "ivarType":"float",
-        "name":"_maximumZoomScale",
-        "offset":204,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIView *",
-        "name":"_zoomView",
+        "ivarType":"double",
+        "name":"_startOffsetY",
         "offset":208,
         "type":"ivar"
       },
       {
         "ivarType":"double",
+        "name":"_lastUpdateOffsetX",
+        "offset":216,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_lastUpdateOffsetY",
+        "offset":224,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_lastUpdateTime",
+        "offset":232,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_minimumZoomScale",
+        "offset":240,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_maximumZoomScale",
+        "offset":244,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIView *",
+        "name":"_zoomView",
+        "offset":248,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
         "name":"_horizontalVelocity",
-        "offset":212,
+        "offset":252,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_verticalVelocity",
-        "offset":220,
+        "offset":260,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_previousHorizontalVelocity",
-        "offset":228,
+        "offset":268,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_previousVerticalVelocity",
-        "offset":236,
+        "offset":276,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_scrollHeartbeat",
-        "offset":244,
+        "offset":284,
         "type":"ivar"
       },
       {
         "ivarType":"struct CGPoint",
         "name":"_pageDecelerationTarget",
-        "offset":248,
+        "offset":288,
         "type":"ivar"
       },
       {
         "ivarType":"struct CGSize",
         "name":"_decelerationFactor",
-        "offset":256,
+        "offset":296,
         "type":"ivar"
       },
       {
         "ivarType":"struct CGPoint",
         "name":"_adjustedDecelerationTarget",
-        "offset":264,
+        "offset":304,
         "type":"ivar"
       },
       {
         "ivarType":"struct CGSize",
         "name":"_adjustedDecelerationFactor",
-        "offset":272,
+        "offset":312,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_decelerationLnFactorH",
-        "offset":280,
+        "offset":320,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_decelerationLnFactorV",
-        "offset":288,
+        "offset":328,
         "type":"ivar"
       },
       {
         "ivarType":"id *",
         "name":"_shadows",
-        "offset":296,
+        "offset":336,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_scrollNotificationViews",
-        "offset":300,
+        "offset":340,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_contentOffsetAnimationDuration",
-        "offset":304,
+        "offset":344,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_animation",
-        "offset":312,
+        "offset":352,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_zoomAnimation",
-        "offset":316,
+        "offset":356,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_pinch",
-        "offset":320,
+        "offset":360,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_pan",
-        "offset":324,
+        "offset":364,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_swipe",
-        "offset":328,
+        "offset":368,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_touchDelayGestureRecognizer",
-        "offset":332,
+        "offset":372,
         "type":"ivar"
       },
       {
         "ivarType":"UISwipeGestureRecognizer *[4]",
         "name":"_lowFidelitySwipeGestureRecognizers",
-        "offset":336,
+        "offset":376,
         "type":"ivar"
       },
       {
         "ivarType":"UIScrollView *",
         "name":"_draggingChildScrollView",
-        "offset":352,
+        "offset":392,
         "type":"ivar"
       },
       {
         "ivarType":"struct CGPoint",
         "name":"_parentAdjustment",
-        "offset":356,
+        "offset":396,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_pagingSpringPull",
-        "offset":364,
+        "offset":404,
         "type":"ivar"
       },
       {
         "ivarType":"float",
         "name":"_pagingFriction",
-        "offset":368,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"int",
-        "name":"_fastScrollCount",
-        "offset":372,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"float",
-        "name":"_fastScrollMultiplier",
-        "offset":376,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"float",
-        "name":"_fastScrollStartMultiplier",
-        "offset":380,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_fastScrollEndTime",
-        "offset":384,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"struct CGPoint",
-        "name":"_rotationCenterPoint",
-        "offset":392,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"float",
-        "name":"_accuracy",
-        "offset":400,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"unsigned int",
-        "name":"_zoomAnimationCount",
-        "offset":404,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"struct CGSize",
-        "name":"_accumulatedOffset",
         "offset":408,
         "type":"ivar"
       },
       {
         "ivarType":"int",
-        "name":"_touchLevel",
+        "name":"_fastScrollCount",
+        "offset":412,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_fastScrollMultiplier",
         "offset":416,
         "type":"ivar"
       },
       {
         "ivarType":"float",
-        "name":"_savedKeyboardAdjustmentDelta",
+        "name":"_fastScrollStartMultiplier",
         "offset":420,
         "type":"ivar"
       },
       {
-        "ivarType":"struct {\n        unsigned int tracking:1;\n        unsigned int dragging:1;\n        unsigned int verticalBounceEnabled:1;\n        unsigned int horizontalBounceEnabled:1;\n        unsigned int verticalBouncing:1;\n        unsigned int horizontalBouncing:1;\n        unsigned int bouncesZoom:1;\n        unsigned int zoomBouncing:1;\n        unsigned int alwaysBounceHorizontal:1;\n        unsigned int alwaysBounceVertical:1;\n        unsigned int preventScrollingContainer:1;\n        unsigned int canCancelContentTouches:1;\n        unsigned int delaysContentTouches:1;\n        unsigned int programmaticScrollDisabled:1;\n        unsigned int scrollDisabled:1;\n        unsigned int zoomDisabled:1;\n        unsigned int scrollTriggered:1;\n        unsigned int showsHorizontalScrollIndicator:1;\n        unsigned int showsVerticalScrollIndicator:1;\n        unsigned int indicatorStyle:2;\n        unsigned int inZoom:1;\n        unsigned int hideIndicatorsInZoom:1;\n        unsigned int pushedTrackingMode:1;\n        unsigned int displayingScrollIndicators:1;\n        unsigned int verticalIndicatorShrunk:1;\n        unsigned int horizontalIndicatorShrunk:1;\n        unsigned int contentFitDisableScrolling:1;\n        unsigned int pagingEnabled:1;\n        unsigned int pagingLeft:1;\n        unsigned int pagingRight:1;\n        unsigned int pagingUp:1;\n        unsigned int pagingDown:1;\n        unsigned int lastHorizontalDirection:1;\n        unsigned int lastVerticalDirection:1;\n        unsigned int dontScrollToTop:1;\n        unsigned int scrollingToTop:1;\n        unsigned int singleFingerPan:1;\n        unsigned int autoscrolling:1;\n        unsigned int automaticContentOffsetAdjustmentDisabled:1;\n        unsigned int skipStartOffsetAdjustment:1;\n        unsigned int delegateScrollViewDidScroll:1;\n        unsigned int delegateScrollViewDidZoom:1;\n        unsigned int delegateContentSizeForZoomScale:1;\n        unsigned int preserveCenterDuringRotation:1;\n        unsigned int delaysTrackingWhileDecelerating:1;\n        unsigned int pinnedZoomMin:1;\n        unsigned int pinnedXMin:1;\n        unsigned int pinnedYMin:1;\n        unsigned int pinnedXMax:1;\n        unsigned int pinnedYMax:1;\n        unsigned int skipLinkChecks:1;\n        unsigned int staysCenteredDuringPinch:1;\n        unsigned int wasDelayingPinchForSystemGestures:1;\n        unsigned int systemGesturesRecognitionPossible:1;\n        unsigned int disableContentOffsetRounding:1;\n        unsigned int alwaysDisableContentOffsetRounding:1;\n        unsigned int adjustedDecelerationTargetX:1;\n        unsigned int adjustedDecelerationTargetY:1;\n        unsigned int hasScrolled:1;\n        unsigned int wantsConstrainedContentSize:1;\n        unsigned int constrainedContentSizeNeedsUpdate:1;\n        unsigned int updateInsetBottom:1;\n        unsigned int beingDraggedByChildScrollView:1;\n        unsigned int adjustsTargetsOnContentOffsetChanges:1;\n        unsigned int forwardsTouchesUpResponderChain:1;\n        unsigned int firstResponderKeyboardAvoidanceDisabled:1;\n    }",
-        "name":"_scrollViewFlags",
+        "ivarType":"double",
+        "name":"_fastScrollEndTime",
         "offset":424,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGPoint",
+        "name":"_rotationCenterPoint",
+        "offset":432,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_accuracy",
+        "offset":440,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"_zoomAnimationCount",
+        "offset":444,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGSize",
+        "name":"_accumulatedOffset",
+        "offset":448,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_touchLevel",
+        "offset":456,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"_savedKeyboardAdjustmentDelta",
+        "offset":460,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int tracking:1;\n        unsigned int dragging:1;\n        unsigned int verticalBounceEnabled:1;\n        unsigned int horizontalBounceEnabled:1;\n        unsigned int verticalBouncing:1;\n        unsigned int horizontalBouncing:1;\n        unsigned int bouncesZoom:1;\n        unsigned int zoomBouncing:1;\n        unsigned int alwaysBounceHorizontal:1;\n        unsigned int alwaysBounceVertical:1;\n        unsigned int preventScrollingContainer:1;\n        unsigned int canCancelContentTouches:1;\n        unsigned int delaysContentTouches:1;\n        unsigned int programmaticScrollDisabled:1;\n        unsigned int scrollDisabled:1;\n        unsigned int zoomDisabled:1;\n        unsigned int scrollTriggered:1;\n        unsigned int showsHorizontalScrollIndicator:1;\n        unsigned int showsVerticalScrollIndicator:1;\n        unsigned int indicatorStyle:2;\n        unsigned int inZoom:1;\n        unsigned int hideIndicatorsInZoom:1;\n        unsigned int pushedTrackingMode:1;\n        unsigned int displayingScrollIndicators:1;\n        unsigned int verticalIndicatorShrunk:1;\n        unsigned int horizontalIndicatorShrunk:1;\n        unsigned int contentFitDisableScrolling:1;\n        unsigned int pagingEnabled:1;\n        unsigned int pagingLeft:1;\n        unsigned int pagingRight:1;\n        unsigned int pagingUp:1;\n        unsigned int pagingDown:1;\n        unsigned int lastHorizontalDirection:1;\n        unsigned int lastVerticalDirection:1;\n        unsigned int dontScrollToTop:1;\n        unsigned int scrollingToTop:1;\n        unsigned int singleFingerPan:1;\n        unsigned int autoscrolling:1;\n        unsigned int automaticContentOffsetAdjustmentDisabled:1;\n        unsigned int skipStartOffsetAdjustment:1;\n        unsigned int delegateScrollViewDidScroll:1;\n        unsigned int delegateScrollViewDidZoom:1;\n        unsigned int delegateContentSizeForZoomScale:1;\n        unsigned int preserveCenterDuringRotation:1;\n        unsigned int delaysTrackingWhileDecelerating:1;\n        unsigned int pinnedZoomMin:1;\n        unsigned int pinnedXMin:1;\n        unsigned int pinnedYMin:1;\n        unsigned int pinnedXMax:1;\n        unsigned int pinnedYMax:1;\n        unsigned int skipLinkChecks:1;\n        unsigned int staysCenteredDuringPinch:1;\n        unsigned int wasDelayingPinchForSystemGestures:1;\n        unsigned int systemGesturesRecognitionPossible:1;\n        unsigned int disableContentOffsetRounding:1;\n        unsigned int alwaysDisableContentOffsetRounding:1;\n        unsigned int adjustedDecelerationTargetX:1;\n        unsigned int adjustedDecelerationTargetY:1;\n        unsigned int hasScrolled:1;\n        unsigned int wantsConstrainedContentSize:1;\n        unsigned int constrainedContentSizeNeedsUpdate:1;\n        unsigned int updateInsetBottom:1;\n        unsigned int beingDraggedByChildScrollView:1;\n        unsigned int adjustsTargetsOnContentOffsetChanges:1;\n        unsigned int forwardsTouchesUpResponderChain:1;\n        unsigned int firstResponderKeyboardAvoidanceDisabled:1;\n        unsigned int interruptingDeceleration:1;\n    }",
+        "name":"_scrollViewFlags",
+        "offset":464,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_useContentDimensionVariablesForConstraintLowering",
-        "offset":436,
+        "offset":476,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_scrollTestParameters",
-        "offset":440,
+        "offset":480,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_keyboardDismissMode",
-        "offset":444,
+        "offset":484,
         "type":"ivar"
       },
       {
         "ivarType":"NSISVariable *",
         "name":"_contentWidthVariable",
-        "offset":448,
+        "offset":488,
         "type":"ivar"
       },
       {
         "ivarType":"NSISVariable *",
         "name":"_contentHeightVariable",
-        "offset":452,
+        "offset":492,
         "type":"ivar"
       },
       {
         "ivarType":"NSArray *",
         "name":"_automaticContentConstraints",
-        "offset":456,
+        "offset":496,
         "type":"ivar"
       },
       {
         "ivarType":"struct CADoublePoint",
         "name":"_zoomAnchorPoint",
-        "offset":460,
+        "offset":500,
         "type":"ivar"
       }
     ],
@@ -1070,349 +1070,349 @@
       {
         "ivarType":"id",
         "name":"_delegate",
-        "offset":200,
+        "offset":272,
         "type":"ivar"
       },
       {
         "ivarType":"struct CGSize",
         "name":"_contentSize",
-        "offset":208,
+        "offset":280,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_contentInset",
-        "offset":224,
+        "offset":296,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_verticalScrollIndicator",
-        "offset":256,
+        "offset":328,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_horizontalScrollIndicator",
-        "offset":264,
+        "offset":336,
         "type":"ivar"
       },
       {
         "ivarType":"_UIStaticScrollBar *",
         "name":"_staticScrollBar",
-        "offset":272,
+        "offset":344,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_scrollIndicatorInset",
-        "offset":280,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_startOffsetX",
-        "offset":312,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_startOffsetY",
-        "offset":320,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_lastUpdateOffsetX",
-        "offset":328,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_lastUpdateOffsetY",
-        "offset":336,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_lastUpdateTime",
-        "offset":344,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_minimumZoomScale",
         "offset":352,
         "type":"ivar"
       },
       {
         "ivarType":"double",
-        "name":"_maximumZoomScale",
-        "offset":360,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIView *",
-        "name":"_zoomView",
-        "offset":368,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_horizontalVelocity",
-        "offset":376,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_verticalVelocity",
+        "name":"_startOffsetX",
         "offset":384,
         "type":"ivar"
       },
       {
         "ivarType":"double",
-        "name":"_previousHorizontalVelocity",
+        "name":"_startOffsetY",
         "offset":392,
         "type":"ivar"
       },
       {
         "ivarType":"double",
-        "name":"_previousVerticalVelocity",
+        "name":"_lastUpdateOffsetX",
         "offset":400,
         "type":"ivar"
       },
       {
-        "ivarType":"id",
-        "name":"_scrollHeartbeat",
+        "ivarType":"double",
+        "name":"_lastUpdateOffsetY",
         "offset":408,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGPoint",
-        "name":"_pageDecelerationTarget",
+        "ivarType":"double",
+        "name":"_lastUpdateTime",
         "offset":416,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize",
-        "name":"_decelerationFactor",
+        "ivarType":"double",
+        "name":"_minimumZoomScale",
+        "offset":424,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_maximumZoomScale",
         "offset":432,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGPoint",
-        "name":"_adjustedDecelerationTarget",
+        "ivarType":"UIView *",
+        "name":"_zoomView",
+        "offset":440,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_horizontalVelocity",
         "offset":448,
         "type":"ivar"
       },
       {
-        "ivarType":"struct CGSize",
-        "name":"_adjustedDecelerationFactor",
+        "ivarType":"double",
+        "name":"_verticalVelocity",
+        "offset":456,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_previousHorizontalVelocity",
         "offset":464,
         "type":"ivar"
       },
       {
         "ivarType":"double",
-        "name":"_decelerationLnFactorH",
+        "name":"_previousVerticalVelocity",
+        "offset":472,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"_scrollHeartbeat",
         "offset":480,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGPoint",
+        "name":"_pageDecelerationTarget",
+        "offset":488,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGSize",
+        "name":"_decelerationFactor",
+        "offset":504,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGPoint",
+        "name":"_adjustedDecelerationTarget",
+        "offset":520,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGSize",
+        "name":"_adjustedDecelerationFactor",
+        "offset":536,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_decelerationLnFactorH",
+        "offset":552,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_decelerationLnFactorV",
-        "offset":488,
+        "offset":560,
         "type":"ivar"
       },
       {
         "ivarType":"id *",
         "name":"_shadows",
-        "offset":496,
+        "offset":568,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_scrollNotificationViews",
-        "offset":504,
+        "offset":576,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_contentOffsetAnimationDuration",
-        "offset":512,
+        "offset":584,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_animation",
-        "offset":520,
+        "offset":592,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_zoomAnimation",
-        "offset":528,
+        "offset":600,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_pinch",
-        "offset":536,
+        "offset":608,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_pan",
-        "offset":544,
+        "offset":616,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_swipe",
-        "offset":552,
+        "offset":624,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_touchDelayGestureRecognizer",
-        "offset":560,
+        "offset":632,
         "type":"ivar"
       },
       {
         "ivarType":"UISwipeGestureRecognizer *[4]",
         "name":"_lowFidelitySwipeGestureRecognizers",
-        "offset":568,
+        "offset":640,
         "type":"ivar"
       },
       {
         "ivarType":"UIScrollView *",
         "name":"_draggingChildScrollView",
-        "offset":600,
+        "offset":672,
         "type":"ivar"
       },
       {
         "ivarType":"struct CGPoint",
         "name":"_parentAdjustment",
-        "offset":608,
+        "offset":680,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_pagingSpringPull",
-        "offset":624,
+        "offset":696,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_pagingFriction",
-        "offset":632,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"long long",
-        "name":"_fastScrollCount",
-        "offset":640,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_fastScrollMultiplier",
-        "offset":648,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_fastScrollStartMultiplier",
-        "offset":656,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_fastScrollEndTime",
-        "offset":664,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"struct CGPoint",
-        "name":"_rotationCenterPoint",
-        "offset":672,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"double",
-        "name":"_accuracy",
-        "offset":688,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"unsigned long long",
-        "name":"_zoomAnimationCount",
-        "offset":696,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"struct CGSize",
-        "name":"_accumulatedOffset",
         "offset":704,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
-        "name":"_touchLevel",
+        "name":"_fastScrollCount",
+        "offset":712,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_fastScrollMultiplier",
         "offset":720,
         "type":"ivar"
       },
       {
         "ivarType":"double",
-        "name":"_savedKeyboardAdjustmentDelta",
+        "name":"_fastScrollStartMultiplier",
         "offset":728,
         "type":"ivar"
       },
       {
-        "ivarType":"struct {\n        unsigned int tracking:1;\n        unsigned int dragging:1;\n        unsigned int verticalBounceEnabled:1;\n        unsigned int horizontalBounceEnabled:1;\n        unsigned int verticalBouncing:1;\n        unsigned int horizontalBouncing:1;\n        unsigned int bouncesZoom:1;\n        unsigned int zoomBouncing:1;\n        unsigned int alwaysBounceHorizontal:1;\n        unsigned int alwaysBounceVertical:1;\n        unsigned int preventScrollingContainer:1;\n        unsigned int canCancelContentTouches:1;\n        unsigned int delaysContentTouches:1;\n        unsigned int programmaticScrollDisabled:1;\n        unsigned int scrollDisabled:1;\n        unsigned int zoomDisabled:1;\n        unsigned int scrollTriggered:1;\n        unsigned int showsHorizontalScrollIndicator:1;\n        unsigned int showsVerticalScrollIndicator:1;\n        unsigned int indicatorStyle:2;\n        unsigned int inZoom:1;\n        unsigned int hideIndicatorsInZoom:1;\n        unsigned int pushedTrackingMode:1;\n        unsigned int displayingScrollIndicators:1;\n        unsigned int verticalIndicatorShrunk:1;\n        unsigned int horizontalIndicatorShrunk:1;\n        unsigned int contentFitDisableScrolling:1;\n        unsigned int pagingEnabled:1;\n        unsigned int pagingLeft:1;\n        unsigned int pagingRight:1;\n        unsigned int pagingUp:1;\n        unsigned int pagingDown:1;\n        unsigned int lastHorizontalDirection:1;\n        unsigned int lastVerticalDirection:1;\n        unsigned int dontScrollToTop:1;\n        unsigned int scrollingToTop:1;\n        unsigned int singleFingerPan:1;\n        unsigned int autoscrolling:1;\n        unsigned int automaticContentOffsetAdjustmentDisabled:1;\n        unsigned int skipStartOffsetAdjustment:1;\n        unsigned int delegateScrollViewDidScroll:1;\n        unsigned int delegateScrollViewDidZoom:1;\n        unsigned int delegateContentSizeForZoomScale:1;\n        unsigned int preserveCenterDuringRotation:1;\n        unsigned int delaysTrackingWhileDecelerating:1;\n        unsigned int pinnedZoomMin:1;\n        unsigned int pinnedXMin:1;\n        unsigned int pinnedYMin:1;\n        unsigned int pinnedXMax:1;\n        unsigned int pinnedYMax:1;\n        unsigned int skipLinkChecks:1;\n        unsigned int staysCenteredDuringPinch:1;\n        unsigned int wasDelayingPinchForSystemGestures:1;\n        unsigned int systemGesturesRecognitionPossible:1;\n        unsigned int disableContentOffsetRounding:1;\n        unsigned int alwaysDisableContentOffsetRounding:1;\n        unsigned int adjustedDecelerationTargetX:1;\n        unsigned int adjustedDecelerationTargetY:1;\n        unsigned int hasScrolled:1;\n        unsigned int wantsConstrainedContentSize:1;\n        unsigned int constrainedContentSizeNeedsUpdate:1;\n        unsigned int updateInsetBottom:1;\n        unsigned int beingDraggedByChildScrollView:1;\n        unsigned int adjustsTargetsOnContentOffsetChanges:1;\n        unsigned int forwardsTouchesUpResponderChain:1;\n        unsigned int firstResponderKeyboardAvoidanceDisabled:1;\n    }",
-        "name":"_scrollViewFlags",
+        "ivarType":"double",
+        "name":"_fastScrollEndTime",
         "offset":736,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGPoint",
+        "name":"_rotationCenterPoint",
+        "offset":744,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_accuracy",
+        "offset":760,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned long long",
+        "name":"_zoomAnimationCount",
+        "offset":768,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct CGSize",
+        "name":"_accumulatedOffset",
+        "offset":776,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_touchLevel",
+        "offset":792,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_savedKeyboardAdjustmentDelta",
+        "offset":800,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct {\n        unsigned int tracking:1;\n        unsigned int dragging:1;\n        unsigned int verticalBounceEnabled:1;\n        unsigned int horizontalBounceEnabled:1;\n        unsigned int verticalBouncing:1;\n        unsigned int horizontalBouncing:1;\n        unsigned int bouncesZoom:1;\n        unsigned int zoomBouncing:1;\n        unsigned int alwaysBounceHorizontal:1;\n        unsigned int alwaysBounceVertical:1;\n        unsigned int preventScrollingContainer:1;\n        unsigned int canCancelContentTouches:1;\n        unsigned int delaysContentTouches:1;\n        unsigned int programmaticScrollDisabled:1;\n        unsigned int scrollDisabled:1;\n        unsigned int zoomDisabled:1;\n        unsigned int scrollTriggered:1;\n        unsigned int showsHorizontalScrollIndicator:1;\n        unsigned int showsVerticalScrollIndicator:1;\n        unsigned int indicatorStyle:2;\n        unsigned int inZoom:1;\n        unsigned int hideIndicatorsInZoom:1;\n        unsigned int pushedTrackingMode:1;\n        unsigned int displayingScrollIndicators:1;\n        unsigned int verticalIndicatorShrunk:1;\n        unsigned int horizontalIndicatorShrunk:1;\n        unsigned int contentFitDisableScrolling:1;\n        unsigned int pagingEnabled:1;\n        unsigned int pagingLeft:1;\n        unsigned int pagingRight:1;\n        unsigned int pagingUp:1;\n        unsigned int pagingDown:1;\n        unsigned int lastHorizontalDirection:1;\n        unsigned int lastVerticalDirection:1;\n        unsigned int dontScrollToTop:1;\n        unsigned int scrollingToTop:1;\n        unsigned int singleFingerPan:1;\n        unsigned int autoscrolling:1;\n        unsigned int automaticContentOffsetAdjustmentDisabled:1;\n        unsigned int skipStartOffsetAdjustment:1;\n        unsigned int delegateScrollViewDidScroll:1;\n        unsigned int delegateScrollViewDidZoom:1;\n        unsigned int delegateContentSizeForZoomScale:1;\n        unsigned int preserveCenterDuringRotation:1;\n        unsigned int delaysTrackingWhileDecelerating:1;\n        unsigned int pinnedZoomMin:1;\n        unsigned int pinnedXMin:1;\n        unsigned int pinnedYMin:1;\n        unsigned int pinnedXMax:1;\n        unsigned int pinnedYMax:1;\n        unsigned int skipLinkChecks:1;\n        unsigned int staysCenteredDuringPinch:1;\n        unsigned int wasDelayingPinchForSystemGestures:1;\n        unsigned int systemGesturesRecognitionPossible:1;\n        unsigned int disableContentOffsetRounding:1;\n        unsigned int alwaysDisableContentOffsetRounding:1;\n        unsigned int adjustedDecelerationTargetX:1;\n        unsigned int adjustedDecelerationTargetY:1;\n        unsigned int hasScrolled:1;\n        unsigned int wantsConstrainedContentSize:1;\n        unsigned int constrainedContentSizeNeedsUpdate:1;\n        unsigned int updateInsetBottom:1;\n        unsigned int beingDraggedByChildScrollView:1;\n        unsigned int adjustsTargetsOnContentOffsetChanges:1;\n        unsigned int forwardsTouchesUpResponderChain:1;\n        unsigned int firstResponderKeyboardAvoidanceDisabled:1;\n        unsigned int interruptingDeceleration:1;\n    }",
+        "name":"_scrollViewFlags",
+        "offset":808,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_useContentDimensionVariablesForConstraintLowering",
-        "offset":748,
+        "offset":820,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_scrollTestParameters",
-        "offset":752,
+        "offset":824,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_keyboardDismissMode",
-        "offset":760,
+        "offset":832,
         "type":"ivar"
       },
       {
         "ivarType":"NSISVariable *",
         "name":"_contentWidthVariable",
-        "offset":768,
+        "offset":840,
         "type":"ivar"
       },
       {
         "ivarType":"NSISVariable *",
         "name":"_contentHeightVariable",
-        "offset":776,
+        "offset":848,
         "type":"ivar"
       },
       {
         "ivarType":"NSArray *",
         "name":"_automaticContentConstraints",
-        "offset":784,
+        "offset":856,
         "type":"ivar"
       },
       {
         "ivarType":"struct CGPoint",
         "name":"_zoomAnchorPoint",
-        "offset":792,
+        "offset":864,
         "type":"ivar"
       }
     ],

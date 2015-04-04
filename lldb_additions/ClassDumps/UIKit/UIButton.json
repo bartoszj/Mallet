@@ -223,103 +223,103 @@
       {
         "ivarType":"unsigned int",
         "name":"_externalFlatEdge",
-        "offset":128,
+        "offset":168,
         "type":"ivar"
       },
       {
         "ivarType":"struct __CFDictionary *",
         "name":"_contentLookup",
-        "offset":132,
+        "offset":172,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_contentEdgeInsets",
-        "offset":136,
+        "offset":176,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_titleEdgeInsets",
-        "offset":152,
+        "offset":192,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_imageEdgeInsets",
-        "offset":168,
+        "offset":208,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_backgroundView",
-        "offset":184,
+        "offset":224,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_imageView",
-        "offset":188,
+        "offset":228,
         "type":"ivar"
       },
       {
         "ivarType":"UILabel *",
         "name":"_titleView",
-        "offset":192,
+        "offset":232,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_initialized",
-        "offset":196,
+        "offset":236,
         "type":"ivar"
       },
       {
         "ivarType":"unsigned int",
         "name":"_lastDrawingControlState",
-        "offset":200,
+        "offset":240,
         "type":"ivar"
       },
       {
         "ivarType":"UITapGestureRecognizer *",
         "name":"_selectGestureRecognizer",
-        "offset":204,
+        "offset":244,
         "type":"ivar"
       },
       {
-        "ivarType":"struct {\n        unsigned int reversesTitleShadowWhenHighlighted:1;\n        unsigned int adjustsImageWhenHighlighted:1;\n        unsigned int adjustsImageWhenDisabled:1;\n        unsigned int autosizeToFit:1;\n        unsigned int disabledDimsImage:1;\n        unsigned int showsTouchWhenHighlighted:1;\n        unsigned int buttonType:8;\n        unsigned int shouldHandleScrollerMouseEvent:1;\n        unsigned int titleFrozen:1;\n    }",
+        "ivarType":"struct {\n        unsigned int reversesTitleShadowWhenHighlighted:1;\n        unsigned int adjustsImageWhenHighlighted:1;\n        unsigned int adjustsImageWhenDisabled:1;\n        unsigned int autosizeToFit:1;\n        unsigned int disabledDimsImage:1;\n        unsigned int showsTouchWhenHighlighted:1;\n        unsigned int buttonType:8;\n        unsigned int shouldHandleScrollerMouseEvent:1;\n        unsigned int titleFrozen:1;\n        unsigned int resendTraitToImageViews:2;\n    }",
         "name":"_buttonFlags",
-        "offset":208,
+        "offset":248,
         "type":"ivar"
       },
       {
         "ivarType":"_UIButtonMaskAnimationView *",
         "name":"_maskAnimationView",
-        "offset":212,
+        "offset":252,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_selectionView",
-        "offset":216,
+        "offset":256,
         "type":"ivar"
       },
       {
         "ivarType":"UIFont *",
         "name":"_lazyTitleViewFont",
-        "offset":220,
+        "offset":260,
         "type":"ivar"
       },
       {
         "ivarType":"NSArray *",
         "name":"_contentConstraints",
-        "offset":224,
+        "offset":264,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_internalTitlePaddingInsets",
-        "offset":228,
+        "offset":268,
         "type":"ivar"
       }
     ],
@@ -332,103 +332,103 @@
       {
         "ivarType":"unsigned long long",
         "name":"_externalFlatEdge",
-        "offset":240,
+        "offset":312,
         "type":"ivar"
       },
       {
         "ivarType":"struct __CFDictionary *",
         "name":"_contentLookup",
-        "offset":248,
+        "offset":320,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_contentEdgeInsets",
-        "offset":256,
+        "offset":328,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_titleEdgeInsets",
-        "offset":288,
+        "offset":360,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_imageEdgeInsets",
-        "offset":320,
+        "offset":392,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_backgroundView",
-        "offset":352,
+        "offset":424,
         "type":"ivar"
       },
       {
         "ivarType":"UIImageView *",
         "name":"_imageView",
-        "offset":360,
+        "offset":432,
         "type":"ivar"
       },
       {
         "ivarType":"UILabel *",
         "name":"_titleView",
-        "offset":368,
+        "offset":440,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_initialized",
-        "offset":376,
+        "offset":448,
         "type":"ivar"
       },
       {
         "ivarType":"unsigned long long",
         "name":"_lastDrawingControlState",
-        "offset":384,
+        "offset":456,
         "type":"ivar"
       },
       {
         "ivarType":"UITapGestureRecognizer *",
         "name":"_selectGestureRecognizer",
-        "offset":392,
+        "offset":464,
         "type":"ivar"
       },
       {
-        "ivarType":"struct {\n        unsigned int reversesTitleShadowWhenHighlighted:1;\n        unsigned int adjustsImageWhenHighlighted:1;\n        unsigned int adjustsImageWhenDisabled:1;\n        unsigned int autosizeToFit:1;\n        unsigned int disabledDimsImage:1;\n        unsigned int showsTouchWhenHighlighted:1;\n        unsigned int buttonType:8;\n        unsigned int shouldHandleScrollerMouseEvent:1;\n        unsigned int titleFrozen:1;\n    }",
+        "ivarType":"struct {\n        unsigned int reversesTitleShadowWhenHighlighted:1;\n        unsigned int adjustsImageWhenHighlighted:1;\n        unsigned int adjustsImageWhenDisabled:1;\n        unsigned int autosizeToFit:1;\n        unsigned int disabledDimsImage:1;\n        unsigned int showsTouchWhenHighlighted:1;\n        unsigned int buttonType:8;\n        unsigned int shouldHandleScrollerMouseEvent:1;\n        unsigned int titleFrozen:1;\n        unsigned int resendTraitToImageViews:2;\n    }",
         "name":"_buttonFlags",
-        "offset":400,
+        "offset":472,
         "type":"ivar"
       },
       {
         "ivarType":"_UIButtonMaskAnimationView *",
         "name":"_maskAnimationView",
-        "offset":408,
+        "offset":480,
         "type":"ivar"
       },
       {
         "ivarType":"UIView *",
         "name":"_selectionView",
-        "offset":416,
+        "offset":488,
         "type":"ivar"
       },
       {
         "ivarType":"UIFont *",
         "name":"_lazyTitleViewFont",
-        "offset":424,
+        "offset":496,
         "type":"ivar"
       },
       {
         "ivarType":"NSArray *",
         "name":"_contentConstraints",
-        "offset":432,
+        "offset":504,
         "type":"ivar"
       },
       {
         "ivarType":"struct UIEdgeInsets",
         "name":"_internalTitlePaddingInsets",
-        "offset":440,
+        "offset":512,
         "type":"ivar"
       }
     ],

@@ -2,15 +2,15 @@
 # platform :ios, "7.0"
 
 target "LLDB iOS App" do
-    pod "AFNetworking", "~> 2.5.0"
+    pod "AFNetworking", "~> 2.5.2"
     pod "FMDB", "~> 2.5"
     pod "Facebook-iOS-SDK", "~> 3.23"
-    pod "MBProgressHUD", "~> 0.9"
+    pod "MBProgressHUD", "~> 0.9.1"
     pod "Reachability", "~> 3.2"
 end
 
 target "LLDB iOS App KIF", :exclusive => true do
-    pod 'KIF', '~> 3.1'
+    pod 'KIF', '~> 3.2.1'
 end
 
 target "LLDB iOS App Swift Tests", :exclusive => true do
