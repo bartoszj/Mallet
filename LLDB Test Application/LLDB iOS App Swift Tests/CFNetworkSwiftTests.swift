@@ -32,7 +32,7 @@ class CFNetworkSwiftTests: SharedSwiftTestCase {
     func testNSURLRequest2() {
         let url = NSURL(string: "https://google.com")!
         let mutableRequest = NSMutableURLRequest(URL: url)
-        let request = mutableRequest.copy() as NSURLRequest
+        let request = mutableRequest.copy() as! NSURLRequest
         self.compareObject(mutableRequest, type: "NSMutableURLRequest", summary: "https://google.com")
         self.compareObject(request, type: "NSURLRequest", summary: "https://google.com")
     }
@@ -42,7 +42,7 @@ class CFNetworkSwiftTests: SharedSwiftTestCase {
         let url = NSURL(string: "https://google.com")!
         let mutableRequest = NSMutableURLRequest(URL: url)
         mutableRequest.HTTPMethod = "POST"
-        let request = mutableRequest.copy() as NSURLRequest
+        let request = mutableRequest.copy() as! NSURLRequest
         self.compareObject(mutableRequest, type: "NSMutableURLRequest", summary: "POST, https://google.com")
         self.compareObject(request, type: "NSURLRequest", summary: "POST, https://google.com")
     }
@@ -52,7 +52,7 @@ class CFNetworkSwiftTests: SharedSwiftTestCase {
         let url = NSURL(string: "https://google.com")!
         let mutableRequest = NSMutableURLRequest(URL: url)
         mutableRequest.HTTPBody = "httpBodyData".dataUsingEncoding(NSUTF8StringEncoding)
-        let request = mutableRequest.copy() as NSURLRequest
+        let request = mutableRequest.copy() as! NSURLRequest
         self.compareObject(mutableRequest, type: "NSMutableURLRequest", summary: "GET, https://google.com, body=12 bytes")
         self.compareObject(request, type: "NSURLRequest", summary: "GET, https://google.com, body=12 bytes")
     }
@@ -60,14 +60,14 @@ class CFNetworkSwiftTests: SharedSwiftTestCase {
     func testNSURLRequest6() {
         let url = NSURL(string: "https://google.com")!
         let mutableRequest = NSMutableURLRequest(URL: url)
-        var request = mutableRequest.copy() as NSURLRequest
+        var request = mutableRequest.copy() as! NSURLRequest
         self.compareObject(mutableRequest, type: "NSMutableURLRequest", summary: "https://google.com")
         self.compareObject(request, type: "NSURLRequest", summary: "https://google.com")
         
         // HTTP headers.
         mutableRequest.setValue("headerValue", forHTTPHeaderField: "headerName")
         mutableRequest.setValue("headerValue2", forHTTPHeaderField: "headerName2")
-        request = mutableRequest.copy() as NSURLRequest
+        request = mutableRequest.copy() as! NSURLRequest
         self.compareObject(mutableRequest, type: "NSMutableURLRequest", summary: "GET, https://google.com")
         self.compareObject(request, type: "NSURLRequest", summary: "GET, https://google.com")
     }
@@ -80,7 +80,7 @@ class CFNetworkSwiftTests: SharedSwiftTestCase {
         let expectation = self.expectationWithDescription("GET")
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
-            let httpResponse = response as NSHTTPURLResponse
+            let httpResponse = response as! NSHTTPURLResponse
             self.compareObject(response, type: "NSURLResponse", summary: "http://api.openweathermap.org/data/2.5/weather?q=London,uk")
             self.compareObject(httpResponse, type: "NSHTTPURLResponse", summary: "http://api.openweathermap.org/data/2.5/weather?q=London,uk")
             

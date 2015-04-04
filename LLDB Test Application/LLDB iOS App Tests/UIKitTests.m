@@ -31,14 +31,14 @@
 - (void)testUIEdgeInsets
 {
     UIEdgeInsets insets = UIEdgeInsetsMake(1, 2, 3, 4);
-    [self compareVariable:&insets ofType:@"UIEdgeInsets *" toSummary:@"(top=1, left=2, bottom=3, right=4)"];
+    [self compareVariable:&insets ofType:@"UIEdgeInsets *" toSummary:@"(top = 1, left = 2, bottom = 3, right = 4)"];
 }
 
 #pragma mark - UIOffset
 - (void)testUIOffset
 {
     UIOffset offset = UIOffsetMake(1, 2);
-    [self compareVariable:&offset ofType:@"UIOffset *" toSummary:@"(horizontal=1, vertical=2)"];
+    [self compareVariable:&offset ofType:@"UIOffset *" toSummary:@"(horizontal = 1, vertical = 2)"];
 }
 
 #pragma mark - UIScreen

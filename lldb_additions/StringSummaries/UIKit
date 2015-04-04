@@ -1,4 +1,4 @@
-type summary add -s "(top=${var.top}, left=${var.left}, bottom=${var.bottom}, right=${var.right})" -v --category UIKit UIEdgeInsets
-type summary add -s "(horizontal=${var.horizontal}, vertical=${var.vertical})" -v --category UIKit UIOffset
+type summary add -s "(top = ${var.top}, left = ${var.left}, bottom = ${var.bottom}, right = ${var.right})" -v --category UIKit UIEdgeInsets
+type summary add -s "(horizontal = ${var.horizontal}, vertical = ${var.vertical})" -v --category UIKit UIOffset
 
 type category enable UIKit

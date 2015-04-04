@@ -240,10 +240,10 @@ class FoundationSwiftTests: SharedSwiftTestCase {
         let constraint3 = NSLayoutConstraint(item: view, attribute: .Height, relatedBy: .LessThanOrEqual, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 300)
         
         if !nslayoutConstraintSummaryShort {
-            let ptr = ObjectIdentifier(view).uintValue()
-            let summary1 = NSString(format: "H:[UIView:0x%lx(200)]", ptr)
-            let summary2 = NSString(format: "H:[UIView:0x%lx(>=200)]", ptr)
-            let summary3 = NSString(format: "V:[UIView:0x%lx(<=300)]", ptr)
+            let ptr = ObjectIdentifier(view).uintValue
+            let summary1 = NSString(format: "H:[UIView:0x%lx(200)]", ptr) as String
+            let summary2 = NSString(format: "H:[UIView:0x%lx(>=200)]", ptr) as String
+            let summary3 = NSString(format: "V:[UIView:0x%lx(<=300)]", ptr) as String
             self.compareObject(constraint1, type: "NSLayoutConstraint", summary: summary1)
             self.compareObject(constraint2, type: "NSLayoutConstraint", summary: summary2)
             self.compareObject(constraint3, type: "NSLayoutConstraint", summary: summary3)
@@ -264,10 +264,10 @@ class FoundationSwiftTests: SharedSwiftTestCase {
         constraint3.priority = 789
         
         if !nslayoutConstraintSummaryShort {
-            let ptr = ObjectIdentifier(view).uintValue()
-            let summary1 = NSString(format: "H:[UIView:0x%lx(200@123)]", ptr)
-            let summary2 = NSString(format: "H:[UIView:0x%lx(>=200@456)]", ptr)
-            let summary3 = NSString(format: "V:[UIView:0x%lx(<=300@789)]", ptr)
+            let ptr = ObjectIdentifier(view).uintValue
+            let summary1 = NSString(format: "H:[UIView:0x%lx(200@123)]", ptr) as String
+            let summary2 = NSString(format: "H:[UIView:0x%lx(>=200@456)]", ptr) as String
+            let summary3 = NSString(format: "V:[UIView:0x%lx(<=300@789)]", ptr) as String
             self.compareObject(constraint1, type: "NSLayoutConstraint", summary: summary1)
             self.compareObject(constraint2, type: "NSLayoutConstraint", summary: summary2)
             self.compareObject(constraint3, type: "NSLayoutConstraint", summary: summary3)
@@ -287,11 +287,11 @@ class FoundationSwiftTests: SharedSwiftTestCase {
         constraint3.priority = 300
         
         if !nslayoutConstraintSummaryShort {
-            let ptr1 = ObjectIdentifier(view1).uintValue()
-            let ptr2 = ObjectIdentifier(view2).uintValue()
-            let summary1 = NSString(format: "UIView:0x%lx.left == UIView:0x%lx.lastBaseline - 200", ptr1, ptr2)
-            let summary2 = NSString(format: "UIView:0x%lx.trailing >= 2*UIView:0x%lx.centerX + 200", ptr1, ptr2)
-            let summary3 = NSString(format: "UIView:0x%lx.topMargin <= UIView:0x%lx.centerYWithMargins + 300 @300", ptr1, ptr2)
+            let ptr1 = ObjectIdentifier(view1).uintValue
+            let ptr2 = ObjectIdentifier(view2).uintValue
+            let summary1 = NSString(format: "UIView:0x%lx.left == UIView:0x%lx.lastBaseline - 200", ptr1, ptr2) as String
+            let summary2 = NSString(format: "UIView:0x%lx.trailing >= 2*UIView:0x%lx.centerX + 200", ptr1, ptr2) as String
+            let summary3 = NSString(format: "UIView:0x%lx.topMargin <= UIView:0x%lx.centerYWithMargins + 300 @300", ptr1, ptr2) as String
             self.compareObject(constraint1, type: "NSLayoutConstraint", summary: summary1)
             self.compareObject(constraint2, type: "NSLayoutConstraint", summary: summary2)
             self.compareObject(constraint3, type: "NSLayoutConstraint", summary: summary3)
@@ -303,17 +303,17 @@ class FoundationSwiftTests: SharedSwiftTestCase {
     }
     
     func testNSLayoutConstraint04() {
-        let view = UINib(nibName: "AutolayoutView", bundle: nil).instantiateWithOwner(nil, options: nil).first! as UIView
-        let subview = view.subviews[0] as UIView
-        let constraints = view.constraints()
-        let constraint1 = constraints[0] as NSLayoutConstraint
-        let constraint2 = constraints[1] as NSLayoutConstraint
+        let view = UINib(nibName: "AutolayoutView", bundle: nil).instantiateWithOwner(nil, options: nil).first! as! UIView
+        let subview = view.subviews[0] as! UIView
+        let constraints = view.constraints() as! [NSLayoutConstraint]
+        let constraint1 = constraints[0]
+        let constraint2 = constraints[1]
         
         if !nslayoutConstraintSummaryShort {
-            let ptr1 = ObjectIdentifier(subview).uintValue()
-            let ptr2 = ObjectIdentifier(view).uintValue()
-            let summary1 = NSString(format: "UIView:0x%lx.top == UIView:0x%lx.top + standard", ptr1, ptr2)
-            let summary2 = NSString(format: "UIView:0x%lx.leading == UIView:0x%lx.leading + standard", ptr1, ptr2)
+            let ptr1 = ObjectIdentifier(subview).uintValue
+            let ptr2 = ObjectIdentifier(view).uintValue
+            let summary1 = NSString(format: "UIView:0x%lx.top == UIView:0x%lx.top + standard", ptr1, ptr2) as String
+            let summary2 = NSString(format: "UIView:0x%lx.leading == UIView:0x%lx.leading + standard", ptr1, ptr2) as String
             self.compareObject(constraint1, type: "NSLayoutConstraint", summary: summary1)
             self.compareObject(constraint2, type: "NSLayoutConstraint", summary: summary2)
         } else {
