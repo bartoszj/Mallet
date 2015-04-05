@@ -21,8 +21,22 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Bolts (1.1.4)
-  - Facebook-iOS-SDK (3.23.2):
+  - Facebook-iOS-SDK (4.0.1):
     - Bolts (~> 1.0)
+    - Facebook-iOS-SDK/CoreKit (= 4.0.1)
+    - Facebook-iOS-SDK/LoginKit (= 4.0.1)
+    - Facebook-iOS-SDK/ShareKit (= 4.0.1)
+  - Facebook-iOS-SDK/CoreKit (4.0.1):
+    - Bolts (~> 1.0)
+    - Facebook-iOS-SDK/CoreKit/no-arc (= 4.0.1)
+  - Facebook-iOS-SDK/CoreKit/no-arc (4.0.1):
+    - Bolts (~> 1.0)
+  - Facebook-iOS-SDK/LoginKit (4.0.1):
+    - Bolts (~> 1.0)
+    - Facebook-iOS-SDK/CoreKit
+  - Facebook-iOS-SDK/ShareKit (4.0.1):
+    - Bolts (~> 1.0)
+    - Facebook-iOS-SDK/CoreKit
   - FMDB (2.5):
     - FMDB/standard (= 2.5)
   - FMDB/common (2.5)
@@ -36,7 +50,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.2)
-  - Facebook-iOS-SDK (~> 3.23)
+  - Facebook-iOS-SDK (~> 4.0)
   - FMDB (~> 2.5)
   - KIF (~> 3.2.1)
   - MBProgressHUD (~> 0.9.1)
@@ -45,7 +59,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: fefbce9660acb17f48ae0011292d4da0f457bf36
   Bolts: f8e2f94edbf9fec7bb8de5ecaaa3aa6b7de6f64e
-  Facebook-iOS-SDK: cd87f0b2f0c1d9574b44e8fa2baacc275524bac3
+  Facebook-iOS-SDK: 6d05532c97e9c542f8d87f94b7f6ee217493d00b
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
   KIF: ef1691e54e1d969c3b4fd0b5b56a3d7ddf37f216
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad

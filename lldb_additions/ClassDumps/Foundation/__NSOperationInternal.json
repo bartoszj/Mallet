@@ -1,0 +1,726 @@
+{
+  "arm64":{
+    "className":"__NSOperationInternal",
+    "ivars":[
+      {
+        "ivarType":"unsigned char [8]",
+        "name":"__pad1",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__outerOp",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__prevOp",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__nextOp",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__nextPriOp",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperationQueue *",
+        "name":"__queue",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__dependencies",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__down_dependencies",
+        "offset":64,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__unfinished_deps",
+        "offset":72,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"CDUnknownBlockType",
+        "name":"__completion",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"void *",
+        "name":"__obsInfo",
+        "offset":88,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"void *",
+        "name":"__implicitObsInfo",
+        "offset":96,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__seqno",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"__thread_prio",
+        "offset":112,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__children",
+        "offset":120,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__RC",
+        "offset":128,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__state",
+        "offset":132,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__prio",
+        "offset":136,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__cached_isReady",
+        "offset":137,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__isCancelled",
+        "offset":138,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__isBarrier",
+        "offset":139,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__qoses",
+        "offset":140,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _opaque_pthread_mutex_t",
+        "name":"__wait_mutex",
+        "offset":144,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _opaque_pthread_cond_t",
+        "name":"__wait_cond",
+        "offset":208,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _opaque_pthread_t *",
+        "name":"__pthread",
+        "offset":256,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char *",
+        "name":"__nameBuffer",
+        "offset":264,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__activity",
+        "offset":272,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct pthread_override_s *",
+        "name":"__ov",
+        "offset":280,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char [0]",
+        "name":"__pad3",
+        "offset":288,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"__NSOperationInternal",
+    "ivars":[
+      {
+        "ivarType":"unsigned char [8]",
+        "name":"__pad1",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__outerOp",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__prevOp",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__nextOp",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__nextPriOp",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperationQueue *",
+        "name":"__queue",
+        "offset":28,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__dependencies",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__down_dependencies",
+        "offset":36,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__unfinished_deps",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"CDUnknownBlockType",
+        "name":"__completion",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"void *",
+        "name":"__obsInfo",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"void *",
+        "name":"__implicitObsInfo",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__seqno",
+        "offset":60,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"__thread_prio",
+        "offset":68,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__children",
+        "offset":76,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__RC",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__state",
+        "offset":84,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__prio",
+        "offset":88,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__cached_isReady",
+        "offset":89,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__isCancelled",
+        "offset":90,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__isBarrier",
+        "offset":91,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__qoses",
+        "offset":92,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _opaque_pthread_mutex_t",
+        "name":"__wait_mutex",
+        "offset":96,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _opaque_pthread_cond_t",
+        "name":"__wait_cond",
+        "offset":140,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _opaque_pthread_t *",
+        "name":"__pthread",
+        "offset":168,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char *",
+        "name":"__nameBuffer",
+        "offset":172,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__activity",
+        "offset":176,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct pthread_override_s *",
+        "name":"__ov",
+        "offset":180,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char [12]",
+        "name":"__pad3",
+        "offset":184,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "i386":{
+    "className":"__NSOperationInternal",
+    "ivars":[
+      {
+        "ivarType":"unsigned char [8]",
+        "name":"__pad1",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__outerOp",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__prevOp",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__nextOp",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__nextPriOp",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperationQueue *",
+        "name":"__queue",
+        "offset":28,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__dependencies",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__down_dependencies",
+        "offset":36,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__unfinished_deps",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"CDUnknownBlockType",
+        "name":"__completion",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"void *",
+        "name":"__obsInfo",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"void *",
+        "name":"__implicitObsInfo",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__seqno",
+        "offset":60,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"__thread_prio",
+        "offset":68,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__children",
+        "offset":76,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__RC",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__state",
+        "offset":84,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__prio",
+        "offset":88,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__cached_isReady",
+        "offset":89,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__isCancelled",
+        "offset":90,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__isBarrier",
+        "offset":91,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__qoses",
+        "offset":92,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _opaque_pthread_mutex_t",
+        "name":"__wait_mutex",
+        "offset":96,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _opaque_pthread_cond_t {\n        long __sig;\n        char __opaque[24];\n    }",
+        "name":"__wait_cond",
+        "offset":140,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _opaque_pthread_t *",
+        "name":"__pthread",
+        "offset":168,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char *",
+        "name":"__nameBuffer",
+        "offset":172,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__activity",
+        "offset":176,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct pthread_override_s *",
+        "name":"__ov",
+        "offset":180,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char [12]",
+        "name":"__pad3",
+        "offset":184,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"__NSOperationInternal",
+    "ivars":[
+      {
+        "ivarType":"unsigned char [8]",
+        "name":"__pad1",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__outerOp",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__prevOp",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__nextOp",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__nextPriOp",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperationQueue *",
+        "name":"__queue",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__dependencies",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__down_dependencies",
+        "offset":64,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__unfinished_deps",
+        "offset":72,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"CDUnknownBlockType",
+        "name":"__completion",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"void *",
+        "name":"__obsInfo",
+        "offset":88,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"void *",
+        "name":"__implicitObsInfo",
+        "offset":96,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__seqno",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"__thread_prio",
+        "offset":112,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__children",
+        "offset":120,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__RC",
+        "offset":128,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__state",
+        "offset":132,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__prio",
+        "offset":136,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__cached_isReady",
+        "offset":137,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__isCancelled",
+        "offset":138,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__isBarrier",
+        "offset":139,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__qoses",
+        "offset":140,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _opaque_pthread_mutex_t",
+        "name":"__wait_mutex",
+        "offset":144,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _opaque_pthread_cond_t {\n        long long __sig;\n        char __opaque[40];\n    }",
+        "name":"__wait_cond",
+        "offset":208,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _opaque_pthread_t *",
+        "name":"__pthread",
+        "offset":256,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char *",
+        "name":"__nameBuffer",
+        "offset":264,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__activity",
+        "offset":272,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct pthread_override_s *",
+        "name":"__ov",
+        "offset":280,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char [0]",
+        "name":"__pad3",
+        "offset":288,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  }
+}

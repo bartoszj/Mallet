@@ -321,4 +321,67 @@ class FoundationSwiftTests: SharedSwiftTestCase {
             self.compareObject(constraint2, type: "NSLayoutConstraint", summary: "leading == leading+standard")
         }
     }
+    
+    // MARK: - NSOperation
+    func testNSOperation01() {
+        let exceptation = self.expectationWithDescription("Operation")
+        let operation = NSBlockOperation { () -> Void in
+            
+        }
+        operation.completionBlock = {
+            exceptation.fulfill()
+        }
+        
+        operation.name = "Operation name"
+        self.compareObject(operation, type: "NSOperation", summary: "name=\"Operation name\"")
+        operation.qualityOfService = .Background
+        self.compareObject(operation, type: "NSOperation", summary: "qos=Background, name=\"Operation name\"")
+        operation.queuePriority = .Low;
+        self.compareObject(operation, type: "NSOperation", summary: "priority=Low, qos=Background, name=\"Operation name\"")
+        
+        NSOperationQueue.mainQueue().addOperation(operation)
+        operation.cancel()
+        self.compareObject(operation, type: "NSOperation", summary: "cancelled, priority=Low, qos=Background, name=\"Operation name\"")
+     
+        self.waitForExpectationsWithTimeout(2, handler: nil)
+        self.compareObject(operation, type: "NSOperation", summary: "cancelled, priority=Low, qos=Background, name=\"Operation name\"")
+    }
+    
+    func testNSOperationQueue01() {
+        let queue = NSOperationQueue()
+        self.compareObject(queue, type: "NSOperationQueue", summary: "operations=0, executing=0")
+        queue.maxConcurrentOperationCount = 1
+        self.compareObject(queue, type: "NSOperationQueue", summary: "operations=0, executing=0, max=1")
+        queue.qualityOfService = .UserInteractive
+        self.compareObject(queue, type: "NSOperationQueue", summary: "operations=0, executing=0, max=1, qos=UserInteractive")
+        queue.suspended = true
+        self.compareObject(queue, type: "NSOperationQueue", summary: "suspended, operations=0, executing=0, max=1, qos=UserInteractive")
+    }
+    
+    func testNSOperationQueue02() {
+        let queue = NSOperationQueue.mainQueue()
+        self.compareObject(queue, type: "NSOperationQueue", summary: "operations=0, executing=0, max=1, qos=UserInteractive, mainQueue")
+    }
+    
+    func testNSOperationQueue03() {
+        let queue = NSOperationQueue()
+        queue.maxConcurrentOperationCount = 2
+        queue.suspended = true
+        self.compareObject(queue, type: "NSOperationQueue", summary: "suspended, operations=0, executing=0, max=2")
+        
+        queue.addOperationWithBlock { () -> Void in
+            
+        }
+        self.compareObject(queue, type: "NSOperationQueue", summary: "suspended, operations=1, executing=0, max=2")
+        
+        queue.addOperationWithBlock { () -> Void in
+            
+        }
+        self.compareObject(queue, type: "NSOperationQueue", summary: "suspended, operations=2, executing=0, max=2")
+        
+        queue.addOperationWithBlock { () -> Void in
+            
+        }
+        self.compareObject(queue, type: "NSOperationQueue", summary: "suspended, operations=3, executing=0, max=2")
+    }
 }

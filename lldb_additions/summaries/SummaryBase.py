@@ -159,6 +159,15 @@ class SummaryBaseSyntheticProvider(object):
             return None
         return get_architecture_list().get_ivar(self.architecture_name, self.type_name, ivar_name)
 
+    def get_address(self):
+        """
+        Returns object address.
+
+        :return: Object address.
+        :rtype: int
+        """
+        return get_address_value(self.value_obj)
+
     def get_child_value(self, ivar_name, type_name=None, offset=None):
         """
         Returns child value (SBValue) with given name (or offset). If variable cannot be find by name then uses ivar offset.
@@ -806,6 +815,23 @@ def get_nsset_count_value(obj):
         if s.isdigit():
             return int(s)
     return None
+
+
+def get_address_value(obj):
+    """
+    Returns address from LLDB value.
+
+    :param lldb.SBValue obj: LLDB value object.
+    :return: Address from LLDB value.
+    :rtype: int | None
+    """
+    no_dynamic = obj.GetDynamicValue(lldb.eNoDynamicValues)
+    """:type: lldb.SBValue"""
+    address = no_dynamic.GetAddress()
+    """:type: lldb.SBAddress"""
+    address_value = address.GetFileAddress()
+    """:type: int"""
+    return address_value
 
 
 def get_type_name_value(obj):

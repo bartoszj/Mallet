@@ -28,6 +28,11 @@ import lldb_additions.scripts.class_dump as class_dump
 
 
 def normalize_type(type_32bit, type_64bit):
+    if type_32bit is None:
+        type_32bit = type_64bit
+    elif type_64bit is None:
+        type_64bit = type_32bit
+
     if type_32bit == type_64bit:
         if type_32bit == u"struct CGPoint":
             return u"CGPoint"
@@ -105,7 +110,10 @@ def dump_class(class_name):
                 ivar_i386 = cl_i386.get_ivar(ivar.name)
                 ivar_x86_64 = cl_x86_64.get_ivar(ivar.name)
 
-                type_name = normalize_type(ivar_armv7.ivarType, ivar_arm64.ivarType)
+                type32 = ivar_armv7.ivarType if ivar_armv7 else None
+                type64 = ivar_arm64.ivarType if ivar_arm64 else None
+
+                type_name = normalize_type(type32, type64)
                 max_type_length = max(len(nt) for nt in type_name.split(u"\n"))
                 last_type_length = len(type_name.split(u"\n")[-1])
 
@@ -154,7 +162,10 @@ def dump_class(class_name):
                 #     ivar_x86_64_padding = next_ivar_x86_64.offset - ivar_x86_64.offset - ivar_x86_64.size
 
                 # Normalized type name.
-                type_name = normalize_type(ivar_armv7.ivarType, ivar_arm64.ivarType)
+                type32 = ivar_armv7.ivarType if ivar_armv7 else None
+                type64 = ivar_arm64.ivarType if ivar_arm64 else None
+
+                type_name = normalize_type(type32, type64)
                 # Split names by new lines.
                 first_type_name = u"\n".join(type_name.split(u"\n")[:-1])
                 if first_type_name:
@@ -166,29 +177,43 @@ def dump_class(class_name):
                 # Offsets values.
                 if ivar_armv7_padding:
                     offset_armv7 = u"{0:>3} (0x{0:03X}) / {1:<2} + {2:<2}"\
-                        .format(ivar_armv7.offset, ivar_armv7.size, ivar_armv7_padding)
+                        .format(ivar_armv7.offset if ivar_armv7 is not None else -1,
+                                ivar_armv7.size if ivar_armv7 is not None else None,
+                                ivar_armv7_padding if ivar_armv7 is not None else -1)
                 else:
                     offset_armv7 = u"{0:>3} (0x{0:03X}) / {1:<2}"\
-                        .format(ivar_armv7.offset, ivar_armv7.size)
+                        .format(ivar_armv7.offset if ivar_armv7 is not None else -1,
+                                ivar_armv7.size if ivar_armv7 is not None else None)
+
                 if ivar_arm64_padding:
                     offset_arm64 = u"{0:>3} (0x{0:03X}) / {1:<2} + {2:<2}"\
-                        .format(ivar_arm64.offset, ivar_arm64.size, ivar_arm64_padding)
+                        .format(ivar_arm64.offset if ivar_arm64 is not None else -1,
+                                ivar_arm64.size if ivar_arm64 is not None else None,
+                                ivar_arm64_padding if ivar_arm64 is not None else -1)
                 else:
                     offset_arm64 = u"{0:>3} (0x{0:03X}) / {1:<2}"\
-                        .format(ivar_arm64.offset, ivar_arm64.size)
+                        .format(ivar_arm64.offset if ivar_arm64 is not None else -1,
+                                ivar_arm64.size if ivar_arm64 is not None else None)
+
                 if ivar_i386_padding:
                     offset_i386 = u"{0:>3} (0x{0:03X}) / {1:<2} + {2:<2}"\
-                        .format(ivar_i386.offset, ivar_i386.size, ivar_i386_padding)
+                        .format(ivar_i386.offset if ivar_i386 is not None else -1,
+                                ivar_i386.size if ivar_i386 is not None else None,
+                                ivar_i386_padding if ivar_i386 is not None else -1)
                 else:
                     offset_i386 = u"{0:>3} (0x{0:03X}) / {1:<2}"\
-                        .format(ivar_i386.offset, ivar_i386.size)
+                        .format(ivar_i386.offset if ivar_i386 is not None else -1,
+                                ivar_i386.size if ivar_i386 is not None else None)
 
                 if ivar_x86_64_padding:
                     offset_x86_64 = u"{0:>3} (0x{0:03X}) / {1:<2} + {2:<2}"\
-                        .format(ivar_x86_64.offset, ivar_x86_64.size, ivar_x86_64_padding)
+                        .format(ivar_x86_64.offset if ivar_x86_64 is not None else -1,
+                                ivar_x86_64.size if ivar_x86_64 is not None else None,
+                                ivar_x86_64_padding if ivar_x86_64 is not None else -1)
                 else:
                     offset_x86_64 = u"{0:>3} (0x{0:03X}) / {1:<2}"\
-                        .format(ivar_x86_64.offset, ivar_x86_64.size)
+                        .format(ivar_x86_64.offset if ivar_x86_64 is not None else -1,
+                                ivar_x86_64.size if ivar_x86_64 is not None else None)
 
                 output += first_type_name
                 output += u"{Name:{name_width}} {ArmV7:{o_width}} {i386:{o_width}} {Arm64:{o_width}} {x86_64:{o_width}}\n"\

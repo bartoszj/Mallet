@@ -2,6 +2,7 @@ SKDownload:StoreKit/SKDownload.json
 UIControl:UIKit/UIControl.json
 SKPayment:StoreKit/SKPayment.json
 SKPaymentQueueInternal:StoreKit/SKPaymentQueueInternal.json
+__NSOperationQueueInternal:Foundation/__NSOperationQueueInternal.json
 NSURLResponseInternal:CFNetwork/NSURLResponseInternal.json
 UIEvent:UIKit/UIEvent.json
 SKPaymentInternal:StoreKit/SKPaymentInternal.json
@@ -37,11 +38,13 @@ UIAlertAction:UIKit/UIAlertAction.json
 NSURLResponse:CFNetwork/NSURLResponse.json
 SKPaymentQueue:StoreKit/SKPaymentQueue.json
 SKProductsRequest:StoreKit/SKProductsRequest.json
+NSOperation:Foundation/NSOperation.json
 SKProductsResponse:StoreKit/SKProductsResponse.json
 UIView:UIKit/UIView.json
 SKRequest:StoreKit/SKRequest.json
 NSURLRequestInternal:CFNetwork/NSURLRequestInternal.json
 NSURLComponents:Foundation/NSURLComponents.json
+__NSOperationInternal:Foundation/__NSOperationInternal.json
 SKProductsRequestInternal:StoreKit/SKProductsRequestInternal.json
 UIDatePicker:UIKit/UIDatePicker.json
 UIStoryboard:UIKit/UIStoryboard.json
@@ -50,9 +53,10 @@ UIBarItem:UIKit/UIBarItem.json
 SKProduct:StoreKit/SKProduct.json
 SKPaymentTransactionInternal:StoreKit/SKPaymentTransactionInternal.json
 UIImageView:UIKit/UIImageView.json
-UILabel:UIKit/UILabel.json
+NSOperationQueue:Foundation/NSOperationQueue.json
 UIButton:UIKit/UIButton.json
 UIStepper:UIKit/UIStepper.json
+UILabel:UIKit/UILabel.json
 UIStoryboardSegue:UIKit/UIStoryboardSegue.json
 UIAlertView:UIKit/UIAlertView.json
 SKReceiptRefreshRequest:StoreKit/SKReceiptRefreshRequest.json

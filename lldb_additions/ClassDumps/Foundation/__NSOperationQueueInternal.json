@@ -1,0 +1,462 @@
+{
+  "arm64":{
+    "className":"__NSOperationQueueInternal",
+    "ivars":[
+      {
+        "ivarType":"struct _opaque_pthread_mutex_t",
+        "name":"__queueLock",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__firstOperation",
+        "offset":72,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__lastOperation",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__pendingFirstOperation",
+        "offset":88,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__pendingLastOperation",
+        "offset":96,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *[5]",
+        "name":"__firstPriOperation",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *[5]",
+        "name":"__lastPriOperation",
+        "offset":144,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_queue> *",
+        "name":"__pending_barrier",
+        "offset":184,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__maxNumOps",
+        "offset":192,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__actualMaxNumOps",
+        "offset":200,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__numExecOps",
+        "offset":204,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"__unused2",
+        "offset":208,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__mainQ",
+        "offset":212,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__suspended",
+        "offset":213,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__overcommit",
+        "offset":214,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__propertyQOS",
+        "offset":215,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_queue> *",
+        "name":"__dispatch_queue",
+        "offset":216,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char [160]",
+        "name":"__nameBuffer",
+        "offset":224,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"__NSOperationQueueInternal",
+    "ivars":[
+      {
+        "ivarType":"struct _opaque_pthread_mutex_t",
+        "name":"__queueLock",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__firstOperation",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__lastOperation",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__pendingFirstOperation",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__pendingLastOperation",
+        "offset":60,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *[5]",
+        "name":"__firstPriOperation",
+        "offset":64,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *[5]",
+        "name":"__lastPriOperation",
+        "offset":84,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_queue> *",
+        "name":"__pending_barrier",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__maxNumOps",
+        "offset":108,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__actualMaxNumOps",
+        "offset":112,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__numExecOps",
+        "offset":116,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"__unused2",
+        "offset":120,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__mainQ",
+        "offset":124,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__suspended",
+        "offset":125,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__overcommit",
+        "offset":126,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__propertyQOS",
+        "offset":127,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_queue> *",
+        "name":"__dispatch_queue",
+        "offset":128,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char [160]",
+        "name":"__nameBuffer",
+        "offset":132,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "i386":{
+    "className":"__NSOperationQueueInternal",
+    "ivars":[
+      {
+        "ivarType":"struct _opaque_pthread_mutex_t",
+        "name":"__queueLock",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__firstOperation",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__lastOperation",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__pendingFirstOperation",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__pendingLastOperation",
+        "offset":60,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *[5]",
+        "name":"__firstPriOperation",
+        "offset":64,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *[5]",
+        "name":"__lastPriOperation",
+        "offset":84,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_queue> *",
+        "name":"__pending_barrier",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__maxNumOps",
+        "offset":108,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__actualMaxNumOps",
+        "offset":112,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__numExecOps",
+        "offset":116,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"__unused2",
+        "offset":120,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__mainQ",
+        "offset":124,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__suspended",
+        "offset":125,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__overcommit",
+        "offset":126,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__propertyQOS",
+        "offset":127,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_queue> *",
+        "name":"__dispatch_queue",
+        "offset":128,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char [160]",
+        "name":"__nameBuffer",
+        "offset":132,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"__NSOperationQueueInternal",
+    "ivars":[
+      {
+        "ivarType":"struct _opaque_pthread_mutex_t",
+        "name":"__queueLock",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__firstOperation",
+        "offset":72,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__lastOperation",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__pendingFirstOperation",
+        "offset":88,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *",
+        "name":"__pendingLastOperation",
+        "offset":96,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *[5]",
+        "name":"__firstPriOperation",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSOperation *[5]",
+        "name":"__lastPriOperation",
+        "offset":144,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_queue> *",
+        "name":"__pending_barrier",
+        "offset":184,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__maxNumOps",
+        "offset":192,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__actualMaxNumOps",
+        "offset":200,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__numExecOps",
+        "offset":204,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"__unused2",
+        "offset":208,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__mainQ",
+        "offset":212,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__suspended",
+        "offset":213,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned char",
+        "name":"__overcommit",
+        "offset":214,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__propertyQOS",
+        "offset":215,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_queue> *",
+        "name":"__dispatch_queue",
+        "offset":216,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char [160]",
+        "name":"__nameBuffer",
+        "offset":224,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  }
+}

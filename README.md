@@ -26,6 +26,8 @@ The summaries will be available the next time Xcode starts.
     - NSDateComponents
     - NSLayoutConstraint
     - NSObject
+    - NSOperation (NSBlockOperation)
+    - NSOperationQueue
     - NSURLComponents (__NSConcreteURLComponents)
     - NSUUID (__NSConcreteUUID)
 - QuartzCore:

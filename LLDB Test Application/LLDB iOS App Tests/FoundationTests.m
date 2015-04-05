@@ -366,4 +366,67 @@
 #endif
 }
 
+#pragma mark - NSOperation
+- (void)testNSOperation01
+{
+    XCTestExpectation *exceptation = [self expectationWithDescription:@"Operation"];
+    NSOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
+    }];
+    operation.completionBlock = ^{
+        [exceptation fulfill];
+    };
+    
+    operation.name = @"Operation name";
+    [self compareObject:operation ofType:@"NSOperation *" toSummary:@"name=\"Operation name\""];
+    operation.qualityOfService = NSQualityOfServiceBackground;
+    [self compareObject:operation ofType:@"NSOperation *" toSummary:@"qos=Background, name=\"Operation name\""];
+    operation.queuePriority = NSOperationQueuePriorityLow;
+    [self compareObject:operation ofType:@"NSOperation *" toSummary:@"priority=Low, qos=Background, name=\"Operation name\""];
+    
+    [[NSOperationQueue mainQueue] addOperation:operation];
+    [operation cancel];
+    [self compareObject:operation ofType:@"NSOperation *" toSummary:@"cancelled, priority=Low, qos=Background, name=\"Operation name\""];
+    
+    [self waitForExpectationsWithTimeout:2 handler:nil];
+    [self compareObject:operation ofType:@"NSOperation *" toSummary:@"cancelled, priority=Low, qos=Background, name=\"Operation name\""];
+}
+
+- (void)testNSOperationQueue01
+{
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [self compareObject:queue ofType:@"NSOperationQueue *" toSummary:@"operations=0, executing=0"];
+    queue.maxConcurrentOperationCount = 1;
+    [self compareObject:queue ofType:@"NSOperationQueue *" toSummary:@"operations=0, executing=0, max=1"];
+    queue.qualityOfService = NSQualityOfServiceUserInteractive;
+    [self compareObject:queue ofType:@"NSOperationQueue *" toSummary:@"operations=0, executing=0, max=1, qos=UserInteractive"];
+    queue.suspended = YES;
+    [self compareObject:queue ofType:@"NSOperationQueue *" toSummary:@"suspended, operations=0, executing=0, max=1, qos=UserInteractive"];
+}
+
+- (void)testNSOperationQueue02
+{
+    NSOperationQueue *queue = [NSOperationQueue mainQueue];
+    [self compareObject:queue ofType:@"NSOperationQueue *" toSummary:@"operations=0, executing=0, max=1, qos=UserInteractive, mainQueue"];
+}
+
+- (void)testNSOperationQueue03
+{
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    queue.maxConcurrentOperationCount = 2;
+    queue.suspended = YES;
+    [self compareObject:queue ofType:@"NSOperationQueue *" toSummary:@"suspended, operations=0, executing=0, max=2"];
+    
+    [queue addOperationWithBlock:^{
+    }];
+    [self compareObject:queue ofType:@"NSOperationQueue *" toSummary:@"suspended, operations=1, executing=0, max=2"];
+    
+    [queue addOperationWithBlock:^{
+    }];
+    [self compareObject:queue ofType:@"NSOperationQueue *" toSummary:@"suspended, operations=2, executing=0, max=2"];
+    
+    [queue addOperationWithBlock:^{
+    }];
+    [self compareObject:queue ofType:@"NSOperationQueue *" toSummary:@"suspended, operations=3, executing=0, max=2"];
+}
+
 @end
