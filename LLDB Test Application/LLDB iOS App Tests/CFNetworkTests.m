@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SharedTestCase.h"
 
-@interface CFNetworkTests : SharedTestCase
+@interface CFNetworkTests : SharedTestCase <NSURLConnectionDataDelegate>
+
+@property (strong, nonatomic) XCTestExpectation *exceptation;
 
 @end
 
@@ -25,6 +27,7 @@
 - (void)tearDown
 {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
+    self.exceptation = nil;
     [super tearDown];
 }
 
@@ -103,6 +106,26 @@
     }];
     
     [self waitForExpectationsWithTimeout:10 handler:nil];
+}
+
+#pragma mark - NSURLConnection
+- (void)testNSURLConnection01
+{
+    NSURL *url = [NSURL URLWithString:@"http://api.openweathermap.org/data/2.5/weather?q=London,uk"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    self.exceptation = [self expectationWithDescription:@"GET"];
+    
+    NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
+    [self compareObject:connection ofType:@"NSURLConnection *" toSummary:@"url=http://api.openweathermap.org/data/2.5/weather?q=London,uk"];
+    [connection start];
+    [self compareObject:connection ofType:@"NSURLConnection *" toSummary:@"url=http://api.openweathermap.org/data/2.5/weather?q=London,uk"];
+    
+    [self waitForExpectationsWithTimeout:10 handler:nil];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    [self.exceptation fulfill];
 }
 
 @end

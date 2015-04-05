@@ -20,6 +20,7 @@ The summaries will be available the next time Xcode starts.
 - CFNetowrk:
     - CFURLRequest
     - CFURLResponse
+    - NSURLConnection
     - NSURLRequest (NSMutableURLRequest)
     - NSURLResponse, NSHTTPURLResponse
 - Foundation:

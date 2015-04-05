@@ -9,7 +9,9 @@
 import UIKit
 import XCTest
 
-class CFNetworkSwiftTests: SharedSwiftTestCase {
+class CFNetworkSwiftTests: SharedSwiftTestCase, NSURLConnectionDataDelegate {
+    
+    var exceptation: XCTestExpectation?
 
     // MARK: - Setup
     override func setUp() {
@@ -19,6 +21,7 @@ class CFNetworkSwiftTests: SharedSwiftTestCase {
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        self.exceptation = nil
         super.tearDown()
     }
     
@@ -88,5 +91,23 @@ class CFNetworkSwiftTests: SharedSwiftTestCase {
         }
         
         self.waitForExpectationsWithTimeout(10, handler: nil)
+    }
+    
+    // MARK: - NSURLConnection
+    func testNSURLConnection01() {
+        let url = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=London,uk")!
+        let request = NSURLRequest(URL: url)
+        self.exceptation = self.expectationWithDescription("GET")
+        
+        let connection = NSURLConnection(request: request, delegate: self)!
+        self.compareObject(connection, type: "NSURLConnection", summary: "url=http://api.openweathermap.org/data/2.5/weather?q=London,uk")
+        connection.start()
+        self.compareObject(connection, type: "NSURLConnection", summary: "url=http://api.openweathermap.org/data/2.5/weather?q=London,uk")
+        
+        self.waitForExpectationsWithTimeout(10, handler: nil)
+    }
+    
+    func connectionDidFinishLoading(connection: NSURLConnection) {
+        self.exceptation?.fulfill()
     }
 }

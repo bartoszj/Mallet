@@ -1,0 +1,54 @@
+{
+  "arm64":{
+    "className":"NSURLConnection",
+    "ivars":[
+      {
+        "ivarType":"NSURLConnectionInternal *",
+        "name":"_internal",
+        "offset":8,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"NSURLConnection",
+    "ivars":[
+      {
+        "ivarType":"NSURLConnectionInternal *",
+        "name":"_internal",
+        "offset":4,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "i386":{
+    "className":"NSURLConnection",
+    "ivars":[
+      {
+        "ivarType":"NSURLConnectionInternal *",
+        "name":"_internal",
+        "offset":4,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"NSURLConnection",
+    "ivars":[
+      {
+        "ivarType":"NSURLConnectionInternal *",
+        "name":"_internal",
+        "offset":8,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  }
+}

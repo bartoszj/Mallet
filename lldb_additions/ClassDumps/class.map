@@ -11,7 +11,9 @@ UIDeviceRGBColor:UIKit/UIDeviceRGBColor.json
 UIScrollView:UIKit/UIScrollView.json
 NSHTTPURLResponse:CFNetwork/NSHTTPURLResponse.json
 NSURLRequest:CFNetwork/NSURLRequest.json
+__NSOperationInternal:Foundation/__NSOperationInternal.json
 UIScreen:UIKit/UIScreen.json
+NSURLConnection:CFNetwork/NSURLConnection.json
 NSHTTPURLResponseInternal:CFNetwork/NSHTTPURLResponseInternal.json
 UITouchesEvent:UIKit/UITouchesEvent.json
 UINibStorage:UIKit/UINibStorage.json
@@ -44,7 +46,7 @@ UIView:UIKit/UIView.json
 SKRequest:StoreKit/SKRequest.json
 NSURLRequestInternal:CFNetwork/NSURLRequestInternal.json
 NSURLComponents:Foundation/NSURLComponents.json
-__NSOperationInternal:Foundation/__NSOperationInternal.json
+NSURLConnectionInternal:CFNetwork/NSURLConnectionInternal.json
 SKProductsRequestInternal:StoreKit/SKProductsRequestInternal.json
 UIDatePicker:UIKit/UIDatePicker.json
 UIStoryboard:UIKit/UIStoryboard.json
