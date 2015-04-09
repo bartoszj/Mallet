@@ -874,7 +874,7 @@
         "type":"ivar"
       },
       {
-        "ivarType":"CDStruct_79c71658",
+        "ivarType":"struct {\n        int width;\n        int height;\n    }",
         "name":"_presentationSizeClassPair",
         "offset":296,
         "type":"ivar"

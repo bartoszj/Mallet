@@ -5,127 +5,127 @@
       {
         "ivarType":"long long",
         "name":"_loadingDate",
-        "offset":352,
+        "offset":424,
         "type":"ivar"
       },
       {
         "ivarType":"NSDate *",
         "name":"_userSuppliedDate",
-        "offset":360,
+        "offset":432,
         "type":"ivar"
       },
       {
         "ivarType":"NSDate *",
         "name":"_userSuppliedMinimumDate",
-        "offset":368,
+        "offset":440,
         "type":"ivar"
       },
       {
         "ivarType":"NSDate *",
         "name":"_userSuppliedMaximumDate",
-        "offset":376,
+        "offset":448,
         "type":"ivar"
       },
       {
         "ivarType":"NSLocale *",
         "name":"_compositeLocale",
-        "offset":384,
+        "offset":456,
         "type":"ivar"
       },
       {
         "ivarType":"NSLocale *",
         "name":"_userProvidedLocale",
-        "offset":392,
+        "offset":464,
         "type":"ivar"
       },
       {
         "ivarType":"NSCalendar *",
         "name":"_userProvidedCalendar",
-        "offset":400,
+        "offset":472,
         "type":"ivar"
       },
       {
         "ivarType":"_UIDatePickerChineseCalendar *",
         "name":"_chineseWrapperCalendar",
-        "offset":408,
+        "offset":480,
         "type":"ivar"
       },
       {
         "ivarType":"NSDate *",
         "name":"_minimumDate",
-        "offset":416,
+        "offset":488,
         "type":"ivar"
       },
       {
         "ivarType":"NSDate *",
         "name":"_maximumDate",
-        "offset":424,
+        "offset":496,
         "type":"ivar"
       },
       {
         "ivarType":"NSDateComponents *",
         "name":"_lastSelectedDateComponents",
-        "offset":432,
+        "offset":504,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"_allowsZeroTimeInterval",
-        "offset":440,
+        "offset":512,
         "type":"ivar"
       },
       {
         "ivarType":"_UIDatePickerMode *",
         "name":"_mode",
-        "offset":448,
+        "offset":520,
         "type":"ivar"
       },
       {
         "ivarType":"NSTimeZone *",
         "name":"_timeZone",
-        "offset":456,
+        "offset":528,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_timeInterval",
-        "offset":464,
+        "offset":536,
         "type":"ivar"
       },
       {
         "ivarType":"UILabel *",
         "name":"_hourLabel",
-        "offset":472,
+        "offset":544,
         "type":"ivar"
       },
       {
         "ivarType":"UILabel *",
         "name":"_minuteLabel",
-        "offset":480,
+        "offset":552,
         "type":"ivar"
       },
       {
         "ivarType":"UIDatePicker *",
         "name":"_datePickerDelegate",
-        "offset":488,
+        "offset":560,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_delegateOfDatePicker",
-        "offset":496,
+        "offset":568,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_expectedAMPM",
-        "offset":504,
+        "offset":576,
         "type":"ivar"
       },
       {
         "ivarType":"struct {\n        unsigned int staggerTimeIntervals:1;\n        unsigned int loadingDateOrTime:1;\n        unsigned int highlightsToday:1;\n        unsigned int usesBlackChrome:1;\n    }",
         "name":"_datePickerFlags",
-        "offset":508,
+        "offset":580,
         "type":"ivar"
       }
     ],
@@ -138,127 +138,127 @@
       {
         "ivarType":"int",
         "name":"_loadingDate",
-        "offset":180,
+        "offset":220,
         "type":"ivar"
       },
       {
         "ivarType":"NSDate *",
         "name":"_userSuppliedDate",
-        "offset":184,
+        "offset":224,
         "type":"ivar"
       },
       {
         "ivarType":"NSDate *",
         "name":"_userSuppliedMinimumDate",
-        "offset":188,
+        "offset":228,
         "type":"ivar"
       },
       {
         "ivarType":"NSDate *",
         "name":"_userSuppliedMaximumDate",
-        "offset":192,
+        "offset":232,
         "type":"ivar"
       },
       {
         "ivarType":"NSLocale *",
         "name":"_compositeLocale",
-        "offset":196,
+        "offset":236,
         "type":"ivar"
       },
       {
         "ivarType":"NSLocale *",
         "name":"_userProvidedLocale",
-        "offset":200,
+        "offset":240,
         "type":"ivar"
       },
       {
         "ivarType":"NSCalendar *",
         "name":"_userProvidedCalendar",
-        "offset":204,
+        "offset":244,
         "type":"ivar"
       },
       {
         "ivarType":"_UIDatePickerChineseCalendar *",
         "name":"_chineseWrapperCalendar",
-        "offset":208,
+        "offset":248,
         "type":"ivar"
       },
       {
         "ivarType":"NSDate *",
         "name":"_minimumDate",
-        "offset":212,
+        "offset":252,
         "type":"ivar"
       },
       {
         "ivarType":"NSDate *",
         "name":"_maximumDate",
-        "offset":216,
+        "offset":256,
         "type":"ivar"
       },
       {
         "ivarType":"NSDateComponents *",
         "name":"_lastSelectedDateComponents",
-        "offset":220,
+        "offset":260,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"_allowsZeroTimeInterval",
-        "offset":224,
+        "offset":264,
         "type":"ivar"
       },
       {
         "ivarType":"_UIDatePickerMode *",
         "name":"_mode",
-        "offset":228,
+        "offset":268,
         "type":"ivar"
       },
       {
         "ivarType":"NSTimeZone *",
         "name":"_timeZone",
-        "offset":232,
+        "offset":272,
         "type":"ivar"
       },
       {
         "ivarType":"double",
         "name":"_timeInterval",
-        "offset":236,
+        "offset":276,
         "type":"ivar"
       },
       {
         "ivarType":"UILabel *",
         "name":"_hourLabel",
-        "offset":244,
+        "offset":284,
         "type":"ivar"
       },
       {
         "ivarType":"UILabel *",
         "name":"_minuteLabel",
-        "offset":248,
+        "offset":288,
         "type":"ivar"
       },
       {
         "ivarType":"UIDatePicker *",
         "name":"_datePickerDelegate",
-        "offset":252,
+        "offset":292,
         "type":"ivar"
       },
       {
         "ivarType":"id",
         "name":"_delegateOfDatePicker",
-        "offset":256,
+        "offset":296,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_expectedAMPM",
-        "offset":260,
+        "offset":300,
         "type":"ivar"
       },
       {
         "ivarType":"struct {\n        unsigned int staggerTimeIntervals:1;\n        unsigned int loadingDateOrTime:1;\n        unsigned int highlightsToday:1;\n        unsigned int usesBlackChrome:1;\n    }",
         "name":"_datePickerFlags",
-        "offset":264,
+        "offset":304,
         "type":"ivar"
       }
     ],

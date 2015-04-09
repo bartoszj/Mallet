@@ -5,61 +5,61 @@
       {
         "ivarType":"NSMutableArray *",
         "name":"_indicators",
-        "offset":240,
+        "offset":312,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_currentPage",
-        "offset":248,
+        "offset":320,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_displayedPage",
-        "offset":256,
+        "offset":328,
         "type":"ivar"
       },
       {
         "ivarType":"struct {\n        unsigned int hideForSinglePage:1;\n        unsigned int defersCurrentPageDisplay:1;\n    }",
         "name":"_pageControlFlags",
-        "offset":264,
+        "offset":336,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_currentPageImage",
-        "offset":272,
+        "offset":344,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_pageImage",
-        "offset":280,
+        "offset":352,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_lastUserInterfaceIdiom",
-        "offset":288,
+        "offset":360,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_currentPageIndicatorTintColor",
-        "offset":296,
+        "offset":368,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_pageIndicatorTintColor",
-        "offset":304,
+        "offset":376,
         "type":"ivar"
       },
       {
         "ivarType":"_UILegibilitySettings *",
         "name":"_legibilitySettings",
-        "offset":312,
+        "offset":384,
         "type":"ivar"
       }
     ],
@@ -72,61 +72,61 @@
       {
         "ivarType":"NSMutableArray *",
         "name":"_indicators",
-        "offset":128,
+        "offset":168,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_currentPage",
-        "offset":132,
+        "offset":172,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_displayedPage",
-        "offset":136,
+        "offset":176,
         "type":"ivar"
       },
       {
         "ivarType":"struct {\n        unsigned int hideForSinglePage:1;\n        unsigned int defersCurrentPageDisplay:1;\n    }",
         "name":"_pageControlFlags",
-        "offset":140,
+        "offset":180,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_currentPageImage",
-        "offset":144,
+        "offset":184,
         "type":"ivar"
       },
       {
         "ivarType":"UIImage *",
         "name":"_pageImage",
-        "offset":148,
+        "offset":188,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_lastUserInterfaceIdiom",
-        "offset":152,
+        "offset":192,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_currentPageIndicatorTintColor",
-        "offset":156,
+        "offset":196,
         "type":"ivar"
       },
       {
         "ivarType":"UIColor *",
         "name":"_pageIndicatorTintColor",
-        "offset":160,
+        "offset":200,
         "type":"ivar"
       },
       {
         "ivarType":"_UILegibilitySettings *",
         "name":"_legibilitySettings",
-        "offset":164,
+        "offset":204,
         "type":"ivar"
       }
     ],

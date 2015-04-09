@@ -21,99 +21,123 @@
         "type":"ivar"
       },
       {
+        "ivarType":"NSAttributedString *",
+        "name":"_attributedDetailMessage",
+        "offset":720,
+        "type":"ivar"
+      },
+      {
         "ivarType":"NSMutableArray *",
         "name":"_actions",
-        "offset":720,
+        "offset":728,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableArray *",
+        "name":"_actionDelimiterIndices",
+        "offset":736,
         "type":"ivar"
       },
       {
         "ivarType":"NSSet *",
         "name":"_linkedAlertControllers",
-        "offset":728,
+        "offset":744,
         "type":"ivar"
       },
       {
         "ivarType":"UIAlertAction *",
         "name":"_cancelAction",
-        "offset":736,
+        "offset":752,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIAlertAction *",
+        "name":"_defaultAction",
+        "offset":760,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_resolvedStyle",
-        "offset":744,
+        "offset":768,
         "type":"ivar"
       },
       {
         "ivarType":"long long",
         "name":"_preferredStyle",
-        "offset":752,
+        "offset":776,
         "type":"ivar"
       },
       {
         "ivarType":"NSObject<UIAlertControllerVisualStyleProviding> *",
         "name":"_styleProvider",
-        "offset":760,
+        "offset":784,
         "type":"ivar"
       },
       {
         "ivarType":"UIViewController *",
         "name":"_contentViewController",
-        "offset":768,
+        "offset":792,
         "type":"ivar"
       },
       {
         "ivarType":"_UIAlertControllerTextFieldViewController *",
         "name":"_textFieldViewController",
-        "offset":776,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"_Bool",
-        "name":"_textFieldsHidden",
-        "offset":784,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIGestureRecognizer *",
-        "name":"_backButtonDismissGestureRecognizer",
-        "offset":792,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"id",
-        "name":"_ownedTransitioningDelegate",
         "offset":800,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
-        "name":"_shouldEnsureContentControllerViewIsVisibleOnAppearance",
+        "name":"_textFieldsHidden",
         "offset":808,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITapGestureRecognizer *",
+        "name":"_backButtonDismissGestureRecognizer",
+        "offset":816,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"_ownedTransitioningDelegate",
+        "offset":824,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_shouldEnsureContentControllerViewIsVisibleOnAppearance",
+        "offset":832,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_hidden",
+        "offset":833,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"__shouldAllowNilParameters",
-        "offset":809,
+        "offset":834,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_hasPreservedInputViews",
+        "offset":835,
         "type":"ivar"
       },
       {
         "ivarType":"_Bool",
         "name":"__shouldFlipFrameForShimDismissal",
-        "offset":810,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIAlertAction *",
-        "name":"__defaultAlertAction",
-        "offset":816,
+        "offset":836,
         "type":"ivar"
       },
       {
         "ivarType":"UIPopoverController *",
         "name":"__compatibilityPopoverController",
-        "offset":824,
+        "offset":840,
         "type":"ivar"
       }
     ],
@@ -142,99 +166,123 @@
         "type":"ivar"
       },
       {
+        "ivarType":"NSAttributedString *",
+        "name":"_attributedDetailMessage",
+        "offset":364,
+        "type":"ivar"
+      },
+      {
         "ivarType":"NSMutableArray *",
         "name":"_actions",
-        "offset":364,
+        "offset":368,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSMutableArray *",
+        "name":"_actionDelimiterIndices",
+        "offset":372,
         "type":"ivar"
       },
       {
         "ivarType":"NSSet *",
         "name":"_linkedAlertControllers",
-        "offset":368,
+        "offset":376,
         "type":"ivar"
       },
       {
         "ivarType":"UIAlertAction *",
         "name":"_cancelAction",
-        "offset":372,
+        "offset":380,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UIAlertAction *",
+        "name":"_defaultAction",
+        "offset":384,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_resolvedStyle",
-        "offset":376,
+        "offset":388,
         "type":"ivar"
       },
       {
         "ivarType":"int",
         "name":"_preferredStyle",
-        "offset":380,
+        "offset":392,
         "type":"ivar"
       },
       {
         "ivarType":"NSObject<UIAlertControllerVisualStyleProviding> *",
         "name":"_styleProvider",
-        "offset":384,
+        "offset":396,
         "type":"ivar"
       },
       {
         "ivarType":"UIViewController *",
         "name":"_contentViewController",
-        "offset":388,
+        "offset":400,
         "type":"ivar"
       },
       {
         "ivarType":"_UIAlertControllerTextFieldViewController *",
         "name":"_textFieldViewController",
-        "offset":392,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"char",
-        "name":"_textFieldsHidden",
-        "offset":396,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIGestureRecognizer *",
-        "name":"_backButtonDismissGestureRecognizer",
-        "offset":400,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"id",
-        "name":"_ownedTransitioningDelegate",
         "offset":404,
         "type":"ivar"
       },
       {
         "ivarType":"char",
-        "name":"_shouldEnsureContentControllerViewIsVisibleOnAppearance",
+        "name":"_textFieldsHidden",
         "offset":408,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"UITapGestureRecognizer *",
+        "name":"_backButtonDismissGestureRecognizer",
+        "offset":412,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"_ownedTransitioningDelegate",
+        "offset":416,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_shouldEnsureContentControllerViewIsVisibleOnAppearance",
+        "offset":420,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_hidden",
+        "offset":421,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"__shouldAllowNilParameters",
-        "offset":409,
+        "offset":422,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_hasPreservedInputViews",
+        "offset":423,
         "type":"ivar"
       },
       {
         "ivarType":"char",
         "name":"__shouldFlipFrameForShimDismissal",
-        "offset":410,
-        "type":"ivar"
-      },
-      {
-        "ivarType":"UIAlertAction *",
-        "name":"__defaultAlertAction",
-        "offset":412,
+        "offset":424,
         "type":"ivar"
       },
       {
         "ivarType":"UIPopoverController *",
         "name":"__compatibilityPopoverController",
-        "offset":416,
+        "offset":428,
         "type":"ivar"
       }
     ],

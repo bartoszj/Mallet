@@ -43,6 +43,12 @@
         "name":"_requestParameters",
         "offset":56,
         "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_simulatesAskToBuyInSandbox",
+        "offset":64,
+        "type":"ivar"
       }
     ],
     "superClassName":"NSObject",
@@ -91,6 +97,12 @@
         "ivarType":"NSDictionary *",
         "name":"_requestParameters",
         "offset":28,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_simulatesAskToBuyInSandbox",
+        "offset":32,
         "type":"ivar"
       }
     ],

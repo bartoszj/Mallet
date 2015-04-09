@@ -28,8 +28,9 @@ UIAlertController:UIKit/UIAlertController.json
 UIPageControl:UIKit/UIPageControl.json
 UINib:UIKit/UINib.json
 UITouch:UIKit/UITouch.json
-UIPickerView:UIKit/UIPickerView.json
+NSURLSessionConfiguration:CFNetwork/NSURLSessionConfiguration.json
 NSLayoutConstraint:Foundation/NSLayoutConstraint.json
+UIPickerView:UIKit/UIPickerView.json
 __NSConcreteURLComponents:Foundation/__NSConcreteURLComponents.json
 SKRequestInternal:StoreKit/SKRequestInternal.json
 UINavigationController:UIKit/UINavigationController.json
