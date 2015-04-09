@@ -142,7 +142,7 @@ class NSOperationQueueInternalSyntheticProvider(NSObject.NSObjectSyntheticProvid
 
     @staticmethod
     def get_qos_summary(value):
-        qos = NSOperationInternal.qos_text(value)
+        qos = NSOperationInternal.get_qos_text(value)
         if qos is None:
             return None
         return "qos={}".format(qos)

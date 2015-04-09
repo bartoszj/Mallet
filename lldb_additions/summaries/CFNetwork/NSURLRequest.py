@@ -26,6 +26,17 @@ from ...scripts import helpers
 from ..Foundation import NSObject
 import NSURLRequestInternal
 
+NSURLRequestUseProtocolCachePolicy = 0
+NSURLRequestReloadIgnoringLocalCacheData = 1
+NSURLRequestReturnCacheDataElseLoad = 2
+NSURLRequestReturnCacheDataDontLoad = 3
+
+NSURLNetworkServiceTypeDefault = 0
+NSURLNetworkServiceTypeVoIP = 1
+NSURLNetworkServiceTypeVideo = 2
+NSURLNetworkServiceTypeBackground = 3
+NSURLNetworkServiceTypeVoice = 4
+
 
 class NSURLRequestSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
@@ -74,6 +85,32 @@ class NSURLRequestSyntheticProvider(NSObject.NSObjectSyntheticProvider):
 
     def summary(self):
         return self.request_internal_summary
+
+
+def get_cache_policy_text(value):
+    if value == NSURLRequestUseProtocolCachePolicy:
+        return "UseProtocol"
+    elif value == NSURLRequestReloadIgnoringLocalCacheData:
+        return "ReloadIgnoringLocalCacheData"
+    elif value == NSURLRequestReturnCacheDataElseLoad:
+        return "ReturnCacheDataElseLoad"
+    elif value == NSURLRequestReturnCacheDataDontLoad:
+        return "ReturnCacheDataDontLoad"
+    return "Unknown"
+
+
+def get_network_service_type_text(value):
+    if value == NSURLNetworkServiceTypeDefault:
+        return "Default"
+    elif value == NSURLNetworkServiceTypeVoIP:
+        return "VoIP"
+    elif value == NSURLNetworkServiceTypeVideo:
+        return "Video"
+    elif value == NSURLNetworkServiceTypeBackground:
+        return "Background"
+    elif value == NSURLNetworkServiceTypeVoice:
+        return "Voice"
+    return "Unknown"
 
 
 def summary_provider(value_obj, internal_dict):

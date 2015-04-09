@@ -110,4 +110,62 @@ class CFNetworkSwiftTests: SharedSwiftTestCase, NSURLConnectionDataDelegate {
     func connectionDidFinishLoading(connection: NSURLConnection) {
         self.exceptation?.fulfill()
     }
+    
+    // MARK: - NSURLSessionConfiguration
+    func testNSURLSessionConfiguration01() {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.sharedContainerIdentifier = "Shared Identifier"
+        self.compareObject(configuration, type: "NSURLSessionConfiguration", summary: "sharedContainerIdentifier=\"Shared Identifier\"")
+        configuration.allowsCellularAccess = false
+        self.compareObject(configuration, type: "NSURLSessionConfiguration", summary: "sharedContainerIdentifier=\"Shared Identifier\", disallowsCellularAccess")
+        configuration.networkServiceType = .NetworkServiceTypeVideo
+        self.compareObject(configuration, type: "NSURLSessionConfiguration", summary: "sharedContainerIdentifier=\"Shared Identifier\", disallowsCellularAccess, networkServiceType=Video")
+    }
+    
+    func testNSURLSessionConfiguration02() {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.timeoutIntervalForRequest = 12
+        self.compareObject(configuration, type: "NSURLSessionConfiguration", summary: "timeoutRequest=12")
+        configuration.timeoutIntervalForResource = 32
+        self.compareObject(configuration, type: "NSURLSessionConfiguration", summary: "timeoutRequest=12, timeoutResource=32")
+    }
+    
+    func testNSURLSessionConfiguration03() {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.HTTPCookieAcceptPolicy = .Always
+        self.compareObject(configuration, type: "NSURLSessionConfiguration", summary: "HTTPCookieAcceptPolicy=Always")
+        configuration.HTTPShouldSetCookies = false
+        self.compareObject(configuration, type: "NSURLSessionConfiguration", summary: "dontSetCookies, HTTPCookieAcceptPolicy=Always")
+    }
+    
+    func testNSURLSessionConfiguration04() {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.TLSMinimumSupportedProtocol = kSSLProtocol2
+        self.compareObject(configuration, type: "NSURLSessionConfiguration", summary: "TLSMin=SSLv2")
+        configuration.TLSMaximumSupportedProtocol = kDTLSProtocol1
+        self.compareObject(configuration, type: "NSURLSessionConfiguration", summary: "TLSMin=SSLv2, TLSMax=DTLSv1")
+    }
+    
+    func testNSURLSessionConfiguration05() {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.requestCachePolicy = .ReturnCacheDataElseLoad
+        self.compareObject(configuration, type: "NSURLSessionConfiguration", summary: "cachePolicy=ReturnCacheDataElseLoad")
+        configuration.sessionSendsLaunchEvents = true
+        self.compareObject(configuration, type: "NSURLSessionConfiguration", summary: "sessionSendsLaunchEvents, cachePolicy=ReturnCacheDataElseLoad")
+        configuration.discretionary = true
+        self.compareObject(configuration, type: "NSURLSessionConfiguration", summary: "discretionary, sessionSendsLaunchEvents, cachePolicy=ReturnCacheDataElseLoad")
+    }
+    
+    func testNSURLSessionConfiguration06() {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.HTTPMaximumConnectionsPerHost = 123
+        self.compareObject(configuration, type: "NSURLSessionConfiguration", summary: "HTTPMaximumConnectionsPerHost=123")
+        configuration.HTTPShouldUsePipelining = true
+        self.compareObject(configuration, type: "NSURLSessionConfiguration", summary: "shouldUsePipelining, HTTPMaximumConnectionsPerHost=123")
+    }
+    
+    func testNSURLSessionConfiguration07() {
+        let configuration = NSURLSessionConfiguration.backgroundSessionConfigurationWithIdentifier("BackgroundIdentifier")
+        self.compareObject(configuration, type: "NSURLSessionConfiguration", summary: "identifier=\"BackgroundIdentifier\", sessionSendsLaunchEvents, backgroundSession")
+    }
 }

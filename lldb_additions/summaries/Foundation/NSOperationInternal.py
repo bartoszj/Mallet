@@ -110,7 +110,7 @@ class NSOperationInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def get_priority_summary(value):
         if value == -1:
             return None
-        priority = priority_text(value)
+        priority = get_priority_text(value)
         return "priority={}".format(priority)
 
     @staticmethod
@@ -132,7 +132,7 @@ class NSOperationInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     @staticmethod
     def get_qos_summary(value):
         value &= 0xFF
-        qos = qos_text(value)
+        qos = get_qos_text(value)
         if qos is None:
             return None
         return "qos={}".format(qos)
@@ -149,7 +149,7 @@ class NSOperationInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         return summary
 
 
-def qos_text(qos):
+def get_qos_text(qos):
     """
     Returns QOS name by numeric value.
 
@@ -170,7 +170,7 @@ def qos_text(qos):
     return None
 
 
-def priority_text(priority):
+def get_priority_text(priority):
     """
     Returns operation priority name by numeric value.
 

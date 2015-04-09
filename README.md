@@ -23,6 +23,7 @@ The summaries will be available the next time Xcode starts.
     - NSURLConnection
     - NSURLRequest (NSMutableURLRequest)
     - NSURLResponse, NSHTTPURLResponse
+    - NSURLSessionConfiguration
 - Foundation:
     - NSDateComponents
     - NSLayoutConstraint

@@ -128,4 +128,70 @@
     [self.exceptation fulfill];
 }
 
+#pragma mark - NSURLSessionConfiguration
+- (void)testNSURLSessionConfiguration01
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+//    [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@""];
+    configuration.sharedContainerIdentifier = @"Shared Identifier";
+    [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@"sharedContainerIdentifier=@\"Shared Identifier\""];
+    configuration.allowsCellularAccess = NO;
+    [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@"sharedContainerIdentifier=@\"Shared Identifier\", disallowsCellularAccess"];
+    configuration.networkServiceType = NSURLNetworkServiceTypeVideo;
+    [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@"sharedContainerIdentifier=@\"Shared Identifier\", disallowsCellularAccess, networkServiceType=Video"];
+}
+
+- (void)testNSURLSessionConfiguration02
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    configuration.timeoutIntervalForRequest = 12;
+    [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@"timeoutRequest=12"];
+    configuration.timeoutIntervalForResource = 32;
+    [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@"timeoutRequest=12, timeoutResource=32"];
+}
+
+- (void)testNSURLSessionConfiguration03
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    configuration.HTTPCookieAcceptPolicy = NSHTTPCookieAcceptPolicyAlways;
+    [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@"HTTPCookieAcceptPolicy=Always"];
+    configuration.HTTPShouldSetCookies = NO;
+    [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@"dontSetCookies, HTTPCookieAcceptPolicy=Always"];
+}
+
+- (void)testNSURLSessionConfiguration04
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    configuration.TLSMinimumSupportedProtocol = kSSLProtocol2;
+    [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@"TLSMin=SSLv2"];
+    configuration.TLSMaximumSupportedProtocol = kDTLSProtocol1;
+    [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@"TLSMin=SSLv2, TLSMax=DTLSv1"];
+}
+
+- (void)testNSURLSessionConfiguration05
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    configuration.requestCachePolicy = NSURLRequestReturnCacheDataElseLoad;
+    [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@"cachePolicy=ReturnCacheDataElseLoad"];
+    configuration.sessionSendsLaunchEvents = YES;
+    [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@"sessionSendsLaunchEvents, cachePolicy=ReturnCacheDataElseLoad"];
+    configuration.discretionary = YES;
+    [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@"discretionary, sessionSendsLaunchEvents, cachePolicy=ReturnCacheDataElseLoad"];
+}
+
+- (void)testNSURLSessionConfiguration06
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    configuration.HTTPMaximumConnectionsPerHost = 123;
+    [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@"HTTPMaximumConnectionsPerHost=123"];
+    configuration.HTTPShouldUsePipelining = YES;
+    [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@"shouldUsePipelining, HTTPMaximumConnectionsPerHost=123"];
+}
+
+- (void)testNSURLSessionConfiguration07
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:@"BackgroundIdentifier"];
+    [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@"identifier=@\"BackgroundIdentifier\", sessionSendsLaunchEvents, backgroundSession"];
+}
+
 @end
