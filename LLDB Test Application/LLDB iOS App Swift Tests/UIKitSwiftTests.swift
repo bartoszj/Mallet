@@ -156,19 +156,19 @@ class UIKitSwiftTests: SharedSwiftTestCase {
     }
     
     // MARK: - UIAlertController
-//    func testUIAlertController01() {
-//        let alertController = UIAlertController(title: "alert title", message: "alert message", preferredStyle: .ActionSheet)
-//        self.compareObject(alertController, type: "UIAlertController", summary: "title=\"alert title\", message=\"alert message\", preferredStyle=ActionSheet, actions=0")
-//    }
+    func testUIAlertController01() {
+        let alertController = UIAlertController(title: "alert title", message: "alert message", preferredStyle: .ActionSheet)
+        self.compareObject(alertController, type: "UIAlertController", summary: "title=\"alert title\", message=\"alert message\", preferredStyle=ActionSheet, actions=0")
+    }
     
-//    func testUIAlertController02() {
-//        let alertController = UIAlertController(title: "alert title", message: "alert message", preferredStyle: .Alert)
-//        let action = UIAlertAction(title: "alert title", style: .Destructive) { (action) -> Void in
-//            println("action")
-//        }
-//        alertController.addAction(action)
-//        self.compareObject(alertController, type: "UIAlertController", summary: "title=\"alert title\", message=\"alert message\", preferredStyle=Alert, actions=1")
-//    }
+    func testUIAlertController02() {
+        let alertController = UIAlertController(title: "alert title", message: "alert message", preferredStyle: .Alert)
+        let action = UIAlertAction(title: "alert title", style: .Destructive) { (action) -> Void in
+            println("action")
+        }
+        alertController.addAction(action)
+        self.compareObject(alertController, type: "UIAlertController", summary: "title=\"alert title\", message=\"alert message\", preferredStyle=Alert, actions=1")
+    }
     
     // MARK: - UIAlertView
     func testUIAlertView() {

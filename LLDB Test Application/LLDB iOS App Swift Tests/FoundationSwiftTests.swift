@@ -125,11 +125,11 @@ class FoundationSwiftTests: SharedSwiftTestCase {
         self.compareObject(dateComponents, type: "NSDateComponents", summary: "second=7")
     }
     
-//    func testNSDateComponents08() {
+    func testNSDateComponents08() {
 //        var dateComponents = NSDateComponents()
 //        dateComponents.week = 8
 //        self.compareObject(dateComponents, type: "NSDateComponents", summary: "week=8")
-//    }
+    }
     
     func testNSDateComponents09() {
         var dateComponents = NSDateComponents()
