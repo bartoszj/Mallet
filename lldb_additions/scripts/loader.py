@@ -66,7 +66,7 @@ def get_package_dir_path():
 lldb_additions_package_name = get_package_name()
 lldb_additions_package_dir_path = get_package_dir_path()
 lldb_additions_class_dump_dir = "ClassDumps"
-lldb_additions_string_summaries_dir = "StringSummaries"
+lldb_additions_lldb_commands_dir = "lldb_commands"
 
 lldb_script_extensions = [".py"]
 lldb_scripts_paths = ["scripts"]
@@ -128,6 +128,7 @@ def split_path(path):
 def scripts_in_directory(path, subdirectories=True):
     """
     Finds all Python scripts in given directory.
+    Returns file name and full path to file.
 
     :param str path: Path to directory with scripts.
     :param bool subdirectories: True if subdirectories should also be searched.
@@ -266,7 +267,7 @@ def load_all(debugger, internal_dict):
         scripts.extend(scripts_in_directory(directory_path, subdirectories=False))
     load_scripts(scripts, debugger, internal_dict)
 
-    # Load summary strings.
-    load_lldb_commands_directory(os.path.join(lldb_additions_package_dir_path, lldb_additions_string_summaries_dir), debugger, internal_dict)
+    # Load lldb commands.
+    load_lldb_commands_directory(os.path.join(lldb_additions_package_dir_path, lldb_additions_lldb_commands_dir), debugger, internal_dict)
 
     log.debug("Scripts loaded.")

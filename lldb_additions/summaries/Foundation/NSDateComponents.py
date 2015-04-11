@@ -281,13 +281,3 @@ class NSDateComponentsSyntheticProvider(NSObject.NSObjectSyntheticProvider):
 
 def summary_provider(value_obj, internal_dict):
     return helpers.generic_summary_provider(value_obj, internal_dict, NSDateComponentsSyntheticProvider)
-
-
-def lldb_init(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F {}.summary_provider \
-                            --category Foundation \
-                            NSDateComponents".format(__name__))
-    debugger.HandleCommand("type synthetic add -l {}.NSDateComponentsSyntheticProvider \
-                           --category Foundation \
-                           NSDateComponents".format(__name__))
-    debugger.HandleCommand("type category enable Foundation")

@@ -56,10 +56,3 @@ class NSURLConnectionSyntheticProvider(NSObject.NSObjectSyntheticProvider):
 
 def summary_provider(value_obj, internal_dict):
     return helpers.generic_summary_provider(value_obj, internal_dict, NSURLConnectionSyntheticProvider)
-
-
-def lldb_init(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F {}.summary_provider \
-                            --category CFNetwork \
-                            NSURLConnection".format(__name__))
-    debugger.HandleCommand("type category enable CFNetwork")

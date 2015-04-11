@@ -74,10 +74,3 @@ class CGImageSyntheticProvider(NSObject.NSObjectSyntheticProvider):
 
 def summary_provider(value_obj, internal_dict):
     return helpers.generic_summary_provider(value_obj, internal_dict, CGImageSyntheticProvider)
-
-
-def lldb_init(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F {}.summary_provider \
-                           --category CoreGraphics \
-                           CGImage".format(__name__))
-    debugger.HandleCommand("type category enable CoreGraphics")

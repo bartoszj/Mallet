@@ -1,0 +1,13 @@
+type summary add -F lldb_additions.summaries.Foundation.NSDateComponents.summary_provider         --category Foundation NSDateComponents
+type summary add -F lldb_additions.summaries.Foundation.NSLayoutConstraint.summary_provider       --category Foundation NSAutoresizingMaskLayoutConstraint NSLayoutConstraint NSIBPrototypingLayoutConstraint
+type summary add -F lldb_additions.summaries.Foundation.NSOperation.summary_provider              --category Foundation NSOperation NSBlockOperation
+type summary add -F lldb_additions.summaries.Foundation.NSOperationInternal.summary_provider      --category Foundation __NSOperationInternal
+type summary add -F lldb_additions.summaries.Foundation.NSOperationQueue.summary_provider         --category Foundation NSOperationQueue
+type summary add -F lldb_additions.summaries.Foundation.NSOperationQueueInternal.summary_provider --category Foundation __NSOperationQueueInternal
+type summary add -F lldb_additions.summaries.Foundation.NSURLComponents.summary_provider          --category Foundation NSURLComponents __NSConcreteURLComponents
+type summary add -F lldb_additions.summaries.Foundation.NSUUID.summary_provider                   --category Foundation NSUUID __NSConcreteUUID
+
+type synthetic add -l lldb_additions.summaries.Foundation.NSDateComponents.NSDateComponentsSyntheticProvider --category Foundation NSDateComponents
+type synthetic add -l lldb_additions.summaries.Foundation.NSURLComponents.NSURLComponentsSyntheticProvider   --category Foundation NSURLComponents __NSConcreteURLComponents
+
+type category enable Foundation

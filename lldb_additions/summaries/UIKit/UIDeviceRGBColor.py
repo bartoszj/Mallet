@@ -97,13 +97,3 @@ class UIDeviceRGBColorSyntheticProvider(UIColor.UIColorSyntheticProvider):
 
 def summary_provider(value_obj, internal_dict):
     return helpers.generic_summary_provider(value_obj, internal_dict, UIDeviceRGBColorSyntheticProvider)
-
-
-def lldb_init(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F {}.summary_provider \
-                            --category UIKit \
-                            UIDeviceRGBColor UICachedDeviceRGBColor".format(__name__))
-    debugger.HandleCommand("type synthetic add -l {}.UIDeviceRGBColorSyntheticProvider \
-                           --category UIKit \
-                           UIDeviceRGBColor UICachedDeviceRGBColor".format(__name__))
-    debugger.HandleCommand("type category enable UIKit")

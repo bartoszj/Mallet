@@ -56,10 +56,3 @@ class SKPaymentQueueSyntheticProvider(NSObject.NSObjectSyntheticProvider):
 
 def summary_provider(value_obj, internal_dict):
     return helpers.generic_summary_provider(value_obj, internal_dict, SKPaymentQueueSyntheticProvider)
-
-
-def lldb_init(debugger, internal_dict):
-    debugger.HandleCommand("type summary add -F {}.summary_provider \
-                            --category StoreKit \
-                            SKPaymentQueue".format(__name__))
-    debugger.HandleCommand("type category enable StoreKit")

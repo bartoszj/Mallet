@@ -168,4 +168,20 @@ class CFNetworkSwiftTests: SharedSwiftTestCase, NSURLConnectionDataDelegate {
         let configuration = NSURLSessionConfiguration.backgroundSessionConfigurationWithIdentifier("BackgroundIdentifier")
         self.compareObject(configuration, type: "NSURLSessionConfiguration", summary: "identifier=\"BackgroundIdentifier\", sessionSendsLaunchEvents, backgroundSession")
     }
+    
+    // MARK: - NSURLsession
+    func testNSURLSession01() {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: configuration)
+        session.sessionDescription = "Session Description"
+        self.compareObject(session, type: "NSURLSession", summary: "\"Session Description\"")
+    }
+    
+    func testNSURLSession02() {
+        let session = NSURLSession.sharedSession()
+        self.compareObject(session, type: "NSURLSession", summary: "sharedSession")
+        
+        session.sessionDescription = "Session Description"
+        self.compareObject(session, type: "NSURLSession", summary: "sharedSession, \"Session Description\"")
+    }
 }

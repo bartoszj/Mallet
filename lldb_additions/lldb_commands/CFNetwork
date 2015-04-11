@@ -1,0 +1,16 @@
+type summary add -F lldb_additions.summaries.CFNetwork.CFURLRequest.summary_provider              --category CFNetwork _CFURLRequest
+type summary add -F lldb_additions.summaries.CFNetwork.CFURLResponse.summary_provider             --category CFNetwork CFURLResponse
+type summary add -F lldb_additions.summaries.CFNetwork.NSHTTPURLResponse.summary_provider         --category CFNetwork NSHTTPURLResponse
+type summary add -F lldb_additions.summaries.CFNetwork.NSURLConnection.summary_provider           --category CFNetwork NSURLConnection
+type summary add -F lldb_additions.summaries.CFNetwork.NSURLConnectionInternal.summary_provider   --category CFNetwork NSURLConnectionInternal
+type summary add -F lldb_additions.summaries.CFNetwork.NSURLRequest.summary_provider              --category CFNetwork NSURLRequest NSMutableURLRequest
+type summary add -F lldb_additions.summaries.CFNetwork.NSURLRequestInternal.summary_provider      --category CFNetwork NSURLRequestInternal
+type summary add -F lldb_additions.summaries.CFNetwork.NSURLResponse.summary_provider             --category CFNetwork NSURLResponse
+type summary add -F lldb_additions.summaries.CFNetwork.NSURLResponseInternal.summary_provider     --category CFNetwork NSURLResponseInternal
+type summary add -F lldb_additions.summaries.CFNetwork.NSURLSession.summary_provider              --category CFNetwork NSURLSession
+type summary add -F lldb_additions.summaries.CFNetwork.NSURLSessionConfiguration.summary_provider --category CFNetwork NSURLSessionConfiguration
+
+type synthetic add -l lldb_additions.summaries.CFNetwork.NSURLRequest.NSURLRequestSyntheticProvider   --category CFNetwork NSURLRequest NSMutableURLRequest
+type synthetic add -l lldb_additions.summaries.CFNetwork.NSURLResponse.NSURLResponseSyntheticProvider --category CFNetwork NSURLResponse NSHTTPURLResponse
+
+type category enable CFNetwork

@@ -115,13 +115,3 @@ def get_network_service_type_text(value):
 
 def summary_provider(value_obj, internal_dict):
     return helpers.generic_summary_provider(value_obj, internal_dict, NSURLRequestSyntheticProvider)
-
-
-def lldb_init(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F {}.summary_provider \
-                            --category CFNetwork \
-                            NSURLRequest NSMutableURLRequest".format(__name__))
-    debugger.HandleCommand("type synthetic add -l {}.NSURLRequestSyntheticProvider \
-                           --category CFNetwork \
-                           NSURLRequest NSMutableURLRequest".format(__name__))
-    debugger.HandleCommand("type category enable CFNetwork")

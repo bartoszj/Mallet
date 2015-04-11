@@ -68,10 +68,3 @@ def summary_provider(value_obj, internal_dict):
         return helpers.generic_summary_provider(value_obj, internal_dict, UIDeviceRGBColor.UIDeviceRGBColorSyntheticProvider)
     else:
         return helpers.generic_summary_provider(value_obj, internal_dict, UIColorSyntheticProvider)
-
-
-def lldb_init(debugger, dictionary):
-    debugger.HandleCommand("type summary add -F {}.summary_provider \
-                            --category UIKit \
-                            UIColor".format(__name__))
-    debugger.HandleCommand("type category enable UIKit")
