@@ -194,4 +194,23 @@
     [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@"identifier=@\"BackgroundIdentifier\", sessionSendsLaunchEvents, backgroundSession"];
 }
 
+#pragma mark - NSURLsession
+- (void)testNSURLSession01
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+    session.sessionDescription = @"Session Description";
+    
+    [self compareObject:session ofType:@"NSURLSession *" toSummary:@"@\"Session Description\""];
+}
+
+- (void)testNSURLSession02
+{
+    NSURLSession *session = [NSURLSession sharedSession];
+    [self compareObject:session ofType:@"NSURLSession *" toSummary:@"sharedSession"];
+    
+    session.sessionDescription = @"Session Description";
+    [self compareObject:session ofType:@"NSURLSession *" toSummary:@"sharedSession, @\"Session Description\""];
+}
+
 @end

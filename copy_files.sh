@@ -22,6 +22,7 @@ CPY=(
     "CFNetwork.framework/NSURLRequestInternal.json"
     "CFNetwork.framework/NSURLResponse.json"
     "CFNetwork.framework/NSURLResponseInternal.json"
+    "CFNetwork.framework/NSURLSession.json"
     "CFNetwork.framework/NSURLSessionConfiguration.json"
 
     "Foundation.framework/NSLayoutConstraint.json"

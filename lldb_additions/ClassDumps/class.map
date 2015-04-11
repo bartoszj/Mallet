@@ -23,6 +23,7 @@ UIProgressView:UIKit/UIProgressView.json
 UIResponder:UIKit/UIResponder.json
 UIDeviceWhiteColor:UIKit/UIDeviceWhiteColor.json
 UIColor:UIKit/UIColor.json
+NSURLSession:CFNetwork/NSURLSession.json
 UISwitch:UIKit/UISwitch.json
 UIAlertController:UIKit/UIAlertController.json
 UIPageControl:UIKit/UIPageControl.json
