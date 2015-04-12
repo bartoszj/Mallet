@@ -184,4 +184,45 @@ class CFNetworkSwiftTests: SharedSwiftTestCase, NSURLConnectionDataDelegate {
         session.sessionDescription = "Session Description"
         self.compareObject(session, type: "NSURLSession", summary: "sharedSession, \"Session Description\"")
     }
+    
+    // MARK: - NSURLSessionTask
+    func testNSURLSessionTask01() {
+        let session = NSURLSession.sharedSession()
+        let url = NSURL(string: "https://google.com")!
+        let exceptation = self.expectationWithDescription("task")
+        var dataTask: NSURLSessionDataTask! = nil
+        dataTask = session.dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
+            let summary = "state=Completed, received=\(data.length), request={https://google.com}, response={\(response.URL!.absoluteString!)}"
+            self.compareObject(dataTask, type: "NSURLSessionTask", summary: summary)
+            self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: summary)
+            exceptation.fulfill()
+        })
+        self.compareObject(dataTask, type: "NSURLSessionTask", summary: "state=Suspended, request={https://google.com}")
+        self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: "state=Suspended, request={https://google.com}")
+        dataTask.resume()
+        self.compareObject(dataTask, type: "NSURLSessionTask", summary: "state=Running, request={https://google.com}")
+        self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: "state=Running, request={https://google.com}")
+        self.waitForExpectationsWithTimeout(2, handler: nil)
+    }
+    
+    func testNSURLSessionTask02() {
+        let session = NSURLSession.sharedSession()
+        let url = NSURL(string: "https://google.com")!
+        let mutableRequest = NSMutableURLRequest(URL: url)
+        mutableRequest.HTTPBody = ("httpBodyData" as NSString).dataUsingEncoding(NSUTF8StringEncoding)
+        let exceptation = self.expectationWithDescription("task")
+        var dataTask: NSURLSessionDataTask! = nil
+        dataTask = session.dataTaskWithRequest(mutableRequest, completionHandler: { (data, response, error) -> Void in
+            let summary = "state=Completed, received=\(data.length), toReceive=\(data.length), sent=12, toSend=12, request={GET, https://google.com, body=12 bytes}, response={\(response.URL!.absoluteString!)}"
+            self.compareObject(dataTask, type: "NSURLSessionTask", summary: summary)
+            self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: summary)
+            exceptation.fulfill()
+        })
+        self.compareObject(dataTask, type: "NSURLSessionTask", summary: "state=Suspended, request={GET, https://google.com, body=12 bytes}")
+        self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: "state=Suspended, request={GET, https://google.com, body=12 bytes}")
+        dataTask.resume()
+        self.compareObject(dataTask, type: "NSURLSessionTask", summary: "state=Running, request={GET, https://google.com, body=12 bytes}")
+        self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: "state=Running, request={GET, https://google.com, body=12 bytes}")
+        self.waitForExpectationsWithTimeout(2, handler: nil)
+    }
 }

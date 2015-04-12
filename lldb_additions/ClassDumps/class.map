@@ -1,4 +1,5 @@
 SKDownload:StoreKit/SKDownload.json
+NSURLSessionDataTask:CFNetwork/NSURLSessionDataTask.json
 UIControl:UIKit/UIControl.json
 SKPayment:StoreKit/SKPayment.json
 SKPaymentQueueInternal:StoreKit/SKPaymentQueueInternal.json
@@ -21,6 +22,7 @@ UITableViewCell:UIKit/UITableViewCell.json
 SKProductInternal:StoreKit/SKProductInternal.json
 UIProgressView:UIKit/UIProgressView.json
 UIAlertView:UIKit/UIAlertView.json
+__NSCFLocalSessionTask:CFNetwork/__NSCFLocalSessionTask.json
 UIResponder:UIKit/UIResponder.json
 UIDeviceWhiteColor:UIKit/UIDeviceWhiteColor.json
 UIColor:UIKit/UIColor.json
@@ -51,6 +53,7 @@ NSURLRequestInternal:CFNetwork/NSURLRequestInternal.json
 NSURLComponents:Foundation/NSURLComponents.json
 NSURLConnectionInternal:CFNetwork/NSURLConnectionInternal.json
 SKProductsRequestInternal:StoreKit/SKProductsRequestInternal.json
+__NSCFLocalDataTask:CFNetwork/__NSCFLocalDataTask.json
 UIDatePicker:UIKit/UIDatePicker.json
 UIStoryboard:UIKit/UIStoryboard.json
 NSURLSessionTask:CFNetwork/NSURLSessionTask.json

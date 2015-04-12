@@ -1,0 +1,22 @@
+{
+  "arm64":{
+    "className":"__NSCFLocalDataTask",
+    "superClassName":"__NSCFLocalSessionTask",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"__NSCFLocalDataTask",
+    "superClassName":"__NSCFLocalSessionTask",
+    "type":"class"
+  },
+  "i386":{
+    "className":"__NSCFLocalDataTask",
+    "superClassName":"__NSCFLocalSessionTask",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"__NSCFLocalDataTask",
+    "superClassName":"__NSCFLocalSessionTask",
+    "type":"class"
+  }
+}

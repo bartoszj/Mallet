@@ -36,15 +36,15 @@ The summaries will be available the next time Xcode starts.
     - NSURLResponse, NSHTTPURLResponse
     - NSURLSession
     - NSURLSessionConfiguration
-    - NSURLSessionTask
+    - NSURLSessionTask, NSURLSessionDataTask, \_\_NSCFLocalSessionTask, \_\_NSCFLocalDataTask
 - Foundation:
     - NSDateComponents
     - NSLayoutConstraint
     - NSObject
     - NSOperation (NSBlockOperation)
     - NSOperationQueue
-    - NSURLComponents (\__NSConcreteURLComponents)
-    - NSUUID (\__NSConcreteUUID)
+    - NSURLComponents (\_\_NSConcreteURLComponents)
+    - NSUUID (\_\_NSConcreteUUID)
 - QuartzCore:
     - CALayer
 - UIKit:

@@ -223,11 +223,14 @@
         
         NSString *summary = [NSString stringWithFormat:@"state=Completed, received=%lu, request={https://google.com}, response={%@}", (unsigned long)data.length, response.URL.absoluteString];
         [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:summary];
+        [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:summary];
         [exceptation fulfill];
     }];
     [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:@"state=Suspended, request={https://google.com}"];
+    [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:@"state=Suspended, request={https://google.com}"];
     [dataTask resume];
     [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:@"state=Running, request={https://google.com}"];
+    [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:@"state=Running, request={https://google.com}"];
     
     [self waitForExpectationsWithTimeout:2 handler:nil];
 }
@@ -243,11 +246,14 @@
         
         NSString *summary = [NSString stringWithFormat:@"state=Completed, received=%lu, toReceive=%lu, sent=12, toSend=12, request={GET, https://google.com, body=12 bytes}, response={%@}", (unsigned long)data.length, (unsigned long)data.length, response.URL.absoluteString];
         [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:summary];
+        [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:summary];
         [exceptation fulfill];
     }];
     [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:@"state=Suspended, request={GET, https://google.com, body=12 bytes}"];
+    [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:@"state=Suspended, request={GET, https://google.com, body=12 bytes}"];
     [dataTask resume];
     [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:@"state=Running, request={GET, https://google.com, body=12 bytes}"];
+    [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:@"state=Running, request={GET, https://google.com, body=12 bytes}"];
     
     [self waitForExpectationsWithTimeout:2 handler:nil];
 }

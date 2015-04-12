@@ -78,6 +78,8 @@ lldb_summaries_load_order = ["SummaryBase",
 
                              "NSObject",
                              "NSURLResponse",
+                             "NSURLSessionTask",
+                             "NSCFLocalSessionTask",
 
                              "CADoublePoint",
                              "CADoubleSize",

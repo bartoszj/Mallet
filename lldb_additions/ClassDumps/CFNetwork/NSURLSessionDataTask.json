@@ -1,0 +1,22 @@
+{
+  "arm64":{
+    "className":"NSURLSessionDataTask",
+    "superClassName":"NSURLSessionTask",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"NSURLSessionDataTask",
+    "superClassName":"NSURLSessionTask",
+    "type":"class"
+  },
+  "i386":{
+    "className":"NSURLSessionDataTask",
+    "superClassName":"NSURLSessionTask",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"NSURLSessionDataTask",
+    "superClassName":"NSURLSessionTask",
+    "type":"class"
+  }
+}

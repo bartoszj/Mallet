@@ -1,0 +1,462 @@
+{
+  "arm64":{
+    "className":"__NSCFLocalSessionTask",
+    "ivars":[
+      {
+        "ivarType":"_Bool",
+        "name":"_pendingResponseDisposition",
+        "offset":344,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_pendingResponseDisposition_didFinish",
+        "offset":345,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_duetAccountingIsDiscretionary",
+        "offset":346,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_didIssueDidFinish",
+        "offset":347,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"__NSCFURLSessionConnection *",
+        "name":"_cfConn",
+        "offset":352,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURL *",
+        "name":"_uploadFile",
+        "offset":360,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSData *",
+        "name":"_uploadData",
+        "offset":368,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSInputStream *",
+        "name":"_uploadDataStream",
+        "offset":376,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_data> *",
+        "name":"_dataTaskData",
+        "offset":384,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"CDUnknownBlockType",
+        "name":"_dataTaskCompletion",
+        "offset":392,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_data> *",
+        "name":"_pendingResponseBytes",
+        "offset":400,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"__NSURLSessionLocal *",
+        "name":"_localSession",
+        "offset":408,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned long long",
+        "name":"_suspendCount",
+        "offset":416,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"CDUnknownBlockType",
+        "name":"_async_initialization",
+        "offset":424,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_source> *",
+        "name":"_resourceTimeout",
+        "offset":432,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_duetAccountedBundleID",
+        "offset":440,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct HTTPConnectionCacheKey *",
+        "name":"_connKey",
+        "offset":448,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURLSessionConfiguration *",
+        "name":"__configuration",
+        "offset":456,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSURLSessionTask",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"__NSCFLocalSessionTask",
+    "ivars":[
+      {
+        "ivarType":"char",
+        "name":"_pendingResponseDisposition",
+        "offset":232,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_pendingResponseDisposition_didFinish",
+        "offset":233,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_duetAccountingIsDiscretionary",
+        "offset":234,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_didIssueDidFinish",
+        "offset":235,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"__NSCFURLSessionConnection *",
+        "name":"_cfConn",
+        "offset":236,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURL *",
+        "name":"_uploadFile",
+        "offset":240,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSData *",
+        "name":"_uploadData",
+        "offset":244,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSInputStream *",
+        "name":"_uploadDataStream",
+        "offset":248,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_data> *",
+        "name":"_dataTaskData",
+        "offset":252,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"CDUnknownBlockType",
+        "name":"_dataTaskCompletion",
+        "offset":256,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_data> *",
+        "name":"_pendingResponseBytes",
+        "offset":260,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"__NSURLSessionLocal *",
+        "name":"_localSession",
+        "offset":264,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"_suspendCount",
+        "offset":268,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"CDUnknownBlockType",
+        "name":"_async_initialization",
+        "offset":272,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_source> *",
+        "name":"_resourceTimeout",
+        "offset":276,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_duetAccountedBundleID",
+        "offset":280,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct HTTPConnectionCacheKey *",
+        "name":"_connKey",
+        "offset":284,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURLSessionConfiguration *",
+        "name":"__configuration",
+        "offset":288,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSURLSessionTask",
+    "type":"class"
+  },
+  "i386":{
+    "className":"__NSCFLocalSessionTask",
+    "ivars":[
+      {
+        "ivarType":"char",
+        "name":"_pendingResponseDisposition",
+        "offset":232,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_pendingResponseDisposition_didFinish",
+        "offset":233,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_duetAccountingIsDiscretionary",
+        "offset":234,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_didIssueDidFinish",
+        "offset":235,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"__NSCFURLSessionConnection *",
+        "name":"_cfConn",
+        "offset":236,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURL *",
+        "name":"_uploadFile",
+        "offset":240,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSData *",
+        "name":"_uploadData",
+        "offset":244,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSInputStream *",
+        "name":"_uploadDataStream",
+        "offset":248,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_data> *",
+        "name":"_dataTaskData",
+        "offset":252,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"CDUnknownBlockType",
+        "name":"_dataTaskCompletion",
+        "offset":256,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_data> *",
+        "name":"_pendingResponseBytes",
+        "offset":260,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"__NSURLSessionLocal *",
+        "name":"_localSession",
+        "offset":264,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"_suspendCount",
+        "offset":268,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"CDUnknownBlockType",
+        "name":"_async_initialization",
+        "offset":272,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_source> *",
+        "name":"_resourceTimeout",
+        "offset":276,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_duetAccountedBundleID",
+        "offset":280,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct HTTPConnectionCacheKey *",
+        "name":"_connKey",
+        "offset":284,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURLSessionConfiguration *",
+        "name":"__configuration",
+        "offset":288,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSURLSessionTask",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"__NSCFLocalSessionTask",
+    "ivars":[
+      {
+        "ivarType":"_Bool",
+        "name":"_pendingResponseDisposition",
+        "offset":344,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_pendingResponseDisposition_didFinish",
+        "offset":345,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_duetAccountingIsDiscretionary",
+        "offset":346,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_didIssueDidFinish",
+        "offset":347,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"__NSCFURLSessionConnection *",
+        "name":"_cfConn",
+        "offset":352,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURL *",
+        "name":"_uploadFile",
+        "offset":360,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSData *",
+        "name":"_uploadData",
+        "offset":368,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSInputStream *",
+        "name":"_uploadDataStream",
+        "offset":376,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_data> *",
+        "name":"_dataTaskData",
+        "offset":384,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"CDUnknownBlockType",
+        "name":"_dataTaskCompletion",
+        "offset":392,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_data> *",
+        "name":"_pendingResponseBytes",
+        "offset":400,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"__NSURLSessionLocal *",
+        "name":"_localSession",
+        "offset":408,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned long long",
+        "name":"_suspendCount",
+        "offset":416,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"CDUnknownBlockType",
+        "name":"_async_initialization",
+        "offset":424,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_source> *",
+        "name":"_resourceTimeout",
+        "offset":432,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_duetAccountedBundleID",
+        "offset":440,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct HTTPConnectionCacheKey *",
+        "name":"_connKey",
+        "offset":448,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURLSessionConfiguration *",
+        "name":"__configuration",
+        "offset":456,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSURLSessionTask",
+    "type":"class"
+  }
+}
