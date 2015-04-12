@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class CFNetworkSwiftTests: SharedSwiftTestCase, NSURLConnectionDataDelegate {
+class CFNetworkSwiftTests: SharedSwiftTestCase, NSURLConnectionDataDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDownloadDelegate {
     
     var exceptation: XCTestExpectation?
 
@@ -192,16 +192,18 @@ class CFNetworkSwiftTests: SharedSwiftTestCase, NSURLConnectionDataDelegate {
         let exceptation = self.expectationWithDescription("task")
         var dataTask: NSURLSessionDataTask! = nil
         dataTask = session.dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
-            let summary = "state=Completed, received=\(data.length), request={https://google.com}, response={\(response.URL!.absoluteString!)}"
+            let summary = "state=Completed, tid=\(dataTask.taskIdentifier), received=\(data.length), request={https://google.com}, response={\(response.URL!.absoluteString!)}"
             self.compareObject(dataTask, type: "NSURLSessionTask", summary: summary)
             self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: summary)
             exceptation.fulfill()
         })
-        self.compareObject(dataTask, type: "NSURLSessionTask", summary: "state=Suspended, request={https://google.com}")
-        self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: "state=Suspended, request={https://google.com}")
+        var summary = "state=Suspended, tid=\(dataTask.taskIdentifier), request={https://google.com}"
+        self.compareObject(dataTask, type: "NSURLSessionTask", summary: summary)
+        self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: summary)
         dataTask.resume()
-        self.compareObject(dataTask, type: "NSURLSessionTask", summary: "state=Running, request={https://google.com}")
-        self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: "state=Running, request={https://google.com}")
+        summary = "state=Running, tid=\(dataTask.taskIdentifier), request={https://google.com}"
+        self.compareObject(dataTask, type: "NSURLSessionTask", summary: summary)
+        self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: summary)
         self.waitForExpectationsWithTimeout(2, handler: nil)
     }
     
@@ -213,16 +215,18 @@ class CFNetworkSwiftTests: SharedSwiftTestCase, NSURLConnectionDataDelegate {
         let exceptation = self.expectationWithDescription("task")
         var dataTask: NSURLSessionDataTask! = nil
         dataTask = session.dataTaskWithRequest(mutableRequest, completionHandler: { (data, response, error) -> Void in
-            let summary = "state=Completed, received=\(data.length), toReceive=\(data.length), sent=12, toSend=12, request={GET, https://google.com, body=12 bytes}, response={\(response.URL!.absoluteString!)}"
+            let summary = "state=Completed, tid=\(dataTask.taskIdentifier), received=\(data.length), toReceive=\(data.length), sent=12, toSend=12, request={GET, https://google.com, body=12 bytes}, response={\(response.URL!.absoluteString!)}"
             self.compareObject(dataTask, type: "NSURLSessionTask", summary: summary)
             self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: summary)
             exceptation.fulfill()
         })
-        self.compareObject(dataTask, type: "NSURLSessionTask", summary: "state=Suspended, request={GET, https://google.com, body=12 bytes}")
-        self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: "state=Suspended, request={GET, https://google.com, body=12 bytes}")
+        var summary = "state=Suspended, tid=\(dataTask.taskIdentifier), request={GET, https://google.com, body=12 bytes}"
+        self.compareObject(dataTask, type: "NSURLSessionTask", summary: summary)
+        self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: summary)
         dataTask.resume()
-        self.compareObject(dataTask, type: "NSURLSessionTask", summary: "state=Running, request={GET, https://google.com, body=12 bytes}")
-        self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: "state=Running, request={GET, https://google.com, body=12 bytes}")
+        summary = "state=Running, tid=\(dataTask.taskIdentifier), request={GET, https://google.com, body=12 bytes}"
+        self.compareObject(dataTask, type: "NSURLSessionTask", summary: summary)
+        self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: summary)
         self.waitForExpectationsWithTimeout(2, handler: nil)
     }
     
@@ -233,7 +237,7 @@ class CFNetworkSwiftTests: SharedSwiftTestCase, NSURLConnectionDataDelegate {
         var downloadTask: NSURLSessionDownloadTask! = nil
         downloadTask = session.downloadTaskWithURL(url, completionHandler: { (location, response, error) -> Void in
             let data = NSData(contentsOfURL: location)!
-            let summary = "state=Running, received=\(data.length), request={https://google.com}, response={\(response.URL!.absoluteString!)}"
+            let summary = "state=Running, tid=\(downloadTask.taskIdentifier), received=\(data.length), request={https://google.com}, response={\(response.URL!.absoluteString!)}"
             self.compareObject(downloadTask, type: "NSURLSessionTask", summary: summary)
             exceptation.fulfill()
         })
@@ -249,13 +253,38 @@ class CFNetworkSwiftTests: SharedSwiftTestCase, NSURLConnectionDataDelegate {
         let data = ("HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData" as NSString).dataUsingEncoding(NSUTF8StringEncoding)
         var uploadTask: NSURLSessionUploadTask! = nil
         uploadTask = session.uploadTaskWithRequest(request, fromData: data, completionHandler: { (data, response, error) -> Void in
-            let summary = "state=Completed, received=\(data.length), toReceive=\(data.length), sent=98, toSend=98, request={https://google.com}, response={\(response.URL!.absoluteString!)}"
+            let summary = "state=Completed, tid=\(uploadTask.taskIdentifier), received=\(data.length), toReceive=\(data.length), sent=98, toSend=98, request={https://google.com}, response={\(response.URL!.absoluteString!)}"
             self.compareObject(uploadTask, type: "NSURLSessionUploadTask", summary: summary)
             exceptation.fulfill()
         })
-        self.compareObject(uploadTask, type: "NSURLSessionUploadTask", summary: "state=Suspended, request={https://google.com}")
+        var summary = "state=Suspended, tid=\(uploadTask.taskIdentifier), request={https://google.com}"
+        self.compareObject(uploadTask, type: "NSURLSessionUploadTask", summary: summary)
         uploadTask.resume()
-        self.compareObject(uploadTask, type: "NSURLSessionUploadTask", summary: "state=Running, request={https://google.com}")
+        summary = "state=Running, tid=\(uploadTask.taskIdentifier), request={https://google.com}"
+        self.compareObject(uploadTask, type: "NSURLSessionUploadTask", summary: summary)
         self.waitForExpectationsWithTimeout(2, handler: nil)
+    }
+    
+    func testNSURLSessionTask05() {
+        let configuration = NSURLSessionConfiguration.backgroundSessionConfigurationWithIdentifier("backgroundSession")
+        let session = NSURLSession(configuration: configuration, delegate: self, delegateQueue: NSOperationQueue.mainQueue())
+        let url = NSURL(string: "https://google.com")!
+        self.exceptation = self.expectationWithDescription("task")
+        let downloadTask = session.downloadTaskWithURL(url)
+        
+        var summary = "state=Suspended, tid=\(downloadTask.taskIdentifier), request={https://google.com}"
+        self.compareObject(downloadTask, type: "NSURLSessionDownloadTask", summary: summary)
+        downloadTask.resume()
+        summary = "state=Running, tid=\(downloadTask.taskIdentifier), request={https://google.com}"
+        self.compareObject(downloadTask, type: "NSURLSessionDownloadTask", summary: summary)
+        
+        self.waitForExpectationsWithTimeout(2, handler: nil)
+    }
+    
+    func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL) {
+        let summary = "state=Running, tid=\(downloadTask.taskIdentifier), received=\(downloadTask.countOfBytesReceived), request={https://google.com}, response={\(downloadTask.response!.URL!.absoluteString!)}"
+        self.compareObject(downloadTask, type: "NSURLSessionDownloadTask", summary: summary)
+        
+        self.exceptation?.fulfill()
     }
 }

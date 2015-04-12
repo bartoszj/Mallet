@@ -1,0 +1,22 @@
+{
+  "arm64":{
+    "className":"__NSCFBackgroundUploadTask",
+    "superClassName":"__NSCFBackgroundDataTask",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"__NSCFBackgroundUploadTask",
+    "superClassName":"__NSCFBackgroundDataTask",
+    "type":"class"
+  },
+  "i386":{
+    "className":"__NSCFBackgroundUploadTask",
+    "superClassName":"__NSCFBackgroundDataTask",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"__NSCFBackgroundUploadTask",
+    "superClassName":"__NSCFBackgroundDataTask",
+    "type":"class"
+  }
+}

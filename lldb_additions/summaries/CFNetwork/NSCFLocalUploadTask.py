@@ -23,10 +23,10 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from ...scripts import helpers
-import NSURLSessionTask
+import NSCFLocalDataTask
 
 
-class NSCFLocalUploadTaskSyntheticProvider(NSURLSessionTask.NSURLSessionTaskSyntheticProvider):
+class NSCFLocalUploadTaskSyntheticProvider(NSCFLocalDataTask.NSCFLocalDataTaskTaskSyntheticProvider):
     """
     Class representing __NSCFLocalUploadTask.
     """

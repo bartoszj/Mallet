@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SharedTestCase.h"
 
-@interface CFNetworkTests : SharedTestCase <NSURLConnectionDataDelegate>
+@interface CFNetworkTests : SharedTestCase <NSURLConnectionDataDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDownloadDelegate>
 
 @property (strong, nonatomic) XCTestExpectation *exceptation;
 
@@ -221,16 +221,18 @@
     XCTestExpectation *exceptation = [self expectationWithDescription:@"task"];
     __block NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
-        NSString *summary = [NSString stringWithFormat:@"state=Completed, received=%lu, request={https://google.com}, response={%@}", (unsigned long)data.length, response.URL.absoluteString];
+        NSString *summary = [NSString stringWithFormat:@"state=Completed, tid=%lu, received=%lu, request={https://google.com}, response={%@}", (unsigned long)dataTask.taskIdentifier, (unsigned long)data.length, response.URL.absoluteString];
         [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:summary];
         [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:summary];
         [exceptation fulfill];
     }];
-    [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:@"state=Suspended, request={https://google.com}"];
-    [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:@"state=Suspended, request={https://google.com}"];
+    NSString *summary = [NSString stringWithFormat:@"state=Suspended, tid=%lu, request={https://google.com}", (unsigned long)dataTask.taskIdentifier];
+    [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:summary];
+    [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:summary];
     [dataTask resume];
-    [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:@"state=Running, request={https://google.com}"];
-    [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:@"state=Running, request={https://google.com}"];
+    summary = [NSString stringWithFormat:@"state=Running, tid=%lu, request={https://google.com}", (unsigned long)dataTask.taskIdentifier];
+    [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:summary];
+    [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:summary];
     
     [self waitForExpectationsWithTimeout:2 handler:nil];
 }
@@ -244,16 +246,18 @@
     XCTestExpectation *exceptation = [self expectationWithDescription:@"task"];
     __block NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:mutableRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
-        NSString *summary = [NSString stringWithFormat:@"state=Completed, received=%lu, toReceive=%lu, sent=12, toSend=12, request={GET, https://google.com, body=12 bytes}, response={%@}", (unsigned long)data.length, (unsigned long)data.length, response.URL.absoluteString];
+        NSString *summary = [NSString stringWithFormat:@"state=Completed, tid=%lu, received=%lu, toReceive=%lu, sent=12, toSend=12, request={GET, https://google.com, body=12 bytes}, response={%@}", (unsigned long)dataTask.taskIdentifier, (unsigned long)data.length, (unsigned long)data.length, response.URL.absoluteString];
         [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:summary];
         [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:summary];
         [exceptation fulfill];
     }];
-    [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:@"state=Suspended, request={GET, https://google.com, body=12 bytes}"];
-    [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:@"state=Suspended, request={GET, https://google.com, body=12 bytes}"];
+    NSString *summary = [NSString stringWithFormat:@"state=Suspended, tid=%lu, request={GET, https://google.com, body=12 bytes}", (unsigned long)dataTask.taskIdentifier];
+    [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:summary];
+    [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:summary];
     [dataTask resume];
-    [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:@"state=Running, request={GET, https://google.com, body=12 bytes}"];
-    [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:@"state=Running, request={GET, https://google.com, body=12 bytes}"];
+    summary = [NSString stringWithFormat:@"state=Running, tid=%lu, request={GET, https://google.com, body=12 bytes}", (unsigned long)dataTask.taskIdentifier];
+    [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:summary];
+    [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:summary];
     
     [self waitForExpectationsWithTimeout:2 handler:nil];
 }
@@ -265,7 +269,7 @@
     XCTestExpectation *exceptation = [self expectationWithDescription:@"task"];
     __block NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
         NSData *data = [NSData dataWithContentsOfURL:location];
-        NSString *summary = [NSString stringWithFormat:@"state=Running, received=%lu, request={https://google.com}, response={%@}, path=@\"%@\"", (unsigned long)data.length, response.URL.absoluteString, location.path];
+        NSString *summary = [NSString stringWithFormat:@"state=Running, tid=%lu, received=%lu, request={https://google.com}, response={%@}, path=@\"%@\"", (unsigned long)downloadTask.taskIdentifier, (unsigned long)data.length, response.URL.absoluteString, location.path];
         [self compareObject:downloadTask ofType:@"NSURLSessionDownloadTask *" toSummary:summary];
         [exceptation fulfill];
     }];
@@ -283,14 +287,41 @@
     
     NSData *data = [@"HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData" dataUsingEncoding:NSUTF8StringEncoding];
     __block NSURLSessionUploadTask *uploadTask = [session uploadTaskWithRequest:request fromData:data completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSString *summary = [NSString stringWithFormat:@"state=Completed, received=%lu, toReceive=%lu, sent=98, toSend=98, request={https://google.com}, response={%@}", (unsigned long)data.length, (unsigned long)data.length, response.URL.absoluteString];
+        NSString *summary = [NSString stringWithFormat:@"state=Completed, tid=%lu, received=%lu, toReceive=%lu, sent=98, toSend=98, request={https://google.com}, response={%@}", (unsigned long)uploadTask.taskIdentifier, (unsigned long)data.length, (unsigned long)data.length, response.URL.absoluteString];
         [self compareObject:uploadTask ofType:@"NSURLSessionUploadTask *" toSummary:summary];
         [exceptation fulfill];
     }];
-    [self compareObject:uploadTask ofType:@"NSURLSessionUploadTask *" toSummary:@"state=Suspended, request={https://google.com}"];
+    NSString *summary = [NSString stringWithFormat:@"state=Suspended, tid=%lu, request={https://google.com}", (unsigned long)uploadTask.taskIdentifier];
+    [self compareObject:uploadTask ofType:@"NSURLSessionUploadTask *" toSummary:summary];
     [uploadTask resume];
-    [self compareObject:uploadTask ofType:@"NSURLSessionUploadTask *" toSummary:@"state=Running, request={https://google.com}"];
+    summary = [NSString stringWithFormat:@"state=Running, tid=%lu, request={https://google.com}", (unsigned long)uploadTask.taskIdentifier];
+    [self compareObject:uploadTask ofType:@"NSURLSessionUploadTask *" toSummary:summary];
     [self waitForExpectationsWithTimeout:2 handler:nil];
+}
+
+- (void)testNSURLSessionTask05
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:@"backgroundSession"];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    NSURL *url = [NSURL URLWithString:@"https://google.com"];
+    self.exceptation = [self expectationWithDescription:@"task"];
+    NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithURL:url];
+    
+    NSString *summary = [NSString stringWithFormat:@"state=Suspended, tid=%lu, request={https://google.com}", (unsigned long)downloadTask.taskIdentifier];
+    [self compareObject:downloadTask ofType:@"NSURLSessionDownloadTask *" toSummary:summary];
+    [downloadTask resume];
+    summary = [NSString stringWithFormat:@"state=Running, tid=%lu, request={https://google.com}", (unsigned long)downloadTask.taskIdentifier];
+    [self compareObject:downloadTask ofType:@"NSURLSessionDownloadTask *" toSummary:summary];
+    
+    [self waitForExpectationsWithTimeout:2 handler:nil];
+}
+
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
+{
+    NSString *summary = [NSString stringWithFormat:@"state=Running, tid=%lu, received=%lu, request={https://google.com}, response={%@}", (unsigned long)downloadTask.taskIdentifier, (unsigned long)downloadTask.countOfBytesReceived, downloadTask.response.URL.absoluteString];
+    [self compareObject:downloadTask ofType:@"NSURLSessionDownloadTask *" toSummary:summary];
+    
+    [self.exceptation fulfill];
 }
 
 @end

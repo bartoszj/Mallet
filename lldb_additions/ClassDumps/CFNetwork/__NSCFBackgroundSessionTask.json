@@ -1,0 +1,126 @@
+{
+  "arm64":{
+    "className":"__NSCFBackgroundSessionTask",
+    "ivars":[
+      {
+        "ivarType":"_Bool",
+        "name":"_sentCancel",
+        "offset":344,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id <NDBackgroundSessionProtocol>",
+        "name":"_remoteSession",
+        "offset":352,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned long long",
+        "name":"_ident",
+        "offset":360,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSError *",
+        "name":"_immediateError",
+        "offset":368,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSURLSessionTask",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"__NSCFBackgroundSessionTask",
+    "ivars":[
+      {
+        "ivarType":"char",
+        "name":"_sentCancel",
+        "offset":232,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id <NDBackgroundSessionProtocol>",
+        "name":"_remoteSession",
+        "offset":236,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"_ident",
+        "offset":240,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSError *",
+        "name":"_immediateError",
+        "offset":244,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSURLSessionTask",
+    "type":"class"
+  },
+  "i386":{
+    "className":"__NSCFBackgroundSessionTask",
+    "ivars":[
+      {
+        "ivarType":"char",
+        "name":"_sentCancel",
+        "offset":232,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id <NDBackgroundSessionProtocol>",
+        "name":"_remoteSession",
+        "offset":236,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"_ident",
+        "offset":240,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSError *",
+        "name":"_immediateError",
+        "offset":244,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSURLSessionTask",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"__NSCFBackgroundSessionTask",
+    "ivars":[
+      {
+        "ivarType":"_Bool",
+        "name":"_sentCancel",
+        "offset":344,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id <NDBackgroundSessionProtocol>",
+        "name":"_remoteSession",
+        "offset":352,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned long long",
+        "name":"_ident",
+        "offset":360,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSError *",
+        "name":"_immediateError",
+        "offset":368,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSURLSessionTask",
+    "type":"class"
+  }
+}

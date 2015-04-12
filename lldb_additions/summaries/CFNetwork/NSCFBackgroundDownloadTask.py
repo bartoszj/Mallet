@@ -23,17 +23,28 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from ...scripts import helpers
-import NSURLSessionDataTask
+from .. import SummaryBase
+import NSCFBackgroundSessionTask
 
 
-class NSURLSessionUploadTaskSyntheticProvider(NSURLSessionDataTask.NSURLSessionDataTaskSyntheticProvider):
+class NSCFBackgroundDownloadTaskSyntheticProvider(NSCFBackgroundSessionTask.NSCFBackgroundSessionTaskSyntheticProvider):
     """
-    Class representing NSURLSessionUploadTask.
+    Class representing __NSCFBackgroundDownloadTask.
     """
     def __init__(self, value_obj, internal_dict):
-        super(NSURLSessionUploadTaskSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.type_name = "NSURLSessionUploadTask"
+        super(NSCFBackgroundDownloadTaskSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "__NSCFBackgroundDownloadTask"
+
+        self.register_child_value("finished", ivar_name="_finished",
+                                  primitive_value_function=SummaryBase.get_bool_value,
+                                  summary_function=self.get_finished_summary)
+
+    @staticmethod
+    def get_finished_summary(value):
+        if value:
+            return "finished"
+        return None
 
 
 def summary_provider(value_obj, internal_dict):
-    return helpers.generic_summary_provider(value_obj, internal_dict, NSURLSessionUploadTaskSyntheticProvider)
+    return helpers.generic_summary_provider(value_obj, internal_dict, NSCFBackgroundDownloadTaskSyntheticProvider)

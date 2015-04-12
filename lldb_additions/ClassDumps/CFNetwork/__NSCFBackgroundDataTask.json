@@ -1,0 +1,198 @@
+{
+  "arm64":{
+    "className":"__NSCFBackgroundDataTask",
+    "ivars":[
+      {
+        "ivarType":"NSInputStream *",
+        "name":"_requestBodyStream",
+        "offset":376,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSInputStream *",
+        "name":"_initialStream",
+        "offset":384,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_queue> *",
+        "name":"_writeQueue",
+        "offset":392,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_io> *",
+        "name":"_pipeIO",
+        "offset":400,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned long long",
+        "name":"_bytesRead",
+        "offset":408,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_streamBased",
+        "offset":416,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSFileHandle *",
+        "name":"_readHandle",
+        "offset":424,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"__NSCFBackgroundSessionTask",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"__NSCFBackgroundDataTask",
+    "ivars":[
+      {
+        "ivarType":"NSInputStream *",
+        "name":"_requestBodyStream",
+        "offset":248,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSInputStream *",
+        "name":"_initialStream",
+        "offset":252,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_queue> *",
+        "name":"_writeQueue",
+        "offset":256,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_io> *",
+        "name":"_pipeIO",
+        "offset":260,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"_bytesRead",
+        "offset":264,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_streamBased",
+        "offset":268,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSFileHandle *",
+        "name":"_readHandle",
+        "offset":272,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"__NSCFBackgroundSessionTask",
+    "type":"class"
+  },
+  "i386":{
+    "className":"__NSCFBackgroundDataTask",
+    "ivars":[
+      {
+        "ivarType":"NSInputStream *",
+        "name":"_requestBodyStream",
+        "offset":248,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSInputStream *",
+        "name":"_initialStream",
+        "offset":252,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_queue> *",
+        "name":"_writeQueue",
+        "offset":256,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_io> *",
+        "name":"_pipeIO",
+        "offset":260,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"_bytesRead",
+        "offset":264,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"_streamBased",
+        "offset":268,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSFileHandle *",
+        "name":"_readHandle",
+        "offset":272,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"__NSCFBackgroundSessionTask",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"__NSCFBackgroundDataTask",
+    "ivars":[
+      {
+        "ivarType":"NSInputStream *",
+        "name":"_requestBodyStream",
+        "offset":376,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSInputStream *",
+        "name":"_initialStream",
+        "offset":384,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_queue> *",
+        "name":"_writeQueue",
+        "offset":392,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_io> *",
+        "name":"_pipeIO",
+        "offset":400,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned long long",
+        "name":"_bytesRead",
+        "offset":408,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"_streamBased",
+        "offset":416,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSFileHandle *",
+        "name":"_readHandle",
+        "offset":424,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"__NSCFBackgroundSessionTask",
+    "type":"class"
+  }
+}

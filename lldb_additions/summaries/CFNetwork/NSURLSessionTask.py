@@ -35,13 +35,17 @@ NSURLSessionTaskStateCompleted = 3
 
 # Class hierarchy:
 # ┌ NSURLSessionTask (+)
-# ├── NSURLSessionDataTask (-)
+# ├─┬ NSURLSessionDataTask (-)
+# │ └── NSURLSessionUploadTask (-)
 # ├── NSURLSessionDownloadTask (-)
-# ├── NSURLSessionUploadTask (-)
-# └─┬ __NSCFLocalSessionTask (+)
-#   ├── __NSCFLocalDataTask (-)
-#   ├── __NSCFLocalDownloadTask (+)
-#   └── __NSCFLocalUploadTask (-)
+# ├─┬ __NSCFLocalSessionTask (+)
+# │ ├─┬ __NSCFLocalDataTask (-)
+# │ │ └── __NSCFLocalUploadTask (-)
+# │ └── __NSCFLocalDownloadTask (+)
+# └─┬ __NSCFBackgroundSessionTask (+)
+#   ├─┬ __NSCFBackgroundDataTask (+)
+#   │ └── __NSCFBackgroundUploadTask (-)
+#   └── __NSCFBackgroundDownloadTask (+)
 
 
 class NSURLSessionTaskSyntheticProvider(NSObject.NSObjectSyntheticProvider):
@@ -53,7 +57,7 @@ class NSURLSessionTaskSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         self.type_name = "NSURLSessionTask"
 
         self.register_child_value("task_identifier", ivar_name="_taskIdentifier",
-                                  primitive_value_function=SummaryBase.get_summary_value,
+                                  primitive_value_function=SummaryBase.get_unsigned_value,
                                   summary_function=self.get_task_identifier_summary)
         self.register_child_value("original_request", ivar_name="_originalRequest",
                                   provider_class=NSURLRequest.NSURLRequestSyntheticProvider,
@@ -82,7 +86,7 @@ class NSURLSessionTaskSyntheticProvider(NSObject.NSObjectSyntheticProvider):
 
     @staticmethod
     def get_task_identifier_summary(value):
-        return "taskIdentifier={}".format(value)
+        return "tid={}".format(value)
 
     @staticmethod
     def get_original_request_summary(provider):
@@ -139,11 +143,11 @@ class NSURLSessionTaskSyntheticProvider(NSObject.NSObjectSyntheticProvider):
 
     def summary(self):
         summary = SummaryBase.join_summaries(self.state_summary,
+                                             self.task_identifier_summary,
                                              self.count_of_bytes_received_summary,
                                              self.count_of_bytes_expected_to_receive_summary,
                                              self.count_of_bytes_sent_summary,
                                              self.count_of_bytes_expected_to_send_summary,
-                                             self.task_identifier_summary,
                                              self.original_request_summary,
                                              self.response_summary,
                                              self.task_description_summary)

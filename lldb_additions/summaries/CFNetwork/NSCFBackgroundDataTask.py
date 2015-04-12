@@ -23,17 +23,26 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from ...scripts import helpers
-import NSURLSessionDataTask
+from .. import SummaryBase
+import NSCFBackgroundSessionTask
 
 
-class NSURLSessionUploadTaskSyntheticProvider(NSURLSessionDataTask.NSURLSessionDataTaskSyntheticProvider):
+class NSCFBackgroundDataTaskSyntheticProvider(NSCFBackgroundSessionTask.NSCFBackgroundSessionTaskSyntheticProvider):
     """
-    Class representing NSURLSessionUploadTask.
+    Class representing __NSCFBackgroundDataTask.
     """
     def __init__(self, value_obj, internal_dict):
-        super(NSURLSessionUploadTaskSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.type_name = "NSURLSessionUploadTask"
+        super(NSCFBackgroundDataTaskSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "__NSCFBackgroundDataTask"
+
+        self.register_child_value("bytes_read", ivar_name="_bytesRead",
+                                  primitive_value_function=SummaryBase.get_unsigned_value,
+                                  summary_function=self.get_bytes_read_summary)
+
+    @staticmethod
+    def get_bytes_read_summary(value):
+        return "bytesRead={}".format(value)
 
 
 def summary_provider(value_obj, internal_dict):
-    return helpers.generic_summary_provider(value_obj, internal_dict, NSURLSessionUploadTaskSyntheticProvider)
+    return helpers.generic_summary_provider(value_obj, internal_dict, NSCFBackgroundDataTaskSyntheticProvider)

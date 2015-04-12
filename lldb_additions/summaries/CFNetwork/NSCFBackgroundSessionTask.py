@@ -23,17 +23,17 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from ...scripts import helpers
-import NSURLSessionDataTask
+import NSURLSessionTask
 
 
-class NSURLSessionUploadTaskSyntheticProvider(NSURLSessionDataTask.NSURLSessionDataTaskSyntheticProvider):
+class NSCFBackgroundSessionTaskSyntheticProvider(NSURLSessionTask.NSURLSessionTaskSyntheticProvider):
     """
-    Class representing NSURLSessionUploadTask.
+    Class representing __NSCFBackgroundSessionTask.
     """
     def __init__(self, value_obj, internal_dict):
-        super(NSURLSessionUploadTaskSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.type_name = "NSURLSessionUploadTask"
+        super(NSCFBackgroundSessionTaskSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "__NSCFBackgroundSessionTask"
 
 
 def summary_provider(value_obj, internal_dict):
-    return helpers.generic_summary_provider(value_obj, internal_dict, NSURLSessionUploadTaskSyntheticProvider)
+    return helpers.generic_summary_provider(value_obj, internal_dict, NSCFBackgroundSessionTaskSyntheticProvider)
