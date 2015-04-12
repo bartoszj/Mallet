@@ -25,9 +25,12 @@ CPY=(
     "CFNetwork.framework/NSURLSession.json"
     "CFNetwork.framework/NSURLSessionConfiguration.json"
     "CFNetwork.framework/NSURLSessionDataTask.json"
+    "CFNetwork.framework/NSURLSessionDownloadTask.json"
     "CFNetwork.framework/NSURLSessionTask.json"
-    "CFNetwork.framework/__NSCFLocalSessionTask.json"
     "CFNetwork.framework/__NSCFLocalDataTask.json"
+    "CFNetwork.framework/__NSCFLocalDownloadFile.json"
+    "CFNetwork.framework/__NSCFLocalDownloadTask.json"
+    "CFNetwork.framework/__NSCFLocalSessionTask.json"
 
     "Foundation.framework/NSLayoutConstraint.json"
     "Foundation.framework/NSOperation.json"

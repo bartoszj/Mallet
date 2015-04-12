@@ -1,0 +1,22 @@
+{
+  "arm64":{
+    "className":"NSURLSessionDownloadTask",
+    "superClassName":"NSURLSessionTask",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"NSURLSessionDownloadTask",
+    "superClassName":"NSURLSessionTask",
+    "type":"class"
+  },
+  "i386":{
+    "className":"NSURLSessionDownloadTask",
+    "superClassName":"NSURLSessionTask",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"NSURLSessionDownloadTask",
+    "superClassName":"NSURLSessionTask",
+    "type":"class"
+  }
+}

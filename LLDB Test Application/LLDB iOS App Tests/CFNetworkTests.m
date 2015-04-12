@@ -258,4 +258,20 @@
     [self waitForExpectationsWithTimeout:2 handler:nil];
 }
 
+- (void)testNSURLSessionTask03
+{
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURL *url = [NSURL URLWithString:@"https://google.com"];
+    XCTestExpectation *exceptation = [self expectationWithDescription:@"task"];
+    __block NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        NSData *data = [NSData dataWithContentsOfURL:location];
+        NSString *summary = [NSString stringWithFormat:@"state=Running, received=%lu, request={https://google.com}, response={%@}, path=@\"%@\"", (unsigned long)data.length, response.URL.absoluteString, location.path];
+        [self compareObject:downloadTask ofType:@"NSURLSessionDownloadTask *" toSummary:summary];
+        [exceptation fulfill];
+    }];
+    [downloadTask resume];
+    
+    [self waitForExpectationsWithTimeout:2 handler:nil];
+}
+
 @end

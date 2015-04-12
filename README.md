@@ -36,7 +36,8 @@ The summaries will be available the next time Xcode starts.
     - NSURLResponse, NSHTTPURLResponse
     - NSURLSession
     - NSURLSessionConfiguration
-    - NSURLSessionTask, NSURLSessionDataTask, \_\_NSCFLocalSessionTask, \_\_NSCFLocalDataTask
+    - NSURLSessionTask, NSURLSessionDataTask, NSURLSessionDownloadTask (\_\_NSCFLocalSessionTask, \_\_NSCFLocalDataTask, \_\_NSCFLocalDownloadTask)
+    - \_\_NSCFLocalDownloadFile
 - Foundation:
     - NSDateComponents
     - NSLayoutConstraint

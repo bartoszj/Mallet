@@ -225,4 +225,19 @@ class CFNetworkSwiftTests: SharedSwiftTestCase, NSURLConnectionDataDelegate {
         self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: "state=Running, request={GET, https://google.com, body=12 bytes}")
         self.waitForExpectationsWithTimeout(2, handler: nil)
     }
+    
+    func testNSURLSessionTask03() {
+        let session = NSURLSession.sharedSession()
+        let url = NSURL(string: "https://google.com")!
+        let exceptation = self.expectationWithDescription("task")
+        var downloadTask: NSURLSessionDownloadTask! = nil
+        downloadTask = session.downloadTaskWithURL(url, completionHandler: { (location, response, error) -> Void in
+            let data = NSData(contentsOfURL: location)!
+            let summary = "state=Running, received=\(data.length), request={https://google.com}, response={\(response.URL!.absoluteString!)}"
+            self.compareObject(downloadTask, type: "NSURLSessionTask", summary: summary)
+            exceptation.fulfill()
+        })
+        downloadTask.resume()
+        self.waitForExpectationsWithTimeout(2, handler: nil)
+    }
 }

@@ -43,6 +43,7 @@ UISlider:UIKit/UISlider.json
 _UIDatePickerView:UIKit/_UIDatePickerView.json
 UIAlertAction:UIKit/UIAlertAction.json
 NSURLResponse:CFNetwork/NSURLResponse.json
+__NSCFLocalDownloadTask:CFNetwork/__NSCFLocalDownloadTask.json
 SKPaymentQueue:StoreKit/SKPaymentQueue.json
 SKProductsRequest:StoreKit/SKProductsRequest.json
 NSOperation:Foundation/NSOperation.json
@@ -60,7 +61,9 @@ NSURLSessionTask:CFNetwork/NSURLSessionTask.json
 UIInternalEvent:UIKit/UIInternalEvent.json
 UIBarItem:UIKit/UIBarItem.json
 SKProduct:StoreKit/SKProduct.json
+NSURLSessionDownloadTask:CFNetwork/NSURLSessionDownloadTask.json
 SKPaymentTransactionInternal:StoreKit/SKPaymentTransactionInternal.json
+__NSCFLocalDownloadFile:CFNetwork/__NSCFLocalDownloadFile.json
 UIImageView:UIKit/UIImageView.json
 NSOperationQueue:Foundation/NSOperationQueue.json
 UIButton:UIKit/UIButton.json

@@ -24,32 +24,34 @@
 
 from ...scripts import helpers
 from .. import SummaryBase
-import NSURLSessionTask
+import NSCFLocalSessionTask
+import NSCFLocalDownloadFile
 
 
-class NSCFLocalSessionTaskSyntheticProvider(NSURLSessionTask.NSURLSessionTaskSyntheticProvider):
+class NSCFLocalDownloadTaskSyntheticProvider(NSCFLocalSessionTask.NSCFLocalSessionTaskSyntheticProvider):
     """
-    Class representing __NSCFLocalSessionTask.
+    Class representing __NSCFLocalDownloadTask.
     """
     def __init__(self, value_obj, internal_dict):
-        super(NSCFLocalSessionTaskSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.type_name = "__NSCFLocalSessionTask"
+        super(NSCFLocalDownloadTaskSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "__NSCFLocalDownloadTask"
 
-        self.register_child_value("upload_file", ivar_name="_uploadFile",
-                                  primitive_value_function=SummaryBase.get_summary_value,
-                                  summary_function=self.get_upload_file_summary)
-        self.register_child_value("upload_data", ivar_name="_uploadData",
-                                  primitive_value_function=SummaryBase.get_summary_value,
-                                  summary_function=self.get_upload_data_summary)
+        self.register_child_value("download_file", ivar_name="_downloadFile",
+                                  provider_class=NSCFLocalDownloadFile.NSCFLocalDownloadFileSyntheticProvider,
+                                  summary_function=self.get_download_file_summary)
 
     @staticmethod
-    def get_upload_file_summary(value):
-        return "uploadFile={}".format(value)
+    def get_download_file_summary(provider):
+        """
+        :param NSCFLocalDownloadFile.NSCFLocalDownloadFileSyntheticProvider provider: NSCFLocalDownloadFile provider.
+        """
+        return provider.path_summary
 
-    @staticmethod
-    def get_upload_data_summary(value):
-        return "uploadData={}".format(value)
+    def summary(self):
+        super_summary = super(NSCFLocalDownloadTaskSyntheticProvider, self).summary()
+        summary = SummaryBase.join_summaries(super_summary, self.download_file_summary)
+        return summary
 
 
 def summary_provider(value_obj, internal_dict):
-    return helpers.generic_summary_provider(value_obj, internal_dict, NSCFLocalSessionTaskSyntheticProvider)
+    return helpers.generic_summary_provider(value_obj, internal_dict, NSCFLocalDownloadTaskSyntheticProvider)

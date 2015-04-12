@@ -1,6 +1,8 @@
 type summary add -F lldb_additions.summaries.CFNetwork.CFURLRequest.summary_provider              --category CFNetwork _CFURLRequest
 type summary add -F lldb_additions.summaries.CFNetwork.CFURLResponse.summary_provider             --category CFNetwork CFURLResponse
 type summary add -F lldb_additions.summaries.CFNetwork.NSCFLocalDataTask.summary_provider         --category CFNetwork __NSCFLocalDataTask
+type summary add -F lldb_additions.summaries.CFNetwork.NSCFLocalDownloadFile.summary_provider     --category CFNetwork __NSCFLocalDownloadFile
+type summary add -F lldb_additions.summaries.CFNetwork.NSCFLocalDownloadTask.summary_provider     --category CFNetwork __NSCFLocalDownloadTask
 type summary add -F lldb_additions.summaries.CFNetwork.NSCFLocalSessionTask.summary_provider      --category CFNetwork __NSCFLocalSessionTask
 type summary add -F lldb_additions.summaries.CFNetwork.NSHTTPURLResponse.summary_provider         --category CFNetwork NSHTTPURLResponse
 type summary add -F lldb_additions.summaries.CFNetwork.NSURLConnection.summary_provider           --category CFNetwork NSURLConnection
@@ -12,6 +14,7 @@ type summary add -F lldb_additions.summaries.CFNetwork.NSURLResponseInternal.sum
 type summary add -F lldb_additions.summaries.CFNetwork.NSURLSession.summary_provider              --category CFNetwork NSURLSession
 type summary add -F lldb_additions.summaries.CFNetwork.NSURLSessionConfiguration.summary_provider --category CFNetwork NSURLSessionConfiguration
 type summary add -F lldb_additions.summaries.CFNetwork.NSURLSessionDataTask.summary_provider      --category CFNetwork NSURLSessionDataTask
+type summary add -F lldb_additions.summaries.CFNetwork.NSURLSessionDownloadTask.summary_provider  --category CFNetwork NSURLSessionDownloadTask
 type summary add -F lldb_additions.summaries.CFNetwork.NSURLSessionTask.summary_provider          --category CFNetwork NSURLSessionTask
 
 type synthetic add -l lldb_additions.summaries.CFNetwork.NSURLRequest.NSURLRequestSyntheticProvider   --category CFNetwork NSURLRequest NSMutableURLRequest

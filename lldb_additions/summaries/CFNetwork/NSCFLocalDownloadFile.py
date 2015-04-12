@@ -24,32 +24,39 @@
 
 from ...scripts import helpers
 from .. import SummaryBase
-import NSURLSessionTask
+from ..Foundation import NSObject
 
 
-class NSCFLocalSessionTaskSyntheticProvider(NSURLSessionTask.NSURLSessionTaskSyntheticProvider):
+class NSCFLocalDownloadFileSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
-    Class representing __NSCFLocalSessionTask.
+    Class representing __NSCFLocalDownloadFile.
     """
     def __init__(self, value_obj, internal_dict):
-        super(NSCFLocalSessionTaskSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.type_name = "__NSCFLocalSessionTask"
+        super(NSCFLocalDownloadFileSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "__NSCFLocalDownloadFile"
 
-        self.register_child_value("upload_file", ivar_name="_uploadFile",
+        self.register_child_value("finished", ivar_name="_finished",
+                                  primitive_value_function=SummaryBase.get_bool_value,
+                                  summary_function=self.get_finished_summary)
+        self.register_child_value("path", ivar_name="_path",
                                   primitive_value_function=SummaryBase.get_summary_value,
-                                  summary_function=self.get_upload_file_summary)
-        self.register_child_value("upload_data", ivar_name="_uploadData",
-                                  primitive_value_function=SummaryBase.get_summary_value,
-                                  summary_function=self.get_upload_data_summary)
+                                  summary_function=self.get_path_summary)
 
     @staticmethod
-    def get_upload_file_summary(value):
-        return "uploadFile={}".format(value)
+    def get_finished_summary(value):
+        if value:
+            return "finished"
+        return None
 
     @staticmethod
-    def get_upload_data_summary(value):
-        return "uploadData={}".format(value)
+    def get_path_summary(value):
+        return "path={}".format(value)
+
+    def summary(self):
+        summary = SummaryBase.join_summaries(self.finished_summary,
+                                             self.path_summary)
+        return summary
 
 
 def summary_provider(value_obj, internal_dict):
-    return helpers.generic_summary_provider(value_obj, internal_dict, NSCFLocalSessionTaskSyntheticProvider)
+    return helpers.generic_summary_provider(value_obj, internal_dict, NSCFLocalDownloadFileSyntheticProvider)

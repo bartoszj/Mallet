@@ -33,6 +33,14 @@ NSURLSessionTaskStateSuspended = 1
 NSURLSessionTaskStateCanceling = 2
 NSURLSessionTaskStateCompleted = 3
 
+# Class hierarchy:
+# ┌ NSURLSessionTask (+)
+# ├── NSURLSessionDataTask (-)
+# ├── NSURLSessionDownloadTask (-)
+# └─┬ __NSCFLocalSessionTask (+)
+#   ├── __NSCFLocalDataTask (-)
+#   └── __NSCFLocalDownloadTask (+)
+
 
 class NSURLSessionTaskSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
