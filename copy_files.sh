@@ -52,6 +52,7 @@ CPY=(
     "StoreKit.framework/SKRequest.json"
     "StoreKit.framework/SKRequestInternal.json"
 
+    "UIKit.framework/UIActivityIndicatorView.json"
     "UIKit.framework/UIAlertAction.json"
     "UIKit.framework/UIAlertController.json"
     "UIKit.framework/UIAlertView.json"

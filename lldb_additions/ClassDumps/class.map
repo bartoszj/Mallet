@@ -20,6 +20,7 @@ UINibStorage:UIKit/UINibStorage.json
 UITableViewCell:UIKit/UITableViewCell.json
 SKProductInternal:StoreKit/SKProductInternal.json
 UIProgressView:UIKit/UIProgressView.json
+UIAlertView:UIKit/UIAlertView.json
 UIResponder:UIKit/UIResponder.json
 UIDeviceWhiteColor:UIKit/UIDeviceWhiteColor.json
 UIColor:UIKit/UIColor.json
@@ -62,7 +63,7 @@ UIButton:UIKit/UIButton.json
 UIStepper:UIKit/UIStepper.json
 UILabel:UIKit/UILabel.json
 UIStoryboardSegue:UIKit/UIStoryboardSegue.json
-UIAlertView:UIKit/UIAlertView.json
+UIActivityIndicatorView:UIKit/UIActivityIndicatorView.json
 SKReceiptRefreshRequest:StoreKit/SKReceiptRefreshRequest.json
 UIViewController:UIKit/UIViewController.json
 SKProductsResponseInternal:StoreKit/SKProductsResponseInternal.json

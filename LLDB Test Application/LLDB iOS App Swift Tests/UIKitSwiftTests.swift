@@ -407,4 +407,14 @@ class UIKitSwiftTests: SharedSwiftTestCase {
             self.compareObject(i, type: "CGImage", summary: "(width=225, height=250)")
         }
     }
+    
+    // MARK: - UIActivityIndicatorView
+    func testUIActivityIndicatorView01() {
+        let indicator = UIActivityIndicatorView()
+        self.compareObject(indicator, type: "UIActivityIndicatorView", summary: "hidesWhenStopped, style=White")
+        indicator.hidesWhenStopped = false
+        self.compareObject(indicator, type: "UIActivityIndicatorView", summary: "style=White")
+        indicator.startAnimating()
+        self.compareObject(indicator, type: "UIActivityIndicatorView", summary: "animating, style=White")
+    }
 }

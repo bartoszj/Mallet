@@ -47,6 +47,7 @@ The summaries will be available the next time Xcode starts.
 - QuartzCore:
     - CALayer
 - UIKit:
+    - UIActivityIndicatorView
     - UIAlertAction
     - UIAlertController
     - UIAlertView

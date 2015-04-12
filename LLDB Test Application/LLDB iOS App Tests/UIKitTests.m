@@ -468,4 +468,15 @@
     }
 }
 
+#pragma mark - UIActivityIndicatorView
+- (void)testUIActivityIndicatorView01
+{
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] init];
+    [self compareObject:indicator ofType:@"UIActivityIndicatorView *" toSummary:@"hidesWhenStopped, style=White"];
+    indicator.hidesWhenStopped = NO;
+    [self compareObject:indicator ofType:@"UIActivityIndicatorView *" toSummary:@"style=White"];
+    [indicator startAnimating];
+    [self compareObject:indicator ofType:@"UIActivityIndicatorView *" toSummary:@"animating, style=White"];
+}
+
 @end
