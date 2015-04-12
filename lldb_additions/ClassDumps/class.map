@@ -32,6 +32,7 @@ UIAlertController:UIKit/UIAlertController.json
 UIPageControl:UIKit/UIPageControl.json
 UINib:UIKit/UINib.json
 UITouch:UIKit/UITouch.json
+__NSCFLocalUploadTask:CFNetwork/__NSCFLocalUploadTask.json
 NSURLSessionConfiguration:CFNetwork/NSURLSessionConfiguration.json
 NSLayoutConstraint:Foundation/NSLayoutConstraint.json
 UIPickerView:UIKit/UIPickerView.json
@@ -46,6 +47,7 @@ NSURLResponse:CFNetwork/NSURLResponse.json
 __NSCFLocalDownloadTask:CFNetwork/__NSCFLocalDownloadTask.json
 SKPaymentQueue:StoreKit/SKPaymentQueue.json
 SKProductsRequest:StoreKit/SKProductsRequest.json
+NSURLSessionUploadTask:CFNetwork/NSURLSessionUploadTask.json
 NSOperation:Foundation/NSOperation.json
 SKProductsResponse:StoreKit/SKProductsResponse.json
 UIView:UIKit/UIView.json

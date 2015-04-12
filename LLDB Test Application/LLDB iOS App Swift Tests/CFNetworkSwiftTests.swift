@@ -240,4 +240,22 @@ class CFNetworkSwiftTests: SharedSwiftTestCase, NSURLConnectionDataDelegate {
         downloadTask.resume()
         self.waitForExpectationsWithTimeout(2, handler: nil)
     }
+    
+    func testNSURLSessionTask04() {
+        let session = NSURLSession.sharedSession()
+        let url = NSURL(string: "https://google.com")!
+        let request = NSURLRequest(URL: url)
+        let exceptation = self.expectationWithDescription("task")
+        let data = ("HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData" as NSString).dataUsingEncoding(NSUTF8StringEncoding)
+        var uploadTask: NSURLSessionUploadTask! = nil
+        uploadTask = session.uploadTaskWithRequest(request, fromData: data, completionHandler: { (data, response, error) -> Void in
+            let summary = "state=Completed, received=\(data.length), toReceive=\(data.length), sent=98, toSend=98, request={https://google.com}, response={\(response.URL!.absoluteString!)}"
+            self.compareObject(uploadTask, type: "NSURLSessionUploadTask", summary: summary)
+            exceptation.fulfill()
+        })
+        self.compareObject(uploadTask, type: "NSURLSessionUploadTask", summary: "state=Suspended, request={https://google.com}")
+        uploadTask.resume()
+        self.compareObject(uploadTask, type: "NSURLSessionUploadTask", summary: "state=Running, request={https://google.com}")
+        self.waitForExpectationsWithTimeout(2, handler: nil)
+    }
 }

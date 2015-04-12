@@ -274,4 +274,23 @@
     [self waitForExpectationsWithTimeout:2 handler:nil];
 }
 
+- (void)testNSURLSessionTask04
+{
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURL *url = [NSURL URLWithString:@"https://google.com"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    XCTestExpectation *exceptation = [self expectationWithDescription:@"task"];
+    
+    NSData *data = [@"HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData" dataUsingEncoding:NSUTF8StringEncoding];
+    __block NSURLSessionUploadTask *uploadTask = [session uploadTaskWithRequest:request fromData:data completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSString *summary = [NSString stringWithFormat:@"state=Completed, received=%lu, toReceive=%lu, sent=98, toSend=98, request={https://google.com}, response={%@}", (unsigned long)data.length, (unsigned long)data.length, response.URL.absoluteString];
+        [self compareObject:uploadTask ofType:@"NSURLSessionUploadTask *" toSummary:summary];
+        [exceptation fulfill];
+    }];
+    [self compareObject:uploadTask ofType:@"NSURLSessionUploadTask *" toSummary:@"state=Suspended, request={https://google.com}"];
+    [uploadTask resume];
+    [self compareObject:uploadTask ofType:@"NSURLSessionUploadTask *" toSummary:@"state=Running, request={https://google.com}"];
+    [self waitForExpectationsWithTimeout:2 handler:nil];
+}
+
 @end

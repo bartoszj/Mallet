@@ -37,9 +37,11 @@ NSURLSessionTaskStateCompleted = 3
 # ┌ NSURLSessionTask (+)
 # ├── NSURLSessionDataTask (-)
 # ├── NSURLSessionDownloadTask (-)
+# ├── NSURLSessionUploadTask (-)
 # └─┬ __NSCFLocalSessionTask (+)
 #   ├── __NSCFLocalDataTask (-)
-#   └── __NSCFLocalDownloadTask (+)
+#   ├── __NSCFLocalDownloadTask (+)
+#   └── __NSCFLocalUploadTask (-)
 
 
 class NSURLSessionTaskSyntheticProvider(NSObject.NSObjectSyntheticProvider):

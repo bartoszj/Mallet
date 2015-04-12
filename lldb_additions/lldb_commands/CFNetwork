@@ -4,6 +4,7 @@ type summary add -F lldb_additions.summaries.CFNetwork.NSCFLocalDataTask.summary
 type summary add -F lldb_additions.summaries.CFNetwork.NSCFLocalDownloadFile.summary_provider     --category CFNetwork __NSCFLocalDownloadFile
 type summary add -F lldb_additions.summaries.CFNetwork.NSCFLocalDownloadTask.summary_provider     --category CFNetwork __NSCFLocalDownloadTask
 type summary add -F lldb_additions.summaries.CFNetwork.NSCFLocalSessionTask.summary_provider      --category CFNetwork __NSCFLocalSessionTask
+type summary add -F lldb_additions.summaries.CFNetwork.NSCFLocalUploadTask.summary_provider       --category CFNetwork __NSCFLocalUploadTask
 type summary add -F lldb_additions.summaries.CFNetwork.NSHTTPURLResponse.summary_provider         --category CFNetwork NSHTTPURLResponse
 type summary add -F lldb_additions.summaries.CFNetwork.NSURLConnection.summary_provider           --category CFNetwork NSURLConnection
 type summary add -F lldb_additions.summaries.CFNetwork.NSURLConnectionInternal.summary_provider   --category CFNetwork NSURLConnectionInternal
@@ -16,6 +17,7 @@ type summary add -F lldb_additions.summaries.CFNetwork.NSURLSessionConfiguration
 type summary add -F lldb_additions.summaries.CFNetwork.NSURLSessionDataTask.summary_provider      --category CFNetwork NSURLSessionDataTask
 type summary add -F lldb_additions.summaries.CFNetwork.NSURLSessionDownloadTask.summary_provider  --category CFNetwork NSURLSessionDownloadTask
 type summary add -F lldb_additions.summaries.CFNetwork.NSURLSessionTask.summary_provider          --category CFNetwork NSURLSessionTask
+type summary add -F lldb_additions.summaries.CFNetwork.NSURLSessionUploadTask.summary_provider    --category CFNetwork NSURLSessionUploadTask
 
 type synthetic add -l lldb_additions.summaries.CFNetwork.NSURLRequest.NSURLRequestSyntheticProvider   --category CFNetwork NSURLRequest NSMutableURLRequest
 type synthetic add -l lldb_additions.summaries.CFNetwork.NSURLResponse.NSURLResponseSyntheticProvider --category CFNetwork NSURLResponse NSHTTPURLResponse

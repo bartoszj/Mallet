@@ -1,0 +1,22 @@
+{
+  "arm64":{
+    "className":"__NSCFLocalUploadTask",
+    "superClassName":"__NSCFLocalDataTask",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"__NSCFLocalUploadTask",
+    "superClassName":"__NSCFLocalDataTask",
+    "type":"class"
+  },
+  "i386":{
+    "className":"__NSCFLocalUploadTask",
+    "superClassName":"__NSCFLocalDataTask",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"__NSCFLocalUploadTask",
+    "superClassName":"__NSCFLocalDataTask",
+    "type":"class"
+  }
+}
