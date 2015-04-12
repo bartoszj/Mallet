@@ -16,6 +16,7 @@ typedef NS_ENUM (NSInteger, ViewControllerCellId) {
     ViewControllerScrollViewCellId,
     ViewControllerModalCellId,
     ViewControllerCrashCellId,
+    ViewControllerExampleCellId,
 };
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -43,6 +44,7 @@ typedef NS_ENUM (NSInteger, ViewControllerCellId) {
                      @(ViewControllerScrollViewCellId),
                      @(ViewControllerModalCellId),
                      @(ViewControllerCrashCellId),
+                     @(ViewControllerExampleCellId),
                      ];
 }
 
@@ -90,6 +92,9 @@ typedef NS_ENUM (NSInteger, ViewControllerCellId) {
         case ViewControllerCrashCellId:
             cell.textLabel.text = @"Crash";
             break;
+        case ViewControllerExampleCellId:
+            cell.textLabel.text = @"Example";
+            break;
     }
 
     return cell;
@@ -127,6 +132,9 @@ typedef NS_ENUM (NSInteger, ViewControllerCellId) {
             NSLog(@"%@", n);
             break;
         }
+        case ViewControllerExampleCellId:
+            [self performSegueWithIdentifier:@"ShowExample" sender:nil];
+            break;
     }
 }
 

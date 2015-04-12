@@ -3,8 +3,19 @@ LLDB missing summaries
 
 LLDB summaries for iOS Objective-C classes.
 
+<div>
+  <div style="width:50%; float:left;">
+    <p style="font-weight: bold">Before:</p>
+    <img alt="Before" src="assets/before.png"/>
+  </div>
+  <div style="width:50%; float:left;">
+  <p style="font-weight: bold">After:</p>
+    <img alt="After" src="assets/after.png" />
+  </div>
+</div>
+
 ## Instalation
-Clone this repository and add the following line to yout __~/.lldbinit__ file. If it doesn't exist, create it.
+Clone this repository and add the following line to your __~/.lldbinit__ file. If it doesn't exist, create it.
 
     # ~/.lldbinit
     ...
@@ -31,8 +42,8 @@ The summaries will be available the next time Xcode starts.
     - NSObject
     - NSOperation (NSBlockOperation)
     - NSOperationQueue
-    - NSURLComponents (__NSConcreteURLComponents)
-    - NSUUID (__NSConcreteUUID)
+    - NSURLComponents (\__NSConcreteURLComponents)
+    - NSUUID (\__NSConcreteUUID)
 - QuartzCore:
     - CALayer
 - UIKit:

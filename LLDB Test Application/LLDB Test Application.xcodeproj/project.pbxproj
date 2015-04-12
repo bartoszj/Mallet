@@ -44,6 +44,7 @@
 		96601967198588E400BDBB71 /* SharedTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 96601961198588E400BDBB71 /* SharedTestCase.m */; };
 		96601968198588E400BDBB71 /* UIKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96601962198588E400BDBB71 /* UIKitTests.m */; };
 		9660196B1985897700BDBB71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9660196A1985897700BDBB71 /* Images.xcassets */; };
+		966460A41ADA83B200363226 /* ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966460A31ADA83B200363226 /* ExampleViewController.m */; };
 		96739E6A1A7E4D6F00D50717 /* CFNetworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96739E691A7E4D6F00D50717 /* CFNetworkTests.m */; };
 		9675D66F1A87EA9F00CFA33C /* LLDB_iOS_App_Swift_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675D66E1A87EA9F00CFA33C /* LLDB_iOS_App_Swift_Tests.swift */; };
 		9675D67C1A87EBDA00CFA33C /* CFNetworkSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675D6751A87EBDA00CFA33C /* CFNetworkSwiftTests.swift */; };
@@ -159,6 +160,8 @@
 		9660196C1985898500BDBB71 /* LLDB iOS App-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LLDB iOS App-Info.plist"; sourceTree = "<group>"; };
 		9660196D1985898500BDBB71 /* LLDB iOS App-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LLDB iOS App-Prefix.pch"; sourceTree = "<group>"; };
 		9660196F19858AA800BDBB71 /* LLDB iOS App Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LLDB iOS App Tests-Info.plist"; sourceTree = "<group>"; };
+		966460A21ADA83B200363226 /* ExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleViewController.h; sourceTree = "<group>"; };
+		966460A31ADA83B200363226 /* ExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleViewController.m; sourceTree = "<group>"; };
 		96739E691A7E4D6F00D50717 /* CFNetworkTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFNetworkTests.m; sourceTree = "<group>"; };
 		9675D66A1A87EA9F00CFA33C /* LLDB iOS App Swift Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LLDB iOS App Swift Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9675D66E1A87EA9F00CFA33C /* LLDB_iOS_App_Swift_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLDB_iOS_App_Swift_Tests.swift; sourceTree = "<group>"; };
@@ -413,6 +416,8 @@
 				96FCE39D19B0D7B000A5A883 /* AlertsViewController.m */,
 				9677E6AA19B0878F002DBAE1 /* BasicViewController.h */,
 				9677E6AB19B0878F002DBAE1 /* BasicViewController.m */,
+				966460A21ADA83B200363226 /* ExampleViewController.h */,
+				966460A31ADA83B200363226 /* ExampleViewController.m */,
 				96982C1B1A64607400C78595 /* ModalViewController.h */,
 				96982C1C1A64607400C78595 /* ModalViewController.m */,
 				96FCE39919B0CE6E00A5A883 /* PickersViewController.h */,
@@ -839,6 +844,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				966019511985884F00BDBB71 /* AppDelegate.m in Sources */,
+				966460A41ADA83B200363226 /* ExampleViewController.m in Sources */,
 				9686224619B2014D00096721 /* ViewsViewController.m in Sources */,
 				96982C1D1A64607400C78595 /* ModalViewController.m in Sources */,
 				966019521985884F00BDBB71 /* Compare.m in Sources */,

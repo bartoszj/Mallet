@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="dEu-ff-frt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="dEu-ff-frt">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -61,6 +61,7 @@
                         <segue destination="JB4-ne-H7y" kind="push" identifier="ShowScrollView" id="Tl1-7X-O8b"/>
                         <segue destination="xN1-2A-egQ" kind="push" identifier="ShowViews" id="okY-9b-NI9"/>
                         <segue destination="amy-BH-sLU" kind="modal" identifier="ShowModal" id="jY9-IH-ixg"/>
+                        <segue destination="87l-Rf-ylt" kind="push" identifier="ShowExample" id="ZLg-LH-Et9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -245,13 +246,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkD-uE-JQH">
-                                <rect key="frame" x="20" y="72" width="76" height="20.5"/>
+                                <rect key="frame" x="20" y="72" width="76" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbL-qS-rlr">
-                                <rect key="frame" x="20" y="100.5" width="151.5" height="20.5"/>
+                                <rect key="frame" x="20" y="101" width="152" height="21"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Attributed">
                                         <attributes>
@@ -293,7 +294,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wd-5f-XbY">
-                                <rect key="frame" x="20" y="129" width="119" height="30"/>
+                                <rect key="frame" x="20" y="130" width="119" height="30"/>
                                 <state key="normal" title="Some button text">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -302,14 +303,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9X-PG-K01">
-                                <rect key="frame" x="20" y="167" width="184" height="34"/>
+                                <rect key="frame" x="20" y="168" width="184" height="34"/>
                                 <state key="normal" title="Some plain button text">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iXp-Tj-oOm">
-                                <rect key="frame" x="20" y="209" width="188" height="30"/>
+                                <rect key="frame" x="20" y="210" width="188" height="30"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Some">
@@ -358,17 +359,17 @@
                                 </state>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gho-nF-5o0">
-                                <rect key="frame" x="20" y="247" width="280" height="30"/>
+                                <rect key="frame" x="20" y="248" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Some placeholder text" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VHC-R1-zSS">
-                                <rect key="frame" x="20" y="285" width="280" height="30"/>
+                                <rect key="frame" x="20" y="286" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="With placeholder" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UJ3-pB-WFz">
-                                <rect key="frame" x="20" y="323" width="280" height="30"/>
+                                <rect key="frame" x="20" y="324" width="280" height="30"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Some ">
                                         <attributes>
@@ -388,22 +389,22 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="13.3123" minValue="0.0" maxValue="43" translatesAutoresizingMaskIntoConstraints="NO" id="OoO-8e-7OD">
-                                <rect key="frame" x="18" y="361" width="284" height="31"/>
+                                <rect key="frame" x="18" y="362" width="284" height="31"/>
                             </slider>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.54000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="iYt-aF-KeS">
-                                <rect key="frame" x="20" y="399" width="280" height="2"/>
+                                <rect key="frame" x="20" y="400" width="280" height="2"/>
                             </progressView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7d1-ce-nwM">
-                                <rect key="frame" x="20" y="409" width="51" height="31"/>
+                                <rect key="frame" x="20" y="410" width="51" height="31"/>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cmw-Aa-U4C">
-                                <rect key="frame" x="77" y="409" width="51" height="31"/>
+                                <rect key="frame" x="77" y="410" width="51" height="31"/>
                             </switch>
                             <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" maximumValue="100" stepValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="JXr-IZ-K9G">
-                                <rect key="frame" x="134" y="409" width="94" height="29"/>
+                                <rect key="frame" x="134" y="410" width="94" height="29"/>
                             </stepper>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="bn2-0s-Kg3">
-                                <rect key="frame" x="20" y="448" width="280" height="29"/>
+                                <rect key="frame" x="20" y="449" width="280" height="29"/>
                                 <segments>
                                     <segment title="111"/>
                                     <segment title="222"/>
@@ -412,7 +413,7 @@
                                 </segments>
                             </segmentedControl>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="Bdg-tb-4Oe">
-                                <rect key="frame" x="20" y="484" width="280" height="37"/>
+                                <rect key="frame" x="20" y="485" width="280" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.47619510609999999" green="0.68487972949999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.0" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
@@ -516,6 +517,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmW-1g-TQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1355" y="3766"/>
+        </scene>
+        <!--Example View Controller-->
+        <scene sceneID="NNp-Up-TPm">
+            <objects>
+                <viewController id="87l-Rf-ylt" customClass="ExampleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ur1-gm-fTN"/>
+                        <viewControllerLayoutGuide type="bottom" id="FGn-AG-QcW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eGd-z1-UU1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="myLoGin" borderStyle="roundedRect" placeholder="Login" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r9T-Jz-PFe" userLabel="Login text">
+                                <rect key="frame" x="20" y="231" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5ecr3T" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YK2-2v-uFP" userLabel="Password text">
+                                <rect key="frame" x="20" y="269" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAw-jF-kVm">
+                                <rect key="frame" x="141" y="307" width="38" height="30"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonTouched:forEvent:" destination="87l-Rf-ylt" eventType="touchUpInside" id="Nbn-eH-REC"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="UY7-Cv-9fu">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="YK2-2v-uFP" secondAttribute="centerX" id="07R-h4-yRN"/>
+                            <constraint firstItem="r9T-Jz-PFe" firstAttribute="leading" secondItem="YK2-2v-uFP" secondAttribute="leading" id="1Nw-gU-a1M"/>
+                            <constraint firstAttribute="centerY" secondItem="UY7-Cv-9fu" secondAttribute="centerY" id="231-ki-1AH"/>
+                            <constraint firstAttribute="centerY" secondItem="YK2-2v-uFP" secondAttribute="centerY" id="30j-ct-Kwf"/>
+                            <constraint firstItem="YK2-2v-uFP" firstAttribute="centerX" secondItem="mAw-jF-kVm" secondAttribute="centerX" id="F4d-FY-rBM"/>
+                            <constraint firstAttribute="centerX" secondItem="UY7-Cv-9fu" secondAttribute="centerX" id="FP4-Lw-1RU"/>
+                            <constraint firstItem="YK2-2v-uFP" firstAttribute="leading" secondItem="eGd-z1-UU1" secondAttribute="leading" constant="20" symbolic="YES" id="mPO-Dt-wSQ"/>
+                            <constraint firstItem="mAw-jF-kVm" firstAttribute="top" secondItem="YK2-2v-uFP" secondAttribute="bottom" constant="8" symbolic="YES" id="odT-aE-i3S"/>
+                            <constraint firstItem="r9T-Jz-PFe" firstAttribute="trailing" secondItem="YK2-2v-uFP" secondAttribute="trailing" id="oh3-6o-1Ba"/>
+                            <constraint firstItem="YK2-2v-uFP" firstAttribute="top" secondItem="r9T-Jz-PFe" secondAttribute="bottom" constant="8" symbolic="YES" id="tfr-rb-r68"/>
+                            <constraint firstAttribute="trailing" secondItem="YK2-2v-uFP" secondAttribute="trailing" constant="20" symbolic="YES" id="wsA-ze-waR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xCw-hp-HBf"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="UY7-Cv-9fu" id="WVs-tJ-tbP"/>
+                        <outlet property="loginButton" destination="mAw-jF-kVm" id="IPJ-zq-kmY"/>
+                        <outlet property="loginTextField" destination="r9T-Jz-PFe" id="kOp-B8-Dfe"/>
+                        <outlet property="passwordTextField" destination="YK2-2v-uFP" id="5Xf-SX-bDz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4U0-QV-iMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1355" y="4458"/>
         </scene>
     </scenes>
     <resources>
