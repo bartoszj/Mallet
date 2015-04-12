@@ -53,6 +53,7 @@ NSURLConnectionInternal:CFNetwork/NSURLConnectionInternal.json
 SKProductsRequestInternal:StoreKit/SKProductsRequestInternal.json
 UIDatePicker:UIKit/UIDatePicker.json
 UIStoryboard:UIKit/UIStoryboard.json
+NSURLSessionTask:CFNetwork/NSURLSessionTask.json
 UIInternalEvent:UIKit/UIInternalEvent.json
 UIBarItem:UIKit/UIBarItem.json
 SKProduct:StoreKit/SKProduct.json

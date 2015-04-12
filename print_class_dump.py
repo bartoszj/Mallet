@@ -53,7 +53,11 @@ def normalize_type(type_32bit, type_64bit):
         return u"BOOL"
     elif type_32bit == u"int" and type_64bit == u"long long":
         return u"NSInteger"
+    elif type_32bit == u"long" and type_64bit == u"long long":
+        return u"NSInteger"
     elif type_32bit == u"unsigned int" and type_64bit == u"unsigned long long":
+        return u"NSUInteger"
+    elif type_32bit == u"unsigned long" and type_64bit == u"unsigned long long":
         return u"NSUInteger"
     elif type_32bit == u"float" and type_64bit == u"double":
         return u"CGFloat"

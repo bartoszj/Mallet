@@ -70,7 +70,7 @@
     [self compareObject:request ofType:@"NSURLRequest *" toSummary:@"GET, https://google.com, body=12 bytes"];
 }
 
-- (void)testNSURLRequest6
+- (void)testNSURLRequest5
 {
     NSURL *url = [NSURL URLWithString:@"https://google.com"];
     NSMutableURLRequest *mutableRequest = [NSMutableURLRequest requestWithURL:url];
@@ -194,7 +194,7 @@
     [self compareObject:configuration ofType:@"NSURLSessionConfiguration *" toSummary:@"identifier=@\"BackgroundIdentifier\", sessionSendsLaunchEvents, backgroundSession"];
 }
 
-#pragma mark - NSURLsession
+#pragma mark - NSURLSession
 - (void)testNSURLSession01
 {
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -211,6 +211,45 @@
     
     session.sessionDescription = @"Session Description";
     [self compareObject:session ofType:@"NSURLSession *" toSummary:@"sharedSession, @\"Session Description\""];
+}
+
+#pragma mark - NSURLSessionTask
+- (void)testNSURLSessionTask01
+{
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURL *url = [NSURL URLWithString:@"https://google.com"];
+    XCTestExpectation *exceptation = [self expectationWithDescription:@"task"];
+    __block NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        NSString *summary = [NSString stringWithFormat:@"state=Completed, received=%lu, request={https://google.com}, response={%@}", (unsigned long)data.length, response.URL.absoluteString];
+        [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:summary];
+        [exceptation fulfill];
+    }];
+    [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:@"state=Suspended, request={https://google.com}"];
+    [dataTask resume];
+    [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:@"state=Running, request={https://google.com}"];
+    
+    [self waitForExpectationsWithTimeout:2 handler:nil];
+}
+
+- (void)testNSURLSessionTask02
+{
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURL *url = [NSURL URLWithString:@"https://google.com"];
+    NSMutableURLRequest *mutableRequest = [NSMutableURLRequest requestWithURL:url];
+    mutableRequest.HTTPBody = [@"httpBodyData" dataUsingEncoding:NSUTF8StringEncoding];
+    XCTestExpectation *exceptation = [self expectationWithDescription:@"task"];
+    __block NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:mutableRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        NSString *summary = [NSString stringWithFormat:@"state=Completed, received=%lu, toReceive=%lu, sent=12, toSend=12, request={GET, https://google.com, body=12 bytes}, response={%@}", (unsigned long)data.length, (unsigned long)data.length, response.URL.absoluteString];
+        [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:summary];
+        [exceptation fulfill];
+    }];
+    [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:@"state=Suspended, request={GET, https://google.com, body=12 bytes}"];
+    [dataTask resume];
+    [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:@"state=Running, request={GET, https://google.com, body=12 bytes}"];
+    
+    [self waitForExpectationsWithTimeout:2 handler:nil];
 }
 
 @end

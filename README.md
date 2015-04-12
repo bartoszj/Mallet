@@ -36,6 +36,7 @@ The summaries will be available the next time Xcode starts.
     - NSURLResponse, NSHTTPURLResponse
     - NSURLSession
     - NSURLSessionConfiguration
+    - NSURLSessionTask
 - Foundation:
     - NSDateComponents
     - NSLayoutConstraint

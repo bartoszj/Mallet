@@ -1,0 +1,1326 @@
+{
+  "arm64":{
+    "className":"NSURLSessionTask",
+    "ivars":[
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldSkipPreferredClientCertificateLookup",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldPipelineHTTP",
+        "offset":9,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldUsePipelineHeuristics",
+        "offset":10,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldSkipPipelineProbe",
+        "offset":11,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldHandleCookies",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__preventsIdleSystemSleep",
+        "offset":13,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__allowsCellular",
+        "offset":14,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__prohibitAuthUI",
+        "offset":15,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__strictContentLength",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__disallowCellular",
+        "offset":17,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__connectionIsCellular",
+        "offset":18,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"__priorityHint",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__cachePolicy",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__cookieAcceptPolicy",
+        "offset":28,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__networkServiceType",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"__powerAssertion",
+        "offset":36,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned long long",
+        "name":"_taskIdentifier",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURLRequest *",
+        "name":"_originalRequest",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURLResponse *",
+        "name":"_response",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_countOfBytesReceived",
+        "offset":64,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_countOfBytesSent",
+        "offset":72,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_countOfBytesExpectedToSend",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_countOfBytesExpectedToReceive",
+        "offset":88,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_taskDescription",
+        "offset":96,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_state",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSError *",
+        "name":"_error",
+        "offset":112,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURL *",
+        "name":"__ledBellyFallbackURL",
+        "offset":120,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _CFURLRequest *",
+        "name":"__currentCFURLRequest",
+        "offset":128,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_startTime",
+        "offset":136,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURLSession *",
+        "name":"_session",
+        "offset":144,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_queue> *",
+        "name":"_workQueue",
+        "offset":152,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"__ledBellyServiceIdentifier",
+        "offset":160,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__priorityValue",
+        "offset":168,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __PerformanceTiming *",
+        "name":"__performanceTiming",
+        "offset":176,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"__backgroundTaskTimingData",
+        "offset":184,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"__legacySocketStreamProperties",
+        "offset":192,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _CFHSTSPolicy *",
+        "name":"__cfHSTS",
+        "offset":200,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _CFURLCache *",
+        "name":"__cfCache",
+        "offset":208,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _CFURLCredentialStorage *",
+        "name":"__cfCreds",
+        "offset":216,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct OpaqueCFHTTPCookieStorage *",
+        "name":"__cfCookies",
+        "offset":224,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"__timeoutInterval",
+        "offset":232,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"__proxySettings",
+        "offset":240,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"__sslSettings",
+        "offset":248,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSArray *",
+        "name":"__contentDispositionFallbackArray",
+        "offset":256,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSValue *",
+        "name":"__connectionPropertyDuet",
+        "offset":264,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__suspensionThreshhold",
+        "offset":272,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"__boundInterfaceIdentifier",
+        "offset":280,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned long long",
+        "name":"__allowedProtocolTypes",
+        "offset":288,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__requestPriority",
+        "offset":296,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__expectedWorkload",
+        "offset":304,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"__timeWindowDelay",
+        "offset":312,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"__timeWindowDuration",
+        "offset":320,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"__uniqueIdentifier",
+        "offset":328,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__protocolForTask",
+        "offset":336,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "armv7":{
+    "className":"NSURLSessionTask",
+    "ivars":[
+      {
+        "ivarType":"char",
+        "name":"__shouldSkipPreferredClientCertificateLookup",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldPipelineHTTP",
+        "offset":5,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldUsePipelineHeuristics",
+        "offset":6,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldSkipPipelineProbe",
+        "offset":7,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldHandleCookies",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__preventsIdleSystemSleep",
+        "offset":9,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__allowsCellular",
+        "offset":10,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__prohibitAuthUI",
+        "offset":11,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__strictContentLength",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__disallowCellular",
+        "offset":13,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__connectionIsCellular",
+        "offset":14,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"_taskIdentifier",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURLRequest *",
+        "name":"_originalRequest",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURLResponse *",
+        "name":"_response",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_taskDescription",
+        "offset":28,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_state",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSError *",
+        "name":"_error",
+        "offset":36,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURL *",
+        "name":"__ledBellyFallbackURL",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _CFURLRequest *",
+        "name":"__currentCFURLRequest",
+        "offset":44,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURLSession *",
+        "name":"_session",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_queue> *",
+        "name":"_workQueue",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"__ledBellyServiceIdentifier",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"__priorityHint",
+        "offset":60,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __PerformanceTiming *",
+        "name":"__performanceTiming",
+        "offset":64,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"__backgroundTaskTimingData",
+        "offset":68,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"__legacySocketStreamProperties",
+        "offset":72,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _CFHSTSPolicy *",
+        "name":"__cfHSTS",
+        "offset":76,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _CFURLCache *",
+        "name":"__cfCache",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _CFURLCredentialStorage *",
+        "name":"__cfCreds",
+        "offset":84,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct OpaqueCFHTTPCookieStorage *",
+        "name":"__cfCookies",
+        "offset":88,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__cachePolicy",
+        "offset":92,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"__proxySettings",
+        "offset":96,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"__sslSettings",
+        "offset":100,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__cookieAcceptPolicy",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSArray *",
+        "name":"__contentDispositionFallbackArray",
+        "offset":108,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__networkServiceType",
+        "offset":112,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSValue *",
+        "name":"__connectionPropertyDuet",
+        "offset":116,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"__boundInterfaceIdentifier",
+        "offset":120,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned long",
+        "name":"__allowedProtocolTypes",
+        "offset":124,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long",
+        "name":"__requestPriority",
+        "offset":128,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"__uniqueIdentifier",
+        "offset":132,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"__powerAssertion",
+        "offset":136,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__protocolForTask",
+        "offset":140,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_countOfBytesReceived",
+        "offset":144,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_countOfBytesSent",
+        "offset":152,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_countOfBytesExpectedToSend",
+        "offset":160,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_countOfBytesExpectedToReceive",
+        "offset":168,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_startTime",
+        "offset":176,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__priorityValue",
+        "offset":184,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"__timeoutInterval",
+        "offset":192,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__suspensionThreshhold",
+        "offset":200,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__expectedWorkload",
+        "offset":208,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"__timeWindowDelay",
+        "offset":216,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"__timeWindowDuration",
+        "offset":224,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "i386":{
+    "className":"NSURLSessionTask",
+    "ivars":[
+      {
+        "ivarType":"char",
+        "name":"__shouldSkipPreferredClientCertificateLookup",
+        "offset":4,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldPipelineHTTP",
+        "offset":5,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldUsePipelineHeuristics",
+        "offset":6,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldSkipPipelineProbe",
+        "offset":7,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldHandleCookies",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__preventsIdleSystemSleep",
+        "offset":9,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__allowsCellular",
+        "offset":10,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__prohibitAuthUI",
+        "offset":11,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__strictContentLength",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__disallowCellular",
+        "offset":13,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"char",
+        "name":"__connectionIsCellular",
+        "offset":14,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"_taskIdentifier",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURLRequest *",
+        "name":"_originalRequest",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURLResponse *",
+        "name":"_response",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_taskDescription",
+        "offset":28,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"_state",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSError *",
+        "name":"_error",
+        "offset":36,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURL *",
+        "name":"__ledBellyFallbackURL",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _CFURLRequest *",
+        "name":"__currentCFURLRequest",
+        "offset":44,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURLSession *",
+        "name":"_session",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_queue> *",
+        "name":"_workQueue",
+        "offset":52,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"__ledBellyServiceIdentifier",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"__priorityHint",
+        "offset":60,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __PerformanceTiming *",
+        "name":"__performanceTiming",
+        "offset":64,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"__backgroundTaskTimingData",
+        "offset":68,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"__legacySocketStreamProperties",
+        "offset":72,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _CFHSTSPolicy *",
+        "name":"__cfHSTS",
+        "offset":76,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _CFURLCache *",
+        "name":"__cfCache",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _CFURLCredentialStorage *",
+        "name":"__cfCreds",
+        "offset":84,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct OpaqueCFHTTPCookieStorage *",
+        "name":"__cfCookies",
+        "offset":88,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__cachePolicy",
+        "offset":92,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"__proxySettings",
+        "offset":96,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"__sslSettings",
+        "offset":100,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__cookieAcceptPolicy",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSArray *",
+        "name":"__contentDispositionFallbackArray",
+        "offset":108,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__networkServiceType",
+        "offset":112,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSValue *",
+        "name":"__connectionPropertyDuet",
+        "offset":116,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"__boundInterfaceIdentifier",
+        "offset":120,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned long",
+        "name":"__allowedProtocolTypes",
+        "offset":124,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long",
+        "name":"__requestPriority",
+        "offset":128,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"__uniqueIdentifier",
+        "offset":132,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"__powerAssertion",
+        "offset":136,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__protocolForTask",
+        "offset":140,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_countOfBytesReceived",
+        "offset":144,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_countOfBytesSent",
+        "offset":152,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_countOfBytesExpectedToSend",
+        "offset":160,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_countOfBytesExpectedToReceive",
+        "offset":168,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_startTime",
+        "offset":176,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__priorityValue",
+        "offset":184,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"__timeoutInterval",
+        "offset":192,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__suspensionThreshhold",
+        "offset":200,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__expectedWorkload",
+        "offset":208,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"__timeWindowDelay",
+        "offset":216,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"__timeWindowDuration",
+        "offset":224,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  },
+  "x86_64":{
+    "className":"NSURLSessionTask",
+    "ivars":[
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldSkipPreferredClientCertificateLookup",
+        "offset":8,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldPipelineHTTP",
+        "offset":9,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldUsePipelineHeuristics",
+        "offset":10,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldSkipPipelineProbe",
+        "offset":11,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__shouldHandleCookies",
+        "offset":12,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__preventsIdleSystemSleep",
+        "offset":13,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__allowsCellular",
+        "offset":14,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__prohibitAuthUI",
+        "offset":15,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__strictContentLength",
+        "offset":16,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__disallowCellular",
+        "offset":17,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"_Bool",
+        "name":"__connectionIsCellular",
+        "offset":18,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"float",
+        "name":"__priorityHint",
+        "offset":20,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__cachePolicy",
+        "offset":24,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__cookieAcceptPolicy",
+        "offset":28,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"int",
+        "name":"__networkServiceType",
+        "offset":32,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned int",
+        "name":"__powerAssertion",
+        "offset":36,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned long long",
+        "name":"_taskIdentifier",
+        "offset":40,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURLRequest *",
+        "name":"_originalRequest",
+        "offset":48,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURLResponse *",
+        "name":"_response",
+        "offset":56,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_countOfBytesReceived",
+        "offset":64,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_countOfBytesSent",
+        "offset":72,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_countOfBytesExpectedToSend",
+        "offset":80,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_countOfBytesExpectedToReceive",
+        "offset":88,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"_taskDescription",
+        "offset":96,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"_state",
+        "offset":104,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSError *",
+        "name":"_error",
+        "offset":112,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURL *",
+        "name":"__ledBellyFallbackURL",
+        "offset":120,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _CFURLRequest *",
+        "name":"__currentCFURLRequest",
+        "offset":128,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"_startTime",
+        "offset":136,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSURLSession *",
+        "name":"_session",
+        "offset":144,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSObject<OS_dispatch_queue> *",
+        "name":"_workQueue",
+        "offset":152,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"__ledBellyServiceIdentifier",
+        "offset":160,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__priorityValue",
+        "offset":168,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct __PerformanceTiming *",
+        "name":"__performanceTiming",
+        "offset":176,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"__backgroundTaskTimingData",
+        "offset":184,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"__legacySocketStreamProperties",
+        "offset":192,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _CFHSTSPolicy *",
+        "name":"__cfHSTS",
+        "offset":200,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _CFURLCache *",
+        "name":"__cfCache",
+        "offset":208,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct _CFURLCredentialStorage *",
+        "name":"__cfCreds",
+        "offset":216,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"struct OpaqueCFHTTPCookieStorage *",
+        "name":"__cfCookies",
+        "offset":224,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"__timeoutInterval",
+        "offset":232,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"__proxySettings",
+        "offset":240,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSDictionary *",
+        "name":"__sslSettings",
+        "offset":248,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSArray *",
+        "name":"__contentDispositionFallbackArray",
+        "offset":256,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSValue *",
+        "name":"__connectionPropertyDuet",
+        "offset":264,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__suspensionThreshhold",
+        "offset":272,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"__boundInterfaceIdentifier",
+        "offset":280,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"unsigned long long",
+        "name":"__allowedProtocolTypes",
+        "offset":288,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__requestPriority",
+        "offset":296,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"long long",
+        "name":"__expectedWorkload",
+        "offset":304,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"__timeWindowDelay",
+        "offset":312,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"double",
+        "name":"__timeWindowDuration",
+        "offset":320,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"NSString *",
+        "name":"__uniqueIdentifier",
+        "offset":328,
+        "type":"ivar"
+      },
+      {
+        "ivarType":"id",
+        "name":"__protocolForTask",
+        "offset":336,
+        "type":"ivar"
+      }
+    ],
+    "superClassName":"NSObject",
+    "type":"class"
+  }
+}

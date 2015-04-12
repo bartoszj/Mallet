@@ -60,7 +60,7 @@ class CFNetworkSwiftTests: SharedSwiftTestCase, NSURLConnectionDataDelegate {
         self.compareObject(request, type: "NSURLRequest", summary: "GET, https://google.com, body=12 bytes")
     }
     
-    func testNSURLRequest6() {
+    func testNSURLRequest5() {
         let url = NSURL(string: "https://google.com")!
         let mutableRequest = NSMutableURLRequest(URL: url)
         var request = mutableRequest.copy() as! NSURLRequest
@@ -169,7 +169,7 @@ class CFNetworkSwiftTests: SharedSwiftTestCase, NSURLConnectionDataDelegate {
         self.compareObject(configuration, type: "NSURLSessionConfiguration", summary: "identifier=\"BackgroundIdentifier\", sessionSendsLaunchEvents, backgroundSession")
     }
     
-    // MARK: - NSURLsession
+    // MARK: - NSURLSession
     func testNSURLSession01() {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: configuration)

@@ -9,6 +9,7 @@ type summary add -F lldb_additions.summaries.CFNetwork.NSURLResponse.summary_pro
 type summary add -F lldb_additions.summaries.CFNetwork.NSURLResponseInternal.summary_provider     --category CFNetwork NSURLResponseInternal
 type summary add -F lldb_additions.summaries.CFNetwork.NSURLSession.summary_provider              --category CFNetwork NSURLSession
 type summary add -F lldb_additions.summaries.CFNetwork.NSURLSessionConfiguration.summary_provider --category CFNetwork NSURLSessionConfiguration
+type summary add -F lldb_additions.summaries.CFNetwork.NSURLSessionTask.summary_provider          --category CFNetwork NSURLSessionTask
 
 type synthetic add -l lldb_additions.summaries.CFNetwork.NSURLRequest.NSURLRequestSyntheticProvider   --category CFNetwork NSURLRequest NSMutableURLRequest
 type synthetic add -l lldb_additions.summaries.CFNetwork.NSURLResponse.NSURLResponseSyntheticProvider --category CFNetwork NSURLResponse NSHTTPURLResponse
