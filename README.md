@@ -3,22 +3,13 @@ LLDB missing summaries
 
 LLDB summaries for iOS Objective-C classes.
 
-<div>
-  <div style="width:50%; float:left;">
-    <p style="font-weight: bold">Before:</p>
-    <img alt="Before" src="assets/before.png"/>
-  </div>
-  <div style="width:50%; float:left;">
-  <p style="font-weight: bold">After:</p>
-    <img alt="After" src="assets/after.png" />
-  </div>
-</div>
+![Before / after](assets/before_after.png)
 
-## Instalation
+## Installation
 Clone this repository and add the following line to your __~/.lldbinit__ file. If it doesn't exist, create it.
 
     # ~/.lldbinit
-    ...
+
     command script import /path/to/lldb_additions
 
 The summaries will be available the next time Xcode starts.
@@ -28,7 +19,7 @@ The summaries will be available the next time Xcode starts.
     - CGAffineTransform
     - CGImage
     - CGVector
-- CFNetowrk:
+- CFNetwork:
     - CFURLRequest
     - CFURLResponse
     - NSURLConnection
@@ -93,7 +84,7 @@ The summaries will be available the next time Xcode starts.
     - SKRequest
 
 ## Supported synthetic children:
-- CFNetowrk:
+- CFNetwork:
     - NSURLRequest / NSMutableURLRequest
     - NSURLResponse, NSHTTPURLResponse
 - Foundation:
