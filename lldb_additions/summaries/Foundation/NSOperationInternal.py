@@ -175,7 +175,7 @@ def get_priority_text(priority):
     Returns operation priority name by numeric value.
 
     :param int priority: Priority numeric value.
-    :return: Operation priority name
+    :return: Operation priority name.
     :rtype: str | None
     """
     if priority == NSOperationQueuePriorityVeryLow:

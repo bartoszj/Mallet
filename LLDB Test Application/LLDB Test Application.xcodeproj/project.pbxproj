@@ -59,6 +59,7 @@
 		96C0BB091A659789005A34BD /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C0BB081A659789005A34BD /* View.xib */; };
 		96ED44C71A7587E000224ED1 /* AutolayoutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96ED44C61A7587E000224ED1 /* AutolayoutView.xib */; };
 		96F0F8C119B1D74B0033ACED /* QuartzCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F0F8C019B1D74B0033ACED /* QuartzCoreTests.m */; };
+		96F3344C1AF1678E00078D95 /* AFNetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F3344B1AF1678E00078D95 /* AFNetworkingTests.m */; };
 		96FCE39B19B0CE6E00A5A883 /* PickersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FCE39A19B0CE6E00A5A883 /* PickersViewController.m */; };
 		96FCE39E19B0D7B000A5A883 /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FCE39D19B0D7B000A5A883 /* AlertsViewController.m */; };
 		96FCE3A419B0D9D900A5A883 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FCE3A319B0D9D900A5A883 /* ScrollViewController.m */; };
@@ -181,6 +182,7 @@
 		96C0BB081A659789005A34BD /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		96ED44C61A7587E000224ED1 /* AutolayoutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutolayoutView.xib; sourceTree = "<group>"; };
 		96F0F8C019B1D74B0033ACED /* QuartzCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuartzCoreTests.m; sourceTree = "<group>"; };
+		96F3344B1AF1678E00078D95 /* AFNetworkingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingTests.m; sourceTree = "<group>"; };
 		96FCE39919B0CE6E00A5A883 /* PickersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickersViewController.h; sourceTree = "<group>"; };
 		96FCE39A19B0CE6E00A5A883 /* PickersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickersViewController.m; sourceTree = "<group>"; };
 		96FCE39C19B0D7B000A5A883 /* AlertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertsViewController.h; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 		9660195A198588E400BDBB71 /* LLDB iOS App Tests */ = {
 			isa = PBXGroup;
 			children = (
+				96F3344B1AF1678E00078D95 /* AFNetworkingTests.m */,
 				96739E691A7E4D6F00D50717 /* CFNetworkTests.m */,
 				9660195B198588E400BDBB71 /* CoreGraphicsTests.m */,
 				9660195E198588E400BDBB71 /* FoundationTests.m */,
@@ -865,6 +868,7 @@
 				96739E6A1A7E4D6F00D50717 /* CFNetworkTests.m in Sources */,
 				96601967198588E400BDBB71 /* SharedTestCase.m in Sources */,
 				96601965198588E400BDBB71 /* FoundationTests.m in Sources */,
+				96F3344C1AF1678E00078D95 /* AFNetworkingTests.m in Sources */,
 				96601963198588E400BDBB71 /* CoreGraphicsTests.m in Sources */,
 				96F0F8C119B1D74B0033ACED /* QuartzCoreTests.m in Sources */,
 			);
@@ -1131,6 +1135,7 @@
 		};
 		9636C887182977A700FD4AEA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D809A9DCCBAD72E9D08C7532 /* Pods-LLDB iOS App.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -1156,6 +1161,7 @@
 		};
 		9636C888182977A700FD4AEA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D11F59B1D6471342EEECB7C4 /* Pods-LLDB iOS App.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -1273,6 +1279,7 @@
 		};
 		9675D6731A87EA9F00CFA33C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D809A9DCCBAD72E9D08C7532 /* Pods-LLDB iOS App.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -1298,6 +1305,7 @@
 		};
 		9675D6741A87EA9F00CFA33C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D11F59B1D6471342EEECB7C4 /* Pods-LLDB iOS App.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_UNREACHABLE_CODE = YES;

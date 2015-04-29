@@ -1,26 +1,31 @@
 PODS:
-  - AFNetworking (2.5.2):
-    - AFNetworking/NSURLConnection (= 2.5.2)
-    - AFNetworking/NSURLSession (= 2.5.2)
-    - AFNetworking/Reachability (= 2.5.2)
-    - AFNetworking/Security (= 2.5.2)
-    - AFNetworking/Serialization (= 2.5.2)
-    - AFNetworking/UIKit (= 2.5.2)
-  - AFNetworking/NSURLConnection (2.5.2):
+  - AFNetworking (2.5.3):
+    - AFNetworking/NSURLConnection (= 2.5.3)
+    - AFNetworking/NSURLSession (= 2.5.3)
+    - AFNetworking/Reachability (= 2.5.3)
+    - AFNetworking/Security (= 2.5.3)
+    - AFNetworking/Serialization (= 2.5.3)
+    - AFNetworking/UIKit (= 2.5.3)
+  - AFNetworking/NSURLConnection (2.5.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.2):
+  - AFNetworking/NSURLSession (2.5.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.2)
-  - AFNetworking/Security (2.5.2)
-  - AFNetworking/Serialization (2.5.2)
-  - AFNetworking/UIKit (2.5.2):
+  - AFNetworking/Reachability (2.5.3)
+  - AFNetworking/Security (2.5.3)
+  - AFNetworking/Serialization (2.5.3)
+  - AFNetworking/UIKit (2.5.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Bolts (1.1.4)
+  - Bolts (1.1.5):
+    - Bolts/AppLinks (= 1.1.5)
+    - Bolts/Tasks (= 1.1.5)
+  - Bolts/AppLinks (1.1.5):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.1.5)
   - Facebook-iOS-SDK (4.0.1):
     - Bolts (~> 1.0)
     - Facebook-iOS-SDK/CoreKit (= 4.0.1)
@@ -49,7 +54,7 @@ PODS:
   - Reachability (3.2)
 
 DEPENDENCIES:
-  - AFNetworking (~> 2.5.2)
+  - AFNetworking (~> 2.5.3)
   - Facebook-iOS-SDK (~> 4.0)
   - FMDB (~> 2.5)
   - KIF (~> 3.2.1)
@@ -57,12 +62,12 @@ DEPENDENCIES:
   - Reachability (~> 3.2)
 
 SPEC CHECKSUMS:
-  AFNetworking: fefbce9660acb17f48ae0011292d4da0f457bf36
-  Bolts: f8e2f94edbf9fec7bb8de5ecaaa3aa6b7de6f64e
+  AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
+  Bolts: aac24961496d504aa56fc267cde95162a71bac39
   Facebook-iOS-SDK: 6d05532c97e9c542f8d87f94b7f6ee217493d00b
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
   KIF: ef1691e54e1d969c3b4fd0b5b56a3d7ddf37f216
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
 
-COCOAPODS: 0.36.3
+COCOAPODS: 0.36.4

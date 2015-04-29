@@ -77,6 +77,7 @@ lldb_summaries_paths = ["summaries"]
 lldb_summaries_load_order = ["SummaryBase",
 
                              "NSObject",
+                             "NSOperation",
                              "NSURLResponse",
                              "NSURLSessionTask",
                              "NSURLSessionDataTask",

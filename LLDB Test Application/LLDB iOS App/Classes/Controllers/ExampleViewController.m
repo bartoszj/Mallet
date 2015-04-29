@@ -54,7 +54,7 @@
                              };
     NSData *jsonParams = [NSJSONSerialization dataWithJSONObject:params options:0 error:nil];
     
-    NSURLSession *session = self.session;
+//    NSURLSession *session = self.session;
     NSURL *url = [NSURL URLWithString:@"https://example.org/login"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     request.HTTPMethod = @"POST";

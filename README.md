@@ -15,6 +15,8 @@ Clone this repository and add the following line to your __~/.lldbinit__ file. I
 The summaries will be available the next time Xcode starts.
 
 ## Supported summaries:
+- AFNetworking:
+    - AFURLConnectionOperation
 - CoreGraphics:
     - CGAffineTransform
     - CGImage

@@ -94,7 +94,7 @@ class NSURLSessionTaskSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         :param NSURLRequest.NSURLRequestSyntheticProvider provider: NSURLRequest provider.
         """
         summary = provider.summary()
-        if len(summary) == 0:
+        if summary is None or len(summary) == 0:
             return None
         return "request={{{}}}".format(summary)
 
@@ -104,7 +104,7 @@ class NSURLSessionTaskSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         :param NSURLResponse.NSURLResponseSyntheticProvider provider: NSURLResponse provider.
         """
         summary = provider.summary()
-        if len(summary) == 0:
+        if summary is None or len(summary) == 0:
             return None
         return "response={{{}}}".format(summary)
 

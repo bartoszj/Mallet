@@ -174,7 +174,7 @@ class SummaryBaseSyntheticProvider(object):
 
         1. Try to find instance variable using provided offset and type_name.
            If offset is given then type_name also have to be given.
-        2. If there is no offset then method try to get child value from LLDB (if possible) using only name.
+        2. If there is no offset then method try to get child value from LLDB (if possible) using only ivar name.
         3. If LLDB fails then method try to find offset value (and type name if not provided) from json file.
 
         :param str ivar_name: Instance variable name.
@@ -934,14 +934,17 @@ def join_summaries(*args):
 
     :param str separator: Summary separator.
     :param list[str] args: List of summaries.
-    :return:
+    :return: Joined strings.
+    :rtype: str | None
     """
     summaries_strings = []
     """:type: list[str]"""
     for summary in args:
-        if isinstance(summary, str):
+        if isinstance(summary, str) and len(summary) > 0:
             summaries_strings.append(summary)
 
+    if len(summaries_strings) == 0:
+        return None
     return ", ".join(summaries_strings)
 
 
