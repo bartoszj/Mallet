@@ -49,4 +49,65 @@
     [self waitForExpectationsWithTimeout:2 handler:nil];
 }
 
+- (void)testAFURLConnectionOperation02
+{
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.google.con"]];
+    AFURLConnectionOperation *urlOperation = [[AFURLConnectionOperation alloc] initWithRequest:request];
+    [self compareObject:urlOperation ofType:@"AFURLConnectionOperation *" toSummary:@"Ready, request={http://www.google.con}"];
+    __weak typeof(urlOperation) weakUrlOperation = urlOperation;
+    
+    XCTestExpectation *exceptation = [self expectationWithDescription:@"Get"];
+    
+    [urlOperation setCompletionBlock:^{
+        [self compareObject:weakUrlOperation ofType:@"AFURLConnectionOperation *" toSummary:@"Finished, request={http://www.google.con}"];
+        [exceptation fulfill];
+    }];
+    [urlOperation start];
+    [self compareObject:urlOperation ofType:@"AFURLConnectionOperation *" toSummary:@"Executing, request={http://www.google.con}"];
+    
+    [self waitForExpectationsWithTimeout:2 handler:nil];
+}
+
+#pragma mark - AFHTTPRequestOperation
+- (void)testAFHTTPRequestOperation01
+{
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.google.com"]];
+    AFHTTPRequestOperation *httpOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [self compareObject:httpOperation ofType:@"AFHTTPRequestOperation *" toSummary:@"Ready, request={http://www.google.com}"];
+    __weak typeof(httpOperation) weakHttpOperation = httpOperation;
+    
+    XCTestExpectation *exceptation = [self expectationWithDescription:@"Get"];
+    
+    [httpOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *summary = [NSString stringWithFormat:@"Finished, responseData=%lu bytes, request={http://www.google.com}, response={%@}", (unsigned long)weakHttpOperation.responseData.length, weakHttpOperation.response.URL.absoluteString];
+        [self compareObject:weakHttpOperation ofType:@"AFHTTPRequestOperation *" toSummary:summary];
+        [exceptation fulfill];
+    } failure:nil];
+    
+    [httpOperation start];
+    [self compareObject:httpOperation ofType:@"AFHTTPRequestOperation *" toSummary:@"Executing, request={http://www.google.com}"];
+    
+    [self waitForExpectationsWithTimeout:2 handler:nil];
+}
+
+- (void)testAFHTTPRequestOperation02
+{
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.google.con"]];
+    AFHTTPRequestOperation *httpOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [self compareObject:httpOperation ofType:@"AFHTTPRequestOperation *" toSummary:@"Ready, request={http://www.google.con}"];
+    __weak typeof(httpOperation) weakHttpOperation = httpOperation;
+    
+    XCTestExpectation *exceptation = [self expectationWithDescription:@"Get"];
+    
+    [httpOperation setCompletionBlockWithSuccess:nil failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self compareObject:weakHttpOperation ofType:@"AFHTTPRequestOperation *" toSummary:@"Finished, request={http://www.google.con}"];
+        [exceptation fulfill];
+    }];
+    
+    [httpOperation start];
+    [self compareObject:httpOperation ofType:@"AFHTTPRequestOperation *" toSummary:@"Executing, request={http://www.google.con}"];
+    
+    [self waitForExpectationsWithTimeout:2 handler:nil];
+}
+
 @end

@@ -1,3 +1,4 @@
 type summary add -F lldb_additions.summaries.AFNetworking.AFURLConnectionOperation.summary_provider --category AFNetworking AFURLConnectionOperation
+type summary add -F lldb_additions.summaries.AFNetworking.AFHTTPRequestOperation.summary_provider --category AFNetworking AFHTTPRequestOperation
 
 type category enable AFNetworking

@@ -17,6 +17,7 @@ The summaries will be available the next time Xcode starts.
 ## Supported summaries:
 - AFNetworking:
     - AFURLConnectionOperation
+    - AFHTTPRequestOperation
 - CoreGraphics:
     - CGAffineTransform
     - CGImage

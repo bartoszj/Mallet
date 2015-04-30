@@ -111,7 +111,9 @@ lldb_summaries_load_order = ["SummaryBase",
                              "SKPaymentTransactionInternal",
                              "SKProductInternal",
                              "SKProductsRequestInternal",
-                             "SKProductsResponseInternal"
+                             "SKProductsResponseInternal",
+
+                             "AFURLConnectionOperation",
                              ]
 
 

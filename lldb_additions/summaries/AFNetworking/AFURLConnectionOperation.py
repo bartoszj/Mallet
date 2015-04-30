@@ -104,6 +104,7 @@ class AFURLConnectionOperationSyntheticProvider(NSOperation.NSOperationSynthetic
         :return: str | None
         """
         summary = provider.summary()
+
         if summary is None or len(summary) == 0:
             return None
         return "response={{{}}}".format(summary)
