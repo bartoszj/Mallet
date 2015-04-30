@@ -18,6 +18,7 @@ The summaries will be available the next time Xcode starts.
 - AFNetworking:
     - AFURLConnectionOperation
     - AFHTTPRequestOperation
+    - AFHTTPRequestOperationManager
 - CoreGraphics:
     - CGAffineTransform
     - CGImage

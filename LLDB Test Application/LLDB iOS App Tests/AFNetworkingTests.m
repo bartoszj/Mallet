@@ -110,4 +110,41 @@
     [self waitForExpectationsWithTimeout:2 handler:nil];
 }
 
+#pragma mark - AFHTTPRequestOperationManager
+- (void)testAFHTTPRequestOperationManager01
+{
+    NSURL *url = [NSURL URLWithString:@"http://api.openweathermap.org/data/2.5/"];
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:url];
+    [self compareObject:manager ofType:@"AFHTTPRequestOperationManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, operations=0, executing=0"];
+    
+    __weak typeof(manager) weakManager = manager;
+    XCTestExpectation *exceptation = [self expectationWithDescription:@"Get"];
+    
+    [manager GET:@"weather?q=London,uk" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self compareObject:weakManager ofType:@"AFHTTPRequestOperationManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, operations=0, executing=0"];
+        [exceptation fulfill];
+    } failure:nil];
+    
+    [self compareObject:manager ofType:@"AFHTTPRequestOperationManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, operations=1, executing=1"];
+    [self waitForExpectationsWithTimeout:2 handler:nil];
+}
+
+- (void)testAFHTTPRequestOperationManager02
+{
+    NSURL *url = [NSURL URLWithString:@"http://api.openweathermap.org/data/2.5/"];
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:url];
+    [self compareObject:manager ofType:@"AFHTTPRequestOperationManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, operations=0, executing=0"];
+    
+    __weak typeof(manager) weakManager = manager;
+    XCTestExpectation *exceptation = [self expectationWithDescription:@"Get"];
+    
+    [manager GET:@"" parameters:nil success:nil failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self compareObject:weakManager ofType:@"AFHTTPRequestOperationManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, operations=0, executing=0"];
+        [exceptation fulfill];
+    }];
+    
+    [self compareObject:manager ofType:@"AFHTTPRequestOperationManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, operations=1, executing=1"];
+    [self waitForExpectationsWithTimeout:2 handler:nil];
+}
+
 @end
