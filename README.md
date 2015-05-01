@@ -19,6 +19,7 @@ The summaries will be available the next time Xcode starts.
     - AFURLConnectionOperation
     - AFHTTPRequestOperation
     - AFHTTPRequestOperationManager
+    - AFHTTPRequestSerializer
 - CoreGraphics:
     - CGAffineTransform
     - CGImage

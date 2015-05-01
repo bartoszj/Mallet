@@ -115,6 +115,7 @@
 {
     NSURL *url = [NSURL URLWithString:@"http://api.openweathermap.org/data/2.5/"];
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:url];
+    manager.requestSerializer.timeoutInterval = 123;
     [self compareObject:manager ofType:@"AFHTTPRequestOperationManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, operations=0, executing=0"];
     
     __weak typeof(manager) weakManager = manager;
@@ -145,6 +146,34 @@
     
     [self compareObject:manager ofType:@"AFHTTPRequestOperationManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, operations=1, executing=1"];
     [self waitForExpectationsWithTimeout:2 handler:nil];
+}
+
+#pragma mark - AFHTTPRequestSerializer
+- (void)testAFHTTPRequestSerializer01
+{
+    AFHTTPRequestSerializer *serializer = [AFHTTPRequestSerializer serializer];
+    serializer.timeoutInterval = 34;
+    [self compareObject:serializer ofType:@"AFHTTPRequestSerializer *" toSummary:@"timeout=34"];
+    
+    serializer.stringEncoding = NSUTF16StringEncoding;
+    [self compareObject:serializer ofType:@"AFHTTPRequestSerializer *" toSummary:@"stringEncoding=UTF16, timeout=34"];
+    
+    serializer.timeoutInterval = 0;
+    serializer.allowsCellularAccess = YES;
+    [self compareObject:serializer ofType:@"AFHTTPRequestSerializer *" toSummary:@"stringEncoding=UTF16, allowsCellularAccess"];
+}
+
+- (void)testAFHTTPRequestSerializer02
+{
+    AFHTTPRequestSerializer *serializer = [AFHTTPRequestSerializer serializer];
+    serializer.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
+    [self compareObject:serializer ofType:@"AFHTTPRequestSerializer *" toSummary:@"cachePolicy=ReturnCacheDataElseLoad"];
+    
+    serializer.HTTPShouldUsePipelining = YES;
+    [self compareObject:serializer ofType:@"AFHTTPRequestSerializer *" toSummary:@"cachePolicy=ReturnCacheDataElseLoad, shouldUsePipelining"];
+    
+    serializer.networkServiceType = NSURLNetworkServiceTypeVideo;
+    [self compareObject:serializer ofType:@"AFHTTPRequestSerializer *" toSummary:@"cachePolicy=ReturnCacheDataElseLoad, shouldUsePipelining, networkServiceType=Video"];
 }
 
 @end

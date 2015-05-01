@@ -1,5 +1,8 @@
 type summary add -F lldb_additions.summaries.AFNetworking.AFURLConnectionOperation.summary_provider      --category AFNetworking AFURLConnectionOperation
 type summary add -F lldb_additions.summaries.AFNetworking.AFHTTPRequestOperation.summary_provider        --category AFNetworking AFHTTPRequestOperation
 type summary add -F lldb_additions.summaries.AFNetworking.AFHTTPRequestOperationManager.summary_provider --category AFNetworking AFHTTPRequestOperationManager
+type summary add -F lldb_additions.summaries.AFNetworking.AFHTTPRequestSerializer.summary_provider       --category AFNetworking AFHTTPRequestSerializer
+
+#type synthetic add -l lldb_additions.summaries.AFNetworking.AFHTTPRequestSerializer.AFHTTPRequestSerializerSyntheticProvider --category AFNetworking AFHTTPRequestSerializer
 
 type category enable AFNetworking
