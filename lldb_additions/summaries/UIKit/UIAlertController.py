@@ -92,10 +92,11 @@ class UIAlertControllerSyntheticProvider(UIViewController.UIViewControllerSynthe
         name = get_style_name(value)
         return "preferredStyle={}".format(name)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.title_summary, self.message_summary,
-                                             self.preferred_style_summary, self.actions_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.title_summary,
+                self.message_summary,
+                self.preferred_style_summary,
+                self.actions_summary]
 
 
 def summary_provider(value_obj, internal_dict):

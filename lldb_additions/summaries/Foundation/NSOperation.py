@@ -49,8 +49,8 @@ class NSOperationSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         """
         return provider.summary()
 
-    def summary(self):
-        return self.private_summary
+    def summaries_parts(self):
+        return self.private_provider.summaries_parts()
 
 
 def summary_provider(value_obj, internal_dict):

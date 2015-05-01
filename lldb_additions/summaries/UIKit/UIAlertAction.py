@@ -70,9 +70,8 @@ class UIAlertActionSyntheticProvider(NSObject.NSObjectSyntheticProvider):
             name = "Destructive"
         return "style={}".format(name)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.title_summary, self.style_summary, self.enabled_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.title_summary, self.style_summary, self.enabled_summary]
 
 
 def summary_provider(value_obj, internal_dict):

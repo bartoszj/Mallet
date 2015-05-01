@@ -23,32 +23,32 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from ...scripts import helpers
-from ..Foundation import NSObject
-import CFURLResponse
+from ..Foundation import NSJSONSerialization
+from .. import SummaryBase
+import AFHTTPRequestSerializer
 
 
-class NSURLResponseInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider):
+class AFJSONRequestSerializerSyntheticProvider(AFHTTPRequestSerializer.AFHTTPRequestSerializerSyntheticProvider):
     """
-    Class representing NSURLResponseInternal.
+    Class representing AFJSONRequestSerializer.
     """
     def __init__(self, value_obj, internal_dict):
-        super(NSURLResponseInternalSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.type_name = "NSURLResponseInternal"
+        super(AFJSONRequestSerializerSyntheticProvider, self).__init__(value_obj, internal_dict)
 
-        self.register_child_value("response", ivar_name="response", type_name="void_ptr_type",
-                                  provider_class=CFURLResponse.CFURLResponseSyntheticProvider,
-                                  summary_function=self.get_response_summary)
+        self.register_child_value("writing_options", ivar_name="_writingOptions",
+                                  primitive_value_function=SummaryBase.get_unsigned_value,
+                                  summary_function=self.get_writing_options_summary)
 
     @staticmethod
-    def get_response_summary(provider):
-        """
-        :param CFURLResponse.CFURLResponseSyntheticProvider provider: CFURLResponse provider.
-        """
-        return provider.summary()
+    def get_writing_options_summary(value):
+        text = NSJSONSerialization.get_json_writing_options_text(value)
+        if len(text) == 0:
+            return None
+        return "writingOptions=({})".format(text)
 
     def summaries_parts(self):
-        return self.response_provider.summaries_parts()
+        return [self.writing_options_summary] + super(AFJSONRequestSerializerSyntheticProvider, self).summaries_parts()
 
 
 def summary_provider(value_obj, internal_dict):
-    return helpers.generic_summary_provider(value_obj, internal_dict, NSURLResponseInternalSyntheticProvider)
+    return helpers.generic_summary_provider(value_obj, internal_dict, AFJSONRequestSerializerSyntheticProvider)

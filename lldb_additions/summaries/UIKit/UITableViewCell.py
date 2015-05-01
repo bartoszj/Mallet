@@ -78,12 +78,11 @@ class UITableViewCellSyntheticProvider(UIView.UIViewSyntheticProvider):
             return "detailLabel={}".format(provider.text_value)
         return None
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.text_label_summary,
-                                             self.detail_text_label_summary,
-                                             self.reuse_identifier_summary,
-                                             self.tag_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.text_label_summary,
+                self.detail_text_label_summary,
+                self.reuse_identifier_summary,
+                self.tag_summary]
 
 
 def summary_provider(value_obj, internal_dict):

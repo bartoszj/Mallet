@@ -117,6 +117,7 @@ lldb_summaries_load_order = ["SummaryBase",
                              "AFHTTPRequestOperation",
                              "AFHTTPRequestOperationManager",
                              "AFHTTPRequestSerializer",
+                             "AFJSONRequestSerializer",
                              ]
 
 

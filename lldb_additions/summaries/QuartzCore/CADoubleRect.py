@@ -61,6 +61,5 @@ class CADoubleRectSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
         """
         return "size={}".format(provider.summary())
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.origin_summary, self.size_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.origin_summary, self.size_summary]

@@ -52,10 +52,9 @@ class NSURLSessionSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def get_session_description_summary(value):
         return value
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.is_shared_session_summary,
-                                             self.session_description_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.is_shared_session_summary,
+                self.session_description_summary]
 
 
 def summary_provider(value_obj, internal_dict):

@@ -363,10 +363,10 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         summary = summary.rstrip()
         return summary
 
-    def summary(self):
+    def summaries_parts(self):
         # self.print_parameters()
-        return self.long_summary()
-        # return self.short_summary()
+        return [self.long_summary()]
+        # return [self.short_summary()]
 
 
 def summary_provider(value_obj, internal_dict):

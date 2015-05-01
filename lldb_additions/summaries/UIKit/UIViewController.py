@@ -57,8 +57,8 @@ class UIViewControllerSyntheticProvider(UIResponder.UIResponderSyntheticProvider
     def get_child_view_controllers_summary(value):
         return "viewControllers={}".format(value)
 
-    def summary(self):
-        return self.title_summary
+    def summaries_parts(self):
+        return [self.title_summary]
 
 
 def summary_provider(value_obj, internal_dict):

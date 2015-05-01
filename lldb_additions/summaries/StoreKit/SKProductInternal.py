@@ -86,7 +86,6 @@ class SKProductInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def get_product_identifier_summary(value):
         return "identifier={}".format(value)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.localized_title_summary, self.price_summary,
-                                             self.downloadable_summary, self.content_version_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.localized_title_summary, self.price_summary,
+                self.downloadable_summary, self.content_version_summary]

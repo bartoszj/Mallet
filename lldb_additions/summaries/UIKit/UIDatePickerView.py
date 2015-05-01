@@ -78,8 +78,8 @@ class UIDatePickerViewSyntheticProvider(UIPickerView.UIPickerViewSyntheticProvid
     def get_date_components_summary(value):
         return "{}".format(value)
 
-    def summary(self):
-        return self.date_components_summary
+    def summaries_parts(self):
+        return [self.date_components_summary]
 
 
 def summary_provider(value_obj, internal_dict):

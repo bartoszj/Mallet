@@ -141,12 +141,11 @@ class NSOperationInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def get_name_summary(value):
         return "name={}".format(value)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.cancelled_summary,
-                                             self.priority_summary,
-                                             self.qos_summary,
-                                             self.name_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.cancelled_summary,
+                self.priority_summary,
+                self.qos_summary,
+                self.name_summary]
 
 
 def get_qos_text(qos):

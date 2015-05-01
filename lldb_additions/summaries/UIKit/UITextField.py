@@ -23,7 +23,6 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from ...scripts import helpers
-from .. import SummaryBase
 import UIControl
 import UILabel
 
@@ -71,9 +70,8 @@ class UITextFieldSyntheticProvider(UIControl.UIControlSyntheticProvider):
             return "placeholder={}".format(value)
         return None
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.display_label_summary, self.placeholder_label_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.display_label_summary, self.placeholder_label_summary]
 
 
 def summary_provider(value_obj, internal_dict):

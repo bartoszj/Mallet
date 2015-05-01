@@ -185,13 +185,13 @@ class NSOperationQueueInternalSyntheticProvider(NSObject.NSObjectSyntheticProvid
         count = self.get_operations_count()
         return "operations={}".format(count)
 
-    def summary(self):
-        return SummaryBase.join_summaries(self.suspended_summary,
-                                          self.get_operations_count_summary(),
-                                          self.executing_operations_count_summary,
-                                          self.max_operations_count_summary,
-                                          self.qos_summary,
-                                          self.main_summary)
+    def summaries_parts(self):
+        return [self.suspended_summary,
+                self.get_operations_count_summary(),
+                self.executing_operations_count_summary,
+                self.max_operations_count_summary,
+                self.qos_summary,
+                self.main_summary]
 
 
 def summary_provider(value_obj, internal_dict):

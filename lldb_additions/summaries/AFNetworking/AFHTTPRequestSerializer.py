@@ -122,16 +122,15 @@ class AFHTTPRequestSerializerSyntheticProvider(NSObject.NSObjectSyntheticProvide
     def get_child_index(self, name):
         return None
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.string_encoding_summary,
-                                             self.allows_cellular_access_summary,
-                                             self.cache_policy_summary,
-                                             self.http_should_use_pipelining_summary,
-                                             self.network_service_type_summary,
-                                             self.timeout_interval_summary,
-                                             # self.http_request_headers_summary
-                                             )
-        return summary
+    def summaries_parts(self):
+        return [self.string_encoding_summary,
+                self.allows_cellular_access_summary,
+                self.cache_policy_summary,
+                self.http_should_use_pipelining_summary,
+                self.network_service_type_summary,
+                self.timeout_interval_summary,
+                # self.http_request_headers_summary
+                ]
 
 
 def summary_provider(value_obj, internal_dict):

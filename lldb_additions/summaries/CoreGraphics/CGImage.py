@@ -68,8 +68,8 @@ class CGImageSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def get_size_summary(self):
         return "({}, {})".format(self.width_summary, self.height_summary)
 
-    def summary(self):
-        return self.get_size_summary()
+    def summaries_parts(self):
+        return [self.get_size_summary()]
 
 
 def summary_provider(value_obj, internal_dict):

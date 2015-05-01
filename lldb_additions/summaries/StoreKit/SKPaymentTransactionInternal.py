@@ -74,5 +74,5 @@ class SKPaymentTransactionInternalSyntheticProvider(NSObject.NSObjectSyntheticPr
             name = "Deferred"
         return "state={}".format(name)
 
-    def summary(self):
-        return self.transaction_state_summary
+    def summaries_parts(self):
+        return [self.transaction_state_summary]

@@ -222,7 +222,7 @@ class NSDateComponentsSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         self.update_synthetic_children()
         return True
 
-    def summary(self):
+    def summaries_parts(self):
         year_value = self.year_value
         month_value = self.month_value
         day_value = self.day_value
@@ -274,9 +274,7 @@ class NSDateComponentsSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         summaries.extend([self.week_summary, self.weekday_summary, self.weekday_ordinal_summary,
                           self.quarter_summary, self.week_of_year_summary, self.week_of_month_summary,
                           self.year_for_week_of_year_summary, self.leap_month_summary])
-
-        summary = SummaryBase.join_summaries(*summaries)
-        return summary
+        return summaries
 
 
 def summary_provider(value_obj, internal_dict):

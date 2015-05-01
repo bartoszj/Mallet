@@ -50,8 +50,8 @@ class SKProductsRequestSyntheticProvider(SKRequest.SKRequestSyntheticProvider):
         """
         return provider.summary()
 
-    def summary(self):
-        return self.products_request_internal_summary
+    def summaries_parts(self):
+        return self.products_request_internal_provider.summaries_parts()
 
 
 def summary_provider(value_obj, internal_dict):

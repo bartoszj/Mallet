@@ -54,9 +54,8 @@ class UISegmentedControlSyntheticProvider(UIControl.UIControlSyntheticProvider):
     def get_highlighted_segment_summary(value):
         return "highlighted={}".format(value)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.selected_segment_summary, self.segments_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.selected_segment_summary, self.segments_summary]
 
 
 def summary_provider(value_obj, internal_dict):

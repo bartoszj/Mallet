@@ -52,10 +52,9 @@ class NSCFLocalDownloadFileSyntheticProvider(NSObject.NSObjectSyntheticProvider)
     def get_path_summary(value):
         return "path={}".format(value)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.finished_summary,
-                                             self.path_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.finished_summary,
+                self.path_summary]
 
 
 def summary_provider(value_obj, internal_dict):

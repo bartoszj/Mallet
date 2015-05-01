@@ -43,8 +43,8 @@ class UISwitchSyntheticProvider(UIControl.UIControlSyntheticProvider):
     def get_on_summary(value):
         return "on={}".format("YES" if value != 0 else "NO")
 
-    def summary(self):
-        return self.on_summary
+    def summaries_parts(self):
+        return [self.on_summary]
 
 
 def summary_provider(value_obj, internal_dict):

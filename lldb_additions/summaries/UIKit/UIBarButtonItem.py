@@ -52,9 +52,8 @@ class UIBarButtonItemSyntheticProvider(NSObject.NSObjectSyntheticProvider):
             return "width={}".format(SummaryBase.formatted_float(value))
         return None
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.title_summary, self.width_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.title_summary, self.width_summary]
 
 
 def summary_provider(value_obj, internal_dict):

@@ -80,6 +80,5 @@ class CALayerInternalLayerSyntheticProvider(SummaryBase.SummaryBaseSyntheticProv
                                               SummaryBase.formatted_float(provider.size_provider.width_value),
                                               SummaryBase.formatted_float(provider.size_provider.height_value))
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.position_summary, self.bounds_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.position_summary, self.bounds_summary]

@@ -83,8 +83,8 @@ class NSURLRequestSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def get_child_index(self, name):
         return None
 
-    def summary(self):
-        return self.request_internal_summary
+    def summaries_parts(self):
+        return self.request_internal_provider.summaries_parts()
 
 
 def get_cache_policy_text(value):

@@ -43,8 +43,8 @@ class UINibSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def get_storage_summary(value):
         return value
 
-    def summary(self):
-        return self.storage_summary
+    def summaries_parts(self):
+        return [self.storage_summary]
 
 
 def summary_provider(value_obj, internal_dict):

@@ -133,12 +133,11 @@ class AFURLConnectionOperationSyntheticProvider(NSOperation.NSOperationSynthetic
     def get_should_use_credential_storage_summary(value):
         return "shouldUseCredentialStorage={}".format(value)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.state_summary,
-                                             self.response_data_summary,
-                                             self.request_summary,
-                                             self.response_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.state_summary,
+                self.response_data_summary,
+                self.request_summary,
+                self.response_summary]
 
 
 def get_state_text(state):

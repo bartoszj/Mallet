@@ -71,9 +71,8 @@ class CFURLResponseSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
         """
         return "{}".format(value)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.url_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.url_summary]
 
 
 def summary_provider(value_obj, internal_dict):

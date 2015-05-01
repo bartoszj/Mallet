@@ -46,8 +46,8 @@ class NSURLRequestInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         """
         return provider.summary()
 
-    def summary(self):
-        return self.request_summary
+    def summaries_parts(self):
+        return self.request_provider.summaries_parts()
 
 
 def summary_provider(value_obj, internal_dict):

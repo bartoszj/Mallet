@@ -43,8 +43,8 @@ class UIProgressViewSyntheticProvider(UIView.UIViewSyntheticProvider):
     def get_progress_summary(value):
         return "progress={}".format(SummaryBase.formatted_float(value))
 
-    def summary(self):
-        return self.progress_summary
+    def summaries_parts(self):
+        return [self.progress_summary]
 
 
 def summary_provider(value_obj, internal_dict):

@@ -63,5 +63,5 @@ class CALayerIvarsSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
         """
         return provider.summary()
 
-    def summary(self):
-        return self.layer_summary
+    def summaries_parts(self):
+        return self.layer_provider.summaries_parts()

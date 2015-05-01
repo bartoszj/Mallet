@@ -45,5 +45,5 @@ class SKProductsRequestInternalSyntheticProvider(NSObject.NSObjectSyntheticProvi
         else:
             return "@\"{} products\"".format(value)
 
-    def summary(self):
-        return self.product_identifiers_summary
+    def summaries_parts(self):
+        return self.product_identifiers_provider.summaries_parts()

@@ -219,28 +219,27 @@ class NSURLSessionConfigurationSyntheticProvider(NSObject.NSObjectSyntheticProvi
     def get_protocol_classes_summary(value):
         return "protocolClasses={}".format(value)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.identifier_summary,
-                                             self.shared_container_identifier_summary,
-                                             self.allows_cellular_access_summary,
-                                             self.discretionary_summary,
-                                             self.session_sends_launch_events_summary,
-                                             self.http_should_use_pipelining_summary,
-                                             self.http_should_set_cookies_summary,
-                                             self.background_session_summary,
-                                             self.disallows_spdy_summary,
-                                             self.tls_minimum_supported_protocol_summary,
-                                             self.tls_maximum_supported_protocol_summary,
-                                             self.request_cache_policy_summary,
-                                             self.timeout_interval_for_request_summary,
-                                             self.timeout_interval_for_resource_summary,
-                                             self.network_service_type_summary,
-                                             self.http_cookie_accept_policy_summary,
-                                             # self.http_additional_headers_summary,
-                                             self.http_maximum_connections_per_host_summary,
-                                             # self.protocol_classes_summary
-                                             )
-        return summary
+    def summaries_parts(self):
+        return [self.identifier_summary,
+                self.shared_container_identifier_summary,
+                self.allows_cellular_access_summary,
+                self.discretionary_summary,
+                self.session_sends_launch_events_summary,
+                self.http_should_use_pipelining_summary,
+                self.http_should_set_cookies_summary,
+                self.background_session_summary,
+                self.disallows_spdy_summary,
+                self.tls_minimum_supported_protocol_summary,
+                self.tls_maximum_supported_protocol_summary,
+                self.request_cache_policy_summary,
+                self.timeout_interval_for_request_summary,
+                self.timeout_interval_for_resource_summary,
+                self.network_service_type_summary,
+                self.http_cookie_accept_policy_summary,
+                # self.http_additional_headers_summary,
+                self.http_maximum_connections_per_host_summary,
+                # self.protocol_classes_summary
+                ]
 
 
 def get_tls_version_text(value):

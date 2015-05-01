@@ -100,9 +100,8 @@ class UIAlertViewSyntheticProvider(UIView.UIViewSyntheticProvider):
     def get_title_summary(self):
         return self.alert_controller_provider.title_summary
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.get_title_summary(), self.message_summary, self.alert_view_style_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.get_title_summary(), self.message_summary, self.alert_view_style_summary]
 
 
 def summary_provider(value_obj, internal_dict):

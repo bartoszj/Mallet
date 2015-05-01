@@ -115,13 +115,16 @@ class NSURLComponentsSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         self.update_synthetic_children()
         return True
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.url_string_summary, self.scheme_component_summary,
-                                             self.user_component_summary, self.password_component_summary,
-                                             self.host_component_summary, self.port_component_summary,
-                                             self.path_component_summary, self.query_component_summary,
-                                             self.fragment_component_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.url_string_summary,
+                self.scheme_component_summary,
+                self.user_component_summary,
+                self.password_component_summary,
+                self.host_component_summary,
+                self.port_component_summary,
+                self.path_component_summary,
+                self.query_component_summary,
+                self.fragment_component_summary]
 
 
 def summary_provider(value_obj, internal_dict):

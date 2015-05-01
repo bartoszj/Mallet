@@ -66,9 +66,8 @@ class UIStepperSyntheticProvider(UIControl.UIControlSyntheticProvider):
             return "step={}".format(SummaryBase.formatted_float(value))
         return None
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.value_summary, self.step_summary, self.min_summary, self.max_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.value_summary, self.step_summary, self.min_summary, self.max_summary]
 
 
 def summary_provider(value_obj, internal_dict):

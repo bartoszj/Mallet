@@ -23,7 +23,6 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from ...scripts import helpers
-from .. import SummaryBase
 import UIControl
 import UILabel
 
@@ -51,9 +50,8 @@ class UIButtonSyntheticProvider(UIControl.UIControlSyntheticProvider):
         """
         return "text={}".format(provider.text_value)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.label_summary, self.tag_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.label_summary, self.tag_summary]
 
 
 def summary_provider(value_obj, internal_dict):

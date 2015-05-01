@@ -45,8 +45,8 @@ class UIStoryboardSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         file_name, _ = os.path.splitext(value)
         return "fileName=\"{}\"".format(file_name)
 
-    def summary(self):
-        return self.storyboard_file_name_summary
+    def summaries_parts(self):
+        return [self.storyboard_file_name_summary]
 
 
 def summary_provider(value_obj, internal_dict):

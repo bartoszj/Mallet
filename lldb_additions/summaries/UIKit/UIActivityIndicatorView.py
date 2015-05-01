@@ -74,11 +74,10 @@ class UIActivityIndicatorViewSyntheticProvider(UIView.UIViewSyntheticProvider):
             return "hidesWhenStopped"
         return None
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.animating_summary,
-                                             self.hides_when_stopped_summary,
-                                             self.activity_indicator_view_style_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.animating_summary,
+                self.hides_when_stopped_summary,
+                self.activity_indicator_view_style_summary]
 
 
 def get_activity_indicator_style_text(value):

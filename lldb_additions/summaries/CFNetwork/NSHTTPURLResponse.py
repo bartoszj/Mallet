@@ -46,8 +46,8 @@ class NSHTTPURLResponseSyntheticProvider(NSURLResponse.NSURLResponseSyntheticPro
         """
         return provider.summary()
 
-    def summary(self):
-        return self.response_internal_summary
+    def summaries_parts(self):
+        return self.response_internal_provider.summaries_parts()
 
 
 def summary_provider(value_obj, internal_dict):

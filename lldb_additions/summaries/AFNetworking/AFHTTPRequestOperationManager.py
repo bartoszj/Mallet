@@ -74,10 +74,8 @@ class AFHTTPRequestOperationManagerSyntheticProvider(NSObject.NSObjectSyntheticP
     def get_should_use_credential_storage_summary(value):
         return "shouldUseCredentialStorage={}".format(value)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.base_url_summary,
-                                             self.operation_queue_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.base_url_summary, self.operation_queue_summary]
 
 
 def summary_provider(value_obj, internal_dict):

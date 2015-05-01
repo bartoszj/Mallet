@@ -88,9 +88,8 @@ class UIViewSyntheticProvider(UIResponder.UIResponderSyntheticProvider):
                                                       SummaryBase.formatted_float(frame.height))
         return frame_summary
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.get_frame_summary(), self.tag_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.get_frame_summary(), self.tag_summary]
 
 
 def summary_provider(value_obj, internal_dict):

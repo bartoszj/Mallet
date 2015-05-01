@@ -176,4 +176,15 @@
     [self compareObject:serializer ofType:@"AFHTTPRequestSerializer *" toSummary:@"cachePolicy=ReturnCacheDataElseLoad, shouldUsePipelining, networkServiceType=Video"];
 }
 
+#pragma mark - AFJSONRequestSerializer
+- (void)testAFJSONRequestSerializer01
+{
+    AFJSONRequestSerializer *serializer = [AFJSONRequestSerializer serializer];
+    serializer.writingOptions = NSJSONWritingPrettyPrinted;
+    [self compareObject:serializer ofType:@"AFJSONRequestSerializer *" toSummary:@"writingOptions=(PrettyPrinted)"];
+    
+    serializer.timeoutInterval = 123;
+    [self compareObject:serializer ofType:@"AFJSONRequestSerializer *" toSummary:@"writingOptions=(PrettyPrinted), timeout=123"];
+}
+
 @end

@@ -71,11 +71,10 @@ class CFURLRequestSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
         """
         return "{}".format(value)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.http_message_content_provider.http_method_summary,
-                                             self.url_summary,
-                                             self.http_message_content_provider.tmp1_provider.http_body_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.http_message_content_provider.http_method_summary,
+                self.url_summary,
+                self.http_message_content_provider.tmp1_provider.http_body_summary]
 
 
 def summary_provider(value_obj, internal_dict):

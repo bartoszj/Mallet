@@ -22,33 +22,40 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from ...scripts import helpers
-from ..Foundation import NSObject
-import CFURLResponse
+
+NSJSONReadingMutableContainers = 0
+NSJSONReadingMutableLeaves = 1
+NSJSONReadingAllowFragments = 2
+
+NSJSONWritingPrettyPrinted = 1
 
 
-class NSURLResponseInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider):
+def get_json_reading_options_text(value):
     """
-    Class representing NSURLResponseInternal.
+    Returns NSJSONSerialization reading option.
+    :param int value: NSJSONReadingOptions
+    :return: NSJSONSerialization reading option as text.
+    :rtype: str
     """
-    def __init__(self, value_obj, internal_dict):
-        super(NSURLResponseInternalSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.type_name = "NSURLResponseInternal"
+    v = list()
+    if value & NSJSONReadingMutableContainers:
+        v.append("MutableContainers")
+    elif value & NSJSONReadingMutableLeaves:
+        v.append("MutableLeaves")
+    elif value & NSJSONReadingAllowFragments:
+        v.append("AllowFragments")
 
-        self.register_child_value("response", ivar_name="response", type_name="void_ptr_type",
-                                  provider_class=CFURLResponse.CFURLResponseSyntheticProvider,
-                                  summary_function=self.get_response_summary)
-
-    @staticmethod
-    def get_response_summary(provider):
-        """
-        :param CFURLResponse.CFURLResponseSyntheticProvider provider: CFURLResponse provider.
-        """
-        return provider.summary()
-
-    def summaries_parts(self):
-        return self.response_provider.summaries_parts()
+    return ", ".join(v)
 
 
-def summary_provider(value_obj, internal_dict):
-    return helpers.generic_summary_provider(value_obj, internal_dict, NSURLResponseInternalSyntheticProvider)
+def get_json_writing_options_text(value):
+    """
+    Returns NSJSONWritingOptions reading option.
+    :param int value: NSJSONWritingOptions
+    :return: NSJSONWritingOptions reading option as text.
+    :rtype: str
+    """
+    v = list()
+    if value & NSJSONWritingPrettyPrinted:
+        v.append("PrettyPrinted")
+    return ", ".join(v)

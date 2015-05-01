@@ -43,9 +43,8 @@ class UILabelSyntheticProvider(UIView.UIViewSyntheticProvider):
     def get_text_summary(value):
         return "text={}".format(value)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.text_summary, self.tag_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.text_summary, self.tag_summary]
 
 
 def summary_provider(value_obj, internal_dict):

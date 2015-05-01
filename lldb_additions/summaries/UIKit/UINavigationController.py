@@ -37,8 +37,8 @@ class UINavigationControllerSyntheticProvider(UIViewController.UIViewControllerS
         self.synthetic_type = self.SYNTHETIC_PROXY_NAME
         self.synthetic_proxy_name = "child_view_controllers"
 
-    def summary(self):
-        return self.child_view_controllers_summary
+    def summaries_parts(self):
+        return [self.child_view_controllers_summary]
 
 
 def summary_provider(value_obj, internal_dict):

@@ -57,11 +57,10 @@ class UINibStorageSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def get_identifier_for_strings_file_summary(value):
         return "identifierForStringsFile={}".format(value)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.bundle_resource_name_summary,
-                                             self.bundle_directory_name_summary,
-                                             self.identifier_for_strings_file_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.bundle_resource_name_summary,
+                self.bundle_directory_name_summary,
+                self.identifier_for_strings_file_summary]
 
 
 def summary_provider(value_obj, internal_dict):

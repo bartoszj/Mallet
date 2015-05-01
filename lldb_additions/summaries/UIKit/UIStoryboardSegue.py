@@ -43,8 +43,8 @@ class UIStoryboardSegueSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def get_identifier_summary(value):
         return "identifier={}".format(value)
 
-    def summary(self):
-        return self.identifier_summary
+    def summaries_parts(self):
+        return [self.identifier_summary]
 
 
 def summary_provider(value_obj, internal_dict):

@@ -51,9 +51,8 @@ class UISliderSyntheticProvider(UIControl.UIControlSyntheticProvider):
     def get_max_summary(value):
         return "max={}".format(SummaryBase.formatted_float(value))
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.value_summary, self.min_summary, self.max_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.value_summary, self.min_summary, self.max_summary]
 
 
 def summary_provider(value_obj, internal_dict):

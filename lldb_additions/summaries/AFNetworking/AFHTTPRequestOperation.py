@@ -33,9 +33,6 @@ class AFHTTPRequestOperationSyntheticProvider(AFURLConnectionOperation.AFURLConn
     def __init__(self, value_obj, internal_dict):
         super(AFHTTPRequestOperationSyntheticProvider, self).__init__(value_obj, internal_dict)
 
-    def summary(self):
-        return super(AFHTTPRequestOperationSyntheticProvider, self).summary()
-
 
 def summary_provider(value_obj, internal_dict):
     return helpers.generic_summary_provider(value_obj, internal_dict, AFHTTPRequestOperationSyntheticProvider)

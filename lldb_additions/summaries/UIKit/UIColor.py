@@ -45,8 +45,8 @@ class UIColorSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def get_system_color_name_summary(value):
         return "systemColorName={}".format(value)
 
-    def summary(self):
-        return self.system_color_name_summary
+    def summaries_parts(self):
+        return [self.system_color_name_summary]
 
 
 def summary_provider(value_obj, internal_dict):

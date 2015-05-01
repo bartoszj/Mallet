@@ -58,9 +58,8 @@ class UIPageControlSyntheticProvider(UIControl.UIControlSyntheticProvider):
     def get_displayed_page_summary(value):
         return "displayedPage={}".format(value)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.current_page_summary, self.indicators_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.current_page_summary, self.indicators_summary]
 
 
 def summary_provider(value_obj, internal_dict):

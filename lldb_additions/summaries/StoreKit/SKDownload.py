@@ -113,9 +113,8 @@ class SKDownloadSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def get_version_summary(value):
         return "version={}".format(value)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.content_identifier_summary, self.content_length_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.content_identifier_summary, self.content_length_summary]
 
 
 def summary_provider(value_obj, internal_dict):

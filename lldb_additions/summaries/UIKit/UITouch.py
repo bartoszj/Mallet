@@ -119,12 +119,11 @@ class UITouchSyntheticProvider(NSObject.NSObjectSyntheticProvider):
             return None
         return "previousPressure={}".format(value)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.location_in_window_summary,
-                                             self.phase_summary,
-                                             self.tap_count_summary,
-                                             self.pressure_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.location_in_window_summary,
+                self.phase_summary,
+                self.tap_count_summary,
+                self.pressure_summary]
 
 
 def summary_provider(value_obj, internal_dict):

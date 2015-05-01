@@ -72,8 +72,8 @@ class NSURLResponseSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def get_child_index(self, name):
         return None
 
-    def summary(self):
-        return self.response_internal_summary
+    def summaries_parts(self):
+        return self.response_internal_provider.summaries_parts()
 
 
 def summary_provider(value_obj, internal_dict):

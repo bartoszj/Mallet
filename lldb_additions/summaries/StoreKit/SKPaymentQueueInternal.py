@@ -53,6 +53,5 @@ class SKPaymentQueueInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider
             return "transactions={}".format(value)
         return None
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.transactions_summary, self.local_transactions_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.transactions_summary, self.local_transactions_summary]

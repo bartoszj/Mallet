@@ -76,9 +76,8 @@ class UIScreenSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     def get_interface_idiom_summary(value):
         return "idiom={}".format(value)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.bounds_summary, self.scale_summary, self.interface_idiom_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.bounds_summary, self.scale_summary, self.interface_idiom_summary]
 
 
 def summary_provider(value_obj, internal_dict):

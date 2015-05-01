@@ -59,8 +59,8 @@ class NSUUIDSyntheticProvider(NSObject.NSObjectSyntheticProvider):
                                                                  data.GetUnsignedInt32(error, 10),
                                                                  data.GetUnsignedInt16(error, 14))
 
-    def summary(self):
-        return self.uuid_summary
+    def summaries_parts(self):
+        return [self.uuid_summary]
 
 
 def summary_provider(value_obj, internal_dict):

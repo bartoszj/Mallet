@@ -54,11 +54,8 @@ class UIImageViewSyntheticProvider(UIView.UIViewSyntheticProvider):
         scale = provider.scale_summary
         return SummaryBase.join_summaries("image={}".format(size), scale)
 
-    def summary(self):
-        super_summary = super(UIImageViewSyntheticProvider, self).summary()
-        summary = SummaryBase.join_summaries(super_summary, self.storage_summary)
-        return summary
-        # return self.storage_summary
+    def summaries_parts(self):
+        return super(UIImageViewSyntheticProvider, self).summaries_parts() + [self.storage_summary]
 
 
 def summary_provider(value_obj, internal_dict):

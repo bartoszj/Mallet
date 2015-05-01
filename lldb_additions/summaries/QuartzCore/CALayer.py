@@ -68,8 +68,8 @@ class CALayerSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         """
         return self.attr_provider.layer_provider.bounds_provider
 
-    def summary(self):
-        return self.attr_summary
+    def summaries_parts(self):
+        return self.attr_provider.summaries_parts()
 
 
 def summary_provider(value_obj, internal_dict):

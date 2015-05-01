@@ -33,6 +33,9 @@ NSURLSessionTaskStateSuspended = 1
 NSURLSessionTaskStateCanceling = 2
 NSURLSessionTaskStateCompleted = 3
 
+# + Has instance variables.
+# - Doesn't have instance variables.
+#
 # Class hierarchy:
 # ┌ NSURLSessionTask (+)
 # ├─┬ NSURLSessionDataTask (-)
@@ -141,17 +144,16 @@ class NSURLSessionTaskSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         state = get_session_task_state_text(value)
         return "state={}".format(state)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.state_summary,
-                                             self.task_identifier_summary,
-                                             self.count_of_bytes_received_summary,
-                                             self.count_of_bytes_expected_to_receive_summary,
-                                             self.count_of_bytes_sent_summary,
-                                             self.count_of_bytes_expected_to_send_summary,
-                                             self.original_request_summary,
-                                             self.response_summary,
-                                             self.task_description_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.state_summary,
+                self.task_identifier_summary,
+                self.count_of_bytes_received_summary,
+                self.count_of_bytes_expected_to_receive_summary,
+                self.count_of_bytes_sent_summary,
+                self.count_of_bytes_expected_to_send_summary,
+                self.original_request_summary,
+                self.response_summary,
+                self.task_description_summary]
 
 
 def get_session_task_state_text(value):

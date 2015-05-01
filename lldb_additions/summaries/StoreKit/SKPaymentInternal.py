@@ -72,7 +72,6 @@ class SKPaymentInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider):
             return "quantity={}".format(value)
         return None
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.product_identifier_summary, self.quantity_summary,
-                                             self.application_username_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.product_identifier_summary, self.quantity_summary,
+                self.application_username_summary]

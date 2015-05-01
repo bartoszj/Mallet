@@ -81,16 +81,14 @@ class UIScrollViewSyntheticProvider(UIView.UIViewSyntheticProvider):
             return "maxScale={}".format(SummaryBase.formatted_float(value))
         return None
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.get_frame_summary(),
-                                             self.get_content_offset_summary(),
-                                             self.content_size_summary,
-                                             self.content_inset_summary,
-                                             self.minimum_zoom_scale_summary,
-                                             self.maximum_zoom_scale_summary,
-                                             self.tag_summary
-                                             )
-        return summary
+    def summaries_parts(self):
+        return [self.get_frame_summary(),
+                self.get_content_offset_summary(),
+                self.content_size_summary,
+                self.content_inset_summary,
+                self.minimum_zoom_scale_summary,
+                self.maximum_zoom_scale_summary,
+                self.tag_summary]
 
 
 def summary_provider(value_obj, internal_dict):

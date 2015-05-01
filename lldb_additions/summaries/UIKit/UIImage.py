@@ -79,10 +79,9 @@ class UIImageSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         height = height / scale
         return "(width={}, height={})".format(SummaryBase.formatted_float(width), SummaryBase.formatted_float(height))
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.get_size_summary(),
-                                             self.scale_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.get_size_summary(),
+                self.scale_summary]
 
 
 def summary_provider(value_obj, internal_dict):

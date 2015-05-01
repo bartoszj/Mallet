@@ -23,7 +23,6 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from ...scripts import helpers
-from .. import SummaryBase
 import NSCFLocalSessionTask
 import NSCFLocalDownloadFile
 
@@ -47,10 +46,8 @@ class NSCFLocalDownloadTaskSyntheticProvider(NSCFLocalSessionTask.NSCFLocalSessi
         """
         return provider.path_summary
 
-    def summary(self):
-        super_summary = super(NSCFLocalDownloadTaskSyntheticProvider, self).summary()
-        summary = SummaryBase.join_summaries(super_summary, self.download_file_summary)
-        return summary
+    def summaries_parts(self):
+        return super(NSCFLocalDownloadTaskSyntheticProvider, self).summaries_parts() + [self.download_file_summary]
 
 
 def summary_provider(value_obj, internal_dict):

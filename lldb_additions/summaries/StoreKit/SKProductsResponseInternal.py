@@ -54,6 +54,5 @@ class SKProductsResponseInternalSyntheticProvider(NSObject.NSObjectSyntheticProv
             return "{} invalid".format(value)
         return None
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.products_summary, self.invalid_identifiers_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.products_summary, self.invalid_identifiers_summary]

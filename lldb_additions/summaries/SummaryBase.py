@@ -636,6 +636,15 @@ class SummaryBaseSyntheticProvider(object):
                 r.cached_summary = summary
             return summary
 
+    def summaries_parts(self):
+        """
+        Return array of summaries which will be joined in `summary` method.
+
+        :return: Array of summaries
+        :rtype: list[str | None]
+        """
+        return list()
+
     def summary(self):
         """
         Return object summary.
@@ -643,7 +652,7 @@ class SummaryBaseSyntheticProvider(object):
         :return: Object summary.
         :rtype: str | None
         """
-        return None
+        return join_summaries(*self.summaries_parts())
 
 
 def get_signed_value(obj):

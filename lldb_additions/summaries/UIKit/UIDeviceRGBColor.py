@@ -85,14 +85,13 @@ class UIDeviceRGBColorSyntheticProvider(UIColor.UIColorSyntheticProvider):
             return "rgb=#{:02X}{:02X}{:02X}".format(r_value, g_value, b_value)
         return "rgba=#{:02X}{:02X}{:02X}{:02X}".format(r_value, g_value, b_value, a_value)
 
-    def summary(self):
-        summary = SummaryBase.join_summaries(self.get_rgb_summary(),
-                                             self.red_component_summary,
-                                             self.green_component_summary,
-                                             self.blue_component_summary,
-                                             self.alpha_component_summary,
-                                             self.system_color_name_summary)
-        return summary
+    def summaries_parts(self):
+        return [self.get_rgb_summary(),
+                self.red_component_summary,
+                self.green_component_summary,
+                self.blue_component_summary,
+                self.alpha_component_summary,
+                self.system_color_name_summary]
 
 
 def summary_provider(value_obj, internal_dict):
