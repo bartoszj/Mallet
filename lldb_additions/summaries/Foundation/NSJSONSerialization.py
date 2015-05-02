@@ -25,7 +25,7 @@
 
 NSJSONReadingMutableContainers = 0
 NSJSONReadingMutableLeaves = 1
-NSJSONReadingAllowFragments = 2
+NSJSONReadingAllowFragments = 4
 
 NSJSONWritingPrettyPrinted = 1
 

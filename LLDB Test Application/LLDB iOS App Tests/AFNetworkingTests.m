@@ -211,4 +211,18 @@
     [self compareObject:serializer ofType:@"AFHTTPResponseSerializer *" toSummary:@"stringEncoding=UTF32"];
 }
 
+#pragma mark - AFJSONResponseSerializer
+- (void)testAFJSONResponseSerializer01
+{
+    AFJSONResponseSerializer *serializer = [AFJSONResponseSerializer serializer];
+    serializer.readingOptions = NSJSONReadingAllowFragments;
+    [self compareObject:serializer ofType:@"AFJSONResponseSerializer *" toSummary:@"readingOptions=AllowFragments"];
+    
+    serializer.removesKeysWithNullValues = YES;
+    [self compareObject:serializer ofType:@"AFJSONResponseSerializer *" toSummary:@"readingOptions=AllowFragments, removesKeysWithNullValues"];
+    
+    serializer.stringEncoding = NSUTF32StringEncoding;
+    [self compareObject:serializer ofType:@"AFJSONResponseSerializer *" toSummary:@"readingOptions=AllowFragments, removesKeysWithNullValues, stringEncoding=UTF32"];
+}
+
 @end
