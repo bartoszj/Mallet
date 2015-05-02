@@ -291,4 +291,35 @@
     [self compareObject:serializer ofType:@"AFCompoundResponseSerializer *" toSummary:@"serializers=2"];
 }
 
+#pragma mark - AFSecurityPolicy
+- (void)testAFSecurityPolicy01
+{
+    AFSecurityPolicy *policy = [AFSecurityPolicy defaultPolicy];
+    [self compareObject:policy ofType:@"AFSecurityPolicy *" toSummary:@"sslPinningMode=None"];
+    
+    policy.allowInvalidCertificates = YES;
+    [self compareObject:policy ofType:@"AFSecurityPolicy *" toSummary:@"allowInvalidCertificates, sslPinningMode=None"];
+    
+    policy.validatesCertificateChain = NO;
+    [self compareObject:policy ofType:@"AFSecurityPolicy *" toSummary:@"allowInvalidCertificates, notValidatesCertificateChain, sslPinningMode=None"];
+    
+    policy.validatesDomainName = NO;
+    [self compareObject:policy ofType:@"AFSecurityPolicy *" toSummary:@"allowInvalidCertificates, notValidatesCertificateChain, notValidatesDomainName, sslPinningMode=None"];
+    
+    policy.pinnedCertificates = @[[NSData new]];
+    [self compareObject:policy ofType:@"AFSecurityPolicy *" toSummary:@"allowInvalidCertificates, notValidatesCertificateChain, notValidatesDomainName, sslPinningMode=None, pinnedCertificates=1"];
+}
+
+- (void)testAFSecurityPolicy02
+{
+    AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+    [self compareObject:policy ofType:@"AFSecurityPolicy *" toSummary:@"sslPinningMode=Certificate"];
+}
+
+- (void)testAFSecurityPolicy03
+{
+    AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModePublicKey];
+    [self compareObject:policy ofType:@"AFSecurityPolicy *" toSummary:@"sslPinningMode=PublicKey"];
+}
+
 @end

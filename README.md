@@ -29,6 +29,7 @@ The summaries will be available the next time Xcode starts.
     - AFXMLDocumentResponseSerializer
     - AFImageResponseSerializer
     - AFCompoundResponseSerializer
+    - AFSecurityPolicy
 - CoreGraphics:
     - CGAffineTransform
     - CGImage

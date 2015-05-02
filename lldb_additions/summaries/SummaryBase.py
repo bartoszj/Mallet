@@ -779,7 +779,7 @@ def get_count_value(obj):
         return None
 
     # Return 0 if object has no value.
-    if obj.GetValue() is None:
+    if obj.GetValue() is None or obj.GetValueAsUnsigned() == 0:
         return 0
     return obj.GetNumChildren()
 
