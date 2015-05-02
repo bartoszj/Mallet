@@ -21,6 +21,7 @@ The summaries will be available the next time Xcode starts.
     - AFHTTPRequestOperationManager
     - AFHTTPRequestSerializer
     - AFJSONRequestSerializer
+    - AFPropertyListRequestSerializer
 - CoreGraphics:
     - CGAffineTransform
     - CGImage

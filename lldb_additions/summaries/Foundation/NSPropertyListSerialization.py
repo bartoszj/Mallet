@@ -23,41 +23,45 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-NSJSONReadingMutableContainers = 0
-NSJSONReadingMutableLeaves = 1
-NSJSONReadingAllowFragments = 2
+NSPropertyListOpenStepFormat = 1
+NSPropertyListXMLFormat_v1_0 = 100
+NSPropertyListBinaryFormat_v1_0 = 200
 
-NSJSONWritingPrettyPrinted = 1
+NSPropertyListImmutable = 0
+NSPropertyListMutableContainers = 1
+NSPropertyListMutableContainersAndLeaves = 2
 
 
-def get_json_reading_options_text(value):
+def get_format_text(value):
     """
-    Returns NSJSONSerialization reading option.
+    Returns NSPropertyListFormat value as text.
 
-    :param int value: NSJSONReadingOptions
-    :return: NSJSONSerialization reading option as text.
+    :param int value: NSPropertyListFormat value.
+    :return: NSPropertyListFormat value as text.
+    :rtype: str
+    """
+    if value == NSPropertyListOpenStepFormat:
+        return "OpenStep"
+    elif value == NSPropertyListXMLFormat_v1_0:
+        return "XML"
+    elif value == NSPropertyListBinaryFormat_v1_0:
+        return "Binary"
+    return "Unknown"
+
+
+def get_mutability_text(value):
+    """
+    Returns NSPropertyListMutabilityOptions value as text.
+
+    :param int value: NSPropertyListMutabilityOptions value.
+    :return: NSPropertyListMutabilityOptions value as text.
     :rtype: str
     """
     v = list()
-    if value & NSJSONReadingMutableContainers:
+    if value & NSPropertyListImmutable:
+        v.append("Immutable")
+    if value & NSPropertyListMutableContainers:
         v.append("MutableContainers")
-    elif value & NSJSONReadingMutableLeaves:
-        v.append("MutableLeaves")
-    elif value & NSJSONReadingAllowFragments:
-        v.append("AllowFragments")
-
-    return ", ".join(v)
-
-
-def get_json_writing_options_text(value):
-    """
-    Returns NSJSONWritingOptions reading option.
-
-    :param int value: NSJSONWritingOptions
-    :return: NSJSONWritingOptions reading option as text.
-    :rtype: str
-    """
-    v = list()
-    if value & NSJSONWritingPrettyPrinted:
-        v.append("PrettyPrinted")
+    if value & NSPropertyListMutableContainersAndLeaves:
+        v.append("MutableContainersAndLeaves")
     return ", ".join(v)

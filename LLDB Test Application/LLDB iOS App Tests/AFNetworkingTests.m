@@ -187,4 +187,20 @@
     [self compareObject:serializer ofType:@"AFJSONRequestSerializer *" toSummary:@"writingOptions=(PrettyPrinted), timeout=123"];
 }
 
+#pragma mark - AFPropertyListRequestSerializer
+- (void)testAFPropertyListRequestSerializer01
+{
+    AFPropertyListRequestSerializer *serializer = [AFPropertyListRequestSerializer serializer];
+    [self compareObject:serializer ofType:@"AFPropertyListRequestSerializer *" toSummary:@"format=XML"];
+    
+    serializer.format = NSPropertyListBinaryFormat_v1_0;
+    [self compareObject:serializer ofType:@"AFPropertyListRequestSerializer *" toSummary:@"format=Binary"];
+    
+    serializer.writeOptions = NSPropertyListMutableContainers;
+    [self compareObject:serializer ofType:@"AFPropertyListRequestSerializer *" toSummary:@"format=Binary, writeOptions=MutableContainers"];
+    
+    serializer.timeoutInterval = 423;
+    [self compareObject:serializer ofType:@"AFPropertyListRequestSerializer *" toSummary:@"format=Binary, writeOptions=MutableContainers, timeout=423"];
+}
+
 @end
