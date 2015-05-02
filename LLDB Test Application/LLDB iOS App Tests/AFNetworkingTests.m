@@ -249,4 +249,14 @@
     [self compareObject:serializer ofType:@"AFXMLParserResponseSerializer *" toSummary:@"stringEncoding=UTF32"];
 }
 
+#pragma mark - AFXMLDocumentResponseSerializer
+#ifdef __MAC_OS_X_VERSION_MIN_REQUIRED
+- (void)testAFXMLDocumentResponseSerializer01
+{
+    AFXMLDocumentResponseSerializer *serializer = [AFXMLDocumentResponseSerializer serializer];
+    serializer.stringEncoding = NSUTF32StringEncoding;
+    [self compareObject:serializer ofType:@"AFXMLDocumentResponseSerializer *" toSummary:@"stringEncoding=UTF32"];
+}
+#endif
+
 @end
