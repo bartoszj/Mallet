@@ -225,4 +225,20 @@
     [self compareObject:serializer ofType:@"AFJSONResponseSerializer *" toSummary:@"readingOptions=AllowFragments, removesKeysWithNullValues, stringEncoding=UTF32"];
 }
 
+#pragma mark - AFPropertyListResponseSerializer
+- (void)testAFPropertyListResponseSerializer01
+{
+    AFPropertyListResponseSerializer *serializer = [AFPropertyListResponseSerializer serializer];
+    [self compareObject:serializer ofType:@"AFPropertyListResponseSerializer *" toSummary:@"format=XML"];
+    
+    serializer.format = NSPropertyListBinaryFormat_v1_0;
+    [self compareObject:serializer ofType:@"AFPropertyListResponseSerializer *" toSummary:@"format=Binary"];
+    
+    serializer.readOptions = NSPropertyListMutableContainersAndLeaves;
+    [self compareObject:serializer ofType:@"AFPropertyListResponseSerializer *" toSummary:@"format=Binary, readOptions=MutableContainersAndLeaves"];
+    
+    serializer.stringEncoding = NSASCIIStringEncoding;
+    [self compareObject:serializer ofType:@"AFPropertyListResponseSerializer *" toSummary:@"format=Binary, readOptions=MutableContainersAndLeaves, stringEncoding=ASCII"];
+}
+
 @end
