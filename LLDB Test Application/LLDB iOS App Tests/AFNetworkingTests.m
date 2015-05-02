@@ -46,7 +46,7 @@
     [urlOperation start];
     [self compareObject:urlOperation ofType:@"AFURLConnectionOperation *" toSummary:@"Executing, request={http://www.google.com}"];
     
-    [self waitForExpectationsWithTimeout:2 handler:nil];
+    [self waitForExpectationsWithTimeout:5 handler:nil];
 }
 
 - (void)testAFURLConnectionOperation02
@@ -65,7 +65,7 @@
     [urlOperation start];
     [self compareObject:urlOperation ofType:@"AFURLConnectionOperation *" toSummary:@"Executing, request={http://www.google.con}"];
     
-    [self waitForExpectationsWithTimeout:2 handler:nil];
+    [self waitForExpectationsWithTimeout:5 handler:nil];
 }
 
 #pragma mark - AFHTTPRequestOperation
@@ -87,7 +87,7 @@
     [httpOperation start];
     [self compareObject:httpOperation ofType:@"AFHTTPRequestOperation *" toSummary:@"Executing, request={http://www.google.com}"];
     
-    [self waitForExpectationsWithTimeout:2 handler:nil];
+    [self waitForExpectationsWithTimeout:5 handler:nil];
 }
 
 - (void)testAFHTTPRequestOperation02
@@ -107,7 +107,7 @@
     [httpOperation start];
     [self compareObject:httpOperation ofType:@"AFHTTPRequestOperation *" toSummary:@"Executing, request={http://www.google.con}"];
     
-    [self waitForExpectationsWithTimeout:2 handler:nil];
+    [self waitForExpectationsWithTimeout:5 handler:nil];
 }
 
 #pragma mark - AFHTTPRequestOperationManager
@@ -127,7 +127,7 @@
     } failure:nil];
     
     [self compareObject:manager ofType:@"AFHTTPRequestOperationManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, operations=1, executing=1"];
-    [self waitForExpectationsWithTimeout:2 handler:nil];
+    [self waitForExpectationsWithTimeout:5 handler:nil];
 }
 
 - (void)testAFHTTPRequestOperationManager02
@@ -145,7 +145,7 @@
     }];
     
     [self compareObject:manager ofType:@"AFHTTPRequestOperationManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, operations=1, executing=1"];
-    [self waitForExpectationsWithTimeout:2 handler:nil];
+    [self waitForExpectationsWithTimeout:5 handler:nil];
 }
 
 #pragma mark - AFHTTPRequestSerializer
@@ -273,6 +273,22 @@
     
     serializer.stringEncoding = NSUTF32StringEncoding;
     [self compareObject:serializer ofType:@"AFImageResponseSerializer *" toSummary:@"imageScale=3, manuallyInflatesResponseImage, stringEncoding=UTF32"];
+}
+
+#pragma mark - AFCompoundResponseSerializer
+- (void)testAFCompoundResponseSerializer01
+{
+    AFCompoundResponseSerializer *serializer = [AFCompoundResponseSerializer serializer];
+    [self compareObject:serializer ofType:@"AFCompoundResponseSerializer *" toSummary:@"serializers=1"];
+}
+
+- (void)testAFCompoundResponseSerializer02
+{
+    AFJSONResponseSerializer *json = [AFJSONResponseSerializer serializer];
+    AFXMLParserResponseSerializer *xml = [AFXMLParserResponseSerializer serializer];
+    
+    AFCompoundResponseSerializer *serializer = [AFCompoundResponseSerializer compoundSerializerWithResponseSerializers:@[json, xml]];
+    [self compareObject:serializer ofType:@"AFCompoundResponseSerializer *" toSummary:@"serializers=2"];
 }
 
 @end

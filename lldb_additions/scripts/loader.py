@@ -125,6 +125,7 @@ lldb_summaries_load_order = ["SummaryBase",
                              "AFXMLParserResponseSerializer",
                              "AFXMLDocumentResponseSerializer",
                              "AFImageResponseSerializer",
+                             "AFCompoundResponseSerializer",
                              ]
 
 
