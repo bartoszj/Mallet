@@ -127,6 +127,7 @@ lldb_summaries_load_order = ["SummaryBase",
                              "AFImageResponseSerializer",
                              "AFCompoundResponseSerializer",
                              "AFSecurityPolicy",
+                             "AFNetworkActivityIndicatorManager",
                              ]
 
 

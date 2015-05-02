@@ -279,7 +279,7 @@
 - (void)testAFCompoundResponseSerializer01
 {
     AFCompoundResponseSerializer *serializer = [AFCompoundResponseSerializer serializer];
-    [self compareObject:serializer ofType:@"AFCompoundResponseSerializer *" toSummary:@"serializers=1"];
+    [self compareObject:serializer ofType:@"AFCompoundResponseSerializer *" toSummary:@"serializers=0"];
 }
 
 - (void)testAFCompoundResponseSerializer02
@@ -320,6 +320,19 @@
 {
     AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModePublicKey];
     [self compareObject:policy ofType:@"AFSecurityPolicy *" toSummary:@"sslPinningMode=PublicKey"];
+}
+
+#pragma mark - AFNetworkActivityIndicatorManager
+- (void)testAFNetworkActivityIndicatorManager01
+{
+    AFNetworkActivityIndicatorManager *manager = [AFNetworkActivityIndicatorManager sharedManager];
+    [self compareObject:manager ofType:@"AFNetworkActivityIndicatorManager *" toSummary:@"disabled"];
+    
+    manager.enabled = YES;
+    [manager incrementActivityCount];
+    [self compareObject:manager ofType:@"AFNetworkActivityIndicatorManager *" toSummary:@"activityCount=1"];
+    
+    manager.enabled = NO;
 }
 
 @end
