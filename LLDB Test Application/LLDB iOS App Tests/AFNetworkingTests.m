@@ -203,4 +203,12 @@
     [self compareObject:serializer ofType:@"AFPropertyListRequestSerializer *" toSummary:@"format=Binary, writeOptions=MutableContainers, timeout=423"];
 }
 
+#pragma mark - AFHTTPResponseSerializer
+- (void)testAFHTTPResponseSerializer01
+{
+    AFHTTPResponseSerializer *serializer = [AFHTTPResponseSerializer serializer];
+    serializer.stringEncoding = NSUTF32StringEncoding;
+    [self compareObject:serializer ofType:@"AFHTTPResponseSerializer *" toSummary:@"stringEncoding=UTF32"];
+}
+
 @end
