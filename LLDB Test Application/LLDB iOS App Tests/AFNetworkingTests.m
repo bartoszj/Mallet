@@ -259,4 +259,20 @@
 }
 #endif
 
+#pragma mark - AFImageResponseSerializer
+- (void)testAFImageResponseSerializer01
+{
+    AFImageResponseSerializer *serializer = [AFImageResponseSerializer serializer];
+    [self compareObject:serializer ofType:@"AFImageResponseSerializer *" toSummary:@"imageScale=2"];
+    
+    serializer.imageScale = 3;
+    [self compareObject:serializer ofType:@"AFImageResponseSerializer *" toSummary:@"imageScale=3"];
+    
+    serializer.automaticallyInflatesResponseImage = NO;
+    [self compareObject:serializer ofType:@"AFImageResponseSerializer *" toSummary:@"imageScale=3, manuallyInflatesResponseImage"];
+    
+    serializer.stringEncoding = NSUTF32StringEncoding;
+    [self compareObject:serializer ofType:@"AFImageResponseSerializer *" toSummary:@"imageScale=3, manuallyInflatesResponseImage, stringEncoding=UTF32"];
+}
+
 @end
