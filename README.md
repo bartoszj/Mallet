@@ -25,6 +25,7 @@ The summaries will be available the next time Xcode starts.
     - AFHTTPResponseSerializer
     - AFJSONResponseSerializer
     - AFPropertyListResponseSerializer
+    - AFXMLParserResponseSerializer
 - CoreGraphics:
     - CGAffineTransform
     - CGImage

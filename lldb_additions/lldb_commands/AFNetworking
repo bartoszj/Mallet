@@ -7,6 +7,7 @@ type summary add -F lldb_additions.summaries.AFNetworking.AFPropertyListRequestS
 type summary add -F lldb_additions.summaries.AFNetworking.AFHTTPResponseSerializer.summary_provider         --category AFNetworking AFHTTPResponseSerializer
 type summary add -F lldb_additions.summaries.AFNetworking.AFJSONResponseSerializer.summary_provider         --category AFNetworking AFJSONResponseSerializer
 type summary add -F lldb_additions.summaries.AFNetworking.AFPropertyListResponseSerializer.summary_provider --category AFNetworking AFPropertyListResponseSerializer
+type summary add -F lldb_additions.summaries.AFNetworking.AFXMLParserResponseSerializer.summary_provider    --category AFNetworking AFXMLParserResponseSerializer
 
 #type synthetic add -l lldb_additions.summaries.AFNetworking.AFHTTPRequestSerializer.AFHTTPRequestSerializerSyntheticProvider                 --category AFNetworking AFHTTPRequestSerializer
 #type synthetic add -l lldb_additions.summaries.AFNetworking.AFJSONRequestSerializer.AFJSONRequestSerializerSyntheticProvider                 --category AFNetworking AFJSONRequestSerializer

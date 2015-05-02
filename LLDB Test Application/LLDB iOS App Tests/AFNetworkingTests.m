@@ -241,4 +241,12 @@
     [self compareObject:serializer ofType:@"AFPropertyListResponseSerializer *" toSummary:@"format=Binary, readOptions=MutableContainersAndLeaves, stringEncoding=ASCII"];
 }
 
+#pragma mark - AFXMLParserResponseSerializer
+- (void)testAFXMLParserResponseSerializer01
+{
+    AFXMLParserResponseSerializer *serializer = [AFXMLParserResponseSerializer serializer];
+    serializer.stringEncoding = NSUTF32StringEncoding;
+    [self compareObject:serializer ofType:@"AFXMLParserResponseSerializer *" toSummary:@"stringEncoding=UTF32"];
+}
+
 @end
