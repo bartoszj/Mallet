@@ -30,7 +30,8 @@ The summaries will be available the next time Xcode starts.
     - AFImageResponseSerializer
     - AFCompoundResponseSerializer
     - AFSecurityPolicy
-    - AFNetworkActivityIndicatorManager 
+    - AFNetworkActivityIndicatorManager
+    - AFNetworkReachabilityManager
 - CoreGraphics:
     - CGAffineTransform
     - CGImage

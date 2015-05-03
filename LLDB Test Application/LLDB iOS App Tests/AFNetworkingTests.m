@@ -335,4 +335,22 @@
     manager.enabled = NO;
 }
 
+#pragma mark - AFNetworkReachabilityManager
+- (void)testAFNetworkReachabilityManager01
+{
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    [self compareObject:manager ofType:@"AFNetworkReachabilityManager *" toSummary:@"status=Unknown"];
+    [manager startMonitoring];
+    
+    XCTestExpectation *exceptation = [self expectationWithDescription:@"Status"];
+    __weak typeof(manager) weakManager = manager;
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        [self compareObject:weakManager ofType:@"AFNetworkReachabilityManager *" toSummary:@"status=ReachableViaWiFi"];
+        [exceptation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:10 handler:nil];
+    [self compareObject:manager ofType:@"AFNetworkReachabilityManager *" toSummary:@"status=ReachableViaWiFi"];
+}
+
 @end
