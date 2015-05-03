@@ -234,7 +234,7 @@
     [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:summary];
     [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:summary];
     
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
 - (void)testNSURLSessionTask02
@@ -259,7 +259,7 @@
     [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:summary];
     [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:summary];
     
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
 - (void)testNSURLSessionTask03
@@ -275,7 +275,7 @@
     }];
     [downloadTask resume];
     
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
 - (void)testNSURLSessionTask04
@@ -296,7 +296,7 @@
     [uploadTask resume];
     summary = [NSString stringWithFormat:@"state=Running, tid=%lu, request={https://google.com}", (unsigned long)uploadTask.taskIdentifier];
     [self compareObject:uploadTask ofType:@"NSURLSessionUploadTask *" toSummary:summary];
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
 - (void)testNSURLSessionTask05
@@ -313,7 +313,7 @@
     summary = [NSString stringWithFormat:@"state=Running, tid=%lu, request={https://google.com}", (unsigned long)downloadTask.taskIdentifier];
     [self compareObject:downloadTask ofType:@"NSURLSessionDownloadTask *" toSummary:summary];
     
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location

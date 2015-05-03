@@ -20,6 +20,7 @@ The summaries will be available the next time Xcode starts.
     - AFHTTPRequestOperation
     - AFHTTPRequestOperationManager
     - AFURLSessionManager
+    - AFHTTPSessionManager
     - AFHTTPRequestSerializer
     - AFJSONRequestSerializer
     - AFPropertyListRequestSerializer

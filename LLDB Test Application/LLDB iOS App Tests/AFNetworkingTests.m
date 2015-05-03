@@ -46,7 +46,7 @@
     [urlOperation start];
     [self compareObject:urlOperation ofType:@"AFURLConnectionOperation *" toSummary:@"Executing, request={http://www.google.com}"];
     
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
 - (void)testAFURLConnectionOperation02
@@ -65,7 +65,7 @@
     [urlOperation start];
     [self compareObject:urlOperation ofType:@"AFURLConnectionOperation *" toSummary:@"Executing, request={http://www.google.con}"];
     
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
 #pragma mark - AFHTTPRequestOperation
@@ -87,7 +87,7 @@
     [httpOperation start];
     [self compareObject:httpOperation ofType:@"AFHTTPRequestOperation *" toSummary:@"Executing, request={http://www.google.com}"];
     
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
 - (void)testAFHTTPRequestOperation02
@@ -107,7 +107,7 @@
     [httpOperation start];
     [self compareObject:httpOperation ofType:@"AFHTTPRequestOperation *" toSummary:@"Executing, request={http://www.google.con}"];
     
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
 #pragma mark - AFHTTPRequestOperationManager
@@ -127,7 +127,7 @@
     } failure:nil];
     
     [self compareObject:manager ofType:@"AFHTTPRequestOperationManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, operations=1, executing=1"];
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
 - (void)testAFHTTPRequestOperationManager02
@@ -145,16 +145,29 @@
     }];
     
     [self compareObject:manager ofType:@"AFHTTPRequestOperationManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, operations=1, executing=1"];
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
 }
 
 #pragma mark - AFURLSessionManager
 - (void)testAFURLSessionManager01
 {
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *sessionManager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    sessionManager.session.sessionDescription = @"Session Description";
-    [self compareObject:sessionManager ofType:@"AFURLSessionManager *" toSummary:@"@\"Session Description\""];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    manager.session.sessionDescription = @"Session Description";
+    [self compareObject:manager ofType:@"AFURLSessionManager *" toSummary:@"@\"Session Description\""];
+}
+
+#pragma mark - AFHTTPSessionManager
+- (void)testAFHTTPSessionManager01
+{
+    NSURL *url = [NSURL URLWithString:@"http://api.openweathermap.org/data/2.5/"];
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:url sessionConfiguration:configuration];
+    
+    [self compareObject:manager ofType:@"AFHTTPSessionManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/"];
+    
+    manager.session.sessionDescription = @"Session Description";
+    [self compareObject:manager ofType:@"AFHTTPSessionManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, @\"Session Description\""];
 }
 
 #pragma mark - AFHTTPRequestSerializer

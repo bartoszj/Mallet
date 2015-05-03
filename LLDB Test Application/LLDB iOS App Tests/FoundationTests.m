@@ -387,7 +387,7 @@
     [operation cancel];
     [self compareObject:operation ofType:@"NSOperation *" toSummary:@"cancelled, priority=Low, qos=Background, name=\"Operation name\""];
     
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
     [self compareObject:operation ofType:@"NSOperation *" toSummary:@"cancelled, priority=Low, qos=Background, name=\"Operation name\""];
 }
 

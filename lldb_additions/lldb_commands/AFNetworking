@@ -2,6 +2,7 @@ type summary add -F lldb_additions.summaries.AFNetworking.AFURLConnectionOperati
 type summary add -F lldb_additions.summaries.AFNetworking.AFHTTPRequestOperation.summary_provider            --category AFNetworking AFHTTPRequestOperation
 type summary add -F lldb_additions.summaries.AFNetworking.AFHTTPRequestOperationManager.summary_provider     --category AFNetworking AFHTTPRequestOperationManager
 type summary add -F lldb_additions.summaries.AFNetworking.AFURLSessionManager.summary_provider               --category AFNetworking AFURLSessionManager
+type summary add -F lldb_additions.summaries.AFNetworking.AFHTTPSessionManager.summary_provider              --category AFNetworking AFHTTPSessionManager
 type summary add -F lldb_additions.summaries.AFNetworking.AFHTTPRequestSerializer.summary_provider           --category AFNetworking AFHTTPRequestSerializer
 type summary add -F lldb_additions.summaries.AFNetworking.AFJSONRequestSerializer.summary_provider           --category AFNetworking AFJSONRequestSerializer
 type summary add -F lldb_additions.summaries.AFNetworking.AFPropertyListRequestSerializer.summary_provider   --category AFNetworking AFPropertyListRequestSerializer
