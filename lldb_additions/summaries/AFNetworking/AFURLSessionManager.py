@@ -25,58 +25,42 @@
 from ...scripts import helpers
 from ..Foundation import NSObject
 from ..Foundation import NSOperationQueue
+from ..CFNetwork import NSURLSession
 from .. import SummaryBase
-import AFHTTPRequestSerializer
-import AFHTTPResponseSerializer
 import AFSecurityPolicy
 import AFNetworkReachabilityManager
 
 
-class AFHTTPRequestOperationManagerSyntheticProvider(NSObject.NSObjectSyntheticProvider):
+class AFURLSessionManagerSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
-    Class representing AFHTTPRequestOperationManager.
+    Class representing AFURLSessionManager.
     """
     def __init__(self, value_obj, internal_dict):
-        super(AFHTTPRequestOperationManagerSyntheticProvider, self).__init__(value_obj, internal_dict)
+        super(AFURLSessionManagerSyntheticProvider, self).__init__(value_obj, internal_dict)
 
-        self.register_child_value("base_url", ivar_name="_baseURL",
-                                  primitive_value_function=SummaryBase.get_stripped_summary_value,
-                                  summary_function=self.get_base_url_summary)
-        self.register_child_value("request_serializer", ivar_name="_requestSerializer",
-                                  provider_class=AFHTTPRequestSerializer.AFHTTPRequestSerializerSyntheticProvider,
-                                  summary_function=self.get_request_serializer_summary)
-        self.register_child_value("response_serializer", ivar_name="_responseSerializer",
-                                  provider_class=AFHTTPResponseSerializer.AFHTTPResponseSerializerSyntheticProvider,
-                                  summary_function=self.get_response_serializer_summary)
+        self.register_child_value("session", ivar_name="_session",
+                                  provider_class=NSURLSession.NSURLSessionSyntheticProvider,
+                                  summary_function=self.get_session_summary)
         self.register_child_value("operation_queue", ivar_name="_operationQueue",
                                   provider_class=NSOperationQueue.NSOperationQueueSyntheticProvider,
                                   summary_function=self.get_operation_queue_summary)
-        self.register_child_value("should_use_credential_storage", ivar_name="_shouldUseCredentialStorage",
-                                  primitive_value_function=SummaryBase.get_bool_value,
-                                  summary_function=self.get_should_use_credential_storage_summary)
-        self.register_child_value("credential", ivar_name="_credential")
+        self.register_child_value("response_serializer", ivar_name="_responseSerializer",
+                                  provider_class=AFSecurityPolicy.AFSecurityPolicySyntheticProvider,
+                                  summary_function=self.get_response_serializer_summary)
         self.register_child_value("security_policy", ivar_name="_securityPolicy",
                                   provider_class=AFSecurityPolicy.AFSecurityPolicySyntheticProvider,
                                   summary_function=self.get_security_policy_summary)
         self.register_child_value("reachability_manager", ivar_name="_reachabilityManager",
                                   provider_class=AFNetworkReachabilityManager.AFNetworkReachabilityManagerSyntheticProvider,
                                   summary_function=self.get_reachability_manager_summary)
+        self.register_child_value("attempts_to_recreate_upload_tasks_for_background_sessions", ivar_name="_attemptsToRecreateUploadTasksForBackgroundSessions",
+                                  primitive_value_function=SummaryBase.get_bool_value,
+                                  summary_function=self.get_attempts_to_recreate_upload_tasks_for_background_sessions_summary)
 
     @staticmethod
-    def get_base_url_summary(value):
-        return "baseURL={}".format(value)
-
-    @staticmethod
-    def get_request_serializer_summary(provider):
+    def get_session_summary(provider):
         """
-        :param AFHTTPRequestSerializer.AFHTTPRequestSerializerSyntheticProvider provider: AFHTTPRequestSerializer provider.
-        """
-        return provider.summary()
-
-    @staticmethod
-    def get_response_serializer_summary(provider):
-        """
-        :param AFHTTPResponseSerializer.AFHTTPResponseSerializerSyntheticProvider provider: AFHTTPResponseSerializer provider.
+        :param NSURLSession.NSURLSessionSyntheticProvider provider: NSURLSession provider.
         """
         return provider.summary()
 
@@ -97,8 +81,11 @@ class AFHTTPRequestOperationManagerSyntheticProvider(NSObject.NSObjectSyntheticP
         return summary
 
     @staticmethod
-    def get_should_use_credential_storage_summary(value):
-        return "shouldUseCredentialStorage={}".format(value)
+    def get_response_serializer_summary(provider):
+        """
+        :param AFSecurityPolicy.AFSecurityPolicySyntheticProvider provider: AFSecurityPolicy provider.
+        """
+        return provider.summary()
 
     @staticmethod
     def get_security_policy_summary(provider):
@@ -114,9 +101,15 @@ class AFHTTPRequestOperationManagerSyntheticProvider(NSObject.NSObjectSyntheticP
         """
         return provider.summary()
 
+    @staticmethod
+    def get_attempts_to_recreate_upload_tasks_for_background_sessions_summary(value):
+        if value:
+            return "attemptsToRecreateUploadTasksForBackgroundSessions"
+        return None
+
     def summaries_parts(self):
-        return [self.base_url_summary, self.operation_queue_summary]
+        return [self.session_summary]
 
 
 def summary_provider(value_obj, internal_dict):
-    return helpers.generic_summary_provider(value_obj, internal_dict, AFHTTPRequestOperationManagerSyntheticProvider)
+    return helpers.generic_summary_provider(value_obj, internal_dict, AFURLSessionManagerSyntheticProvider)

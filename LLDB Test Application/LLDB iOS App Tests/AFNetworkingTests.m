@@ -148,6 +148,15 @@
     [self waitForExpectationsWithTimeout:5 handler:nil];
 }
 
+#pragma mark - AFURLSessionManager
+- (void)testAFURLSessionManager01
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *sessionManager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    sessionManager.session.sessionDescription = @"Session Description";
+    [self compareObject:sessionManager ofType:@"AFURLSessionManager *" toSummary:@"@\"Session Description\""];
+}
+
 #pragma mark - AFHTTPRequestSerializer
 - (void)testAFHTTPRequestSerializer01
 {
