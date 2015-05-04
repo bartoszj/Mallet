@@ -142,11 +142,11 @@ class NSURLSessionTaskSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     @staticmethod
     def get_state_summary(value):
         state = get_session_task_state_text(value)
-        return "state={}".format(state)
+        return "{}".format(state)
 
     def summaries_parts(self):
         return [self.state_summary,
-                self.task_identifier_summary,
+                # self.task_identifier_summary,
                 self.count_of_bytes_received_summary,
                 self.count_of_bytes_expected_to_receive_summary,
                 self.count_of_bytes_sent_summary,

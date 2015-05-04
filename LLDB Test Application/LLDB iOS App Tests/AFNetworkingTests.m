@@ -154,7 +154,20 @@
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     manager.session.sessionDescription = @"Session Description";
-    [self compareObject:manager ofType:@"AFURLSessionManager *" toSummary:@"@\"Session Description\""];
+    [self compareObject:manager ofType:@"AFURLSessionManager *" toSummary:@"@\"Session Description\", tasks=0"];
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.google.com"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    XCTestExpectation *exceptation = [self expectationWithDescription:@"Request"];
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        [self compareObject:manager ofType:@"AFURLSessionManager *" toSummary:@"@\"Session Description\", tasks=0"];
+        [exceptation fulfill];
+    }];
+    [self compareObject:manager ofType:@"AFURLSessionManager *" toSummary:@"@\"Session Description\", tasks=1"];
+    
+    [dataTask resume];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
+    [self compareObject:manager ofType:@"AFURLSessionManager *" toSummary:@"@\"Session Description\", tasks=0"];
 }
 
 #pragma mark - AFHTTPSessionManager
@@ -164,10 +177,20 @@
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:url sessionConfiguration:configuration];
     
-    [self compareObject:manager ofType:@"AFHTTPSessionManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/"];
+    [self compareObject:manager ofType:@"AFHTTPSessionManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, tasks=0"];
     
     manager.session.sessionDescription = @"Session Description";
-    [self compareObject:manager ofType:@"AFHTTPSessionManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, @\"Session Description\""];
+    [self compareObject:manager ofType:@"AFHTTPSessionManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, @\"Session Description\", tasks=0"];
+    
+    XCTestExpectation *exceptation = [self expectationWithDescription:@"Request"];
+    [manager GET:@"" parameters:nil success:nil failure:^(NSURLSessionDataTask *task, NSError *error) {
+        [self compareObject:manager ofType:@"AFHTTPSessionManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, @\"Session Description\", tasks=0"];
+        [exceptation fulfill];
+    }];
+    
+    [self compareObject:manager ofType:@"AFHTTPSessionManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, @\"Session Description\", tasks=1"];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
+    [self compareObject:manager ofType:@"AFHTTPSessionManager *" toSummary:@"baseURL=http://api.openweathermap.org/data/2.5/, @\"Session Description\", tasks=0"];
 }
 
 #pragma mark - AFHTTPRequestSerializer

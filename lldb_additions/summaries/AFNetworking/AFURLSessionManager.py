@@ -44,6 +44,9 @@ class AFURLSessionManagerSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         self.register_child_value("operation_queue", ivar_name="_operationQueue",
                                   provider_class=NSOperationQueue.NSOperationQueueSyntheticProvider,
                                   summary_function=self.get_operation_queue_summary)
+        self.register_child_value("mutable_task_delegates_keyed_by_task_identifier", ivar_name="_mutableTaskDelegatesKeyedByTaskIdentifier",
+                                  primitive_value_function=SummaryBase.get_count_value,
+                                  summary_function=self.get_mutable_task_delegates_keyed_by_task_identifier_summary)
         self.register_child_value("response_serializer", ivar_name="_responseSerializer",
                                   provider_class=AFSecurityPolicy.AFSecurityPolicySyntheticProvider,
                                   summary_function=self.get_response_serializer_summary)
@@ -81,6 +84,10 @@ class AFURLSessionManagerSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         return summary
 
     @staticmethod
+    def get_mutable_task_delegates_keyed_by_task_identifier_summary(value):
+        return "tasks={}".format(value)
+
+    @staticmethod
     def get_response_serializer_summary(provider):
         """
         :param AFSecurityPolicy.AFSecurityPolicySyntheticProvider provider: AFSecurityPolicy provider.
@@ -108,7 +115,7 @@ class AFURLSessionManagerSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         return None
 
     def summaries_parts(self):
-        return [self.session_summary]
+        return [self.session_summary, self.mutable_task_delegates_keyed_by_task_identifier_summary]
 
 
 def summary_provider(value_obj, internal_dict):
