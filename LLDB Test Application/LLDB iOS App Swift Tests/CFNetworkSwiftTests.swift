@@ -215,7 +215,7 @@ class CFNetworkSwiftTests: SharedSwiftTestCase, NSURLConnectionDataDelegate, NSU
         let exceptation = self.expectationWithDescription("task")
         var dataTask: NSURLSessionDataTask! = nil
         dataTask = session.dataTaskWithRequest(mutableRequest, completionHandler: { (data, response, error) -> Void in
-            let summary = "Completed, received=\(data.length), toReceive=\(data.length), sent=12, toSend=12, request={GET, https://google.com, body=12 bytes}, response={\(response.URL!.absoluteString!)}"
+            let summary = "Completed, received=\(data.length)/\(data.length), sent=12/12, request={GET, https://google.com, body=12 bytes}, response={\(response.URL!.absoluteString!)}"
             self.compareObject(dataTask, type: "NSURLSessionTask", summary: summary)
             self.compareObject(dataTask, type: "NSURLSessionDataTask", summary: summary)
             exceptation.fulfill()
@@ -253,7 +253,7 @@ class CFNetworkSwiftTests: SharedSwiftTestCase, NSURLConnectionDataDelegate, NSU
         let data = ("HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData" as NSString).dataUsingEncoding(NSUTF8StringEncoding)
         var uploadTask: NSURLSessionUploadTask! = nil
         uploadTask = session.uploadTaskWithRequest(request, fromData: data, completionHandler: { (data, response, error) -> Void in
-            let summary = "Completed, received=\(data.length), toReceive=\(data.length), sent=98, toSend=98, request={https://google.com}, response={\(response.URL!.absoluteString!)}"
+            let summary = "Completed, received=\(data.length)/\(data.length), sent=98/98, request={https://google.com}, response={\(response.URL!.absoluteString!)}"
             self.compareObject(uploadTask, type: "NSURLSessionUploadTask", summary: summary)
             exceptation.fulfill()
         })

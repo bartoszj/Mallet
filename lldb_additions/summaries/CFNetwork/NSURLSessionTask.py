@@ -144,16 +144,55 @@ class NSURLSessionTaskSyntheticProvider(NSObject.NSObjectSyntheticProvider):
         state = get_session_task_state_text(value)
         return "{}".format(state)
 
+    def get_received_summary(self):
+        """
+        Returns short receive summary.
+
+        :return: short receive summary.
+        :rtype: str | None
+        """
+        received = self.count_of_bytes_received_value if self.count_of_bytes_received_value is not None else 0
+        to_receive = self.count_of_bytes_expected_to_receive_value if self.count_of_bytes_expected_to_receive_value is not None else 0
+        valid_received = False if (received == 0 or received == -1) else True
+        valid_to_receive = False if (to_receive == 0 or to_receive == -1) else True
+
+        if valid_received and valid_to_receive:
+            return "received={}/{}".format(received, to_receive)
+        elif valid_received:
+            return "received={}".format(received)
+        elif valid_to_receive:
+            return "toReceive={}".format(to_receive)
+        return None
+
+    def get_sent_summary(self):
+        """
+        Returns short send summary.
+
+        :return: short send summary.
+        :rtype: str | None
+        """
+        sent = self.count_of_bytes_sent_value if self.count_of_bytes_sent_value is not None else 0
+        to_send = self.count_of_bytes_expected_to_send_value if self.count_of_bytes_expected_to_send_value is not None else 0
+        valid_sent = False if (sent == 0 or self == -1) else True
+        valid_to_send = False if (to_send == 0 or to_send == -1) else True
+
+        if valid_sent and valid_to_send:
+            return "sent={}/{}".format(sent, to_send)
+        elif valid_sent:
+            return "sent={}".format(sent)
+        elif valid_to_send:
+            return "toSend={}".format(to_send)
+        return None
+
     def summaries_parts(self):
         return [self.state_summary,
                 # self.task_identifier_summary,
-                self.count_of_bytes_received_summary,
-                self.count_of_bytes_expected_to_receive_summary,
-                self.count_of_bytes_sent_summary,
-                self.count_of_bytes_expected_to_send_summary,
+                self.get_received_summary(),
+                self.get_sent_summary(),
                 self.original_request_summary,
                 self.response_summary,
-                self.task_description_summary]
+                # self.task_description_summary
+                ]
 
 
 def get_session_task_state_text(value):

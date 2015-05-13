@@ -246,7 +246,7 @@
     XCTestExpectation *exceptation = [self expectationWithDescription:@"task"];
     __block NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:mutableRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
-        NSString *summary = [NSString stringWithFormat:@"Completed, received=%lu, toReceive=%lu, sent=12, toSend=12, request={GET, https://google.com, body=12 bytes}, response={%@}", (unsigned long)data.length, (unsigned long)data.length, response.URL.absoluteString];
+        NSString *summary = [NSString stringWithFormat:@"Completed, received=%lu/%lu, sent=12/12, request={GET, https://google.com, body=12 bytes}, response={%@}", (unsigned long)data.length, (unsigned long)data.length, response.URL.absoluteString];
         [self compareObject:dataTask ofType:@"NSURLSessionTask *" toSummary:summary];
         [self compareObject:dataTask ofType:@"NSURLSessionDataTask *" toSummary:summary];
         [exceptation fulfill];
@@ -287,7 +287,7 @@
     
     NSData *data = [@"HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData, HttpData" dataUsingEncoding:NSUTF8StringEncoding];
     __block NSURLSessionUploadTask *uploadTask = [session uploadTaskWithRequest:request fromData:data completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSString *summary = [NSString stringWithFormat:@"Completed, received=%lu, toReceive=%lu, sent=98, toSend=98, request={https://google.com}, response={%@}", (unsigned long)data.length, (unsigned long)data.length, response.URL.absoluteString];
+        NSString *summary = [NSString stringWithFormat:@"Completed, received=%lu/%lu, sent=98/98, request={https://google.com}, response={%@}", (unsigned long)data.length, (unsigned long)data.length, response.URL.absoluteString];
         [self compareObject:uploadTask ofType:@"NSURLSessionUploadTask *" toSummary:summary];
         [exceptation fulfill];
     }];
