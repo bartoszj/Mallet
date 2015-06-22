@@ -49,8 +49,6 @@ class AFNetworkActivityIndicatorManagerSyntheticProvider(NSObject.NSObjectSynthe
 
     @staticmethod
     def get_activity_count_summary(value):
-        if value == 0:
-            return None
         return "activityCount={}".format(value)
 
     def summaries_parts(self):

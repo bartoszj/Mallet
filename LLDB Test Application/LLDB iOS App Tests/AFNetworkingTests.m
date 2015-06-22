@@ -371,7 +371,7 @@
 - (void)testAFNetworkActivityIndicatorManager01
 {
     AFNetworkActivityIndicatorManager *manager = [AFNetworkActivityIndicatorManager sharedManager];
-    [self compareObject:manager ofType:@"AFNetworkActivityIndicatorManager *" toSummary:@"disabled"];
+    [self compareObject:manager ofType:@"AFNetworkActivityIndicatorManager *" toSummary:@"disabled, activityCount=0"];
     
     manager.enabled = YES;
     [manager incrementActivityCount];
