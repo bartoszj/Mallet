@@ -31,17 +31,17 @@ def configure_loggers():
     Configure all well known loggers.
     """
 
-    logger_names = ["lldb_additions.scripts.class_dump",
-                    "lldb_additions.scripts.helpers",
-                    "lldb_additions.scripts.loader",
-                    "lldb_additions.scripts.logger",
-                    "lldb_additions.scripts.type_cache",
+    logger_names = ["lldb_additions.class_dump",
+                    "lldb_additions.helpers",
+                    "lldb_additions.type_cache",
+                    "lldb_additions.loader",
+                    "lldb_additions.logger",
                     "lldb_additions.summaries.SummaryBase",
                     ]
     for logger_name in logger_names:
         logger = logging.getLogger(logger_name)
-        configure_null_logger(logger)
-        # configure_logger(logger)
+        # configure_null_logger(logger)
+        configure_logger(logger)
 
 
 def configure_null_logger(logger):

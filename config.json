@@ -1,0 +1,13 @@
+{
+  "builtin": [
+    "AFNetworking",
+    "Foundation",
+    "CFNetwork",
+    "CoreGraphics",
+    "QuartzCore",
+    "StoreKit",
+    "UIKit"
+  ],
+  "custom": [
+  ]
+}

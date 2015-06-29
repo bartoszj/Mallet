@@ -32,9 +32,9 @@ def __lldb_init_module(debugger, internal_dict):
     """
 
     # Configure loggers.
-    import scripts.logger as logger
+    import logger
     logger.configure_loggers()
 
     # Load commands and summaries.
-    import scripts.loader
-    scripts.loader.load_all(debugger, internal_dict)
+    import loader
+    loader.load(debugger, internal_dict)

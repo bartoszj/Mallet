@@ -27,6 +27,7 @@ import os
 import logging
 import imp
 import logger
+import json
 
 logger.configure_loggers()
 
@@ -297,3 +298,106 @@ def load_all(debugger, internal_dict):
     load_lldb_commands_directory(os.path.join(lldb_additions_package_dir_path, lldb_additions_lldb_commands_dir), debugger, internal_dict)
 
     log.debug("Scripts loaded.")
+
+
+
+
+
+
+def get_default_configuration():
+    """
+    Loads default configuration and returns it.
+
+    :return: Default configuration.
+    :rtype: dict
+    """
+    log = logging.getLogger(__name__)
+
+    # Looks for default configuration.
+    file_path = os.path.realpath(__file__)
+    dir_path = os.path.dirname(file_path)
+    default_config_path = os.path.join(dir_path, "config.json")
+    if os.path.exists(default_config_path):
+        # Loads JSON configuration.
+        with open(default_config_path) as default_config_file:
+            default_config = json.load(default_config_file)
+
+        return default_config
+    else:
+        log.critical("Cannot find default config file {}.".format(default_config_path))
+        return dict()
+
+
+def get_user_configuration():
+    """
+    Loads user configuration and returns it.
+
+    :return: User configuration.
+    :rtype: dict
+    """
+    log = logging.getLogger(__name__)
+
+    # Looks for user JSON configuration file.
+    config_path = os.path.expanduser("~/.lldb/lldb_additions.json")
+    if os.path.exists(config_path):
+        # Loads JSON configuration.
+        with open(config_path) as config_file:
+            config = json.load(config_file)
+
+        return config
+    else:
+        # Missing JSON config.
+        log.info("Missing configuration {}.".format(config_path))
+        return dict()
+
+
+def load_configuration(configuration):
+    """
+    Loads user configuration from `configuration`. If parameters or configuration are missing
+    then loads default configuration.
+
+    :param configuration:
+    """
+    log = logging.getLogger(__name__)
+
+    # Get default configuration.
+    default_config = get_default_configuration()
+
+    # Load builtin modules.
+    builtin = None
+    if u"builtin" in configuration:
+        builtin = configuration[u"builtin"]
+
+    if builtin is None:
+        builtin = default_config[u"builtin"]
+
+    if builtin is not None:
+        for builtin_module_name in builtin:
+            print(builtin_module_name)
+
+    # Load user modules.
+    custom = None
+    if u"custom" in configuration:
+        custom = configuration[u"custom"]
+
+    if custom is not None:
+        for custom_module_name in custom:
+            print(custom_module_name)
+
+
+def load(debugger, internal_dict):
+    """
+    Looks for user configuration at "~/.lldb/lldb_additions.json" and loads it
+    using `load_configiration` method.
+
+    :param lldb.SBDebugger debugger: LLDB debugger.
+    :param internal_dict: Internal LLDB dictionary.
+    """
+    log = logging.getLogger(__name__)
+
+    # Get user configuration.
+    user_config = get_user_configuration()
+    # Load configuration.
+    load_configuration(user_config)
+
+    log.debug("Loaded.")

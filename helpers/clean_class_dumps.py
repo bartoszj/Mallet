@@ -24,8 +24,11 @@
 
 import os
 import sys
-sys.path.append("../")
-import lldb_additions.scripts.class_dump as class_dump
+import imp
+
+i = imp.find_module("lldb_additions", [".."])
+imp.load_module("lldb_additions", *i)
+import lldb_additions.class_dump as class_dump
 
 # Example offsets.json file:
 # {
