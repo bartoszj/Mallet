@@ -63,7 +63,7 @@ def clean_class_dumps():
 
     # Input / output folders.
     input_dir = os.path.join(current_dir, "ClassDumps")
-    output_dir = os.path.join(current_dir, "../lldb_additions/ClassDumps")
+    output_dir = os.path.join(current_dir, "../lldb_additions/summaries")
 
     cdm = class_dump.ClassDumpManager()
     cdm.read_directory_path(input_dir)

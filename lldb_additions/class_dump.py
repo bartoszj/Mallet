@@ -29,7 +29,7 @@ import logger
 
 
 logger.configure_loggers()
-class_dump_map_file_name = "class_dump_map.json"
+class_dumps_folder_name = "class_dumps"
 module_map_file_name = "module_map.json"
 
 
@@ -265,20 +265,9 @@ class ClassDumpManager(object):
             if not os.path.exists(folder_path):
                 os.makedirs(folder_path)
 
-        # Class dump map.
-        class_dump_map = dict()
-
         for module in self.modules:
-            module_path = os.path.join(folder_path, module.name)
+            module_path = os.path.join(folder_path, module.name, class_dumps_folder_name)
             module.save_to_folder(module_path)
-
-            # Module map info.
-            class_dump_map[module.name] = module.name
-
-        # Save class dump map.
-        class_dump_map_file_path = os.path.join(folder_path, class_dump_map_file_name)
-        with open(class_dump_map_file_path, "w") as f:
-            json.dump(class_dump_map, f, sort_keys=True, indent=2, separators=(",", ":"))
 
 
 class Module(object):

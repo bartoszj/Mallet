@@ -1,7 +1,0 @@
-{
-  "CFNetwork":"CFNetwork",
-  "Foundation":"Foundation",
-  "QuartzCore":"QuartzCore",
-  "StoreKit":"StoreKit",
-  "UIKit":"UIKit"
-}
