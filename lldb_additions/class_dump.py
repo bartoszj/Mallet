@@ -37,204 +37,107 @@ class LazyClassDumpManager(object):
     """
     Lazy loads class data into memory.
 
-    :param str dir_path: Path to directory where class dumps are stored.
-    :param list[Architecture] architectures: List of architectures.
-    :param dict[str, str] class_map: Maps class name to path to file.
+    :param dict[str, Module] modules: Maps module name to module.
     """
-    def __init__(self, dir_path):
-        """
-        :param str dir_path: Path to directory where class dumps are stored.
-        """
+    def __init__(self):
         super(LazyClassDumpManager, self).__init__()
         log = logging.getLogger(__name__)
         log.debug("LazyClassDumpManager: created.")
-        self.dir_path = dir_path        # Path from where classes are read.
-        self.architectures = list()     # List of architectures.
-        self.class_map = None           # Maps class name to path to file.
-        self._read_class_map()
+        self.modules = dict()
 
-    def _read_class_map(self):
+    def register_module(self, module_name, module_path):
         """
-        Reads class.map file into memory (self.class_map).
+        Adds module directory with `module_map.json` file.
+
+        :param str module_name: Module name.
+        :param str module_path: Path to module directory.
         """
         log = logging.getLogger(__name__)
-        log.debug("LazyClassDumpManager: reading class_map.")
-        class_map_file_path = os.path.join(self.dir_path, class_map_file_name)
-        if not os.path.exists(class_map_file_path):
-            log.error("LazyClassDumpManager: Cannot find class.map file.")
-            raise StandardError()
+        module_path = os.path.normpath(module_path)
+        # Check if directory exists.
+        if not os.path.exists(module_path):
+            log.error("LazyClassDumpManager: Cannot find module \"{}\" directory \"{}\".".format(module_name, module_path))
+            return
 
-        with open(class_map_file_path, "r") as class_map_file:
-            class_map = dict()
-            """:type: dict[str, str]"""
-            # Reads whole file and split it on new line.
-            class_map_file_str = class_map_file.read()
-            class_map_list = class_map_file_str.split("\n")
-            for class_data in class_map_list:
-                # Split each line.
-                class_data_parts = class_data.split(":")
-                class_name = class_data_parts[0]
-                class_file_path = class_data_parts[1]
-                # Saves data to class_map variable.
-                class_map[class_name] = class_file_path
-            self.class_map = class_map
+        # Loads module.
+        module = Module(module_name, module_path)
+        self.modules[module_name] = module
 
-    def read_file(self, f):
+    def get_module(self, name):
         """
-        Reads JSON data from file object.
+        Returns Module object with given name.
 
-        :param f: File to read.
-        :return: Dictionary representing JSON data.
-        :rtype: dict[str, dict]
+        :param str name: Module name.
+        :return: Module object with given name.
+        :rtype: Module | None
         """
-        j = json.load(f)
-        return j
-
-    def read_file_path(self, file_path):
-        """
-        Reads JSON data from file at given file path.
-
-        :param file_path:
-        :return: Dictionary representing JSON data.
-        :rtype: dict[str, dict]
-        """
-        with open(file_path, "r") as f:
-            return self.read_file(f)
-
-    def get_architecture(self, name):
-        """
-        Returns Architecture object with given name.
-
-        :param str name: Architecture name.
-        :return: Architecture object with given name.
-        :rtype: Architecture | None
-        """
-        for a in self.architectures:
-            if a.name == name:
-                return a
+        if name in self.modules:
+            return self.modules[name]
         return None
 
-    def get_architecture_or_create(self, name):
+    def get_class(self, module_name, architecture_name, class_name):
         """
-        Returns Architecture object with given name or create it if was not in the list.
-
-        :param str name: Architecture name.
-        :return: Architecture object with given name.
-        :rtype: Architecture
-        """
-        for a in self.architectures:
-            if a.name == name:
-                return a
-        # Create new architecture.
-        architecture = Architecture(name)
-        self.architectures.append(architecture)
-        return architecture
-
-    def get_class_or_load(self, architecture_name, class_name):
-        """
-        Returns Class object for given architecture or load class JSON file.
-        :param str architecture_name: Architecture name.
-        :param str class_name: Class name.
-        :return: Class object.
-        :rtype: Class
-        """
-        log = logging.getLogger(__name__)
-        architecture = self.get_architecture_or_create(architecture_name)
-
-        # Get class.
-        cl = architecture.get_class(class_name)
-        if cl is None:
-            # Reads JSON from file.
-            log.info("LazyClassDumpManager: get_class_or_load: reading \"{}\".".format(self.class_map[class_name]))
-            file_path = os.path.join(self.dir_path, self.class_map[class_name])
-            if not os.path.exists(file_path):
-                log.error("LazyClassDumpManager: get_class_or_load: missing \"{}\".".format(self.class_map[class_name]))
-                return None
-            j = self.read_file_path(file_path)
-
-            # Empty json data or missing architecture in JSON.
-            if j is None or architecture_name not in j:
-                log.error("LazyClassDumpManager: get_class_or_load: missing data in \"{}\".".format(self.class_map[class_name]))
-                return None
-
-            # Get class json for given architecture.
-            class_json = j[architecture_name]
-
-            # Add class to architecture.
-            cl = architecture.read_json(class_json)
-        return cl
-
-    def get_ivar(self, architecture_name, class_name, ivar_name):
-        """
-        Returns Ivar object based on architecture name, class name and ivar name.
+        Returns Class object based on module name, architecture name and class name.
 
         Supported architectures: armv7, armv7s, arm64, i386, x86_64.
 
+        :param str module_name: Module name.
+        :param str architecture_name: Architecture name.
+        :param str class_name: Class name.
+        :return: Class object based on module name, architecture name and class name.
+        :rtype: Class | None
+        """
+        # Try to finds Module.
+        module = self.get_module(module_name)
+        if not module:
+            return None
+
+        # Get Class.
+        c = module.get_class_or_load(architecture_name, class_name)
+        return c
+
+    def get_ivar(self, module_name, architecture_name, class_name, ivar_name):
+        """
+        Returns Ivar object based on module name, architecture name, class name and ivar name.
+
+        :param str module_name: Module name.
         :param str architecture_name: Architecture name.
         :param str class_name: Class name.
         :param str ivar_name: Ivar name.
-        :return: Ivar object based on architecture name, class name and ivar name.
+        :return: Ivar object based on module name, architecture name, class name and ivar name.
         :rtype: Ivar | None
         """
-        log = logging.getLogger(__name__)
-        # Checks parameters.
-        if architecture_name is None or class_name is None or ivar_name is None:
-            log.error("LazyClassDumpManager: get_ivar: invalid parameters.")
+        # Get Class.
+        c = self.get_class(module_name, architecture_name, class_name)
+        if not c:
             return None
 
-        # Check if class exists in class.map.
-        if class_name not in self.class_map:
-            log.error("LazyClassDumpManager: get_ivar: no class \"{}\" in class_map.".format(class_name))
-            return None
-
-        # Get class.
-        cl = self.get_class_or_load(architecture_name, class_name)
-
-        # Get ivar.
-        ivar = cl.get_ivar(ivar_name)
-        # If ivar doesn't exists then look for it in super class.
-        if ivar is None and cl.super_class_name is not None:
-            return self.get_ivar(architecture_name, cl.super_class_name, ivar_name)
-
-        if ivar is None:
-            log.error("LazyClassDumpManager: get_ivar: no ivar \"{}\" for class \"{}\".".format(ivar_name, class_name))
-        return ivar
+        # Get Ivar.
+        i = c.get_ivar(ivar_name)
+        return i
 
 
 class ClassDumpManager(object):
     """
     Represent list of modules. It loads all data at once.
 
-    :param list[Module] modules: List of architectures.
+    :param dict[str, Module] modules: Map of module name to Module object.
     """
     def __init__(self):
         super(ClassDumpManager, self).__init__()
-        self.modules = list()
+        self.modules = dict()
 
     def get_module(self, name):
         """
-        Finds Module object with given name.
+        Returns Module object with given name.
 
         :param str name: Module name.
         :return: Module object with given name.
         :rtype: Module | None
         """
-        for a in self.modules:
-            if a.name == name:
-                return a
+        if name in self.modules:
+            return self.modules[name]
         return None
-
-    # def all_class_names(self):
-    #     """
-    #     Returns a list of all class names from all architectures.
-    #
-    #     :return: A list of all class names from all architectures.
-    #     :rtype: list[str]
-    #     """
-    #     s = set()
-    #     for a in self.modules:
-    #         s = s.union(set(a.all_class_names()))
-    #     return list(s)
 
     def read_directory_path(self, dir_path):
         """
@@ -246,10 +149,12 @@ class ClassDumpManager(object):
         for module_name in os.listdir(dir_path):
             module_path = os.path.join(dir_path, module_name)
             if os.path.isdir(module_path):
+                # Get Module.
                 module = self.get_module(module_name)
                 if not module:
                     module = Module(module_name)
-                    self.modules.append(module)
+                    self.modules[module_name] = module
+                #  Read Module JSON files.
                 module.read_directory_path(module_path)
 
     def save_to_folder(self, folder_path):
@@ -265,7 +170,8 @@ class ClassDumpManager(object):
             if not os.path.exists(folder_path):
                 os.makedirs(folder_path)
 
-        for module in self.modules:
+        # Save every Module.
+        for module_name, module in self.modules.iteritems():
             module_path = os.path.join(folder_path, module.name, class_dumps_folder_name)
             module.save_to_folder(module_path)
 
@@ -275,15 +181,21 @@ class Module(object):
     Represents one module. Contains list of architectures.
 
     :param str name: Module name.
-    :param list[Architecture] architectures: List of architectures.
+    :param str dir_path: Path to module directory.
+    :param dict[str, str] module_file_map: Module map. Maps class name to class file path.
+    :param dict[str, Architecture] architectures: Maps architecture name to Architecture object.
     """
-    def __init__(self, name):
+    def __init__(self, name, dir_path=None):
         """
         :param str name: Module name.
         """
         super(Module, self).__init__()
         self.name = name
-        self.architectures = list()
+        self.dir_path = dir_path
+        self.module_file_map = None
+        self.architectures = dict()
+        if dir_path:
+            self._read_module_map()
 
     def get_architecture(self, name):
         """
@@ -293,9 +205,8 @@ class Module(object):
         :return: Architecture object with given name.
         :rtype: Architecture | None
         """
-        for a in self.architectures:
-            if a.name == name:
-                return a
+        if name in self.architectures:
+            return self.architectures[name]
         return None
 
     def all_class_names(self):
@@ -306,8 +217,8 @@ class Module(object):
         :rtype: list[str]
         """
         s = set()
-        for a in self.architectures:
-            s = s.union(set(a.all_class_names()))
+        for name, architecture in self.architectures.iteritems():
+            s = s.union(set(architecture.all_class_names()))
         return list(s)
 
     def read_directory_path(self, dir_path):
@@ -352,13 +263,13 @@ class Module(object):
 
         :param dict[str, dict] json_data: Dictionary representation of JSON data of protocol.
         """
-        for archName in json_data:
-            architecture = self.get_architecture(archName)
+        for architecture_name in json_data:
+            architecture = self.get_architecture(architecture_name)
             # Create architecture.
             if not architecture:
-                architecture = Architecture(archName)
-                self.architectures.append(architecture)
-            architecture.read_json(json_data[archName])
+                architecture = Architecture(architecture_name)
+                self.architectures[architecture_name] = architecture
+            architecture.read_json(json_data[architecture_name])
 
     def save_to_folder(self, folder_path):
         """
@@ -380,9 +291,9 @@ class Module(object):
             class_data = dict()
             class_file_name = None
             # Get class data from all architectures.
-            for a in self.architectures:
-                c = a.get_class(class_name)
-                class_data[a.name] = c.json_data()
+            for name, architecture in self.architectures.iteritems():
+                c = architecture.get_class(class_name)
+                class_data[architecture.name] = c.json_data()
                 class_file_name = c.get_file_name()
 
             # Module map info.
@@ -399,6 +310,72 @@ class Module(object):
         with open(module_map_file_path, "w") as f:
             json.dump(module_map, f, sort_keys=True, indent=2, separators=(",", ":"))
 
+    def _read_module_map(self):
+        """
+        Reads module map file.
+        """
+        log = logging.getLogger(__name__)
+        # Check if module map exists.
+        module_map_file_path = os.path.join(self.dir_path, module_map_file_name)
+        if not os.path.exists(module_map_file_path):
+            log.error("Module: _read_module_map: Cannot find module map \"{}\" at \"{}\".".format(self.name, module_map_file_path))
+            raise StandardError()
+
+        # Reads module map into memory.
+        with open(module_map_file_path, "r") as f:
+            self.module_file_map = json.load(f)
+
+    def get_class_or_load(self, architecture_name, class_name):
+        """
+        Get Class object for given architecture and class name. Loads data if needed.
+
+        :param str architecture_name: Architecture name.
+        :param str class_name: Class name.
+        :return: Class object for given architecture and class name.
+        :rtype: Class | None
+        """
+        log = logging.getLogger(__name__)
+        # Load architecture.
+        a = self.get_architecture(architecture_name)
+        if not a:
+            a = Architecture(architecture_name)
+            self.architectures[architecture_name] = a
+
+        # Load class.
+        c = a.get_class(class_name)
+        if c:
+            return c
+
+        # Read class when not yet exists.
+        if class_name in self.module_file_map:
+            # Get path to class json.
+            class_path = self.module_file_map[class_name]
+            class_path = os.path.join(self.dir_path, class_path)
+            # File doesn't exists.
+            if not os.path.exists(class_path):
+                log.error("Module: get_class_or_load: Cannot find file: \"{}\".".format(class_path))
+                return None
+
+            # Open file.
+            with open(class_path, "r") as f:
+                json_data = json.load(f)
+
+                # File is empty.
+                if not json_data:
+                    log.error("Module: get_class_or_load: Cannot open file \"{}\".".format(class_path))
+                    return None
+
+                # File doesn't contains architecture information.
+                if architecture_name not in json_data:
+                    log.error("Module: get_class_or_load: Cannot find architecture in \"{}\".".format(class_path))
+                    return None
+
+                # Read JSON data.
+                class_data = json_data[architecture_name]
+                # Create class object.
+                c = a.read_json(class_data)
+        return c
+
     def __str__(self):
         return "<{}: {}>".format(self.__class__.__name__, self.name)
 
@@ -408,37 +385,15 @@ class Architecture(object):
     Represent one CPU architecture.
 
     :param str name: Name of architecture.
-    :param list[Protocol] protocols: List of protocols.
-    :param list[Class] classes: List of classes.
-    :param dict[str, Class] _classes_map: Maps class name to Class object.
+    :param dict[str, Class] classes: Maps class name to Class object.
     """
     def __init__(self, name):
         """
         :param str name: Name of architecture.
         """
         super(Architecture, self).__init__()
-        self.name = name            # Architecture name.
-        self.protocols = list()     # List of protocols.
-        self.classes = list()       # List of classes.
-
-        self._classes_map = None    # Maps class name to Class object.
-
-    def _get_class_map(self):
-        """
-        Creates class map. Maps class name to Class object.
-
-        :return: Returns class map.
-        :rtype: dict[str, Class]
-        """
-        # Create class map.
-        if self._classes_map is None:
-            m = dict()
-            """:type: dict[str, Class]"""
-            for c in self.classes:
-                m[c.class_name] = c
-            if len(m) > 0:
-                self._classes_map = m
-        return self._classes_map
+        self.name = name
+        self.classes = dict()
 
     def all_class_names(self):
         """
@@ -447,8 +402,7 @@ class Architecture(object):
         :return: All class names.
         :rtype: list[str]
         """
-        self._get_class_map()
-        return self._classes_map.keys()
+        return self.classes.keys()
 
     def get_class(self, name):
         """
@@ -458,12 +412,8 @@ class Architecture(object):
         :return: Class with given name.
         :rtype: Class | None
         """
-        self._get_class_map()
-        if self._classes_map is None:
-            return None
-
-        if name in self._classes_map:
-            return self._classes_map[name]
+        if name in self.classes:
+            return self.classes[name]
         return None
 
     def read_json(self, json_data):
@@ -483,8 +433,7 @@ class Architecture(object):
         t = json_data["type"]
         if t == "class":
             c = Class(json_data)
-            self.classes.append(c)
-            self._classes_map = None
+            self.classes[c.class_name] = c
             return c
         return None
 
@@ -719,3 +668,6 @@ class Ivar(object):
             j["size"] = self.size
         j["type"] = self.type
         return j
+
+    def __str__(self):
+        return "<{} {}, {}>".format(self.__class__.__name__, self.name, self.offset)
