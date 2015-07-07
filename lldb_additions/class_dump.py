@@ -29,10 +29,11 @@ import logger
 
 
 logger.configure_loggers()
-class_map_file_name = "class.map"
+class_dump_map_file_name = "class_dump_map.json"
+module_map_file_name = "module_map.json"
 
 
-class LazyArchitecturesList(object):
+class LazyClassDumpManager(object):
     """
     Lazy loads class data into memory.
 
@@ -44,9 +45,9 @@ class LazyArchitecturesList(object):
         """
         :param str dir_path: Path to directory where class dumps are stored.
         """
-        super(LazyArchitecturesList, self).__init__()
+        super(LazyClassDumpManager, self).__init__()
         log = logging.getLogger(__name__)
-        log.debug("LazyArchitecturesList: created.")
+        log.debug("LazyClassDumpManager: created.")
         self.dir_path = dir_path        # Path from where classes are read.
         self.architectures = list()     # List of architectures.
         self.class_map = None           # Maps class name to path to file.
@@ -57,10 +58,10 @@ class LazyArchitecturesList(object):
         Reads class.map file into memory (self.class_map).
         """
         log = logging.getLogger(__name__)
-        log.debug("LazyArchitecturesList: reading class_map.")
+        log.debug("LazyClassDumpManager: reading class_map.")
         class_map_file_path = os.path.join(self.dir_path, class_map_file_name)
         if not os.path.exists(class_map_file_path):
-            log.error("LazyArchitecturesList: Cannot find class.map file.")
+            log.error("LazyClassDumpManager: Cannot find class.map file.")
             raise StandardError()
 
         with open(class_map_file_path, "r") as class_map_file:
@@ -144,23 +145,23 @@ class LazyArchitecturesList(object):
         cl = architecture.get_class(class_name)
         if cl is None:
             # Reads JSON from file.
-            log.info("LazyArchitecturesList: get_class_or_load: reading \"{}\".".format(self.class_map[class_name]))
+            log.info("LazyClassDumpManager: get_class_or_load: reading \"{}\".".format(self.class_map[class_name]))
             file_path = os.path.join(self.dir_path, self.class_map[class_name])
             if not os.path.exists(file_path):
-                log.error("LazyArchitecturesList: get_class_or_load: missing \"{}\".".format(self.class_map[class_name]))
+                log.error("LazyClassDumpManager: get_class_or_load: missing \"{}\".".format(self.class_map[class_name]))
                 return None
             j = self.read_file_path(file_path)
 
             # Empty json data or missing architecture in JSON.
             if j is None or architecture_name not in j:
-                log.error("LazyArchitecturesList: get_class_or_load: missing data in \"{}\".".format(self.class_map[class_name]))
+                log.error("LazyClassDumpManager: get_class_or_load: missing data in \"{}\".".format(self.class_map[class_name]))
                 return None
 
             # Get class json for given architecture.
             class_json = j[architecture_name]
 
             # Add class to architecture.
-            cl = architecture.add_json(class_json)
+            cl = architecture.read_json(class_json)
         return cl
 
     def get_ivar(self, architecture_name, class_name, ivar_name):
@@ -178,12 +179,12 @@ class LazyArchitecturesList(object):
         log = logging.getLogger(__name__)
         # Checks parameters.
         if architecture_name is None or class_name is None or ivar_name is None:
-            log.error("LazyArchitecturesList: get_ivar: invalid parameters.")
+            log.error("LazyClassDumpManager: get_ivar: invalid parameters.")
             return None
 
         # Check if class exists in class.map.
         if class_name not in self.class_map:
-            log.error("LazyArchitecturesList: get_ivar: no class \"{}\" in class_map.".format(class_name))
+            log.error("LazyClassDumpManager: get_ivar: no class \"{}\" in class_map.".format(class_name))
             return None
 
         # Get class.
@@ -196,18 +197,103 @@ class LazyArchitecturesList(object):
             return self.get_ivar(architecture_name, cl.super_class_name, ivar_name)
 
         if ivar is None:
-            log.error("LazyArchitecturesList: get_ivar: no ivar \"{}\" for class \"{}\".".format(ivar_name, class_name))
+            log.error("LazyClassDumpManager: get_ivar: no ivar \"{}\" for class \"{}\".".format(ivar_name, class_name))
         return ivar
 
 
-class ArchitecturesList(object):
+class ClassDumpManager(object):
     """
-    Represent list of architectures. It loads all data at once.
+    Represent list of modules. It loads all data at once.
 
-    :param list[Architecture] architectures: List of architectures.
+    :param list[Module] modules: List of architectures.
     """
     def __init__(self):
-        super(ArchitecturesList, self).__init__()
+        super(ClassDumpManager, self).__init__()
+        self.modules = list()
+
+    def get_module(self, name):
+        """
+        Finds Module object with given name.
+
+        :param str name: Module name.
+        :return: Module object with given name.
+        :rtype: Module | None
+        """
+        for a in self.modules:
+            if a.name == name:
+                return a
+        return None
+
+    # def all_class_names(self):
+    #     """
+    #     Returns a list of all class names from all architectures.
+    #
+    #     :return: A list of all class names from all architectures.
+    #     :rtype: list[str]
+    #     """
+    #     s = set()
+    #     for a in self.modules:
+    #         s = s.union(set(a.all_class_names()))
+    #     return list(s)
+
+    def read_directory_path(self, dir_path):
+        """
+        Reads all module directories from directory.
+
+        :param str dir_path: Path to directory.
+        """
+        # Go through all files in input directory and read it.
+        for module_name in os.listdir(dir_path):
+            module_path = os.path.join(dir_path, module_name)
+            if os.path.isdir(module_path):
+                module = self.get_module(module_name)
+                if not module:
+                    module = Module(module_name)
+                    self.modules.append(module)
+                module.read_directory_path(module_path)
+
+    def save_to_folder(self, folder_path):
+        """
+        Saves all classes from all modules as JSON files to given folder path.
+
+        :param str folder_path: Path to output folder.
+        """
+        folder_path = os.path.normpath(folder_path)
+
+        # Create output directory if needed.
+        if len(self.modules) != 0:
+            if not os.path.exists(folder_path):
+                os.makedirs(folder_path)
+
+        # Class dump map.
+        class_dump_map = dict()
+
+        for module in self.modules:
+            module_path = os.path.join(folder_path, module.name)
+            module.save_to_folder(module_path)
+
+            # Module map info.
+            class_dump_map[module.name] = module.name
+
+        # Save class dump map.
+        class_dump_map_file_path = os.path.join(folder_path, class_dump_map_file_name)
+        with open(class_dump_map_file_path, "w") as f:
+            json.dump(class_dump_map, f, sort_keys=True, indent=2, separators=(",", ":"))
+
+
+class Module(object):
+    """
+    Represents one module. Contains list of architectures.
+
+    :param str name: Module name.
+    :param list[Architecture] architectures: List of architectures.
+    """
+    def __init__(self, name):
+        """
+        :param str name: Module name.
+        """
+        super(Module, self).__init__()
+        self.name = name
         self.architectures = list()
 
     def get_architecture(self, name):
@@ -235,42 +321,6 @@ class ArchitecturesList(object):
             s = s.union(set(a.all_class_names()))
         return list(s)
 
-    def read_json(self, json_data, framework):
-        """
-        Reads a JSON data.
-
-        :param dict[str, dict] json_data: Dictionary representation of JSON data of protocol.
-        :param str framework: Framework name.
-        """
-        for archName in json_data:
-            architecture = self.get_architecture(archName)
-            # Create architecture.
-            if not architecture:
-                architecture = Architecture(archName)
-                self.architectures.append(architecture)
-            architecture.add_json(json_data[archName], framework)
-
-    def read_file(self, f, framework):
-        """
-        Reads a file object.
-
-        :param f: File to read.
-        :param str framework: Framework name.
-        """
-        json_data = json.load(f)
-        """:type: dict[str, dict]"""
-        self.read_json(json_data, framework)
-
-    def read_file_path(self, file_path, framework):
-        """
-        Reads a file at given path.
-
-        :param str file_path: File path.
-        :param str framework: Framework name.
-        """
-        with open(file_path, "r") as f:
-            self.read_file(f, framework)
-
     def read_directory_path(self, dir_path):
         """
         Reads all files from directory.
@@ -279,88 +329,89 @@ class ArchitecturesList(object):
         """
         # Go through all files in input directory and read it.
         for root, dirs, files in os.walk(dir_path):
-            for f in files:
+            for file_name in files:
                 # Check if it is a JSON file.
-                if not f.endswith(".json"):
+                if not file_name.endswith(".json"):
                     continue
 
-                # Framework.
-                framework_name = root.replace(dir_path, "").strip("/")
-
                 # File path.
-                fi_path = os.path.join(root, f)
-                self.read_file_path(fi_path, framework_name)
+                file_path = os.path.join(root, file_name)
+                self.read_file_path(file_path)
+
+    def read_file_path(self, file_path):
+        """
+        Reads a file at given path.
+
+        :param str file_path: File path.
+        """
+        with open(file_path, "r") as f:
+            self.read_file(f)
+
+    def read_file(self, f):
+        """
+        Reads a file object.
+
+        :param f: File to read.
+        """
+        json_data = json.load(f)
+        """:type: dict[str, dict]"""
+        self.read_json(json_data)
+
+    def read_json(self, json_data):
+        """
+        Reads a JSON data.
+
+        :param dict[str, dict] json_data: Dictionary representation of JSON data of protocol.
+        """
+        for archName in json_data:
+            architecture = self.get_architecture(archName)
+            # Create architecture.
+            if not architecture:
+                architecture = Architecture(archName)
+                self.architectures.append(architecture)
+            architecture.read_json(json_data[archName])
 
     def save_to_folder(self, folder_path):
         """
-        Saves all classes as JSON files to given folder path.
+        Saves all classes from all architectures as JSON files to given folder path.
 
         :param str folder_path: Path to output folder.
         """
+        # Create output directory if needed.
+        if len(self.all_class_names()) != 0:
+            if not os.path.exists(folder_path):
+                os.makedirs(folder_path)
+
+        # Module map.
+        module_map = dict()
+
+        # Get every class.
         classes = self.all_class_names()
-        class_map = list()
-        """:type: list[str]"""
         for class_name in classes:
-            # Get class data.
             class_data = dict()
-            """:type: dict[str, dict]"""
-            framework_name = None
-            file_name = None
+            class_file_name = None
             # Get class data from all architectures.
-            for architecture in self.architectures:
-                c = architecture.get_class(class_name)
-                framework_name = c.framework_name
-                file_name = c.file_name()
-                class_data[architecture.name] = c.json_data()
+            for a in self.architectures:
+                c = a.get_class(class_name)
+                class_data[a.name] = c.json_data()
+                class_file_name = c.get_file_name()
 
-            # Data for class map.
-            class_map.append("{}:{}/{}".format(class_name, framework_name, file_name))
+            # Module map info.
+            module_map[class_name] = class_file_name
 
-            # Output directory path.
-            output_dir_path = os.path.join(folder_path, framework_name)
-            # Create output directory if needed.
-            if not os.path.exists(output_dir_path):
-                os.makedirs(output_dir_path)
+            # Save class data to file.
+            class_file_path = os.path.join(folder_path, class_file_name)
+            with open(class_file_path, "w") as f:
+                json.dump(class_data, f, sort_keys=True, indent=2, separators=(",", ":"))
+                print("Saving {}.{}.".format(self.name, class_name))
 
-            # Output file path.
-            output_file_path = os.path.join(output_dir_path, file_name)
-            # Saving.
-            with open(output_file_path, "w") as output_file:
-                json.dump(class_data, output_file, sort_keys=True, indent=2, separators=(",", ":"))
-                print "Saving {}".format(class_name)
+        # Save module map.
+        module_map_file_path = os.path.join(folder_path, module_map_file_name)
+        with open(module_map_file_path, "w") as f:
+            json.dump(module_map, f, sort_keys=True, indent=2, separators=(",", ":"))
 
-        # Class map file.
-        class_map_file_path = os.path.join(folder_path, class_map_file_name)
-        class_map_str = "\n".join(class_map)
-        with open(class_map_file_path, "w") as class_map_file:
-            class_map_file.write(class_map_str)
-
-    def fix_ivars_offset(self, offsets_file_path):
-        """
-        Fixes ivars offset using offset information from file.
-
-        :param str offsets_file_path: Path to offsets.json file.
-        """
-        # Current directory path.
-        current_dir = os.path.abspath(__file__)
-        current_dir, _ = os.path.split(current_dir)
-
-        # offsets.json file doesn't exists.
-        if not os.path.exists(offsets_file_path):
-            print "Offset file doesn't exists."
-            exit(1)
-
-        # Read offsets.json file.
-        with open(offsets_file_path, "r") as offsets_file:
-            offsets = json.load(offsets_file)
-            """:type: dict[str, list]"""
-
-            # Go through all architectures and fix offsets.
-            for architecture in self.architectures:
-                if architecture.name not in offsets:
-                    print "No architecture {} in offsets.".format(architecture.name)
-                    continue
-                architecture.fix_ivars_offset(offsets[architecture.name])
+    def __str__(self):
+        return "<{}: {}>".format(self.__class__.__name__, self.name)
 
 
 class Architecture(object):
@@ -426,12 +477,11 @@ class Architecture(object):
             return self._classes_map[name]
         return None
 
-    def add_json(self, json_data, framework=None):
+    def read_json(self, json_data):
         """
         Reads JSON content of class and adds it to the list of classes
 
         :param dict[str, str | object] json_data: Dictionary representation of JSON data of class.
-        :param str framework: Name of framework (optional).
         :return: Return parsed class.
         :rtype: Class | None
         """
@@ -444,71 +494,19 @@ class Architecture(object):
         t = json_data["type"]
         if t == "class":
             c = Class(json_data)
-            c.framework_name = framework
             self.classes.append(c)
             self._classes_map = None
             return c
         return None
 
-    def class_inheritance(self, cl):
-        """
-        Returns class hierarchy as list.
-
-        :param Class cl: Class.
-        :return: Class hierarchy as list.
-        :rtype: list[str]
-        """
-        ci = [cl.class_name, cl.super_class_name]
-
-        super_class_name = cl.super_class_name
-        while super_class_name:
-            super_cl = self.get_class(super_class_name)
-            if super_cl:
-                # Adds super class name to the end of the list.
-                ci.append(super_cl.super_class_name)
-                super_class_name = super_cl.super_class_name
-            else:
-                super_class_name = None
-
-        return ci
-
-    def class_offset_for_class(self, cl, offsets_list):
-        """
-        Returns ClassOffset object for given Class object from list of offsets.
-
-        :param Class cl: Class.
-        :param OffsetsList offsets_list: Offsets list.
-        :return: ClassOffset object for given Class object from list of offsets.
-        :rtype: ClassOffset | None
-        """
-        class_inheritance = self.class_inheritance(cl)
-        for class_name in class_inheritance:
-            # Looks for ClassOffset from class list.
-            if offsets_list.has_class_offset(class_name):
-                return offsets_list.get_class_offset(class_name)
-            # Looks for ClassOffset from super class list.
-            if offsets_list.has_super_class_offset(class_name):
-                return offsets_list.get_super_class_offset(class_name)
-        return None
-
-    def fix_ivars_offset(self, offsets):
-        """
-        Adds offset to ivars using content from JSON.
-
-        :param list[dict[str, str | int]] offsets: Dictionary representation of JSON data of list of class offsets.
-        """
-        offsets_list = OffsetsList(offsets)
-        for cl in self.classes:
-            class_offset = self.class_offset_for_class(cl, offsets_list)
-            if class_offset:
-                cl.fix_ivars_offset(class_offset)
+    def __str__(self):
+        return "<{}: {}, classes:{}>".format(self.__class__.__name__, self.name, len(self.classes))
 
 
 class Protocol(object):
     """
     Represents protocol.
 
-    :param str framework_name: Framework name.
     :param str protocol_name: Protocol name.
     :param list[str] protocols: List of protocols names.
     :param list properties: List of properties.
@@ -523,7 +521,6 @@ class Protocol(object):
         :param dict[str, str | list[str] | object] json_data: Dictionary representation of JSON data of protocol.
         """
         super(Protocol, self).__init__()
-        self.framework_name = None
         self.protocol_name = None
         self.protocols = list()
         self.properties = list()
@@ -534,7 +531,7 @@ class Protocol(object):
         self.type = "protocol"
         self.read_json(json_data)
 
-    def file_name(self):
+    def get_file_name(self):
         """
         Returns JSON file name for given protocol.
 
@@ -594,7 +591,7 @@ class Class(Protocol):
         self.type = "class"
         self.read_json(json_data)
 
-    def file_name(self):
+    def get_file_name(self):
         """
         Returns JSON file name for given class.
 
@@ -664,14 +661,8 @@ class Class(Protocol):
         j["type"] = self.type
         return j
 
-    def fix_ivars_offset(self, offset):
-        """
-        Fix (add) ivar offsets based on offsets.json.
-
-        :param ClassOffset offset: Offsets for current class.
-        """
-        for ivar in self.ivars:
-            ivar.offset += offset.offset
+    def __str__(self):
+        return "<{} {}>".format(self.__class__.__name__, self.class_name)
 
 
 class Ivar(object):
@@ -739,132 +730,3 @@ class Ivar(object):
             j["size"] = self.size
         j["type"] = self.type
         return j
-
-
-class OffsetsList(object):
-    """
-    Represents offsets values for all classes (for one architecture) in offsets.json file.
-
-    :param list[ClassOffset] list: List of offsets.
-    :param dict[str, ClassOffset] _classes_map: Map of classes and its offset.
-    :param dict[str, ClassOffset] _super_classes_map: Map of super classes and its offset.
-    """
-    def __init__(self, json_data):
-        """
-        :param list[dict[str, str | int]] json_data: Dictionary representation of JSON data of list of class offsets.
-        """
-        super(OffsetsList, self).__init__()
-        self.list = None
-        self._classes_map = dict()
-        self._super_classes_map = dict()
-        self._read_json(json_data)
-        self._get_class_map()
-
-    def _read_json(self, json_data):
-        """
-        Reads JSON data and creates ClassOffset objects.
-
-        :param list[dict[str, str | int]] json_data: Dictionary representation of JSON data of list of class offsets.
-        """
-        l = list()
-        """:type: list[ClassOffset]"""
-        for cl in json_data:
-            o = ClassOffset(cl)
-            l.append(o)
-        self.list = l
-
-    def _get_class_map(self):
-        """
-        Create class map and super class map.
-        """
-        if self._classes_map is None:
-            cm = dict()
-            """:type: dict[str, ClassOffset]"""
-            scm = dict()
-            """:type: dict[str, ClassOffset]"""
-            for c in self.list:
-                if c.class_name is not None:
-                    cm[c.class_name] = c
-                if c.super_class_name is not None:
-                    scm[c.super_class_name] = c
-            self._classes_map = cm
-            self._super_classes_map = scm
-
-    def has_class_offset(self, class_name):
-        """
-        Checks if object has offset for given class name.
-
-        :param str class_name: Class name.
-        :return: True if offset for given class exists.
-        :rtype: bool
-        """
-        if class_name in self._classes_map:
-            return True
-        return False
-
-    def has_super_class_offset(self, super_class_name):
-        """
-        Checks if object has offset for given super class name.
-
-        :param str super_class_name: Super class name.
-        :return: True if offset for given super class exists.
-        :rtype: bool
-        """
-        if super_class_name in self._super_classes_map:
-            return True
-        return False
-
-    def get_class_offset(self, class_name):
-        """
-        Returns class offset for given class name.
-
-        :param str class_name: Class name.
-        :return: Offset for given class.
-        :rtype: ClassOffset | None
-        """
-        if class_name in self._classes_map:
-            return self._classes_map[class_name]
-        return None
-
-    def get_super_class_offset(self, super_class_name):
-        """
-        Returns class offset for given super class name.
-
-        :param str super_class_name: Super class name.
-        :return: Offset for given super class.
-        :rtype: ClassOffset | None
-        """
-        if super_class_name in self._super_classes_map:
-            return self._super_classes_map[super_class_name]
-        return None
-
-
-class ClassOffset(object):
-    """
-    Represent class offset from offsets.json file.
-
-    :param str class_name: Class name.
-    :param str super_class_name: Super class name.
-    :param int offset: Offset.
-    """
-    def __init__(self, json_data):
-        """
-        :param dict[str, str | int] json_data: Dictionary representation of JSON data of class offset.
-        """
-        super(ClassOffset, self).__init__()
-        self.class_name = None
-        self.super_class_name = None
-        self.offset = None
-        self._read_json(json_data)
-
-    def _read_json(self, json_data):
-        """
-        Reads JSON data and stores data in local parameters.
-
-        :param dict[str, str | int] json_data: Dictionary representation of JSON data.
-        """
-        if "class" in json_data:
-            self.class_name = json_data["class"]
-        if "super_class" in json_data:
-            self.super_class_name = json_data["super_class"]
-        self.offset = json_data["offset"]

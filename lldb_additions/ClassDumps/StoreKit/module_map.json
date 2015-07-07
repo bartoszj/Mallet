@@ -1,0 +1,18 @@
+{
+  "SKDownload":"SKDownload.json",
+  "SKPayment":"SKPayment.json",
+  "SKPaymentInternal":"SKPaymentInternal.json",
+  "SKPaymentQueue":"SKPaymentQueue.json",
+  "SKPaymentQueueInternal":"SKPaymentQueueInternal.json",
+  "SKPaymentTransaction":"SKPaymentTransaction.json",
+  "SKPaymentTransactionInternal":"SKPaymentTransactionInternal.json",
+  "SKProduct":"SKProduct.json",
+  "SKProductInternal":"SKProductInternal.json",
+  "SKProductsRequest":"SKProductsRequest.json",
+  "SKProductsRequestInternal":"SKProductsRequestInternal.json",
+  "SKProductsResponse":"SKProductsResponse.json",
+  "SKProductsResponseInternal":"SKProductsResponseInternal.json",
+  "SKReceiptRefreshRequest":"SKReceiptRefreshRequest.json",
+  "SKRequest":"SKRequest.json",
+  "SKRequestInternal":"SKRequestInternal.json"
+}

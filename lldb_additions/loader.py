@@ -302,7 +302,8 @@ def load_all(debugger, internal_dict):
 
 
 
-
+user_config_file_path = "~/.lldb/lldb_additions.json"
+default_config_file_name = "config.json"
 
 def get_default_configuration():
     """
@@ -316,7 +317,7 @@ def get_default_configuration():
     # Looks for default configuration.
     file_path = os.path.realpath(__file__)
     dir_path = os.path.dirname(file_path)
-    default_config_path = os.path.join(dir_path, "config.json")
+    default_config_path = os.path.join(dir_path, default_config_file_name)
     if os.path.exists(default_config_path):
         # Loads JSON configuration.
         with open(default_config_path) as default_config_file:
@@ -338,7 +339,7 @@ def get_user_configuration():
     log = logging.getLogger(__name__)
 
     # Looks for user JSON configuration file.
-    config_path = os.path.expanduser("~/.lldb/lldb_additions.json")
+    config_path = os.path.expanduser(user_config_file_path)
     if os.path.exists(config_path):
         # Loads JSON configuration.
         with open(config_path) as config_file:

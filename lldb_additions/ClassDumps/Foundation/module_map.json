@@ -1,0 +1,9 @@
+{
+  "NSLayoutConstraint":"NSLayoutConstraint.json",
+  "NSOperation":"NSOperation.json",
+  "NSOperationQueue":"NSOperationQueue.json",
+  "NSURLComponents":"NSURLComponents.json",
+  "__NSConcreteURLComponents":"__NSConcreteURLComponents.json",
+  "__NSOperationInternal":"__NSOperationInternal.json",
+  "__NSOperationQueueInternal":"__NSOperationQueueInternal.json"
+}

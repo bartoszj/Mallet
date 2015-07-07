@@ -64,12 +64,10 @@ def clean_class_dumps():
     # Input / output folders.
     input_dir = os.path.join(current_dir, "ClassDumps")
     output_dir = os.path.join(current_dir, "../lldb_additions/ClassDumps")
-    offsets_file_path = os.path.join(current_dir, "offsets.json")
 
-    al = class_dump.ArchitecturesList()
-    al.read_directory_path(input_dir)
-    al.fix_ivars_offset(offsets_file_path)
-    al.save_to_folder(output_dir)
+    cdm = class_dump.ClassDumpManager()
+    cdm.read_directory_path(input_dir)
+    cdm.save_to_folder(output_dir)
 
 if __name__ == "__main__":
     clean_class_dumps()

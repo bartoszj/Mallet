@@ -78,7 +78,7 @@ def dump_class(class_name):
     current_dir, _ = os.path.split(current_dir)
     input_dir = os.path.join(current_dir, "../lldb_additions/ClassDumps")
 
-    al = class_dump.ArchitecturesList()
+    al = class_dump.ClassDumpManager()
     al.read_directory_path(input_dir)
 
     architecture_armv7 = al.get_architecture("armv7")

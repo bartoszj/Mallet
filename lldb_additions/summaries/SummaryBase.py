@@ -25,10 +25,10 @@
 import os
 import lldb
 import logging
-from ..scripts import class_dump
-from ..scripts import loader
-from ..scripts import helpers
-from ..scripts import type_cache
+from ..import class_dump
+from ..import loader
+from ..import helpers
+from ..import type_cache
 
 
 class RegisterValue(object):
@@ -968,5 +968,5 @@ def get_architecture_list():
         logger = logging.getLogger(__name__)
         class_dump_dir = os.path.join(loader.lldb_additions_package_dir_path, loader.lldb_additions_class_dump_dir)
         logger.debug("Creating shared architecture list: {}".format(class_dump_dir))
-        get_architecture_list.architectures_list = class_dump.LazyArchitecturesList(class_dump_dir)
+        get_architecture_list.architectures_list = class_dump.LazyClassDumpManager(class_dump_dir)
     return get_architecture_list.architectures_list
