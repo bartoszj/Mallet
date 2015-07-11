@@ -329,8 +329,8 @@ class Module(object):
         """
         Get Class object for given architecture and class name. Loads data if needed.
 
-        :param str architecture_name: Architecture name.
-        :param str class_name: Class name.
+        :param str | unicode architecture_name: Architecture name.
+        :param str | unicode class_name: Class name.
         :return: Class object for given architecture and class name.
         :rtype: Class | None
         """

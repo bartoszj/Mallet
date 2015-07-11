@@ -23,12 +23,16 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import os
-import sys
 import imp
+import argparse
+import tabulate
 
 i = imp.find_module("lldb_additions", [".."])
 imp.load_module("lldb_additions", *i)
 import lldb_additions.class_dump as class_dump
+
+
+_whitespace = u"\u200b"
 
 
 def normalize_type(type_32bit, type_64bit):
@@ -72,170 +76,86 @@ def normalize_type(type_32bit, type_64bit):
     return type_64bit
 
 
-def dump_class(class_name):
+def dump_class(module_name, class_name):
+    """
+    Prints class description.
+
+    :param str module_name: Module name.
+    :param str class_name: Class name.
+    """
     # Current directory path.
     current_dir = os.path.abspath(__file__)
     current_dir, _ = os.path.split(current_dir)
-    input_dir = os.path.join(current_dir, "../lldb_additions/ClassDumps")
+    input_dir = os.path.join(current_dir, u"../lldb_additions/summaries/{}/{}".format(module_name, class_dump.class_dumps_folder_name))
+    input_dir = os.path.normpath(input_dir)
 
-    al = class_dump.ClassDumpManager()
-    al.read_directory_path(input_dir)
+    m = class_dump.Module(module_name, input_dir)
+    architectures = [u"armv7", u"i386", u"arm64", u"x86_64"]
+    main_architecture = u"arm64"
+    architecture_32bit = u"armv7"
+    architecture_64bit = u"arm64"
+    classes = [m.get_class_or_load(a, class_name) for a in architectures]
+    main_class = m.get_class_or_load(main_architecture, class_name)
 
-    architecture_armv7 = al.get_architecture("armv7")
-    architecture_i386 = al.get_architecture("i386")
-    architecture_arm64 = al.get_architecture("arm64")
-    architecture_x86_64 = al.get_architecture("x86_64")
+    # Output.
+    output = u"Class: {}\n".format(class_name)
+    if main_class.super_class_name:
+        output += u"Super class: {}\n".format(main_class.super_class_name)
+    if main_class.protocols:
+        output += u"Protocols: {}\n".format(u", ".join(main_class.protocols))
 
-    all_classes = al.all_class_names()
-    if class_name in all_classes:
-        # Classes for all architectures.
-        cl_armv7 = architecture_armv7.get_class(class_name)
-        cl_arm64 = architecture_arm64.get_class(class_name)
-        cl_i386 = architecture_i386.get_class(class_name)
-        cl_x86_64 = architecture_x86_64.get_class(class_name)
-        cl = cl_arm64
+    # iVars.
+    ivars = sorted(main_class.ivars, key=lambda x: x.offset, reverse=True)
+    if ivars:
+        # Headers
+        headers = [u"Name"]
+        [headers.append(a) for a in architectures]
 
-        output = u""
-        # Class name.
-        output += u"Class: {}\n".format(cl.class_name)
-        # Super class name.
-        if cl.super_class_name:
-            output += u"Super class: {}\n".format(cl.super_class_name)
-        # Protocol names.
-        if cl.protocols:
-            output += u"Protocols: {}\n".format(u", ".join(cl.protocols))
-        # iVars.
-        ivars = sorted(cl.ivars, key=lambda x: x.offset, reverse=False)
+        rows = list()
+        for ivar in ivars:
+            # iVars for all architectures.
+            architecture_ivars = [cl.get_ivar(ivar.name) for cl in classes]
+            architecture_ivar_32bit = architecture_ivars[architectures.index(architecture_32bit)]
+            architecture_ivar_64bit = architecture_ivars[architectures.index(architecture_64bit)]
 
-        if ivars:
-            # Find longest type name nad ivar name.
-            longest_type_length = 0
-            longest_ivar_length = 0
-            longest_type_and_ivar_length = 0
-            for ivar in ivars:
-                ivar_armv7 = cl_armv7.get_ivar(ivar.name)
-                ivar_arm64 = cl_arm64.get_ivar(ivar.name)
-                ivar_i386 = cl_i386.get_ivar(ivar.name)
-                ivar_x86_64 = cl_x86_64.get_ivar(ivar.name)
+            # Normalized type name.
+            type32 = architecture_ivar_32bit.ivarType if architecture_ivar_32bit else None
+            type64 = architecture_ivar_64bit.ivarType if architecture_ivar_64bit else None
+            type_name = normalize_type(type32, type64)
+            splitted_type_name = type_name.split(u"\n")
 
-                type32 = ivar_armv7.ivarType if ivar_armv7 else None
-                type64 = ivar_arm64.ivarType if ivar_arm64 else None
+            # For multiline types add "empty" rows.
+            ivar_rows = list()
+            for type_line in splitted_type_name[:-1]:
+                type_row = [type_line.replace(u" ", _whitespace)] + [u""] * len(architectures)
+                ivar_rows.append(type_row)
 
-                type_name = normalize_type(type32, type64)
-                max_type_length = max(len(nt) for nt in type_name.split(u"\n"))
-                last_type_length = len(type_name.split(u"\n")[-1])
+            # Add type line.
+            type_row = [u"{} {}".format(splitted_type_name[-1], ivar.name).replace(u" ", _whitespace)]
+            for architecture_ivar in architecture_ivars:
+                value = u"{0:>3} 0x{0:03X} / {1:<2}".format(architecture_ivar.offset if architecture_ivar is not None else -1,
+                                                            architecture_ivar.size if architecture_ivar is not None else None).replace(u" ", _whitespace)
+                type_row.append(value)
 
-                longest_type_length = max(longest_type_length, max_type_length)
-                longest_ivar_length = max(longest_ivar_length, len(ivar.name))
-                longest_type_and_ivar_length = max(longest_type_and_ivar_length,
-                                                   max_type_length,
-                                                   last_type_length+len(ivar.name)+1)
+            ivar_rows.append(type_row)
+            ivar_rows.reverse()  # Ivars are reversed, so rows for ivar also have to be reversed.
+            rows.extend(ivar_rows)
 
-            offset_width = 21
-            output += u"{Name:{name_width}} {ArmV7:{o_width}} {i386:{o_width}} {Arm64:{o_width}} {x86_64:{o_width}}\n"\
-                .format(Name=u"Name:",
-                        ArmV7=u"    armv7", i386=u"    i386", Arm64=u"    arm64", x86_64=u"    x86_64",
-                        name_width=longest_type_and_ivar_length, o_width=offset_width)
+        rows.reverse()
+        output += tabulate.tabulate(rows, headers)
 
-            for ivar in ivars:
-                # Ivars.
-                ivar_armv7 = cl_armv7.get_ivar(ivar.name)
-                ivar_arm64 = cl_arm64.get_ivar(ivar.name)
-                ivar_i386 = cl_i386.get_ivar(ivar.name)
-                ivar_x86_64 = cl_x86_64.get_ivar(ivar.name)
-
-                # Next ivars.
-                index = ivars.index(ivar) + 1
-                next_ivar = None
-                next_ivar_armv7 = None
-                next_ivar_arm64 = None
-                next_ivar_i386 = None
-                next_ivar_x86_64 = None
-                if index < len(ivars):
-                    next_ivar = ivars[index]
-                    next_ivar_armv7 = cl_armv7.get_ivar(next_ivar.name)
-                    next_ivar_arm64 = cl_arm64.get_ivar(next_ivar.name)
-                    next_ivar_i386 = cl_i386.get_ivar(next_ivar.name)
-                    next_ivar_x86_64 = cl_x86_64.get_ivar(next_ivar.name)
-
-                # Ivar padding.
-                ivar_armv7_padding = 0
-                ivar_arm64_padding = 0
-                ivar_i386_padding = 0
-                ivar_x86_64_padding = 0
-                # if next_ivar:
-                #     ivar_armv7_padding = next_ivar_armv7.offset - ivar_armv7.offset - ivar_armv7.size
-                #     ivar_arm64_padding = next_ivar_arm64.offset - ivar_arm64.offset - ivar_arm64.size
-                #     ivar_i386_padding = next_ivar_i386.offset - ivar_i386.offset - ivar_i386.size
-                #     ivar_x86_64_padding = next_ivar_x86_64.offset - ivar_x86_64.offset - ivar_x86_64.size
-
-                # Normalized type name.
-                type32 = ivar_armv7.ivarType if ivar_armv7 else None
-                type64 = ivar_arm64.ivarType if ivar_arm64 else None
-
-                type_name = normalize_type(type32, type64)
-                # Split names by new lines.
-                first_type_name = u"\n".join(type_name.split(u"\n")[:-1])
-                if first_type_name:
-                    first_type_name += u"\n"
-                last_type_name = type_name.split(u"\n")[-1]
-                # Add ivar name to type name.
-                type_and_ivar = u"{} {}".format(last_type_name, ivar.name)
-
-                # Offsets values.
-                if ivar_armv7_padding:
-                    offset_armv7 = u"{0:>3} (0x{0:03X}) / {1:<2} + {2:<2}"\
-                        .format(ivar_armv7.offset if ivar_armv7 is not None else -1,
-                                ivar_armv7.size if ivar_armv7 is not None else None,
-                                ivar_armv7_padding if ivar_armv7 is not None else -1)
-                else:
-                    offset_armv7 = u"{0:>3} (0x{0:03X}) / {1:<2}"\
-                        .format(ivar_armv7.offset if ivar_armv7 is not None else -1,
-                                ivar_armv7.size if ivar_armv7 is not None else None)
-
-                if ivar_arm64_padding:
-                    offset_arm64 = u"{0:>3} (0x{0:03X}) / {1:<2} + {2:<2}"\
-                        .format(ivar_arm64.offset if ivar_arm64 is not None else -1,
-                                ivar_arm64.size if ivar_arm64 is not None else None,
-                                ivar_arm64_padding if ivar_arm64 is not None else -1)
-                else:
-                    offset_arm64 = u"{0:>3} (0x{0:03X}) / {1:<2}"\
-                        .format(ivar_arm64.offset if ivar_arm64 is not None else -1,
-                                ivar_arm64.size if ivar_arm64 is not None else None)
-
-                if ivar_i386_padding:
-                    offset_i386 = u"{0:>3} (0x{0:03X}) / {1:<2} + {2:<2}"\
-                        .format(ivar_i386.offset if ivar_i386 is not None else -1,
-                                ivar_i386.size if ivar_i386 is not None else None,
-                                ivar_i386_padding if ivar_i386 is not None else -1)
-                else:
-                    offset_i386 = u"{0:>3} (0x{0:03X}) / {1:<2}"\
-                        .format(ivar_i386.offset if ivar_i386 is not None else -1,
-                                ivar_i386.size if ivar_i386 is not None else None)
-
-                if ivar_x86_64_padding:
-                    offset_x86_64 = u"{0:>3} (0x{0:03X}) / {1:<2} + {2:<2}"\
-                        .format(ivar_x86_64.offset if ivar_x86_64 is not None else -1,
-                                ivar_x86_64.size if ivar_x86_64 is not None else None,
-                                ivar_x86_64_padding if ivar_x86_64 is not None else -1)
-                else:
-                    offset_x86_64 = u"{0:>3} (0x{0:03X}) / {1:<2}"\
-                        .format(ivar_x86_64.offset if ivar_x86_64 is not None else -1,
-                                ivar_x86_64.size if ivar_x86_64 is not None else None)
-
-                output += first_type_name
-                output += u"{Name:{name_width}} {ArmV7:{o_width}} {i386:{o_width}} {Arm64:{o_width}} {x86_64:{o_width}}\n"\
-                    .format(Name=type_and_ivar,
-                            ArmV7=offset_armv7, i386=offset_i386, Arm64=offset_arm64, x86_64=offset_x86_64,
-                            name_width=longest_type_and_ivar_length, o_width=offset_width)
-
-        print output
+    print(output)
 
 
 if __name__ == "__main__":
-    # Check number of parameters.
-    if len(sys.argv) != 2:
-        print "Wrong number of parameters"
-        exit()
+    # Argument parser.
+    parser = argparse.ArgumentParser(description="Prints class description.")
+    parser.add_argument("-m", "--module", required=True)
+    parser.add_argument("class")
 
-    dump_class(sys.argv[1])
+    # Parse arguments.
+    args = parser.parse_args()
+    class_name = vars(args)["class"]
+    module_name = args.module
+
+    dump_class(module_name, class_name)

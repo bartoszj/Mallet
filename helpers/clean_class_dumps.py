@@ -55,6 +55,7 @@ import lldb_additions.class_dump as class_dump
 #   ]
 # }
 
+
 def clean_class_dumps():
     # Current directory path.
     current_dir = os.path.abspath(__file__)
