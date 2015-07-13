@@ -22,8 +22,6 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from ...scripts import helpers
-
 NSASCIIStringEncoding = 1
 NSNEXTSTEPStringEncoding = 2
 NSJapaneseEUCStringEncoding = 3
@@ -97,4 +95,4 @@ def get_string_encoding_text(value):
         return "UTF32BigEndian"
     elif value == NSUTF32LittleEndianStringEncoding:
         return "UTF32LittleEndian"
-    return "Unksnown"
+    return "Unknown"

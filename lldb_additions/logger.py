@@ -26,6 +26,18 @@ import logging
 import os
 
 
+def __clean_log_file():
+    if os.path.exists(__logger_file_path):
+        try:
+            with open(__logger_file_path, "w") as f:
+                pass
+        except IOError:
+            pass
+
+__logger_file_path = os.path.expanduser("~/Library/Logs/lldb_additions.log")
+__clean_log_file()
+
+
 def configure_loggers():
     """
     Configure all well known loggers.
@@ -91,13 +103,13 @@ def configure_logger(logger):
         formatter = logging.Formatter('%(asctime)s - %(levelname)-8s - %(name)s - %(message)s')
 
         # File handler.
-        file_path = os.path.expanduser("~/Library/Logs/lldb_additions.log")
+        file_path = __logger_file_path
         file_handler = logging.FileHandler(file_path)
         file_handler.setFormatter(formatter)
 
         logger.addHandler(file_handler)
         logger.lldb_additions_handler = file_handler
-        logger.debug("Logger \"{}\" configured.".format(logger.name))
+        # logger.debug("Logger \"{}\" configured.".format(logger.name))
 
 
 # Configure loggers.

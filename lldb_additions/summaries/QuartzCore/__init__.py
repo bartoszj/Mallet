@@ -23,11 +23,3 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 __all__ = []
-
-
-def __lldb_init_module(debugger, internal_dict):
-    """
-    :param lldb.SBDebugger debugger: LLDB debugger
-    :param dict internal_dict: Internal LLDB dictionary.
-    """
-    pass

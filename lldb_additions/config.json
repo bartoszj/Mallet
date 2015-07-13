@@ -1,5 +1,5 @@
 {
-  "builtin": [
+  "builtin_packages": [
     "Foundation",
     "CoreGraphics",
     "QuartzCore",
@@ -7,7 +7,5 @@
     "UIKit",
     "StoreKit",
     "AFNetworking"
-  ],
-  "custom": [
   ]
 }

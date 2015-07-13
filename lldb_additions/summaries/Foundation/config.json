@@ -1,4 +1,17 @@
 {
   "class_dumps": "class_dumps",
-  "lldb_config": "lldbinit"
+  "lldb_init": "lldbinit",
+  "dependencies": [],
+  "modules": [
+    "NSObject",
+    "NSDateComponents",
+    "NSLayoutConstraint",
+    "NSOperation",
+    "NSOperationInternal",
+    "NSOperationQueue",
+    "NSOperationQueueInternal",
+    "NSURLComponents",
+    "NSUUID"
+  ],
+  "load_all_modules": true
 }
