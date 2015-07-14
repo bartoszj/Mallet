@@ -305,7 +305,6 @@ __package_dir_path = get_package_dir_path()
 __user_config_file_path = u"~/.lldb/lldb_additions.json"
 __default_config_file_name = u"config.json"
 __package_config_file_name = u"config.json"
-__summaries_path = u"summaries"
 __module_files_extensions = [".py"]
 
 
@@ -362,7 +361,7 @@ def __get_builtin_package_path(package_name):
     :return: Builtin package path.
     :rtype: str
     """
-    return os.path.join(__package_dir_path, __summaries_path, package_name)
+    return os.path.join(__package_dir_path, package_name)
 
 
 def __get_builtin_package_config_file_path(package_name):
@@ -540,7 +539,7 @@ def __load_builtin_module(debugger, package_name, module_name):
     :param str module_name: Module name.
     """
     log = logging.getLogger(__name__)
-    module_path = u".".join([__package_name, __summaries_path, package_name, module_name])
+    module_path = u".".join([__package_name, package_name, module_name])
     log.debug(u"Importing module \"{}\".".format(module_path))
     debugger.HandleCommand("script import {}".format(module_path))
 

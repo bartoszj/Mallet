@@ -25,10 +25,10 @@
 import os
 import lldb
 import logging
-from ..import class_dump
-from ..import loader
-from ..import helpers
-from ..import type_cache
+import class_dump
+import loader
+import helpers
+import type_cache
 
 
 class RegisterValue(object):

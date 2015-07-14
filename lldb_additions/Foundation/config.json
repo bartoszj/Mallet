@@ -13,5 +13,5 @@
     "NSURLComponents",
     "NSUUID"
   ],
-  "load_all_modules": true
+  "load_all_modules": false
 }

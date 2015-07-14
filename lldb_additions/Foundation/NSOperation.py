@@ -22,30 +22,30 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from ... import helpers
-from ..Foundation import NSObject
-import NSOperationQueueInternal
+from .. import helpers
+import NSObject
+import NSOperationInternal
 
 
-class NSOperationQueueSyntheticProvider(NSObject.NSObjectSyntheticProvider):
+class NSOperationSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
-    Class representing NSOperationQueue.
+    Class representing NSOperation.
     """
     def __init__(self, value_obj, internal_dict):
-        super(NSOperationQueueSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.type_name = "NSOperationQueue"
+        super(NSOperationSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.type_name = "NSOperation"
 
         self.register_child_value("private", ivar_name="_private",
-                                  provider_class=NSOperationQueueInternal.NSOperationQueueInternalSyntheticProvider,
+                                  provider_class=NSOperationInternal.NSOperationInternalSyntheticProvider,
                                   summary_function=self.get_private_summary)
 
     @staticmethod
     def get_private_summary(provider):
         """
-        Returns NSOperationQueueInternal summary.
-
-        :param NSOperationQueueInternal.NSOperationQueueInternalSyntheticProvider provider: NSOperationQueueInternal provider.
-        :return: NSOperationQueueInternal summary.
+        Returns NSOperationInternal summary.
+        :param NSOperationInternal.NSOperationInternalSyntheticProvider provider: NSOperationInternal provider.
+        :return: NSOperationInternal summary.
+        :rtype: str
         """
         return provider.summary()
 
@@ -54,4 +54,4 @@ class NSOperationQueueSyntheticProvider(NSObject.NSObjectSyntheticProvider):
 
 
 def summary_provider(value_obj, internal_dict):
-    return helpers.generic_summary_provider(value_obj, internal_dict, NSOperationQueueSyntheticProvider)
+    return helpers.generic_summary_provider(value_obj, internal_dict, NSOperationSyntheticProvider)
