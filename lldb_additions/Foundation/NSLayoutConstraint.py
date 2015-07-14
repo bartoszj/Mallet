@@ -23,8 +23,8 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from .. import helpers
-from .. import SummaryBase
-from ..Foundation import NSObject
+from ..common import SummaryBase
+import NSObject
 
 NSLayoutRelationLessThanOrEqual = 3
 NSLayoutRelationEqual = 0

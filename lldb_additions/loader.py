@@ -26,8 +26,8 @@ import lldb
 import os
 import logging
 import imp
-import logger
 import json
+import class_dump
 
 
 lldb_additions_class_dump_dir = "ClassDumps"
@@ -369,7 +369,7 @@ def __get_builtin_package_config_file_path(package_name):
     Returns builtin package config file path.
 
     :param str package_name: Package name.
-    :return: Built in package config file path.
+    :return: Builtin package config file path.
     :rtype: str
     """
     return os.path.join(__get_builtin_package_path(package_name), __package_config_file_name)
@@ -426,7 +426,7 @@ def __load_user_configuration(debugger, user_configuration):
     # Loaded packages.
     loaded_packages = list()
 
-    # Load built in packages.
+    # Load builtin packages.
     builtin_packages = None
     if u"builtin_packages" in user_configuration:
         builtin_packages = user_configuration[u"builtin_packages"]
@@ -465,7 +465,7 @@ def __load_package(debugger, package_name, loaded_packages):
 
 def __load_builtin_package(debugger, package_name, loaded_packages):
     """
-    Loads built in package.
+    Loads builtin package.
 
     :param lldb.SBDebugger debugger: LLDB debugger.
     :param str package_name: Package name.
@@ -476,7 +476,6 @@ def __load_builtin_package(debugger, package_name, loaded_packages):
     # Skip loading if package was already loaded.
     if package_name in loaded_packages:
         return
-    log.debug(u"Loading built in package \"{}\".".format(package_name))
     loaded_packages.append(package_name)
 
     package_path = __get_builtin_package_path(package_name)
@@ -495,16 +494,18 @@ def __load_builtin_package(debugger, package_name, loaded_packages):
         log.critical(u"Cannot read package config file \"{}\".".format(package_config_path))
         return
 
-    class_dumps = package_config[u"class_dumps"]
-    lldb_init = package_config[u"lldb_init"]
-    dependencies = package_config[u"dependencies"]
-    modules = package_config[u"modules"]
-    load_all_modules = package_config[u"load_all_modules"]
+    class_dumps = package_config[u"class_dumps"] if u"class_dumps" in package_config else None
+    lldb_init = package_config[u"lldb_init"] if u"lldb_init" in package_config else None
+    dependencies = package_config[u"dependencies"] if u"dependencies" in package_config else None
+    modules = package_config[u"modules"] if u"modules" in package_config else None
+    load_all_modules = package_config[u"load_all_modules"] if u"load_all_modules" in package_config else None
 
     # Load dependencies.
     if dependencies is not None:
         for dependency in dependencies:
             __load_builtin_package(debugger, dependency, loaded_packages)
+
+    log.debug(u"Loading builtin package \"{}\".".format(package_name))
 
     # Load modules in order.
     all_package_modules = __get_modules_at_path(package_path)
@@ -522,12 +523,25 @@ def __load_builtin_package(debugger, package_name, loaded_packages):
 
     # Load LLDB init.
     if lldb_init is not None:
-        lldb_init_path = os.path.join(package_path, lldb_init)
-        if os.path.exists(lldb_init_path):
-            log.debug(u"Loading lldb init \"{}\".".format(lldb_init_path))
-            debugger.HandleCommand("command source -s true {}".format(lldb_init_path))
+        # Convert string to list of strings.
+        if isinstance(lldb_init, str) or isinstance(lldb_init, unicode):
+            lldb_init = [lldb_init]
+        for li in lldb_init:
+            lldb_init_path = os.path.join(package_path, li)
+            if os.path.exists(lldb_init_path):
+                log.debug(u"Loading lldb init \"{}\".".format(lldb_init_path))
+                debugger.HandleCommand("command source -s true {}".format(lldb_init_path))
+            else:
+                log.critical(u"Cannot find lldb init file \"{}\".".format(lldb_init_path))
+
+    # Register class dump module.
+    if class_dumps is not None:
+        class_dumps_path = os.path.join(package_path, class_dumps)
+        if os.path.exists(class_dumps_path):
+            log.debug(u"Registering class dump module \"{}\".".format(class_dumps_path))
+            get_shared_lazy_class_dump_manager().register_module(package_name, class_dumps_path)
         else:
-            log.critical(u"Cannot find lldb init file \"{}\".".format(lldb_init_path))
+            log.critical(u"Cannot find class dump folder \"{}\".".format(class_dumps_path))
 
 
 def __load_builtin_module(debugger, package_name, module_name):
@@ -549,6 +563,20 @@ def __load_custom_package(debugger, package_name, loaded_packages):
     if package_name in loaded_packages:
         return
     pass
+
+
+def get_shared_lazy_class_dump_manager():
+    """
+    Get shared lazy class dump manager.
+
+    :return: Shared lazy class dump manager.
+    :rtype: ClassDump.LazyClassDumpManager.
+    """
+    if not hasattr(get_shared_lazy_class_dump_manager, "lazy_class_dump_manager"):
+        logger = logging.getLogger(__name__)
+        logger.debug(u"Creating shared class dump manager.")
+        get_shared_lazy_class_dump_manager.lazy_class_dump_manager = class_dump.LazyClassDumpManager()
+    return get_shared_lazy_class_dump_manager.lazy_class_dump_manager
 
 
 def load(debugger, internal_dict):

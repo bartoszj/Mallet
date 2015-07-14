@@ -3,7 +3,7 @@
 
 # The MIT License (MIT)
 #
-# Copyright (c) 2014 Bartosz Janda
+# Copyright (c) 2015 Bartosz Janda
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
 # this software and associated documentation files (the "Software"), to deal in
@@ -22,17 +22,4 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from ..common import SummaryBase
-
-
-class NSObjectSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
-    """
-    Class representing NSObject.
-    """
-    def __init__(self, value_obj, internal_dict):
-        """
-        :param lldb.SBValue value_obj: LLDB variable to compute summary.
-        :param dict internal_dict: Internal LLDB dictionary.
-        """
-        super(NSObjectSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.type_name = "NSObject"
+__all__ = []

@@ -1,5 +1,6 @@
 {
   "builtin_packages": [
+    "common",
     "Foundation",
     "CoreGraphics",
     "QuartzCore",

@@ -23,7 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from .. import helpers
-from .. import SummaryBase
+from ..common import SummaryBase
 import NSObject
 
 

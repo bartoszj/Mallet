@@ -25,10 +25,10 @@
 import os
 import lldb
 import logging
-import class_dump
-import loader
-import helpers
-import type_cache
+from .. import class_dump
+from .. import loader
+from .. import helpers
+from .. import type_cache
 
 
 class RegisterValue(object):
@@ -962,7 +962,7 @@ def get_architecture_list():
     Get shared architecture list.
 
     :return: Shared architecture list.
-    :rtype: ClassDump.LazyArchitecturesList
+    :rtype: ClassDump.LazyClassDumpManager
     """
     if not hasattr(get_architecture_list, "architectures_list"):
         logger = logging.getLogger(__name__)

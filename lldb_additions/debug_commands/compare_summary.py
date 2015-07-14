@@ -23,7 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
-from ...summaries import SummaryBase
+from ..common import SummaryBase
 
 
 def compare_summary(debugger, command, result, internal_dict):
@@ -152,7 +152,3 @@ def compare_summary(debugger, command, result, internal_dict):
             frame.EvaluateExpression("{} = 0".format(result_name), options)
         else:
             frame.EvaluateExpression("{} = @0".format(result_name), options)
-
-
-def lldb_init(debugger, internal_dict):
-    debugger.HandleCommand("command script add -f {}.compare_summary compare_summary".format(__name__))

@@ -25,6 +25,8 @@
 import logging
 import os
 
+__logger_file_path = os.path.expanduser("~/Library/Logs/lldb_additions.log")
+
 
 def __clean_log_file():
     if os.path.exists(__logger_file_path):
@@ -33,9 +35,6 @@ def __clean_log_file():
                 pass
         except IOError:
             pass
-
-__logger_file_path = os.path.expanduser("~/Library/Logs/lldb_additions.log")
-__clean_log_file()
 
 
 def configure_loggers():
@@ -112,4 +111,5 @@ def configure_logger(logger):
 
 
 # Configure loggers.
+__clean_log_file()
 configure_loggers()

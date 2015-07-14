@@ -1,7 +1,11 @@
 {
   "class_dumps": "class_dumps",
-  "lldb_init": "lldbinit",
-  "dependencies": [],
+  "lldb_init": [
+    "lldbinit"
+  ],
+  "dependencies": [
+    "common"
+  ],
   "modules": [
     "NSObject",
     "NSDateComponents",
