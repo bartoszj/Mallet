@@ -33,6 +33,7 @@ class NSURLComponentsSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(NSURLComponentsSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.module_name = "Foundation"
         self.type_name = "__NSConcreteURLComponents"
 
         self.register_child_value("url_string", ivar_name="_urlString",

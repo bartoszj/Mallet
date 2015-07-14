@@ -22,10 +22,8 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import os
 import lldb
 import logging
-from .. import class_dump
 from .. import loader
 from .. import helpers
 from .. import type_cache
@@ -122,6 +120,7 @@ class SummaryBaseSyntheticProvider(object):
 
         self.value_obj = value_obj
         self.dynamic_value_obj = self.value_obj.GetDynamicValue(self.default_dynamic_type)
+        self.module_name = None
         self.type_name = None
 
         self.target = self.dynamic_value_obj.GetTarget()
@@ -157,7 +156,7 @@ class SummaryBaseSyntheticProvider(object):
             logger = logging.getLogger(__name__)
             logger.error("get_ivar: empty type_name.")
             return None
-        return get_architecture_list().get_ivar(self.architecture_name, self.type_name, ivar_name)
+        return loader.get_shared_lazy_class_dump_manager().get_ivar(self.module_name, self.architecture_name, self.type_name, ivar_name)
 
     def get_address(self):
         """
@@ -915,13 +914,13 @@ def get_synthetic_value_copy(obj):
 def strip_string(string):
     # Removes @" or " from the beginning of the string.
     if string.startswith("@\""):
-        summary = string[2:]
+        string = string[2:]
     elif string.startswith("\""):
-        summary = string[1:]
+        string = string[1:]
 
     # Removes " from the ond of the string.
     if string.endswith("\""):
-        string = summary[:-1]
+        string = string[:-1]
 
     return string
 
@@ -955,18 +954,3 @@ def join_summaries(*args):
     if len(summaries_strings) == 0:
         return None
     return ", ".join(summaries_strings)
-
-
-def get_architecture_list():
-    """
-    Get shared architecture list.
-
-    :return: Shared architecture list.
-    :rtype: ClassDump.LazyClassDumpManager
-    """
-    if not hasattr(get_architecture_list, "architectures_list"):
-        logger = logging.getLogger(__name__)
-        class_dump_dir = os.path.join(loader.__package_dir_path, loader.lldb_additions_class_dump_dir)
-        logger.debug("Creating shared architecture list: {}".format(class_dump_dir))
-        get_architecture_list.architectures_list = class_dump.LazyClassDumpManager(class_dump_dir)
-    return get_architecture_list.architectures_list

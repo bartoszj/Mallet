@@ -35,4 +35,5 @@ class NSObjectSyntheticProvider(SummaryBase.SummaryBaseSyntheticProvider):
         :param dict internal_dict: Internal LLDB dictionary.
         """
         super(NSObjectSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.module_name = "Foundation"
         self.type_name = "NSObject"

@@ -66,6 +66,7 @@ class NSLayoutConstraintSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(NSLayoutConstraintSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.module_name = "Foundation"
         self.type_name = "NSLayoutConstraint"
 
         self.register_child_value("container", ivar_name="_container",
