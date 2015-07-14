@@ -29,8 +29,6 @@ import imp
 import logger
 import json
 
-logger.configure_loggers()
-
 
 lldb_additions_class_dump_dir = "ClassDumps"
 lldb_additions_lldb_commands_dir = "lldb_commands"
@@ -321,8 +319,7 @@ def __get_default_configuration():
     log = logging.getLogger(__name__)
 
     # Looks for default configuration.
-    dir_path = __package_dir_path
-    default_config_path = os.path.join(dir_path, __default_config_file_name)
+    default_config_path = os.path.join(__package_dir_path, __default_config_file_name)
     if os.path.exists(default_config_path):
         # Loads JSON configuration.
         with open(default_config_path) as default_config_file:
@@ -524,10 +521,19 @@ def __load_builtin_package(debugger, package_name, loaded_packages):
             # Load module.
             __load_builtin_module(debugger, package_name, module_name)
 
+    # Load LLDB init.
+    if lldb_init is not None:
+        lldb_init_path = os.path.join(package_path, lldb_init)
+        if os.path.exists(lldb_init_path):
+            log.debug(u"Loading lldb init \"{}\".".format(lldb_init_path))
+            debugger.HandleCommand("command source -s true {}".format(lldb_init_path))
+        else:
+            log.critical(u"Cannot find lldb init file \"{}\".".format(lldb_init_path))
+
 
 def __load_builtin_module(debugger, package_name, module_name):
     """
-    Loads module.
+    Loads module into LLDB Python interpreter.
 
     :param lldb.SBDebugger debugger: LLDB debugger.
     :param str package_name: Package name.

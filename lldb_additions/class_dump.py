@@ -28,7 +28,6 @@ import logging
 import logger
 
 
-logger.configure_loggers()
 class_dumps_folder_name = "class_dumps"
 module_map_file_name = "module_map.json"
 

@@ -42,7 +42,6 @@ def configure_loggers():
     """
     Configure all well known loggers.
     """
-
     logger_names = ["lldb_additions.class_dump",
                     "lldb_additions.helpers",
                     "lldb_additions.type_cache",
