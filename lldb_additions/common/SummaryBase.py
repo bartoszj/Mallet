@@ -503,6 +503,10 @@ class SummaryBaseSyntheticProvider(object):
         :raises AttributeError: If registered attribute doesn't exists.
         """
         logger = logging.getLogger(__name__)
+        # Skipping "builtin" get_value method.
+        if item == "get_value":
+            return None
+
         # Check is child value, primitive value or summary value should be returned.
         attribute_name = item
         primitive_value = False

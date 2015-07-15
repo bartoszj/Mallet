@@ -27,6 +27,9 @@ import lldb
 import logging
 
 
+__shared_type_cache = None
+
+
 class TypeCache(object):
     """
     Stores cached types.
@@ -160,13 +163,25 @@ class TypeCache(object):
 
 def get_type_cache():
     """
-    Get shared TypeCache.
+    Returns shared TypeCache.
 
     :return: TypeCache singleton.
     :rtype: TypeCache
     """
-    if not hasattr(get_type_cache, "type_cache"):
+    global __shared_type_cache
+    if __shared_type_cache is None:
         logger = logging.getLogger(__name__)
-        logger.debug("Creating shared TypeCache.")
-        get_type_cache.type_cache = TypeCache()
-    return get_type_cache.type_cache
+        logger.debug(u"Creating shared TypeCache.")
+        __shared_type_cache = TypeCache()
+    return __shared_type_cache
+
+
+def clean_type_cache():
+    """
+    Cleans shared TypeCache.
+    """
+    global __shared_type_cache
+    if __shared_type_cache is not None:
+        logger = logging.getLogger(__name__)
+        logger.debug(u"Cleaning shared TypeCache.")
+        __shared_type_cache = None

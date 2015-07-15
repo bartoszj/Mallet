@@ -46,7 +46,7 @@ def configure_loggers():
                     "lldb_additions.type_cache",
                     "lldb_additions.loader",
                     "lldb_additions.logger",
-                    "lldb_additions.summaries.SummaryBase",
+                    "lldb_additions.common.SummaryBase",
                     ]
     for logger_name in logger_names:
         logger = logging.getLogger(logger_name)
