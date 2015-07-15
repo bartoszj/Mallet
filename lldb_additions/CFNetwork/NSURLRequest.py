@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from ...scripts import helpers
+from .. import helpers
 from ..Foundation import NSObject
 import NSURLRequestInternal
 
@@ -44,6 +44,7 @@ class NSURLRequestSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(NSURLRequestSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.module_name = "CFNetwork"
         self.type_name = "NSURLRequest"
 
         self.register_child_value("request_internal", ivar_name="_internal",

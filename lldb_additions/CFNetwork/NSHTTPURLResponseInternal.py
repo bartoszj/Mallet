@@ -31,4 +31,5 @@ class NSHTTPURLResponseInternalSyntheticProvider(NSObject.NSObjectSyntheticProvi
     """
     def __init__(self, value_obj, internal_dict):
         super(NSHTTPURLResponseInternalSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.module_name = "CFNetwork"
         self.type_name = "NSHTTPURLResponseInternal"

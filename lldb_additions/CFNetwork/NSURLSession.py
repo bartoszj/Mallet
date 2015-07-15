@@ -22,8 +22,8 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from ...scripts import helpers
-from .. import SummaryBase
+from .. import helpers
+from ..common import SummaryBase
 from ..Foundation import NSObject
 
 
@@ -33,6 +33,7 @@ class NSURLSessionSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(NSURLSessionSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.module_name = "CFNetwork"
         self.type_name = "NSURLSession"
 
         self.register_child_value("is_shared_session", ivar_name="__isSharedSession",

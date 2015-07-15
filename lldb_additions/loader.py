@@ -31,18 +31,7 @@ import class_dump
 import type_cache
 
 
-lldb_summaries_load_order = ["SummaryBase",
-
-                             "NSObject",
-                             "NSOperation",
-                             "NSURLResponse",
-                             "NSURLSessionTask",
-                             "NSURLSessionDataTask",
-                             "NSCFLocalSessionTask",
-                             "NSCFLocalDataTask",
-                             "NSCFBackgroundSessionTask",
-                             "NSCFBackgroundDataTask",
-
+lldb_summaries_load_order = [
                              "UIResponder",
                              "UIView",
                              "UIControl",

@@ -1,0 +1,29 @@
+type summary add -F lldb_additions.CFNetwork.CFURLRequest.summary_provider               --category CFNetwork _CFURLRequest
+type summary add -F lldb_additions.CFNetwork.CFURLResponse.summary_provider              --category CFNetwork CFURLResponse
+type summary add -F lldb_additions.CFNetwork.NSCFBackgroundDataTask.summary_provider     --category CFNetwork __NSCFBackgroundDataTask
+type summary add -F lldb_additions.CFNetwork.NSCFBackgroundDownloadTask.summary_provider --category CFNetwork __NSCFBackgroundDownloadTask
+type summary add -F lldb_additions.CFNetwork.NSCFBackgroundSessionTask.summary_provider  --category CFNetwork __NSCFBackgroundSessionTask
+type summary add -F lldb_additions.CFNetwork.NSCFBackgroundUploadTask.summary_provider   --category CFNetwork __NSCFBackgroundUploadTask
+type summary add -F lldb_additions.CFNetwork.NSCFLocalDataTask.summary_provider          --category CFNetwork __NSCFLocalDataTask
+type summary add -F lldb_additions.CFNetwork.NSCFLocalDownloadFile.summary_provider      --category CFNetwork __NSCFLocalDownloadFile
+type summary add -F lldb_additions.CFNetwork.NSCFLocalDownloadTask.summary_provider      --category CFNetwork __NSCFLocalDownloadTask
+type summary add -F lldb_additions.CFNetwork.NSCFLocalSessionTask.summary_provider       --category CFNetwork __NSCFLocalSessionTask
+type summary add -F lldb_additions.CFNetwork.NSCFLocalUploadTask.summary_provider        --category CFNetwork __NSCFLocalUploadTask
+type summary add -F lldb_additions.CFNetwork.NSHTTPURLResponse.summary_provider          --category CFNetwork NSHTTPURLResponse
+type summary add -F lldb_additions.CFNetwork.NSURLConnection.summary_provider            --category CFNetwork NSURLConnection
+type summary add -F lldb_additions.CFNetwork.NSURLConnectionInternal.summary_provider    --category CFNetwork NSURLConnectionInternal
+type summary add -F lldb_additions.CFNetwork.NSURLRequest.summary_provider               --category CFNetwork NSURLRequest NSMutableURLRequest
+type summary add -F lldb_additions.CFNetwork.NSURLRequestInternal.summary_provider       --category CFNetwork NSURLRequestInternal
+type summary add -F lldb_additions.CFNetwork.NSURLResponse.summary_provider              --category CFNetwork NSURLResponse
+type summary add -F lldb_additions.CFNetwork.NSURLResponseInternal.summary_provider      --category CFNetwork NSURLResponseInternal
+type summary add -F lldb_additions.CFNetwork.NSURLSession.summary_provider               --category CFNetwork NSURLSession
+type summary add -F lldb_additions.CFNetwork.NSURLSessionConfiguration.summary_provider  --category CFNetwork NSURLSessionConfiguration
+type summary add -F lldb_additions.CFNetwork.NSURLSessionDataTask.summary_provider       --category CFNetwork NSURLSessionDataTask
+type summary add -F lldb_additions.CFNetwork.NSURLSessionDownloadTask.summary_provider   --category CFNetwork NSURLSessionDownloadTask
+type summary add -F lldb_additions.CFNetwork.NSURLSessionTask.summary_provider           --category CFNetwork NSURLSessionTask
+type summary add -F lldb_additions.CFNetwork.NSURLSessionUploadTask.summary_provider     --category CFNetwork NSURLSessionUploadTask
+
+type synthetic add -l lldb_additions.CFNetwork.NSURLRequest.NSURLRequestSyntheticProvider   --category CFNetwork NSURLRequest NSMutableURLRequest
+type synthetic add -l lldb_additions.CFNetwork.NSURLResponse.NSURLResponseSyntheticProvider --category CFNetwork NSURLResponse NSHTTPURLResponse
+
+type category enable CFNetwork

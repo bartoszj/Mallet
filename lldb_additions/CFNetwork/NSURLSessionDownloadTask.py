@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from ...scripts import helpers
+from .. import helpers
 import NSURLSessionTask
 
 
@@ -32,6 +32,7 @@ class NSURLSessionDownloadTaskSyntheticProvider(NSURLSessionTask.NSURLSessionTas
     """
     def __init__(self, value_obj, internal_dict):
         super(NSURLSessionDownloadTaskSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.module_name = "CFNetwork"
         self.type_name = "NSURLSessionDownloadTask"
 
 

@@ -22,8 +22,8 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from ...scripts import helpers
-from .. import SummaryBase
+from .. import helpers
+from ..common import SummaryBase
 import NSURLSessionTask
 
 
@@ -33,6 +33,7 @@ class NSCFLocalSessionTaskSyntheticProvider(NSURLSessionTask.NSURLSessionTaskSyn
     """
     def __init__(self, value_obj, internal_dict):
         super(NSCFLocalSessionTaskSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.module_name = "CFNetwork"
         self.type_name = "__NSCFLocalSessionTask"
 
         self.register_child_value("upload_file", ivar_name="_uploadFile",
