@@ -43,13 +43,6 @@ lldb_summaries_load_order = ["SummaryBase",
                              "NSCFBackgroundSessionTask",
                              "NSCFBackgroundDataTask",
 
-                             "CADoublePoint",
-                             "CADoubleSize",
-                             "CADoubleRect",
-                             "CALayerInternalLayer",
-                             "CALayerIvars",
-                             "CALayer",
-
                              "UIResponder",
                              "UIView",
                              "UIControl",
