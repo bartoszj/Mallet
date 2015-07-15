@@ -1,0 +1,12 @@
+{
+  "lldb_init": [
+    "lldbinit"
+  ],
+  "dependencies": [
+    "Foundation"
+  ],
+  "modules": [
+    "CGImage"
+  ],
+  "load_all_modules": false
+}

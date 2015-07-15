@@ -1,6 +1,6 @@
 type summary add -s "(dx = ${var.dx}, dy = ${var.dy})" -v --category CoreGraphics CGVector
 type summary add -s "([${var.a}, ${var.b}], [${var.c}, ${var.d}], [${var.tx}, ${var.ty}])" -v --category CoreGraphics CGAffineTransform
 
-type summary add -F lldb_additions.summaries.CoreGraphics.CGImage.summary_provider --category CoreGraphics CGImage
+type summary add -F lldb_additions.CoreGraphics.CGImage.summary_provider --category CoreGraphics CGImage
 
 type category enable CoreGraphics
