@@ -22,8 +22,8 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from ...scripts import helpers
-from .. import SummaryBase
+from .. import helpers
+from ..common import SummaryBase
 from ..Foundation import NSObject
 
 SKDownloadStateWaiting = 0
@@ -40,6 +40,7 @@ class SKDownloadSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(SKDownloadSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.module_name = "StoreKit"
         self.type_name = "SKDownload"
 
         self.register_child_value("content_identifier", ivar_name="_contentIdentifier",

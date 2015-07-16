@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from .. import SummaryBase
+from ..common import SummaryBase
 from ..Foundation import NSObject
 
 
@@ -33,6 +33,7 @@ class SKProductsResponseInternalSyntheticProvider(NSObject.NSObjectSyntheticProv
 
     def __init__(self, value_obj, internal_dict):
         super(SKProductsResponseInternalSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.module_name = "StoreKit"
         self.type_name = "SKProductsResponseInternal"
 
         self.register_child_value("products", ivar_name="_products",
