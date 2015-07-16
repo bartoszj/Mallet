@@ -22,9 +22,9 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from ...scripts import helpers
+from .. import helpers
 from ..Foundation import NSPropertyListSerialization
-from .. import SummaryBase
+from ..common import SummaryBase
 import AFHTTPResponseSerializer
 
 

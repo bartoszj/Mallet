@@ -1,0 +1,24 @@
+type summary add -F lldb_additions.AFNetworking.AFURLConnectionOperation.summary_provider          --category AFNetworking AFURLConnectionOperation
+type summary add -F lldb_additions.AFNetworking.AFHTTPRequestOperation.summary_provider            --category AFNetworking AFHTTPRequestOperation
+type summary add -F lldb_additions.AFNetworking.AFHTTPRequestOperationManager.summary_provider     --category AFNetworking AFHTTPRequestOperationManager
+type summary add -F lldb_additions.AFNetworking.AFURLSessionManager.summary_provider               --category AFNetworking AFURLSessionManager
+type summary add -F lldb_additions.AFNetworking.AFHTTPSessionManager.summary_provider              --category AFNetworking AFHTTPSessionManager
+type summary add -F lldb_additions.AFNetworking.AFHTTPRequestSerializer.summary_provider           --category AFNetworking AFHTTPRequestSerializer
+type summary add -F lldb_additions.AFNetworking.AFJSONRequestSerializer.summary_provider           --category AFNetworking AFJSONRequestSerializer
+type summary add -F lldb_additions.AFNetworking.AFPropertyListRequestSerializer.summary_provider   --category AFNetworking AFPropertyListRequestSerializer
+type summary add -F lldb_additions.AFNetworking.AFHTTPResponseSerializer.summary_provider          --category AFNetworking AFHTTPResponseSerializer
+type summary add -F lldb_additions.AFNetworking.AFJSONResponseSerializer.summary_provider          --category AFNetworking AFJSONResponseSerializer
+type summary add -F lldb_additions.AFNetworking.AFPropertyListResponseSerializer.summary_provider  --category AFNetworking AFPropertyListResponseSerializer
+type summary add -F lldb_additions.AFNetworking.AFXMLParserResponseSerializer.summary_provider     --category AFNetworking AFXMLParserResponseSerializer
+type summary add -F lldb_additions.AFNetworking.AFXMLDocumentResponseSerializer.summary_provider   --category AFNetworking AFXMLDocumentResponseSerializer
+type summary add -F lldb_additions.AFNetworking.AFImageResponseSerializer.summary_provider         --category AFNetworking AFImageResponseSerializer
+type summary add -F lldb_additions.AFNetworking.AFCompoundResponseSerializer.summary_provider      --category AFNetworking AFCompoundResponseSerializer
+type summary add -F lldb_additions.AFNetworking.AFSecurityPolicy.summary_provider                  --category AFNetworking AFSecurityPolicy
+type summary add -F lldb_additions.AFNetworking.AFNetworkActivityIndicatorManager.summary_provider --category AFNetworking AFNetworkActivityIndicatorManager
+type summary add -F lldb_additions.AFNetworking.AFNetworkReachabilityManager.summary_provider      --category AFNetworking AFNetworkReachabilityManager
+
+#type synthetic add -l lldb_additions.AFNetworking.AFHTTPRequestSerializer.AFHTTPRequestSerializerSyntheticProvider                 --category AFNetworking AFHTTPRequestSerializer
+#type synthetic add -l lldb_additions.AFNetworking.AFJSONRequestSerializer.AFJSONRequestSerializerSyntheticProvider                 --category AFNetworking AFJSONRequestSerializer
+#type synthetic add -l lldb_additions.AFNetworking.AFPropertyListRequestSerializer.AFPropertyListRequestSerializerSyntheticProvider --category AFNetworking AFPropertyListRequestSerializer
+
+type category enable AFNetworking

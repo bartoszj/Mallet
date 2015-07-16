@@ -7,6 +7,11 @@
     "common"
   ],
   "modules": [
+    "CFHTTPMessage",
+    "CFURLRequest",
+    "CFURLResponse",
+    "HTTPHeaderDict",
+
     "NSURLResponse",
     "NSURLResponseInternal",
     "NSHTTPURLResponse",

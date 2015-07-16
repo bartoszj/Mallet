@@ -22,11 +22,11 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from ...scripts import helpers
+from .. import helpers
 from ..Foundation import NSObject
 from ..Foundation import NSString
 from ..CFNetwork import NSURLRequest
-from .. import SummaryBase
+from ..common import SummaryBase
 
 
 class AFHTTPRequestSerializerSyntheticProvider(NSObject.NSObjectSyntheticProvider):

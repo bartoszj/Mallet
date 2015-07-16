@@ -31,30 +31,6 @@ import class_dump
 import type_cache
 
 
-lldb_summaries_load_order = [
-
-
-                             "AFURLConnectionOperation",
-                             "AFHTTPRequestOperation",
-                             "AFHTTPRequestOperationManager",
-                             "AFURLSessionManager",
-                             "AFHTTPSessionManager",
-                             "AFHTTPRequestSerializer",
-                             "AFJSONRequestSerializer",
-                             "AFPropertyListRequestSerializer",
-                             "AFHTTPResponseSerializer",
-                             "AFJSONResponseSerializer",
-                             "AFPropertyListResponseSerializer",
-                             "AFXMLParserResponseSerializer",
-                             "AFXMLDocumentResponseSerializer",
-                             "AFImageResponseSerializer",
-                             "AFCompoundResponseSerializer",
-                             "AFSecurityPolicy",
-                             "AFNetworkActivityIndicatorManager",
-                             "AFNetworkReachabilityManager",
-                             ]
-
-
 def get_package_name():
     """
     Returns package name -> "lldb_additions"
