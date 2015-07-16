@@ -32,25 +32,7 @@ import type_cache
 
 
 lldb_summaries_load_order = [
-                             "UIResponder",
-                             "UIView",
-                             "UIControl",
-                             "UIPickerView",
-                             "UIViewController",
-                             "UINavigationController",
-                             "UIBarItem",
-                             "UIColor",
-                             "UIEvent",
-                             "UIInternalEvent",
 
-                             "SKRequestInternal",
-                             "SKRequest",
-                             "SKPaymentInternal",
-                             "SKPaymentQueueInternal",
-                             "SKPaymentTransactionInternal",
-                             "SKProductInternal",
-                             "SKProductsRequestInternal",
-                             "SKProductsResponseInternal",
 
                              "AFURLConnectionOperation",
                              "AFHTTPRequestOperation",

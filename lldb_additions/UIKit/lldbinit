@@ -1,0 +1,46 @@
+type summary add -s "(top = ${var.top}, left = ${var.left}, bottom = ${var.bottom}, right = ${var.right})"  -v --category UIKit UIEdgeInsets
+type summary add -s "(horizontal = ${var.horizontal}, vertical = ${var.vertical})"                          -v --category UIKit UIOffset
+
+type summary add -F lldb_additions.UIKit.UIActivityIndicatorView.summary_provider --category UIKit UIActivityIndicatorView
+type summary add -F lldb_additions.UIKit.UIAlertAction.summary_provider           --category UIKit UIAlertAction
+type summary add -F lldb_additions.UIKit.UIAlertController.summary_provider       --category UIKit UIAlertController
+type summary add -F lldb_additions.UIKit.UIAlertView.summary_provider             --category UIKit UIAlertView
+type summary add -F lldb_additions.UIKit.UIBarButtonItem.summary_provider         --category UIKit UIBarButtonItem
+type summary add -F lldb_additions.UIKit.UIButton.summary_provider                --category UIKit UIButton
+type summary add -F lldb_additions.UIKit.UIColor.summary_provider                 --category UIKit UIColor
+type summary add -F lldb_additions.UIKit.UIDatePicker.summary_provider            --category UIKit UIDatePicker
+type summary add -F lldb_additions.UIKit.UIDatePickerView.summary_provider        --category UIKit _UIDatePickerView
+type summary add -F lldb_additions.UIKit.UIDeviceRGBColor.summary_provider        --category UIKit UIDeviceRGBColor UICachedDeviceRGBColor
+type summary add -F lldb_additions.UIKit.UIDeviceWhiteColor.summary_provider      --category UIKit UIDeviceWhiteColor UICachedDeviceWhiteColor
+type summary add -F lldb_additions.UIKit.UIEvent.summary_provider                 --category UIKit UIEvent
+type summary add -F lldb_additions.UIKit.UIImage.summary_provider                 --category UIKit UIImage
+type summary add -F lldb_additions.UIKit.UIImageView.summary_provider             --category UIKit UIImageView
+type summary add -F lldb_additions.UIKit.UIInternalEvent.summary_provider         --category UIKit UIInternalEvent
+type summary add -F lldb_additions.UIKit.UILabel.summary_provider                 --category UIKit UILabel
+type summary add -F lldb_additions.UIKit.UINavigationController.summary_provider  --category UIKit UINavigationController
+type summary add -F lldb_additions.UIKit.UINib.summary_provider                   --category UIKit UINib
+type summary add -F lldb_additions.UIKit.UINibStorage.summary_provider            --category UIKit UINibStorage
+type summary add -F lldb_additions.UIKit.UIPageControl.summary_provider           --category UIKit UIPageControl
+# type summary add -F lldb_additions.UIKit.UIPickerView.summary_provider          --category UIKit UIPickerView
+type summary add -F lldb_additions.UIKit.UIProgressView.summary_provider          --category UIKit UIProgressView
+type summary add -F lldb_additions.UIKit.UIScreen.summary_provider                --category UIKit UIScreen
+type summary add -F lldb_additions.UIKit.UIScrollView.summary_provider            --category UIKit UIScrollView
+type summary add -F lldb_additions.UIKit.UISegmentedControl.summary_provider      --category UIKit UISegmentedControl
+type summary add -F lldb_additions.UIKit.UISlider.summary_provider                --category UIKit UISlider
+type summary add -F lldb_additions.UIKit.UIStepper.summary_provider               --category UIKit UIStepper
+type summary add -F lldb_additions.UIKit.UIStoryboard.summary_provider            --category UIKit UIStoryboard
+type summary add -F lldb_additions.UIKit.UIStoryboardSegue.summary_provider       --category UIKit UIStoryboardSegue
+type summary add -F lldb_additions.UIKit.UISwitch.summary_provider                --category UIKit UISwitch
+type summary add -F lldb_additions.UIKit.UITableViewCell.summary_provider         --category UIKit UITableViewCell
+type summary add -F lldb_additions.UIKit.UITextField.summary_provider             --category UIKit UITextField
+type summary add -F lldb_additions.UIKit.UITouch.summary_provider                 --category UIKit UITouch
+type summary add -F lldb_additions.UIKit.UITouchesEvent.summary_provider          --category UIKit UITouchesEvent
+type summary add -F lldb_additions.UIKit.UIView.summary_provider                  --category UIKit UIView UIWindow
+type summary add -F lldb_additions.UIKit.UIViewController.summary_provider        --category UIKit UIViewController
+
+type synthetic add -l lldb_additions.UIKit.UIDeviceRGBColor.UIDeviceRGBColorSyntheticProvider             --category UIKit UIDeviceRGBColor UICachedDeviceRGBColor
+type synthetic add -l lldb_additions.UIKit.UIDeviceWhiteColor.UIDeviceWhiteColorSyntheticProvider         --category UIKit UIDeviceWhiteColor UICachedDeviceWhiteColor
+type synthetic add -l lldb_additions.UIKit.UINavigationController.UINavigationControllerSyntheticProvider --category UIKit UINavigationController
+type synthetic add -l lldb_additions.UIKit.UITouchesEvent.UITouchesEventSyntheticProvider                 --category UIKit UITouchesEvent
+
+type category enable UIKit

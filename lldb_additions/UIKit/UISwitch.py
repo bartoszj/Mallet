@@ -22,8 +22,8 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from ...scripts import helpers
-from .. import SummaryBase
+from .. import helpers
+from ..common import SummaryBase
 import UIControl
 
 
@@ -33,6 +33,7 @@ class UISwitchSyntheticProvider(UIControl.UIControlSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UISwitchSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.module_name = "UIKit"
         self.type_name = "UISwitch"
 
         self.register_child_value("on", ivar_name="_on",

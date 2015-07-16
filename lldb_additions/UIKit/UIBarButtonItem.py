@@ -22,17 +22,18 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from ...scripts import helpers
-from .. import SummaryBase
-from ..Foundation import NSObject
+from .. import helpers
+from ..common import SummaryBase
+import UIBarItem
 
 
-class UIBarButtonItemSyntheticProvider(NSObject.NSObjectSyntheticProvider):
+class UIBarButtonItemSyntheticProvider(UIBarItem.UIBarItemSyntheticProvider):
     """
     Class representing UIBarButtonItem.
     """
     def __init__(self, value_obj, internal_dict):
         super(UIBarButtonItemSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.module_name = "UIKit"
         self.type_name = "UIBarButtonItem"
 
         self.register_child_value("title", ivar_name="_title",

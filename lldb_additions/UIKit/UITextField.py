@@ -22,7 +22,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from ...scripts import helpers
+from .. import helpers
 import UIControl
 import UILabel
 
@@ -33,6 +33,7 @@ class UITextFieldSyntheticProvider(UIControl.UIControlSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UITextFieldSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.module_name = "UIKit"
         self.type_name = "UITextField"
 
         self.register_child_value("display_label", ivar_name="_displayLabel",

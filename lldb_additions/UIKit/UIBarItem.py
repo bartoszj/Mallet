@@ -31,4 +31,5 @@ class UIBarItemSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UIBarItemSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.module_name = "UIKit"
         self.type_name = "UIBarItem"

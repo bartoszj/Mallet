@@ -22,9 +22,9 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from ...scripts import helpers
+from .. import helpers
+from ..common import SummaryBase
 from ..Foundation import NSObject
-from .. import SummaryBase
 
 
 class UINibStorageSyntheticProvider(NSObject.NSObjectSyntheticProvider):
@@ -33,6 +33,7 @@ class UINibStorageSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UINibStorageSyntheticProvider, self).__init__(value_obj, internal_dict)
+        self.module_name = "UIKit"
         self.type_name = "UINibStorage"
 
         self.register_child_value("bundle_resource_name", ivar_name="bundleResourceName",
