@@ -187,6 +187,11 @@ def __load_user_configuration(user_configuration, debugger, internal_dict):
     # Get default configuration.
     default_config = __get_default_configuration()
 
+    # Get reload flag.
+    reload_modules = False
+    if u"reload" in user_configuration:
+        reload_modules = bool(user_configuration[u"reload"])
+
     # Loaded packages.
     loaded_packages = list()
 
@@ -202,22 +207,23 @@ def __load_user_configuration(user_configuration, debugger, internal_dict):
 
     if builtin_packages is not None:
         for module_name in builtin_packages:
-            __load_builtin_package(module_name, loaded_packages, debugger, internal_dict)
+            __load_builtin_package(module_name, loaded_packages, reload_modules, debugger, internal_dict)
 
     # Load additional builtin packages (only from user config).
         if u"additional_builtin_packages" in user_configuration:
             additional_builtin_packages = user_configuration[u"additional_builtin_packages"]
             """:type: list[str]"""
             for module_name in additional_builtin_packages:
-                __load_builtin_package(module_name, loaded_packages, debugger, internal_dict)
+                __load_builtin_package(module_name, loaded_packages, reload_modules, debugger, internal_dict)
 
 
-def __load_package(package_name, loaded_packages, debugger, internal_dict):
+def __load_package(package_name, loaded_packages, reload_modules, debugger, internal_dict):
     """
     Loads packages, builtin or custom.
 
     :param str package_name: Package name.
     :param list[str] loaded_packages: Loaded packages.
+    :param bool reload_modules: True if modules should be reloaded.
     :param lldb.SBDebugger debugger: LLDB debugger.
     :param dict internal_dict: Internal LLDB dictionary.
     """
@@ -228,20 +234,21 @@ def __load_package(package_name, loaded_packages, debugger, internal_dict):
     # Checks if builtin package with given name exists.
     builtin_package_config_path = __get_builtin_package_config_file_path(package_name)
     if os.path.exists(builtin_package_config_path):
-        __load_builtin_package(package_name, loaded_packages, debugger, internal_dict)
+        __load_builtin_package(package_name, loaded_packages, reload_modules, debugger, internal_dict)
     else:
         # Check if custom module exists.
         custom_package_config_file_path = __get_custom_package_config_file_path(package_name)
         if os.path.exists(custom_package_config_file_path):
-            __load_custom_package(package_name, loaded_packages, debugger, internal_dict)
+            __load_custom_package(package_name, loaded_packages, reload_modules, debugger, internal_dict)
 
 
-def __load_builtin_package(package_name, loaded_packages, debugger, internal_dict):
+def __load_builtin_package(package_name, loaded_packages, reload_modules, debugger, internal_dict):
     """
     Loads builtin package.
 
     :param str package_name: Package name.
     :param list[str] loaded_packages: Loaded packages.
+    :param bool reload_modules: True if modules should be reloaded.
     :param lldb.SBDebugger debugger: LLDB debugger.
     :param dict internal_dict: Internal LLDB dictionary.
     """
@@ -277,7 +284,7 @@ def __load_builtin_package(package_name, loaded_packages, debugger, internal_dic
     # Load dependencies.
     if dependencies is not None:
         for dependency in dependencies:
-            __load_builtin_package(dependency, loaded_packages, debugger, internal_dict)
+            __load_builtin_package(dependency, loaded_packages, reload_modules, debugger, internal_dict)
 
     log.debug(u"Loading builtin package \"{}\".".format(package_name))
 
@@ -286,14 +293,14 @@ def __load_builtin_package(package_name, loaded_packages, debugger, internal_dic
     if modules is not None:
         for module_name in modules:
             # Load module.
-            __load_builtin_module(package_name, module_name, debugger, internal_dict)
+            __load_builtin_module(package_name, module_name, reload_modules, debugger, internal_dict)
             all_package_modules.remove(module_name)
 
     # Load other modules.
     if load_all_modules is True:
         for module_name in all_package_modules:
             # Load module.
-            __load_builtin_module(package_name, module_name, debugger, internal_dict)
+            __load_builtin_module(package_name, module_name, reload_modules, debugger, internal_dict)
 
     # Load LLDB init.
     if lldb_init is not None:
@@ -318,36 +325,39 @@ def __load_builtin_package(package_name, loaded_packages, debugger, internal_dic
             log.critical(u"Cannot find class dump folder \"{}\".".format(class_dumps_path))
 
 
-def __load_builtin_module(package_name, module_name, debugger, internal_dict):
+def __load_builtin_module(package_name, module_name, reload_modules, debugger, internal_dict):
     """
     Loads module into LLDB Python interpreter.
 
     :param str package_name: Package name.
     :param str module_name: Module name.
+    :param bool reload_modules: True if modules should be reloaded.
     :param lldb.SBDebugger debugger: LLDB debugger.
     :param dict internal_dict: Internal LLDB dictionary.
     """
     log = logging.getLogger(__name__)
     # Load module at path.
     module_path = u".".join([__package_name, package_name, module_name])
-    # log.debug(u"Importing module \"{}\".".format(module_path))
+    if reload_modules is False:
+        log.debug(u"Importing module \"{}\".".format(module_path))
     debugger.HandleCommand("script import {}".format(module_path))
 
     # (Re)Load module.
-    module_file_path = os.path.join(__package_dir_path, package_name, module_name) + u".py"
-    if os.path.exists(module_file_path):
-        log.debug(u"Loading module \"{}\" at path \"{}\".".format(module_path, module_file_path))
-        module = imp.load_source(module_path, module_file_path)
+    if reload_modules:
+        module_file_path = os.path.join(__package_dir_path, package_name, module_name) + u".py"
+        if os.path.exists(module_file_path):
+            log.debug(u"Loading module \"{}\" at path \"{}\".".format(module_path, module_file_path))
+            module = imp.load_source(module_path, module_file_path)
 
-        # Execute init method.
-        if hasattr(module, "lldb_init"):
-            # Initialize module.
-            module.lldb_init(debugger, internal_dict)
-    else:
-        log.critical(u"Cannot find module at path \"{}\".".format(module_file_path))
+            # Execute init method.
+            # if hasattr(module, "lldb_init"):
+            #     # Initialize module.
+            #     module.lldb_init(debugger, internal_dict)
+        else:
+            log.critical(u"Cannot find module at path \"{}\".".format(module_file_path))
 
 
-def __load_custom_package(package_name, loaded_packages, debugger, internal_dict):
+def __load_custom_package(package_name, loaded_packages, reload_modules, debugger, internal_dict):
     # Skip loading if package was already loaded.
     if package_name in loaded_packages:
         return
