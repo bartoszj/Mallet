@@ -192,6 +192,10 @@ def __load_user_configuration(user_configuration, debugger, internal_dict):
     if u"reload" in user_configuration:
         reload_modules = bool(user_configuration[u"reload"])
 
+    # Reload builtin scripts.
+    if reload_modules:
+        __reload_scripts()
+
     # Loaded packages.
     loaded_packages = list()
 
@@ -215,6 +219,17 @@ def __load_user_configuration(user_configuration, debugger, internal_dict):
             """:type: list[str]"""
             for module_name in additional_builtin_packages:
                 __load_builtin_package(module_name, loaded_packages, reload_modules, debugger, internal_dict)
+
+
+def __reload_scripts():
+    """
+    Reloads builtin scripts, like class_dump, helpers, loader, logger and type_cache.
+    """
+    scripts = [u"class_dump", u"helpers", u"loader", u"logger", u"type_cache"]
+    for script in scripts:
+        script_file_path = os.path.join(__package_dir_path, script) + u".py"
+        script_module_path = u".".join([__package_name, script])
+        imp.load_source(script_module_path, script_file_path)
 
 
 def __load_package(package_name, loaded_packages, reload_modules, debugger, internal_dict):
