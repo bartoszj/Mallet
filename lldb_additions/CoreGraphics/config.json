@@ -6,6 +6,10 @@
     "Foundation"
   ],
   "modules": [
+    "CGPoint",
+    "CGSize",
+    "CGRect",
+    "CGVector",
     "CGImage"
   ],
   "load_all_modules": false

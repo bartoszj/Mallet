@@ -8,6 +8,9 @@
     "CoreGraphics"
   ],
   "modules": [
+    "UIEdgeInsets",
+    "UIOffset",
+    
     "UIAlertAction",
     "UIColor",
     "UIDeviceRGBColor",
