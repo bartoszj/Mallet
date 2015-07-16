@@ -194,14 +194,22 @@ def __load_user_configuration(user_configuration, debugger, internal_dict):
     builtin_packages = None
     if u"builtin_packages" in user_configuration:
         builtin_packages = user_configuration[u"builtin_packages"]
+        """:type: list[str]"""
 
     if builtin_packages is None:
         builtin_packages = default_config[u"builtin_packages"]
+        """:type: list[str]"""
 
-    """:type: list[str]"""
     if builtin_packages is not None:
         for module_name in builtin_packages:
             __load_builtin_package(module_name, loaded_packages, debugger, internal_dict)
+
+    # Load additional builtin packages (only from user config).
+        if u"additional_builtin_packages" in user_configuration:
+            additional_builtin_packages = user_configuration[u"additional_builtin_packages"]
+            """:type: list[str]"""
+            for module_name in additional_builtin_packages:
+                __load_builtin_package(module_name, loaded_packages, debugger, internal_dict)
 
 
 def __load_package(package_name, loaded_packages, debugger, internal_dict):
