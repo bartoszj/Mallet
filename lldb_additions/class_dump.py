@@ -74,6 +74,23 @@ class LazyClassDumpManager(object):
             return self.modules[name]
         return None
 
+    def find_module_for_class(self, architecture_name, class_name):
+        """
+        Tries to find module name for given class.
+
+        :param str architecture_name: Architecture name.
+        :param str class_name: Class name.
+        :return: Module name.
+        :rtype: str | None
+        """
+        # Tries to find class in all modules.
+        for module_name in self.modules:
+            module = self.modules[module_name]
+            c = module.get_class_or_load(architecture_name, class_name)
+            if c is not None:
+                return module_name
+        return None
+
     def get_class(self, module_name, architecture_name, class_name):
         """
         Returns Class object based on module name, architecture name and class name.
@@ -113,6 +130,16 @@ class LazyClassDumpManager(object):
 
         # Get Ivar.
         i = c.get_ivar(ivar_name)
+
+        # Ivar not fount, but has superclass.
+        if i is None and c.super_class_name is not None:
+            i = self.get_ivar(module_name, architecture_name, c.super_class_name, ivar_name)
+
+            # Class not found in current module, try to load another module.
+            if i is None:
+                mm = self.find_module_for_class(architecture_name, c.super_class_name)
+                if mm is not None:
+                    i = self.get_ivar(mm, architecture_name, c.super_class_name)
         return i
 
 

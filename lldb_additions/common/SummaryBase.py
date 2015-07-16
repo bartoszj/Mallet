@@ -152,6 +152,10 @@ class SummaryBaseSyntheticProvider(object):
         :return: Ivar object with given name.
         :rtype: ClassDump.Ivar | None
         """
+        if self.module_name is None:
+            logger = logging.getLogger(__name__)
+            logger.error("get_ivar: empty module_name.")
+            return None
         if self.type_name is None:
             logger = logging.getLogger(__name__)
             logger.error("get_ivar: empty type_name.")
