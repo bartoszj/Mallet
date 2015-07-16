@@ -48,7 +48,7 @@ class UITouchesEventSyntheticProvider(UIInternalEvent.UIInternalEventSyntheticPr
         return "touches={}".format(value)
 
     def summaries_parts(self):
-        return self.touches_provider.summaries_parts()
+        return [self.touches_summary]
 
 
 def summary_provider(value_obj, internal_dict):
