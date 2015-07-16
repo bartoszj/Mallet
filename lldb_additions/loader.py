@@ -225,7 +225,7 @@ def __reload_scripts():
     """
     Reloads builtin scripts, like class_dump, helpers, loader, logger and type_cache.
     """
-    scripts = [u"class_dump", u"helpers", u"loader", u"logger", u"type_cache"]
+    scripts = [u"loader", u"class_dump", u"helpers", u"logger", u"type_cache"]
     for script in scripts:
         script_file_path = os.path.join(__package_dir_path, script) + u".py"
         script_module_path = u".".join([__package_name, script])

@@ -28,22 +28,21 @@ import logging
 
 
 __shared_type_cache = None
+""":type: TypeCache"""
 
 
 class TypeCache(object):
     """
     Stores cached types.
 
-    :param dict[str, lldb.SBType] types: Stores cached types.
-    :param bool _populated: Mark if types were populated with default types.
+    :param dict[int, dict[str, lldb.SBType]] targets: Stores cached types per target.
     """
     def __init__(self):
         super(TypeCache, self).__init__()
-        self.types = dict()
-        self._populated = False
+        self.targets = dict()
 
     @staticmethod
-    def _get_type_from_name(type_name, target):
+    def __get_type_from_name(type_name, target):
         """
         Returns type for given name from target (not from cache).
 
@@ -63,6 +62,20 @@ class TypeCache(object):
 
         return t
 
+    @staticmethod
+    def __get_target_id(target):
+        """
+        Returns target process unique id.
+        :param lldb.SBTarget target: LLDB target.
+        :return: Target process unique id.
+        :rtype: int
+        """
+        process = target.GetProcess()
+        """:type: lldb.SBProcess"""
+        process_id = process.GetUniqueID()
+        """:type: int"""
+        return process_id
+
     def get_type(self, type_name, target):
         """
         Try to find type in cache or ask LLDB to return one.
@@ -76,89 +89,99 @@ class TypeCache(object):
         if type_name is None or target is None:
             return None
 
-        # Populate type cache with standard types.
-        self._populate_standard_types(target)
+        target_id = self.__get_target_id(target)
+        if target_id not in self.targets:
+            self.__populate_standard_types(target, target_id)
 
         # Find and return type from cache.
-        if type_name in self.types:
-            return self.types[type_name]
+        types = self.targets[target_id]
+        if type_name in types:
+            return types[type_name]
 
         # Get type from name.
         logger = logging.getLogger(__name__)
-        logger.info("Adding type \"{}\" to cache.".format(type_name))
-        t = self._get_type_from_name(type_name, target)
+        logger.info(u"Adding type \"{}\" to cache.".format(type_name))
+        t = self.__get_type_from_name(type_name, target)
         if not t:
-            logger.warning("Type \"{}\" doesn't exists.".format(type_name))
-        self.types[type_name] = t
+            logger.warning(u"Type \"{}\" doesn't exists.".format(type_name))
+        types[type_name] = t
         return t
 
-    def _populate_standard_types(self, target):
+    def clean_cache(self):
+        """
+        Cleans cached types.
+        """
+        self.targets = dict()
+
+    def __populate_standard_types(self, target, target_id):
         """
         Populates TypeCache with common LLDB types.
 
         :param lldb.SBTarget target: LLDB target.
+        :param int target_id: Target ID.
         """
         # Do not populate if already data was populated.
-        if self._populated:
+        if target_id in self.targets:
             return
 
-        self._populated = True
         is64bit = helpers.is_64bit_architecture_from_target(target)
         logger = logging.getLogger(__name__)
-        logger.debug("Populating type cache.")
+        logger.debug(u"Populating type cache for target {!r}.".format(target_id))
 
         # char, unsigned char
-        self.types["char"] = target.GetBasicType(lldb.eBasicTypeChar)
-        self.types["unsigned char"] = target.GetBasicType(lldb.eBasicTypeUnsignedChar)
-        self.types["short"] = target.GetBasicType(lldb.eBasicTypeShort)
-        self.types["unsigned short"] = target.GetBasicType(lldb.eBasicTypeUnsignedShort)
-        self.types["int"] = target.GetBasicType(lldb.eBasicTypeInt)
-        self.types["unsigned int"] = target.GetBasicType(lldb.eBasicTypeUnsignedInt)
-        self.types["long"] = target.GetBasicType(lldb.eBasicTypeLong)
-        self.types["unsigned long"] = target.GetBasicType(lldb.eBasicTypeUnsignedLong)
-        self.types["long long"] = target.GetBasicType(lldb.eBasicTypeLongLong)
-        self.types["unsigned long long"] = target.GetBasicType(lldb.eBasicTypeUnsignedLongLong)
-        self.types["float"] = target.GetBasicType(lldb.eBasicTypeFloat)
-        self.types["double"] = target.GetBasicType(lldb.eBasicTypeDouble)
-        self.types["uuid_t"] = target.GetBasicType(lldb.eBasicTypeUnsignedInt128)
-        self.types["id"] = target.GetBasicType(lldb.eBasicTypeObjCID)
+        types = dict()
+        types["char"] = target.GetBasicType(lldb.eBasicTypeChar)
+        types["unsigned char"] = target.GetBasicType(lldb.eBasicTypeUnsignedChar)
+        types["short"] = target.GetBasicType(lldb.eBasicTypeShort)
+        types["unsigned short"] = target.GetBasicType(lldb.eBasicTypeUnsignedShort)
+        types["int"] = target.GetBasicType(lldb.eBasicTypeInt)
+        types["unsigned int"] = target.GetBasicType(lldb.eBasicTypeUnsignedInt)
+        types["long"] = target.GetBasicType(lldb.eBasicTypeLong)
+        types["unsigned long"] = target.GetBasicType(lldb.eBasicTypeUnsignedLong)
+        types["long long"] = target.GetBasicType(lldb.eBasicTypeLongLong)
+        types["unsigned long long"] = target.GetBasicType(lldb.eBasicTypeUnsignedLongLong)
+        types["float"] = target.GetBasicType(lldb.eBasicTypeFloat)
+        types["double"] = target.GetBasicType(lldb.eBasicTypeDouble)
+        types["uuid_t"] = target.GetBasicType(lldb.eBasicTypeUnsignedInt128)
+        types["id"] = target.GetBasicType(lldb.eBasicTypeObjCID)
 
         if is64bit:
-            self.types["NSInteger"] = target.GetBasicType(lldb.eBasicTypeLong)
-            self.types["NSUInteger"] = target.GetBasicType(lldb.eBasicTypeUnsignedLong)
-            self.types["CGFloat"] = target.GetBasicType(lldb.eBasicTypeDouble)
-            self.types["addr_type"] = target.GetBasicType(lldb.eBasicTypeUnsignedLongLong)
+            types["NSInteger"] = target.GetBasicType(lldb.eBasicTypeLong)
+            types["NSUInteger"] = target.GetBasicType(lldb.eBasicTypeUnsignedLong)
+            types["CGFloat"] = target.GetBasicType(lldb.eBasicTypeDouble)
+            types["addr_type"] = target.GetBasicType(lldb.eBasicTypeUnsignedLongLong)
         else:
-            self.types["NSInteger"] = target.GetBasicType(lldb.eBasicTypeInt)
-            self.types["NSUInteger"] = target.GetBasicType(lldb.eBasicTypeUnsignedInt)
-            self.types["CGFloat"] = target.GetBasicType(lldb.eBasicTypeFloat)
-            self.types["addr_type"] = target.GetBasicType(lldb.eBasicTypeUnsignedLong)
+            types["NSInteger"] = target.GetBasicType(lldb.eBasicTypeInt)
+            types["NSUInteger"] = target.GetBasicType(lldb.eBasicTypeUnsignedInt)
+            types["CGFloat"] = target.GetBasicType(lldb.eBasicTypeFloat)
+            types["addr_type"] = target.GetBasicType(lldb.eBasicTypeUnsignedLong)
 
-        self.types["addr_ptr_type"] = self.types["addr_type"].GetPointerType()
-        self.types["void_ptr_type"] = target.GetBasicType(lldb.eBasicTypeVoid).GetPointerType()
-        self.types["CGPoint"] = target.FindFirstType("CGPoint")
-        self.types["CGSize"] = target.FindFirstType("CGSize")
-        self.types["CGRect"] = target.FindFirstType("CGRect")
-        self.types["UIEdgeInsets"] = target.FindFirstType("UIEdgeInsets")
-        self.types["UIOffset"] = target.FindFirstType("UIOffset")
-        self.types["struct CGPoint"] = target.FindFirstType("CGPoint")
-        self.types["struct CGSize"] = target.FindFirstType("CGSize")
-        self.types["struct CGRect"] = target.FindFirstType("CGRect")
-        self.types["struct UIEdgeInsets"] = target.FindFirstType("UIEdgeInsets")
-        self.types["struct UIOffset"] = target.FindFirstType("UIOffset")
+        types["addr_ptr_type"] = types["addr_type"].GetPointerType()
+        types["void_ptr_type"] = target.GetBasicType(lldb.eBasicTypeVoid).GetPointerType()
+        types["CGPoint"] = target.FindFirstType("CGPoint")
+        types["CGSize"] = target.FindFirstType("CGSize")
+        types["CGRect"] = target.FindFirstType("CGRect")
+        types["UIEdgeInsets"] = target.FindFirstType("UIEdgeInsets")
+        types["UIOffset"] = target.FindFirstType("UIOffset")
+        types["struct CGPoint"] = target.FindFirstType("CGPoint")
+        types["struct CGSize"] = target.FindFirstType("CGSize")
+        types["struct CGRect"] = target.FindFirstType("CGRect")
+        types["struct UIEdgeInsets"] = target.FindFirstType("UIEdgeInsets")
+        types["struct UIOffset"] = target.FindFirstType("UIOffset")
 
-        self.types["NSString *"] = target.FindFirstType("NSString").GetPointerType()
-        self.types["NSAttributedString *"] = target.FindFirstType("NSAttributedString").GetPointerType()
-        self.types["NSMutableAttributedString *"] = target.FindFirstType("NSMutableAttributedString").GetPointerType()
-        self.types["NSNumber *"] = target.FindFirstType("NSNumber").GetPointerType()
-        self.types["NSDecimalNumber *"] = target.FindFirstType("NSDecimalNumber").GetPointerType()
-        self.types["NSURL *"] = target.FindFirstType("NSURL").GetPointerType()
-        self.types["NSDate *"] = target.FindFirstType("NSDate").GetPointerType()
-        self.types["NSData *"] = target.FindFirstType("NSData").GetPointerType()
-        self.types["NSArray *"] = target.FindFirstType("NSArray").GetPointerType()
-        self.types["NSMutableArray *"] = target.FindFirstType("NSMutableArray").GetPointerType()
-        self.types["NSSet *"] = target.FindFirstType("NSSet").GetPointerType()
-        self.types["NSDictionary *"] = target.FindFirstType("NSDictionary").GetPointerType()
+        types["NSString *"] = target.FindFirstType("NSString").GetPointerType()
+        types["NSAttributedString *"] = target.FindFirstType("NSAttributedString").GetPointerType()
+        types["NSMutableAttributedString *"] = target.FindFirstType("NSMutableAttributedString").GetPointerType()
+        types["NSNumber *"] = target.FindFirstType("NSNumber").GetPointerType()
+        types["NSDecimalNumber *"] = target.FindFirstType("NSDecimalNumber").GetPointerType()
+        types["NSURL *"] = target.FindFirstType("NSURL").GetPointerType()
+        types["NSDate *"] = target.FindFirstType("NSDate").GetPointerType()
+        types["NSData *"] = target.FindFirstType("NSData").GetPointerType()
+        types["NSArray *"] = target.FindFirstType("NSArray").GetPointerType()
+        types["NSMutableArray *"] = target.FindFirstType("NSMutableArray").GetPointerType()
+        types["NSSet *"] = target.FindFirstType("NSSet").GetPointerType()
+        types["NSDictionary *"] = target.FindFirstType("NSDictionary").GetPointerType()
+        self.targets[target_id] = types
 
 
 def get_type_cache():
@@ -184,4 +207,4 @@ def clean_type_cache():
     if __shared_type_cache is not None:
         logger = logging.getLogger(__name__)
         logger.debug(u"Cleaning shared TypeCache.")
-        __shared_type_cache = None
+        __shared_type_cache.clean_cache()
