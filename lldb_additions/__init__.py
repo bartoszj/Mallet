@@ -37,4 +37,5 @@ def __lldb_init_module(debugger, internal_dict):
 
     # Load commands and summaries.
     import loader
-    loader.load(debugger, internal_dict)
+    l = loader.Loader(debugger, internal_dict)
+    l.load()

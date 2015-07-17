@@ -23,6 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import lldb
+import os
 import logging
 
 Architecture_unknown = 0
@@ -235,6 +236,52 @@ def generic_summary_provider(value_obj, internal_dict, class_synthetic_provider)
     # Summary not available.
     # logger.debug("generic_summary_provider: summary unavailable")
     return "Summary Unavailable"
+
+
+def get_root_package_name(name):
+    """
+    Returns root package name.
+
+    :param str name: Full module name
+    :return: Root package name.
+    :rtype: str
+    """
+    return name.split(u".")[0]
+
+
+def get_package_name(name):
+    """
+    Returns package name.
+
+    :param str name: Full module name
+    :return: Package name.
+    :rtype: str
+    """
+    return name.split(u".")[-1]
+
+
+def get_package_dir_path(module, file):
+    """
+    Returns absolute package path.
+
+    :param str module: Module name.
+    :param str file: Module file path.
+    :return: Absolute package path.
+    :rtype: str
+    """
+    # Get number of submodules.
+    modules = module.split(".")
+    modules_count = len(modules)
+    step_count = modules_count - 1
+    if step_count < 0:
+        step_count = 0
+
+    # Got up to main package folder.
+    path = os.path.realpath(file)
+    for _ in range(step_count):
+        path = os.path.dirname(path)
+
+    return path
 
 
 class save_parameter(object):
