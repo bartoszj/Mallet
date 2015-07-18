@@ -25,91 +25,106 @@
 import logging
 import os
 
-__logger_file_path = os.path.expanduser("~/Library/Logs/lldb_additions.log")
 
+class LoggerConfigurator(object):
+    """
+    Configures logger.
+    :param logging.Formatter __formatter: Shared formatter.
+    :param logging.FileHandler __file_handler: Shared file handler.
+    :param logging.NullHandler __null_handler: Shared NULL handler.
+    """
+    __HANDLER_NAME = u"lldb_additions_handler"
+    __LOGGER_FILE_PATH = os.path.expanduser(u"~/Library/Logs/lldb_additions.log")
+    __LOGGER_NAMES = [u"lldb_additions.class_dump",
+                      u"lldb_additions.helpers",
+                      u"lldb_additions.type_cache",
+                      u"lldb_additions.loader",
+                      u"lldb_additions.logger",
+                      u"lldb_additions.common.SummaryBase",
+                      ]
 
-def __clean_log_file():
-    if os.path.exists(__logger_file_path):
-        try:
-            with open(__logger_file_path, "w") as f:
+    def __init__(self):
+        super(LoggerConfigurator, self).__init__()
+        self.__formatter = logging.Formatter(u"%(asctime)s - %(levelname)-8s - %(name)s - %(message)s")
+        self.__file_handler = logging.FileHandler(self.__LOGGER_FILE_PATH)
+        self.__file_handler.setFormatter(self.__formatter)
+        self.__null_handler = logging.NullHandler()
+
+    def __clean_log_file(self):
+        """
+        Clean log file.
+        """
+        if os.path.exists(self.__LOGGER_FILE_PATH):
+            try:
+                with open(self.__LOGGER_FILE_PATH, "w"):
+                    pass
+            except IOError:
                 pass
-        except IOError:
-            pass
+
+    def configure_loggers(self):
+        """
+        Configure all well known loggers.
+        """
+        self.__clean_log_file()
+        for logger_name in self.__LOGGER_NAMES:
+            logger = logging.getLogger(logger_name)
+            self.__configure_logger(logger)
+
+    def disable_loggers(self):
+        """
+        Disable all well known loggers.
+        """
+        self.__clean_log_file()
+        for logger_name in self.__LOGGER_NAMES:
+            logger = logging.getLogger(logger_name)
+            self.__configure_null_logger(logger)
+
+    def __configure_logger(self, logger):
+        """
+        Configure given logger.
+
+        :param logging.Logger logger: Logger object to configure.
+        """
+        previous_handler = getattr(logger, self.__HANDLER_NAME, None)
+        new_handler = self.__file_handler
+        # Remove previous handler and add new only when they are different.
+        if previous_handler != new_handler:
+            if previous_handler is not None:
+                logger.removeHandler(previous_handler)
+            logger.setLevel(logging.DEBUG)
+            logger.addHandler(new_handler)
+            setattr(logger, self.__HANDLER_NAME, new_handler)
+            # logger.debug(u"Logger \"{}\" configured.".format(logger.name))
+
+    def __configure_null_logger(self, logger):
+        """
+        Configure given logger with NullHandler.
+
+        :param logging.Logger logger: Logger object to configure.
+        """
+        previous_handler = getattr(logger, self.__HANDLER_NAME, None)
+        new_handler = self.__null_handler
+        # Remove previous handler and add new only when they are different.
+        if previous_handler != new_handler:
+            if previous_handler is not None:
+                logger.removeHandler(previous_handler)
+            logger.setLevel(logging.DEBUG)
+            logger.addHandler(new_handler)
+            setattr(logger, self.__HANDLER_NAME, new_handler)
+            # logger.debug(u"Logger \"{}\" configured.".format(logger.name))
+
+__shared_logger_configurator = None
+""":type: LoggerConfigurator"""
 
 
-def configure_loggers():
+def get_shared_logger_configurator():
     """
-    Configure all well known loggers.
+    Returns shared logger configurator.
+
+    :return: Shared logger configurator.
+    :rtype: LoggerConfigurator
     """
-    logger_names = ["lldb_additions.class_dump",
-                    "lldb_additions.helpers",
-                    "lldb_additions.type_cache",
-                    "lldb_additions.loader",
-                    "lldb_additions.logger",
-                    "lldb_additions.common.SummaryBase",
-                    ]
-    for logger_name in logger_names:
-        logger = logging.getLogger(logger_name)
-        # configure_null_logger(logger)
-        configure_logger(logger)
-
-
-def configure_null_logger(logger):
-    """
-    Configure given logger with NullHandler.
-
-    :param logging.Logger logger: Logger object to configure.
-    """
-    # Remove previous file handle if it is not a NullHandler.
-    if hasattr(logger, "lldb_additions_handler"):
-        handler = logger.lldb_additions_handler
-        """:type: logging.Handler"""
-        if isinstance(handler, logging.NullHandler) is False:
-            logger.removeHandler(handler)
-            del logger.lldb_additions_handler
-
-    # Add FileHandler.
-    if not hasattr(logger, "lldb_additions_handler"):
-        logger.lldb_additions_logger = True
-        logger.setLevel(logging.DEBUG)
-
-        # Null handler.
-        null_handler = logging.NullHandler()
-
-        logger.addHandler(null_handler)
-        logger.lldb_additions_logger = null_handler
-
-
-def configure_logger(logger):
-    """
-    Configure given logger.
-    :param logging.Logger logger: Logger object to configure.
-    """
-    # Remove previous file handle if it is not a FileHandler.
-    if hasattr(logger, "lldb_additions_handler"):
-        handler = logger.lldb_additions_handler
-        """:type: logging.Handler"""
-        if isinstance(handler, logging.FileHandler) is False:
-            logger.removeHandler(handler)
-            del logger.lldb_additions_handler
-
-    # Add FileHandler.
-    if not hasattr(logger, "lldb_additions_handler"):
-        logger.setLevel(logging.DEBUG)
-
-        # Formatter.
-        formatter = logging.Formatter('%(asctime)s - %(levelname)-8s - %(name)s - %(message)s')
-
-        # File handler.
-        file_path = __logger_file_path
-        file_handler = logging.FileHandler(file_path)
-        file_handler.setFormatter(formatter)
-
-        logger.addHandler(file_handler)
-        logger.lldb_additions_handler = file_handler
-        # logger.debug("Logger \"{}\" configured.".format(logger.name))
-
-
-# Configure loggers.
-__clean_log_file()
-configure_loggers()
+    global __shared_logger_configurator
+    if __shared_logger_configurator is None:
+        __shared_logger_configurator = LoggerConfigurator()
+    return __shared_logger_configurator
