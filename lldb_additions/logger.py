@@ -111,6 +111,7 @@ class LoggerConfigurator(object):
             logger.addHandler(new_handler)
             setattr(logger, self.__HANDLER_NAME, new_handler)
 
+
 __shared_logger_configurator = None
 """:type: LoggerConfigurator"""
 

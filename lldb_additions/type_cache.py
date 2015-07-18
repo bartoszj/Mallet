@@ -27,10 +27,6 @@ import lldb
 import logging
 
 
-__shared_type_cache = None
-""":type: TypeCache"""
-
-
 class TypeCache(object):
     """
     Stores cached types.
@@ -182,6 +178,10 @@ class TypeCache(object):
         types["NSSet *"] = target.FindFirstType("NSSet").GetPointerType()
         types["NSDictionary *"] = target.FindFirstType("NSDictionary").GetPointerType()
         self.targets[target_id] = types
+
+
+__shared_type_cache = None
+""":type: TypeCache"""
 
 
 def get_type_cache():

@@ -381,6 +381,10 @@ class Loader(object):
         pass
 
 
+__shared_lazy_class_dump_manager = None
+""":type: class_dump.LazyClassDumpManager"""
+
+
 def get_shared_lazy_class_dump_manager():
     """
     Get shared lazy class dump manager.
@@ -388,8 +392,9 @@ def get_shared_lazy_class_dump_manager():
     :return: Shared lazy class dump manager.
     :rtype: ClassDump.LazyClassDumpManager.
     """
-    if not hasattr(get_shared_lazy_class_dump_manager, "lazy_class_dump_manager"):
-        logger = logging.getLogger(__name__)
-        logger.debug(u"Creating shared class dump manager.")
-        get_shared_lazy_class_dump_manager.lazy_class_dump_manager = class_dump.LazyClassDumpManager()
-    return get_shared_lazy_class_dump_manager.lazy_class_dump_manager
+    global __shared_lazy_class_dump_manager
+    if __shared_lazy_class_dump_manager is None:
+        __shared_lazy_class_dump_manager = class_dump.LazyClassDumpManager()
+        log = logging.getLogger(__name__)
+        log.debug(u"Creating shared class dump manager.")
+    return __shared_lazy_class_dump_manager
