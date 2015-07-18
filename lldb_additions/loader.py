@@ -39,13 +39,16 @@ class Loader(object):
 
     :param lldb.SBDebugger debugger: LLDB debugger.
     :param dict internal_dict: Internal LLDB dictionary.
+    :param bool reload_builtin_modules: True, if builtin modules should be reloaded.
+    :param bool reload_modules: True, if user modules should be reloaded.
+    :param str __PACKAGE_NAME: Package name.
     """
-    __package_name = helpers.get_root_package_name(__name__)
-    __package_dir_path = helpers.get_package_dir_path(__name__, __file__)
-    __user_config_file_path = u"~/.lldb/lldb_additions.json"
-    __default_config_file_name = u"config.json"
-    __package_config_file_name = u"config.json"
-    __module_files_extensions = [".py"]
+    __PACKAGE_NAME = helpers.get_root_package_name(__name__)
+    __PACKAGE_DIR_PATH = helpers.get_package_dir_path(__name__, __file__)
+    __USER_CONFIG_FILE_PATH = u"~/.lldb/lldb_additions.json"
+    __DEFAULT_CONFIG_FILE_NAME = u"config.json"
+    __PACKAGE_CONFIG_FILE_NAME = u"config.json"
+    __MODULE_FILES_EXTENSIONS = [".py"]
 
     def __init__(self, debugger, internal_dict):
         """
@@ -55,6 +58,8 @@ class Loader(object):
         super(Loader, self).__init__()
         self.debugger = debugger
         self.internal_dict = internal_dict
+        self.reload_builtin_modules = False
+        self.reload_modules = False
 
     @classmethod
     def __get_default_configuration(cls):
@@ -67,7 +72,7 @@ class Loader(object):
         log = logging.getLogger(__name__)
 
         # Looks for default configuration.
-        default_config_path = os.path.join(cls.__package_dir_path, cls.__default_config_file_name)
+        default_config_path = os.path.join(cls.__PACKAGE_DIR_PATH, cls.__DEFAULT_CONFIG_FILE_NAME)
         if os.path.exists(default_config_path):
             # Loads JSON configuration.
             with open(default_config_path) as default_config_file:
@@ -89,7 +94,7 @@ class Loader(object):
         log = logging.getLogger(__name__)
 
         # Looks for user JSON configuration file.
-        config_path = os.path.expanduser(cls.__user_config_file_path)
+        config_path = os.path.expanduser(cls.__USER_CONFIG_FILE_PATH)
         if os.path.exists(config_path):
             # Loads JSON configuration.
             try:
@@ -114,7 +119,7 @@ class Loader(object):
         :return: Builtin package path.
         :rtype: str
         """
-        return os.path.join(cls.__package_dir_path, package_name)
+        return os.path.join(cls.__PACKAGE_DIR_PATH, package_name)
 
     @classmethod
     def __get_builtin_package_config_file_path(cls, package_name):
@@ -125,7 +130,7 @@ class Loader(object):
         :return: Builtin package config file path.
         :rtype: str
         """
-        return os.path.join(cls.__get_builtin_package_path(package_name), cls.__package_config_file_name)
+        return os.path.join(cls.__get_builtin_package_path(package_name), cls.__PACKAGE_CONFIG_FILE_NAME)
 
     @classmethod
     def __get_custom_package_config_file_path(cls, package_name):
@@ -136,7 +141,7 @@ class Loader(object):
         :return: Custom package config file path.
         :rtype: str
         """
-        return os.path.join(os.path.expanduser(package_name), cls.__package_config_file_name)
+        return os.path.join(os.path.expanduser(package_name), cls.__PACKAGE_CONFIG_FILE_NAME)
 
     @classmethod
     def __get_modules_at_path(cls, path):
@@ -158,7 +163,7 @@ class Loader(object):
             if module_name == "__init__":
                 continue
             # Add only files with correct suffix.
-            elif cls.__module_files_extensions.count(module_extension) != 0:
+            elif cls.__MODULE_FILES_EXTENSIONS.count(module_extension) != 0:
                 modules.append(module_name)
         return modules
 
@@ -175,11 +180,15 @@ class Loader(object):
         # Get user configuration.
         user_configuration = self.__get_user_configuration()
 
-        # Reload builtin scripts.
-        reload_modules = False
+        # Reload builtin modules flag.
+        if u"reload_builtin_modules" in user_configuration:
+            self.reload_builtin_modules = bool(user_configuration[u"reload_builtin_modules"])
+        # Reload modules flag.
         if u"reload" in user_configuration:
-            reload_modules = bool(user_configuration[u"reload"])
-        if reload_modules:
+            self.reload_modules = bool(user_configuration[u"reload"])
+
+        # Reload builtin scripts.
+        if self.reload_builtin_modules:
             self.__reload_internal_scripts()
 
         # Clean log file.
@@ -216,14 +225,14 @@ class Loader(object):
 
         if builtin_packages is not None:
             for module_name in builtin_packages:
-                self.__load_builtin_package(module_name, loaded_packages, reload_modules)
+                self.__load_builtin_package(module_name, loaded_packages)
 
         # Load additional builtin packages (only from user config).
         if u"packages" in user_configuration:
             additional_builtin_packages = user_configuration[u"packages"]
             """:type: list[str]"""
             for module_name in additional_builtin_packages:
-                self.__load_builtin_package(module_name, loaded_packages, reload_modules)
+                self.__load_builtin_package(module_name, loaded_packages)
 
         log.debug(u"Loaded.")
 
@@ -233,17 +242,16 @@ class Loader(object):
         """
         scripts = [u"loader", u"class_dump", u"helpers", u"logger", u"type_cache"]
         for script in scripts:
-            script_file_path = os.path.join(self.__package_dir_path, script) + u".py"
-            script_module_path = u".".join([self.__package_name, script])
+            script_file_path = os.path.join(self.__PACKAGE_DIR_PATH, script) + u".py"
+            script_module_path = u".".join([self.__PACKAGE_NAME, script])
             imp.load_source(script_module_path, script_file_path)
 
-    def __load_package(self, package_name, loaded_packages, reload_modules):
+    def __load_package(self, package_name, loaded_packages):
         """
         Loads packages, builtin or custom.
 
         :param str package_name: Package name.
         :param list[str] loaded_packages: Loaded packages.
-        :param bool reload_modules: True if modules should be reloaded.
         """
         # Skip loading if packages was already loaded.
         if package_name in loaded_packages:
@@ -252,20 +260,19 @@ class Loader(object):
         # Checks if builtin package with given name exists.
         builtin_package_config_path = self.__get_builtin_package_config_file_path(package_name)
         if os.path.exists(builtin_package_config_path):
-            self.__load_builtin_package(package_name, loaded_packages, reload_modules)
+            self.__load_builtin_package(package_name, loaded_packages)
         else:
             # Check if custom module exists.
             custom_package_config_file_path = self.__get_custom_package_config_file_path(package_name)
             if os.path.exists(custom_package_config_file_path):
-                self.__load_custom_package(package_name, loaded_packages, reload_modules)
+                self.__load_custom_package(package_name, loaded_packages)
 
-    def __load_builtin_package(self, package_name, loaded_packages, reload_modules):
+    def __load_builtin_package(self, package_name, loaded_packages):
         """
         Loads builtin package.
 
         :param str package_name: Package name.
         :param list[str] loaded_packages: Loaded packages.
-        :param bool reload_modules: True if modules should be reloaded.
         """
         log = logging.getLogger(__name__)
 
@@ -299,7 +306,7 @@ class Loader(object):
         # Load dependencies.
         if dependencies is not None:
             for dependency in dependencies:
-                self.__load_builtin_package(dependency, loaded_packages, reload_modules)
+                self.__load_builtin_package(dependency, loaded_packages)
 
         log.debug(u"Loading builtin package \"{}\".".format(package_name))
 
@@ -308,14 +315,14 @@ class Loader(object):
         if modules is not None:
             for module_name in modules:
                 # Load module.
-                self.__load_builtin_module(package_name, module_name, reload_modules)
+                self.__load_builtin_module(package_name, module_name)
                 all_package_modules.remove(module_name)
 
         # Load other modules.
         if load_all_modules is True:
             for module_name in all_package_modules:
                 # Load module.
-                self.__load_builtin_module(package_name, module_name, reload_modules)
+                self.__load_builtin_module(package_name, module_name)
 
         # Load LLDB init.
         if lldb_init is not None:
@@ -339,24 +346,23 @@ class Loader(object):
             else:
                 log.critical(u"Cannot find class dump folder \"{}\".".format(class_dumps_path))
 
-    def __load_builtin_module(self, package_name, module_name, reload_modules):
+    def __load_builtin_module(self, package_name, module_name):
         """
         Loads module into LLDB Python interpreter.
 
         :param str package_name: Package name.
         :param str module_name: Module name.
-        :param bool reload_modules: True if modules should be reloaded.
         """
         log = logging.getLogger(__name__)
         # Load module at path.
-        module_path = u".".join([self.__package_name, package_name, module_name])
-        if reload_modules is False:
+        module_path = u".".join([self.__PACKAGE_NAME, package_name, module_name])
+        if self.reload_builtin_modules is False:
             log.debug(u"Importing module \"{}\".".format(module_path))
         self.debugger.HandleCommand("script import {}".format(module_path))
 
         # (Re)Load module.
-        if reload_modules:
-            module_file_path = os.path.join(self.__package_dir_path, package_name, module_name) + u".py"
+        if self.reload_builtin_modules:
+            module_file_path = os.path.join(self.__PACKAGE_DIR_PATH, package_name, module_name) + u".py"
             if os.path.exists(module_file_path):
                 log.debug(u"Loading module \"{}\" at path \"{}\".".format(module_path, module_file_path))
                 module = imp.load_source(module_path, module_file_path)
@@ -368,7 +374,7 @@ class Loader(object):
             else:
                 log.critical(u"Cannot find module at path \"{}\".".format(module_file_path))
 
-    def __load_custom_package(self, package_name, loaded_packages, reload_modules):
+    def __load_custom_package(self, package_name, loaded_packages):
         # Skip loading if package was already loaded.
         if package_name in loaded_packages:
             return
