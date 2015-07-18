@@ -25,6 +25,7 @@
 import lldb
 import os
 import logging
+import logger
 import imp
 import json
 import class_dump
@@ -169,6 +170,15 @@ class Loader(object):
         # Get default configuration.
         default_config = self.__get_default_configuration()
 
+        # Configure logger.
+        configure_loggers = False
+        if u"logging" in user_configuration:
+            configure_loggers = bool(user_configuration[u"logging"])
+        if configure_loggers:
+            logger.get_shared_logger_configurator().configure_loggers()
+        else:
+            logger.get_shared_logger_configurator().disable_loggers()
+
         # Get reload flag.
         reload_modules = False
         if u"reload" in user_configuration:
@@ -196,11 +206,11 @@ class Loader(object):
                 self.__load_builtin_package(module_name, loaded_packages, reload_modules)
 
         # Load additional builtin packages (only from user config).
-            if u"additional_builtin_packages" in user_configuration:
-                additional_builtin_packages = user_configuration[u"additional_builtin_packages"]
-                """:type: list[str]"""
-                for module_name in additional_builtin_packages:
-                    self.__load_builtin_package(module_name, loaded_packages, reload_modules)
+        if u"additional_builtin_packages" in user_configuration:
+            additional_builtin_packages = user_configuration[u"additional_builtin_packages"]
+            """:type: list[str]"""
+            for module_name in additional_builtin_packages:
+                self.__load_builtin_package(module_name, loaded_packages, reload_modules)
 
     def __reload_internal_scripts(self):
         """

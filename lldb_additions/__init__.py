@@ -30,11 +30,6 @@ def __lldb_init_module(debugger, internal_dict):
     :param lldb.SBDebugger debugger: LLDB debugger
     :param dict internal_dict: Internal LLDB dictionary.
     """
-
-    # Configure loggers.
-    import logger
-    logger.get_shared_logger_configurator().configure_loggers()
-
     # Load commands and summaries.
     import loader
     loader.Loader(debugger, internal_dict).load()

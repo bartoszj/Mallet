@@ -27,8 +27,8 @@ import imp
 import argparse
 import tabulate
 
-i = imp.find_module("lldb_additions", [".."])
-imp.load_module("lldb_additions", *i)
+i = imp.find_module(u"lldb_additions", [u".."])
+imp.load_module(u"lldb_additions", *i)
 import lldb_additions.class_dump as class_dump
 
 
@@ -72,7 +72,7 @@ def normalize_type(type_32bit, type_64bit):
     elif type_32bit == u"struct CADoublePoint" and type_64bit == u"struct CGPoint":
         return u"CADoublePoint"
 
-    print("Different types: {} != {}".format(type_32bit, type_64bit))
+    print(u"Different types: {} != {}".format(type_32bit, type_64bit))
     return type_64bit
 
 
@@ -86,7 +86,7 @@ def dump_class(module_name, class_name):
     # Current directory path.
     current_dir = os.path.abspath(__file__)
     current_dir, _ = os.path.split(current_dir)
-    input_dir = os.path.join(current_dir, u"../lldb_additions/summaries/{}/{}".format(module_name, class_dump.class_dumps_folder_name))
+    input_dir = os.path.join(current_dir, u"../lldb_additions/{}/{}".format(module_name, class_dump.class_dumps_folder_name))
     input_dir = os.path.normpath(input_dir)
 
     m = class_dump.Module(module_name, input_dir)
@@ -149,13 +149,13 @@ def dump_class(module_name, class_name):
 
 if __name__ == "__main__":
     # Argument parser.
-    parser = argparse.ArgumentParser(description="Prints class description.")
-    parser.add_argument("-m", "--module", required=True)
-    parser.add_argument("class")
+    parser = argparse.ArgumentParser(description=u"Prints class description.")
+    parser.add_argument(u"module")
+    parser.add_argument(u"class")
 
     # Parse arguments.
     args = parser.parse_args()
-    class_name = vars(args)["class"]
+    class_name = vars(args)[u"class"]
     module_name = args.module
 
     dump_class(module_name, class_name)

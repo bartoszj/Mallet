@@ -260,24 +260,24 @@ def get_package_name(name):
     return name.split(u".")[-1]
 
 
-def get_package_dir_path(module, file):
+def get_package_dir_path(module, file_path):
     """
     Returns absolute package path.
 
     :param str module: Module name.
-    :param str file: Module file path.
+    :param str file_path: Module file path.
     :return: Absolute package path.
     :rtype: str
     """
     # Get number of submodules.
-    modules = module.split(".")
+    modules = module.split(u".")
     modules_count = len(modules)
     step_count = modules_count - 1
     if step_count < 0:
         step_count = 0
 
     # Got up to main package folder.
-    path = os.path.realpath(file)
+    path = os.path.realpath(file_path)
     for _ in range(step_count):
         path = os.path.dirname(path)
 
