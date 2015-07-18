@@ -33,7 +33,6 @@ class NSURLResponseSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(NSURLResponseSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "CFNetwork"
         self.type_name = "NSURLResponse"
 
         self.register_child_value("response_internal", ivar_name="_internal",

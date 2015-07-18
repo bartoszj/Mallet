@@ -32,7 +32,6 @@ class UINavigationControllerSyntheticProvider(UIViewController.UIViewControllerS
     """
     def __init__(self, value_obj, internal_dict):
         super(UINavigationControllerSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UINavigationController"
 
         self.synthetic_type = self.SYNTHETIC_PROXY_NAME

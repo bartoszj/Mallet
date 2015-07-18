@@ -33,7 +33,6 @@ class UITextFieldSyntheticProvider(UIControl.UIControlSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UITextFieldSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UITextField"
 
         self.register_child_value("display_label", ivar_name="_displayLabel",

@@ -33,7 +33,6 @@ class UIViewControllerSyntheticProvider(UIResponder.UIResponderSyntheticProvider
     """
     def __init__(self, value_obj, internal_dict):
         super(UIViewControllerSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UIViewController"
 
         self.register_child_value("title", ivar_name="_title",

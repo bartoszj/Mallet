@@ -52,7 +52,6 @@ class UIAlertViewSyntheticProvider(UIView.UIViewSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UIAlertViewSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UIAlertView"
 
         self.register_child_value("alert_controller", ivar_name="_alertController",

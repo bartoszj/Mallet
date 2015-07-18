@@ -30,7 +30,6 @@ import UIControl
 class UISegmentedControlSyntheticProvider(UIControl.UIControlSyntheticProvider):
     def __init__(self, value_obj, internal_dict):
         super(UISegmentedControlSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UISegmentedControl"
 
         self.register_child_value("segments", ivar_name="_segments",

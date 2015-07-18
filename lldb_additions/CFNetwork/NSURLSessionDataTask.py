@@ -32,7 +32,6 @@ class NSURLSessionDataTaskSyntheticProvider(NSURLSessionTask.NSURLSessionTaskSyn
     """
     def __init__(self, value_obj, internal_dict):
         super(NSURLSessionDataTaskSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "CFNetwork"
         self.type_name = "NSURLSessionDataTask"
 
 

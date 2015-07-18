@@ -33,7 +33,6 @@ class NSCFLocalDownloadTaskSyntheticProvider(NSCFLocalSessionTask.NSCFLocalSessi
     """
     def __init__(self, value_obj, internal_dict):
         super(NSCFLocalDownloadTaskSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "CFNetwork"
         self.type_name = "__NSCFLocalDownloadTask"
 
         self.register_child_value("download_file", ivar_name="_downloadFile",

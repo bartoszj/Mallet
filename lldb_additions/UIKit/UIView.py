@@ -42,7 +42,6 @@ class UIViewSyntheticProvider(UIResponder.UIResponderSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UIViewSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UIView"
 
         self.register_child_value("tag", ivar_name="_tag",

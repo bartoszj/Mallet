@@ -33,7 +33,6 @@ class NSCFLocalDownloadFileSyntheticProvider(NSObject.NSObjectSyntheticProvider)
     """
     def __init__(self, value_obj, internal_dict):
         super(NSCFLocalDownloadFileSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "CFNetwork"
         self.type_name = "__NSCFLocalDownloadFile"
 
         self.register_child_value("finished", ivar_name="_finished",

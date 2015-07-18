@@ -33,7 +33,6 @@ class CALayerSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(CALayerSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "QuartzCore"
         self.type_name = "CALayer"
 
         self.register_child_value("attr", ivar_name="_attr",

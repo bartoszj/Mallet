@@ -40,7 +40,6 @@ class SKDownloadSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(SKDownloadSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "StoreKit"
         self.type_name = "SKDownload"
 
         self.register_child_value("content_identifier", ivar_name="_contentIdentifier",

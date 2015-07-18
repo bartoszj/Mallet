@@ -35,7 +35,6 @@ class NSOperationQueueInternalSyntheticProvider(NSObject.NSObjectSyntheticProvid
     """
     def __init__(self, value_obj, internal_dict):
         super(NSOperationQueueInternalSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "Foundation"
         self.type_name = "__NSOperationQueueInternal"
 
         self.register_child_value("first_operation", ivar_name="__firstOperation",

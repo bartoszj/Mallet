@@ -44,7 +44,6 @@ class NSURLRequestSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(NSURLRequestSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "CFNetwork"
         self.type_name = "NSURLRequest"
 
         self.register_child_value("request_internal", ivar_name="_internal",

@@ -32,7 +32,6 @@ class SKReceiptRefreshRequestSyntheticProvider(SKRequest.SKRequestSyntheticProvi
     """
     def __init__(self, value_obj, internal_dict):
         super(SKReceiptRefreshRequestSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "StoreKit"
         self.type_name = "SKReceiptRefreshRequest"
 
 

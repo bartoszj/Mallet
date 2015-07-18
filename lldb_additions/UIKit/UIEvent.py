@@ -33,7 +33,6 @@ class UIEventSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UIEventSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UIEvent"
 
         self.register_child_value("timestamp", ivar_name="_timestamp",

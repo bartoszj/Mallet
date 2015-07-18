@@ -32,7 +32,6 @@ class SKProductsRequestInternalSyntheticProvider(NSObject.NSObjectSyntheticProvi
     """
     def __init__(self, value_obj, internal_dict):
         super(SKProductsRequestInternalSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "StoreKit"
         self.type_name = "SKProductsRequestInternal"
 
         self.register_child_value("product_identifiers", ivar_name="_productIdentifiers",

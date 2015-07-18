@@ -33,7 +33,6 @@ class SKProductSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(SKProductSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "StoreKit"
         self.type_name = "SKProduct"
 
         self.register_child_value("internal", ivar_name="_internal",

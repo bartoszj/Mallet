@@ -33,7 +33,6 @@ class UISliderSyntheticProvider(UIControl.UIControlSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UISliderSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UISlider"
 
         self.register_child_value("value", "_value", primitive_value_function=SummaryBase.get_float_value, summary_function=self.get_value_summary)

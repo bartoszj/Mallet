@@ -33,7 +33,6 @@ class UIProgressViewSyntheticProvider(UIView.UIViewSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UIProgressViewSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UIProgressView"
 
         self.register_child_value("progress", ivar_name="_progress",

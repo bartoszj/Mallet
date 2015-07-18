@@ -32,7 +32,6 @@ class SKPaymentInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(SKPaymentInternalSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "StoreKit"
         self.type_name = "SKPaymentInternal"
 
         self.register_child_value("application_username", ivar_name="_applicationUsername",

@@ -34,7 +34,6 @@ class UIImageSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UIImageSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UIImage"
 
         self.register_child_value("image_ref", ivar_name="_imageRef",

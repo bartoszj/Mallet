@@ -34,7 +34,6 @@ class UIStoryboardSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UIStoryboardSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UIStoryboard"
 
         self.register_child_value("storyboard_file_name", ivar_name="storyboardFileName",

@@ -33,7 +33,6 @@ class UITouchesEventSyntheticProvider(UIInternalEvent.UIInternalEventSyntheticPr
     """
     def __init__(self, value_obj, internal_dict):
         super(UITouchesEventSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UITouchesEvent"
 
         self.register_child_value("touches", ivar_name="_touches",

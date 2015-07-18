@@ -34,7 +34,6 @@ class UITableViewCellSyntheticProvider(UIView.UIViewSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UITableViewCellSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UITableViewCell"
 
         self.register_child_value("reuse_identifier", ivar_name="_reuseIdentifier",

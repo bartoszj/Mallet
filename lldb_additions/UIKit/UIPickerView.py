@@ -32,7 +32,6 @@ class UIPickerViewSyntheticProvider(UIView.UIViewSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UIPickerViewSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UIPickerView"
 
 

@@ -33,7 +33,6 @@ class NSCFBackgroundDataTaskSyntheticProvider(NSCFBackgroundSessionTask.NSCFBack
     """
     def __init__(self, value_obj, internal_dict):
         super(NSCFBackgroundDataTaskSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "CFNetwork"
         self.type_name = "__NSCFBackgroundDataTask"
 
         self.register_child_value("bytes_read", ivar_name="_bytesRead",

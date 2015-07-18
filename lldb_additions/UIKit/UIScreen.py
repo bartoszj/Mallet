@@ -34,7 +34,6 @@ class UIScreenSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UIScreenSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UIScreen"
 
         self.register_child_value("bounds", ivar_name="_bounds",

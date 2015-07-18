@@ -33,7 +33,6 @@ class NSCFBackgroundDownloadTaskSyntheticProvider(NSCFBackgroundSessionTask.NSCF
     """
     def __init__(self, value_obj, internal_dict):
         super(NSCFBackgroundDownloadTaskSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "CFNetwork"
         self.type_name = "__NSCFBackgroundDownloadTask"
 
         self.register_child_value("finished", ivar_name="_finished",

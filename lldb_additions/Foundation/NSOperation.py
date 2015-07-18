@@ -33,7 +33,6 @@ class NSOperationSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(NSOperationSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "Foundation"
         self.type_name = "NSOperation"
 
         self.register_child_value("private", ivar_name="_private",

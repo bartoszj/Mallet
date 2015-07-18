@@ -33,7 +33,6 @@ class UISwitchSyntheticProvider(UIControl.UIControlSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UISwitchSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UISwitch"
 
         self.register_child_value("on", ivar_name="_on",

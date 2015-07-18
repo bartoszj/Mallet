@@ -38,7 +38,6 @@ class UIActivityIndicatorViewSyntheticProvider(UIView.UIViewSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UIActivityIndicatorViewSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UIActivityIndicatorView"
 
         self.register_child_value("duration", ivar_name="_duration",

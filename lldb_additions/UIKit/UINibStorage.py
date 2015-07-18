@@ -33,7 +33,6 @@ class UINibStorageSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UINibStorageSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UINibStorage"
 
         self.register_child_value("bundle_resource_name", ivar_name="bundleResourceName",

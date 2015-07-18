@@ -34,7 +34,6 @@ class UIImageViewSyntheticProvider(UIView.UIViewSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UIImageViewSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UIImageView"
 
         self.register_child_value("storage", ivar_name="_storage",

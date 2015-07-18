@@ -32,7 +32,6 @@ class SKPaymentQueueInternalSyntheticProvider(NSObject.NSObjectSyntheticProvider
     """
     def __init__(self, value_obj, internal_dict):
         super(SKPaymentQueueInternalSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "StoreKit"
         self.type_name = "SKPaymentQueueInternal"
 
         self.register_child_value("local_transactions", ivar_name="_localTransactions",

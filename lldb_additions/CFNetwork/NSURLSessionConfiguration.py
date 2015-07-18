@@ -48,7 +48,6 @@ class NSURLSessionConfigurationSyntheticProvider(NSObject.NSObjectSyntheticProvi
     """
     def __init__(self, value_obj, internal_dict):
         super(NSURLSessionConfigurationSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "CFNetwork"
         self.type_name = "NSURLSessionConfiguration"
 
         self.register_child_value("allows_cellular_access", ivar_name="_allowsCellularAccess",

@@ -36,7 +36,6 @@ class NSURLConnectionInternalSyntheticProvider(NSObject.NSObjectSyntheticProvide
     """
     def __init__(self, value_obj, internal_dict):
         super(NSURLConnectionInternalSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "CFNetwork"
         self.type_name = "NSURLConnectionInternal"
 
         self.register_child_value("connection", ivar_name="_connection",

@@ -35,7 +35,6 @@ class UIScrollViewSyntheticProvider(UIView.UIViewSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UIScrollViewSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UIScrollView"
 
         self.register_child_value("content_size", ivar_name="_contentSize",

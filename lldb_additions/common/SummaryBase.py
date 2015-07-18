@@ -120,7 +120,7 @@ class SummaryBaseSyntheticProvider(object):
 
         self.value_obj = value_obj
         self.dynamic_value_obj = self.value_obj.GetDynamicValue(self.default_dynamic_type)
-        self.module_name = None
+        self.module_name = helpers.get_package_name(self.__class__.__module__)
         self.type_name = None
 
         self.target = self.dynamic_value_obj.GetTarget()

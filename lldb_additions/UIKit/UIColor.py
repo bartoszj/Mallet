@@ -33,7 +33,6 @@ class UIColorSyntheticProvider(NSObject.NSObjectSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UIColorSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UIColor"
 
         self.register_child_value("system_color_name", ivar_name="_systemColorName",

@@ -33,7 +33,6 @@ class UIDeviceRGBColorSyntheticProvider(UIColor.UIColorSyntheticProvider):
     """
     def __init__(self, value_obj, internal_dict):
         super(UIDeviceRGBColorSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "UIDeviceRGBColor"
 
         self.register_child_value("red_component", ivar_name="redComponent",

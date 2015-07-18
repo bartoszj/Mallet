@@ -33,7 +33,6 @@ class UIDatePickerViewSyntheticProvider(UIPickerView.UIPickerViewSyntheticProvid
     """
     def __init__(self, value_obj, internal_dict):
         super(UIDatePickerViewSyntheticProvider, self).__init__(value_obj, internal_dict)
-        self.module_name = "UIKit"
         self.type_name = "_UIDatePickerView"
 
         self.register_child_value("date", ivar_name="_userSuppliedDate",

@@ -246,7 +246,7 @@ def get_root_package_name(name):
     :return: Root package name.
     :rtype: str
     """
-    return name.split(u".")[0]
+    return name.split(".")[0]
 
 
 def get_package_name(name):
@@ -257,7 +257,18 @@ def get_package_name(name):
     :return: Package name.
     :rtype: str
     """
-    return name.split(u".")[-1]
+    return name.split(".")[-2]
+
+
+def get_module_name(name):
+    """
+    Returns module name.
+
+    :param str name: Full module name
+    :return: Module name.
+    :rtype: str
+    """
+    return name.split(".")[-1]
 
 
 def get_package_dir_path(module, file_path):
