@@ -6,7 +6,6 @@
     "QuartzCore",
     "CFNetwork",
     "UIKit",
-    "StoreKit",
     "AFNetworking"
   ]
 }

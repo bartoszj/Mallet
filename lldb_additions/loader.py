@@ -92,13 +92,17 @@ class Loader(object):
         config_path = os.path.expanduser(cls.__user_config_file_path)
         if os.path.exists(config_path):
             # Loads JSON configuration.
-            with open(config_path) as config_file:
-                config = json.load(config_file)
-
+            try:
+                with open(config_path) as config_file:
+                    config = json.load(config_file)
+            except ValueError:
+                # Cannot open user JSON.
+                log.warning(u"Cannot open user configuration \"{}\".".format(config_path))
+                return dict()
             return config
         else:
             # Missing JSON config.
-            log.info(u"Missing user configuration \"{}\".".format(config_path))
+            log.warning(u"Missing user configuration \"{}\".".format(config_path))
             return dict()
 
     @classmethod
@@ -158,17 +162,18 @@ class Loader(object):
                 modules.append(module_name)
         return modules
 
-    def __load_user_configuration(self, user_configuration):
+    def load(self):
         """
-        Loads user configuration from `configuration`. If parameters or configuration are missing
+        Looks for user configuration at "~/.lldb/lldb_additions.json" If parameters or configuration are missing
         then loads default configuration.
-
-        :param dict user_configuration: User configuration.
         """
-        # log = logging.getLogger(__name__)
+        log = logging.getLogger(__name__)
 
         # Get default configuration.
         default_config = self.__get_default_configuration()
+
+        # Get user configuration.
+        user_configuration = self.__get_user_configuration()
 
         # Reload builtin scripts.
         reload_modules = False
@@ -214,11 +219,13 @@ class Loader(object):
                 self.__load_builtin_package(module_name, loaded_packages, reload_modules)
 
         # Load additional builtin packages (only from user config).
-        if u"additional_builtin_packages" in user_configuration:
-            additional_builtin_packages = user_configuration[u"additional_builtin_packages"]
+        if u"packages" in user_configuration:
+            additional_builtin_packages = user_configuration[u"packages"]
             """:type: list[str]"""
             for module_name in additional_builtin_packages:
                 self.__load_builtin_package(module_name, loaded_packages, reload_modules)
+
+        log.debug(u"Loaded.")
 
     def __reload_internal_scripts(self):
         """
@@ -366,21 +373,6 @@ class Loader(object):
         if package_name in loaded_packages:
             return
         pass
-
-    def load(self):
-        """
-        Looks for user configuration at "~/.lldb/lldb_additions.json" and loads it
-        using `load_configuration` method.
-        """
-        log = logging.getLogger(__name__)
-
-        # Get user configuration.
-        user_config = self.__get_user_configuration()
-
-        # Load configuration.
-        self.__load_user_configuration(user_config)
-
-        log.debug(u"Loaded.")
 
 
 def get_shared_lazy_class_dump_manager():

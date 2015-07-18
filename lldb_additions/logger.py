@@ -92,8 +92,8 @@ class LoggerConfigurator(object):
             logger.setLevel(logging.DEBUG)
             logger.addHandler(new_handler)
             setattr(logger, self.__HANDLER_NAME, new_handler)
-            log = logging.getLogger(__name__)
-            log.debug(u"Logger \"{}\" configured..".format(logger.name))
+            # log = logging.getLogger(__name__)
+            # log.debug(u"Logger \"{}\" configured..".format(logger.name))
 
     def __configure_null_logger(self, logger):
         """
