@@ -39,8 +39,8 @@ class Loader(object):
 
     :param lldb.SBDebugger debugger: LLDB debugger.
     :param dict internal_dict: Internal LLDB dictionary.
-    :param bool reload_builtin_modules: True, if builtin modules should be reloaded.
-    :param bool reload_modules: True, if user modules should be reloaded.
+    :param bool reload_builtin_packages: True, if builtin packages should be reloaded.
+    :param bool reload_packages: True, if user packages should be reloaded.
     :param str __PACKAGE_NAME: Package name.
     """
     __PACKAGE_NAME = helpers.get_root_package_name(__name__)
@@ -58,8 +58,11 @@ class Loader(object):
         super(Loader, self).__init__()
         self.debugger = debugger
         self.internal_dict = internal_dict
-        self.reload_builtin_modules = False
-        self.reload_modules = False
+
+        self.loaded_builtin_packages = list()
+        self.loaded_packages = list()
+        self.reload_builtin_packages = False
+        self.reload_packages = False
 
     @classmethod
     def __get_default_configuration(cls):
@@ -180,15 +183,24 @@ class Loader(object):
         # Get user configuration.
         user_configuration = self.__get_user_configuration()
 
-        # Reload builtin modules flag.
-        if u"reload_builtin_modules" in user_configuration:
-            self.reload_builtin_modules = bool(user_configuration[u"reload_builtin_modules"])
-        # Reload modules flag.
+        # Reload builtin packages flag.
+        if u"reload_builtin_packages" in user_configuration:
+            self.reload_builtin_packages = bool(user_configuration[u"reload_builtin_packages"])
+        # Reload packages flag.
         if u"reload" in user_configuration:
-            self.reload_modules = bool(user_configuration[u"reload"])
+            self.reload_packages = bool(user_configuration[u"reload"])
+
+        # Clean loaded packages.
+        # if self.reload_builtin_packages:
+        #     self.loaded_builtin_packages = list()
+        # if self.reload_packages:
+        #     self.loaded_packages = list()
+        # Commands require to load each time :(
+        self.loaded_builtin_packages = list()
+        self.loaded_packages = list()
 
         # Reload builtin scripts.
-        if self.reload_builtin_modules:
+        if self.reload_builtin_packages:
             self.__reload_internal_scripts()
 
         # Clean log file.
@@ -210,9 +222,6 @@ class Loader(object):
         # Cleans shared type cache.
         type_cache.clean_type_cache()
 
-        # Loaded packages.
-        loaded_packages = list()
-
         # Load builtin packages.
         builtin_packages = None
         if u"builtin_packages" in user_configuration:
@@ -224,15 +233,15 @@ class Loader(object):
             """:type: list[str]"""
 
         if builtin_packages is not None:
-            for module_name in builtin_packages:
-                self.__load_builtin_package(module_name, loaded_packages)
+            for package_name in builtin_packages:
+                self.__load_builtin_package(package_name)
 
-        # Load additional builtin packages (only from user config).
+        # Load user or builtin packages (only from user config).
         if u"packages" in user_configuration:
             additional_builtin_packages = user_configuration[u"packages"]
             """:type: list[str]"""
-            for module_name in additional_builtin_packages:
-                self.__load_builtin_package(module_name, loaded_packages)
+            for package_name in additional_builtin_packages:
+                self.__load_builtin_package(package_name)
 
         log.debug(u"Loaded.")
 
@@ -246,40 +255,38 @@ class Loader(object):
             script_module_path = u".".join([self.__PACKAGE_NAME, script])
             imp.load_source(script_module_path, script_file_path)
 
-    def __load_package(self, package_name, loaded_packages):
+    def __load_package(self, package_name):
         """
         Loads packages, builtin or custom.
 
         :param str package_name: Package name.
-        :param list[str] loaded_packages: Loaded packages.
         """
         # Skip loading if packages was already loaded.
-        if package_name in loaded_packages:
+        if package_name in self.loaded_builtin_packages or package_name in self.loaded_packages:
             return
 
         # Checks if builtin package with given name exists.
         builtin_package_config_path = self.__get_builtin_package_config_file_path(package_name)
         if os.path.exists(builtin_package_config_path):
-            self.__load_builtin_package(package_name, loaded_packages)
+            self.__load_builtin_package(package_name)
         else:
             # Check if custom module exists.
             custom_package_config_file_path = self.__get_custom_package_config_file_path(package_name)
             if os.path.exists(custom_package_config_file_path):
-                self.__load_custom_package(package_name, loaded_packages)
+                self.__load_custom_package(package_name)
 
-    def __load_builtin_package(self, package_name, loaded_packages):
+    def __load_builtin_package(self, package_name):
         """
         Loads builtin package.
 
         :param str package_name: Package name.
-        :param list[str] loaded_packages: Loaded packages.
         """
         log = logging.getLogger(__name__)
 
         # Skip loading if package was already loaded.
-        if package_name in loaded_packages:
+        if package_name in self.loaded_builtin_packages:
             return
-        loaded_packages.append(package_name)
+        self.loaded_builtin_packages.append(package_name)
 
         package_path = self.__get_builtin_package_path(package_name)
 
@@ -306,9 +313,9 @@ class Loader(object):
         # Load dependencies.
         if dependencies is not None:
             for dependency in dependencies:
-                self.__load_builtin_package(dependency, loaded_packages)
+                self.__load_builtin_package(dependency)
 
-        log.debug(u"Loading builtin package \"{}\".".format(package_name))
+        log.info(u"Loading builtin package \"{}\".".format(package_name))
 
         # Load modules in order.
         all_package_modules = self.__get_modules_at_path(package_path)
@@ -356,12 +363,12 @@ class Loader(object):
         log = logging.getLogger(__name__)
         # Load module at path.
         module_path = u".".join([self.__PACKAGE_NAME, package_name, module_name])
-        if self.reload_builtin_modules is False:
+        if self.reload_builtin_packages is False:
             log.debug(u"Importing module \"{}\".".format(module_path))
         self.debugger.HandleCommand("script import {}".format(module_path))
 
         # (Re)Load module.
-        if self.reload_builtin_modules:
+        if self.reload_builtin_packages:
             module_file_path = os.path.join(self.__PACKAGE_DIR_PATH, package_name, module_name) + u".py"
             if os.path.exists(module_file_path):
                 log.debug(u"Loading module \"{}\" at path \"{}\".".format(module_path, module_file_path))
@@ -374,15 +381,17 @@ class Loader(object):
             else:
                 log.critical(u"Cannot find module at path \"{}\".".format(module_file_path))
 
-    def __load_custom_package(self, package_name, loaded_packages):
+    def __load_custom_package(self, package_name):
         # Skip loading if package was already loaded.
-        if package_name in loaded_packages:
+        if package_name in self.loaded_packages:
             return
         pass
 
 
 __shared_lazy_class_dump_manager = None
 """:type: class_dump.LazyClassDumpManager"""
+__shared_loader = None
+""":type: Loader"""
 
 
 def get_shared_lazy_class_dump_manager():
@@ -398,3 +407,20 @@ def get_shared_lazy_class_dump_manager():
         log = logging.getLogger(__name__)
         log.debug(u"Creating shared class dump manager.")
     return __shared_lazy_class_dump_manager
+
+
+def get_shared_loader(debugger, internal_dict):
+    """
+    Get shared Loader.
+
+    :param lldb.SBDebugger debugger: LLDB debugger
+    :param dict internal_dict: Internal LLDB dictionary.
+    :return: Shared loader.
+    :rtype: Loader.
+    """
+    global __shared_loader
+    if __shared_loader is None:
+        __shared_loader = Loader(debugger, internal_dict)
+        log = logging.getLogger(__name__)
+        log.debug(u"Creating shared Loader.")
+    return __shared_loader

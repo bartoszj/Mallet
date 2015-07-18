@@ -32,4 +32,4 @@ def __lldb_init_module(debugger, internal_dict):
     """
     # Load commands and summaries.
     import loader
-    loader.Loader(debugger, internal_dict).load()
+    loader.get_shared_loader(debugger, internal_dict).load()
