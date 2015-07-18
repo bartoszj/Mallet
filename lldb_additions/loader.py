@@ -170,6 +170,20 @@ class Loader(object):
         # Get default configuration.
         default_config = self.__get_default_configuration()
 
+        # Reload builtin scripts.
+        reload_modules = False
+        if u"reload" in user_configuration:
+            reload_modules = bool(user_configuration[u"reload"])
+        if reload_modules:
+            self.__reload_internal_scripts()
+
+        # Clean log file.
+        clean_log_file = False
+        if u"clean_logs" in user_configuration:
+            clean_log_file = bool(user_configuration[u"clean_logs"])
+        if clean_log_file:
+            logger.get_shared_logger_configurator().clean_log_file()
+
         # Configure logger.
         configure_loggers = False
         if u"logging" in user_configuration:
@@ -179,14 +193,8 @@ class Loader(object):
         else:
             logger.get_shared_logger_configurator().disable_loggers()
 
-        # Get reload flag.
-        reload_modules = False
-        if u"reload" in user_configuration:
-            reload_modules = bool(user_configuration[u"reload"])
-
-        # Reload builtin scripts.
-        if reload_modules:
-            self.__reload_internal_scripts()
+        # Cleans shared type cache.
+        type_cache.clean_type_cache()
 
         # Loaded packages.
         loaded_packages = list()
@@ -366,11 +374,9 @@ class Loader(object):
         """
         log = logging.getLogger(__name__)
 
-        # Cleans shared type cache.
-        type_cache.clean_type_cache()
-
         # Get user configuration.
         user_config = self.__get_user_configuration()
+
         # Load configuration.
         self.__load_user_configuration(user_config)
 

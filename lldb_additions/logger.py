@@ -35,11 +35,11 @@ class LoggerConfigurator(object):
     """
     __HANDLER_NAME = u"lldb_additions_handler"
     __LOGGER_FILE_PATH = os.path.expanduser(u"~/Library/Logs/lldb_additions.log")
-    __LOGGER_NAMES = [u"lldb_additions.class_dump",
+    __LOGGER_NAMES = [u"lldb_additions.logger",
+                      u"lldb_additions.class_dump",
                       u"lldb_additions.helpers",
                       u"lldb_additions.type_cache",
                       u"lldb_additions.loader",
-                      u"lldb_additions.logger",
                       u"lldb_additions.common.SummaryBase",
                       ]
 
@@ -50,7 +50,7 @@ class LoggerConfigurator(object):
         self.__file_handler.setFormatter(self.__formatter)
         self.__null_handler = logging.NullHandler()
 
-    def __clean_log_file(self):
+    def clean_log_file(self):
         """
         Clean log file.
         """
@@ -65,7 +65,6 @@ class LoggerConfigurator(object):
         """
         Configure all well known loggers.
         """
-        self.__clean_log_file()
         for logger_name in self.__LOGGER_NAMES:
             logger = logging.getLogger(logger_name)
             self.__configure_logger(logger)
@@ -74,7 +73,6 @@ class LoggerConfigurator(object):
         """
         Disable all well known loggers.
         """
-        self.__clean_log_file()
         for logger_name in self.__LOGGER_NAMES:
             logger = logging.getLogger(logger_name)
             self.__configure_null_logger(logger)
@@ -94,7 +92,8 @@ class LoggerConfigurator(object):
             logger.setLevel(logging.DEBUG)
             logger.addHandler(new_handler)
             setattr(logger, self.__HANDLER_NAME, new_handler)
-            # logger.debug(u"Logger \"{}\" configured.".format(logger.name))
+            log = logging.getLogger(__name__)
+            log.debug(u"Logger \"{}\" configured..".format(logger.name))
 
     def __configure_null_logger(self, logger):
         """
@@ -111,7 +110,6 @@ class LoggerConfigurator(object):
             logger.setLevel(logging.DEBUG)
             logger.addHandler(new_handler)
             setattr(logger, self.__HANDLER_NAME, new_handler)
-            # logger.debug(u"Logger \"{}\" configured.".format(logger.name))
 
 __shared_logger_configurator = None
 """:type: LoggerConfigurator"""
