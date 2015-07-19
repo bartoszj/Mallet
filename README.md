@@ -1,7 +1,7 @@
-LLDB missing summaries
-======================
+Mallet
+======
 
-LLDB summaries for iOS Objective-C classes.
+LLDB additions for iOS Objective-C classes.
 
 ![Before / after](assets/before_after.png)
 
@@ -10,7 +10,7 @@ Clone this repository and add the following line to your __~/.lldbinit__ file. I
 
     # ~/.lldbinit
 
-    command script import /path/to/lldb_additions
+    command script import /path/to/mallet
 
 The summaries will be available the next time Xcode starts.
 

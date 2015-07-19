@@ -25,9 +25,9 @@
 import os
 import imp
 
-i = imp.find_module("lldb_additions", [".."])
-imp.load_module("lldb_additions", *i)
-import lldb_additions.class_dump as class_dump
+i = imp.find_module(u"mallet", [u".."])
+imp.load_module(u"mallet", *i)
+import mallet.class_dump as class_dump
 
 # Example offsets.json file:
 # {
@@ -63,7 +63,7 @@ def clean_class_dumps():
 
     # Input / output folders.
     input_dir = os.path.join(current_dir, u"ClassDumps")
-    output_dir = os.path.join(current_dir, u"../lldb_additions")
+    output_dir = os.path.join(current_dir, u"../mallet")
 
     cdm = class_dump.ClassDumpManager()
     cdm.read_directory_path(input_dir)

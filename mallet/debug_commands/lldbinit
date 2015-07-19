@@ -1,0 +1,1 @@
+command script add -f mallet.debug_commands.compare_summary.compare_summary compare_summary

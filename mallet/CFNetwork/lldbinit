@@ -1,0 +1,29 @@
+type summary add -F mallet.CFNetwork.CFURLRequest.summary_provider               --category CFNetwork _CFURLRequest
+type summary add -F mallet.CFNetwork.CFURLResponse.summary_provider              --category CFNetwork CFURLResponse
+type summary add -F mallet.CFNetwork.NSCFBackgroundDataTask.summary_provider     --category CFNetwork __NSCFBackgroundDataTask
+type summary add -F mallet.CFNetwork.NSCFBackgroundDownloadTask.summary_provider --category CFNetwork __NSCFBackgroundDownloadTask
+type summary add -F mallet.CFNetwork.NSCFBackgroundSessionTask.summary_provider  --category CFNetwork __NSCFBackgroundSessionTask
+type summary add -F mallet.CFNetwork.NSCFBackgroundUploadTask.summary_provider   --category CFNetwork __NSCFBackgroundUploadTask
+type summary add -F mallet.CFNetwork.NSCFLocalDataTask.summary_provider          --category CFNetwork __NSCFLocalDataTask
+type summary add -F mallet.CFNetwork.NSCFLocalDownloadFile.summary_provider      --category CFNetwork __NSCFLocalDownloadFile
+type summary add -F mallet.CFNetwork.NSCFLocalDownloadTask.summary_provider      --category CFNetwork __NSCFLocalDownloadTask
+type summary add -F mallet.CFNetwork.NSCFLocalSessionTask.summary_provider       --category CFNetwork __NSCFLocalSessionTask
+type summary add -F mallet.CFNetwork.NSCFLocalUploadTask.summary_provider        --category CFNetwork __NSCFLocalUploadTask
+type summary add -F mallet.CFNetwork.NSHTTPURLResponse.summary_provider          --category CFNetwork NSHTTPURLResponse
+type summary add -F mallet.CFNetwork.NSURLConnection.summary_provider            --category CFNetwork NSURLConnection
+type summary add -F mallet.CFNetwork.NSURLConnectionInternal.summary_provider    --category CFNetwork NSURLConnectionInternal
+type summary add -F mallet.CFNetwork.NSURLRequest.summary_provider               --category CFNetwork NSURLRequest NSMutableURLRequest
+type summary add -F mallet.CFNetwork.NSURLRequestInternal.summary_provider       --category CFNetwork NSURLRequestInternal
+type summary add -F mallet.CFNetwork.NSURLResponse.summary_provider              --category CFNetwork NSURLResponse
+type summary add -F mallet.CFNetwork.NSURLResponseInternal.summary_provider      --category CFNetwork NSURLResponseInternal
+type summary add -F mallet.CFNetwork.NSURLSession.summary_provider               --category CFNetwork NSURLSession
+type summary add -F mallet.CFNetwork.NSURLSessionConfiguration.summary_provider  --category CFNetwork NSURLSessionConfiguration
+type summary add -F mallet.CFNetwork.NSURLSessionDataTask.summary_provider       --category CFNetwork NSURLSessionDataTask
+type summary add -F mallet.CFNetwork.NSURLSessionDownloadTask.summary_provider   --category CFNetwork NSURLSessionDownloadTask
+type summary add -F mallet.CFNetwork.NSURLSessionTask.summary_provider           --category CFNetwork NSURLSessionTask
+type summary add -F mallet.CFNetwork.NSURLSessionUploadTask.summary_provider     --category CFNetwork NSURLSessionUploadTask
+
+type synthetic add -l mallet.CFNetwork.NSURLRequest.NSURLRequestSyntheticProvider   --category CFNetwork NSURLRequest NSMutableURLRequest
+type synthetic add -l mallet.CFNetwork.NSURLResponse.NSURLResponseSyntheticProvider --category CFNetwork NSURLResponse NSHTTPURLResponse
+
+type category enable CFNetwork

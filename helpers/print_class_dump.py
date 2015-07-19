@@ -27,9 +27,9 @@ import imp
 import argparse
 import tabulate
 
-i = imp.find_module(u"lldb_additions", [u".."])
-imp.load_module(u"lldb_additions", *i)
-import lldb_additions.class_dump as class_dump
+i = imp.find_module(u"mallet", [u".."])
+imp.load_module(u"mallet", *i)
+import mallet.class_dump as class_dump
 
 
 _whitespace = u"\u200b"
@@ -86,7 +86,7 @@ def dump_class(module_name, class_name):
     # Current directory path.
     current_dir = os.path.abspath(__file__)
     current_dir, _ = os.path.split(current_dir)
-    input_dir = os.path.join(current_dir, u"../lldb_additions/{}/{}".format(module_name, class_dump.class_dumps_folder_name))
+    input_dir = os.path.join(current_dir, u"../mallet/{}/{}".format(module_name, class_dump.class_dumps_folder_name))
     input_dir = os.path.normpath(input_dir)
 
     m = class_dump.Module(module_name, input_dir)

@@ -1,1 +1,0 @@
-command script add -f lldb_additions.debug_commands.compare_summary.compare_summary compare_summary

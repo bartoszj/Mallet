@@ -45,7 +45,7 @@ class Loader(object):
     """
     __PACKAGE_NAME = helpers.get_root_package_name(__name__)
     __PACKAGE_DIR_PATH = helpers.get_package_dir_path(__name__, __file__)
-    __USER_CONFIG_FILE_PATH = u"~/.lldb/lldb_additions.json"
+    __USER_CONFIG_FILE_PATH = u"~/.lldb/mallet.json"
     __DEFAULT_CONFIG_FILE_NAME = u"config.json"
     __PACKAGE_CONFIG_FILE_NAME = u"config.json"
     __MODULE_FILES_EXTENSIONS = [".py"]
@@ -172,7 +172,7 @@ class Loader(object):
 
     def load(self):
         """
-        Looks for user configuration at "~/.lldb/lldb_additions.json" If parameters or configuration are missing
+        Looks for user configuration at "~/.lldb/mallet.json" If parameters or configuration are missing
         then loads default configuration.
         """
         log = logging.getLogger(__name__)

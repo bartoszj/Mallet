@@ -1,0 +1,13 @@
+type summary add -F mallet.Foundation.NSDateComponents.summary_provider         --category Foundation NSDateComponents
+type summary add -F mallet.Foundation.NSLayoutConstraint.summary_provider       --category Foundation NSAutoresizingMaskLayoutConstraint NSLayoutConstraint NSIBPrototypingLayoutConstraint
+type summary add -F mallet.Foundation.NSOperation.summary_provider              --category Foundation NSOperation NSBlockOperation
+type summary add -F mallet.Foundation.NSOperationInternal.summary_provider      --category Foundation __NSOperationInternal
+type summary add -F mallet.Foundation.NSOperationQueue.summary_provider         --category Foundation NSOperationQueue
+type summary add -F mallet.Foundation.NSOperationQueueInternal.summary_provider --category Foundation __NSOperationQueueInternal
+type summary add -F mallet.Foundation.NSURLComponents.summary_provider          --category Foundation NSURLComponents __NSConcreteURLComponents
+type summary add -F mallet.Foundation.NSUUID.summary_provider                   --category Foundation NSUUID __NSConcreteUUID
+
+type synthetic add -l mallet.Foundation.NSDateComponents.NSDateComponentsSyntheticProvider --category Foundation NSDateComponents
+type synthetic add -l mallet.Foundation.NSURLComponents.NSURLComponentsSyntheticProvider   --category Foundation NSURLComponents __NSConcreteURLComponents
+
+type category enable Foundation

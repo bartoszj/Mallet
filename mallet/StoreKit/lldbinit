@@ -1,0 +1,11 @@
+type summary add -F mallet.StoreKit.SKDownload.summary_provider                --category StoreKit SKDownload
+type summary add -F mallet.StoreKit.SKPayment.summary_provider                 --category StoreKit SKPayment SKMutablePayment
+type summary add -F mallet.StoreKit.SKPaymentQueue.summary_provider            --category StoreKit SKPaymentQueue
+type summary add -F mallet.StoreKit.SKPaymentTransaction.summary_provider      --category StoreKit SKPaymentTransaction
+type summary add -F mallet.StoreKit.SKProduct.summary_provider                 --category StoreKit SKProduct
+type summary add -F mallet.StoreKit.SKProductsRequest.summary_provider         --category StoreKit SKProductsRequest
+type summary add -F mallet.StoreKit.SKProductsResponse.summary_provider        --category StoreKit SKProductsResponse
+# type summary add -F mallet.StoreKit.SKReceiptRefreshRequest.summary_provider --category StoreKit SKReceiptRefreshRequest
+type summary add -F mallet.StoreKit.SKRequest.summary_provider                 --category StoreKit SKRequest
+
+type category enable StoreKit

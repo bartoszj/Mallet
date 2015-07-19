@@ -33,14 +33,14 @@ class LoggerConfigurator(object):
     :param logging.FileHandler __file_handler: Shared file handler.
     :param logging.NullHandler __null_handler: Shared NULL handler.
     """
-    __HANDLER_NAME = u"lldb_additions_handler"
-    __LOGGER_FILE_PATH = os.path.expanduser(u"~/Library/Logs/lldb_additions.log")
-    __LOGGER_NAMES = [u"lldb_additions.logger",
-                      u"lldb_additions.class_dump",
-                      u"lldb_additions.helpers",
-                      u"lldb_additions.type_cache",
-                      u"lldb_additions.loader",
-                      u"lldb_additions.common.SummaryBase",
+    __HANDLER_NAME = u"mallet_handler"
+    __LOGGER_FILE_PATH = os.path.expanduser(u"~/Library/Logs/mallet.log")
+    __LOGGER_NAMES = [u"mallet.logger",
+                      u"mallet.class_dump",
+                      u"mallet.helpers",
+                      u"mallet.type_cache",
+                      u"mallet.loader",
+                      u"mallet.common.SummaryBase",
                       ]
 
     def __init__(self):

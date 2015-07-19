@@ -1,0 +1,3 @@
+type summary add -F mallet.QuartzCore.CALayer.summary_provider --category QuartzCore CALayer
+
+type category enable QuartzCore
