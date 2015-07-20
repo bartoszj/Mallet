@@ -189,15 +189,15 @@ class Loader(object):
         # Reload packages flag.
         if u"reload" in user_configuration:
             self.reload_packages = bool(user_configuration[u"reload"])
+        # Unfortunately all packages have to be reloaded or Xcode will crash.
+        self.reload_builtin_packages = True
+        self.reload_packages = True
 
         # Clean loaded packages.
-        # if self.reload_builtin_packages:
-        #     self.loaded_builtin_packages = list()
-        # if self.reload_packages:
-        #     self.loaded_packages = list()
-        # Commands require to load each time :(
-        self.loaded_builtin_packages = list()
-        self.loaded_packages = list()
+        if self.reload_builtin_packages:
+            self.loaded_builtin_packages = list()
+        if self.reload_packages:
+            self.loaded_packages = list()
 
         # Reload builtin scripts.
         if self.reload_builtin_packages:
