@@ -31,6 +31,7 @@ import json
 import class_dump
 import type_cache
 import helpers
+import yaml
 
 
 class Loader(object):
@@ -45,8 +46,8 @@ class Loader(object):
     """
     __PACKAGE_NAME = helpers.get_root_package_name(__name__)
     __PACKAGE_DIR_PATH = helpers.get_package_dir_path(__name__, __file__)
-    __USER_CONFIG_FILE_PATH = u"~/.lldb/mallet.json"
-    __DEFAULT_CONFIG_FILE_NAME = u"config.json"
+    __USER_CONFIG_FILE_PATH = u"~/.lldb/mallet.yml"
+    __DEFAULT_CONFIG_FILE_NAME = u"config.yml"
     __PACKAGE_CONFIG_FILE_NAME = u"config.json"
     __MODULE_FILES_EXTENSIONS = [".py"]
 
@@ -77,13 +78,24 @@ class Loader(object):
         # Looks for default configuration.
         default_config_path = os.path.join(cls.__PACKAGE_DIR_PATH, cls.__DEFAULT_CONFIG_FILE_NAME)
         if os.path.exists(default_config_path):
-            # Loads JSON configuration.
-            with open(default_config_path) as default_config_file:
-                default_config = json.load(default_config_file)
-
-            return default_config
+            # Loads YAML configuration.
+            try:
+                with open(default_config_path) as default_config_file:
+                    default_config = yaml.load(default_config_file)
+                return default_config
+            except ValueError:
+                # Cannot open YAML file.
+                if len(log.handlers) == 0:
+                    print(u"Cannot open default config file \"{}\".".format(default_config_path))
+                else:
+                    log.critical(u"Cannot open default config file \"{}\".".format(default_config_path))
+                return dict()
         else:
-            log.critical(u"Cannot find default config file \"{}\".".format(default_config_path))
+            # Missing YAML config.
+            if len(log.handlers) == 0:
+                print(u"Cannot find default config file \"{}\".".format(default_config_path))
+            else:
+                log.critical(u"Cannot find default config file \"{}\".".format(default_config_path))
             return dict()
 
     @classmethod
@@ -96,23 +108,23 @@ class Loader(object):
         """
         log = logging.getLogger(__name__)
 
-        # Looks for user JSON configuration file.
+        # Looks for user YAML configuration file.
         config_path = os.path.expanduser(cls.__USER_CONFIG_FILE_PATH)
         if os.path.exists(config_path):
-            # Loads JSON configuration.
+            # Loads YAML configuration.
             try:
                 with open(config_path) as config_file:
-                    config = json.load(config_file)
+                    config = yaml.load(config_file)
+                return config
             except ValueError:
-                # Cannot open user JSON.
+                # Cannot open user YAML.
                 if len(log.handlers) == 0:
                     print(u"Cannot open user configuration \"{}\".".format(config_path))
                 else:
                     log.warning(u"Cannot open user configuration \"{}\".".format(config_path))
                 return dict()
-            return config
         else:
-            # Missing JSON config.
+            # Missing YAML config.
             if len(log.handlers) == 0:
                 print(u"Missing user configuration \"{}\".".format(config_path))
             else:
@@ -178,7 +190,7 @@ class Loader(object):
 
     def load(self):
         """
-        Looks for user configuration at "~/.lldb/mallet.json" If parameters or configuration are missing
+        Looks for user configuration at "~/.lldb/mallet.yml" If parameters or configuration are missing
         then loads default configuration.
         """
         log = logging.getLogger(__name__)
@@ -230,7 +242,7 @@ class Loader(object):
 
         # Load builtin packages.
         builtin_packages = None
-        if u"builtin_packages" in user_configuration:
+        if u"builtin_packages" in user_configuration and isinstance(user_configuration[u"builtin_packages"], list):
             builtin_packages = user_configuration[u"builtin_packages"]
             """:type: list[str]"""
 
@@ -243,7 +255,7 @@ class Loader(object):
                 self.__load_builtin_package(package_name)
 
         # Load user or builtin packages (only from user config).
-        if u"packages" in user_configuration:
+        if u"packages" in user_configuration and isinstance(user_configuration[u"packages"], list):
             additional_builtin_packages = user_configuration[u"packages"]
             """:type: list[str]"""
             for package_name in additional_builtin_packages:
