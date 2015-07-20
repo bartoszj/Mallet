@@ -105,12 +105,18 @@ class Loader(object):
                     config = json.load(config_file)
             except ValueError:
                 # Cannot open user JSON.
-                log.warning(u"Cannot open user configuration \"{}\".".format(config_path))
+                if len(log.handlers) == 0:
+                    print(u"Cannot open user configuration \"{}\".".format(config_path))
+                else:
+                    log.warning(u"Cannot open user configuration \"{}\".".format(config_path))
                 return dict()
             return config
         else:
             # Missing JSON config.
-            log.warning(u"Missing user configuration \"{}\".".format(config_path))
+            if len(log.handlers) == 0:
+                print(u"Missing user configuration \"{}\".".format(config_path))
+            else:
+                log.warning(u"Missing user configuration \"{}\".".format(config_path))
             return dict()
 
     @classmethod
