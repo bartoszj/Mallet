@@ -1,0 +1,16 @@
+# List of packages taht should be loaded (both builtin and custom).
+# StoreKit is not by default loaded.
+# Custom modules can be added by adding path to module.
+packages: 
+  - StoreKit
+  # - ~/path/to/custom/module
+
+# Reload builtin packages or user packages (by default false).
+# reload_builtin_packages: true
+# reload: true
+
+# Turn on/off logging to file ~/Library/Logs/mallet.log. (by default false).
+# logging: true
+
+# Cleans log file every time mallet is loaded (by default false).
+# clean_logs: true
