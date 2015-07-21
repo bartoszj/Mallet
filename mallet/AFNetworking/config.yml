@@ -1,0 +1,26 @@
+lldb_init: 
+  - lldbinit
+dependencies:
+  - common
+  - Foundation
+  - CFNetwork
+modules:
+  - AFURLConnectionOperation
+  - AFHTTPRequestOperation
+  - AFHTTPRequestOperationManager
+  - AFURLSessionManager
+  - AFHTTPSessionManager
+  - AFHTTPRequestSerializer
+  - AFJSONRequestSerializer
+  - AFPropertyListRequestSerializer
+  - AFHTTPResponseSerializer
+  - AFJSONResponseSerializer
+  - AFPropertyListResponseSerializer
+  - AFXMLParserResponseSerializer
+  - AFXMLDocumentResponseSerializer
+  - AFImageResponseSerializer
+  - AFCompoundResponseSerializer
+  - AFSecurityPolicy
+  - AFNetworkActivityIndicatorManager
+  - AFNetworkReachabilityManager
+load_all_modules: false

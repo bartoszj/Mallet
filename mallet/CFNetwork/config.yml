@@ -1,0 +1,41 @@
+class_dumps: class_dumps
+lldb_init:
+  - lldbinit
+dependencies:
+  - common
+modules:
+  - CFHTTPMessage
+  - CFURLRequest
+  - CFURLResponse
+  - HTTPHeaderDict
+
+  - NSURLResponse
+  - NSURLResponseInternal
+  - NSHTTPURLResponse
+  - NSHTTPURLResponseInternal
+  - NSURLRequest
+  - NSURLRequestInternal
+
+  - NSURLConnection
+  - NSURLConnectionInternal
+
+  - NSCFLocalDownloadFile
+
+  - NSURLSession
+  - NSURLSessionConfiguration
+
+  - NSURLSessionTask
+  - NSURLSessionDataTask
+  - NSURLSessionUploadTask
+  - NSURLSessionDownloadTask
+
+  - NSCFLocalSessionTask
+  - NSCFLocalDataTask
+  - NSCFLocalUploadTask
+  - NSCFLocalDownloadTask
+
+  - NSCFBackgroundSessionTask
+  - NSCFBackgroundDataTask
+  - NSCFBackgroundUploadTask
+  - NSCFBackgroundDownloadTask
+load_all_modules: false

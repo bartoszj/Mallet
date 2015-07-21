@@ -27,7 +27,6 @@ import os
 import logging
 import logger
 import imp
-import json
 import class_dump
 import type_cache
 import helpers
@@ -43,12 +42,17 @@ class Loader(object):
     :param bool reload_builtin_packages: True, if builtin packages should be reloaded.
     :param bool reload_packages: True, if user packages should be reloaded.
     :param str __PACKAGE_NAME: Package name.
+    :param str __PACKAGE_DIR_PATH: Path to directory.
+    :param str __USER_CONFIG_FILE_PATH: User configuration file path.
+    :param str __DEFAULT_CONFIG_FILE_NAME: Default (package) configuration file name.
+    :param str __PACKAGE_CONFIG_FILE_NAME: Package configuration file name.
+    :param str __MODULE_FILES_EXTENSIONS: Supported module extensions.
     """
     __PACKAGE_NAME = helpers.get_root_package_name(__name__)
     __PACKAGE_DIR_PATH = helpers.get_package_dir_path(__name__, __file__)
     __USER_CONFIG_FILE_PATH = u"~/.lldb/mallet.yml"
     __DEFAULT_CONFIG_FILE_NAME = u"config.yml"
-    __PACKAGE_CONFIG_FILE_NAME = u"config.json"
+    __PACKAGE_CONFIG_FILE_NAME = u"config.yml"
     __MODULE_FILES_EXTENSIONS = [".py"]
 
     def __init__(self, debugger, internal_dict):
@@ -317,7 +321,7 @@ class Loader(object):
         # Read config file.
         try:
             with open(package_config_path) as package_config_file:
-                package_config = json.load(package_config_file)
+                package_config = yaml.load(package_config_file)
         except ValueError:
             log.critical(u"Cannot read package config file \"{}\".".format(package_config_path))
             return

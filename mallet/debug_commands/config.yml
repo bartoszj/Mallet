@@ -1,0 +1,4 @@
+lldb_init:
+  - lldbinit
+modules: 
+  - compare_summary

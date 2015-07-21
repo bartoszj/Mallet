@@ -1,0 +1,16 @@
+class_dumps: class_dumps
+lldb_init:
+  - lldbinit
+dependencies:
+  - common
+modules:
+  - NSObject
+  - NSDateComponents
+  - NSLayoutConstraint
+  - NSOperation
+  - NSOperationInternal
+  - NSOperationQueue
+  - NSOperationQueueInternal
+  - NSURLComponents
+  - NSUUID
+load_all_modules: false

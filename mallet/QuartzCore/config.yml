@@ -1,0 +1,13 @@
+class_dumps: class_dumps
+lldb_init:
+  - lldbinit
+dependencies:
+  - Foundation
+modules:
+  - CADoublePoint
+  - CADoubleSize
+  - CADoubleRect
+  - CALayerInternalLayer
+  - CALayerIvars
+  - CALayer
+load_all_modules: false
