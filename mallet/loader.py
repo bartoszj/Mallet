@@ -140,7 +140,7 @@ class Loader(object):
         """
         Returns builtin package path.
 
-        :param str package_name: Package path.
+        :param str package_name: Package name.
         :return: Builtin package path.
         :rtype: str
         """
@@ -158,6 +158,17 @@ class Loader(object):
         return os.path.join(cls.__get_builtin_package_path(package_name), cls.__PACKAGE_CONFIG_FILE_NAME)
 
     @classmethod
+    def __get_custom_package_path(cls, package_name):
+        """
+        Returns custom package path.
+
+        :param str package_name: Package name.
+        :return: Custom package path.
+        :rtype: str
+        """
+        return os.path.expanduser(package_name)
+
+    @classmethod
     def __get_custom_package_config_file_path(cls, package_name):
         """
         Returns custom package config file path.
@@ -166,7 +177,7 @@ class Loader(object):
         :return: Custom package config file path.
         :rtype: str
         """
-        return os.path.join(os.path.expanduser(package_name), cls.__PACKAGE_CONFIG_FILE_NAME)
+        return os.path.join(cls.__get_custom_package_path(package_name), cls.__PACKAGE_CONFIG_FILE_NAME)
 
     @classmethod
     def __get_modules_at_path(cls, path):
@@ -256,14 +267,14 @@ class Loader(object):
 
         if builtin_packages is not None:
             for package_name in builtin_packages:
-                self.__load_builtin_package(package_name)
+                self.__load_package(package_name)
 
         # Load user or builtin packages (only from user config).
         if u"packages" in user_configuration and isinstance(user_configuration[u"packages"], list):
             additional_builtin_packages = user_configuration[u"packages"]
             """:type: list[str]"""
             for package_name in additional_builtin_packages:
-                self.__load_builtin_package(package_name)
+                self.__load_package(package_name)
 
         log.debug(u"Loaded.")
 
@@ -283,49 +294,44 @@ class Loader(object):
 
         :param str package_name: Package name.
         """
+        log = logging.getLogger(__name__)
+
         # Skip loading if packages was already loaded.
         if package_name in self.loaded_builtin_packages or package_name in self.loaded_packages:
             return
 
         # Checks if builtin package with given name exists.
-        builtin_package_config_path = self.__get_builtin_package_config_file_path(package_name)
-        if os.path.exists(builtin_package_config_path):
-            self.__load_builtin_package(package_name)
-        else:
-            # Check if custom module exists.
-            custom_package_config_file_path = self.__get_custom_package_config_file_path(package_name)
-            if os.path.exists(custom_package_config_file_path):
-                self.__load_custom_package(package_name)
-
-    def __load_builtin_package(self, package_name):
-        """
-        Loads builtin package.
-
-        :param str package_name: Package name.
-        """
-        log = logging.getLogger(__name__)
-
-        # Skip loading if package was already loaded.
-        if package_name in self.loaded_builtin_packages:
-            return
-        self.loaded_builtin_packages.append(package_name)
-
+        builtin = True
         package_path = self.__get_builtin_package_path(package_name)
-
-        # Check package config file.
         package_config_path = self.__get_builtin_package_config_file_path(package_name)
         if not os.path.exists(package_config_path):
-            log.critical(u"Missing package config file \"{}\".".format(package_config_path))
-            return
+            # Check if custom module with given name exists and has config file.
+            builtin = False
+            package_path = self.__get_custom_package_path(package_name)
+            package_config_path = self.__get_custom_package_config_file_path(package_name)
+            if not os.path.exists(package_config_path):
+                # Both builtin and custom packages don't have config file.
+                return
+
+        # Check config file path.
+        assert package_path, u"Empty package path."
+        assert package_config_path, u"Empty package config file path."
+
+        # Append loaded packages.
+        if builtin:
+            self.loaded_builtin_packages.append(package_name)
+        else:
+            self.loaded_packages.append(package_name)
 
         # Read config file.
         try:
             with open(package_config_path) as package_config_file:
                 package_config = yaml.load(package_config_file)
         except ValueError:
-            log.critical(u"Cannot read package config file \"{}\".".format(package_config_path))
+            log.warning(u"Cannot read package config file \"{}\".".format(package_config_path))
             return
 
+        # Read configuration.
         class_dumps = package_config[u"class_dumps"] if u"class_dumps" in package_config else None
         lldb_init = package_config[u"lldb_init"] if u"lldb_init" in package_config else None
         dependencies = package_config[u"dependencies"] if u"dependencies" in package_config else None
@@ -335,9 +341,9 @@ class Loader(object):
         # Load dependencies.
         if dependencies is not None:
             for dependency in dependencies:
-                self.__load_builtin_package(dependency)
+                self.__load_package(dependency)
 
-        log.info(u"Loading builtin package \"{}\".".format(package_name))
+        log.info(u"Loading {} package \"{}\".".format(u"builtin" if builtin else u"custom", package_name))
 
         # Load modules in order.
         all_package_modules = self.__get_modules_at_path(package_path)
@@ -364,7 +370,7 @@ class Loader(object):
                     log.debug(u"Loading lldb init \"{}\".".format(lldb_init_path))
                     self.debugger.HandleCommand("command source -s true {}".format(lldb_init_path))
                 else:
-                    log.critical(u"Cannot find lldb init file \"{}\".".format(lldb_init_path))
+                    log.warning(u"Cannot find lldb init file \"{}\".".format(lldb_init_path))
 
         # Register class dump module.
         if class_dumps is not None:
@@ -402,12 +408,6 @@ class Loader(object):
                 #     module.lldb_init(debugger, internal_dict)
             else:
                 log.critical(u"Cannot find module at path \"{}\".".format(module_file_path))
-
-    def __load_custom_package(self, package_name):
-        # Skip loading if package was already loaded.
-        if package_name in self.loaded_packages:
-            return
-        pass
 
 
 __shared_lazy_class_dump_manager = None
