@@ -5,10 +5,6 @@ packages:
   - StoreKit
   # - ~/path/to/custom/module
 
-# Reload builtin packages or user packages (by default false).
-# reload_builtin_packages: true
-# reload: true
-
 # Turn on/off logging to file ~/Library/Logs/mallet.log. (by default false).
 # logging: true
 
