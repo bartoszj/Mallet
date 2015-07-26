@@ -3,14 +3,46 @@
 
 from setuptools import setup, find_packages
 
-setup(name="Mallet_LLDB",
+# Instruction:
+# - Dev
+#   - python setup.py develop --user
+#   - (test)
+#   - python setup.py develop --user -u
+#
+# - PyPI
+#   - python setup.py register -r https://pypi.python.org/pypi
+#
+#   - python setup.py sdist bdist_wheel
+#   - pip install --user dist/mallet_lldb*
+#   - (test)
+#   - pip uninstall mallet-lldb
+#
+#   - twine upload dist/*
+#   - pip install --user mallet-lldb
+#   - (test)
+#   - pip uninstall mallet-lldb
+#
+# - Test PyPI
+#   - python setup.py register -r https://testpypi.python.org/pypi
+#
+#   - python setup.py sdist bdist_wheel
+#   - pip install --user dist/mallet_lldb*
+#   - (test)
+#   - pip uninstall mallet-lldb
+#
+#   - twine upload -r pypitest dist/*
+#   - pip install -i https://testpypi.python.org/pypi --user mallet-lldb
+#   - (test)
+#   - pip uninstall mallet-lldb
+
+setup(name="mallet-lldb",
       version="1.0a1",
       description="LLDB additions for iOS project.",
       url="https://github.com/bartoszj/Mallet",
       author="Bartosz Janda",
       license="MIT",
       classifiers=[
-          "Development Status :: 4 - Beta",
+          "Development Status :: 3 - Alpha",
           "Environment :: Console",
           "Environment :: MacOS X",
           "Environment :: Plugins",

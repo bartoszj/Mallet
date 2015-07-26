@@ -8,15 +8,65 @@ LLDB additions for iOS project.
 Installation
 ------------
 
-Clone this repository and add the following line to your **~/.lldbinit** file. If it doesn't exist, create it.
+PIP
+^^^
 
-::
+.. code-block:: bash
 
-    # ~/.lldbinit
+    [sudo] pip install mallet-lldb
 
-    command script import /path/to/mallet
+Add the following line to your **~/.lldbinit** file. If it doesn't exist, create it.
+
+.. code-block:: 
+
+    command script import mallet
+
+GitHub
+^^^^^^
+
+.. code-block:: bash
+
+    git clone https://github.com/bartoszj/Mallet
+
+Add the following line to your **~/.lldbinit** file. If it doesn't exist, create it.
+
+.. code-block:: 
+
+    command script import /path/to/mallet/folder
+
+Homebrew
+^^^^^^^^
+
+TBD
+
+----
 
 The summaries will be available the next time Xcode starts.
+
+Configuration
+-------------
+
+By default Mallet doesn't load summaries for ``StoreKit``. If you want to load them or load any custom summaries, or configure Mallet behavior then create file **~/.lldb/mallet.yml**. You can find example in the GitHub repository.
+
+.. code-block:: YAML
+
+    # List of packages that should be loaded (both built in and custom).
+    # StoreKit is not by default loaded.
+    # Custom modules can be added by adding path to module.
+    packages: 
+      - StoreKit
+      # - ~/path/to/custom/module
+
+    # Turn on/off logging to file ~/Library/Logs/mallet.log. (by default false).
+    # logging: true
+
+    # Cleans log file every time mallet is loaded (by default false).
+    # clean_logs: true
+
+Custom summaries
+----------------
+
+TBD.
 
 Supported summaries:
 --------------------

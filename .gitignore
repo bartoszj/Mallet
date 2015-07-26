@@ -40,6 +40,10 @@ nosetests.xml
 # PyCharm
 .idea
 
+# Sublime
+*.sublime-project
+*.sublime-workspace
+
 # Xcode
 *.o
 *.lo

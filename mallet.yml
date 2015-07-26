@@ -1,4 +1,4 @@
-# List of packages taht should be loaded (both builtin and custom).
+# List of packages that should be loaded (both built in and custom).
 # StoreKit is not by default loaded.
 # Custom modules can be added by adding path to module.
 packages: 
