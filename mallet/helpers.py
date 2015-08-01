@@ -238,6 +238,17 @@ def generic_summary_provider(value_obj, internal_dict, class_synthetic_provider)
     return "Summary Unavailable"
 
 
+def get_first_package_name(name):
+    """
+    Returns first package name.
+
+    :param str name: Full module name
+    :return: First package name.
+    :rtype: str
+    """
+    return name.split(".")[0]
+
+
 def get_root_package_name(name):
     """
     Returns root package name.
@@ -246,7 +257,7 @@ def get_root_package_name(name):
     :return: Root package name.
     :rtype: str
     """
-    return name.split(".")[0]
+    return ".".join(name.split(".")[:-1])
 
 
 def get_package_name(name):
@@ -260,12 +271,12 @@ def get_package_name(name):
     return name.split(".")[-2]
 
 
-def get_module_name(name):
+def get_last_package_name(name):
     """
     Returns module name.
 
     :param str name: Full module name
-    :return: Module name.
+    :return: Last package name / module name.
     :rtype: str
     """
     return name.split(".")[-1]

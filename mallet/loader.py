@@ -31,6 +31,7 @@ import class_dump
 import type_cache
 import helpers
 import yaml
+import sys
 
 
 class Loader(object):
@@ -47,12 +48,13 @@ class Loader(object):
     :param str __PACKAGE_CONFIG_FILE_NAME: Package configuration file name.
     :param str __MODULE_FILES_EXTENSIONS: Supported module extensions.
     """
-    __PACKAGE_NAME = helpers.get_root_package_name(__name__)
+    __PACKAGE_NAME = helpers.get_first_package_name(__name__)
     __PACKAGE_DIR_PATH = helpers.get_package_dir_path(__name__, __file__)
     __USER_CONFIG_FILE_PATH = u"~/.lldb/mallet.yml"
     __DEFAULT_CONFIG_FILE_NAME = u"config.yml"
     __PACKAGE_CONFIG_FILE_NAME = u"config.yml"
     __MODULE_FILES_EXTENSIONS = [".py"]
+    __MODULE_INIT_METHOD = "lldb_init"
 
     def __init__(self, debugger, internal_dict):
         """
@@ -373,6 +375,20 @@ class Loader(object):
     def __load_module(self, full_package_name, package_path, module_name):
         """
         Loads module into LLDB Python interpreter.
+        It is wrapper to `__load_module_*` methods.
+
+        :param str full_package_name: Full package name.
+        :param str package_path: Package path.
+        :param str module_name: Module name.
+        """
+        # self.__load_module_1(full_package_name, package_path, module_name)
+        self.__load_module_2(full_package_name, package_path, module_name)
+        # self.__load_module_3(full_package_name, package_path, module_name)
+
+    def __load_module_1(self, full_package_name, package_path, module_name):
+        """
+        Loads module into LLDB Python interpreter.
+        This implementation is using `imp.load_source`.
 
         :param str full_package_name: Full package name.
         :param str package_path: Package path.
@@ -390,11 +406,98 @@ class Loader(object):
             module = imp.load_source(full_module_name, module_file_path)
 
             # Execute init method.
-            if hasattr(module, "lldb_init"):
+            if hasattr(module, self.__MODULE_INIT_METHOD):
                 # Initialize module.
-                module.lldb_init(self.debugger, self.internal_dict)
+                init_method = getattr(module, self.__MODULE_INIT_METHOD)
+                init_method(self.debugger, self.internal_dict)
         else:
             log.warning(u"Cannot find module at path \"{}\".".format(module_file_path))
+
+    def __load_module_2(self, full_package_name, package_path, module_name):
+        """
+        Loads module into LLDB Python interpreter.
+        This implementation is using `imp.find_module` and `imp.load_module`.
+
+        :param str full_package_name: Full package name.
+        :param str package_path: Package path.
+        :param str module_name: Module name.
+        :return: Loaded module.
+        :rtype: module | None
+        """
+        # print(full_package_name, package_path, module_name)
+        log = logging.getLogger(__name__)
+
+        # Try to load root package. Which is required to load sub module.
+        root_package_name = helpers.get_root_package_name(full_package_name)
+        # Package already loaded.
+        if full_package_name in sys.modules:
+            package = sys.modules[full_package_name]
+        # There is no root package to load.
+        elif root_package_name == full_package_name:
+            package = None
+        # Load root package.
+        else:
+            last_package_name = helpers.get_last_package_name(full_package_name)
+            root_package_path = os.path.dirname(package_path)
+
+            package = self.__load_module_2(root_package_name, root_package_path, last_package_name)
+
+        # Load module.
+        m = None
+        """:type: module"""
+        fp = None
+        """:type: file"""
+        try:
+            # Find and load module.
+            full_module_name = u".".join([full_package_name, module_name])
+            fp, pathname, description = imp.find_module(module_name, [package_path])
+            log.debug(u"Loading module \"{}\" at path \"{}\".".format(full_module_name, pathname))
+            m = imp.load_module(full_module_name, fp, pathname, description)
+
+            # Add module to package if exists.
+            if package:
+                setattr(package, module_name, m)
+
+            # Execute init method.
+            if hasattr(m, self.__MODULE_INIT_METHOD):
+                # Initialize module.
+                init_method = getattr(m, self.__MODULE_INIT_METHOD)
+                init_method(self.debugger, self.internal_dict)
+
+        except ImportError:
+            log.warning(u"Cannot find module \"{}\" at path \"{}\".".format(module_name, package_path))
+        finally:
+            # Closing file.
+            if fp:
+                fp.close()
+
+        return m
+
+    def __load_module_3(self, full_package_name, package_path, module_name):
+        """
+        Loads module into LLDB Python interpreter.
+        This implementation is using standard `import` statement, no reloading.
+        Is working only with built in modules or modules installed by pip.
+
+        :param str full_package_name: Full package name.
+        :param str package_path: Package path.
+        :param str module_name: Module name.
+        """
+        log = logging.getLogger(__name__)
+
+        # Load module at path.
+        full_module_name = u".".join([full_package_name, module_name])
+        log.debug(u"Loading module \"{}\".".format(full_module_name))
+        self.debugger.HandleCommand("script import {}".format(full_module_name))
+
+        if full_module_name in sys.modules:
+            module = sys.modules[full_module_name]
+
+            # Execute init method.
+            if hasattr(module, self.__MODULE_INIT_METHOD):
+                # Initialize module.
+                init_method = getattr(module, self.__MODULE_INIT_METHOD)
+                init_method(self.debugger, self.internal_dict)
 
 
 __shared_lazy_class_dump_manager = None
