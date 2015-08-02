@@ -193,11 +193,8 @@ class Loader(object):
         for f in os.listdir(path):
             # Work only files with correct suffix.
             module_name, module_extension = os.path.splitext(f)
-            # Skip __init__ file.
-            if module_name == "__init__":
-                continue
             # Add only files with correct suffix.
-            elif cls.__MODULE_FILES_EXTENSIONS.count(module_extension) != 0:
+            if cls.__MODULE_FILES_EXTENSIONS.count(module_extension) != 0:
                 modules.append(module_name)
         return modules
 
@@ -312,16 +309,14 @@ class Loader(object):
             return
 
         # Read configuration.
-        package_name = package_config[u"name"] if u"name" in package_config else None
         class_dumps = package_config[u"class_dumps"] if u"class_dumps" in package_config else None
         lldb_init = package_config[u"lldb_init"] if u"lldb_init" in package_config else None
         dependencies = package_config[u"dependencies"] if u"dependencies" in package_config else None
         modules = package_config[u"modules"] if u"modules" in package_config else None
         load_all_modules = package_config[u"load_all_modules"] if u"load_all_modules" in package_config else None
 
-        # Get package name from package / package path.
-        if package_name is None:
-            package_name = os.path.basename(package)
+        # Get package name from package path.
+        package_name = os.path.basename(package)
 
         # Get full package name.
         if builtin:
@@ -424,16 +419,24 @@ class Loader(object):
         :return: Loaded module.
         :rtype: module | None
         """
-        # print(full_package_name, package_path, module_name)
         log = logging.getLogger(__name__)
 
-        # Try to load root package. Which is required to load sub module.
+        # Root package.
         root_package_name = helpers.get_root_package_name(full_package_name)
+
+        # Don't load __init__ module, just load package.
+        if module_name == "__init__":
+            last_package_name = helpers.get_last_package_name(full_package_name)
+            root_package_path = os.path.dirname(package_path)
+
+            return self.__load_module_2(root_package_name, root_package_path, last_package_name)
+
+        # Try to load root package. Which is required to load sub module.
         # Package already loaded.
         if full_package_name in sys.modules:
             package = sys.modules[full_package_name]
         # There is no root package to load.
-        elif root_package_name == full_package_name:
+        elif root_package_name is None or len(root_package_name) == 0:
             package = None
         # Load root package.
         else:
