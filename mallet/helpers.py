@@ -242,6 +242,8 @@ def get_first_package_name(name):
     """
     Returns first package name.
 
+    From `a.b.c` it returns `a`.
+
     :param str name: Full module name
     :return: First package name.
     :rtype: str
@@ -252,6 +254,8 @@ def get_first_package_name(name):
 def get_root_package_name(name):
     """
     Returns root package name.
+
+    From `a.b.c` it returns `a.b`.
 
     :param str name: Full module name
     :return: Root package name.
@@ -264,6 +268,8 @@ def get_package_name(name):
     """
     Returns package name.
 
+    From `a.b.c` it returns `b`.
+
     :param str name: Full module name
     :return: Package name.
     :rtype: str
@@ -274,6 +280,8 @@ def get_package_name(name):
 def get_last_package_name(name):
     """
     Returns module name.
+
+    From `a.b.c` it returns `c`.
 
     :param str name: Full module name
     :return: Last package name / module name.

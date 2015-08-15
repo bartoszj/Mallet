@@ -424,7 +424,7 @@ class Loader(object):
         # Root package.
         root_package_name = helpers.get_root_package_name(full_package_name)
 
-        # Don't load __init__ module, just load package.
+        # Don't load __init__ module directly, just load package.
         if module_name == "__init__":
             last_package_name = helpers.get_last_package_name(full_package_name)
             root_package_path = os.path.dirname(package_path)
@@ -461,7 +461,7 @@ class Loader(object):
             if package:
                 setattr(package, module_name, m)
 
-            # Execute init method.
+            # Execute mallet init method.
             if hasattr(m, self.__MODULE_INIT_METHOD):
                 # Initialize module.
                 init_method = getattr(m, self.__MODULE_INIT_METHOD)
