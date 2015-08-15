@@ -36,7 +36,7 @@ from setuptools import setup, find_packages
 #   - pip uninstall mallet-lldb
 
 setup(name="mallet-lldb",
-      version="1.0a1",
+      version="1.0a2",
       description="LLDB additions for iOS project.",
       url="https://github.com/bartoszj/Mallet",
       author="Bartosz Janda",
