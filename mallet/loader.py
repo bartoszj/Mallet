@@ -376,17 +376,7 @@ class Loader(object):
                 self.__load_module(full_package_name, package_path, module_name)
 
         # Load LLDB init.
-        if lldb_init is not None:
-            # Convert string to list of strings.
-            if isinstance(lldb_init, str) or isinstance(lldb_init, unicode):
-                lldb_init = [lldb_init]
-            for li in lldb_init:
-                lldb_init_path = os.path.join(package_path, li)
-                if os.path.exists(lldb_init_path):
-                    log.debug(u"Loading lldb init \"{}\".".format(lldb_init_path))
-                    self.debugger.HandleCommand("command source -s true {}".format(lldb_init_path))
-                else:
-                    log.warning(u"Cannot find lldb init file \"{}\".".format(lldb_init_path))
+        self.__load_lldb_init(package_path, lldb_init)
 
         # Register class dump module.
         if class_dumps is not None:
@@ -531,6 +521,28 @@ class Loader(object):
                 # Initialize module.
                 init_method = getattr(module, self.__MODULE_INIT_METHOD)
                 init_method(self.debugger, self.internal_dict)
+
+    def __load_lldb_init(self, package_path, lldb_init):
+        """
+        Loads lldb init files.
+
+        :param str package_path: Package path.
+        :param str | list[str] lldb_init: lldb init files.
+        :return:
+        """
+        log = logging.getLogger(__name__)
+
+        if lldb_init is not None:
+            # Convert string to list of strings.
+            if isinstance(lldb_init, str) or isinstance(lldb_init, unicode):
+                lldb_init = [lldb_init]
+            for li in lldb_init:
+                lldb_init_path = os.path.join(package_path, li)
+                if os.path.exists(lldb_init_path):
+                    log.debug(u"Loading lldb init \"{}\".".format(lldb_init_path))
+                    self.debugger.HandleCommand("command source -s true {}".format(lldb_init_path))
+                else:
+                    log.warning(u"Cannot find lldb init file \"{}\".".format(lldb_init_path))
 
 
 __shared_lazy_class_dump_manager = None
