@@ -40,7 +40,12 @@ class Loader(object):
 
     :param lldb.SBDebugger debugger: LLDB debugger.
     :param dict internal_dict: Internal LLDB dictionary.
-    :param list[str] loaded_packages: List of loaded packages.
+    :param bool reload_builtin: Reload builtin modules.
+    :param bool reload_custom: Reload custom / user modules.
+    :param list[str] loaded_builtin_packages: List of loaded builtin packages.
+    :param list[str] loaded_builtin_packages_lldb_init: List of loaded builtin packages lldb init.
+    :param list[str] loaded_custom_packages: List of loaded custom packages.
+    :param list[str] loaded_custom_packages_lldb_init: List of loaded custom packages lldb init.
     :param str __PACKAGE_NAME: Package name.
     :param str __PACKAGE_DIR_PATH: Path to directory.
     :param str __USER_CONFIG_FILE_PATH: User configuration file path.
@@ -56,16 +61,17 @@ class Loader(object):
     __MODULE_FILES_EXTENSIONS = [".py"]
     __MODULE_INIT_METHOD = "lldb_init"
 
-    def __init__(self, debugger, internal_dict):
-        """
-        :param lldb.SBDebugger debugger: LLDB debugger.
-        :param dict internal_dict: Internal LLDB dictionary.
-        """
+    def __init__(self):
         super(Loader, self).__init__()
-        self.debugger = debugger
-        self.internal_dict = internal_dict
+        self.debugger = None
+        self.internal_dict = None
 
-        self.loaded_packages = list()
+        self.reload_builtin = False
+        self.reload_custom = True
+        self.loaded_builtin_packages = list()
+        self.loaded_builtin_packages_lldb_init = list()
+        self.loaded_custom_packages = list()
+        self.loaded_custom_packages_lldb_init = list()
 
     @classmethod
     def __get_default_configuration(cls):
@@ -198,11 +204,13 @@ class Loader(object):
                 modules.append(module_name)
         return modules
 
-    def load(self):
+    def load(self, debugger, internal_dict):
         """
         Looks for user configuration at "~/.lldb/mallet.yml" If parameters or configuration are missing
         then loads default configuration.
         """
+        self.debugger = debugger
+        self.internal_dict = internal_dict
         log = logging.getLogger(__name__)
 
         # Get default configuration.
@@ -211,10 +219,29 @@ class Loader(object):
         # Get user configuration.
         user_configuration = self.__get_user_configuration()
 
-        self.loaded_packages = list()
+        # Reload builtin / custom.
+        self.reload_builtin = False
+        self.reload_custom = True
+        if u"reload_builtin" in user_configuration:
+            self.reload_builtin = bool(user_configuration[u"reload_builtin"])
+        if u"reload" in user_configuration:
+            self.reload_custom = bool(user_configuration[u"reload"])
+        # Force custom package reload if builtin packages are reloaded.
+        if self.reload_builtin:
+            self.reload_custom = True
 
-        # Reload builtin scripts.
-        self.__reload_internal_scripts()
+        # Clean loaded packages list.
+        self.loaded_builtin_packages = list()
+        self.loaded_custom_packages = list()
+
+        # Reload builtin scripts and cleans builtin loaded packages.
+        if self.reload_builtin:
+            self.loaded_builtin_packages_lldb_init = list()
+            self.__reload_internal_scripts()
+
+        # Clean custom / user packages.
+        if self.reload_custom:
+            self.loaded_custom_packages_lldb_init = list()
 
         # Clean log file.
         clean_log_file = False
@@ -277,7 +304,7 @@ class Loader(object):
         log = logging.getLogger(__name__)
 
         # Skip loading if packages was already loaded.
-        if package in self.loaded_packages:
+        if package in self.loaded_builtin_packages or package in self.loaded_custom_packages:
             return
 
         # Checks if builtin package with given name exists.
@@ -298,7 +325,10 @@ class Loader(object):
         assert package_config_path, u"Empty package config file path."
 
         # Append loaded packages.
-        self.loaded_packages.append(package)
+        if builtin:
+            self.loaded_builtin_packages.append(package)
+        else:
+            self.loaded_custom_packages.append(package)
 
         # Read config file.
         try:
@@ -524,18 +554,16 @@ def get_shared_lazy_class_dump_manager():
     return __shared_lazy_class_dump_manager
 
 
-def get_shared_loader(debugger, internal_dict):
+def get_shared_loader():
     """
     Get shared Loader.
 
-    :param lldb.SBDebugger debugger: LLDB debugger
-    :param dict internal_dict: Internal LLDB dictionary.
     :return: Shared loader.
     :rtype: Loader.
     """
     global __shared_loader
     if __shared_loader is None:
-        __shared_loader = Loader(debugger, internal_dict)
+        __shared_loader = Loader()
         log = logging.getLogger(__name__)
         log.debug(u"Creating shared Loader.")
     return __shared_loader
